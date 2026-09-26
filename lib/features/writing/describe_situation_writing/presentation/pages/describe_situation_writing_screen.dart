@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/features/writing/presentation/mixins/writing_game_screen_mixin.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
@@ -36,7 +37,9 @@ class DescribeSituationScreen extends StatefulWidget {
 }
 
 class _DescribeSituationScreenState extends State<DescribeSituationScreen>
-    with WritingGameScreenMixin {
+    with
+        GameScreenMixin<DescribeSituationScreen>,
+        WritingGameScreenMixin<DescribeSituationScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

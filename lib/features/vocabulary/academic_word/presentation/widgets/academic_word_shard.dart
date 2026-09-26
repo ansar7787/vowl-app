@@ -93,7 +93,9 @@ class AcademicWordShard extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 12.w),
                     child: Text(
                       text.toUpperCase(),
-                      style: _textStyle(isDark ? Colors.white : Colors.black87),
+                      style: _textStyle(
+                        Theme.of(context).colorScheme.onSurface,
+                      ),
                     ),
                   ),
                 ),

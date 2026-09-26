@@ -32,12 +32,20 @@ class SyllableStressDrumConsole extends StatelessWidget {
       alignment: WrapAlignment.center,
       children: List.generate(
         syllables.length,
-        (i) => _buildDrumPad(i, syllables[i], correctIndex, color, isDark),
+        (i) => _buildDrumPad(
+          context,
+          i,
+          syllables[i],
+          correctIndex,
+          color,
+          isDark,
+        ),
       ),
     );
   }
 
   Widget _buildDrumPad(
+    BuildContext context,
     int index,
     String text,
     int correct,
@@ -104,7 +112,7 @@ class SyllableStressDrumConsole extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         color: isSelected || (isAnswered && index == correct)
                             ? contentColor
-                            : (isDark ? Colors.white : Colors.black87),
+                            : (Theme.of(context).colorScheme.onSurface),
                       ),
                     ),
                   ),

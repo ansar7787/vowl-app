@@ -1,9 +1,9 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/theme/app_colors.dart';
 
 /// Premium language picker bottom sheet for the Settings screen.
 ///
@@ -149,7 +149,7 @@ class _LanguagePickerSheetState extends State<LanguagePickerSheet> {
                       fontFamily: 'Outfit',
                       fontSize: 18.sp,
                       fontWeight: FontWeight.w500,
-                      color: isDark ? Colors.white : AppColors.slate900,
+                      color: Theme.of(context).colorScheme.onSurface,
                     ),
                     decoration: InputDecoration(
                       hintText: localeService.tr('language_picker.search_hint'),
@@ -338,7 +338,7 @@ class _LanguageTile extends StatelessWidget {
                                 : FontWeight.w700,
                             color: isActive
                                 ? AppColors.blue500
-                                : (isDark ? Colors.white : AppColors.slate900),
+                                : (Theme.of(context).colorScheme.onSurface),
                           ),
                         ),
                         if (localeInfo.name != localeInfo.nativeName)

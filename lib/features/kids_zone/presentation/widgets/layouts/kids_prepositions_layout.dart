@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,6 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();

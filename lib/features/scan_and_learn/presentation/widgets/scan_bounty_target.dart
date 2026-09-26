@@ -1,9 +1,9 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -23,7 +23,7 @@ class ScanBountyTarget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final textColor = isDark ? Colors.white : Colors.black87;
+    final textColor = Theme.of(context).colorScheme.onSurface;
     final subtitleColor = isDark
         ? Colors.amber.shade300
         : Colors.amber.shade700;

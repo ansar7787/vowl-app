@@ -109,7 +109,7 @@ class _ChatBubble extends StatelessWidget {
                 fontWeight: FontWeight.w500,
                 color: isUser
                     ? Colors.white
-                    : (isDark ? Colors.white : AppColors.slate900),
+                    : (Theme.of(context).colorScheme.onSurface),
               ),
             ),
           ),
@@ -149,7 +149,7 @@ class _TypingIndicator extends StatelessWidget {
                 fontFamily: 'Outfit',
                 fontSize: 15.sp,
                 fontWeight: FontWeight.w500,
-                color: isDark ? Colors.white : AppColors.slate900,
+                color: Theme.of(context).colorScheme.onSurface,
               ),
             ),
           ),

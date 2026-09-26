@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:flutter/material.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -34,14 +34,12 @@ class VowlAssets {
     'cosmic_unicorn': '🦄',
   };
 
-  // ── Vowlbot image assets ─────────────────────────────────────────────────
-  static const String vowlbotHappy = 'assets/images/mascot/voxbot_happy.webp';
-  static const String vowlbotNeutral =
-      'assets/images/mascot/voxbot_neutral.webp';
-  static const String vowlbotThinking =
-      'assets/images/mascot/voxbot_thinking.webp';
-  static const String vowlbotWorried =
-      'assets/images/mascot/voxbot_worried.webp';
+  // ── Vowly image assets ─────────────────────────────────────────────────
+  static const String vowlyHappy = 'assets/images/mascot/vowly_happy.webp';
+  static const String vowlyNeutral = 'assets/images/mascot/vowly_neutral.webp';
+  static const String vowlyThinking =
+      'assets/images/mascot/vowly_thinking.webp';
+  static const String vowlyWorried = 'assets/images/mascot/vowly_worried.webp';
 
   // ── Mascot display names ─────────────────────────────────────────────────
   static const Map<String, String> mascotNames = {

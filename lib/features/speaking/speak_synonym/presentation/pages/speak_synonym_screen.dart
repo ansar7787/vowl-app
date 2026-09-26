@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -33,7 +34,10 @@ class SpeakSynonymScreen extends StatefulWidget {
 }
 
 class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
-    with SingleTickerProviderStateMixin, SpeakingGameScreenMixin {
+    with
+        SingleTickerProviderStateMixin,
+        GameScreenMixin<SpeakSynonymScreen>,
+        SpeakingGameScreenMixin<SpeakSynonymScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

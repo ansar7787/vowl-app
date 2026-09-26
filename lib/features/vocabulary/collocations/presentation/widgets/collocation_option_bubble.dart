@@ -51,7 +51,7 @@ class CollocationOptionBubble extends StatelessWidget {
         ? Colors.white.withValues(alpha: 0.05)
         : Colors.black.withValues(alpha: 0.03);
     Color borderColor = color.withValues(alpha: 0.3);
-    Color textColor = isDark ? Colors.white : Colors.black87;
+    Color textColor = Theme.of(context).colorScheme.onSurface;
 
     if (showCorrect) {
       bubbleColor = Colors.green.withValues(alpha: 0.2);

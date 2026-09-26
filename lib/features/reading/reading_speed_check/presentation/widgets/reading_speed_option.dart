@@ -83,7 +83,7 @@ class ReadingSpeedOption extends StatelessWidget {
                 fontWeight: isSelected || isCorrect || isWrong
                     ? FontWeight.w700
                     : FontWeight.w600,
-                color: isDark ? Colors.white : Colors.black87,
+                color: Theme.of(context).colorScheme.onSurface,
               ),
             ),
           ),

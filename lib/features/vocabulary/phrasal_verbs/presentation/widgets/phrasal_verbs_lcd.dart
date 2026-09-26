@@ -62,7 +62,7 @@ class PhrasalVerbsLcd extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: 15.sp,
               fontWeight: FontWeight.bold,
-              color: isDark ? Colors.white : Colors.black87,
+              color: Theme.of(context).colorScheme.onSurface,
               height: 1.2,
             ),
           ),

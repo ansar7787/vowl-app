@@ -34,7 +34,7 @@ class PhotoResultChip extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     const primaryTeal = AppColors.teal500;
-    final textColor = isDark ? Colors.white : Colors.black87;
+    final textColor = Theme.of(context).colorScheme.onSurface;
     final entry = PhotoVocabularyDictionary.getEntry(label.label);
 
     final translationParts = translatedText?.split('\n\n') ?? [];

@@ -17,6 +17,7 @@ import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/utils/notification_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:flutter/painting.dart' show imageCache;
+import 'package:shared_preferences/shared_preferences.dart';
 
 // ============================================================================
 // EVENTS
@@ -249,6 +250,55 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     imageCache.clear();
     imageCache.clearLiveImages();
 
+    try {
+      final prefs = await SharedPreferences.getInstance();
+
+      final themeMode = prefs.getString('theme_mode');
+      final isMidnight = prefs.getBool('is_midnight');
+      final appLocale = prefs.getString('app_locale');
+      final targetLanguage = prefs.getString('target_language');
+      final soundEnabled = prefs.getBool('sound_enabled');
+      final notificationsEnabled = prefs.getBool('notifications_enabled');
+      final reduceComplexGestures = prefs.getBool('reduce_complex_gestures');
+      final notificationCardDismissedTime = prefs.getInt(
+        'notification_card_dismissed_time',
+      );
+
+      await prefs.clear();
+
+      if (themeMode != null) {
+        await prefs.setString('theme_mode', themeMode);
+      }
+      if (isMidnight != null) {
+        await prefs.setBool('is_midnight', isMidnight);
+      }
+      if (appLocale != null) {
+        await prefs.setString('app_locale', appLocale);
+      }
+      if (targetLanguage != null) {
+        await prefs.setString('target_language', targetLanguage);
+      }
+      if (soundEnabled != null) {
+        await prefs.setBool('sound_enabled', soundEnabled);
+      }
+      if (notificationsEnabled != null) {
+        await prefs.setBool('notifications_enabled', notificationsEnabled);
+      }
+      if (reduceComplexGestures != null) {
+        await prefs.setBool('reduce_complex_gestures', reduceComplexGestures);
+      }
+      if (notificationCardDismissedTime != null) {
+        await prefs.setInt(
+          'notification_card_dismissed_time',
+          notificationCardDismissedTime,
+        );
+      }
+    } catch (e) {
+      if (kDebugMode) {
+        debugPrint('AuthBloc: SharedPreferences cleanup failed: $e');
+      }
+    }
+
     await _logOut(const NoParams());
     emit(const AuthState.unauthenticated());
   }
@@ -281,6 +331,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   ) async {
     if (state.status == AuthStatus.loggingOut) return;
     emit(state.copyWith(status: AuthStatus.loggingOut));
+
+    try {
+      await di.sl<NotificationService>().cancelAllReminders();
+    } catch (e) {
+      if (kDebugMode) debugPrint('AuthBloc: notification cleanup failed: $e');
+    }
 
     final result = await _deleteAccount(const NoParams());
     await result.fold(

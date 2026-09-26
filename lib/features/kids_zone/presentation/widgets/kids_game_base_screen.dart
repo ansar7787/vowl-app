@@ -85,7 +85,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
   void dispose() {
     _showBriefing.dispose();
     _hintText.dispose();
-    di.sl<KidsAudioService>().stopBgm();
+
     di.sl<KidsTTSService>().stop();
     super.dispose();
   }

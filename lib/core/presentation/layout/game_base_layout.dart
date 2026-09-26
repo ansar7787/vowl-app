@@ -187,7 +187,7 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
               data: MediaQuery.of(context).copyWith(
                 textScaler: MediaQuery.of(
                   context,
-                ).textScaler.clamp(minScaleFactor: 0.8, maxScaleFactor: 1.1),
+                ).textScaler.clamp(minScaleFactor: 0.8, maxScaleFactor: 1.5),
               ),
               child: ValueListenableBuilder<int>(
                 valueListenable: _stateHash,

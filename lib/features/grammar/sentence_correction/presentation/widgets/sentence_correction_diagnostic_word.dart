@@ -34,7 +34,7 @@ class SentenceCorrectionDiagnosticWord extends StatelessWidget {
     Color itemColor = Colors.transparent;
     Color borderColor = primaryColor.withValues(alpha: 0.1);
     double borderWidth = 1;
-    Color textColor = isDark ? Colors.white : Colors.black87;
+    Color textColor = Theme.of(context).colorScheme.onSurface;
     List<BoxShadow> shadows = [];
     TextDecoration? textDecoration;
     Color? decorationColor;

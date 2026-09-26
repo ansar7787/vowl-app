@@ -1,9 +1,9 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:math' as dart_math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_background_renderer.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_furniture_renderer.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -48,6 +48,7 @@ class KidsRoomLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Stack(
       children: [
         // 1. Wall Layer (Background)
@@ -185,8 +186,8 @@ class KidsRoomLayout extends StatelessWidget {
   }
 
   Widget _buildAmbientOverlay(BuildContext context) {
-    final hour = DateTime.now().hour;
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final hour = DateTime.now().hour;
 
     Color overlayColor = Colors.transparent;
 

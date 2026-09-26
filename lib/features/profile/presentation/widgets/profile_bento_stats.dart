@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -10,7 +11,6 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -24,8 +24,8 @@ class ProfileBentoStats extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final xpProgress = (user.totalExp % 100) / 100;
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final xpProgress = (user.totalExp % 100) / 100;
 
     return Column(
       children: [
@@ -201,7 +201,6 @@ class _BentoWideCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return ScaleButton(
       onTap: onTap,
       child: GlassTile(
@@ -247,7 +246,7 @@ class _BentoWideCard extends StatelessWidget {
                           fontFamily: 'Outfit',
                           fontSize: 24.sp,
                           fontWeight: FontWeight.w900,
-                          color: isDark ? Colors.white : AppColors.slate900,
+                          color: Theme.of(context).colorScheme.onSurface,
                         ),
                       ),
                       if (subtitle != null) ...[
@@ -304,7 +303,6 @@ class _StatPod extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return ScaleButton(
       onTap: () {
         di.sl<HapticService>().selection();
@@ -337,7 +335,7 @@ class _StatPod extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 22.sp,
                   fontWeight: FontWeight.w900,
-                  color: isDark ? Colors.white : AppColors.slate900,
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
               ),
               SizedBox(height: 4.h),

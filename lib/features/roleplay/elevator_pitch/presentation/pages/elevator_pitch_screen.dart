@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
 import 'package:vowl/features/roleplay/presentation/mixins/roleplay_game_screen_mixin.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
@@ -28,7 +29,9 @@ class ElevatorPitchScreen extends StatefulWidget {
 }
 
 class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
-    with RoleplayGameScreenMixin {
+    with
+        GameScreenMixin<ElevatorPitchScreen>,
+        RoleplayGameScreenMixin<ElevatorPitchScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

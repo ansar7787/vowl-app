@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mixin.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
@@ -27,7 +28,9 @@ class ConditionalsScreen extends StatefulWidget {
 }
 
 class _ConditionalsScreenState extends State<ConditionalsScreen>
-    with GrammarGameScreenMixin {
+    with
+        GameScreenMixin<ConditionalsScreen>,
+        GrammarGameScreenMixin<ConditionalsScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

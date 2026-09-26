@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -31,7 +32,9 @@ class DetailSpotlightScreen extends StatefulWidget {
 }
 
 class _DetailSpotlightScreenState extends State<DetailSpotlightScreen>
-    with ListeningGameScreenMixin {
+    with
+        GameScreenMixin<DetailSpotlightScreen>,
+        ListeningGameScreenMixin<DetailSpotlightScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

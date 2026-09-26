@@ -111,7 +111,7 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 18.sp,
-                color: isDark ? Colors.white : Colors.black87,
+                color: Theme.of(context).colorScheme.onSurface,
                 height: 1.35,
               ),
             ),

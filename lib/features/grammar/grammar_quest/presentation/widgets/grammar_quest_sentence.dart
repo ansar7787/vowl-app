@@ -25,7 +25,7 @@ class GrammarQuestSentence extends StatelessWidget {
         style: TextStyle(
           fontFamily: 'Outfit',
           fontSize: isCompact ? 15.sp : 20.sp,
-          color: isDark ? Colors.white : Colors.black87,
+          color: Theme.of(context).colorScheme.onSurface,
           height: 1.4,
         ),
       ),

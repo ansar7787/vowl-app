@@ -27,7 +27,7 @@ class SentenceBuilderKeyboardInput extends StatelessWidget {
         style: TextStyle(
           fontFamily: 'Outfit',
           fontSize: 16.sp,
-          color: isDark ? Colors.white : Colors.black87,
+          color: Theme.of(context).colorScheme.onSurface,
         ),
         maxLines: 3,
         minLines: 1,

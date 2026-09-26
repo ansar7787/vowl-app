@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -27,7 +28,10 @@ class SubjectVerbAgreementScreen extends StatefulWidget {
 }
 
 class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
-    with SingleTickerProviderStateMixin, GrammarGameScreenMixin {
+    with
+        SingleTickerProviderStateMixin,
+        GameScreenMixin<SubjectVerbAgreementScreen>,
+        GrammarGameScreenMixin<SubjectVerbAgreementScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

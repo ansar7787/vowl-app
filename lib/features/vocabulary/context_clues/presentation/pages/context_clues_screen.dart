@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:ui';
 import 'dart:math' as math;
@@ -35,7 +36,9 @@ class ContextCluesScreen extends StatefulWidget {
 }
 
 class _ContextCluesScreenState extends State<ContextCluesScreen>
-    with VocabularyGameScreenMixin {
+    with
+        GameScreenMixin<ContextCluesScreen>,
+        VocabularyGameScreenMixin<ContextCluesScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

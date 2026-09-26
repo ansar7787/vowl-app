@@ -4,8 +4,8 @@ service cloud.firestore {
 
     // ─── USER DATA ───────────────────────────────────────────────────
     match /users/{userId} {
-      // Anyone authenticated can READ profiles (needed for global rankings)
-      allow read: if request.auth != null;
+      // Users can only READ their own profile
+      allow read: if request.auth != null && request.auth.uid == userId;
 
       // CREATE: Only own document, prevent spoofing isAdmin
       allow create: if request.auth != null && request.auth.uid == userId
@@ -60,7 +60,7 @@ service cloud.firestore {
                 !('lastRewardTimestamp' in resource.data) || 
                 resource.data.lastRewardTimestamp == null ||
                 !(resource.data.lastRewardTimestamp is timestamp) ||
-                request.time >= resource.data.lastRewardTimestamp + duration.value(0, 's')
+                request.time >= resource.data.lastRewardTimestamp + duration.value(2, 's')
               )
             )
           )

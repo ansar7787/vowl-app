@@ -1,5 +1,5 @@
-import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -137,8 +137,8 @@ class MainWrapper extends StatelessWidget {
     IconData activeIcon,
     String label,
   ) {
-    final isSelected = navigationShell.currentIndex == index;
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isSelected = navigationShell.currentIndex == index;
     const accentColor = IllustrationColors.brightBlue;
 
     return Semantics(

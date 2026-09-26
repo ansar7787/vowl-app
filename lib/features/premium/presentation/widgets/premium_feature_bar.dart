@@ -1,10 +1,10 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:lucide_icons/lucide_icons.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -18,7 +18,6 @@ class ModernFeatureBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     // An ultra-premium 2026 staggered list of glassmorphic feature cards
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -123,12 +122,11 @@ class ModernFeatureBar extends StatelessWidget {
           icon: LucideIcons.zap,
           title: context.tr(
             'premium.feature_2x_speed',
-            fallback: '2x Learning Velocity',
+            fallback: 'Enhanced Learning Tools',
           ),
           subtitle: context.tr(
             'premium.feature_2x_speed_desc',
-            fallback:
-                'Master concepts twice as fast with advanced XP tracking.',
+            fallback: 'Access advanced exercises and detailed explanations.',
           ),
           isDark: isDark,
           customColor: AppColors.amber500, // Amber
@@ -249,7 +247,7 @@ class ModernFeatureBar extends StatelessWidget {
                       title,
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        color: isDark ? Colors.white : Colors.black87,
+                        color: Theme.of(context).colorScheme.onSurface,
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w900,
                         letterSpacing: 0.5,

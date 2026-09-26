@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,7 @@ import '../../../presentation/bloc/elite_mastery_bloc.dart';
 import '../../../presentation/layout/elite_base_layout.dart';
 import '../../../presentation/widgets/elite_hint_card.dart';
 import '../widgets/idiom_match_options_panel.dart';
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/features/elite_mastery/presentation/mixins/elite_mastery_game_screen_mixin.dart';
 
 class _LocalPalette {
@@ -33,7 +35,9 @@ class IdiomMatchScreen extends StatefulWidget {
 }
 
 class _IdiomMatchScreenState extends State<IdiomMatchScreen>
-    with EliteMasteryGameScreenMixin {
+    with
+        GameScreenMixin<IdiomMatchScreen>,
+        EliteMasteryGameScreenMixin<IdiomMatchScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -184,7 +188,9 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen>
               }
             }
 
-            debugPrint(contextSentence);
+            if (kDebugMode) {
+              debugPrint(contextSentence);
+            }
 
             return EliteBaseLayout(
               gameType: widget.gameType,

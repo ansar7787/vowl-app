@@ -58,7 +58,7 @@ class WordReorderFloatingTile extends StatelessWidget {
                 fontWeight: FontWeight.w700,
                 color: isHighlighted
                     ? Colors.amber
-                    : (isDark ? Colors.white : Colors.black87),
+                    : (Theme.of(context).colorScheme.onSurface),
               ),
             ),
           ),

@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
@@ -12,7 +13,6 @@ import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/home/presentation/widgets/mastery_avatar.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -33,6 +33,7 @@ class CommandPod extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Column(
       children: [
         if (mode == CommandPodMode.full ||
@@ -602,7 +603,7 @@ class CommandPod extends StatelessWidget {
                         fontFamily: 'Outfit',
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : AppColors.slate900,
+                        color: Theme.of(context).colorScheme.onSurface,
                         height: 1.1,
                       ),
                       maxLines: 1,
@@ -632,6 +633,7 @@ class CommandPod extends StatelessWidget {
   }
 
   Widget _buildDynamicGreeting(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final name =
         user.displayName?.split(' ').first ??
         context.tr('home.default_seeker_name', fallback: 'Seeker');
@@ -650,7 +652,6 @@ class CommandPod extends StatelessWidget {
       greeting = context.tr('home.greeting_night', fallback: 'Good Night');
     }
 
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,

@@ -71,7 +71,7 @@ class DialectDrillRegionMap extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w900,
-                  color: isDark ? Colors.white : Colors.black87,
+                  color: Theme.of(context).colorScheme.onSurface,
                   letterSpacing: 1,
                 ),
               ),

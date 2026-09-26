@@ -37,7 +37,7 @@ class CorrectionWritingSentenceCard extends StatelessWidget {
           style: TextStyle(
             fontFamily: 'Spectral',
             fontSize: 16.sp,
-            color: isDark ? Colors.white : Colors.black87,
+            color: Theme.of(context).colorScheme.onSurface,
             height: 1.6,
           ),
         ),

@@ -1,8 +1,8 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class FlashcardActionButtons extends StatelessWidget {
   final bool isFlipped;

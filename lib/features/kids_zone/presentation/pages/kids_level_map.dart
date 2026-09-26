@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:async';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
@@ -19,7 +20,6 @@ import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_star_vault_bottom_sheet.dart';
 import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class KidsLevelMap extends StatefulWidget {
   final String gameType;
@@ -280,7 +280,6 @@ class _KidsLevelMapState extends State<KidsLevelMap>
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     final screenWidth = MediaQuery.of(context).size.width;
 
     return BlocListener<AuthBloc, AuthState>(
@@ -333,6 +332,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
       },
       child: Builder(
         builder: (context) {
+          final isDark = Theme.of(context).brightness == Brightness.dark;
           // PERF: context.select instead of BlocBuilder — only rebuild when
           // the user entity reference itself changes, not on every AuthState.
           final user = context.select<AuthBloc, dynamic>(
@@ -374,6 +374,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
               _activeStoryBeat,
             ]),
             builder: (context, _) {
+              final isDark = Theme.of(context).brightness == Brightness.dark;
               return AbsorbPointer(
                 absorbing: _isUnlockAnimating.value,
                 child: Scaffold(
@@ -576,7 +577,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
       child: Container(
         padding: EdgeInsets.all(20.r),
         decoration: BoxDecoration(
-          color: isDark ? AppColors.slate800 : Colors.white,
+          color: Theme.of(context).colorScheme.surface,
           borderRadius: BorderRadius.circular(32.r),
           border: Border.all(color: widget.primaryColor, width: 3.w),
           boxShadow: [
@@ -635,7 +636,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                       fontFamily: 'Outfit',
                       fontSize: 22.sp,
                       fontWeight: FontWeight.w900,
-                      color: isDark ? Colors.white : AppColors.slate900,
+                      color: Theme.of(context).colorScheme.onSurface,
                     ),
                   ),
                   SizedBox(height: 8.h),

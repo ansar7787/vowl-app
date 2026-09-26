@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -28,7 +29,9 @@ class GuessTitleScreen extends StatefulWidget {
 }
 
 class _GuessTitleScreenState extends State<GuessTitleScreen>
-    with ReadingGameScreenMixin {
+    with
+        GameScreenMixin<GuessTitleScreen>,
+        ReadingGameScreenMixin<GuessTitleScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -111,7 +114,6 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('reading', level: widget.level);
 
     return BlocConsumer<ReadingBloc, ReadingState>(
@@ -130,6 +132,7 @@ class _GuessTitleScreenState extends State<GuessTitleScreen>
             _showTypeToConfirm,
           ]),
           builder: (context, _) {
+            final isDark = Theme.of(context).brightness == Brightness.dark;
             return ReadingBaseLayout(
               useScrolling: false,
               disablePadding: true,

@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'dart:async';
 import 'dart:math' as math;
@@ -20,7 +21,6 @@ import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_rank_
 import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_rank_tile.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class LeaderboardScreen extends StatefulWidget {
   final bool isKids;
@@ -47,12 +47,12 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     // FIX (MEDIUM-1): Use context.select instead of context.watch to scope
     // rebuilds to only the isMidnight boolean, not the entire ThemeCubit state.
     final isMidnight = context.select<ThemeCubit, bool>(
       (c) => c.state.isMidnight,
     );
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     final bgColor = isMidnight
         ? Colors.black
         : (isDark ? AppColors.slate900 : Colors.white);
@@ -184,11 +184,68 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    if (widget.state.users.isEmpty) {
+      return RefreshIndicator(
+        onRefresh: () async {
+          final completer = Completer<void>();
+          context.read<LeaderboardBloc>().add(
+            LoadLeaderboard(completer: completer, isKids: widget.state.isKids),
+          );
+          await completer.future;
+        },
+        backgroundColor: Colors.transparent,
+        color: AppColors.indigo500,
+        child: CustomScrollView(
+          physics: const AlwaysScrollableScrollPhysics(
+            parent: BouncingScrollPhysics(),
+          ),
+          slivers: [
+            SliverFillRemaining(
+              child: Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(
+                      Icons.emoji_events_outlined,
+                      size: 48,
+                      color: Colors.grey,
+                    ),
+                    const SizedBox(height: 16),
+                    Text(
+                      'No rankings yet',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Theme.of(context).brightness == Brightness.dark
+                            ? Colors.white
+                            : Colors.black,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    const Text(
+                      'Complete lessons to appear on the leaderboard!',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 14,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
     final rankIndex = widget.state.users.indexWhere(
       (u) => u.id == widget.currentUser?.id,
     );
     final showFindMe = rankIndex >= 6; // Only show if not naturally visible
-    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Stack(
       children: [
@@ -532,6 +589,7 @@ class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
     double shrinkOffset,
     bool overlapsContent,
   ) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     // When pinned (shrinkOffset > 10), content scrolls beneath this header.
     // A solid frosted backdrop + bottom shadow prevents the "ghost card"
     // overlap where glassmorphic tiles bleed through.
@@ -540,7 +598,6 @@ class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
       1.0,
     );
     final isPinned = collapseProgress > 0.5 || overlapsContent;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return ClipRect(
       child: Stack(
@@ -626,6 +683,7 @@ class _LeaderboardErrorView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Center(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 32.w),
@@ -677,7 +735,6 @@ class _LeaderboardToggle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return Container(
       height: 48.h,
       padding: EdgeInsets.all(3.r),

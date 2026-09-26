@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -29,7 +30,9 @@ class FindWordMeaningScreen extends StatefulWidget {
 }
 
 class _FindWordMeaningScreenState extends State<FindWordMeaningScreen>
-    with ReadingGameScreenMixin {
+    with
+        GameScreenMixin<FindWordMeaningScreen>,
+        ReadingGameScreenMixin<FindWordMeaningScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

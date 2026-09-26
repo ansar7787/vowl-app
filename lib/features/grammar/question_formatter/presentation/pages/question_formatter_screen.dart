@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,7 +30,10 @@ class QuestionFormatterScreen extends StatefulWidget {
 }
 
 class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
-    with TickerProviderStateMixin, GrammarGameScreenMixin {
+    with
+        TickerProviderStateMixin,
+        GameScreenMixin<QuestionFormatterScreen>,
+        GrammarGameScreenMixin<QuestionFormatterScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

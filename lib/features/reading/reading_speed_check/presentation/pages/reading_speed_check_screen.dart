@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 
 import 'package:flutter/material.dart';
@@ -31,7 +32,9 @@ class ReadingSpeedCheckScreen extends StatefulWidget {
 }
 
 class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen>
-    with ReadingGameScreenMixin {
+    with
+        GameScreenMixin<ReadingSpeedCheckScreen>,
+        ReadingGameScreenMixin<ReadingSpeedCheckScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

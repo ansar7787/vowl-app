@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -32,7 +33,9 @@ class AntonymSearchScreen extends StatefulWidget {
 }
 
 class _AntonymSearchScreenState extends State<AntonymSearchScreen>
-    with VocabularyGameScreenMixin {
+    with
+        GameScreenMixin<AntonymSearchScreen>,
+        VocabularyGameScreenMixin<AntonymSearchScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

@@ -24,7 +24,7 @@ class AcademicWordInstruction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MediaQuery.withClampedTextScaling(
-      maxScaleFactor: 1.1,
+      maxScaleFactor: 1.5,
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
         constraints: BoxConstraints(maxWidth: 320.w),

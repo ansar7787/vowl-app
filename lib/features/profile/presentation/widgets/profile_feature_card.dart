@@ -1,4 +1,3 @@
-import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
@@ -28,7 +27,6 @@ class ProfileFeatureCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return ScaleButton(
       onTap: onTap,
       child: GlassTile(
@@ -71,7 +69,7 @@ class ProfileFeatureCard extends StatelessWidget {
                           fontFamily: 'Outfit',
                           fontSize: 18.sp,
                           fontWeight: FontWeight.w800,
-                          color: isDark ? Colors.white : AppColors.slate900,
+                          color: Theme.of(context).colorScheme.onSurface,
                         ),
                       ),
                       SizedBox(height: 4.h),

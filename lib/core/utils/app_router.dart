@@ -180,13 +180,6 @@ class AppRouter {
       return null;
     }
 
-    // Process pending deep link if app cold-started from notification
-    if (AppRouter.pendingDeepLink != null) {
-      final link = AppRouter.pendingDeepLink!;
-      AppRouter.pendingDeepLink = null;
-      return link;
-    }
-
     // 5. Age Gate check — MUST complete before entering the main app.
     if (!AgeGateService.isCompletedCached) {
       if (path != ageGateRoute) return ageGateRoute;
@@ -207,6 +200,14 @@ class AppRouter {
           path != hatchingRoute) {
         return kidsZoneRoute; // Force into Kids Zone
       }
+    }
+
+    // Process pending deep link if app cold-started from notification
+    // Processed AFTER age gate and COPPA to prevent bypasses
+    if (AppRouter.pendingDeepLink != null) {
+      final link = AppRouter.pendingDeepLink!;
+      AppRouter.pendingDeepLink = null;
+      return link;
     }
 
     // 6. Authenticated, verified, and age-gated — redirect away from auth/verify/root/ageGate.

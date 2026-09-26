@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -31,7 +32,9 @@ class EmotionRecognitionScreen extends StatefulWidget {
 }
 
 class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen>
-    with ListeningGameScreenMixin {
+    with
+        GameScreenMixin<EmotionRecognitionScreen>,
+        ListeningGameScreenMixin<EmotionRecognitionScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

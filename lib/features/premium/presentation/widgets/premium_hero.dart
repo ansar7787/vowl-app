@@ -1,9 +1,9 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:lucide_icons/lucide_icons.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class PremiumHero extends StatelessWidget {
   const PremiumHero({super.key});
@@ -11,7 +11,6 @@ class PremiumHero extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return Column(
       children: [
         // Ultra-modern floating icon with deep glowing shadows

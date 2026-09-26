@@ -107,7 +107,7 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
                   height: 1.3,
-                  color: isDark ? Colors.white : Colors.black87,
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
               ),
             ),

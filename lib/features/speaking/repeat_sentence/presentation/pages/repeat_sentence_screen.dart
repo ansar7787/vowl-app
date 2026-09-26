@@ -166,7 +166,7 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
 
         return MediaQuery(
           data: mediaQuery.copyWith(
-            textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
+            textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.5),
           ),
           child: ListenableBuilder(
             listenable: Listenable.merge([

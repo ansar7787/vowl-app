@@ -16,6 +16,7 @@ import '../../domain/usecases/get_listening_quests.dart';
 import 'listening_event.dart';
 import 'listening_state.dart';
 import 'listening_analytics.dart';
+import '../../../../core/presentation/bloc/reward_retry_mixin.dart';
 
 // ── Tuneable constants ────────────────────────────────────────────────────────
 
@@ -29,7 +30,8 @@ const String _kListeningBadge = 'listening_master';
 
 // ─────────────────────────────────────────────────────────────────────────────
 
-class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
+class ListeningBloc extends Bloc<ListeningEvent, ListeningState>
+    with RewardRetryMixin {
   final GetListeningQuests getQuest;
   final UpdateUserRewards updateUserRewards;
   final UpdateCategoryStats updateCategoryStats;
@@ -103,7 +105,7 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
               ),
       );
     } catch (e, stack) {
-      debugPrint('[ListeningBloc] fetch error: $e\n$stack');
+      if (kDebugMode) debugPrint('[ListeningBloc] fetch error: $e\n$stack');
       emit(
         ListeningError(
           'Failed to load quests. Please try again.',
@@ -227,8 +229,11 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
 
     final result = await useHint(NoParams());
     result.fold(
-      (failure) =>
-          debugPrint('[ListeningBloc] UseHint failed: ${failure.message}'),
+      (failure) {
+        if (kDebugMode) {
+          debugPrint('[ListeningBloc] UseHint failed: ${failure.message}');
+        }
+      },
       (_) {
         analytics.onHintUsed(
           gameType: _currentGameType ?? '',
@@ -285,7 +290,9 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
         );
       }
     } catch (e) {
-      debugPrint('[ListeningBloc] _onSpeakConfirmed failed: $e');
+      if (kDebugMode) {
+        debugPrint('[ListeningBloc] _onSpeakConfirmed failed: $e');
+      }
     }
   }
 
@@ -322,11 +329,15 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
         updateCategoryStats(
           UpdateCategoryStatsParams(categoryId: gameType, isCorrect: true),
         ).catchError((e, stack) {
-          debugPrint('[ListeningBloc] Stats save failed: $e\n$stack');
+          if (kDebugMode) {
+            debugPrint('[ListeningBloc] Stats save failed: $e\n$stack');
+          }
           return const Right<Failure, void>(null);
         });
         awardBadge(_kListeningBadge).catchError((e, stack) {
-          debugPrint('[ListeningBloc] Badge failed: $e\n$stack');
+          if (kDebugMode) {
+            debugPrint('[ListeningBloc] Badge failed: $e\n$stack');
+          }
           return const Right<Failure, void>(null);
         });
       });
@@ -343,36 +354,31 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
     int level,
     int starsEarned,
   ) async {
-    for (int attempt = 1; attempt <= _kMaxSaveRetries; attempt++) {
-      try {
-        await updateUserRewards(
-          UpdateUserRewardsParams(
-            gameType: gameType,
-            level: level,
-            xpIncrease: _kXpReward,
-            coinIncrease: _kCoinReward,
-            starsEarned: starsEarned,
+    await saveWithRetry(
+      tag: 'ListeningBloc',
+      action: () => updateUserRewards(
+        UpdateUserRewardsParams(
+          gameType: gameType,
+          level: level,
+          xpIncrease: _kXpReward,
+          coinIncrease: _kCoinReward,
+          starsEarned: starsEarned,
+        ),
+      ),
+      onFinalFailure: () {
+        if (kDebugMode) {
+          debugPrint(
+            '[ListeningBloc] All $_kMaxSaveRetries save attempts failed.',
+          );
+        }
+        // Notify the UI so it can show a non-blocking snackbar.
+        add(
+          const ListeningRewardSaveFailedEvent(
+            xpEarned: _kXpReward,
+            coinsEarned: _kCoinReward,
           ),
         );
-        return; // success
-      } catch (e, stack) {
-        debugPrint(
-          '[ListeningBloc] Reward save attempt $attempt/$_kMaxSaveRetries '
-          'failed: $e\n$stack',
-        );
-        if (attempt < _kMaxSaveRetries) {
-          // Exponential back-off: 1 s, 2 s, 4 s
-          await Future.delayed(Duration(seconds: 1 << (attempt - 1)));
-        }
-      }
-    }
-    debugPrint('[ListeningBloc] All $_kMaxSaveRetries save attempts failed.');
-    // Notify the UI so it can show a non-blocking snackbar.
-    add(
-      const ListeningRewardSaveFailedEvent(
-        xpEarned: _kXpReward,
-        coinsEarned: _kCoinReward,
-      ),
+      },
     );
   }
 }

@@ -51,7 +51,7 @@ class DailyJournalScratchArea extends StatelessWidget {
             style: TextStyle(
               fontFamily: 'Spectral',
               fontSize: 16.sp,
-              color: isDark ? Colors.white : Colors.black87,
+              color: Theme.of(context).colorScheme.onSurface,
               height: 1.5,
               fontWeight: FontWeight.bold,
             ),

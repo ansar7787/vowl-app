@@ -44,6 +44,7 @@ class GrammarBaseLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final config = GameScaffoldConfig(
       gameType: gameType,
       level: level,
@@ -67,7 +68,6 @@ class GrammarBaseLayout extends StatelessWidget {
       ),
       onRestoreLife: () => context.read<GrammarBloc>().add(const RestoreLife()),
       headerBuilder: (context, state, progress, lives) {
-        final isDark = Theme.of(context).brightness == Brightness.dark;
         final theme = LevelThemeHelper.getTheme(
           'grammar',
           isDark: isDark,
@@ -104,7 +104,6 @@ class GrammarBaseLayout extends StatelessWidget {
       },
       feedbackBuilder: (context, state) {
         if (state is! GrammarLoaded) return const SizedBox.shrink();
-        final isDark = Theme.of(context).brightness == Brightness.dark;
         final theme = LevelThemeHelper.getTheme(
           'grammar',
           level: level,

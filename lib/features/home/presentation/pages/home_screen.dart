@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
@@ -28,7 +29,6 @@ import 'package:vowl/features/home/presentation/widgets/home_section_header.dart
 import 'package:vowl/features/home/presentation/widgets/unified_stats_row.dart';
 import 'package:vowl/features/home/presentation/widgets/tools_strip.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -103,8 +103,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
     final bgColor = isMidnight
         ? Colors.black
         : (isDark ? AppColors.slate900 : Colors.white);
@@ -148,14 +148,45 @@ class _HomeScreenState extends State<HomeScreen> {
             },
           ),
         ],
-        // BlocSelector instead of BlocBuilder: this screen's tree is heavy
-        // (custom-painted journey path, PageView carousel, multiple glass
-        // panels). Selecting only `state.user` means unrelated AuthState
-        // changes (e.g. transient loading flags) no longer force a full
-        // rebuild of every widget below.
-        child: BlocSelector<AuthBloc, AuthState, UserEntity?>(
-          selector: (state) => state.user,
-          builder: (context, user) {
+        // BlocBuilder with buildWhen prevents unrelated AuthState changes
+        // from forcing a full rebuild of the heavy widget tree below.
+        child: BlocBuilder<AuthBloc, AuthState>(
+          buildWhen: (previous, current) =>
+              previous.user != current.user ||
+              (previous.user == null && previous.message != current.message),
+          builder: (context, state) {
+            if (state.user == null && state.message != null) {
+              return Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(
+                      Icons.cloud_off_rounded,
+                      size: 48,
+                      color: Colors.grey,
+                    ),
+                    SizedBox(height: 16.h),
+                    Text(
+                      'Something went wrong',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 16.sp,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    SizedBox(height: 8.h),
+                    TextButton.icon(
+                      onPressed: () =>
+                          context.read<AuthBloc>().add(const AuthReloadUser()),
+                      icon: const Icon(Icons.refresh),
+                      label: const Text('Try Again'),
+                    ),
+                  ],
+                ),
+              );
+            }
+
+            final user = state.user;
             if (user == null) return const HomeShimmerLoading();
 
             return Stack(

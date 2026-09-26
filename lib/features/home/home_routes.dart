@@ -10,6 +10,7 @@ import 'package:vowl/features/games/presentation/pages/games_screen.dart';
 import 'package:vowl/features/leaderboard/presentation/pages/leaderboard_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/profile_screen.dart';
 import 'package:vowl/features/settings/presentation/pages/settings_screen.dart';
+import 'package:vowl/features/settings/presentation/pages/about_screen.dart';
 import 'package:vowl/features/home/presentation/pages/vowl_mascot_screen.dart';
 import 'package:vowl/features/premium/presentation/pages/premium_screen.dart';
 import 'package:vowl/features/home/presentation/pages/streak_screen.dart';
@@ -30,6 +31,7 @@ class HomeRoutes {
   static const String profileRoute = '/profile';
 
   static const String settingsRoute = '/settings';
+  static const String aboutRoute = '/about';
   static const String leaderboardRoute = '/leaderboard';
   static const String libraryRoute = '/library';
   static const String streakRoute = '/streak';
@@ -112,6 +114,11 @@ class HomeRoutes {
       path: settingsRoute,
       pageBuilder: (context, state) =>
           fadeTransitionPage(child: const SettingsScreen(), state: state),
+    ),
+    GoRoute(
+      path: aboutRoute,
+      pageBuilder: (context, state) =>
+          fadeTransitionPage(child: const AboutScreen(), state: state),
     ),
     GoRoute(
       path: vowlMascotRoute,

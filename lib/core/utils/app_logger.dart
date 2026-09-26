@@ -1,3 +1,4 @@
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 
 /// Thin logging abstraction that decouples call sites from any specific
@@ -77,61 +78,56 @@ class DebugAppLogger implements AppLogger {
   }) {
     if (kDebugMode) {
       debugPrint('$_red[${tag ?? 'APP'}][ERROR] $message$_reset');
-      if (error != null) debugPrint('  Cause: $error');
-      if (stackTrace != null) debugPrint('  Stack:\n$stackTrace');
+      if (error != null) {
+        if (kDebugMode) {
+          debugPrint('  Cause: $error');
+        }
+      }
+      if (stackTrace != null) {
+        if (kDebugMode) {
+          debugPrint('  Stack:\n$stackTrace');
+        }
+      }
     }
   }
 }
 
 // ---------------------------------------------------------------------------
-// Production stub — swap in via di_core.dart before shipping
+// Production implementation — registered in release via di_core.dart
 // ---------------------------------------------------------------------------
 
 /// Production logger backed by Firebase Crashlytics.
 ///
-/// ### Setup
-/// 1. Ensure `firebase_crashlytics` is in pubspec.yaml.
-/// 2. In `di_core.dart`, replace:
-///    ```dart
-///    sl.registerLazySingleton<AppLogger>(() => const DebugAppLogger());
-///    ```
-///    with:
-///    ```dart
-///    sl.registerLazySingleton<AppLogger>(() => const ProductionAppLogger());
-///    ```
-///
 /// Warnings and debug lines are logged as Crashlytics non-fatal breadcrumbs.
 /// Errors are recorded as non-fatal exceptions with full stack traces.
-///
-/// This class is intentionally commented out to avoid importing
-/// firebase_crashlytics in files that don't need it. Uncomment and move
-/// to its own file when integrating.
-//
-// import 'package:firebase_crashlytics/firebase_crashlytics.dart';
-//
-// class ProductionAppLogger implements AppLogger {
-//   const ProductionAppLogger();
-//
-//   @override
-//   void debug(String message, {String? tag}) {
-//     FirebaseCrashlytics.instance.log('[${tag ?? 'APP'}] $message');
-//   }
-//
-//   @override
-//   void warning(String message, {String? tag}) {
-//     FirebaseCrashlytics.instance.log('[${tag ?? 'APP'}][WARN] $message');
-//   }
-//
-//   @override
-//   void error(String message, {Object? error, StackTrace? stackTrace, String? tag}) {
-//     FirebaseCrashlytics.instance.log('[${tag ?? 'APP'}][ERROR] $message');
-//     if (error != null) {
-//       FirebaseCrashlytics.instance.recordError(
-//         error,
-//         stackTrace,
-//         reason: message,
-//         fatal: false,
-//       );
-//     }
-//   }
-// }
+class ProductionAppLogger implements AppLogger {
+  const ProductionAppLogger();
+
+  @override
+  void debug(String message, {String? tag}) {
+    FirebaseCrashlytics.instance.log('[${tag ?? 'APP'}] $message');
+  }
+
+  @override
+  void warning(String message, {String? tag}) {
+    FirebaseCrashlytics.instance.log('[${tag ?? 'APP'}][WARN] $message');
+  }
+
+  @override
+  void error(
+    String message, {
+    Object? error,
+    StackTrace? stackTrace,
+    String? tag,
+  }) {
+    FirebaseCrashlytics.instance.log('[${tag ?? 'APP'}][ERROR] $message');
+    if (error != null) {
+      FirebaseCrashlytics.instance.recordError(
+        error,
+        stackTrace,
+        reason: message,
+        fatal: false,
+      );
+    }
+  }
+}

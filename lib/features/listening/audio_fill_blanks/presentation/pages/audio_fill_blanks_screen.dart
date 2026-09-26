@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'dart:math' as math;
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
@@ -45,7 +46,9 @@ class AudioFillBlanksScreen extends StatefulWidget {
 }
 
 class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen>
-    with ListeningGameScreenMixin {
+    with
+        GameScreenMixin<AudioFillBlanksScreen>,
+        ListeningGameScreenMixin<AudioFillBlanksScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
   @override

@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/mixins/grammar_game_screen_mixin.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
@@ -29,7 +30,9 @@ class PronounResolutionScreen extends StatefulWidget {
 }
 
 class _PronounResolutionScreenState extends State<PronounResolutionScreen>
-    with GrammarGameScreenMixin {
+    with
+        GameScreenMixin<PronounResolutionScreen>,
+        GrammarGameScreenMixin<PronounResolutionScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

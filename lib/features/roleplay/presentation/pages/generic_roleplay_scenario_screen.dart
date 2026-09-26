@@ -6,6 +6,7 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/speech_service.dart';
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
 import 'package:vowl/features/roleplay/presentation/mixins/roleplay_game_screen_mixin.dart';
@@ -47,7 +48,9 @@ class GenericRoleplayScenarioScreen extends StatefulWidget {
 
 class _GenericRoleplayScenarioScreenState
     extends State<GenericRoleplayScenarioScreen>
-    with RoleplayGameScreenMixin {
+    with
+        GameScreenMixin<GenericRoleplayScenarioScreen>,
+        RoleplayGameScreenMixin<GenericRoleplayScenarioScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

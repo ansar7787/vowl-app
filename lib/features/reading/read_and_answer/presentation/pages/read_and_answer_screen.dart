@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -31,7 +32,9 @@ class ReadAndAnswerScreen extends StatefulWidget {
 }
 
 class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen>
-    with ReadingGameScreenMixin {
+    with
+        GameScreenMixin<ReadAndAnswerScreen>,
+        ReadingGameScreenMixin<ReadAndAnswerScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

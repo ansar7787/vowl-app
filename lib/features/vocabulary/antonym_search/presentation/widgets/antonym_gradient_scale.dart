@@ -40,7 +40,7 @@ class _AntonymGradientScaleState extends State<AntonymGradientScale> {
     final bgColor = isDark
         ? Colors.white.withValues(alpha: 0.05)
         : Colors.black.withValues(alpha: 0.03);
-    final textColor = isDark ? Colors.white : Colors.black87;
+    final textColor = Theme.of(context).colorScheme.onSurface;
 
     final maxSteps = widget.gradientScale.length - 1;
 

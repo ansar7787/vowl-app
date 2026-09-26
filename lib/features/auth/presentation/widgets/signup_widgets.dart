@@ -51,6 +51,7 @@ class SignUpNameInput extends StatelessWidget {
               }
               return null;
             },
+            onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
             textInputAction: TextInputAction.next,
             keyboardType: TextInputType.name,
             inputFormatters: [
@@ -119,6 +120,7 @@ class SignUpEmailInput extends StatelessWidget {
               }
               return null;
             },
+            onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
             textInputAction: TextInputAction.next,
             keyboardType: TextInputType.emailAddress,
             inputFormatters: [
@@ -150,8 +152,14 @@ class SignUpEmailInput extends StatelessWidget {
 class SignUpPasswordInput extends StatelessWidget {
   final GlobalKey<FormFieldState>? fieldKey;
   final FocusNode? focusNode;
+  final GlobalKey<FormState>? formKey;
 
-  const SignUpPasswordInput({super.key, this.fieldKey, this.focusNode});
+  const SignUpPasswordInput({
+    super.key,
+    this.fieldKey,
+    this.focusNode,
+    this.formKey,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -193,6 +201,12 @@ class SignUpPasswordInput extends StatelessWidget {
                     );
                   }
                   return null;
+                },
+                onFieldSubmitted: (_) {
+                  if (formKey?.currentState?.validate() ?? false) {
+                    TextInput.finishAutofillContext();
+                    context.read<SignUpCubit>().signUp();
+                  }
                 },
                 textInputAction: TextInputAction.done,
                 obscureText: !state.isPasswordVisible,
@@ -276,6 +290,7 @@ class SignUpButton extends StatelessWidget {
                 ? null
                 : () {
                     if (formKey.currentState?.validate() ?? false) {
+                      TextInput.finishAutofillContext();
                       context.read<SignUpCubit>().signUp();
                     } else {
                       onValidationError();

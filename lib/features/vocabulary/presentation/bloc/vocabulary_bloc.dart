@@ -143,7 +143,7 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
       );
     } catch (e, st) {
       assert(() {
-        debugPrint('[VocabularyBloc] _onFetchQuests: $e\n$st');
+        if (kDebugMode) debugPrint('[VocabularyBloc] _onFetchQuests: $e\n$st');
         return true;
       }());
       emit(

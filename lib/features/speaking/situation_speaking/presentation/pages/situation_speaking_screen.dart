@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -34,7 +35,9 @@ class SituationSpeakingScreen extends StatefulWidget {
 }
 
 class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
-    with SpeakingGameScreenMixin {
+    with
+        GameScreenMixin<SituationSpeakingScreen>,
+        SpeakingGameScreenMixin<SituationSpeakingScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -131,7 +134,7 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
 
         return MediaQuery(
           data: mediaQuery.copyWith(
-            textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
+            textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.5),
           ),
           child: ListenableBuilder(
             listenable: Listenable.merge([

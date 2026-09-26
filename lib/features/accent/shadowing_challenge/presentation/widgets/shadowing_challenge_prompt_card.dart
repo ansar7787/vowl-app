@@ -53,7 +53,7 @@ class ShadowingChallengePromptCard extends StatelessWidget {
                     fontFamily: 'Outfit',
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w600,
-                    color: isDark ? Colors.white : Colors.black87,
+                    color: Theme.of(context).colorScheme.onSurface,
                     letterSpacing: 1,
                     height: 1.3,
                   ),

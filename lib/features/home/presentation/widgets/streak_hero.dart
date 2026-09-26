@@ -1,5 +1,5 @@
-import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -36,7 +36,6 @@ class StreakHero extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     final streak = user.currentStreak;
     const color = IllustrationColors.warmOrange;
 
@@ -156,7 +155,7 @@ class StreakHero extends StatelessWidget {
                         fontSize: 80.sp,
                         fontWeight: FontWeight.w900,
                         height: 1,
-                        color: isDark ? Colors.white : Colors.black87,
+                        color: Theme.of(context).colorScheme.onSurface,
                       ),
                     ).animate().scale(
                       duration: 600.ms,

@@ -2,6 +2,7 @@ const { onSchedule } = require('firebase-functions/v2/scheduler');
 const { onCall, HttpsError } = require('firebase-functions/v2/https');
 const admin = require('firebase-admin');
 const crypto = require('crypto');
+const { google } = require('googleapis');
 admin.initializeApp();
 
 // ─── SECURITY: Rate Limiting Helper ──────────────────────────────────
@@ -725,5 +726,67 @@ exports.updateLeaderboardCache = onSchedule('0 */4 * * *', async (event) => {
     );
   } catch (error) {
     console.error('Error updating leaderboard cache:', error);
+  }
+});
+
+exports.validateIAPReceipt = onCall(async (request) => {
+  // Ensure user is authenticated
+  if (!request.auth) {
+    throw new HttpsError('unauthenticated', 'User must be logged in');
+  }
+  
+  const { purchaseToken, productId, packageName } = request.data;
+  
+  if (!purchaseToken || !productId) {
+    throw new HttpsError('invalid-argument', 'Missing purchase data');
+  }
+
+  try {
+    // Use service account credentials for Google Play Developer API
+    const auth = new google.auth.GoogleAuth({
+      scopes: ['https://www.googleapis.com/auth/androidpublisher'],
+    });
+    
+    const androidPublisher = google.androidpublisher({ version: 'v3', auth });
+    
+    // Verify the purchase with Google Play
+    const response = await androidPublisher.purchases.products.get({
+      packageName: packageName || 'com.ansar.vowl',
+      productId: productId,
+      token: purchaseToken,
+    });
+    
+    const purchase = response.data;
+    
+    // Check purchase state (0 = purchased, 1 = canceled)
+    if (purchase.purchaseState !== 0) {
+      throw new HttpsError('failed-precondition', 'Purchase is not valid');
+    }
+    
+    // Update user document with premium status
+    const uid = request.auth.uid;
+    const db = admin.firestore();
+    
+    // Determine duration based on product ID
+    let days = 30; // default
+    if (productId.includes('weekly')) days = 7;
+    if (productId.includes('yearly')) days = 365;
+    
+    const now = admin.firestore.Timestamp.now();
+    const expiryDate = new Date(now.toDate().getTime() + days * 24 * 60 * 60 * 1000);
+    
+    await db.collection('users').doc(uid).update({
+      isPremium: true,
+      premiumExpiryDate: admin.firestore.Timestamp.fromDate(expiryDate),
+      lastPurchaseToken: purchaseToken,
+      lastPurchaseProductId: productId,
+      lastPurchaseDate: now,
+    });
+    
+    return { success: true, expiryDate: expiryDate.toISOString() };
+    
+  } catch (error) {
+    console.error('IAP validation failed:', error);
+    throw new HttpsError('internal', 'Purchase validation failed');
   }
 });

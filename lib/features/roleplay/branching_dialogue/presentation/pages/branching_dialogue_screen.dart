@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -32,7 +33,10 @@ class BranchingDialogueScreen extends StatefulWidget {
 }
 
 class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
-    with TickerProviderStateMixin, RoleplayGameScreenMixin {
+    with
+        TickerProviderStateMixin,
+        GameScreenMixin<BranchingDialogueScreen>,
+        RoleplayGameScreenMixin<BranchingDialogueScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

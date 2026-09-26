@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:math' as math;
 import 'dart:ui' as ui;
 
@@ -11,7 +12,6 @@ import 'package:vowl/features/elite_mastery/domain/entities/elite_mastery_quest.
 import '../bloc/elite_mastery_bloc.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/pedagogical_rule_box.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();

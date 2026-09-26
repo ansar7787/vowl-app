@@ -163,7 +163,7 @@ class CompassQuadrant extends StatelessWidget {
                             fontWeight: FontWeight.w900,
                             color: isSelected
                                 ? Colors.white
-                                : (isDark ? Colors.white : Colors.black87),
+                                : (Theme.of(context).colorScheme.onSurface),
                             letterSpacing: 0.5,
                           ),
                         ),

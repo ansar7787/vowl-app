@@ -76,7 +76,7 @@ class _ArticleFloatingOrbState extends State<ArticleFloatingOrb>
     List<BoxShadow> shadows = [];
 
     if (!widget.isAnswered) {
-      textColor = widget.isDark ? Colors.white : Colors.black87;
+      textColor = Theme.of(context).colorScheme.onSurface;
       borderColor = widget.isDark ? Colors.white30 : Colors.black26;
       gradientColors = [
         widget.primaryColor.withValues(alpha: 0.25),

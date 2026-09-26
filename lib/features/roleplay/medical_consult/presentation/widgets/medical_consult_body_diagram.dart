@@ -107,7 +107,7 @@ class MedicalConsultBodyDiagram extends StatelessWidget {
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 14.sp,
-                                color: isDark ? Colors.white : Colors.black87,
+                                color: Theme.of(context).colorScheme.onSurface,
                                 fontWeight: FontWeight.w600,
                                 letterSpacing: 0.5,
                               ),

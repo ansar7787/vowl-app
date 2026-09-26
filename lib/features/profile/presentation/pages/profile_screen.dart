@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -585,7 +586,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
         );
       }
     } catch (e) {
-      debugPrint('Error picking image: $e');
+      if (kDebugMode) {
+        debugPrint('Error picking image: $e');
+      }
     }
   }
 

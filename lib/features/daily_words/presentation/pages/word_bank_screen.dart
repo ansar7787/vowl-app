@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,7 +12,6 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/daily_words/domain/entities/word_progress.dart';
 import 'package:vowl/features/daily_words/presentation/bloc/daily_words_bloc.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class WordBankScreen extends StatefulWidget {
   const WordBankScreen({super.key});
@@ -57,7 +57,6 @@ class _WordBankScreenState extends State<WordBankScreen> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return Scaffold(
       backgroundColor: isDark ? AppColors.slate900 : Colors.white,
       body: Stack(
@@ -106,7 +105,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
             onPressed: () => context.pop(),
             icon: Icon(
               Icons.arrow_back_rounded,
-              color: isDark ? Colors.white : AppColors.slate900,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
           ),
           SizedBox(width: 8.w),
@@ -117,7 +116,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
                 fontFamily: 'Outfit',
                 fontSize: 24.sp,
                 fontWeight: FontWeight.w900,
-                color: isDark ? Colors.white : AppColors.slate900,
+                color: Theme.of(context).colorScheme.onSurface,
               ),
               maxLines: 1,
             ),
@@ -157,7 +156,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 16.sp,
-                  color: isDark ? Colors.white : AppColors.slate900,
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
                 decoration: InputDecoration(
                   border: InputBorder.none,
@@ -244,7 +243,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
                           fontFamily: 'Outfit',
                           fontSize: 20.sp,
                           fontWeight: FontWeight.w800,
-                          color: isDark ? Colors.white : AppColors.slate900,
+                          color: Theme.of(context).colorScheme.onSurface,
                         ),
                         maxLines: 1,
                       ),
@@ -376,7 +375,7 @@ class _StatIndicator extends StatelessWidget {
             fontFamily: 'Outfit',
             fontSize: 24.sp,
             fontWeight: FontWeight.w900,
-            color: isDark ? Colors.white : AppColors.slate900,
+            color: Theme.of(context).colorScheme.onSurface,
           ),
         ),
         SizedBox(height: 4.h),

@@ -9,6 +9,7 @@ import '../../../presentation/bloc/elite_mastery_bloc.dart';
 import '../../../presentation/layout/elite_base_layout.dart';
 import '../../../presentation/widgets/elite_hint_card.dart';
 import '../widgets/accent_shadowing_target_panel.dart';
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/features/accent/presentation/widgets/accent_self_evaluation_panel.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/elite_mastery/presentation/mixins/elite_mastery_game_screen_mixin.dart';
@@ -27,7 +28,9 @@ class AccentShadowingScreen extends StatefulWidget {
 }
 
 class _AccentShadowingScreenState extends State<AccentShadowingScreen>
-    with EliteMasteryGameScreenMixin {
+    with
+        GameScreenMixin<AccentShadowingScreen>,
+        EliteMasteryGameScreenMixin<AccentShadowingScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

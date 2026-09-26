@@ -1,4 +1,3 @@
-import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -57,7 +56,7 @@ class IdiomsStrangerMessage extends StatelessWidget {
           constraints: BoxConstraints(maxWidth: 0.75.sw),
           padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
           decoration: BoxDecoration(
-            color: isDark ? AppColors.slate800 : Colors.white,
+            color: Theme.of(context).colorScheme.surface,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(24.r),
               topRight: Radius.circular(24.r),
@@ -103,7 +102,7 @@ class IdiomsStrangerTextMessage extends StatelessWidget {
           constraints: BoxConstraints(maxWidth: 0.75.sw),
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
           decoration: BoxDecoration(
-            color: isDark ? AppColors.slate800 : Colors.white,
+            color: Theme.of(context).colorScheme.surface,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(24.r),
               topRight: Radius.circular(24.r),
@@ -194,7 +193,7 @@ class IdiomsUserMessage extends StatelessWidget {
                     fontFamily: 'Outfit',
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w800,
-                    color: isDark ? Colors.white : Colors.black87,
+                    color: Theme.of(context).colorScheme.onSurface,
                     letterSpacing: 0.5,
                   ),
                 ),

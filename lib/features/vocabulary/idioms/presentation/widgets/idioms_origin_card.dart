@@ -20,7 +20,6 @@ class IdiomsOriginCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return Container(
           width: double.infinity,
           padding: EdgeInsets.all(16.r),

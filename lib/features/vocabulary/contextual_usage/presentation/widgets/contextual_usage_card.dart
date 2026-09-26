@@ -47,7 +47,7 @@ class ContextualUsageCard extends StatelessWidget {
                 width: 0.88.sw,
                 padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 40.h),
                 decoration: BoxDecoration(
-                  color: isDark ? AppColors.slate800 : Colors.white,
+                  color: Theme.of(context).colorScheme.surface,
                   borderRadius: BorderRadius.circular(4.r),
                   border: Border.all(
                     color: color.withValues(alpha: isAnswered ? 0.6 : 0.2),

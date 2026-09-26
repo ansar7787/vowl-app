@@ -1,5 +1,5 @@
-import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -19,6 +19,7 @@ class KidsSunburstBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return RepaintBoundary(
       child: Center(
         child:
@@ -64,6 +65,7 @@ class Kids3DButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final shadowColor = isGolden
         ? AppColors.amber600
         : color.withValues(alpha: 0.7);

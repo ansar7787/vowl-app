@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -31,7 +32,10 @@ class JobInterviewScreen extends StatefulWidget {
 }
 
 class _JobInterviewScreenState extends State<JobInterviewScreen>
-    with TickerProviderStateMixin, RoleplayGameScreenMixin {
+    with
+        TickerProviderStateMixin,
+        GameScreenMixin<JobInterviewScreen>,
+        RoleplayGameScreenMixin<JobInterviewScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

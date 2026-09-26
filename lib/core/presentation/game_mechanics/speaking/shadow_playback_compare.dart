@@ -347,8 +347,8 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final bgColor = isDark ? _LocalPalette.color0c0c1a : Colors.white;
     final textColor = isDark ? Colors.white : AppColors.slate900;
     final subtitleColor = isDark ? Colors.white60 : Colors.black54;

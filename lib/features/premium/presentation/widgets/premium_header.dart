@@ -1,10 +1,10 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:lucide_icons/lucide_icons.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -17,7 +17,6 @@ class PremiumHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       child: Row(
@@ -51,7 +50,7 @@ class PremiumHeader extends StatelessWidget {
                   },
                   icon: Icon(
                     LucideIcons.chevronLeft,
-                    color: isDark ? Colors.white : Colors.black87,
+                    color: Theme.of(context).colorScheme.onSurface,
                     size: 24.r,
                   ),
                 ),
@@ -100,7 +99,7 @@ class PremiumHeader extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            color: isDark ? Colors.white : Colors.black87,
+                            color: Theme.of(context).colorScheme.onSurface,
                             fontSize: 12.sp,
                             fontWeight: FontWeight.bold,
                             letterSpacing: 0.5,

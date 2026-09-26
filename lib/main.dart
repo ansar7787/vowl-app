@@ -273,10 +273,10 @@ class _MyAppState extends State<MyApp> {
       if (!mounted) return;
       // Pre-cache frequently shown mascot assets to avoid jank on first display.
       for (final path in const [
-        'assets/images/mascot/voxbot_happy.webp',
-        'assets/images/mascot/voxbot_neutral.webp',
-        'assets/images/mascot/voxbot_thinking.webp',
-        'assets/images/mascot/voxbot_worried.webp',
+        'assets/images/mascot/vowly_happy.webp',
+        'assets/images/mascot/vowly_neutral.webp',
+        'assets/images/mascot/vowly_thinking.webp',
+        'assets/images/mascot/vowly_worried.webp',
       ]) {
         precacheImage(AssetImage(path), context).catchError((_) {});
       }

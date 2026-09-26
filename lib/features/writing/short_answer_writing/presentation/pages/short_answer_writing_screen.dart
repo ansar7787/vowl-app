@@ -10,6 +10,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/gibberish_detector_service.dart';
 import 'package:vowl/core/utils/ml_services/language_id_service.dart';
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/features/writing/presentation/mixins/writing_game_screen_mixin.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
@@ -36,7 +37,9 @@ class ShortAnswerScreen extends StatefulWidget {
 }
 
 class _ShortAnswerScreenState extends State<ShortAnswerScreen>
-    with WritingGameScreenMixin {
+    with
+        GameScreenMixin<ShortAnswerScreen>,
+        WritingGameScreenMixin<ShortAnswerScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

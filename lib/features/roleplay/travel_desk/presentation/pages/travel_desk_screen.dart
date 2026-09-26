@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -30,7 +31,10 @@ class TravelDeskScreen extends StatefulWidget {
 }
 
 class _TravelDeskScreenState extends State<TravelDeskScreen>
-    with TickerProviderStateMixin, RoleplayGameScreenMixin {
+    with
+        TickerProviderStateMixin,
+        GameScreenMixin<TravelDeskScreen>,
+        RoleplayGameScreenMixin<TravelDeskScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

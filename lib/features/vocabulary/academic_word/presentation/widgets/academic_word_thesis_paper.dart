@@ -30,11 +30,11 @@ class AcademicWordThesisPaper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return MediaQuery.withClampedTextScaling(
       maxScaleFactor: 1.2,
       child: LayoutBuilder(
         builder: (context, constraints) {
-          final isDark = Theme.of(context).brightness == Brightness.dark;
           final cardWidth = constraints.maxWidth > 0
               ? (330.w).clamp(0.0, constraints.maxWidth - 32.w)
               : 330.w;

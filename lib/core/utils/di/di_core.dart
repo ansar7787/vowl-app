@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter/foundation.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -42,12 +43,17 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/auth/domain/usecases/get_current_user.dart';
 // FIX (HIGH-3): AppLogger imported so it can be registered in the DI graph.
 import 'package:vowl/core/utils/app_logger.dart';
+import 'package:vowl/core/services/in_app_purchase_service.dart';
 
 /// Initialises core systems, platform boundaries, and base infrastructure.
 Future<void> initExternalAndCore(GetIt sl) async {
   // ============================================================
   // EXTERNAL PLATFORM BOUNDARIES
   // ============================================================
+  sl.registerLazySingleton<InAppPurchaseService>(
+    () => InAppPurchaseService.instance,
+  );
+  await InAppPurchaseService.instance.initialize();
   sl.registerLazySingleton<FirebaseAuth>(() => FirebaseAuth.instance);
   sl.registerLazySingleton<FirebaseFirestore>(() => FirebaseFirestore.instance);
   sl.registerLazySingleton<FirebaseStorage>(() => FirebaseStorage.instance);
@@ -59,10 +65,6 @@ Future<void> initExternalAndCore(GetIt sl) async {
       customCheckOptions: [
         InternetCheckOption(
           uri: Uri.parse('https://one.one.one.one'),
-          timeout: const Duration(seconds: 10),
-        ),
-        InternetCheckOption(
-          uri: Uri.parse('https://jsonplaceholder.typicode.com/todos/1'),
           timeout: const Duration(seconds: 10),
         ),
       ],
@@ -84,7 +86,9 @@ Future<void> initExternalAndCore(GetIt sl) async {
   // implementation before shipping:
   //   sl.registerLazySingleton<AppLogger>(() => FirebaseAppLogger());
   // ============================================================
-  sl.registerLazySingleton<AppLogger>(() => const DebugAppLogger());
+  sl.registerLazySingleton<AppLogger>(
+    () => kReleaseMode ? const ProductionAppLogger() : const DebugAppLogger(),
+  );
 
   // ============================================================
   // CORE SYSTEMS & INFRASTRUCTURE

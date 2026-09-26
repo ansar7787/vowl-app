@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -31,7 +32,9 @@ class IdiomsScreen extends StatefulWidget {
 }
 
 class _IdiomsScreenState extends State<IdiomsScreen>
-    with VocabularyGameScreenMixin {
+    with
+        GameScreenMixin<IdiomsScreen>,
+        VocabularyGameScreenMixin<IdiomsScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

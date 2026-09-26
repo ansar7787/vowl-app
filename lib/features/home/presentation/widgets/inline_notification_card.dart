@@ -1,5 +1,5 @@
-import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -197,12 +197,12 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return ValueListenableBuilder<bool>(
       valueListenable: _isVisible,
       builder: (context, isVisible, _) {
         if (!isVisible) return const SizedBox.shrink();
 
-        final isDark = Theme.of(context).brightness == Brightness.dark;
         final title = _getDynamicTitle();
         final subtitle = _getDynamicSubtitle();
 
@@ -219,7 +219,7 @@ class _InlineNotificationCardState extends State<InlineNotificationCard>
               ),
               child: Container(
                 decoration: BoxDecoration(
-                  color: isDark ? AppColors.slate800 : Colors.white,
+                  color: Theme.of(context).colorScheme.surface,
                   borderRadius: BorderRadius.circular(24.r),
                   border: Border.all(
                     color: IllustrationColors.warmOrange.withValues(

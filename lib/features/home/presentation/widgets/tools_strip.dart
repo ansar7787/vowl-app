@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -12,7 +13,6 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -38,7 +38,6 @@ class ToolsStrip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     final screenWidth = MediaQuery.of(context).size.width;
 
     // Responsive card width: adapts from SE (320dp) to Pro Max (430dp).
@@ -158,6 +157,8 @@ class ToolsStrip extends StatelessWidget {
                 .asMap()
                 .entries
                 .map((entry) {
+                  final isDark =
+                      Theme.of(context).brightness == Brightness.dark;
                   final index = entry.key;
                   final tool = entry.value;
 
@@ -282,7 +283,7 @@ class _FeaturedToolCard extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
         margin: EdgeInsets.symmetric(horizontal: 24.w),
         decoration: BoxDecoration(
-          color: isDark ? AppColors.slate800 : Colors.white,
+          color: Theme.of(context).colorScheme.surface,
           borderRadius: BorderRadius.circular(12.r),
           border: Border.all(color: def.color.withValues(alpha: 0.5), width: 1),
           boxShadow: [
@@ -298,7 +299,7 @@ class _FeaturedToolCard extends StatelessWidget {
           fontFamily: 'Outfit',
           fontSize: 12.sp,
           fontWeight: FontWeight.w600,
-          color: isDark ? Colors.white : AppColors.slate900,
+          color: Theme.of(context).colorScheme.onSurface,
           height: 1.3,
         ),
         child: ScaleButton(
@@ -456,7 +457,7 @@ class _CompactToolCard extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
         margin: EdgeInsets.symmetric(horizontal: 24.w),
         decoration: BoxDecoration(
-          color: isDark ? AppColors.slate800 : Colors.white,
+          color: Theme.of(context).colorScheme.surface,
           borderRadius: BorderRadius.circular(12.r),
           border: Border.all(color: def.color.withValues(alpha: 0.5), width: 1),
           boxShadow: [
@@ -472,7 +473,7 @@ class _CompactToolCard extends StatelessWidget {
           fontFamily: 'Outfit',
           fontSize: 12.sp,
           fontWeight: FontWeight.w600,
-          color: isDark ? Colors.white : AppColors.slate900,
+          color: Theme.of(context).colorScheme.onSurface,
           height: 1.3,
         ),
         child: ScaleButton(
@@ -519,7 +520,7 @@ class _CompactToolCard extends StatelessWidget {
                           fontFamily: 'Outfit',
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w900,
-                          color: isDark ? Colors.white : AppColors.slate900,
+                          color: Theme.of(context).colorScheme.onSurface,
                         ),
                       ),
                       SizedBox(height: 4.h),

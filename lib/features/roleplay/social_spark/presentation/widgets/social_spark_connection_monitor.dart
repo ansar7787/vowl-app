@@ -125,7 +125,7 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
                   fontSize: 20.sp,
                   color: text.isEmpty
                       ? Colors.grey.shade600
-                      : (isDark ? Colors.white : Colors.black87),
+                      : (Theme.of(context).colorScheme.onSurface),
                   height: 1.3,
                 ),
               ),

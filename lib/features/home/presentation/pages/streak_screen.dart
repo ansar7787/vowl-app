@@ -1,5 +1,5 @@
-import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/illustration_colors.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -44,12 +44,12 @@ class _StreakScreenState extends State<StreakScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
     final bgColor = isMidnight
         ? _LocalPalette.color020617
         : (isDark ? AppColors.slate900 : AppColors.slate50);
-    final contentColor = isDark ? Colors.white : AppColors.slate900;
+    final contentColor = Theme.of(context).colorScheme.onSurface;
 
     return Scaffold(
       backgroundColor: bgColor,

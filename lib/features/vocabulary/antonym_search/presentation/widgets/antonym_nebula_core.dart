@@ -68,7 +68,7 @@ class AntonymNebulaCore extends StatelessWidget {
                               fontFamily: 'Outfit',
                               fontSize: 20.sp,
                               fontWeight: FontWeight.w900,
-                              color: isDark ? Colors.white : Colors.black87,
+                              color: Theme.of(context).colorScheme.onSurface,
                             ),
                           ),
                         ),

@@ -1,6 +1,6 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/category_colors.dart';
 
 class _LocalPalette {

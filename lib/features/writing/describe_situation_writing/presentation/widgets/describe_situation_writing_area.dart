@@ -54,7 +54,7 @@ class DescribeSituationWritingArea extends StatelessWidget {
                 }) => null,
             style: TextStyle(
               fontFamily: 'Outfit',
-              color: isDark ? Colors.white : Colors.black87,
+              color: Theme.of(context).colorScheme.onSurface,
               fontSize: 14.sp,
             ),
             decoration: InputDecoration(

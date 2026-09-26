@@ -51,6 +51,7 @@ class ReadingBaseLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final mascotId = context.select<AuthBloc, String>(
       (bloc) => bloc.state.user?.vowlMascot ?? 'vowl_prime',
     );
@@ -105,7 +106,6 @@ class ReadingBaseLayout extends StatelessWidget {
           onRestoreLife: () =>
               context.read<ReadingBloc>().add(const RestoreLife()),
           headerBuilder: (context, s, progress, lvs) {
-            final isDark = Theme.of(context).brightness == Brightness.dark;
             final theme = LevelThemeHelper.getTheme(
               gameType.name,
               isDark: isDark,
@@ -155,7 +155,6 @@ class ReadingBaseLayout extends StatelessWidget {
           },
           feedbackBuilder: (context, s) {
             if (s is! ReadingLoaded) return const SizedBox.shrink();
-            final isDark = Theme.of(context).brightness == Brightness.dark;
             final theme = LevelThemeHelper.getTheme(
               gameType.name,
               isDark: isDark,

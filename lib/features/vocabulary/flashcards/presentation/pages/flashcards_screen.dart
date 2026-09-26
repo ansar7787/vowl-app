@@ -8,6 +8,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_game_body.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
@@ -32,7 +33,9 @@ class FlashcardsScreen extends StatefulWidget {
 }
 
 class _FlashcardsScreenState extends State<FlashcardsScreen>
-    with VocabularyGameScreenMixin {
+    with
+        GameScreenMixin<FlashcardsScreen>,
+        VocabularyGameScreenMixin<FlashcardsScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

@@ -21,7 +21,6 @@ class SynonymNuanceScale extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return Container(
           margin: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
           child: ClipRRect(

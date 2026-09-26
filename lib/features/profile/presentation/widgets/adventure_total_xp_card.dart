@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
@@ -6,7 +7,6 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class AdventureTotalXpCard extends StatelessWidget {
   final UserEntity user;
@@ -82,7 +82,7 @@ class AdventureTotalXpCard extends StatelessWidget {
                         fontFamily: 'Outfit',
                         fontSize: 26.sp,
                         fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : AppColors.slate900,
+                        color: Theme.of(context).colorScheme.onSurface,
                         height: 1.1,
                       ),
                     ),

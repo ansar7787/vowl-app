@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -22,7 +23,6 @@ import 'package:vowl/features/home/presentation/widgets/adaptive_smart_mix_widge
 import 'package:vowl/core/utils/pedagogical_blueprint.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 /// Configuration for category games scaling and rules
 const int _kMaxLevelsPerGame = 200;
@@ -78,7 +78,6 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     // 10/10 Optimization: Select precise state slices instead of watching entire objects
     // This prevents the page from rebuilding entirely if an unrelated state property changes.
     final isMidnight = context.select(
@@ -101,7 +100,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
       );
     }
 
-    final contentColor = isDark ? Colors.white : AppColors.slate900;
+    final contentColor = Theme.of(context).colorScheme.onSurface;
     final hasBlueprint =
         PedagogicalBlueprintMap.getBlueprint(widget.categoryId) != null;
 
@@ -391,7 +390,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     List<GameSubtype> games,
     bool isDark,
   ) {
-    final contentColor = isDark ? Colors.white : AppColors.slate900;
+    final contentColor = Theme.of(context).colorScheme.onSurface;
     final displayColor = theme.primaryColor;
 
     // Calculate Progress dynamically
@@ -652,7 +651,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
               fontFamily: 'Outfit',
               fontSize: 12.sp,
               fontWeight: FontWeight.w900,
-              color: isDark ? Colors.white : AppColors.slate900,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
             maxLines: 1,
           ),
@@ -674,7 +673,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
         !user.categoryStats.containsKey(subtype.name) && currentLevel == 1;
 
     final displayColor = theme.primaryColor;
-    final contentColor = isDark ? Colors.white : AppColors.slate900;
+    final contentColor = Theme.of(context).colorScheme.onSurface;
 
     // Abstract the math out of the widget parameters to ensure raw floats are clean
     final double cardProgress =

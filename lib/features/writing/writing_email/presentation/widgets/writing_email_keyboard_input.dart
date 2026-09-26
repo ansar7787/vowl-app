@@ -115,7 +115,7 @@ class _WritingEmailKeyboardInputState extends State<WritingEmailKeyboardInput> {
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 16.sp,
-                    color: widget.isDark ? Colors.white : Colors.black87,
+                    color: Theme.of(context).colorScheme.onSurface,
                   ),
                   decoration: InputDecoration(
                     border: InputBorder.none,

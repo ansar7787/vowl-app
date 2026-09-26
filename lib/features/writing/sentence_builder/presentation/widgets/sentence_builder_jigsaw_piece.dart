@@ -1,4 +1,3 @@
-import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -41,6 +40,7 @@ class SentenceBuilderJigsawPiece extends StatelessWidget {
               isAssembled: isAssembled,
               isDark: isDark,
               isDragging: isDragging,
+              surfaceColor: Theme.of(context).colorScheme.surface,
             ),
             child: Padding(
               // The left notch padding and right tab padding ensure text doesn't clip
@@ -61,7 +61,7 @@ class SentenceBuilderJigsawPiece extends StatelessWidget {
                         fontSize: 15.sp,
                         fontWeight: FontWeight.w800,
                         height: 1.2,
-                        color: isDark ? Colors.white : Colors.black87,
+                        color: Theme.of(context).colorScheme.onSurface,
                       ),
                     ),
                   ),
@@ -86,6 +86,7 @@ class _PuzzlePiecePainter extends CustomPainter {
   final bool isAssembled;
   final bool isDark;
   final bool isDragging;
+  final Color surfaceColor;
 
   _PuzzlePiecePainter({
     required this.color,
@@ -93,6 +94,7 @@ class _PuzzlePiecePainter extends CustomPainter {
     required this.isAssembled,
     required this.isDark,
     required this.isDragging,
+    required this.surfaceColor,
   });
 
   @override
@@ -179,9 +181,7 @@ class _PuzzlePiecePainter extends CustomPainter {
 
     // Draw background
     final paint = Paint()
-      ..color = isAssembled
-          ? color.withValues(alpha: 0.25)
-          : (isDark ? AppColors.slate800 : Colors.white)
+      ..color = isAssembled ? color.withValues(alpha: 0.25) : surfaceColor
       ..style = PaintingStyle.fill;
 
     canvas.drawPath(path, paint);

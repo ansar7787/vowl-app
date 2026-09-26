@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -5,7 +6,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/translation/presentation/bloc/translation_bloc.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class LanguageManagerSheet extends StatelessWidget {
   final bool isDark;
@@ -17,7 +17,7 @@ class LanguageManagerSheet extends StatelessWidget {
     return Container(
       height: MediaQuery.of(context).size.height * 0.7,
       decoration: BoxDecoration(
-        color: isDark ? AppColors.slate800 : Colors.white,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
       ),
       child: Column(
@@ -41,7 +41,7 @@ class LanguageManagerSheet extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: 20.sp,
               fontWeight: FontWeight.w800,
-              color: isDark ? Colors.white : AppColors.slate900,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
           ),
           SizedBox(height: 8.h),
@@ -140,7 +140,7 @@ class LanguageManagerSheet extends StatelessWidget {
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
-        backgroundColor: isDark ? AppColors.slate800 : Colors.white,
+        backgroundColor: Theme.of(context).colorScheme.surface,
         title: Text(
           context.tr(
             'translation.delete_pack_title',
@@ -150,7 +150,7 @@ class LanguageManagerSheet extends StatelessWidget {
           style: TextStyle(
             fontFamily: 'Outfit',
             fontWeight: FontWeight.bold,
-            color: isDark ? Colors.white : AppColors.slate900,
+            color: Theme.of(context).colorScheme.onSurface,
           ),
         ),
         content: Text(

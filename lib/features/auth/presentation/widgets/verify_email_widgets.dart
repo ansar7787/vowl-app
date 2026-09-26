@@ -1,7 +1,7 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -18,6 +18,7 @@ class VerifyEmailIconHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Semantics(
       image: true,
       label: context.tr(
@@ -169,6 +170,7 @@ class ResendEmailButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final label = canResendEmail
         ? context.tr('auth.resend_email', fallback: 'Resend Email')
         : context.tr(
@@ -226,6 +228,7 @@ class VerifyConfirmationButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Semantics(
       button: true,
       label: context.tr(
@@ -276,6 +279,7 @@ class VerifyLogoutButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Semantics(
       button: true,
       label: context.tr('auth.cancel_and_logout_semantic', fallback: 'Log Out'),

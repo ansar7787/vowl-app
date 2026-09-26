@@ -87,7 +87,7 @@ class SummarizeStoryFrameVault extends StatelessWidget {
         textAlign: TextAlign.center,
         style: TextStyle(
           fontFamily: 'Outfit',
-          color: isDark ? Colors.white : Colors.black87,
+          color: Theme.of(context).colorScheme.onSurface,
           fontSize: 12.sp,
           fontWeight: FontWeight.bold,
         ),

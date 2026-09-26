@@ -1,9 +1,8 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:confetti/confetti.dart';
-import 'package:lottie/lottie.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -132,14 +131,14 @@ class _KidsFeedbackOverlayContentState
               ),
             ],
           ),
-          child: Lottie.asset(
-            'assets/animations/success.json',
-            width: 100.sp,
-            height: 100.sp,
-            repeat: false,
-            errorBuilder: (context, error, stackTrace) =>
-                Icon(Icons.star_rounded, color: Colors.white, size: 80.sp),
-          ),
+          child: Icon(Icons.star_rounded, color: Colors.white, size: 80.sp)
+              .animate()
+              .scale(
+                begin: const Offset(0, 0),
+                end: const Offset(1, 1),
+                duration: const Duration(milliseconds: 600),
+                curve: Curves.elasticOut,
+              ),
         )
         .animate()
         .scale(curve: Curves.elasticOut, duration: 800.ms)

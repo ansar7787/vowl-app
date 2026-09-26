@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +29,9 @@ class ParagraphSummaryScreen extends StatefulWidget {
 }
 
 class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen>
-    with ReadingGameScreenMixin {
+    with
+        GameScreenMixin<ParagraphSummaryScreen>,
+        ReadingGameScreenMixin<ParagraphSummaryScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

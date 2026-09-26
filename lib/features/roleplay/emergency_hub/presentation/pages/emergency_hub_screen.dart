@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:math' as math;
@@ -33,7 +34,10 @@ class EmergencyHubScreen extends StatefulWidget {
 }
 
 class _EmergencyHubScreenState extends State<EmergencyHubScreen>
-    with TickerProviderStateMixin, RoleplayGameScreenMixin {
+    with
+        TickerProviderStateMixin,
+        GameScreenMixin<EmergencyHubScreen>,
+        RoleplayGameScreenMixin<EmergencyHubScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

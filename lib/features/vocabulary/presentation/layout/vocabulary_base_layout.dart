@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -13,7 +14,6 @@ import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_vocab_mind_map.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_family_tree.dart';
 import 'package:vowl/core/presentation/widgets/pedagogical_rule_box.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class VocabularyBaseLayout extends StatelessWidget {
   final GameSubtype gameType;
@@ -50,7 +50,6 @@ class VocabularyBaseLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     // Compute theme ONCE — shared by header, feedback, and mascot builders.
     final theme = VocabLevelTheme.from(
       LevelThemeHelper.getTheme(gameType.name, isDark: isDark, level: level),

@@ -56,8 +56,8 @@ class EliteBaseLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<ThemeCubit>();
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    context.watch<ThemeCubit>();
     final isMidnight = context.read<ThemeCubit>().state.isMidnight;
     final theme = LevelThemeHelper.getTheme(
       gameType.name,

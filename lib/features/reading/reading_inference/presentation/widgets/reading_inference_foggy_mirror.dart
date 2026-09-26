@@ -41,7 +41,7 @@ class ReadingInferenceFoggyMirror extends StatelessWidget {
                 fontFamily: 'Outfit',
                 fontSize: 16.sp,
                 height: 1.4,
-                color: isDark ? Colors.white : Colors.black87,
+                color: Theme.of(context).colorScheme.onSurface,
                 fontWeight: FontWeight.w500,
               ),
             ),

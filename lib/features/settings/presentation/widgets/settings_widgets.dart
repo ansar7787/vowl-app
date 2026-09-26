@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:io';
 import 'dart:ui';
 import 'package:flutter/material.dart';
@@ -10,7 +11,6 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 // ---------------------------------------------------------------------------
 // SettingsSectionTitle
@@ -132,7 +132,6 @@ class SettingsTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return Semantics(
       // FIX (HIGH-5): Each settings tile now has a proper accessibility label
       // and is marked as a button so TalkBack/VoiceOver users can identify
@@ -172,7 +171,7 @@ class SettingsTile extends StatelessWidget {
                           fontWeight: FontWeight.w600,
                           color: isDestructive
                               ? Colors.red
-                              : (isDark ? Colors.white : AppColors.slate900),
+                              : (Theme.of(context).colorScheme.onSurface),
                         ),
                         maxLines: 1,
                         minFontSize: 10,
@@ -240,7 +239,6 @@ class SettingsSwitchTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return Semantics(
       // FIX (HIGH-5): Switch tiles now announce their on/off state.
       label: '$title. $subtitle',
@@ -272,7 +270,7 @@ class SettingsSwitchTile extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 15.sp,
                       fontWeight: FontWeight.w600,
-                      color: isDark ? Colors.white : AppColors.slate900,
+                      color: Theme.of(context).colorScheme.onSurface,
                     ),
                   ),
                   AutoSizeText(
@@ -551,7 +549,7 @@ class SettingsProfileSection extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 22.sp,
                       fontWeight: FontWeight.w900,
-                      color: isDark ? Colors.white : AppColors.slate900,
+                      color: Theme.of(context).colorScheme.onSurface,
                       letterSpacing: -0.5,
                     ),
                     maxLines: 1,

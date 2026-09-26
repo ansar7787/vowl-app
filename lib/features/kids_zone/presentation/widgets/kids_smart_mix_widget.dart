@@ -1,10 +1,10 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -76,7 +76,7 @@ class KidsSmartMixWidget extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: 24.w),
       padding: EdgeInsets.all(16.r),
       decoration: BoxDecoration(
-        color: isDark ? AppColors.slate800 : Colors.white,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(
           color: AppColors.indigo500.withValues(alpha: 0.3),

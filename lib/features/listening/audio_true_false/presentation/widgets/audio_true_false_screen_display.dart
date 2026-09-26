@@ -21,7 +21,6 @@ class AudioTrueFalseScreenDisplay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return Container(
       width: double.infinity,
       constraints: BoxConstraints(minHeight: 120.h),
@@ -58,7 +57,7 @@ class AudioTrueFalseScreenDisplay extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: 22.sp,
               fontWeight: FontWeight.w700,
-              color: isDark ? Colors.white : Colors.black87,
+              color: Theme.of(context).colorScheme.onSurface,
               letterSpacing: 0.5,
               height: 1.3,
             ),

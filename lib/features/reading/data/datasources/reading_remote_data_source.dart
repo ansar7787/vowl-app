@@ -26,9 +26,11 @@ class ReadingRemoteDataSourceImpl implements ReadingRemoteDataSource {
     try {
       // 1. Try to load from Local Assets (Free & Fast)
       final localData = await assetQuestService.getQuests(gameType.name, level);
-      debugPrint(
-        'ReadingRemoteDataSourceImpl: Found ${localData.length} quests for ${gameType.name} at level $level',
-      );
+      if (kDebugMode) {
+        debugPrint(
+          'ReadingRemoteDataSourceImpl: Found ${localData.length} quests for ${gameType.name} at level $level',
+        );
+      }
 
       if (localData.isNotEmpty) {
         final List<ReadingQuestModel> quests = [];
@@ -42,7 +44,9 @@ class ReadingRemoteDataSourceImpl implements ReadingRemoteDataSource {
               ),
             );
           } catch (e) {
-            debugPrint('Error parsing reading quest ${q['id']}: $e');
+            if (kDebugMode) {
+              debugPrint('Error parsing reading quest ${q['id']}: $e');
+            }
           }
         }
         if (quests.isNotEmpty) return quests;
@@ -106,7 +110,7 @@ class ReadingRemoteDataSourceImpl implements ReadingRemoteDataSource {
         );
       }
     } on FirebaseException catch (e) {
-      debugPrint('FirebaseException in getReadingQuest: $e');
+      if (kDebugMode) debugPrint('FirebaseException in getReadingQuest: $e');
       throw ServerException(
         e.message ?? 'Firestore database error occurred.',
         e.code,
@@ -116,7 +120,7 @@ class ReadingRemoteDataSourceImpl implements ReadingRemoteDataSource {
     } on ServerException {
       rethrow;
     } catch (e) {
-      debugPrint('Error in getReadingQuest: $e');
+      if (kDebugMode) debugPrint('Error in getReadingQuest: $e');
       throw ServerException(e.toString());
     }
   }

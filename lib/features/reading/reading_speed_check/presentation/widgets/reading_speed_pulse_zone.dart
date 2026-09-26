@@ -62,7 +62,7 @@ class ReadingSpeedPulseZone extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: largeText ? 24.sp : 18.sp,
               height: 1.5,
-              color: isDark ? Colors.white : Colors.black87,
+              color: Theme.of(context).colorScheme.onSurface,
               fontWeight: FontWeight.w500,
             ),
           ),

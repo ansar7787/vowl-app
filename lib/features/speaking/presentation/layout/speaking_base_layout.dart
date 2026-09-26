@@ -66,6 +66,7 @@ class SpeakingBaseLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final mascotId = context.select<AuthBloc, String>(
       (bloc) => bloc.state.user?.vowlMascot ?? 'vowl_prime',
     );
@@ -98,7 +99,6 @@ class SpeakingBaseLayout extends StatelessWidget {
           context.read<SpeakingBloc>().add(const RestoreLife()),
 
       headerBuilder: (context, state, progress, lives) {
-        final isDark = Theme.of(context).brightness == Brightness.dark;
         final currentQuest = state is SpeakingLoaded
             ? state.currentQuestOrNull
             : null;
@@ -136,7 +136,6 @@ class SpeakingBaseLayout extends StatelessWidget {
       },
       feedbackBuilder: (context, state) {
         if (state is! SpeakingLoaded) return const SizedBox.shrink();
-        final isDark = Theme.of(context).brightness == Brightness.dark;
         final theme = LevelThemeHelper.getTheme(
           'speaking',
           level: level,

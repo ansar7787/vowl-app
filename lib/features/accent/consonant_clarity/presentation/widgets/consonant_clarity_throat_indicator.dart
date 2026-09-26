@@ -87,7 +87,7 @@ class ConsonantClarityThroatIndicator extends StatelessWidget {
                     fontFamily: 'Outfit',
                     fontSize: 16.sp,
                     fontWeight: FontWeight.bold,
-                    color: isDark ? Colors.white : Colors.black87,
+                    color: Theme.of(context).colorScheme.onSurface,
                   ),
                 ),
                 SizedBox(height: 2.h),

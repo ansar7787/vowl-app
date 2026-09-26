@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -34,7 +35,9 @@ class TopicVocabScreen extends StatefulWidget {
 }
 
 class _TopicVocabScreenState extends State<TopicVocabScreen>
-    with VocabularyGameScreenMixin {
+    with
+        GameScreenMixin<TopicVocabScreen>,
+        VocabularyGameScreenMixin<TopicVocabScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -80,7 +83,6 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listenWhen: vocabularyListenWhen,
       listener: onVocabularyStateChanged,
@@ -463,6 +465,7 @@ class _TopicInstructionBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final screenWidth = MediaQuery.of(context).size.width;
 
     return ConstrainedBox(
@@ -520,6 +523,7 @@ class _CompactFit extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     if (!isCompact) return child;
     return SizedBox(
       width: width,

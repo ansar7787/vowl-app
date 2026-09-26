@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -33,7 +34,10 @@ class AudioTrueFalseScreen extends StatefulWidget {
 }
 
 class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen>
-    with SingleTickerProviderStateMixin, ListeningGameScreenMixin {
+    with
+        SingleTickerProviderStateMixin,
+        GameScreenMixin<AudioTrueFalseScreen>,
+        ListeningGameScreenMixin<AudioTrueFalseScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

@@ -240,7 +240,9 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
           ),
         )
         .catchError((e, st) {
-          debugPrint('[GrammarBloc] Persistence error: $e\n$st');
+          if (kDebugMode) {
+            debugPrint('[GrammarBloc] Persistence error: $e\n$st');
+          }
           return const Right<Failure, void>(null);
         })
         .then((_) {
@@ -251,12 +253,16 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
                 ),
               )
               .catchError((e, st) {
-                debugPrint('[GrammarBloc] Persistence error: $e\n$st');
+                if (kDebugMode) {
+                  debugPrint('[GrammarBloc] Persistence error: $e\n$st');
+                }
                 return const Right<Failure, void>(null);
               })
               .then((_) {
                 awardBadge('grammar_master').catchError((e, st) {
-                  debugPrint('[GrammarBloc] Persistence error: $e\n$st');
+                  if (kDebugMode) {
+                    debugPrint('[GrammarBloc] Persistence error: $e\n$st');
+                  }
                   return const Right<Failure, void>(null);
                 });
               });

@@ -23,7 +23,7 @@ class PhotoBountyTarget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final textColor = isDark ? Colors.white : Colors.black87;
+    final textColor = Theme.of(context).colorScheme.onSurface;
     final subtitleColor = isDark
         ? Colors.amber.shade300
         : Colors.amber.shade700;

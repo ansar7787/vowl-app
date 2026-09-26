@@ -20,7 +20,6 @@ class SynonymInstructionHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return Center(
       child:
           ClipRRect(
@@ -92,7 +91,9 @@ class SynonymInstructionHeader extends StatelessWidget {
                                   fontFamily: 'Outfit',
                                   fontSize: isCompact ? 10.sp : 12.sp,
                                   fontWeight: FontWeight.w700,
-                                  color: isDark ? Colors.white : Colors.black87,
+                                  color: Theme.of(
+                                    context,
+                                  ).colorScheme.onSurface,
                                   letterSpacing: 1.2,
                                   height: 1.3,
                                 ),

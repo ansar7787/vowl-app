@@ -23,7 +23,6 @@ class EliteHintCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     if (!isVisible) {
       return Semantics(
         button: true,

@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -34,7 +35,10 @@ class SituationalResponseScreen extends StatefulWidget {
 }
 
 class _SituationalResponseScreenState extends State<SituationalResponseScreen>
-    with TickerProviderStateMixin, RoleplayGameScreenMixin {
+    with
+        TickerProviderStateMixin,
+        GameScreenMixin<SituationalResponseScreen>,
+        RoleplayGameScreenMixin<SituationalResponseScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

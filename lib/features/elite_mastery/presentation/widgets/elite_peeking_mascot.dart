@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,7 +7,6 @@ import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/utils/mascot_message_helper.dart';
 import '../bloc/elite_mastery_bloc.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 /// Floating mascot widget that peeks from the top-left of the game area.
 ///

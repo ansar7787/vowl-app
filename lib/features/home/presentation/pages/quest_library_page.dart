@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -16,7 +17,6 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/curriculum_service.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -172,7 +172,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
     final bgColor = isMidnight
         ? _LocalPalette.color020617
         : (isDark ? AppColors.slate900 : AppColors.slate50);
-    final contentColor = isDark ? Colors.white : AppColors.slate900;
+    final contentColor = Theme.of(context).colorScheme.onSurface;
 
     final authState = context.watch<AuthBloc>().state;
     final user = authState.user;
@@ -447,7 +447,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
   }
 
   Widget _buildLibraryStatsDashboard(UserEntity user, bool isDark) {
-    final contentColor = isDark ? Colors.white : AppColors.slate900;
+    final contentColor = Theme.of(context).colorScheme.onSurface;
 
     // Calculate global stats across all active games (200 levels each)
     int clearedLevels = 0;
@@ -710,7 +710,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
               fontFamily: 'Outfit',
               fontSize: 12.sp,
               fontWeight: FontWeight.w900,
-              color: isDark ? Colors.white : AppColors.slate900,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
             maxLines: 1,
           ),
@@ -1042,7 +1042,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
     final isMastered = completedCount >= 200;
     final isNew =
         !user.categoryStats.containsKey(subtype.name) && currentLevel == 1;
-    final contentColor = isDark ? Colors.white : AppColors.slate900;
+    final contentColor = Theme.of(context).colorScheme.onSurface;
 
     return Semantics(
       button: true,
@@ -1239,7 +1239,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
         !user.categoryStats.containsKey(subtype.name) && currentLevel == 1;
     final isMastered = completedCount >= 200;
     final displayColor = theme.primaryColor;
-    final contentColor = isDark ? Colors.white : AppColors.slate900;
+    final contentColor = Theme.of(context).colorScheme.onSurface;
     final completedPercent = (completedCount / 200 * 100).toInt();
 
     return Semantics(

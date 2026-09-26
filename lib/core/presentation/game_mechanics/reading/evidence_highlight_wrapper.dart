@@ -262,8 +262,8 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final bgColor = isDark ? _LocalPalette.color0c0c1a : Colors.white;
     final textColor = isDark ? Colors.white : AppColors.slate900;
     final subtitleColor = isDark ? Colors.white60 : Colors.black54;
@@ -474,21 +474,42 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
                                               )
                                             : null,
                                       ),
-                                      child: Text(
-                                        word.display,
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 16.sp,
-                                          fontWeight: isCorrectEvidence
-                                              ? FontWeight.w800
-                                              : FontWeight.w500,
-                                          color: isWrongTap
-                                              ? tokens.gameIncorrect
-                                              : isCorrectEvidence
-                                              ? tokens.gameCorrect
-                                              : textColor,
-                                          height: 1.5,
-                                        ),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Text(
+                                            word.display,
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 16.sp,
+                                              fontWeight: isCorrectEvidence
+                                                  ? FontWeight.w800
+                                                  : FontWeight.w500,
+                                              color: isWrongTap
+                                                  ? tokens.gameIncorrect
+                                                  : isCorrectEvidence
+                                                  ? tokens.gameCorrect
+                                                  : textColor,
+                                              height: 1.5,
+                                            ),
+                                          ),
+                                          if (isCorrectEvidence ||
+                                              isWrongTap) ...[
+                                            SizedBox(width: 4.w),
+                                            Icon(
+                                              isCorrectEvidence
+                                                  ? Icons.check_circle
+                                                  : Icons.cancel,
+                                              size: 14.sp,
+                                              color: isCorrectEvidence
+                                                  ? tokens.gameCorrect
+                                                  : tokens.gameIncorrect,
+                                              semanticLabel: isCorrectEvidence
+                                                  ? 'Correct evidence'
+                                                  : 'Incorrect evidence',
+                                            ),
+                                          ],
+                                        ],
                                       ),
                                     );
 

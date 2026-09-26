@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:async';
 import 'dart:ui';
 import 'package:flutter/material.dart';
@@ -11,7 +12,6 @@ import 'package:vowl/core/utils/translation_service.dart';
 import 'package:google_mlkit_translation/google_mlkit_translation.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -791,7 +791,7 @@ class _LanguageSelectionBottomSheetState
           ],
         ),
       ),
-    ).then((_) {
+    ).whenComplete(() {
       typeController.dispose();
     });
   }

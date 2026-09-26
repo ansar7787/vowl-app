@@ -51,7 +51,7 @@ class ModifierMagneticArena extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: isCompact ? 16.sp : 22.sp,
                   fontWeight: FontWeight.w500,
-                  color: isDark ? Colors.white : Colors.black87,
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
               );
             } else {

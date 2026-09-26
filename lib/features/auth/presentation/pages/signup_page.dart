@@ -19,7 +19,7 @@ import 'package:vowl/features/auth/presentation/bloc/signup_cubit.dart';
 import 'package:vowl/features/auth/presentation/bloc/login_cubit.dart';
 import 'package:vowl/features/auth/presentation/widgets/signup_widgets.dart';
 import 'package:vowl/features/auth/presentation/widgets/login_widgets.dart';
-import 'package:vowl/features/home/presentation/widgets/vowlbot_auth_companion.dart';
+import 'package:vowl/features/home/presentation/widgets/vowly_auth_companion.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
@@ -556,7 +556,7 @@ class _SignUpViewState extends State<SignUpView> {
                                             ), // Close Padding
                                             Positioned(
                                               top: 0,
-                                              child: VowlBotAuthCompanion(
+                                              child: VowlyAuthCompanion(
                                                 nameFocus: _nameFocus,
                                                 nameValue: state.name,
                                                 emailFocus: _emailFocus,

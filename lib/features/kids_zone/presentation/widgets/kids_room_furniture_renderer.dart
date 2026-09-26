@@ -14,6 +14,7 @@ class KidsRoomFurnitureRenderer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     if (item == null) {
       // Empty slot placeholder
       return Container(
@@ -29,8 +30,6 @@ class KidsRoomFurnitureRenderer extends StatelessWidget {
         ),
       );
     }
-
-    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     // Instead of just an emoji in a circle, render a styled container
     // that looks like actual furniture with depth and shadows.

@@ -15,7 +15,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/login_cubit.dart';
 import 'package:vowl/features/auth/presentation/widgets/login_widgets.dart';
-import 'package:vowl/features/home/presentation/widgets/vowlbot_auth_companion.dart';
+import 'package:vowl/features/home/presentation/widgets/vowly_auth_companion.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
@@ -357,7 +357,7 @@ class _LoginViewState extends State<LoginView> {
                                             ), // Close Padding
                                             Positioned(
                                               top: 0,
-                                              child: VowlBotAuthCompanion(
+                                              child: VowlyAuthCompanion(
                                                 emailFocus: _emailFocus,
                                                 passwordFocus: _passwordFocus,
                                                 size: 60,

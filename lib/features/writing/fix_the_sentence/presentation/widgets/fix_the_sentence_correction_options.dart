@@ -69,6 +69,7 @@ class FixTheSentenceCorrectionOptions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Wrap(
       spacing: 12.w,
       runSpacing: 12.h,
@@ -100,7 +101,7 @@ class FixTheSentenceCorrectionOptions extends StatelessWidget {
                     fontFamily: 'Outfit',
                     fontSize: 12.sp,
                     fontWeight: FontWeight.bold,
-                    color: isDark ? Colors.white : Colors.black87,
+                    color: Theme.of(context).colorScheme.onSurface,
                   ),
                 ),
               ],

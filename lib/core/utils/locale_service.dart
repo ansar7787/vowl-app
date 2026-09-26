@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart' as intl;
@@ -155,7 +156,9 @@ class LocaleService extends ChangeNotifier {
       _isInitialized = true;
       notifyListeners();
     } catch (e) {
-      debugPrint('LocaleService: Init error: $e');
+      if (kDebugMode) {
+        debugPrint('LocaleService: Init error: $e');
+      }
       _isInitialized = true;
       notifyListeners();
     }
@@ -179,7 +182,9 @@ class LocaleService extends ChangeNotifier {
 
       notifyListeners();
     } catch (e) {
-      debugPrint('LocaleService: setLocale error: $e');
+      if (kDebugMode) {
+        debugPrint('LocaleService: setLocale error: $e');
+      }
     }
   }
 
@@ -239,9 +244,11 @@ class LocaleService extends ChangeNotifier {
       );
       return json.decode(jsonString) as Map<String, dynamic>;
     } catch (e) {
-      debugPrint(
-        'LocaleService: Failed to load $languageCode translations: $e',
-      );
+      if (kDebugMode) {
+        debugPrint(
+          'LocaleService: Failed to load $languageCode translations: $e',
+        );
+      }
       return {};
     }
   }

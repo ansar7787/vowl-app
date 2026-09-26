@@ -1,9 +1,9 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:go_router/go_router.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'dart:async';
@@ -22,7 +22,8 @@ import 'package:vowl/core/utils/subscription_plans_service.dart';
 import 'package:vowl/features/premium/domain/entities/subscription_plan.dart';
 import 'package:vowl/features/premium/presentation/widgets/widgets.dart';
 import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
-import 'package:vowl/core/theme/app_colors.dart';
+import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
+import 'package:vowl/core/services/in_app_purchase_service.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -38,16 +39,13 @@ class PremiumScreen extends StatefulWidget {
 
 class _PremiumScreenState extends State<PremiumScreen> {
   final _paymentService = di.sl<PaymentService>();
-  int _selectedPlanIndexVal =
-      2; // Pre-select yearly (best value, highest margin)
+  int _selectedPlanIndexVal = 0;
   bool _isProcessingVal = false;
   bool _paymentCompletedVal = false;
   bool? _paymentSuccessVal;
   String? _errorMessageVal;
   String? _transactionIdVal;
   Timer? _paymentTimeout;
-  Timer? _cancelButtonTimer;
-  bool _showCancelButton = false;
   late ConfettiController _confettiController;
 
   static const List<SubscriptionPlan> _fallbackPlans = [
@@ -57,7 +55,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
       price: 49.0,
       oldPrice: 59.0,
       days: 7,
-      tag: 'FESTIVE OFFER',
+      tag: '',
       color: '#F43F5E',
       displayOrder: 0,
     ),
@@ -120,13 +118,6 @@ class _PremiumScreenState extends State<PremiumScreen> {
   }
 
   void _startPaymentTimeout() {
-    // Show cancel button after 15 seconds so user isn't trapped
-    _cancelButtonTimer = Timer(const Duration(seconds: 15), () {
-      if (mounted && _isProcessingVal) {
-        _showCancelButton = true;
-        _updateState();
-      }
-    });
     // Timeout after 2 minutes if no response
     _paymentTimeout = Timer(const Duration(minutes: 2), () {
       if (mounted && _isProcessingVal) {
@@ -138,9 +129,6 @@ class _PremiumScreenState extends State<PremiumScreen> {
   void _cancelPaymentTimeout() {
     _paymentTimeout?.cancel();
     _paymentTimeout = null;
-    _cancelButtonTimer?.cancel();
-    _cancelButtonTimer = null;
-    _showCancelButton = false;
   }
 
   void _handlePaymentTimeout() {
@@ -460,6 +448,28 @@ class _PremiumScreenState extends State<PremiumScreen> {
           const ModernFeatureBar(),
           SizedBox(height: 32.h),
           _buildCTAButton(),
+          SizedBox(height: 12.h),
+          TextButton(
+            onPressed: () {
+              di.sl<HapticService>().selection();
+              InAppPurchaseService.instance.restorePurchases();
+            },
+            child: Text(
+              context.tr(
+                'premium.restore_purchases',
+                fallback: 'Restore Purchases',
+              ),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.white60
+                    : Colors.black54,
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w600,
+                decoration: TextDecoration.underline,
+              ),
+            ),
+          ),
           SizedBox(height: 20.h),
           _buildSecureTag(),
           SizedBox(height: 8.h),
@@ -514,25 +524,23 @@ class _PremiumScreenState extends State<PremiumScreen> {
                     fontSize: 12.sp,
                   ),
                 ),
-                if (_showCancelButton) ...[
-                  SizedBox(height: 24.h),
-                  TextButton(
-                    onPressed: () {
-                      _cancelPaymentTimeout();
-                      _isProcessingVal = false;
-                      _updateState();
-                    },
-                    child: Text(
-                      context.tr('common.cancel', fallback: 'Cancel'),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        color: Colors.white60,
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w600,
-                      ),
+                SizedBox(height: 24.h),
+                TextButton(
+                  onPressed: () {
+                    _cancelPaymentTimeout();
+                    _isProcessingVal = false;
+                    _updateState();
+                  },
+                  child: Text(
+                    context.tr('common.cancel', fallback: 'Cancel'),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      color: Colors.white60,
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
-                ],
+                ),
               ],
             ),
           ),
@@ -604,68 +612,60 @@ class _PremiumScreenState extends State<PremiumScreen> {
       label: ctaLabel,
       child: ScaleButton(
         onTap: _isProcessingVal ? null : _onActivatePressed,
-        child:
-            Container(
-                  width: double.infinity,
-                  height: 60.h,
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      colors: [AppColors.indigo500, AppColors.violet500],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ),
-                    borderRadius: BorderRadius.circular(24.r),
-                    border: Border.all(
-                      color: Colors.white.withValues(alpha: 0.3),
-                      width: 1.5,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: AppColors.indigo500.withValues(alpha: 0.4),
-                        blurRadius: 25,
-                        spreadRadius: 2,
-                        offset: const Offset(0, 10),
-                      ),
-                    ],
-                  ),
-                  child: Center(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Flexible(
-                          child: Text(
-                            ctaLabel,
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              color: Colors.white,
-                              fontSize: 18.sp,
-                              fontWeight: FontWeight.w900,
-                              letterSpacing: 1,
-                            ),
-                          ),
-                        ),
-                        if (!_isProcessingVal) ...[
-                          SizedBox(width: 10.w),
-                          const Icon(
-                            Icons.arrow_forward_ios_rounded,
-                            color: Colors.white,
-                            size: 16,
-                          ),
-                        ],
-                      ],
+        child: Container(
+          width: double.infinity,
+          height: 60.h,
+          decoration: BoxDecoration(
+            gradient: const LinearGradient(
+              colors: [AppColors.indigo500, AppColors.violet500],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+            borderRadius: BorderRadius.circular(24.r),
+            border: Border.all(
+              color: Colors.white.withValues(alpha: 0.3),
+              width: 1.5,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: AppColors.indigo500.withValues(alpha: 0.4),
+                blurRadius: 25,
+                spreadRadius: 2,
+                offset: const Offset(0, 10),
+              ),
+            ],
+          ),
+          child: Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Flexible(
+                  child: Text(
+                    ctaLabel,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      color: Colors.white,
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 1,
                     ),
                   ),
-                )
-                .animate(onPlay: (c) => c.repeat(reverse: true))
-                .scale(
-                  begin: const Offset(1, 1),
-                  end: const Offset(1.02, 1.02),
-                  duration: 1.5.seconds,
-                  curve: Curves.easeInOut,
                 ),
+                if (!_isProcessingVal) ...[
+                  SizedBox(width: 10.w),
+                  const Icon(
+                    Icons.arrow_forward_ios_rounded,
+                    color: Colors.white,
+                    size: 16,
+                  ),
+                ],
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
@@ -681,30 +681,135 @@ class _PremiumScreenState extends State<PremiumScreen> {
     final plan = _activePlansVal[_selectedPlanIndexVal];
 
     try {
-      final checkoutOpened = await _paymentService.purchaseSubscription(
-        contact: '',
-        email: user.email,
-        planId: plan.id,
-        amount: plan.price,
-        days: plan.days,
-        planName: plan.name,
-        currency: plan.currency,
-      );
-
-      if (checkoutOpened) {
-        _startPaymentTimeout();
-      } else {
-        // Checkout failed to open (missing key, uninitialized SDK, etc.)
+      final hasConnection = await InternetConnection().hasInternetAccess;
+      if (!hasConnection) {
         if (!mounted) return;
         di.sl<HapticService>().error();
         _isProcessingVal = false;
         _paymentCompletedVal = true;
         _paymentSuccessVal = false;
         _errorMessageVal = context.tr(
-          'premium.error_checkout_failed',
-          fallback: 'Could not open payment. Please try again later.',
+          'premium.no_network',
+          fallback:
+              'No internet connection. Please check your network and try again.',
         );
         _updateState();
+        return;
+      }
+
+      if (InAppPurchaseService.shouldUseIAP) {
+        String productId;
+        switch (plan.id) {
+          case 'weekly':
+            productId = InAppPurchaseService.premiumWeekly;
+            break;
+          case 'monthly':
+            productId = InAppPurchaseService.premiumMonthly;
+            break;
+          case 'yearly':
+            productId = InAppPurchaseService.premiumYearly;
+            break;
+          default:
+            productId = InAppPurchaseService.premiumMonthly;
+        }
+
+        final iap = InAppPurchaseService.instance;
+        try {
+          final product = iap.products.firstWhere((p) => p.id == productId);
+          iap.onPurchaseSuccess = (purchase) async {
+            _cancelPaymentTimeout();
+            if (!mounted) return;
+            try {
+              final user = context.read<AuthBloc>().state.user;
+              if (user != null) {
+                final selectedPlan = _activePlansVal[_selectedPlanIndexVal];
+                await _paymentService.upgradeToPremium(
+                  orderId: purchase.purchaseID ?? '',
+                  paymentId: purchase.purchaseID ?? '',
+                  signature: 'iap_verified',
+                  days: selectedPlan.days,
+                );
+                if (mounted) {
+                  context.read<AuthBloc>().add(const AuthReloadUser());
+                  di.sl<HapticService>().success();
+                  _confettiController.play();
+                  _isProcessingVal = false;
+                  _paymentCompletedVal = true;
+                  _paymentSuccessVal = true;
+                  _transactionIdVal = purchase.purchaseID;
+                  _errorMessageVal = null;
+                  _updateState();
+                }
+              }
+            } catch (e, stackTrace) {
+              di.sl<AppLogger>().error(
+                'IAP upgrade failed after purchase',
+                error: e,
+                stackTrace: stackTrace,
+              );
+              if (mounted) {
+                di.sl<HapticService>().error();
+                _isProcessingVal = false;
+                _paymentCompletedVal = true;
+                _paymentSuccessVal = false;
+                _errorMessageVal = context.tr(
+                  'premium.error_upgrade_failed',
+                  fallback: 'Upgrade Failed',
+                );
+                _updateState();
+              }
+            }
+          };
+          iap.onPurchaseError = (error) {
+            _cancelPaymentTimeout();
+            di.sl<HapticService>().error();
+            if (mounted) {
+              _isProcessingVal = false;
+              _paymentCompletedVal = true;
+              _paymentSuccessVal = false;
+              _errorMessageVal = error;
+              _updateState();
+            }
+          };
+          await iap.buyProduct(product);
+          _startPaymentTimeout();
+        } catch (e) {
+          if (!mounted) return;
+          _isProcessingVal = false;
+          _paymentCompletedVal = true;
+          _paymentSuccessVal = false;
+          _errorMessageVal = context.tr(
+            'premium.error_checkout_failed',
+            fallback: 'Product not found',
+          );
+          _updateState();
+        }
+      } else {
+        final checkoutOpened = await _paymentService.purchaseSubscription(
+          contact: '',
+          email: user.email,
+          planId: plan.id,
+          amount: plan.price,
+          days: plan.days,
+          planName: plan.name,
+          currency: plan.currency,
+        );
+
+        if (checkoutOpened) {
+          _startPaymentTimeout();
+        } else {
+          // Checkout failed to open (missing key, uninitialized SDK, etc.)
+          if (!mounted) return;
+          di.sl<HapticService>().error();
+          _isProcessingVal = false;
+          _paymentCompletedVal = true;
+          _paymentSuccessVal = false;
+          _errorMessageVal = context.tr(
+            'premium.error_checkout_failed',
+            fallback: 'Could not open payment. Please try again later.',
+          );
+          _updateState();
+        }
       }
     } catch (e) {
       // Order creation failed (network, server error, etc.)
@@ -749,7 +854,8 @@ class _PremiumScreenState extends State<PremiumScreen> {
         Text(
           context.tr(
             'premium.cancellation_note',
-            fallback: 'Cancel anytime. No auto-renewal.',
+            fallback:
+                'One-time payment. Access for the selected duration. No recurring charges.',
           ),
           textAlign: TextAlign.center,
           style: TextStyle(

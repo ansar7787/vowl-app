@@ -69,7 +69,7 @@ class JobInterviewExplanationPanel extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 18.sp,
                   fontWeight: FontWeight.bold,
-                  color: isDark ? Colors.white : Colors.black87,
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
               ),
             ],

@@ -91,7 +91,7 @@ class FindWordMeaningMagnifierField extends StatelessWidget {
                           color: showAsCorrect
                               ? (isDark ? tokens.gameCorrect : Colors.green)
                               : (isFocused
-                                    ? (isDark ? Colors.white : Colors.black87)
+                                    ? (Theme.of(context).colorScheme.onSurface)
                                     : (isDark
                                           ? Colors.white54
                                           : Colors.black54)),

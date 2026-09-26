@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -30,7 +31,9 @@ class TrueFalseReadingScreen extends StatefulWidget {
 }
 
 class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen>
-    with ReadingGameScreenMixin {
+    with
+        GameScreenMixin<TrueFalseReadingScreen>,
+        ReadingGameScreenMixin<TrueFalseReadingScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

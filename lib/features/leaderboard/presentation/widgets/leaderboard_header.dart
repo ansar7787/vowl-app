@@ -1,9 +1,9 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class LeaderboardHeader extends StatelessWidget {
   final DateTime lastUpdated;
@@ -71,7 +71,7 @@ class LeaderboardHeader extends StatelessWidget {
                               fontFamily: 'Outfit',
                               fontSize: 22.sp,
                               fontWeight: FontWeight.w900,
-                              color: isDark ? Colors.white : AppColors.slate900,
+                              color: Theme.of(context).colorScheme.onSurface,
                               letterSpacing: 1,
                             ),
                             maxLines: 1,

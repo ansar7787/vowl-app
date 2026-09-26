@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -33,7 +34,9 @@ class WordFormationScreen extends StatefulWidget {
 }
 
 class _WordFormationScreenState extends State<WordFormationScreen>
-    with VocabularyGameScreenMixin {
+    with
+        GameScreenMixin<WordFormationScreen>,
+        VocabularyGameScreenMixin<WordFormationScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -106,6 +109,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listenWhen: vocabularyListenWhen,
       listener: onVocabularyStateChanged,
@@ -114,8 +118,6 @@ class _WordFormationScreenState extends State<WordFormationScreen>
           'vocabulary',
           level: widget.level,
         );
-
-        final isDark = Theme.of(context).brightness == Brightness.dark;
 
         final quest = (state is VocabularyLoaded)
             ? state.currentQuest

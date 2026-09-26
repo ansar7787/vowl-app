@@ -302,7 +302,7 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
         if (state is RoleplayLoaded) {
           emit((state as RoleplayLoaded).copyWith(hintUsed: false));
         }
-        debugPrint('[RoleplayBloc] UseHint failed: $failure');
+        if (kDebugMode) debugPrint('[RoleplayBloc] UseHint failed: $failure');
       },
       (_) {
         /* debit confirmed */
@@ -346,9 +346,11 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
         currentLevel: event.currentLevel,
       );
     } catch (e) {
-      debugPrint(
-        '[RoleplayBloc] PreloadNextBatch failed — will fetch on demand: $e',
-      );
+      if (kDebugMode) {
+        debugPrint(
+          '[RoleplayBloc] PreloadNextBatch failed — will fetch on demand: $e',
+        );
+      }
     }
   }
 
@@ -365,7 +367,7 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
         ),
       );
     } catch (e) {
-      debugPrint('[RoleplayBloc] SpeakConfirmed failed: $e');
+      if (kDebugMode) debugPrint('[RoleplayBloc] SpeakConfirmed failed: $e');
     }
   }
 }

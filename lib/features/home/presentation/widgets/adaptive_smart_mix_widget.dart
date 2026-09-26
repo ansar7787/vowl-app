@@ -99,9 +99,9 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     if (_blueprint == null) return const SizedBox.shrink();
 
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getCategoryTheme(
       widget.categoryId,
       isDark: isDark,
@@ -203,7 +203,7 @@ class _AdaptiveSmartMixWidgetState extends State<AdaptiveSmartMixWidget> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme(subtype.name, isDark: isDark);
     final displayColor = theme.primaryColor;
-    final contentColor = isDark ? Colors.white : AppColors.slate900;
+    final contentColor = Theme.of(context).colorScheme.onSurface;
 
     return ScaleButton(
       onTap: () async {

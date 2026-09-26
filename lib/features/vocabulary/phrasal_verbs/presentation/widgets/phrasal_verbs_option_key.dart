@@ -46,7 +46,7 @@ class PhrasalVerbsOptionKey extends StatelessWidget {
 
     Color cardBg = isDark ? color.withValues(alpha: 0.1) : Colors.white;
     Color cardBorder = color.withValues(alpha: 0.3);
-    Color textColor = isDark ? Colors.white : Colors.black87;
+    Color textColor = Theme.of(context).colorScheme.onSurface;
 
     if (showCorrect) {
       cardBg = Colors.green;

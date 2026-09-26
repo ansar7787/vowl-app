@@ -1,5 +1,4 @@
 import 'package:vowl/core/theme/illustration_colors.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -137,7 +136,6 @@ class _KidsGameEntryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     final color = metadata.color;
     final displayColor = color;
     final title = metadata.gridTitle; // e.g. "ABC"
@@ -199,7 +197,7 @@ class _KidsGameEntryCard extends StatelessWidget {
                         fontFamily: 'Outfit',
                         fontSize: 15.sp,
                         fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : AppColors.slate900,
+                        color: Theme.of(context).colorScheme.onSurface,
                         height: 1.1,
                       ),
                     ),

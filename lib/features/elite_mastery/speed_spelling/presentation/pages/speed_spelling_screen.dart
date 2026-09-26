@@ -13,6 +13,7 @@ import '../../../presentation/layout/elite_base_layout.dart';
 import '../../../presentation/widgets/elite_hint_card.dart';
 import '../widgets/speed_spelling_input_field.dart';
 import '../widgets/speed_spelling_character_deck.dart';
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/features/elite_mastery/presentation/mixins/elite_mastery_game_screen_mixin.dart';
 
 class SpeedSpellingScreen extends StatefulWidget {
@@ -29,7 +30,9 @@ class SpeedSpellingScreen extends StatefulWidget {
 }
 
 class _SpeedSpellingScreenState extends State<SpeedSpellingScreen>
-    with EliteMasteryGameScreenMixin {
+    with
+        GameScreenMixin<SpeedSpellingScreen>,
+        EliteMasteryGameScreenMixin<SpeedSpellingScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

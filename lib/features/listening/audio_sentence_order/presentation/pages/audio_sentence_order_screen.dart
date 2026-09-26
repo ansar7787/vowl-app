@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
@@ -30,7 +31,9 @@ class AudioSentenceOrderScreen extends StatefulWidget {
 }
 
 class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen>
-    with ListeningGameScreenMixin {
+    with
+        GameScreenMixin<AudioSentenceOrderScreen>,
+        ListeningGameScreenMixin<AudioSentenceOrderScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

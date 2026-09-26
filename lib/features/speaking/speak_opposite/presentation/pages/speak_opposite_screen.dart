@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -32,7 +33,9 @@ class SpeakOppositeScreen extends StatefulWidget {
 }
 
 class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
-    with SpeakingGameScreenMixin {
+    with
+        GameScreenMixin<SpeakOppositeScreen>,
+        SpeakingGameScreenMixin<SpeakOppositeScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 
@@ -140,7 +143,7 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
 
         return MediaQuery(
           data: mediaQuery.copyWith(
-            textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
+            textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.5),
           ),
           child: ListenableBuilder(
             listenable: Listenable.merge([

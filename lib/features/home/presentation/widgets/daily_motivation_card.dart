@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/features/kids_zone/theme/kids_colors.dart';
 import 'dart:convert';
 import 'package:flutter/material.dart';
@@ -8,7 +10,6 @@ import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -180,9 +181,11 @@ class _DailyMotivationCardState extends State<DailyMotivationCard>
       // Surfaced for debugging rather than swallowed silently — a
       // malformed asset should be visible in logs, even though the
       // user still sees a graceful fallback quote either way.
-      debugPrint(
-        'DailyMotivationCard: failed to load hoot content: $e\n$stack',
-      );
+      if (kDebugMode) {
+        debugPrint(
+          'DailyMotivationCard: failed to load hoot content: $e\n$stack',
+        );
+      }
       if (!mounted) return;
       _hootTitle.value = _fallbackTitle;
       _hootText.value = _fallbackQuote;

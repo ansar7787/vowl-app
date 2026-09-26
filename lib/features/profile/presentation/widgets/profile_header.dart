@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,7 +10,6 @@ import 'package:vowl/core/presentation/widgets/shimmer_image.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class ProfileHeader extends StatelessWidget {
   final UserEntity user;
@@ -71,7 +71,7 @@ class ProfileHeader extends StatelessWidget {
                 padding: EdgeInsets.all(4.w),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: isDark ? AppColors.slate800 : Colors.white,
+                  color: Theme.of(context).colorScheme.surface,
                   boxShadow: [
                     BoxShadow(
                       color: glowColor.withValues(alpha: isPremium ? 0.4 : 0.1),
@@ -204,7 +204,7 @@ class ProfileHeader extends StatelessWidget {
                             color: glowColor,
                             shape: BoxShape.circle,
                             border: Border.all(
-                              color: isDark ? AppColors.slate800 : Colors.white,
+                              color: Theme.of(context).colorScheme.surface,
                               width: 3,
                             ),
                           ),
@@ -256,7 +256,7 @@ class ProfileHeader extends StatelessWidget {
                           fontFamily: 'Outfit',
                           fontSize: 28.sp,
                           fontWeight: FontWeight.w900,
-                          color: isDark ? Colors.white : AppColors.slate900,
+                          color: Theme.of(context).colorScheme.onSurface,
                           letterSpacing: -0.5,
                         ),
                       ),

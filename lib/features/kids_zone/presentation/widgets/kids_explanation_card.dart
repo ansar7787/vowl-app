@@ -1,4 +1,3 @@
-import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_color_tokens.dart';
 import 'package:vowl/core/utils/app_logger.dart';
 import 'package:flutter/material.dart';
@@ -68,7 +67,7 @@ class _KidsExplanationCardState extends State<KidsExplanationCard> {
       width: double.infinity,
       padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
-        color: isDark ? AppColors.slate800 : Colors.white,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(32.r),
           topRight: Radius.circular(32.r),

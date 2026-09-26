@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
@@ -11,6 +12,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/features/settings/presentation/widgets/settings_dialogs.dart';
 import 'package:vowl/features/settings/presentation/widgets/settings_widgets.dart';
@@ -23,12 +25,10 @@ import 'package:vowl/features/settings/presentation/widgets/language_picker_shee
 import 'package:vowl/core/utils/widgets/language_selection_bottom_sheet.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/features/kids_zone/presentation/utils/kids_audio_service.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/age_gate_service.dart';
 import 'package:vowl/core/utils/translation_service.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -49,6 +49,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   bool _notificationsEnabledVal = true;
   bool _soundEnabledVal = true;
   bool _reduceComplexGesturesVal = false;
+  bool _analyticsEnabledVal = true;
   bool _isLoadingVal = true;
   String? _translationLanguageNameVal;
 
@@ -79,6 +80,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final savedPref = prefs.getBool('notifications_enabled') ?? true;
     final soundPref = prefs.getBool('sound_enabled') ?? true;
     final gesturesPref = prefs.getBool('reduce_complex_gestures') ?? false;
+    final analyticsPref = prefs.getBool('analytics_enabled') ?? true;
 
     if (!mounted) return;
     _appVersionVal = info.version;
@@ -86,6 +88,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     _notificationsEnabledVal = savedPref && isGranted;
     _soundEnabledVal = soundPref;
     _reduceComplexGesturesVal = gesturesPref;
+    _analyticsEnabledVal = analyticsPref;
     _isLoadingVal = false;
     _updateState();
   }
@@ -134,7 +137,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
     di.sl<SoundService>().setMuted(!value);
 
     if (!value) {
-      await di.sl<KidsAudioService>().stopBgm();
       await di.sl<KidsTTSService>().stop();
     }
   }
@@ -144,6 +146,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
     _updateState();
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool('reduce_complex_gestures', value);
+  }
+
+  Future<void> _toggleAnalytics(bool value) async {
+    _analyticsEnabledVal = value;
+    _updateState();
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('analytics_enabled', value);
+    await FirebaseAnalytics.instance.setAnalyticsCollectionEnabled(value);
   }
 
   Future<void> _handleSupportLink(BuildContext context) async {
@@ -306,6 +316,48 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                             >(
                                               selector: (state) => state.user,
                                               builder: (context, user) {
+                                                if (user == null) {
+                                                  return Container(
+                                                    padding: EdgeInsets.all(
+                                                      16.r,
+                                                    ),
+                                                    decoration: BoxDecoration(
+                                                      color: Colors.red
+                                                          .withValues(
+                                                            alpha: 0.1,
+                                                          ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                            16.r,
+                                                          ),
+                                                      border: Border.all(
+                                                        color: Colors.red
+                                                            .withValues(
+                                                              alpha: 0.3,
+                                                            ),
+                                                      ),
+                                                    ),
+                                                    child: Row(
+                                                      children: [
+                                                        const Icon(
+                                                          Icons.error_outline,
+                                                          color: Colors.red,
+                                                        ),
+                                                        SizedBox(width: 12.w),
+                                                        const Expanded(
+                                                          child: Text(
+                                                            'Failed to load user profile.',
+                                                            style: TextStyle(
+                                                              color: Colors.red,
+                                                              fontFamily:
+                                                                  'Outfit',
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  );
+                                                }
                                                 return SettingsProfileSection(
                                                   user: user,
                                                   isDark: isDark,
@@ -339,11 +391,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                                   _notificationsEnabledVal,
                                               reduceComplexGestures:
                                                   _reduceComplexGesturesVal,
+                                              analyticsEnabled:
+                                                  _analyticsEnabledVal,
                                               isLoading: _isLoadingVal,
                                               onToggleSound: _toggleSound,
                                               onToggleNotifications:
                                                   _toggleNotifications,
                                               onToggleGestures: _toggleGestures,
+                                              onToggleAnalytics:
+                                                  _toggleAnalytics,
                                               onTapTranslationLanguage: () async {
                                                 await LanguageSelectionBottomSheet.show(
                                                   context,
@@ -475,7 +531,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           fontFamily: 'Outfit',
           fontSize: 22.sp,
           fontWeight: FontWeight.w800,
-          color: isDark ? Colors.white : AppColors.slate900,
+          color: Theme.of(context).colorScheme.onSurface,
         ),
       ),
     );
@@ -545,24 +601,28 @@ class _SettingsPreferencesGroup extends StatelessWidget {
   final bool soundEnabled;
   final bool notificationsEnabled;
   final bool reduceComplexGestures;
+  final bool analyticsEnabled;
   final bool isLoading;
   final String? translationLanguageName;
   final VoidCallback onTapTranslationLanguage;
   final ValueChanged<bool> onToggleSound;
   final ValueChanged<bool> onToggleNotifications;
   final ValueChanged<bool> onToggleGestures;
+  final ValueChanged<bool> onToggleAnalytics;
 
   const _SettingsPreferencesGroup({
     required this.isDark,
     required this.soundEnabled,
     required this.notificationsEnabled,
     required this.reduceComplexGestures,
+    required this.analyticsEnabled,
     required this.isLoading,
     required this.translationLanguageName,
     required this.onTapTranslationLanguage,
     required this.onToggleSound,
     required this.onToggleNotifications,
     required this.onToggleGestures,
+    required this.onToggleAnalytics,
   });
 
   @override
@@ -623,6 +683,19 @@ class _SettingsPreferencesGroup extends StatelessWidget {
               value: reduceComplexGestures,
               isLoading: isLoading,
               onChanged: onToggleGestures,
+            ),
+            SettingsSwitchTile(
+              title: context.tr('settings.analytics', fallback: 'Analytics'),
+              subtitle: context.tr(
+                'settings.analytics_subtitle',
+                fallback:
+                    'Help us improve the app by sharing anonymous usage data',
+              ),
+              icon: Icons.analytics_rounded,
+              color: AppColors.blue500,
+              value: analyticsEnabled,
+              isLoading: isLoading,
+              onChanged: onToggleAnalytics,
             ),
             if (isDark)
               SettingsSwitchTile(
@@ -773,6 +846,12 @@ class _SettingsSupportGroup extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+            ),
+            SettingsTile(
+              title: context.tr('settings.about', fallback: 'About'),
+              icon: Icons.info_rounded,
+              color: AppColors.indigo500,
+              onTap: () => context.push('/about'),
             ),
           ],
         ),

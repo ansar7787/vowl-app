@@ -21,7 +21,7 @@ class VocabularyQuestionCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final Color primaryColor =
         theme?.primaryColor ?? Theme.of(context).colorScheme.primary;
-    final Color textColor = isDark ? Colors.white : Colors.black87;
+    final Color textColor = Theme.of(context).colorScheme.onSurface;
     final Color bgColor = isDark
         ? Colors.white.withValues(alpha: 0.05)
         : Colors.white.withValues(alpha: 0.7);

@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -40,7 +41,9 @@ class AcademicWordScreen extends StatefulWidget {
 // ─────────────────────────────────────────────────────────────────────────────
 
 class _AcademicWordScreenState extends State<AcademicWordScreen>
-    with VocabularyGameScreenMixin {
+    with
+        GameScreenMixin<AcademicWordScreen>,
+        VocabularyGameScreenMixin<AcademicWordScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
   @override
@@ -579,7 +582,6 @@ class _AcademicWordGameBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return LayoutBuilder(
       builder: (context, constraints) {
         final maxHeight = constraints.maxHeight;

@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -29,7 +30,9 @@ class SoundImageMatchScreen extends StatefulWidget {
 }
 
 class _SoundImageMatchScreenState extends State<SoundImageMatchScreen>
-    with ListeningGameScreenMixin {
+    with
+        GameScreenMixin<SoundImageMatchScreen>,
+        ListeningGameScreenMixin<SoundImageMatchScreen> {
   final ValueNotifier<int?> _selectedIndex = ValueNotifier(null);
   final ValueNotifier<int?> _pendingSelectedIndex = ValueNotifier(null);
   final ScrollController _scrollController = ScrollController();

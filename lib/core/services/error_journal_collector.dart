@@ -56,7 +56,9 @@ class ErrorJournalCollector {
           .add(entry);
     } catch (e) {
       // Silent — never disrupt gameplay for analytics
-      debugPrint('[ErrorJournal] Failed to record: $e');
+      if (kDebugMode) {
+        debugPrint('[ErrorJournal] Failed to record: $e');
+      }
     }
   }
 
@@ -94,7 +96,9 @@ class ErrorJournalCollector {
         );
       }).toList();
     } catch (e) {
-      debugPrint('[ErrorJournal] Failed to fetch: $e');
+      if (kDebugMode) {
+        debugPrint('[ErrorJournal] Failed to fetch: $e');
+      }
       return [];
     }
   }
@@ -112,7 +116,9 @@ class ErrorJournalCollector {
           .doc(entryId)
           .delete();
     } catch (e) {
-      debugPrint('[ErrorJournal] Failed to dismiss: $e');
+      if (kDebugMode) {
+        debugPrint('[ErrorJournal] Failed to dismiss: $e');
+      }
     }
   }
 
@@ -137,7 +143,9 @@ class ErrorJournalCollector {
         snapshot = await collection.limit(500).get();
       }
     } catch (e) {
-      debugPrint('[ErrorJournal] Failed to clear all: $e');
+      if (kDebugMode) {
+        debugPrint('[ErrorJournal] Failed to clear all: $e');
+      }
     }
   }
 }

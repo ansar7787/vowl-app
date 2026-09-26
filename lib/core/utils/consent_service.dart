@@ -36,19 +36,19 @@ class ConsentService {
           }
         },
         (error) {
-          // Fail-open: don't block app startup if UMP fails
+          // Fail-closed/non-personalized: don't block app startup if UMP fails
           if (kDebugMode) {
             debugPrint(
               'ConsentService: UMP error (${error.errorCode}): ${error.message}',
             );
           }
-          _isConsentObtained = true;
+          _isConsentObtained = false;
           if (!completer.isCompleted) completer.complete();
         },
       );
     } catch (e) {
       if (kDebugMode) debugPrint('ConsentService: Exception: $e');
-      _isConsentObtained = true;
+      _isConsentObtained = false;
       if (!completer.isCompleted) completer.complete();
     }
 

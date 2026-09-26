@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -33,7 +34,9 @@ class FixTheSentenceScreen extends StatefulWidget {
 }
 
 class _FixTheSentenceScreenState extends State<FixTheSentenceScreen>
-    with WritingGameScreenMixin {
+    with
+        GameScreenMixin<FixTheSentenceScreen>,
+        WritingGameScreenMixin<FixTheSentenceScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

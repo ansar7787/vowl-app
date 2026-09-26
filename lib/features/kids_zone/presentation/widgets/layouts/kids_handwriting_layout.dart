@@ -1,4 +1,3 @@
-import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:async';
 import 'package:flutter/material.dart' hide Ink;
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -146,7 +145,6 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
           });
         }
 
-        final isDark = Theme.of(context).brightness == Brightness.dark;
         final targetWord = state.currentQuest.question ?? '';
 
         return Column(
@@ -167,7 +165,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                 width: 300.w,
                 padding: EdgeInsets.symmetric(vertical: 20.h),
                 decoration: BoxDecoration(
-                  color: isDark ? AppColors.slate800 : Colors.white,
+                  color: Theme.of(context).colorScheme.surface,
                   borderRadius: BorderRadius.circular(32.r),
                   border: Border.all(
                     color: widget.primaryColor.withValues(alpha: 0.3),

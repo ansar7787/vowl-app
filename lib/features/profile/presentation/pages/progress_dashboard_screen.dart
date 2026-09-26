@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,7 +18,6 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -31,7 +31,6 @@ class ProgressDashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return Scaffold(
       backgroundColor: isDark ? AppColors.slate900 : Colors.white,
       body: BlocBuilder<AuthBloc, AuthState>(
@@ -94,7 +93,7 @@ class ProgressDashboardScreen extends StatelessWidget {
             onPressed: () => context.pop(),
             icon: Icon(
               Icons.arrow_back_rounded,
-              color: isDark ? Colors.white : AppColors.slate900,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
           ),
           SizedBox(width: 8.w),
@@ -108,7 +107,7 @@ class ProgressDashboardScreen extends StatelessWidget {
                 fontFamily: 'Outfit',
                 fontSize: 24.sp,
                 fontWeight: FontWeight.w900,
-                color: isDark ? Colors.white : AppColors.slate900,
+                color: Theme.of(context).colorScheme.onSurface,
               ),
               maxLines: 1,
             ),
@@ -782,7 +781,7 @@ class _ContinueLearningSection extends StatelessWidget {
                       fontFamily: 'Outfit',
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w900,
-                      color: isDark ? Colors.white : AppColors.slate900,
+                      color: Theme.of(context).colorScheme.onSurface,
                       letterSpacing: 0.5,
                     ),
                   ),

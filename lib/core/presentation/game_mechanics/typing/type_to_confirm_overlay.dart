@@ -134,7 +134,6 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     final content = Material(
       type: MaterialType.transparency,
       child: Padding(

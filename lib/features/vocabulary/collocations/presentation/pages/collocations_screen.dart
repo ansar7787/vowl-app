@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -30,7 +31,10 @@ class CollocationsScreen extends StatefulWidget {
 }
 
 class _CollocationsScreenState extends State<CollocationsScreen>
-    with TickerProviderStateMixin, VocabularyGameScreenMixin {
+    with
+        TickerProviderStateMixin,
+        GameScreenMixin<CollocationsScreen>,
+        VocabularyGameScreenMixin<CollocationsScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

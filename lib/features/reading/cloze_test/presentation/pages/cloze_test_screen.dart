@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,7 +28,9 @@ class ClozeTestScreen extends StatefulWidget {
 }
 
 class _ClozeTestScreenState extends State<ClozeTestScreen>
-    with ReadingGameScreenMixin {
+    with
+        GameScreenMixin<ClozeTestScreen>,
+        ReadingGameScreenMixin<ClozeTestScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

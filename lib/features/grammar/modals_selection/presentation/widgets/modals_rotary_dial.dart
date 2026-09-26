@@ -56,6 +56,7 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial>
 
   @override
   void dispose() {
+    widget.isAnsweredNotifier.removeListener(_onAnsweredChanged);
     _snapController.dispose();
     _rotation.dispose();
     super.dispose();

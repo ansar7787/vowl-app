@@ -1,5 +1,4 @@
 import 'package:vowl/core/theme/illustration_colors.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -47,6 +46,7 @@ class _CategoryShelfState extends State<CategoryShelf> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return SizedBox(
       height: 215.h,
       // This shelf uses a fixed card height by design (horizontal carousel).
@@ -209,7 +209,7 @@ class _GameEntryCard extends StatelessWidget {
                         fontFamily: 'Outfit',
                         fontSize: 15.sp,
                         fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : AppColors.slate900,
+                        color: Theme.of(context).colorScheme.onSurface,
                         height: 1.1,
                       ),
                     ),

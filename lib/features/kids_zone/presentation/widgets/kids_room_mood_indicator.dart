@@ -1,10 +1,10 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class KidsRoomMoodIndicator extends StatelessWidget {
   final UserEntity user;
@@ -13,9 +13,9 @@ class KidsRoomMoodIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final mood = user.kidsBuddyMood;
     final moodData = _getMoodData(mood);
-    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(20.r),

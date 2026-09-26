@@ -11,7 +11,6 @@ class KidsWorldBackgroundPainter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     // A crisp, pedagogical "school" aesthetic background.
     // Light mode: Clean, crisp white with subtle grey notebook dots.
     // Dark mode: Deep slate with subtle dark-blue dots.

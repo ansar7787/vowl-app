@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -28,7 +29,9 @@ class SentenceOrderReadingScreen extends StatefulWidget {
 }
 
 class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
-    with ReadingGameScreenMixin {
+    with
+        GameScreenMixin<SentenceOrderReadingScreen>,
+        ReadingGameScreenMixin<SentenceOrderReadingScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

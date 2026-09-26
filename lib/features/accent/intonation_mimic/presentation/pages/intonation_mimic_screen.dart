@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -30,7 +31,10 @@ class IntonationMimicScreen extends StatefulWidget {
 }
 
 class _IntonationMimicScreenState extends State<IntonationMimicScreen>
-    with TickerProviderStateMixin, AccentGameScreenMixin {
+    with
+        TickerProviderStateMixin,
+        GameScreenMixin<IntonationMimicScreen>,
+        AccentGameScreenMixin<IntonationMimicScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

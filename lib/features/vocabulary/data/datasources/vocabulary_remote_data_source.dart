@@ -53,8 +53,10 @@ class VocabularyRemoteDataSourceImpl implements VocabularyRemoteDataSource {
       }
       return [];
     } catch (e, stackTrace) {
-      debugPrint('VocabularyRemoteDataSource Error: $e');
-      debugPrint('Stacktrace: $stackTrace');
+      if (kDebugMode) debugPrint('VocabularyRemoteDataSource Error: $e');
+      if (kDebugMode) {
+        debugPrint('Stacktrace: $stackTrace');
+      }
       rethrow;
     }
   }

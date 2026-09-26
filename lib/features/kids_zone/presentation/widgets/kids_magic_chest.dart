@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,7 +9,6 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class KidsMagicChest extends StatefulWidget {
   final VoidCallback onClaimed;
@@ -83,6 +83,7 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, state) {
         final user = state.user;
@@ -108,8 +109,6 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
                 !_isClaiming.value &&
                 (lastClaim == null ||
                     now.isAfter(lastClaim.add(const Duration(hours: 24))));
-
-            final isDark = Theme.of(context).brightness == Brightness.dark;
 
             return ScaleButton(
               onTap: canClaim

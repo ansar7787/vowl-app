@@ -16,7 +16,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 /// ### Architecture
 /// - Uses [ListenableBuilder] on focus nodes — zero setState.
 /// - [SpeechBubblePainter] properly repaints when theme colors change.
-class VowlBotAuthCompanion extends StatefulWidget {
+class VowlyAuthCompanion extends StatefulWidget {
   final FocusNode? nameFocus;
   final String nameValue;
   final FocusNode? emailFocus;
@@ -25,7 +25,7 @@ class VowlBotAuthCompanion extends StatefulWidget {
   final bool isSignup;
   final bool isForgotPassword;
 
-  const VowlBotAuthCompanion({
+  const VowlyAuthCompanion({
     super.key,
     this.nameFocus,
     this.nameValue = "",
@@ -37,18 +37,18 @@ class VowlBotAuthCompanion extends StatefulWidget {
   });
 
   @override
-  State<VowlBotAuthCompanion> createState() => _VowlBotAuthCompanionState();
+  State<VowlyAuthCompanion> createState() => _VowlyAuthCompanionState();
 }
 
-class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
+class _VowlyAuthCompanionState extends State<VowlyAuthCompanion> {
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
-      precacheImage(const AssetImage(VowlAssets.vowlbotHappy), context);
-      precacheImage(const AssetImage(VowlAssets.vowlbotThinking), context);
-      precacheImage(const AssetImage(VowlAssets.vowlbotWorried), context);
+      precacheImage(const AssetImage(VowlAssets.vowlyHappy), context);
+      precacheImage(const AssetImage(VowlAssets.vowlyThinking), context);
+      precacheImage(const AssetImage(VowlAssets.vowlyWorried), context);
     });
   }
 
@@ -115,6 +115,7 @@ class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final listenables = [
       if (widget.nameFocus != null) widget.nameFocus!,
       if (widget.emailFocus != null) widget.emailFocus!,
@@ -130,22 +131,21 @@ class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
   }
 
   Widget _buildContent(BuildContext context) {
-    String currentAsset = VowlAssets.vowlbotHappy;
-    if (widget.passwordFocus?.hasFocus ?? false) {
-      currentAsset = VowlAssets.vowlbotWorried;
-    } else if (widget.emailFocus?.hasFocus ?? false) {
-      currentAsset = VowlAssets.vowlbotThinking;
-    } else if (widget.nameFocus?.hasFocus ?? false) {
-      currentAsset = VowlAssets.vowlbotHappy;
-    }
-
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    String currentAsset = VowlAssets.vowlyHappy;
+    if (widget.passwordFocus?.hasFocus ?? false) {
+      currentAsset = VowlAssets.vowlyWorried;
+    } else if (widget.emailFocus?.hasFocus ?? false) {
+      currentAsset = VowlAssets.vowlyThinking;
+    } else if (widget.nameFocus?.hasFocus ?? false) {
+      currentAsset = VowlAssets.vowlyHappy;
+    }
 
     // Adaptive Colors based on Theme
     final bubbleColor = isDark
         ? Colors.black.withValues(alpha: 0.75)
         : Colors.white.withValues(alpha: 0.85);
-    final textColor = isDark ? Colors.white : Colors.black87;
+    final textColor = Theme.of(context).colorScheme.onSurface;
     final borderColor = const Color(
       0xFF6366F1,
     ); // Primary Indigo for neon-glass effect

@@ -18,6 +18,7 @@ class AudioTrueFalseInstruction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     String mainText = instruction;
     String subText = '';
 
@@ -26,8 +27,6 @@ class AudioTrueFalseInstruction extends StatelessWidget {
       mainText = instruction.substring(0, match.start + 1);
       subText = match.group(2) ?? '';
     }
-
-    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Column(
       children: [

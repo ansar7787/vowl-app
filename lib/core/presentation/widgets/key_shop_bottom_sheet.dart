@@ -1,8 +1,10 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/widgets/parental_gate_dialog.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
@@ -18,7 +20,6 @@ import 'package:vowl/core/presentation/widgets/premium_store_bottom_sheet.dart';
 import 'package:vowl/core/utils/reward_limit_service.dart';
 
 import 'package:vowl/core/presentation/widgets/shakeable_wrapper.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class KeyShopBottomSheet {
   static void show({
@@ -708,7 +709,14 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                         SizedBox(width: 12.w),
                         Expanded(
                           child: ScaleButton(
-                            onTap: () {
+                            onTap: () async {
+                              if (widget.isKidsMode) {
+                                final passed = await ParentalGateDialog.show(
+                                  context,
+                                );
+                                if (!passed || !context.mounted) return;
+                              }
+                              if (!context.mounted) return;
                               Navigator.pop(context);
                               PremiumStoreBottomSheet.show(
                                 context: widget.parentContext,

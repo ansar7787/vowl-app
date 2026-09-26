@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -34,7 +35,10 @@ class PronunciationFocusScreen extends StatefulWidget {
 }
 
 class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
-    with SingleTickerProviderStateMixin, SpeakingGameScreenMixin {
+    with
+        SingleTickerProviderStateMixin,
+        GameScreenMixin<PronunciationFocusScreen>,
+        SpeakingGameScreenMixin<PronunciationFocusScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

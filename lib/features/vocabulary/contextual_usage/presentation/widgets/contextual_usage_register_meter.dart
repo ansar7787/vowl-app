@@ -20,7 +20,6 @@ class ContextualUsageRegisterMeter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     String levelText = "";
     if (registerLevel != null) {
       if (registerLevel! <= 3) {

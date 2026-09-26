@@ -47,7 +47,7 @@ class IdiomMatchOptionsPanel extends StatelessWidget {
         final isWrong = wrongIndices.contains(index);
         final isCorrect =
             showCorrectAnswer && originalIndices[index] == correctAnswerIndex;
-        Color textColor = isDark ? Colors.white : Colors.black87;
+        Color textColor = Theme.of(context).colorScheme.onSurface;
 
         // FIX: this option previously had zero Semantics. A sighted player
         // gets the outcome from border color (green/red) plus the cancel

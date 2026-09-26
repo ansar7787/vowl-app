@@ -49,7 +49,7 @@ class ShadowingChallengeSpeedSlider extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 14.sp,
                   fontWeight: FontWeight.bold,
-                  color: isDark ? Colors.white : Colors.black87,
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
               ),
             ],

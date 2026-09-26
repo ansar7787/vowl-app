@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -9,7 +10,6 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/presentation/widgets/animated_page_indicator.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -251,8 +251,6 @@ class _DiscoveryCollectionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return Semantics(
       button: true,
       label:
@@ -398,7 +396,7 @@ class _DiscoveryCollectionCard extends StatelessWidget {
                                   ? FontStyle.italic
                                   : FontStyle.normal,
                               fontWeight: FontWeight.w900,
-                              color: isDark ? Colors.white : AppColors.slate900,
+                              color: Theme.of(context).colorScheme.onSurface,
                               height: 1.1,
                             ),
                             maxLines: 2,

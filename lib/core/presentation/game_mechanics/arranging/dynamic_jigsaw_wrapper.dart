@@ -442,128 +442,129 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                           valueListenable: _positionalFeedback,
                           builder: (context, positionalFeedback, _) {
                             return Container(
-                                  width: double.infinity,
-                                  constraints: BoxConstraints(minHeight: 60.h),
-                                  padding: EdgeInsets.all(12.r),
-                                  decoration: BoxDecoration(
-                                    color: isDark
-                                        ? Colors.white.withValues(alpha: 0.05)
-                                        : Colors.black.withValues(alpha: 0.02),
-                                    borderRadius: BorderRadius.circular(12.r),
-                                    border: Border.all(
-                                      color: hasError
-                                          ? errorColor.withValues(alpha: 0.5)
-                                          : Colors.transparent,
-                                    ),
-                                  ),
-                                  child: Wrap(
-                                    spacing: 8.w,
-                                    runSpacing: 8.h,
-                                    children: List.generate(placedTiles.length, (
-                                      index,
-                                    ) {
-                                      final tile = placedTiles[index];
+                              width: double.infinity,
+                              constraints: BoxConstraints(minHeight: 60.h),
+                              padding: EdgeInsets.all(12.r),
+                              decoration: BoxDecoration(
+                                color: isDark
+                                    ? Colors.white.withValues(alpha: 0.05)
+                                    : Colors.black.withValues(alpha: 0.02),
+                                borderRadius: BorderRadius.circular(12.r),
+                                border: Border.all(
+                                  color: hasError
+                                      ? errorColor.withValues(alpha: 0.5)
+                                      : Colors.transparent,
+                                ),
+                              ),
+                              child: Wrap(
+                                spacing: 8.w,
+                                runSpacing: 8.h,
+                                children: List.generate(placedTiles.length, (
+                                  index,
+                                ) {
+                                  final tile = placedTiles[index];
 
-                                      return DragTarget<_WordTile>(
-                                        onAcceptWithDetails: (details) =>
-                                            _onTileDropped(index, details.data),
-                                        builder: (context, candidateData, rejectedData) {
-                                          final isHovering =
-                                              candidateData.isNotEmpty;
+                                  return DragTarget<_WordTile>(
+                                    onAcceptWithDetails: (details) =>
+                                        _onTileDropped(index, details.data),
+                                    builder: (context, candidateData, rejectedData) {
+                                      final isHovering =
+                                          candidateData.isNotEmpty;
 
-                                          if (tile == null) {
-                                            return Container(
-                                              key: ValueKey('empty_$index'),
-                                              height: 36.h,
-                                              width: isHovering ? 80.w : 50.w,
-                                              decoration: BoxDecoration(
-                                                color: widget.primaryColor
-                                                    .withValues(
-                                                      alpha: isHovering
-                                                          ? 0.2
-                                                          : 0.05,
-                                                    ),
-                                                borderRadius:
-                                                    BorderRadius.circular(18.r),
-                                                border: Border.all(
-                                                  color: widget.primaryColor
-                                                      .withValues(
-                                                        alpha: isHovering
-                                                            ? 0.8
-                                                            : 0.2,
-                                                      ),
-                                                  style: BorderStyle.solid,
+                                      if (tile == null) {
+                                        return Container(
+                                          key: ValueKey('empty_$index'),
+                                          height: 36.h,
+                                          width: isHovering ? 80.w : 50.w,
+                                          decoration: BoxDecoration(
+                                            color: widget.primaryColor
+                                                .withValues(
+                                                  alpha: isHovering
+                                                      ? 0.2
+                                                      : 0.05,
                                                 ),
-                                              ),
-                                            );
-                                          }
-
-                                          final bool? isCorrectPos =
-                                              positionalFeedback?[index];
-                                          final Color tileColor =
-                                              isCorrectPos == true
-                                              ? tokens.gameCorrect
-                                              : isCorrectPos == false
-                                              ? tokens.gameIncorrect
-                                              : widget.primaryColor;
-
-                                          return Draggable<_WordTile>(
-                                            data: tile,
-                                            childWhenDragging: Opacity(
-                                              opacity: 0.3,
-                                              child: _buildTile(
-                                                tile,
-                                                isDark,
-                                                subtitleColor,
-                                                textColor,
-                                              ),
+                                            borderRadius: BorderRadius.circular(
+                                              18.r,
                                             ),
-                                            feedback: Material(
-                                              color: Colors.transparent,
-                                              child: _buildTile(
-                                                tile,
-                                                isDark,
-                                                subtitleColor,
-                                                textColor,
-                                                scale: 1.1,
-                                              ),
+                                            border: Border.all(
+                                              color: widget.primaryColor
+                                                  .withValues(
+                                                    alpha: isHovering
+                                                        ? 0.8
+                                                        : 0.2,
+                                                  ),
+                                              style: BorderStyle.solid,
                                             ),
-                                            child: GestureDetector(
-                                              key: ValueKey(
-                                                'placed_${tile.id}',
-                                              ),
-                                              onTap: () =>
-                                                  _onPlacedTileTapped(index),
-                                              child:
-                                                  Container(
-                                                        padding:
-                                                            EdgeInsets.symmetric(
-                                                              horizontal: 16.w,
-                                                              vertical: 8.h,
-                                                            ),
-                                                        decoration: BoxDecoration(
-                                                          color: tileColor
-                                                              .withValues(
-                                                                alpha:
-                                                                    isHovering
-                                                                    ? 0.3
-                                                                    : 0.15,
-                                                              ),
-                                                          borderRadius:
-                                                              BorderRadius.circular(
-                                                                18.r,
-                                                              ),
-                                                          border: Border.all(
-                                                            color: tileColor
-                                                                .withValues(
-                                                                  alpha:
-                                                                      isHovering
-                                                                      ? 1.0
-                                                                      : 0.5,
-                                                                ),
-                                                          ),
+                                          ),
+                                        );
+                                      }
+
+                                      final bool? isCorrectPos =
+                                          positionalFeedback?[index];
+                                      final Color tileColor =
+                                          isCorrectPos == true
+                                          ? tokens.gameCorrect
+                                          : isCorrectPos == false
+                                          ? tokens.gameIncorrect
+                                          : widget.primaryColor;
+
+                                      return Draggable<_WordTile>(
+                                        data: tile,
+                                        childWhenDragging: Opacity(
+                                          opacity: 0.3,
+                                          child: _buildTile(
+                                            tile,
+                                            isDark,
+                                            subtitleColor,
+                                            textColor,
+                                          ),
+                                        ),
+                                        feedback: Material(
+                                          color: Colors.transparent,
+                                          child: _buildTile(
+                                            tile,
+                                            isDark,
+                                            subtitleColor,
+                                            textColor,
+                                            scale: 1.1,
+                                          ),
+                                        ),
+                                        child: GestureDetector(
+                                          key: ValueKey('placed_${tile.id}'),
+                                          onTap: () =>
+                                              _onPlacedTileTapped(index),
+                                          child:
+                                              Container(
+                                                    padding:
+                                                        EdgeInsets.symmetric(
+                                                          horizontal: 16.w,
+                                                          vertical: 8.h,
                                                         ),
-                                                        child: Text(
+                                                    decoration: BoxDecoration(
+                                                      color: tileColor
+                                                          .withValues(
+                                                            alpha: isHovering
+                                                                ? 0.3
+                                                                : 0.15,
+                                                          ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                            18.r,
+                                                          ),
+                                                      border: Border.all(
+                                                        color: tileColor
+                                                            .withValues(
+                                                              alpha: isHovering
+                                                                  ? 1.0
+                                                                  : 0.5,
+                                                            ),
+                                                      ),
+                                                    ),
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      children: [
+                                                        Text(
                                                           tile.word,
                                                           style: TextStyle(
                                                             fontFamily:
@@ -574,28 +575,43 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                                                             color: textColor,
                                                           ),
                                                         ),
-                                                      )
-                                                      .animate(
-                                                        key: ValueKey(
-                                                          'anim_placed_${tile.id}',
-                                                        ),
-                                                      )
-                                                      .scaleXY(
-                                                        begin: 0.8,
-                                                        end: 1.0,
-                                                        curve:
-                                                            Curves.easeOutBack,
-                                                        duration: 250.ms,
-                                                      ),
-                                            ),
-                                          );
-                                        },
+                                                        if (isCorrectPos !=
+                                                            null) ...[
+                                                          SizedBox(width: 6.w),
+                                                          Icon(
+                                                            isCorrectPos
+                                                                ? Icons
+                                                                      .check_circle
+                                                                : Icons.cancel,
+                                                            color: tileColor,
+                                                            size: 16.r,
+                                                            semanticLabel:
+                                                                isCorrectPos
+                                                                ? 'Correct word'
+                                                                : 'Incorrect word',
+                                                          ),
+                                                        ],
+                                                      ],
+                                                    ),
+                                                  )
+                                                  .animate(
+                                                    key: ValueKey(
+                                                      'anim_placed_${tile.id}',
+                                                    ),
+                                                  )
+                                                  .scaleXY(
+                                                    begin: 0.8,
+                                                    end: 1.0,
+                                                    curve: Curves.easeOutBack,
+                                                    duration: 250.ms,
+                                                  ),
+                                        ),
                                       );
-                                    }),
-                                  ),
-                                )
-                                .animate(target: hasError ? 1 : 0)
-                                .shakeX(amount: 5, duration: 400.ms);
+                                    },
+                                  );
+                                }),
+                              ),
+                            ).animate(target: hasError ? 1 : 0).shakeX(amount: 5, duration: 400.ms);
                           },
                         );
                       },

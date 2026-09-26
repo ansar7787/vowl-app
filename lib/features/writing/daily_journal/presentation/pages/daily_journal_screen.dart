@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -35,7 +36,9 @@ class DailyJournalScreen extends StatefulWidget {
 }
 
 class _DailyJournalScreenState extends State<DailyJournalScreen>
-    with WritingGameScreenMixin {
+    with
+        GameScreenMixin<DailyJournalScreen>,
+        WritingGameScreenMixin<DailyJournalScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

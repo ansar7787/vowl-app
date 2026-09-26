@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
@@ -9,7 +10,6 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/forgot_password_cubit.dart';
 import 'package:vowl/features/auth/domain/constants/auth_validators.dart';
 import 'package:vowl/features/auth/presentation/widgets/auth_decoration.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 // ---------------------------------------------------------------------------
 // Email Input
@@ -24,12 +24,14 @@ class ForgotPasswordEmailInput extends StatelessWidget {
   final GlobalKey<FormFieldState>? fieldKey;
   final FocusNode? focusNode;
   final Color contrastColor;
+  final VoidCallback? onSubmitted;
 
   const ForgotPasswordEmailInput({
     super.key,
     this.fieldKey,
     this.focusNode,
     required this.contrastColor,
+    this.onSubmitted,
   });
 
   @override
@@ -62,6 +64,7 @@ class ForgotPasswordEmailInput extends StatelessWidget {
           }
           return null;
         },
+        onFieldSubmitted: (_) => onSubmitted?.call(),
         textInputAction: TextInputAction.done,
         keyboardType: TextInputType.emailAddress,
         inputFormatters: [

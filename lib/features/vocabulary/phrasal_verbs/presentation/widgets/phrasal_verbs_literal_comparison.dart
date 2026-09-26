@@ -16,7 +16,6 @@ class PhrasalVerbsLiteralComparison extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     // Split the literal vs figurative text. Format expected: "Literal: ... \nFigurative: ..."
     final parts = literalVsFigurative.split('\n');
     final literalText = parts.isNotEmpty ? parts[0] : literalVsFigurative;

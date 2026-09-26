@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/features/writing/presentation/mixins/writing_game_screen_mixin.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
@@ -32,7 +33,9 @@ class CompleteSentenceScreen extends StatefulWidget {
 }
 
 class _CompleteSentenceScreenState extends State<CompleteSentenceScreen>
-    with WritingGameScreenMixin {
+    with
+        GameScreenMixin<CompleteSentenceScreen>,
+        WritingGameScreenMixin<CompleteSentenceScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

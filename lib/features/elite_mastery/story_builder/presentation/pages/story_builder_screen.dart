@@ -8,6 +8,7 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/features/elite_mastery/presentation/bloc/elite_mastery_bloc.dart';
 import 'package:vowl/features/elite_mastery/presentation/mixins/elite_mastery_game_screen_mixin.dart';
 import 'package:vowl/features/elite_mastery/presentation/layout/elite_base_layout.dart';
@@ -29,7 +30,9 @@ class StoryBuilderScreen extends StatefulWidget {
 }
 
 class _StoryBuilderScreenState extends State<StoryBuilderScreen>
-    with EliteMasteryGameScreenMixin {
+    with
+        GameScreenMixin<StoryBuilderScreen>,
+        EliteMasteryGameScreenMixin<StoryBuilderScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

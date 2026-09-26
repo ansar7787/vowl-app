@@ -27,9 +27,9 @@ class ShimmerImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     final tokens = Theme.of(context).extension<AppColorTokens>()!;
 
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final baseColor = isDark ? AppColors.slate800 : AppColors.slate200;
     final highlightColor = isDark ? AppColors.slate700 : AppColors.slate100;
     final placeholderBg = isDark ? AppColors.slate900 : AppColors.slate50;

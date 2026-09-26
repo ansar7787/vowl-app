@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -9,7 +10,6 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -75,7 +75,7 @@ class _ProfileBadgesListState extends State<ProfileBadgesList> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      color: isDark ? Colors.white : AppColors.slate900,
+                      color: Theme.of(context).colorScheme.onSurface,
                       fontWeight: FontWeight.w900,
                       fontSize: 16.sp,
                       letterSpacing: 1,

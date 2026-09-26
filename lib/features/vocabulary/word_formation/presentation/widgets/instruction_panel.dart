@@ -13,8 +13,8 @@ class InstructionPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final hint = quest?.hint;
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final hint = quest?.hint;
 
     return Container(
       width: double.infinity,

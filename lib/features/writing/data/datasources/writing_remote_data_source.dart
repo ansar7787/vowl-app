@@ -34,7 +34,9 @@ class WritingRemoteDataSourceImpl implements WritingRemoteDataSource {
           try {
             quests.add(WritingQuestModel.fromJson(q, q['id'] ?? ''));
           } catch (e) {
-            debugPrint('Error parsing writing quest ${q['id']}: $e');
+            if (kDebugMode) {
+              debugPrint('Error parsing writing quest ${q['id']}: $e');
+            }
           }
         }
         if (quests.isNotEmpty) return quests;
@@ -59,7 +61,7 @@ class WritingRemoteDataSourceImpl implements WritingRemoteDataSource {
         "We're having trouble loading this writing exercise. Please try again in a moment.",
       );
     } catch (e) {
-      debugPrint('Error in getWritingQuest: $e');
+      if (kDebugMode) debugPrint('Error in getWritingQuest: $e');
       if (e is ServerException) rethrow;
       throw ServerException(e.toString());
     }

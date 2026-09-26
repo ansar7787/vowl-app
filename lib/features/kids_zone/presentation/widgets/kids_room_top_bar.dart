@@ -15,7 +15,6 @@ class KidsRoomTopBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
       child: Row(
@@ -65,7 +64,6 @@ class KidsRoomTopBar extends StatelessWidget {
 
   Widget _buildCurrencyBadge(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return ClipRRect(
       borderRadius: BorderRadius.circular(20.r),
       child: BackdropFilter(

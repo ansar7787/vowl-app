@@ -1,4 +1,6 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:async';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -13,7 +15,6 @@ import 'package:vowl/core/utils/injection_container.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:confetti/confetti.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -71,7 +72,7 @@ class _HatchingPageState extends State<HatchingPage> {
       _tts.setCompletionHandler(() {});
       _tts.setErrorHandler((_) {});
     } catch (e) {
-      debugPrint('HatchingPage: TTS initialization failed: $e');
+      if (kDebugMode) debugPrint('HatchingPage: TTS initialization failed: $e');
     }
   }
 
@@ -132,14 +133,13 @@ class _HatchingPageState extends State<HatchingPage> {
     try {
       await _tts.speak(_getIntroMessage(context));
     } catch (e) {
-      debugPrint('HatchingPage: TTS speak failed: $e');
+      if (kDebugMode) debugPrint('HatchingPage: TTS speak failed: $e');
     }
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return AnnotatedRegion<SystemUiOverlayStyle>(
       // FIX (H1): System UI adapts to theme instead of forcing light.
       value: SystemUiOverlayStyle(

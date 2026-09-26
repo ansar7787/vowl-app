@@ -31,9 +31,11 @@ List<Map<String, dynamic>> _parseQuestsInIsolate(String jsonString) {
           .toList();
     }
   } catch (e) {
-    debugPrint(
-      'AssetQuestService Isolate Error: Failed to parse JSON. Error: $e',
-    );
+    if (kDebugMode) {
+      debugPrint(
+        'AssetQuestService Isolate Error: Failed to parse JSON. Error: $e',
+      );
+    }
   }
   return [];
 }

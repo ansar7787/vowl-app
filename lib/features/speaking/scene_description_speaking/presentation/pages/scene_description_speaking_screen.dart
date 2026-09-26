@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -38,7 +39,10 @@ class SceneDescriptionScreen extends StatefulWidget {
 }
 
 class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
-    with SingleTickerProviderStateMixin, SpeakingGameScreenMixin {
+    with
+        SingleTickerProviderStateMixin,
+        GameScreenMixin<SceneDescriptionScreen>,
+        SpeakingGameScreenMixin<SceneDescriptionScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

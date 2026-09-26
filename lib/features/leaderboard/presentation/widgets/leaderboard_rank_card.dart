@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,7 +9,6 @@ import 'package:vowl/core/presentation/widgets/shimmer_image.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -32,7 +32,6 @@ class LeaderboardRankCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     // Reactively watch for current user profile changes only.
     final currentUser = context.select<AuthBloc, UserEntity?>(
       (bloc) => bloc.state.user,
@@ -48,7 +47,7 @@ class LeaderboardRankCard extends StatelessWidget {
         : currentUser.totalLevelsCompleted;
     final maxLevels = isKids ? _totalKidsLevels : _totalLevels;
     final progress = (levelsCleared / maxLevels).clamp(0.0, 1.0);
-    final contrastColor = isDark ? Colors.white : AppColors.slate900;
+    final contrastColor = Theme.of(context).colorScheme.onSurface;
     final secondaryTextColor = isDark ? Colors.white60 : AppColors.slate500;
 
     return Semantics(

@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -17,7 +18,6 @@ import 'package:vowl/features/translation/presentation/widgets/language_manager_
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/presentation/widgets/premium_lock_card.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class TranslateScreen extends StatefulWidget {
   const TranslateScreen({super.key});
@@ -201,7 +201,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
             onPressed: () => context.pop(),
             icon: Icon(
               Icons.arrow_back_rounded,
-              color: isDark ? Colors.white : AppColors.slate900,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
           ),
           SizedBox(width: 8.w),
@@ -212,7 +212,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                 fontFamily: 'Outfit',
                 fontSize: 24.sp,
                 fontWeight: FontWeight.w900,
-                color: isDark ? Colors.white : AppColors.slate900,
+                color: Theme.of(context).colorScheme.onSurface,
               ),
               maxLines: 1,
             ),
@@ -284,7 +284,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                           fontFamily: 'Outfit',
                           fontSize: 18.sp,
                           fontWeight: FontWeight.w800,
-                          color: isDark ? Colors.white : AppColors.slate900,
+                          color: Theme.of(context).colorScheme.onSurface,
                         ),
                         maxLines: 1,
                       ),
@@ -469,7 +469,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                 fontFamily: 'Outfit',
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w500,
-                color: isDark ? Colors.white : AppColors.slate900,
+                color: Theme.of(context).colorScheme.onSurface,
                 height: 1.4,
               ),
               decoration: InputDecoration(
@@ -682,7 +682,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                       height: 1.4,
                       color: state.translatedText.isEmpty
                           ? (isDark ? Colors.white38 : AppColors.slate400)
-                          : (isDark ? Colors.white : AppColors.slate900),
+                          : (Theme.of(context).colorScheme.onSurface),
                     ),
                   ),
                 ),
@@ -750,7 +750,7 @@ class _LanguagePickerSheetState extends State<_LanguagePickerSheet> {
     return Container(
       height: MediaQuery.of(context).size.height * 0.75,
       decoration: BoxDecoration(
-        color: isDark ? AppColors.slate800 : Colors.white,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
       ),
       child: Column(
@@ -774,7 +774,7 @@ class _LanguagePickerSheetState extends State<_LanguagePickerSheet> {
               fontFamily: 'Outfit',
               fontSize: 20.sp,
               fontWeight: FontWeight.w800,
-              color: isDark ? Colors.white : AppColors.slate900,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
           ),
           SizedBox(height: 16.h),
@@ -806,7 +806,7 @@ class _LanguagePickerSheetState extends State<_LanguagePickerSheet> {
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 16.sp,
-                        color: isDark ? Colors.white : AppColors.slate900,
+                        color: Theme.of(context).colorScheme.onSurface,
                       ),
                       decoration: InputDecoration(
                         hintText: context.tr(

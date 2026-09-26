@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/utils/instruction_helper.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
@@ -32,7 +33,10 @@ class ConflictResolverScreen extends StatefulWidget {
 }
 
 class _ConflictResolverScreenState extends State<ConflictResolverScreen>
-    with TickerProviderStateMixin, RoleplayGameScreenMixin {
+    with
+        TickerProviderStateMixin,
+        GameScreenMixin<ConflictResolverScreen>,
+        RoleplayGameScreenMixin<ConflictResolverScreen> {
   @override
   GameSubtype get gameType => widget.gameType;
 

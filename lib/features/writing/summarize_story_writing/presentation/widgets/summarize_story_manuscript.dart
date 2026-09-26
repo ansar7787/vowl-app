@@ -21,7 +21,7 @@ class SummarizeStoryManuscript extends StatelessWidget {
       width: double.infinity,
       padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
-        color: isDark ? AppColors.slate800 : Colors.white,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(color: color.withValues(alpha: 0.3), width: 2),
         boxShadow: [

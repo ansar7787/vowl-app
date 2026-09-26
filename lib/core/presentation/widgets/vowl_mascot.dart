@@ -70,16 +70,16 @@ class VowlMascot extends StatelessWidget {
     this.isKidsMode = false,
   });
 
-  /// Returns the VoxBot image asset path for the current [state].
-  /// Returns an empty string if [mascotId] is not explicitly 'vox_bot'.
+  /// Returns the Vowly image asset path for the current [state].
+  /// Returns an empty string if [mascotId] is not explicitly 'vowly'.
   String _getAssetPath() {
-    if (mascotId != 'vox_bot') return '';
+    if (mascotId != 'vowly') return '';
     return switch (state) {
-      VowlMascotState.happy => 'assets/images/mascot/voxbot_happy.webp',
-      VowlMascotState.worried => 'assets/images/mascot/voxbot_worried.webp',
+      VowlMascotState.happy => 'assets/images/mascot/vowly_happy.webp',
+      VowlMascotState.worried => 'assets/images/mascot/vowly_worried.webp',
       VowlMascotState.thinking ||
-      VowlMascotState.studying => 'assets/images/mascot/voxbot_thinking.webp',
-      _ => 'assets/images/mascot/voxbot_neutral.webp',
+      VowlMascotState.studying => 'assets/images/mascot/vowly_thinking.webp',
+      _ => 'assets/images/mascot/vowly_neutral.webp',
     };
   }
 
@@ -103,7 +103,7 @@ class VowlMascot extends StatelessWidget {
                 ? (userData.kidsMascot ?? 'owly')
                 : (userData.vowlMascot ?? 'vowl_prime'));
 
-        final isVoxBot = effectiveMascotId == 'vox_bot';
+        final isVowly = effectiveMascotId == 'vowly';
         final botSize = size ?? 120.r;
 
         final mascotMap = isKidsMode
@@ -131,7 +131,7 @@ class VowlMascot extends StatelessWidget {
         }
 
         // ── Base bot widget ───────────────────────────────────────────────
-        Widget bot = isVoxBot
+        Widget bot = isVowly
             ? Image.asset(
                 _getAssetPath(),
                 width: botSize,
@@ -143,7 +143,7 @@ class VowlMascot extends StatelessWidget {
                 colorBlendMode: state == VowlMascotState.sleeping
                     ? BlendMode.dstIn
                     : null,
-                // FIX (CRASH SAFETY): a missing or corrupt VoxBot asset
+                // FIX (CRASH SAFETY): a missing or corrupt Vowly asset
                 // would previously propagate up to the app's
                 // GlobalErrorBoundary, replacing the ENTIRE screen with a
                 // full "system anomaly" error page over what's ultimately

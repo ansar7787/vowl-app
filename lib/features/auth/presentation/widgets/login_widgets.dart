@@ -53,6 +53,7 @@ class LoginEmailInput extends StatelessWidget {
               }
               return null;
             },
+            onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
             textInputAction: TextInputAction.next,
             keyboardType: TextInputType.emailAddress,
             inputFormatters: [
@@ -127,6 +128,12 @@ class LoginPasswordInput extends StatelessWidget {
                 );
               }
               return null;
+            },
+            onFieldSubmitted: (_) {
+              if (formKey.currentState?.validate() ?? false) {
+                TextInput.finishAutofillContext();
+                context.read<LoginCubit>().logInWithCredentials();
+              }
             },
             obscureText: !state.isPasswordVisible,
             textInputAction: TextInputAction.done,
@@ -203,6 +210,7 @@ class LoginButton extends StatelessWidget {
                 ? null
                 : () {
                     if (formKey.currentState?.validate() ?? false) {
+                      TextInput.finishAutofillContext();
                       context.read<LoginCubit>().logInWithCredentials();
                     } else {
                       onValidationError();
@@ -237,7 +245,10 @@ class LoginButton extends StatelessWidget {
 // ---------------------------------------------------------------------------
 
 class GoogleLoginButton extends StatelessWidget {
-  const GoogleLoginButton({super.key});
+  final bool Function()? onValidate;
+  final VoidCallback? onValidationError;
+
+  const GoogleLoginButton({super.key, this.onValidate, this.onValidationError});
 
   @override
   Widget build(BuildContext context) {
@@ -255,7 +266,13 @@ class GoogleLoginButton extends StatelessWidget {
           child: OutlinedButton(
             onPressed: state.isSubmitting
                 ? null
-                : () => context.read<LoginCubit>().logInWithGoogle(),
+                : () {
+                    if (onValidate != null && !onValidate!()) {
+                      onValidationError?.call();
+                      return;
+                    }
+                    context.read<LoginCubit>().logInWithGoogle();
+                  },
             style: OutlinedButton.styleFrom(
               foregroundColor: contrastColor,
               side: BorderSide(color: contrastColor.withValues(alpha: 0.2)),

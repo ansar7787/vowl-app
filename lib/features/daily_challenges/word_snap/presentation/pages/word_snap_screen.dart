@@ -1,3 +1,4 @@
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,7 +16,6 @@ import 'package:vowl/core/services/daily_challenge_service.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:vowl/core/theme/app_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -192,7 +192,6 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return ListenableBuilder(
       listenable: Listenable.merge([
         _currentPuzzle,
@@ -232,7 +231,7 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
             onPressed: () => context.pop(),
             icon: Icon(
               Icons.arrow_back_rounded,
-              color: isDark ? Colors.white : AppColors.slate900,
+              color: Theme.of(context).colorScheme.onSurface,
               size: 24.r,
             ),
             tooltip: context.tr('common.back', fallback: 'Back'),
@@ -247,7 +246,7 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
                 fontFamily: 'Outfit',
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w800,
-                color: isDark ? Colors.white : AppColors.slate900,
+                color: Theme.of(context).colorScheme.onSurface,
                 letterSpacing: -0.3,
               ),
             ),
@@ -339,7 +338,7 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
               fontFamily: 'Outfit',
               fontSize: 32.sp,
               fontWeight: FontWeight.w900,
-              color: isDark ? Colors.white : Colors.black87,
+              color: Theme.of(context).colorScheme.onSurface,
               letterSpacing: 3,
             ),
           ),
@@ -574,7 +573,7 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
                       fontFamily: 'Outfit',
                       fontSize: 18.sp,
                       fontWeight: FontWeight.w700,
-                      color: isDark ? Colors.white : AppColors.slate900,
+                      color: Theme.of(context).colorScheme.onSurface,
                     ),
                   ),
                   SizedBox(height: 8.h),
@@ -687,7 +686,7 @@ class _WordSnapScreenState extends State<WordSnapScreen> {
                       fontFamily: 'Outfit',
                       fontSize: 22.sp,
                       fontWeight: FontWeight.w900,
-                      color: isDark ? Colors.white : AppColors.slate900,
+                      color: Theme.of(context).colorScheme.onSurface,
                     ),
                   ),
                   SizedBox(height: 8.h),
