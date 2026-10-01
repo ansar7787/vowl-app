@@ -8,17 +8,17 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "The new policy will effect all employees starting from next quarter.",
-            "missingWord": "effect",
+            "passage": "The bank has confirmed that the transfer will credit to your account within three working days.",
+            "missingWord": "will credit",
             "options": [
-                "affect",
-                "effect",
-                "impact",
-                "influence"
+                "has credited",
+                "will credit",
+                "will be credited",
+                "will be crediting"
             ],
-            "correctAnswer": "affect",
-            "hint": "'Effect' and 'affect' are easily confused. Think about which one is usually a verb and which a noun.",
-            "explanation": "'Affect' is usually a verb (to have an impact on): 'The policy will affect all employees'. 'Effect' is usually a noun (the result).",
+            "correctAnswer": "will be credited",
+            "hint": "Ask who or what performs the action in this sentence.",
+            "explanation": "The transfer doesn't credit anything; it receives the action. The passive 'will be credited' is needed.",
             "errorType": "Grammar Error"
         },
         {
@@ -26,53 +26,53 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She gave me a very helpful advise about how to handle the situation.",
-            "missingWord": "advise",
+            "passage": "The policy does not cover damage caused by negligence, nor it covers loss of income during repairs.",
+            "missingWord": "nor it covers",
             "options": [
-                "advice",
-                "advise",
-                "suggestion",
-                "recommendation"
+                "nor it covers",
+                "nor does it cover",
+                "nor it does cover",
+                "nor covers it"
             ],
-            "correctAnswer": "advice",
-            "hint": "'Advice' (noun) and 'advise' (verb) are easily confused. Which one is needed after the article 'a'?",
-            "explanation": "'Advice' is a noun: 'She gave me helpful advice'. 'Advise' is a verb: 'She advised me'. A noun follows 'a'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "nor does it cover",
+            "hint": "Read the second half aloud. Does anything sound missing after 'nor'?",
+            "explanation": "'Nor' at the start of a clause requires an auxiliary before the subject: 'nor does it cover'.",
+            "errorType": "Sentence Structure Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L181_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He borrowed his friend his car for the weekend while his was being repaired.",
-            "missingWord": "borrowed",
+            "passage": "The clinic has extended its opening hours, which helps patients, especially those who works shifts.",
+            "missingWord": "who works",
             "options": [
-                "lent",
-                "borrowed",
-                "loaned",
-                "gave"
+                "which work",
+                "who work",
+                "who works",
+                "whom work"
             ],
-            "correctAnswer": "lent",
-            "hint": "'Borrow' and 'lend' are frequently confused. You borrow FROM someone; you lend TO someone. Which fits here?",
-            "explanation": "You 'lend' something to another person. 'He lent his friend his car' - he gave his car for his friend to use.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "who work",
+            "hint": "Look back from the verb to find what it belongs to.",
+            "explanation": "'Who' refers to 'those', which is plural, so the verb is 'work'.",
+            "errorType": "Agreement Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L182_Q1",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "The company expects to rise its profits by twenty percent this year.",
-            "missingWord": "rise",
+            "passage": "Please avoid to leave valuables unattended in the changing rooms at any time.",
+            "missingWord": "avoid to leave",
             "options": [
-                "raise",
-                "rise",
-                "increase",
-                "boost"
+                "avoid leave",
+                "avoid to leave",
+                "avoid left",
+                "avoid leaving"
             ],
-            "correctAnswer": "raise",
-            "hint": "'Rise' and 'raise' are easily confused. 'Rise' is intransitive (no object); 'raise' is transitive (needs an object).",
-            "explanation": "'Raise' is transitive (needs an object): 'to raise profits'. 'Rise' is intransitive: 'Profits will rise'. The company raises profits.",
+            "correctAnswer": "avoid leaving",
+            "hint": "Consider what verb form this word normally allows after it.",
+            "explanation": "'Avoid' is followed by a gerund, never by 'to' plus infinitive.",
             "errorType": "Grammar Error"
         },
         {
@@ -80,35 +80,35 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She lay the books on the table and went to get a cup of tea.",
-            "missingWord": "lay",
+            "passage": "Guests are requested to vacate their rooms by 11 a.m., after which a late checkout fee will be slapped on.",
+            "missingWord": "slapped on",
             "options": [
-                "laid",
-                "lay",
-                "placed",
-                "put"
+                "stuck on",
+                "applied",
+                "chucked on",
+                "slapped on"
             ],
-            "correctAnswer": "laid",
-            "hint": "'Lay' (present: to place something) vs 'laid' (past of 'lay'). Which past tense form is needed here?",
-            "explanation": "The past tense of 'lay' (to place something) is 'laid'. 'She laid the books on the table' is correct.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "applied",
+            "hint": "Think about who is likely to read this notice.",
+            "explanation": "In a formal notice from a hotel, 'applied' is the appropriate verb. 'Slapped on' is casual.",
+            "errorType": "Register Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L182_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "The number of people who accept the invitation are growing every day.",
-            "missingWord": "are growing",
+            "passage": "I'd rather you don't mention it to anyone until the announcement has been made.",
+            "missingWord": "don't",
             "options": [
-                "is growing",
-                "are growing",
-                "grow",
-                "have grown"
+                "don't",
+                "didn't",
+                "haven't",
+                "wouldn't"
             ],
-            "correctAnswer": "is growing",
-            "hint": "The subject of this sentence is 'The number' (singular). Which verb form is correct?",
-            "explanation": "'The number of' takes a singular verb: 'The number of people is growing'. Compare: 'A number of people are growing'.",
+            "correctAnswer": "didn't",
+            "hint": "The speaker is stating a preference about someone else's action. Which verb form goes with it?",
+            "explanation": "'I'd rather you' is followed by the past simple, even for present or future preferences.",
             "errorType": "Grammar Error"
         },
         {
@@ -116,107 +116,107 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She was very discrete about the personal information she shared with others.",
-            "missingWord": "discrete",
+            "passage": "The grant will be awarded to projects who demonstrate clear benefit to the local community.",
+            "missingWord": "who",
             "options": [
-                "discreet",
-                "discrete",
-                "private",
-                "careful"
+                "that",
+                "whose",
+                "who",
+                "whom"
             ],
-            "correctAnswer": "discreet",
-            "hint": "'Discreet' and 'discrete' are homophones with different meanings. Which means 'tactful and careful'?",
-            "explanation": "'Discreet' means tactful and careful: 'She was very discreet'. 'Discrete' means separate or distinct (e.g., discrete parts).",
-            "errorType": "Grammar Error"
+            "correctAnswer": "that",
+            "hint": "Consider what kind of noun 'projects' is.",
+            "explanation": "'Who' refers to people. For projects, use 'that' or 'which'.",
+            "errorType": "Pronoun Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L183_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "The two companies are planning to compliment each other's strengths and services.",
-            "missingWord": "compliment",
+            "passage": "Although the trial was small, its results were promising, they warrant a larger study.",
+            "missingWord": "promising, they",
             "options": [
-                "complement",
-                "compliment",
-                "support",
-                "enhance"
+                "promising; they",
+                "promising, they",
+                "promising they",
+                "promising. they"
             ],
-            "correctAnswer": "complement",
-            "hint": "'Complement' and 'compliment' are easily confused. Which means 'to complete or go well with something'?",
-            "explanation": "'Complement' means to complete or go well with: 'The companies complement each other's strengths'. 'Compliment' means to praise.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "promising; they",
+            "hint": "Count the complete statements in the sentence and how they are linked.",
+            "explanation": "Two independent clauses can't be joined by a comma alone. A semicolon works.",
+            "errorType": "Punctuation Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L183_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She felt very anxious before the exam, which effected her performance badly.",
-            "missingWord": "effected",
+            "passage": "He is one of those people who is always willing to help, however busy he is.",
+            "missingWord": "is always",
             "options": [
-                "affected",
-                "effected",
-                "impacted",
-                "harmed"
+                "is always",
+                "was always",
+                "are always",
+                "has always been"
             ],
-            "correctAnswer": "affected",
-            "hint": "'Effect' is usually a noun; 'affect' is usually a verb. Which is needed here?",
-            "explanation": "'Affect' is the verb meaning 'to have an impact on': 'This affected her performance badly'. 'Effect' is the noun (the effect).",
-            "errorType": "Grammar Error"
+            "correctAnswer": "are always",
+            "hint": "Look back to find who the verb belongs to.",
+            "explanation": "In 'one of those people who...', 'who' refers to 'people', which is plural, so the verb is 'are'.",
+            "errorType": "Agreement Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L184_Q1",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "Can you please insure that all the documents are signed before you submit them?",
-            "missingWord": "insure",
+            "passage": "By the end of the workshop, participants should be able to identify common errors, explain why they occur and correcting them independently.",
+            "missingWord": "correcting",
             "options": [
-                "ensure",
-                "insure",
-                "assure",
-                "make sure"
+                "correct",
+                "corrects",
+                "corrected",
+                "correcting"
             ],
-            "correctAnswer": "ensure",
-            "hint": "'Ensure', 'insure', and 'assure' have different meanings. Which means 'to make certain that something happens'?",
-            "explanation": "'Ensure' means to make certain: 'Please ensure all documents are signed'. 'Insure' relates to financial insurance.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "correct",
+            "hint": "Compare the verbs that come before this one.",
+            "explanation": "Items in a series should match. After 'be able to', all three are base verbs.",
+            "errorType": "Parallelism Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L184_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "The principle reason for his success was his dedication and hard work.",
-            "missingWord": "principle",
+            "passage": "The proposal has been welcomed by many residents, though some remain sceptic about its effect on traffic.",
+            "missingWord": "sceptic",
             "options": [
-                "principal",
-                "principle",
-                "principled",
-                "principal's"
+                "sceptical",
+                "sceptic",
+                "sceptically",
+                "scepticism"
             ],
-            "correctAnswer": "principal",
-            "hint": "'Principal' and 'principle' are homophones. Which one means 'main' or 'most important'?",
-            "explanation": "'Principal' (adjective) means main or most important: 'the principal reason'. 'Principle' is a noun meaning a rule or belief.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "sceptical",
+            "hint": "Think about the word class needed after 'remain'.",
+            "explanation": "'Remain' is followed by an adjective. 'Sceptic' is a noun, so 'sceptical' is needed.",
+            "errorType": "Word Form Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L184_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He could not bare the thought of losing his job during the economic crisis.",
-            "missingWord": "bare",
+            "passage": "If the committee will approve the funding next month, we could begin recruitment in April.",
+            "missingWord": "will approve",
             "options": [
-                "bear",
-                "bare",
-                "stand",
-                "endure"
+                "to approve",
+                "approves",
+                "approving",
+                "will approve"
             ],
-            "correctAnswer": "bear",
-            "hint": "'Bare' and 'bear' are easily confused. Which means 'to tolerate' or 'to endure'?",
-            "explanation": "'Bear' means to tolerate or endure: 'He could not bear the thought'. 'Bare' means uncovered or minimal.",
+            "correctAnswer": "approves",
+            "hint": "Consider what the writer treats as possible, not certain.",
+            "explanation": "In conditionals, the 'if' clause doesn't use 'will' even for the future.",
             "errorType": "Grammar Error"
         },
         {
@@ -224,71 +224,71 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She was complemented by her manager for her excellent work on the project.",
-            "missingWord": "complemented",
+            "passage": "The new software offers a range of features which makes it suitable for both beginners and experts.",
+            "missingWord": "makes",
             "options": [
-                "complimented",
-                "complemented",
-                "praised",
-                "recognised"
+                "makes",
+                "is making",
+                "making",
+                "make"
             ],
-            "correctAnswer": "complimented",
-            "hint": "'Complement' and 'compliment' are confusable. Which means 'to praise'?",
-            "explanation": "'Compliment' (verb) means to praise: 'She was complimented by her manager'. 'Complement' means to go well with something.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "make",
+            "hint": "Look back to find what the verb belongs to.",
+            "explanation": "'Which' refers to 'features', which is plural, so the verb is 'make'.",
+            "errorType": "Agreement Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L185_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "The data infers that sales have fallen by fifteen percent over the quarter.",
-            "missingWord": "infers",
+            "passage": "Guests are asked to refrain from smoking anywhere on the premises or risk getting chucked out.",
+            "missingWord": "getting chucked out",
             "options": [
-                "implies",
-                "infers",
-                "concludes",
-                "assumes"
+                "being kicked out",
+                "getting the boot",
+                "being asked to leave",
+                "getting chucked out"
             ],
-            "correctAnswer": "implies",
-            "hint": "Data itself can't reason or draw conclusions - only a person can. Which word describes what the evidence itself does?",
-            "explanation": "'Implies' means to suggest or indicate, which is what evidence does: 'the data implies'. Only a person can 'infer', 'conclude', or 'assume' from evidence.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "being asked to leave",
+            "hint": "Consider the tone appropriate to a printed notice.",
+            "explanation": "'Being asked to leave' is polite and formal, which suits a notice.",
+            "errorType": "Register Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L185_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He had to except a pay cut in order to keep his position at the company.",
-            "missingWord": "except",
+            "passage": "There has been a marked increase of the number of people who choose to work from home.",
+            "missingWord": "increase of",
             "options": [
-                "accept",
-                "except",
-                "take",
-                "receive"
+                "increase at",
+                "increase on",
+                "increase of",
+                "increase in"
             ],
-            "correctAnswer": "accept",
-            "hint": "'Accept' and 'except' are easily confused. Which means 'to receive or agree to something'?",
-            "explanation": "'Accept' means to receive or agree to: 'He had to accept a pay cut'. 'Except' means 'excluding' or 'apart from'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "increase in",
+            "hint": "Think about which word normally follows 'increase' before a quantity.",
+            "explanation": "We say 'an increase in' something. 'Of' isn't used this way.",
+            "errorType": "Preposition Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L186_Q1",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She laid awake all night worrying about the interview the following morning.",
-            "missingWord": "laid",
+            "passage": "If only I would have started earlier, I could have finished before the deadline.",
+            "missingWord": "would have started",
             "options": [
-                "lay",
-                "laid",
-                "lied",
-                "lain"
+                "started",
+                "would have started",
+                "had started",
+                "would start"
             ],
-            "correctAnswer": "lay",
-            "hint": "'To lie' (recline) and 'to lay' (put something down) are often confused. Which one has no object here?",
-            "explanation": "'Lie' (recline) - 'lay' (past) - 'lain' (past participle) takes no object: 'She lay awake'. 'Laid' is the past tense of 'lay', which needs an object, like 'She laid the book down'.",
+            "correctAnswer": "had started",
+            "hint": "Think about what kind of situation follows 'if only' when we regret the past.",
+            "explanation": "'If only' takes past perfect for past regrets: 'had started'.",
             "errorType": "Grammar Error"
         },
         {
@@ -296,233 +296,233 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "There was a lose screw in the mechanism that was causing the machine to rattle.",
-            "missingWord": "lose",
+            "passage": "Passengers should keep an eye on their luggage, as the airport is not responsible of items left unattended.",
+            "missingWord": "responsible of",
             "options": [
-                "loose",
-                "lose",
-                "lost",
-                "loosen"
+                "responsible to",
+                "responsible of",
+                "responsible with",
+                "responsible for"
             ],
-            "correctAnswer": "loose",
-            "hint": "'Loose' and 'lose' are frequently confused. Which means 'not tight' (an adjective)?",
-            "explanation": "'Loose' (adjective) means not tight or fixed: 'a loose screw'. 'Lose' (verb) means to misplace: 'I lose my keys'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "responsible for",
+            "hint": "Which small word usually links 'responsible' with the thing in question?",
+            "explanation": "'Responsible for' is the standard combination.",
+            "errorType": "Preposition Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L186_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "The council is comprised of twelve elected members from across the region.",
-            "missingWord": "is comprised of",
+            "passage": "The evidence suggests that noise, interruptions and lack of privacy, reduce concentration in open-plan offices.",
+            "missingWord": "privacy, reduce",
             "options": [
-                "comprises",
-                "is comprised of",
-                "is composed with",
-                "consist of"
+                "privacy, reduce",
+                "privacy: reduce",
+                "privacy reduce",
+                "privacy; reduce"
             ],
-            "correctAnswer": "comprises",
-            "hint": "'Comprise' is often misused. The whole 'comprises' its parts - is 'is comprised of' correct?",
-            "explanation": "'Comprise' means 'to consist of' or 'to include'. Use 'comprises': 'The council comprises twelve members'. Or use 'is composed of'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "privacy reduce",
+            "hint": "Look at how the subject and the verb are separated.",
+            "explanation": "A comma should not separate the subject from its verb.",
+            "errorType": "Punctuation Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L187_Q1",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She past by the office window and waved at her colleague inside.",
-            "missingWord": "past",
+            "passage": "Ravi was told that his application would be processed as soon as the missing documents would arrive.",
+            "missingWord": "would arrive",
             "options": [
-                "passed",
-                "past",
-                "went past",
-                "walked past"
+                "will arrive",
+                "arrived",
+                "would arrive",
+                "arriving"
             ],
-            "correctAnswer": "passed",
-            "hint": "'Past' and 'passed' are easily confused. Which is the verb form (past tense of 'pass')?",
-            "explanation": "'Passed' is the past tense of the verb 'pass': 'She passed by the office window'. 'Past' is a preposition or noun.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "arrived",
+            "hint": "Think about how time clauses behave after 'as soon as'.",
+            "explanation": "After 'as soon as', a time clause doesn't use 'would' or 'will'. In reported speech it shifts to past simple.",
+            "errorType": "Tense Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L187_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "The affect of the new regulations on small businesses has been significant.",
-            "missingWord": "affect",
+            "passage": "Ali's presentation was not only informative but also it was entertaining for the whole room.",
+            "missingWord": "also it was entertaining",
             "options": [
-                "effect",
-                "affect",
-                "impact",
-                "influence"
+                "it also entertaining",
+                "also it was entertaining",
+                "also entertaining",
+                "also was entertaining"
             ],
-            "correctAnswer": "effect",
-            "hint": "'Effect' and 'affect' are frequently confused. Which is usually a noun meaning 'the result'?",
-            "explanation": "'Effect' is usually a noun: 'the effect of the regulations'. 'Affect' is usually a verb: 'the regulations affect businesses'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "also entertaining",
+            "hint": "Look at what follows 'not only'.",
+            "explanation": "'Not only... but also' needs two matching elements. 'Informative' and 'entertaining' are both adjectives.",
+            "errorType": "Parallelism Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L187_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He kept his bicycle stationery in the garage during the cold winter months.",
-            "missingWord": "stationery",
+            "passage": "The court ruled that the decision was an unlawful and ordered the council to reconsider.",
+            "missingWord": "an unlawful",
             "options": [
-                "stationary",
-                "stationery",
-                "station",
-                "stationed"
+                "unlawful",
+                "a unlawful",
+                "an unlawful",
+                "the unlawful"
             ],
-            "correctAnswer": "stationary",
-            "hint": "'Stationary' (not moving) and 'stationery' (paper, pens) are homophones. Which one fits a parked bicycle?",
-            "explanation": "'Stationary' means not moving, which fits a bicycle kept in a garage. 'Stationery' refers to paper and office supplies - a completely different meaning.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "unlawful",
+            "hint": "Consider what 'unlawful' is doing in this sentence.",
+            "explanation": "Here 'unlawful' is an adjective describing the decision, so it takes no article.",
+            "errorType": "Article Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L188_Q1",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She choose to remain silent rather than argue about the misunderstanding.",
-            "missingWord": "choose",
+            "passage": "Applicants should have at least two years' experience in a hospital setting, preferable in intensive care.",
+            "missingWord": "preferable",
             "options": [
-                "chose",
-                "choose",
-                "had chosen",
-                "selected"
+                "preference",
+                "preferably",
+                "preferable",
+                "preferred"
             ],
-            "correctAnswer": "chose",
-            "hint": "Is 'choose' (present) or 'chose' (past) needed here?",
-            "explanation": "'Chose' is the simple past of 'choose': 'She chose to remain silent'. 'Choose' is the present tense form.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "preferably",
+            "hint": "Consider what this word describes.",
+            "explanation": "'Preferably' modifies the whole phrase, so an adverb is required.",
+            "errorType": "Word Form Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L188_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He was sitting besides the window when the phone call came through.",
-            "missingWord": "besides",
+            "passage": "The office will be closed on 26 December, that being public holiday in most of the country.",
+            "missingWord": "that being public holiday",
             "options": [
-                "beside",
-                "besides",
-                "next to",
-                "by"
+                "that being the public holiday",
+                "that being a public holiday",
+                "that being public holiday",
+                "that been a public holiday"
             ],
-            "correctAnswer": "beside",
-            "hint": "'Beside' and 'besides' have different meanings. Which means 'next to'?",
-            "explanation": "'Beside' means next to: 'sitting beside the window'. 'Besides' means in addition to or anyway: 'Besides, it was raining'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "that being a public holiday",
+            "hint": "Read the phrase out loud. What is missing?",
+            "explanation": "'Public holiday' is a countable noun and needs 'a' here.",
+            "errorType": "Article Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L188_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "The police are investigating who's car was left outside the building overnight.",
-            "missingWord": "who's",
+            "passage": "The candidate's calm under pressure was what impressed most the interview panel.",
+            "missingWord": "impressed most the interview panel",
             "options": [
-                "whose",
-                "who's",
-                "which",
-                "their"
+                "impressed the interview panel most",
+                "most impressed the interview panel",
+                "impressed most the interview panel",
+                "impressed most to the interview panel"
             ],
-            "correctAnswer": "whose",
-            "hint": "'Whose' and 'who's' are commonly confused. Which one shows possession?",
-            "explanation": "'Whose' is the possessive form: 'whose car'. 'Who's' is a contraction of 'who is'. Use 'whose car' here.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "impressed the interview panel most",
+            "hint": "Think about which words normally stay together.",
+            "explanation": "A verb and its object stay together, so 'most' goes after the object.",
+            "errorType": "Sentence Structure Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L189_Q1",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She was formerly introduced to the board at the company's annual general meeting.",
-            "missingWord": "formerly",
+            "passage": "I am writing to complain about my visit to your Kochi branch, when I have waited over an hour without being served.",
+            "missingWord": "have waited",
             "options": [
-                "formally",
-                "formerly",
-                "formal",
-                "former"
+                "wait",
+                "am waiting",
+                "have waited",
+                "waited"
             ],
-            "correctAnswer": "formally",
-            "hint": "Is 'formerly' or 'formally' the right word? Think about what each one means.",
-            "explanation": "'Formally' means in a formal or official manner: 'She was formally introduced'. 'Formerly' means previously or in the past.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "waited",
+            "hint": "Think about the time frame of the visit.",
+            "explanation": "The visit is finished and dated, so past simple is required.",
+            "errorType": "Tense Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L189_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He poured over the financial documents for hours looking for the discrepancy.",
-            "missingWord": "poured",
+            "passage": "The two options are equally as expensive, so cost is not a deciding factor in this case.",
+            "missingWord": "equally as",
             "options": [
-                "pored",
-                "poured",
-                "looked",
-                "went"
+                "equal as",
+                "as equally",
+                "equally as",
+                "equally"
             ],
-            "correctAnswer": "pored",
-            "hint": "'Pore over' and 'pour over' are confused. Which is the correct phrase for studying carefully?",
-            "explanation": "'Pore over' means to study carefully: 'He pored over the documents'. 'Pour over' means to pour liquid on top of something.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "equally",
+            "hint": "Are both words needed to make the comparison?",
+            "explanation": "'Equally' already expresses the comparison. 'As' is redundant.",
+            "errorType": "Clarity Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L189_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "The defendant was found not guilty and was convicted of all the charges.",
-            "missingWord": "convicted",
+            "passage": "Passengers who miss their connection should report to the transfer desk, where staff will rebook them in the next available flight.",
+            "missingWord": "in the next",
             "options": [
-                "acquitted",
-                "charged",
-                "convicted",
-                "prosecuted"
+                "in the next",
+                "at the next",
+                "on the next",
+                "by the next"
             ],
-            "correctAnswer": "acquitted",
-            "hint": "Can someone be found 'not guilty' and also convicted? Which word actually matches a not-guilty verdict?",
-            "explanation": "'Acquitted' means cleared of a charge, matching 'not guilty'. 'Convicted' means found guilty - the opposite, and it contradicts the rest of the sentence.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "on the next",
+            "hint": "Think about which small word goes with flights.",
+            "explanation": "We travel 'on' a flight, so it's 'on the next available flight'.",
+            "errorType": "Preposition Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L190_Q1",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "The project was a great compliment to their previous work in the region.",
-            "missingWord": "compliment",
+            "passage": "The results of the audit have been shared with the board, but they have not yet been made publicly.",
+            "missingWord": "publicly",
             "options": [
-                "complement",
-                "compliment",
-                "addition",
-                "improvement"
+                "public",
+                "publicly",
+                "publicise",
+                "publicity"
             ],
-            "correctAnswer": "complement",
-            "hint": "'Complement' and 'compliment' are easily confused. Which means 'something that completes or enhances something'?",
-            "explanation": "'Complement' means something that completes or enhances: 'a great complement to their previous work'. 'Compliment' = praise.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "public",
+            "hint": "Look at what follows 'made'.",
+            "explanation": "'Made' here takes an adjective as a complement: 'made public'.",
+            "errorType": "Word Form Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L190_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She emigrated to Canada when she was twenty-five and built a new life there.",
-            "missingWord": "emigrated",
+            "passage": "Scarcely had the presentation begun than the projector stopped working and the room fell silent.",
+            "missingWord": "than",
             "options": [
-                "immigrated",
-                "emigrated",
-                "emigrating",
-                "immigration"
+                "that",
+                "than",
+                "then",
+                "when"
             ],
-            "correctAnswer": "immigrated",
-            "hint": "'Immigrate' and 'emigrate' depend on direction. She moved 'to' Canada - which word matches 'to'?",
-            "explanation": "'Immigrate' pairs with 'to' (arriving in a new country): 'immigrated to Canada'. 'Emigrate' pairs with 'from' (leaving your home country).",
+            "correctAnswer": "when",
+            "hint": "Consider which word normally pairs with 'scarcely'.",
+            "explanation": "'Scarcely... when' is the fixed pair. 'Than' pairs with 'no sooner'.",
             "errorType": "Grammar Error"
         },
         {
@@ -530,18 +530,18 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He was enormously flattered when the CEO personally sited his work in the report.",
-            "missingWord": "sited",
+            "passage": "Please order more stationary for the office; we've run out of envelopes and printer paper.",
+            "missingWord": "stationary",
             "options": [
-                "cited",
-                "sited",
-                "sighted",
-                "citing"
+                "stationery",
+                "stationary",
+                "stationer",
+                "stationed"
             ],
-            "correctAnswer": "cited",
-            "hint": "'Cited', 'sited', and 'sighted' are homophones with very different meanings. Which means 'to reference or quote'?",
-            "explanation": "'Cited' means to reference or mention: 'the CEO cited his work'. 'Sited' means placed at a location, which doesn't fit referencing someone's work.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "stationery",
+            "hint": "Think about what the writer is asking to order.",
+            "explanation": "'Stationery' means paper and writing supplies. 'Stationary' means not moving.",
+            "errorType": "Word Choice Error"
         }
     ]
 }

@@ -1,607 +1,586 @@
 {
-    "gameType": "opinionWriting",
-    "batchIndex": 18,
-    "levels": "171-180",
-    "quests": [
-        {
-            "id": "WRT_OPINIONWRITING_L171_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The international community has a duty to intervene in states committing serious humanitarian abuses.",
-            "options": [
-                "Humanitarian intervention has consistently been selectively applied based on strategic interest rather than genuine need.",
-                "The Responsibility to Protect (R2P) doctrine establishes that sovereignty is not a shield for mass atrocity.",
-                "Allowing genocides and mass crimes against humanity to continue unchallenged violates basic human rights.",
-                "Military intervention frequently causes civilian deaths and instability that exceed the harms it aims to prevent."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about the humanitarian duty and R2P case for intervention (Pros) and the selective application and harm escalation concerns (Cons).",
-            "explanation": "R2P doctrine establishes that sovereignty does not protect mass atrocity, and non-intervention allows continuing genocide (Pros), but intervention is selectively applied based on strategic interest and frequently causes greater civilian casualties and instability (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L171_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Non-military humanitarian intervention is more effective than military action in failing states.",
-            "options": [
-                "Targeted sanctions, ICC prosecution, and diplomatic pressure can change state behaviour without military harm.",
-                "Non-military options are too slow and uncertain to prevent ongoing mass atrocities requiring immediate action.",
-                "Economic and diplomatic tools build sustained international pressure without the destabilising effects of invasion.",
-                "Authoritarian states that commit atrocities often resist non-military pressure successfully for many years."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Consider non-military intervention as superior to military action (Pros) and the speed and resistance concerns (Cons).",
-            "explanation": "Sanctions, ICC prosecution, and diplomacy can change behaviour without military casualties and destabilisation (Pros), but non-military options are too slow for ongoing mass atrocities and authoritarian states often resist economic pressure effectively for years (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L171_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "State sovereignty remains the essential foundation of international order despite its costs.",
-            "options": [
-                "The principle of non-interference in sovereign states prevents great powers from imposing their values globally.",
-                "Absolute sovereignty prevents any international response to the worst state-perpetrated crimes against humanity.",
-                "A rules-based international order requires some constraints on sovereignty to protect basic human rights.",
-                "Undermining sovereignty for some states sets precedents that powerful nations exploit for strategic intervention."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about sovereignty as the foundation of international order (Pros) and the mass atrocity and human rights constraint concerns (Cons).",
-            "explanation": "Non-interference prevents great power value imposition and sovereign precedents are exploited for strategic ends (Pros), but absolute sovereignty precludes any response to state-perpetrated atrocity, and a rules-based order requires some sovereignty constraints to protect fundamental rights (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L172_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Wealthy nations have a moral and historical obligation to compensate former colonies.",
-            "options": [
-                "Colonial extraction of wealth, natural resources, and labour created the economic disparities that persist today.",
-                "Determining fair compensation amounts and identifying appropriate recipients is practically extremely difficult.",
-                "Reparations represent acknowledgement of historical wrongs and a commitment to address their lasting consequences.",
-                "Modern citizens cannot be held collectively responsible for historical wrongs committed before their birth."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about the historical injustice and reparative justice case for colonial reparations (Pros) and the practicality and collective responsibility concerns (Cons).",
-            "explanation": "Colonial extraction created today's economic disparities and reparations acknowledge historical wrongs (Pros), but calculating fair amounts and identifying recipients is practically very difficult, and collective responsibility of modern citizens for historical wrongs is philosophically contested (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L172_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Colonial reparations would address current inequality more effectively than existing aid programmes.",
-            "options": [
-                "Aid has the same redistributive potential as reparations if delivered on genuinely fair and unconditional terms.",
-                "Reparation transfers may not reach the populations most directly harmed by specific colonial legacies.",
-                "Direct reparation transfers would be larger and more unconditional than the aid that has failed to close the gap.",
-                "Reparations would shift power in the development relationship from donor to recipient nations."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Consider reparations as more effective than aid for addressing colonial inequality (Pros) and the aid reform and targeting concerns (Cons).",
-            "explanation": "Reparations would be larger, more unconditional, and shift power from donor to recipient unlike current aid (Pros), but reformed aid delivered on fair terms has the same redistributive potential, and reparation transfers may miss populations most directly harmed by specific colonial legacies (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L172_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Structural reforms to global trade and financial systems matter more than reparation transfers.",
-            "options": [
-                "Structural reform and reparations address different dimensions of injustice and are not mutually exclusive.",
-                "Reforming global trade and finance systems faces even more powerful resistance than reparation demands.",
-                "Unequal trade rules, tax havens, and intellectual property regimes extract more from developing nations than reparations could replace.",
-                "System reform addresses ongoing extraction rather than compensating for historical injustice alone."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about structural economic reform versus reparations as the more important priority (Pros for reform) and the complementarity and feasibility concerns (Cons).",
-            "explanation": "Unequal global rules extract more than reparations could compensate and reform addresses ongoing rather than historical injustice (Pros), but reform and reparations address different dimensions and are complementary, while structural reform faces even more powerful resistance than reparation demands (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L173_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "International courts should have binding authority that overrides national governments.",
-            "options": [
-                "International law without enforcement is merely aspirational and cannot prevent atrocities or aggression.",
-                "Binding international judicial authority creates a genuine rule of law above national political interests.",
-                "Binding international jurisdiction over sovereign governments violates the democratic consent of national populations.",
-                "Permanent members of the UN Security Council would never accept binding international judicial authority over themselves."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about the enforcement and rule of law case for binding international judicial authority (Pros) and the democratic consent and great power concerns (Cons).",
-            "explanation": "International law without enforcement is aspirational only and binding judicial authority creates genuine rule of law above politics (Pros), but binding authority over democracies violates national consent, and great powers will never accept international courts overriding their sovereignty (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L173_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The International Criminal Court represents important progress in global accountability despite its limitations.",
-            "options": [
-                "The ICC has established the principle that political leaders who commit atrocities can face personal accountability.",
-                "ICC prosecution of leaders in Uganda, Sudan, and elsewhere has deterred potential perpetrators.",
-                "The ICC primarily prosecutes leaders of weaker nations while Western powers shield their own leaders from prosecution.",
-                "ICC jurisdiction depends entirely on state cooperation, which perpetrators and their allies consistently refuse."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Consider the ICC as meaningful progress in international accountability (Pros) and the selectivity and cooperation concerns (Cons).",
-            "explanation": "The ICC established personal accountability for atrocities and ICC prosecution has created some deterrence (Pros), but it primarily prosecutes weaker nation leaders while Western powers shield their own, and jurisdiction depends on the cooperation that perpetrators routinely refuse (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L173_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Regional international courts are more politically feasible than a global judicial authority.",
-            "options": [
-                "Regional courts with limited jurisdiction have demonstrated greater compliance and legitimacy than global bodies.",
-                "The European Court of Human Rights shows that states can accept binding supranational judicial authority regionally.",
-                "Regional courts create a fragmented international justice system with unequal protection across regions.",
-                "Some of the world's most serious human rights abusers are in regions without functioning international courts."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about regional courts as more feasible than global authority (Pros) and the fragmentation and coverage concerns (Cons).",
-            "explanation": "Regional courts have demonstrated greater compliance, and the ECHR shows states accept regional binding authority (Pros), but regional courts create unequal protection globally, and the worst human rights abusers often exist in regions without effective international courts (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L174_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "All nuclear weapons should be comprehensively banned and permanently destroyed by global treaty.",
-            "options": [
-                "Nuclear weapons represent an existential risk to humanity that no legitimate military objective can justify.",
-                "The Nuclear Non-Proliferation Treaty framework has failed and requires replacement with binding disarmament.",
-                "No nuclear state has shown willingness to disarm unilaterally or accept binding disarmament obligations.",
-                "Nuclear deterrence has prevented direct conflict between great powers for eighty years through MAD stability."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about the existential risk and non-proliferation failure case for nuclear disarmament (Pros) and the political willingness and deterrence concerns (Cons).",
-            "explanation": "Nuclear weapons pose existential civilisational risk that no military objective justifies, and NPT has failed (Pros), but no nuclear state will accept binding disarmament, and nuclear deterrence has prevented great power direct conflict through mutual assured destruction stability (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L174_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Nuclear deterrence maintains a fragile stability that disarmament would dangerously undermine.",
-            "options": [
-                "Nuclear deterrence has prevented direct conflict between nuclear-armed states throughout the Cold War and since.",
-                "Nuclear deterrence requires constant modernisation, creating proliferation risks and enormous economic costs.",
-                "Deterrence stability depends on rational actors and is fatally vulnerable to miscalculation and accident.",
-                "Selective disarmament risks destabilising strategic balances by emboldening non-disarming nuclear states."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Consider nuclear deterrence as essential stability (Pros) and the modernisation, accident, and rationality concerns (Cons).",
-            "explanation": "Nuclear deterrence has demonstrably prevented great power direct conflict (Pros), but it requires expensive modernisation that creates proliferation risks, and deterrence is fatally vulnerable to accident, miscalculation, and non-rational actors (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L174_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Step-by-step arms control is more achievable than comprehensive nuclear disarmament.",
-            "options": [
-                "Verifiable arms reduction agreements build the trust and precedent needed for eventual deeper disarmament.",
-                "Incremental arms control may become the ceiling rather than a step towards genuine disarmament.",
-                "Arms control treaties have repeatedly stalled or collapsed, suggesting they cannot deliver the progress claimed.",
-                "New START and similar agreements demonstrate that nuclear states can accept binding reduction obligations."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about incremental arms control as the path to disarmament (Pros) and the ceiling and historical collapse concerns (Cons).",
-            "explanation": "Verifiable reductions build trust for deeper disarmament and New START shows nuclear states accept reduction obligations (Pros), but incremental control risks becoming the permanent ceiling rather than a step towards disarmament, and arms treaties repeatedly collapse without delivering genuine progress (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L175_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "A formal world government would bring greater global stability than the current state system.",
-            "options": [
-                "A world government would concentrate unprecedented power without the democratic accountability needed to prevent tyranny.",
-                "A world government could address collective action problems like climate change and pandemic response effectively.",
-                "Cultural and political diversity among nations makes single global governance irreconcilably illegitimate for most populations.",
-                "Eliminating competitive nationalism would remove the driver of many wars and geopolitical conflicts."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about the collective action and peace case for world government (Pros) and the tyranny and legitimacy concerns (Cons).",
-            "explanation": "World government could solve collective action problems and eliminate nationalist drivers of conflict (Pros), but unprecedented power concentration without democratic accountability risks global tyranny, and diverse nations would never accept single global governance as legitimate (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L175_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Global federalism with strong national autonomy would be more stable than either world government or anarchy.",
-            "options": [
-                "The EU itself demonstrates the severe strain that federal integration places on national democratic consent.",
-                "A federal world system could coordinate global challenges while preserving meaningful national self-determination.",
-                "Successful federal systems like the EU demonstrate that pooled sovereignty with national autonomy can function.",
-                "Global federalism would require a degree of international trust that currently does not exist between major powers."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Consider global federalism as a middle ground between world government and the current state system (Pros) and the democratic strain and trust concerns (Cons).",
-            "explanation": "Federal models coordinate global challenges while preserving national self-determination, and EU experience shows it can work (Pros), but EU federalism demonstrates severe democratic strain, and global federalism requires levels of international trust that currently do not exist (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L175_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Strengthening existing international institutions is more achievable than creating world government.",
-            "options": [
-                "Reformed multilateral institutions including a more representative Security Council could manage global challenges better.",
-                "Existing international institutions have consistently failed to prevent major global threats and crises.",
-                "Incremental institutional strengthening builds on existing infrastructure rather than requiring revolutionary change.",
-                "Powers that benefit from current institutional asymmetries will block meaningful reform just as they have before."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about institutional reform as an alternative to world government (Pros) and the track record and reform blocking concerns (Cons).",
-            "explanation": "Reformed multilateralism builds on existing infrastructure more practically than revolutionary world government (Pros), but existing institutions have a poor track record on major global threats, and powers benefiting from current asymmetries consistently block meaningful reform (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L176_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The traditional nation state is becoming increasingly irrelevant in the modern world.",
-            "options": [
-                "Nation states retain primary responsibility for welfare, security, and democratic representation of their populations.",
-                "Transnational challenges from climate change to pandemics cannot be managed within national boundaries.",
-                "Nationalist movements worldwide demonstrate that state identity remains powerful rather than declining.",
-                "Economic globalisation has transferred significant power from states to corporations and international capital."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about the transnational challenge and economic power case for declining state relevance (Pros) and the welfare responsibility and nationalism concerns (Cons).",
-            "explanation": "Climate change, pandemics, and economic globalisation exceed national governance capacity (Pros), but states retain primary welfare and security responsibility, and resurgent nationalism demonstrates state identity remains powerfully relevant (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L176_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Nation states remain the primary vehicle for democratic accountability and citizen representation.",
-            "options": [
-                "Democratic institutions, constitutional rights, and welfare states are delivered primarily through national frameworks.",
-                "National democratic accountability is increasingly undermined by global economic forces that states cannot control.",
-                "Supranational bodies like the EU demonstrate that democratic accountability can function beyond the national level.",
-                "Citizens relate most meaningfully to political communities at the national rather than global level."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Consider nation states as the primary vehicle for democracy and citizenship (Pros) and the global economic constraint and supranational democracy concerns (Cons).",
-            "explanation": "Welfare states, constitutional rights, and democratic institutions are delivered nationally and citizens relate most to national communities (Pros), but global economic forces undermine national democratic capacity, and supranational institutions demonstrate democracy can function beyond the state (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L176_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "City-regions rather than nation states are becoming the most effective unit of governance.",
-            "options": [
-                "City-regions represent only a fraction of populations and cannot provide governance for rural and dispersed communities.",
-                "Major city-regions produce a disproportionate share of GDP and innovation and function with greater agility than nation states.",
-                "City-state governance models historically have tended to prioritise urban commercial interests over broader populations.",
-                "Successful city governance models demonstrate that dense urban areas can manage complex challenges effectively."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about city-regions as the most effective modern governance unit (Pros) and the rural representation and historical pattern concerns (Cons).",
-            "explanation": "City-regions drive disproportionate economic output and innovation and govern with greater agility than nation states (Pros), but cities represent only urban populations and historical city-state models prioritised commercial interests over broader welfare (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L177_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Refugees have the right to permanent resettlement in safe countries that have the capacity to receive them.",
-            "options": [
-                "Host country populations have legitimate concerns about pace of cultural change and public resource pressure.",
-                "The 1951 Refugee Convention and subsequent international law establish fundamental rights to protection.",
-                "Permanent resettlement enables refugees to build stable lives and contribute to host society economies and cultures.",
-                "Indefinitely temporary status with no pathway to permanence violates the dignity and humanity of refugees."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about the legal and human rights case for permanent refugee resettlement (Pros) and the host community and permanence concerns (Cons).",
-            "explanation": "International law establishes protection rights and permanence enables stable contribution to host economies and cultures (Pros), but host communities have legitimate concerns about cultural change and resource pressure, and indefinite temporary status is humiliating and damaging (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L177_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Addressing root causes of displacement is more important than expanding resettlement capacity.",
-            "options": [
-                "Root cause interventions take decades and cannot address the needs of currently displaced people.",
-                "Root cause and resettlement responses address different dimensions of displacement and are complementary.",
-                "Conflict resolution, climate adaptation, and economic development reduce the drivers of forced displacement.",
-                "Permanent resettlement addresses the symptoms while root cause work addresses the structural drivers."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Consider root cause reduction versus resettlement expansion (Pros for root causes) and the timeline and complementarity concerns (Cons).",
-            "explanation": "Conflict resolution, climate adaptation, and development reduce structural displacement drivers (Pros), but root cause work takes decades and cannot help the millions currently displaced, and both root cause and resettlement responses are complementary rather than competing (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L177_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Burden-sharing agreements between nations are essential for fair refugee resettlement.",
-            "options": [
-                "Current resettlement is unequally distributed, with neighbouring low-income countries hosting most of the world's refugees.",
-                "Mandatory national refugee quotas violate national sovereignty over migration and admission decisions.",
-                "Mandatory burden-sharing quotas would distribute both costs and human responsibilities more equitably.",
-                "Refugees themselves have preferences about destination that mandatory quotas may override and ignore."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about mandatory burden-sharing for refugee resettlement (Pros) and the sovereignty and refugee preference concerns (Cons).",
-            "explanation": "Unequal distribution burdens low-income neighbouring countries and mandatory quotas distribute responsibilities equitably (Pros), but mandatory national quotas violate sovereignty over admission decisions, and refugees' own destination preferences deserve respect and may conflict with assigned quotas (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L178_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Developed nations must accept legal obligations to support climate change refugees.",
-            "options": [
-                "Wealthy nations' historical emissions are the primary cause of the displacement that climate refugees face.",
-                "Accepting climate refugees is a legally and morally proportionate response to the climate harm caused.",
-                "Climate refugee status has no current legal definition under international law.",
-                "Developed nations face domestic political resistance to increased migration that constrains legal obligations."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about the historical emissions responsibility and proportionate response case (Pros) and the legal gap and political resistance concerns (Cons).",
-            "explanation": "Developed nations' historical emissions cause displacement that justifies legal obligations to climate refugees (Pros), but no legal definition of climate refugee exists in international law, and domestic political resistance severely constrains the obligations governments can accept (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L178_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Creating a new international legal framework for climate displacement is urgently needed.",
-            "options": [
-                "Negotiating a new global legal framework for climate displacement could take decades given geopolitical divisions.",
-                "Climate displacement does not fit neatly into existing refugee definitions and creates protection gaps.",
-                "Climate-displaced people need immediate support that cannot wait for years of treaty negotiation.",
-                "A dedicated legal framework would provide clear status, rights, and obligations for climate-displaced people."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Consider a new legal framework for climate displacement (Pros) and the negotiation timeline and urgency concerns (Cons).",
-            "explanation": "Existing law creates protection gaps for climate displaced people and a dedicated framework would provide clear rights (Pros), but treaty negotiation takes decades, and displaced people need immediate support that cannot wait for a new framework to be agreed (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L178_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "In-situ climate adaptation support reduces displacement more effectively than resettlement capacity.",
-            "options": [
-                "Some climate impacts like sea level rise on small island states cannot be adapted to and require resettlement.",
-                "Adaptation and resettlement capacity are both necessary and serve different climate displacement scenarios.",
-                "Funding adaptation in vulnerable regions enables communities to remain in place rather than being forced to migrate.",
-                "Adequate adaptation finance is the most cost-effective way to address climate displacement at its source."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about in-situ adaptation as the primary climate displacement response (Pros) and the inescapable displacement scenarios and complementarity concerns (Cons).",
-            "explanation": "In-situ adaptation enables communities to stay and is the most cost-effective approach to climate displacement (Pros), but sea level rise and extreme events will displace some communities regardless of adaptation, and adaptation and resettlement capacity are complementary rather than competing responses (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L179_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Economic sanctions are an effective and ethical foreign policy instrument.",
-            "options": [
-                "Targeted sanctions against regimes can change behaviour at significantly lower human cost than military action.",
-                "Sanctions most heavily affect civilian populations rather than the elite decision-makers they target.",
-                "Sanctions generate international normative pressure that signals collective disapproval of unacceptable behaviour.",
-                "Authoritarian regimes use sanctions as justification for domestic repression and blame for economic suffering."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about the effectiveness and ethics case for economic sanctions (Pros) and the civilian harm and regime exploitation concerns (Cons).",
-            "explanation": "Targeted sanctions change behaviour at lower cost than military action and signal collective international condemnation (Pros), but sanctions primarily harm civilian populations rather than targeted elites, and authoritarian regimes exploit sanctions to justify repression and blame external enemies (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L179_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Targeted individual sanctions are more ethical and effective than broad economic sanctions.",
-            "options": [
-                "Targeted individuals often evade asset freezes through family members and networks in non-sanctioning jurisdictions.",
-                "Asset freezes and travel bans on specific regime members cause pain precisely where decision-making power lies.",
-                "Targeted measures avoid the humanitarian collateral damage of broad economic blockades affecting whole populations.",
-                "Individual targeted sanctions lack the economic scale to create sufficient pressure to change state behaviour."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Consider targeted individual sanctions as superior to broad sanctions (Pros) and the evasion and scale concerns (Cons).",
-            "explanation": "Targeted asset freezes and travel bans hit decision-makers rather than civilians and avoid humanitarian collateral damage (Pros), but sanctioned individuals evade measures through family networks, and individual targeting lacks the economic scale to pressure state-level behaviour change (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L179_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Diplomatic engagement is more effective than sanctions in changing state behaviour.",
-            "options": [
-                "Diplomatic engagement keeps open the communication channels essential for de-escalation and negotiation.",
-                "Diplomatic engagement without economic pressure gives authoritarian regimes international legitimacy without demanding change.",
-                "Isolation through sanctions removes the economic interdependence that incentivises regime moderation.",
-                "Some regimes are unresponsive to diplomatic incentives and require economic coercion to change behaviour."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about diplomatic engagement as superior to sanctions for changing state behaviour (Pros) and the legitimacy and coercive necessity concerns (Cons).",
-            "explanation": "Engagement preserves communication channels and economic interdependence incentivises moderation (Pros), but engagement without pressure grants legitimacy without demanding change, and some regimes are unresponsive to diplomatic incentives and require economic coercion (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L180_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Media ownership should be strictly regulated to prevent dangerous concentrations of power.",
-            "options": [
-                "Media ownership regulation risks government interference in press freedom and editorial independence.",
-                "Digital media has created such diverse information sources that traditional ownership concentration concerns are outdated.",
-                "Concentrated media ownership allows few owners to exert disproportionate influence over democratic public discourse.",
-                "Diversity of media ownership is essential to ensure citizens have access to genuinely independent viewpoints."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about the democratic discourse and viewpoint diversity case for media regulation (Pros) and the press freedom and digital diversity concerns (Cons).",
-            "explanation": "Concentrated media ownership distorts democratic discourse and ownership diversity ensures independent viewpoints (Pros), but regulation risks government press interference, and digital media has vastly diversified information sources beyond traditional ownership models (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L180_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Social media algorithms present a greater democratic threat than traditional media ownership.",
-            "options": [
-                "Algorithmic curation creates filter bubbles that are more pervasive and harder to regulate than ownership bias.",
-                "Traditional media ownership still exerts enormous influence over the agenda that social media subsequently amplifies.",
-                "Platform recommendation systems amplify extreme and divisive content at scale regardless of who owns them.",
-                "Algorithmically driven media is itself shaped by market and political forces that traditional regulation can address."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Consider whether algorithmic curation poses a greater democratic threat than media ownership (Pros) and the agenda-setting and regulatory capacity concerns (Cons).",
-            "explanation": "Algorithmic filter bubbles are more pervasive than ownership bias and recommendation systems amplify extremism regardless of ownership (Pros), but traditional media still sets the agenda that social media amplifies, and algorithmic media is itself shaped by forces that existing regulation can address (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L180_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Public service media funded independently of commercial and state interests is essential for democracy.",
-            "options": [
-                "Public service media organisations have consistently faced political pressure that compromises their independence.",
-                "Public funding models risk creating a false impression of neutrality that masks institutional bias.",
-                "Genuinely independent public media provides democratic anchoring amid fragmented commercial information.",
-                "Public service media with guaranteed funding can resist both commercial and political editorial pressure."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about independent public service media as essential for democracy (Pros) and the political pressure and neutrality illusion concerns (Cons).",
-            "explanation": "Independent public media provides democratic anchoring amid fragmented commercial information and can resist commercial and political pressure through guaranteed funding (Pros), but public broadcasters consistently face political pressure that compromises independence, and public funding models can create false impressions of neutrality that mask institutional bias (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        }
-    ]
+  "gameType": "opinionWriting",
+  "batchIndex": 18,
+  "levels": "171-180",
+  "quests": [
+    {
+      "id": "WRT_OPINIONWRITING_L171_Q1",
+      "instruction": "Choose the revision with the most logical transitions.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'Digital receipts are convenient. Paper receipts fade and get lost. Digital receipts also cut paper waste. Some shoppers still want paper. Shops should offer both.'",
+      "options": [
+        "Digital receipts are convenient. Also, paper ones fade. Also, they cut waste. Also, some want paper. Also, shops should offer both.",
+        "Digital receipts are convenient. Therefore, paper ones fade and get lost. Moreover, they also cut paper waste. Nevertheless, some shoppers still want paper. Meanwhile, shops should offer both.",
+        "Digital receipts are convenient because paper ones fade and get lost. They also cut paper waste. However, some shoppers still want paper, so shops should offer both.",
+        "Digital receipts are convenient, but paper ones fade and get lost, but they also cut paper waste, and some shoppers want paper, so shops should offer both."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Each connector should show the real relationship between the ideas.",
+      "explanation": "This version uses 'because', 'also', 'however' and 'so' where they fit. The remaining options misuse connectors or repeat one word or chain clauses.",
+      "structureGuide": "Revision → Transitions"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L171_Q2",
+      "instruction": "Choose the best replacement for 'However'.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'The community fridge reduces food waste. However, it gives neighbours a way to share food.'",
+      "options": [
+        "The community fridge reduces food waste. Consequently, it gives neighbours a way to share food.",
+        "The community fridge reduces food waste. In contrast, it gives neighbours a way to share food.",
+        "The community fridge reduces food waste. Nevertheless, it gives neighbours a way to share food.",
+        "The community fridge reduces food waste. It also gives neighbours a way to share food."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Does the second sentence contrast, follow or add?",
+      "explanation": "The second sentence adds a second benefit, so 'also' is correct. 'However', 'in contrast' and 'consequently' suggest the wrong relationship.",
+      "structureGuide": "Revision → Transitions"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L171_Q3",
+      "instruction": "Choose the sentence with the most logical connector.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'Staff language classes are expensive. They improve customer service.'",
+      "options": [
+        "Staff language classes are expensive, so they improve customer service.",
+        "Staff language classes are expensive, but they improve customer service.",
+        "Staff language classes are expensive, for example, they improve customer service.",
+        "Staff language classes are expensive, therefore they improve customer service."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "The second idea pushes against the first.",
+      "explanation": "'But' shows contrast between a cost and a benefit. The alternatives suggest cause or example, which doesn't fit.",
+      "structureGuide": "Revision → Transitions"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L172_Q1",
+      "instruction": "Put the sentences in the best order.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Repair the order of this paragraph about school assemblies.",
+      "options": [
+        "At present they last forty minutes, which is nearly a full lesson.",
+        "Students lose learning time, and the youngest children struggle to sit still.",
+        "Twenty minutes would keep the message while protecting lesson time.",
+        "Weekly assemblies should be shorter."
+      ],
+      "correctOrder": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "hint": "Start with the claim, then the problem, then its effect, then the fix.",
+      "explanation": "The claim opens, the length is the evidence, the effect explains why it matters and the last sentence offers a solution.",
+      "structureGuide": "Claim → Evidence → Explanation → Recommendation"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L172_Q2",
+      "instruction": "Put the sentences in the best order.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Repair the order of this paragraph about benches.",
+      "options": [
+        "More benches would keep the street open to everyone.",
+        "Older shoppers often need to rest between shops.",
+        "One resident told the council she avoids the street because there is nowhere to sit.",
+        "Public benches should be added along the high street."
+      ],
+      "correctOrder": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "hint": "The example should follow the general reason it illustrates.",
+      "explanation": "The claim leads, the reason explains the need, the example supports the reason and the closing states the benefit.",
+      "structureGuide": "Claim → Reason → Example → Closing"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L172_Q3",
+      "instruction": "Put the sentences in the best order.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Repair the order of this paragraph about holiday homework.",
+      "options": [
+        "Families travel and rest during holidays, so fixed tasks cause stress.",
+        "Some teachers worry that students will forget material.",
+        "Holiday homework should be optional.",
+        "Optional reading lists and short review tasks can keep learning going without pressure."
+      ],
+      "correctOrder": [
+        2,
+        0,
+        1,
+        3
+      ],
+      "hint": "The reply to the worry should come after the worry.",
+      "explanation": "The claim opens, the reason follows, the objection comes next and the reply answers it.",
+      "structureGuide": "Claim → Reason → Objection → Reply"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L173_Q1",
+      "instruction": "Choose the sentence that completes the reasoning.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Late fees should be removed. Some families avoid the library because they owe fees. ____ Removing fees would bring them back.'",
+      "options": [
+        "Late fees are used by many kinds of libraries around the world.",
+        "Children in those families then lose access to books and study space.",
+        "Fees are usually charged for each day a book is overdue.",
+        "Some books are returned on time by their borrowers."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Fill the gap between 'avoid the library' and 'bring them back'.",
+      "explanation": "The best sentence explains the harm caused by avoiding the library. The others give facts unrelated to the harm.",
+      "structureGuide": "Reasoning → Missing Step"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L173_Q2",
+      "instruction": "Choose the best missing step.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Team-building days should be optional. Some staff have caring duties. ____'",
+      "options": [
+        "A fixed day can force them to choose between work and family responsibilities.",
+        "Companies usually plan such days several months in advance.",
+        "Activities on those days can include games and shared lunches.",
+        "Team-building days are held in many companies during the year."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Explain why caring duties matter to the claim.",
+      "explanation": "The best sentence links caring duties to the problem of compulsory days. The alternatives describe team-building days.",
+      "structureGuide": "Reasoning → Missing Step"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L173_Q3",
+      "instruction": "Choose the missing step.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Gyms should turn the music down. Loud music makes it hard to hear staff. ____ So members might get injured.'",
+      "options": [
+        "Injuries are painful and can take weeks to heal, and they may keep people away from the gym for months.",
+        "Gyms play many different types of music through their speakers, from pop to rock to dance tracks.",
+        "Some members prefer to work out to loud music, and many say it helps them to keep going.",
+        "Without clear instructions from staff, members may use equipment incorrectly."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "What connects 'can't hear staff' to 'injuries'?",
+      "explanation": "The correct sentence explains the link. The alternatives describe music, preferences or injuries without connecting them.",
+      "structureGuide": "Reasoning → Missing Step"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L174_Q1",
+      "instruction": "Choose the strongest revision of the conclusion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'That's why I think public benches are good, I guess.'",
+      "options": [
+        "Public benches are good, and I hope you agree with me, because they help many people in the town.",
+        "More public benches would let older and tired shoppers stay active in the town centre.",
+        "That is why benches are good for the high street, and that is my view on the matter as a resident.",
+        "In conclusion, benches are good, and that is what I think about them after looking at the evidence."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "A strong conclusion states the benefit clearly and confidently.",
+      "explanation": "This version restates the argument with a specific benefit. The others are weak or repeat.",
+      "structureGuide": "Conclusion → Revision"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L174_Q2",
+      "instruction": "Choose the best revision.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'To conclude, staff should also be given free parking.'",
+      "options": [
+        "In short, shorter meetings would return time to staff and improve results.",
+        "In short, meetings are long, and staff should have more perks.",
+        "To conclude, meetings and parking are both areas that need attention.",
+        "To conclude, shorter meetings help, and free parking would help too."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "The conclusion should return to the essay's argument.",
+      "explanation": "The correct revision returns to the main argument without adding a new one. The rest add an unrelated idea.",
+      "structureGuide": "Conclusion → Revision"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L174_Q3",
+      "instruction": "Choose the best conclusion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'So that's it.'",
+      "options": [
+        "Taken together, the evidence shows that a four-week trial is a low-risk way to test the idea.",
+        "So, that is the end of my argument about the trial, and I hope it has been of some interest to you.",
+        "Anyway, that is all I have to say about the trial, so I will stop writing here and leave it there.",
+        "The trial idea is one that people might consider at some point, if they have the time and the budget."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Give the reader a final judgement.",
+      "explanation": "This conclusion gathers the evidence and recommends the trial. The others stop without conclusion.",
+      "structureGuide": "Conclusion → Revision"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L175_Q1",
+      "instruction": "Choose the most concise version.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'In my personal opinion, I think that it is my belief that meetings should possibly be shorter.'",
+      "options": [
+        "My personal belief is that meetings should be shorter.",
+        "I believe meetings should be shorter.",
+        "I think that in my view meetings ought to be shorter.",
+        "In my opinion, I believe that meetings should be shorter."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Remove repeated opinion markers.",
+      "explanation": "The correct version uses one opinion marker. The remaining options repeat.",
+      "structureGuide": "Revision → Concision"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L175_Q2",
+      "instruction": "Choose the best rewrite of the paragraph.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'Bike racks should be added. Bike racks are useful. Bike racks help cyclists lock bikes. The town is nice. Cyclists would ride more.'",
+      "options": [
+        "Bike racks should be added. Bike racks are useful, and the town is nice. Cyclists would ride more.",
+        "Bike racks should be added, because bike racks are useful and help with bikes.",
+        "Bike racks should be added because they let cyclists lock their bikes safely and encourage more riding.",
+        "Bike racks, which are useful, should be added to the nice town."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Combine the useful ideas and drop the unnecessary ones.",
+      "explanation": "The best rewrite combines the claim, reason and result. The other choices keep repetition or irrelevant remarks.",
+      "structureGuide": "Revision → Concision"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L175_Q3",
+      "instruction": "Which sentence is unnecessary and could be cut without loss?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Staff language classes would improve customer service. Customers feel more welcome when staff speak their language. Language is a way to communicate. One shop reported fewer misunderstandings after its staff took basic classes.'",
+      "options": [
+        "Customers feel more welcome when staff speak their language.",
+        "One shop reported fewer misunderstandings after its staff took basic classes.",
+        "Language is a way to communicate.",
+        "Staff language classes would improve customer service."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "One sentence states something obvious that adds nothing to the argument.",
+      "explanation": "The definition of language adds nothing. The other sentences state the claim, a reason and evidence.",
+      "structureGuide": "Revision → Concision"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L176_Q1",
+      "instruction": "Which problem should be fixed first?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Draft: 'Cafés should ban laptops. Laptops are annoying, and everyone hates them. Sometimes they make noise. Also, my friend likes cafés.'",
+      "options": [
+        "There is no real reason or evidence supporting the claim.",
+        "The paragraph needs a longer title.",
+        "The sentences are slightly too short.",
+        "A comma is missing in the second sentence."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Fix the biggest weakness in the argument before small details.",
+      "explanation": "The draft lacks reasons and evidence. Punctuation, sentence length and titles are minor.",
+      "structureGuide": "Revision → Priority"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L176_Q2",
+      "instruction": "Which problem should be fixed first?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Draft: 'Later school start times would help students. Most students agree. Teachers agree too. Every study proves it.'",
+      "options": [
+        "The last sentence needs a full stop, and the paragraph would be clearer with a heading above it.",
+        "The second sentence should be longer, so that the paragraph has a better balance of sentence lengths.",
+        "The paragraph should use more formal words, because informal words make an argument sound weaker.",
+        "The claims about agreement and studies are unsupported and exaggerated."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Which problem affects the argument most?",
+      "explanation": "The paragraph makes strong claims without any evidence. The other problems are minor.",
+      "structureGuide": "Revision → Priority"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L176_Q3",
+      "instruction": "Which revision should the writer make first?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "An essay's third paragraph contradicts the thesis, and there are also small punctuation mistakes in paragraph two.",
+      "options": [
+        "Change 'however' to 'but' in paragraph two.",
+        "Add a comma after the first word of the introduction.",
+        "Replace 'good' with 'nice' in the conclusion.",
+        "Fix the contradiction between the thesis and the third paragraph."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Fix problems in the structure of the argument before small wording problems.",
+      "explanation": "A contradiction damages the whole argument. The other edits are small.",
+      "structureGuide": "Revision → Priority"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L177_Q1",
+      "instruction": "Choose the best rewrite.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Draft: 'Public benches are good. They are really good for old people and lots of others. Everyone loves benches. The council should put some in.'",
+      "options": [
+        "The council should add benches along the high street, because older shoppers often need to rest between shops.",
+        "The council should put in some benches, because benches are really good.",
+        "Benches are good for older people and everyone else, so the council should add some.",
+        "Everyone loves benches, so the council should add benches to the high street."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "The rewrite should be specific and supported.",
+      "explanation": "The best version states what, where and why. The other choices remain vague or unsupported.",
+      "structureGuide": "Revision → Multiple Problems"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L177_Q2",
+      "instruction": "Choose the best rewrite.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Draft: 'The disgusting new rota is a joke. It is rubbish and people hate it.'",
+      "options": [
+        "The new rota is a terrible idea that people dislike, and it was introduced without asking anyone.",
+        "The rota is bad for many staff in several ways, and it should be changed as soon as the manager can.",
+        "The new rota gives part-time staff most late shifts, which leaves them little time for study or family.",
+        "The new rota is unfair and upsets everyone in the team, which is why many people dread coming to work."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Replace insults with the actual problem.",
+      "explanation": "The best version explains the problem and its effect. The remaining options are still vague or emotional.",
+      "structureGuide": "Revision → Multiple Problems"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L177_Q3",
+      "instruction": "Choose the best rewrite.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Draft: 'Nobody enjoys team-building days, and they never work.'",
+      "options": [
+        "Very few people enjoy team-building days, and they rarely work, so the money would be better spent elsewhere.",
+        "Some staff find team-building days uncomfortable; offering optional activities could make them more useful.",
+        "Team-building days are generally unpopular and mostly ineffective, so the company should stop organising them.",
+        "Most staff dislike team-building days, so they should be cancelled and replaced with something more useful."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Remove absolute words and add a constructive idea.",
+      "explanation": "The best rewrite limits the claim and suggests improvement. The rest remain generalised or absolute.",
+      "structureGuide": "Revision → Multiple Problems"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L178_Q1",
+      "instruction": "Choose the best revision for parents.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'Homework is stressful and useless, so we are scrapping it.'",
+      "options": [
+        "We are reviewing homework this term, aiming to keep tasks that support learning and reduce unnecessary stress.",
+        "Parents should understand that homework is being cancelled, and there is nothing more to discuss about it.",
+        "We are scrapping homework because it is stressful and useless, and we hope parents will support the change.",
+        "Homework is being changed, and parents do not need to worry, because the school has everything under control."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Parents need a measured, respectful explanation.",
+      "explanation": "The correct version explains the aim and stays respectful. The other choices are blunt or dismissive.",
+      "structureGuide": "Revision → Audience"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L178_Q2",
+      "instruction": "Choose the best revision for a manager.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'Your lunch break policy is dumb.'",
+      "options": [
+        "I think the lunch break policy could be better, maybe, if somebody had the time to look into it.",
+        "The lunch break policy is not very good, and I think it should be looked at again by the management team.",
+        "Your lunch break policy has some problems, I think, and it might be a good idea to consider changing it.",
+        "I would like to raise a concern about the lunch break policy and suggest an alternative."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "The message should be polite, clear and constructive.",
+      "explanation": "The best version states a concern and offers a solution. The others are vague.",
+      "structureGuide": "Revision → Audience"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L178_Q3",
+      "instruction": "Choose the best revision for customers.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'Our app will be down as our servers are being upgraded.'",
+      "options": [
+        "Sorry, but the app will not work for a while, as the team needs to carry out some important work.",
+        "The app will be unavailable on Sunday from 2 to 4 a.m. while we improve its speed.",
+        "The app will be down while the servers are upgraded, and we are sorry for any trouble this may cause.",
+        "Server upgrades will affect the app on Sunday, so customers may find some features unavailable for a time."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Customers want to know when, how long and why.",
+      "explanation": "The best version gives the time and reason in plain language. The other choices omit key details.",
+      "structureGuide": "Revision → Audience"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L179_Q1",
+      "instruction": "Which draft is stronger, and why?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Draft A: 'Public benches are important. Older people need them. They would use the high street more.' Draft B: 'The council should add benches along the high street. Last month, a resident told us she stopped shopping there because she could not rest between shops. Benches would help her and others stay active in the town centre.'",
+      "options": [
+        "Draft B, because it gives a specific example and explains its effect.",
+        "Draft A, because it is shorter and easier to read.",
+        "Draft B, because it contains more sentences.",
+        "Draft A, because it uses stronger emotional wording."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Compare specific evidence, explanation and clarity.",
+      "explanation": "Draft B has a clear claim, a real example and an explanation. Length and emotion don't make an argument stronger.",
+      "structureGuide": "Compare Drafts"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L179_Q2",
+      "instruction": "Which draft is stronger, and why?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Draft A: 'Working from home is always better. Everybody gets more done.' Draft B: 'Working from home can raise output for tasks that need focus, though teams should meet in person now and then.'",
+      "options": [
+        "Draft A, because it is shorter and gets straight to the point without any unnecessary detail.",
+        "Draft A, because it sounds more confident and does not use any careful or limiting words.",
+        "Draft B, because it is longer and gives the reader more words to think about than Draft A does.",
+        "Draft B, because its claim is specific and appropriately limited."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Look at how well each claim matches what can be shown.",
+      "explanation": "Draft B qualifies its claim and is more believable. Draft A overgeneralises.",
+      "structureGuide": "Compare Drafts"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L179_Q3",
+      "instruction": "Which draft suits a school board better, and why?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Draft A: 'The board's decision to cut music is a disgrace and shows contempt for our children.' Draft B: 'Cutting music will remove the only instrument lessons for 120 students, so I ask the board to consider a reduced programme instead.'",
+      "options": [
+        "Draft B, because it avoids mentioning the decision.",
+        "Draft A, because it is shorter and more direct.",
+        "Draft B, because it gives evidence and offers a respectful alternative.",
+        "Draft A, because it shows how strongly the writer feels."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Consider the audience and the writer's goal.",
+      "explanation": "The board is more likely to respond to evidence and a workable suggestion than to insults.",
+      "structureGuide": "Compare Drafts"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L180_Q1",
+      "instruction": "Choose the best revision of the paragraph.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Draft: 'Reading is good. It is really good for you. Everyone should read every day. It's the best thing ever. Schools should make reading time.'",
+      "options": [
+        "Schools should make reading time because reading is really good for everyone, and it is a lot of fun.",
+        "Schools should set aside twenty minutes of daily reading time because regular reading builds vocabulary and concentration.",
+        "Everyone should read every day, and schools should help with that by making sure that time is set aside.",
+        "Reading is the best thing ever, so schools should make time for it every day, and students will love it."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "The best revision has a specific claim, a reason and no repetition.",
+      "explanation": "The correct version states what schools should do and why. The others repeat vague praise.",
+      "structureGuide": "Revision → Whole Paragraph"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L180_Q2",
+      "instruction": "Choose the best revision.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Draft: 'Casual dress should be allowed. Anyone who disagrees is stuck in the past. Casual clothes are comfy.'",
+      "options": [
+        "Casual dress should be allowed on days without client visits; staff report it is more comfortable, and clear guidelines can keep standards professional.",
+        "Casual dress should be allowed because it is comfy, and people who disagree are old-fashioned and out of touch.",
+        "Casual dress should be allowed because casual clothes are comfortable and good, and everyone is happier in them.",
+        "Casual dress should be allowed, and those who disagree should think again about how much clothes really matter."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Fix the tone, add a reason and acknowledge the other side.",
+      "explanation": "This version removes insults, adds a condition and answers a concern. The alternatives keep the insult or repeat.",
+      "structureGuide": "Revision → Whole Paragraph"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L180_Q3",
+      "instruction": "What is the most important improvement across the whole draft?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A draft essay has a vague thesis, a body paragraph with a claim but no evidence, a second body paragraph that repeats the first, and a conclusion that adds a new argument.",
+      "options": [
+        "Lengthen the conclusion with another argument, so that the essay finishes with the strongest point.",
+        "Change the font and layout of the title, so that the essay looks more professional on the page.",
+        "Clarify the thesis, then add evidence and new reasons in the body paragraphs.",
+        "Add more adjectives to the introduction, so that the reader is more impressed from the first line."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Fix the structure and content of the argument first.",
+      "explanation": "A clear thesis with evidence and distinct reasons improves the argument. Adjectives, layout and extra arguments in the conclusion don't fix the weaknesses.",
+      "structureGuide": "Revision → Priority"
+    }
+  ]
 }

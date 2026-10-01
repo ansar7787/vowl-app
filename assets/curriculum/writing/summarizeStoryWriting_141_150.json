@@ -1,817 +1,637 @@
 {
-    "gameType": "summarizeStoryWriting",
-    "batchIndex": 15,
-    "levels": "141-150",
-    "quests": [
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L141_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "An epidemiologist's model had understated the spread of a seasonal illness for two consecutive years, undermining public confidence in her projections. She incorporated informal reporting from community clinics that official statistics had been slow to capture. Her revised model's projections matched the actual outbreak within a narrow margin of error.",
-            "options": [
-                "Public health officials discontinued her model before the revision was implemented.",
-                "An epidemiologist's model had understated the spread of a seasonal illness for two consecutive years, undermining public confidence in her projections.",
-                "She incorporated informal reporting from community clinics that official statistics had been slow to capture.",
-                "Her revised model's projections matched the actual outbreak within a narrow margin of error."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Notice whether officials actually discontinue the model before the revision takes effect.",
-            "explanation": "Because the revised model matches the actual outbreak closely, an option showing it discontinued beforehand contradicts that sequence of events.",
-            "storyKeyEvents": [
-                "An epidemiologist's model had understated the spread of a seasonal illness for two consecutive years, undermining public confidence in her projections.",
-                "She incorporated informal reporting from community clinics that official statistics had been slow to capture.",
-                "Her revised model's projections matched the actual outbreak within a narrow margin of error.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L141_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A municipal bond fund's returns had lagged so far behind comparable funds that its board commissioned an independent performance review. Reviewers found the fund had been overweighted in a single underperforming sector for years. Rebalancing away from that sector brought returns in line with comparable funds within eighteen months.",
-            "options": [
-                "A municipal bond fund's returns had lagged so far behind comparable funds that its board commissioned an independent performance review.",
-                "The board dissolved the fund before the review's findings were implemented.",
-                "Reviewers found the fund had been overweighted in a single underperforming sector for years.",
-                "Rebalancing away from that sector brought returns in line with comparable funds within eighteen months."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Check whether the board actually dissolves the fund before the rebalancing takes place.",
-            "explanation": "Because rebalancing brings returns in line with comparable funds, an option showing the fund dissolved beforehand contradicts that sequence.",
-            "storyKeyEvents": [
-                "A municipal bond fund's returns had lagged so far behind comparable funds that its board commissioned an independent performance review.",
-                "Reviewers found the fund had been overweighted in a single underperforming sector for years.",
-                "Rebalancing away from that sector brought returns in line with comparable funds within eighteen months.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L141_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A translation agency's certified documents had been rejected twice by immigration authorities over inconsistent terminology across translators. It adopted a shared glossary that every translator was required to reference for legal terms. Every subsequent submission was accepted without a single terminology objection.",
-            "options": [
-                "A translation agency's certified documents had been rejected twice by immigration authorities over inconsistent terminology across translators.",
-                "The agency adopted a shared glossary that every translator was required to reference for legal terms.",
-                "Immigration authorities continued rejecting submissions on the same grounds.",
-                "Every subsequent submission was accepted without a single terminology objection."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Notice what actually happens to submissions once the shared glossary is adopted.",
-            "explanation": "Because every subsequent submission is accepted, an option claiming rejections continued on the same grounds contradicts that outcome.",
-            "storyKeyEvents": [
-                "A translation agency's certified documents had been rejected twice by immigration authorities over inconsistent terminology across translators.",
-                "The agency adopted a shared glossary that every translator was required to reference for legal terms.",
-                "Every subsequent submission was accepted without a single terminology objection.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L142_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional court's docket had grown so congested that civil cases routinely waited over eighteen months for a hearing date. Judges instituted a triage system prioritizing cases by complexity rather than filing date. Average wait times for straightforward cases fell to under three months.",
-            "options": [
-                "A regional court's docket had grown so congested that civil cases routinely waited over eighteen months for a hearing date.",
-                "Judges instituted a triage system prioritizing cases by complexity rather than filing date.",
-                "Average wait times for straightforward cases fell to under three months.",
-                "Average wait times for straightforward cases remained above eighteen months."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Track cause and effect: the triage system leads to shorter waits for straightforward cases. One option reverses that.",
-            "explanation": "Because wait times for straightforward cases fall to under three months, an option claiming they remained above eighteen reverses that measured outcome.",
-            "storyKeyEvents": [
-                "A regional court's docket had grown so congested that civil cases routinely waited over eighteen months for a hearing date.",
-                "Judges instituted a triage system prioritizing cases by complexity rather than filing date.",
-                "Average wait times for straightforward cases fell to under three months.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L142_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional actuarial firm's mortality projections had proven so inaccurate that a major client threatened to terminate its contract. Analysts discovered their model relied on outdated regional health data nearly a decade old. Updating the underlying data brought projections within the client's required accuracy threshold.",
-            "options": [
-                "The client terminated the contract before the data update was completed.",
-                "A regional actuarial firm's mortality projections had proven so inaccurate that a major client threatened to terminate its contract.",
-                "Analysts discovered their model relied on outdated regional health data nearly a decade old.",
-                "Updating the underlying data brought projections within the client's required accuracy threshold."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you whether the client actually terminates the contract before the update finishes.",
-            "explanation": "Because updated data brings projections within the required threshold, an option showing the contract terminated beforehand contradicts that sequence.",
-            "storyKeyEvents": [
-                "A regional actuarial firm's mortality projections had proven so inaccurate that a major client threatened to terminate its contract.",
-                "Analysts discovered their model relied on outdated regional health data nearly a decade old.",
-                "Updating the underlying data brought projections within the client's required accuracy threshold.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L142_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional archive's digitization project had stalled so completely that funders questioned whether the initiative would ever be completed. Volunteers with specialized cataloging experience were recruited to supplement the understaffed team. The archive completed digitization of its entire collection well ahead of the revised deadline.",
-            "options": [
-                "A regional archive's digitization project had stalled so completely that funders questioned whether the initiative would ever be completed.",
-                "Funders withdrew support before the volunteer recruitment began.",
-                "Volunteers with specialized cataloging experience were recruited to supplement the understaffed team.",
-                "The archive completed digitization of its entire collection well ahead of the revised deadline."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Check whether funders actually withdraw support before the volunteers are recruited.",
-            "explanation": "Because the archive completes digitization ahead of the revised deadline, an option showing funders withdrawing beforehand contradicts that sequence.",
-            "storyKeyEvents": [
-                "A regional archive's digitization project had stalled so completely that funders questioned whether the initiative would ever be completed.",
-                "Volunteers with specialized cataloging experience were recruited to supplement the understaffed team.",
-                "The archive completed digitization of its entire collection well ahead of the revised deadline.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L143_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional appellate court had overturned the same lower court's rulings on a specific evidentiary question in three separate cases. The lower court's chief judge issued new internal guidance clarifying how that evidentiary question should be handled. No subsequent ruling on that question has been overturned in the two years since.",
-            "options": [
-                "A regional appellate court had overturned the same lower court's rulings on a specific evidentiary question in three separate cases.",
-                "The lower court's chief judge issued new internal guidance clarifying how that evidentiary question should be handled.",
-                "A fourth ruling on the same question was overturned the following year.",
-                "No subsequent ruling on that question has been overturned in the two years since."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Notice what the passage actually says about rulings in the two years following the new guidance.",
-            "explanation": "Because no ruling has been overturned in two years, an option claiming a fourth was overturned the following year contradicts that record.",
-            "storyKeyEvents": [
-                "A regional appellate court had overturned the same lower court's rulings on a specific evidentiary question in three separate cases.",
-                "The lower court's chief judge issued new internal guidance clarifying how that evidentiary question should be handled.",
-                "No subsequent ruling on that question has been overturned in the two years since.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L143_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional utility's demand forecasting had underestimated peak summer usage so consistently that rolling blackouts became an annual occurrence. Engineers incorporated real-time weather modeling that the previous forecasting method had ignored entirely. The utility avoided rolling blackouts for the first time in its recorded history that summer.",
-            "options": [
-                "A regional utility's demand forecasting had underestimated peak summer usage so consistently that rolling blackouts became an annual occurrence.",
-                "Engineers incorporated real-time weather modeling that the previous forecasting method had ignored entirely.",
-                "The utility avoided rolling blackouts for the first time in its recorded history that summer.",
-                "Rolling blackouts occurred just as frequently that summer."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Check whether each option matches what actually happens to blackouts that summer.",
-            "explanation": "Because the utility avoids blackouts for the first time in its history, an option claiming they occurred just as frequently contradicts that outcome.",
-            "storyKeyEvents": [
-                "A regional utility's demand forecasting had underestimated peak summer usage so consistently that rolling blackouts became an annual occurrence.",
-                "Engineers incorporated real-time weather modeling that the previous forecasting method had ignored entirely.",
-                "The utility avoided rolling blackouts for the first time in its recorded history that summer.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L143_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional appraisal firm's property valuations had diverged so widely from actual sale prices that lenders began questioning its reliability. It retrained appraisers using a standardized methodology validated against recent regional sales data. Valuations fell within an acceptable margin of actual sale prices for the following two years.",
-            "options": [
-                "Lenders stopped accepting the firm's valuations before the retraining was complete.",
-                "A regional appraisal firm's property valuations had diverged so widely from actual sale prices that lenders began questioning its reliability.",
-                "The firm retrained appraisers using a standardized methodology validated against recent regional sales data.",
-                "Valuations fell within an acceptable margin of actual sale prices for the following two years."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you whether lenders actually stop accepting valuations before retraining finishes.",
-            "explanation": "Because valuations stay within an acceptable margin for two years after retraining, an option showing lenders rejecting them beforehand contradicts that sequence.",
-            "storyKeyEvents": [
-                "A regional appraisal firm's property valuations had diverged so widely from actual sale prices that lenders began questioning its reliability.",
-                "The firm retrained appraisers using a standardized methodology validated against recent regional sales data.",
-                "Valuations fell within an acceptable margin of actual sale prices for the following two years.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L144_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional trade association's certification exam had such an inconsistent pass rate across test centers that its validity was formally challenged. An independent psychometrician redesigned the exam to remove ambiguously worded questions. Pass rates across all test centers converged within a narrow, statistically expected range.",
-            "options": [
-                "A regional trade association's certification exam had such an inconsistent pass rate across test centers that its validity was formally challenged.",
-                "Pass rates across test centers remained just as inconsistent as before.",
-                "An independent psychometrician redesigned the exam to remove ambiguously worded questions.",
-                "Pass rates across all test centers converged within a narrow, statistically expected range."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Track cause and effect: removing ambiguous questions leads to converging pass rates. One option reverses that.",
-            "explanation": "Because pass rates converge within an expected range, an option claiming they remained just as inconsistent reverses that measured outcome.",
-            "storyKeyEvents": [
-                "A regional trade association's certification exam had such an inconsistent pass rate across test centers that its validity was formally challenged.",
-                "An independent psychometrician redesigned the exam to remove ambiguously worded questions.",
-                "Pass rates across all test centers converged within a narrow, statistically expected range.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L144_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional seed bank's germplasm records had grown so disorganized that researchers routinely failed to locate specific varieties they knew existed. Archivists cross-referenced every physical sample against a newly unified digital catalog. Researchers could locate any variety in the collection within minutes.",
-            "options": [
-                "A regional seed bank's germplasm records had grown so disorganized that researchers routinely failed to locate specific varieties they knew existed.",
-                "Archivists cross-referenced every physical sample against a newly unified digital catalog.",
-                "Researchers still routinely failed to locate varieties after the catalog was completed.",
-                "Researchers could locate any variety in the collection within minutes."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Check whether each option matches what actually happens once the digital catalog is complete.",
-            "explanation": "Because researchers can locate any variety within minutes, an option claiming they still routinely failed to find them contradicts that outcome.",
-            "storyKeyEvents": [
-                "A regional seed bank's germplasm records had grown so disorganized that researchers routinely failed to locate specific varieties they knew existed.",
-                "Archivists cross-referenced every physical sample against a newly unified digital catalog.",
-                "Researchers could locate any variety in the collection within minutes.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L144_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional patent office's examiners had issued so many conflicting rulings on a novel technology category that applicants faced genuine uncertainty. Senior examiners issued unified internal guidance specifically addressing that technology category. Rulings on that category became consistent across nearly every examiner within the following year.",
-            "options": [
-                "A regional patent office's examiners had issued so many conflicting rulings on a novel technology category that applicants faced genuine uncertainty.",
-                "Senior examiners issued unified internal guidance specifically addressing that technology category.",
-                "Rulings on that category became consistent across nearly every examiner within the following year.",
-                "Rulings on that category grew even more inconsistent the following year."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Notice what actually happens to consistency across examiners the following year.",
-            "explanation": "Because rulings become consistent within the following year, an option claiming they grew even more inconsistent reverses that measured outcome.",
-            "storyKeyEvents": [
-                "A regional patent office's examiners had issued so many conflicting rulings on a novel technology category that applicants faced genuine uncertainty.",
-                "Senior examiners issued unified internal guidance specifically addressing that technology category.",
-                "Rulings on that category became consistent across nearly every examiner within the following year.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L145_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional actuarial board's licensing exam had such a low pass rate that candidates alleged the questions no longer reflected current practice. The board commissioned a panel of active practitioners to review and update the entire question bank. The pass rate rose to align with historical averages within two exam cycles.",
-            "options": [
-                "The pass rate remained well below historical averages after the update.",
-                "A regional actuarial board's licensing exam had such a low pass rate that candidates alleged the questions no longer reflected current practice.",
-                "The board commissioned a panel of active practitioners to review and update the entire question bank.",
-                "The pass rate rose to align with historical averages within two exam cycles."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Track cause and effect: an updated question bank leads to the pass rate realigning with historical averages. One option reverses that.",
-            "explanation": "Because the pass rate rises to align with historical averages, an option claiming it remained well below reverses that measured outcome.",
-            "storyKeyEvents": [
-                "A regional actuarial board's licensing exam had such a low pass rate that candidates alleged the questions no longer reflected current practice.",
-                "The board commissioned a panel of active practitioners to review and update the entire question bank.",
-                "The pass rate rose to align with historical averages within two exam cycles.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L145_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional geological survey's landslide-risk maps had proven so unreliable that county planners stopped consulting them for new construction permits. Geologists incorporated updated soil-saturation data collected after the region's most recent major storm. County planners resumed using the maps for every permit application the following year.",
-            "options": [
-                "A regional geological survey's landslide-risk maps had proven so unreliable that county planners stopped consulting them for new construction permits.",
-                "County planners refused to resume using the maps even after the update.",
-                "Geologists incorporated updated soil-saturation data collected after the region's most recent major storm.",
-                "County planners resumed using the maps for every permit application the following year."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Check whether each option matches what planners actually do the following year.",
-            "explanation": "Because planners resume using the maps for every permit the following year, an option claiming they refused to resume contradicts that outcome.",
-            "storyKeyEvents": [
-                "A regional geological survey's landslide-risk maps had proven so unreliable that county planners stopped consulting them for new construction permits.",
-                "Geologists incorporated updated soil-saturation data collected after the region's most recent major storm.",
-                "County planners resumed using the maps for every permit application the following year.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L145_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional pension board's actuarial assumptions had drawn so much criticism from beneficiaries that the state auditor opened a formal review. The auditor found the assumptions were, in fact, more conservative than industry standard. The board's original assumptions were formally upheld without any required changes.",
-            "options": [
-                "A regional pension board's actuarial assumptions had drawn so much criticism from beneficiaries that the state auditor opened a formal review.",
-                "The auditor found the assumptions were, in fact, more conservative than industry standard.",
-                "The auditor's review found the assumptions were dangerously overoptimistic.",
-                "The board's original assumptions were formally upheld without any required changes."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Notice what the auditor's review actually concludes about the board's assumptions.",
-            "explanation": "Because the auditor finds the assumptions more conservative than industry standard, an option claiming they were found dangerously overoptimistic reverses that finding.",
-            "storyKeyEvents": [
-                "A regional pension board's actuarial assumptions had drawn so much criticism from beneficiaries that the state auditor opened a formal review.",
-                "The auditor found the assumptions were, in fact, more conservative than industry standard.",
-                "The board's original assumptions were formally upheld without any required changes.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L146_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional wildlife agency's population surveys for an endangered amphibian had produced such inconsistent counts that conservation funding was placed under review. Biologists adopted a standardized nighttime survey protocol replicated identically across every site. Population estimates became consistent enough to secure another decade of funding.",
-            "options": [
-                "A regional wildlife agency's population surveys for an endangered amphibian had produced such inconsistent counts that conservation funding was placed under review.",
-                "Biologists adopted a standardized nighttime survey protocol replicated identically across every site.",
-                "Population estimates became consistent enough to secure another decade of funding.",
-                "Funding was withdrawn before the standardized protocol could be adopted."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Check whether funding is actually withdrawn before the new protocol is adopted.",
-            "explanation": "Because consistent estimates secure another decade of funding, an option showing funding withdrawn beforehand contradicts that sequence.",
-            "storyKeyEvents": [
-                "A regional wildlife agency's population surveys for an endangered amphibian had produced such inconsistent counts that conservation funding was placed under review.",
-                "Biologists adopted a standardized nighttime survey protocol replicated identically across every site.",
-                "Population estimates became consistent enough to secure another decade of funding.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L146_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional maritime salvage company's insurance claims had been disputed so often that underwriters considered the entire operation too risky to cover. It began documenting every salvage operation with continuous video from multiple angles. Underwriters approved every subsequent claim without dispute for the following two years.",
-            "options": [
-                "Underwriters disputed claims just as frequently after the documentation began.",
-                "A regional maritime salvage company's insurance claims had been disputed so often that underwriters considered the entire operation too risky to cover.",
-                "The company began documenting every salvage operation with continuous video from multiple angles.",
-                "Underwriters approved every subsequent claim without dispute for the following two years."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Track cause and effect: continuous documentation leads to every subsequent claim being approved. One option reverses that.",
-            "explanation": "Because every subsequent claim is approved for two years, an option claiming disputes continued just as often reverses that measured outcome.",
-            "storyKeyEvents": [
-                "A regional maritime salvage company's insurance claims had been disputed so often that underwriters considered the entire operation too risky to cover.",
-                "The company began documenting every salvage operation with continuous video from multiple angles.",
-                "Underwriters approved every subsequent claim without dispute for the following two years.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L146_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional forensic laboratory's fingerprint analyses had been challenged so often in court that prosecutors grew reluctant to rely on its findings. The lab adopted a blind second-review process where a separate analyst confirmed every match independently. No fingerprint match from the lab has been successfully challenged since the process began.",
-            "options": [
-                "A regional forensic laboratory's fingerprint analyses had been challenged so often in court that prosecutors grew reluctant to rely on its findings.",
-                "Prosecutors stopped using the lab's findings before the review process began.",
-                "The lab adopted a blind second-review process where a separate analyst confirmed every match independently.",
-                "No fingerprint match from the lab has been successfully challenged since the process began."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you whether prosecutors actually stop using the lab before the new process begins.",
-            "explanation": "Because no match has been successfully challenged since the process began, an option showing prosecutors abandoning the lab beforehand contradicts that record.",
-            "storyKeyEvents": [
-                "A regional forensic laboratory's fingerprint analyses had been challenged so often in court that prosecutors grew reluctant to rely on its findings.",
-                "The lab adopted a blind second-review process where a separate analyst confirmed every match independently.",
-                "No fingerprint match from the lab has been successfully challenged since the process began.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L147_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional securities regulator's audits had flagged the same brokerage for record-keeping violations in three consecutive examination cycles. The brokerage replaced its entire compliance team and adopted automated record verification. Its fourth examination found zero record-keeping violations for the first time in the firm's history.",
-            "options": [
-                "A regional securities regulator's audits had flagged the same brokerage for record-keeping violations in three consecutive examination cycles.",
-                "The brokerage replaced its entire compliance team and adopted automated record verification.",
-                "Its fourth examination found even more violations than the previous three combined.",
-                "Its fourth examination found zero record-keeping violations for the first time in the firm's history."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Notice what the passage says about the fourth examination's actual findings.",
-            "explanation": "Because the fourth examination finds zero violations, an option claiming it found more than the previous three combined reverses that outcome.",
-            "storyKeyEvents": [
-                "A regional securities regulator's audits had flagged the same brokerage for record-keeping violations in three consecutive examination cycles.",
-                "The brokerage replaced its entire compliance team and adopted automated record verification.",
-                "Its fourth examination found zero record-keeping violations for the first time in the firm's history.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L147_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional aviation authority's air-traffic staffing shortfalls had grown so severe that controllers routinely worked mandatory overtime shifts. It fast-tracked a cohort of trainees through an accelerated, closely supervised certification program. Mandatory overtime shifts were eliminated entirely within the following year.",
-            "options": [
-                "A regional aviation authority's air-traffic staffing shortfalls had grown so severe that controllers routinely worked mandatory overtime shifts.",
-                "The authority fast-tracked a cohort of trainees through an accelerated, closely supervised certification program.",
-                "Mandatory overtime shifts were eliminated entirely within the following year.",
-                "Mandatory overtime shifts increased even further within that year."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Check whether each option matches what actually happens to overtime shifts that year.",
-            "explanation": "Because mandatory overtime is eliminated entirely, an option claiming it increased further reverses that measured outcome.",
-            "storyKeyEvents": [
-                "A regional aviation authority's air-traffic staffing shortfalls had grown so severe that controllers routinely worked mandatory overtime shifts.",
-                "The authority fast-tracked a cohort of trainees through an accelerated, closely supervised certification program.",
-                "Mandatory overtime shifts were eliminated entirely within the following year.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L147_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional credit-rating agency's models had so consistently overrated a category of municipal debt that federal regulators demanded a methodology review. Analysts incorporated a broader set of economic indicators the previous model had excluded. The revised model's ratings for that debt category aligned closely with actual default rates.",
-            "options": [
-                "Regulators suspended the agency's license before the methodology review concluded.",
-                "A regional credit-rating agency's models had so consistently overrated a category of municipal debt that federal regulators demanded a methodology review.",
-                "Analysts incorporated a broader set of economic indicators the previous model had excluded.",
-                "The revised model's ratings for that debt category aligned closely with actual default rates."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Check whether regulators actually suspend the license before the review concludes.",
-            "explanation": "Because the revised model's ratings align closely with actual default rates, an option showing the license suspended beforehand contradicts that sequence.",
-            "storyKeyEvents": [
-                "A regional credit-rating agency's models had so consistently overrated a category of municipal debt that federal regulators demanded a methodology review.",
-                "Analysts incorporated a broader set of economic indicators the previous model had excluded.",
-                "The revised model's ratings for that debt category aligned closely with actual default rates.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L148_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional antitrust regulator's merger reviews had taken so long that acquiring companies routinely abandoned deals rather than wait for approval. It introduced an expedited review track for mergers below a defined market-share threshold. Average review time for qualifying mergers fell from over a year to under two months.",
-            "options": [
-                "A regional antitrust regulator's merger reviews had taken so long that acquiring companies routinely abandoned deals rather than wait for approval.",
-                "Average review time for qualifying mergers remained over a year.",
-                "The regulator introduced an expedited review track for mergers below a defined market-share threshold.",
-                "Average review time for qualifying mergers fell from over a year to under two months."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Track cause and effect: the expedited track leads to review time falling to under two months. One option reverses that.",
-            "explanation": "Because review time falls to under two months, an option claiming it remained over a year reverses that measured outcome.",
-            "storyKeyEvents": [
-                "A regional antitrust regulator's merger reviews had taken so long that acquiring companies routinely abandoned deals rather than wait for approval.",
-                "The regulator introduced an expedited review track for mergers below a defined market-share threshold.",
-                "Average review time for qualifying mergers fell from over a year to under two months.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L148_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional maritime pilot association's licensing exam had produced pass rates so wildly different between examiners that candidates alleged favoritism. The association introduced a blind scoring rubric that hid the candidate's identity from each examiner. Pass rates across all examiners converged within a narrow, statistically expected range.",
-            "options": [
-                "A regional maritime pilot association's licensing exam had produced pass rates so wildly different between examiners that candidates alleged favoritism.",
-                "The association introduced a blind scoring rubric that hid the candidate's identity from each examiner.",
-                "Pass rates across examiners remained just as inconsistent as before.",
-                "Pass rates across all examiners converged within a narrow, statistically expected range."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Check whether each option matches what actually happens to pass rates once blind scoring begins.",
-            "explanation": "Because pass rates converge within an expected range, an option claiming they remained just as inconsistent reverses that outcome.",
-            "storyKeyEvents": [
-                "A regional maritime pilot association's licensing exam had produced pass rates so wildly different between examiners that candidates alleged favoritism.",
-                "The association introduced a blind scoring rubric that hid the candidate's identity from each examiner.",
-                "Pass rates across all examiners converged within a narrow, statistically expected range.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L148_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional telecommunications regulator's spectrum auctions had drawn so few qualified bidders that several rounds ended without a single sale. It lowered the minimum capital requirement for smaller regional carriers to participate. The next auction round sold every available block of spectrum for the first time in years.",
-            "options": [
-                "A regional telecommunications regulator's spectrum auctions had drawn so few qualified bidders that several rounds ended without a single sale.",
-                "The regulator lowered the minimum capital requirement for smaller regional carriers to participate.",
-                "The next auction round sold every available block of spectrum for the first time in years.",
-                "The next auction round ended without a single sale as well."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Read the ending closely: it tells you whether the next auction round actually sells its spectrum.",
-            "explanation": "Because the next round sells every available block for the first time in years, an option claiming it also ended without a sale contradicts that outcome.",
-            "storyKeyEvents": [
-                "A regional telecommunications regulator's spectrum auctions had drawn so few qualified bidders that several rounds ended without a single sale.",
-                "The regulator lowered the minimum capital requirement for smaller regional carriers to participate.",
-                "The next auction round sold every available block of spectrum for the first time in years.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L149_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional environmental agency's water-quality models had understated contamination levels so consistently that residents lost confidence in official reports. It installed continuous real-time sensors instead of relying on periodic manual sampling. Reported contamination levels aligned with independently verified measurements from that point forward.",
-            "options": [
-                "Residents' independent testing continued to contradict the agency's reports.",
-                "A regional environmental agency's water-quality models had understated contamination levels so consistently that residents lost confidence in official reports.",
-                "The agency installed continuous real-time sensors instead of relying on periodic manual sampling.",
-                "Reported contamination levels aligned with independently verified measurements from that point forward."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Track cause and effect: real-time sensors lead to reports aligning with independent measurements. One option reverses that.",
-            "explanation": "Because reports align with independent measurements from that point forward, an option claiming independent testing kept contradicting the agency reverses that outcome.",
-            "storyKeyEvents": [
-                "A regional environmental agency's water-quality models had understated contamination levels so consistently that residents lost confidence in official reports.",
-                "The agency installed continuous real-time sensors instead of relying on periodic manual sampling.",
-                "Reported contamination levels aligned with independently verified measurements from that point forward.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L149_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional securities exchange's circuit-breaker thresholds had triggered so many unnecessary trading halts that institutional investors threatened to route orders elsewhere. It recalibrated the thresholds using volatility data from the previous two years of actual trading. Unnecessary trading halts fell to nearly zero in the following quarter.",
-            "options": [
-                "A regional securities exchange's circuit-breaker thresholds had triggered so many unnecessary trading halts that institutional investors threatened to route orders elsewhere.",
-                "Institutional investors routed their orders elsewhere before the recalibration was completed.",
-                "The exchange recalibrated the thresholds using volatility data from the previous two years of actual trading.",
-                "Unnecessary trading halts fell to nearly zero in the following quarter."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Check whether investors actually route orders elsewhere before the recalibration is completed.",
-            "explanation": "Because unnecessary halts fall to nearly zero the following quarter, an option showing investors leaving beforehand contradicts that sequence.",
-            "storyKeyEvents": [
-                "A regional securities exchange's circuit-breaker thresholds had triggered so many unnecessary trading halts that institutional investors threatened to route orders elsewhere.",
-                "The exchange recalibrated the thresholds using volatility data from the previous two years of actual trading.",
-                "Unnecessary trading halts fell to nearly zero in the following quarter.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L149_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional building-code enforcement office's inspection reports had been so inconsistent between inspectors that contractors routinely appealed citations. It standardized every inspector's checklist and added mandatory photo documentation for each citation. Successful appeals against citations dropped to nearly zero the following year.",
-            "options": [
-                "A regional building-code enforcement office's inspection reports had been so inconsistent between inspectors that contractors routinely appealed citations.",
-                "The office standardized every inspector's checklist and added mandatory photo documentation for each citation.",
-                "Successful appeals against citations rose sharply the following year.",
-                "Successful appeals against citations dropped to nearly zero the following year."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Notice what actually happens to successful appeals the following year.",
-            "explanation": "Because successful appeals drop to nearly zero, an option claiming they rose sharply reverses that measured outcome.",
-            "storyKeyEvents": [
-                "A regional building-code enforcement office's inspection reports had been so inconsistent between inspectors that contractors routinely appealed citations.",
-                "The office standardized every inspector's checklist and added mandatory photo documentation for each citation.",
-                "Successful appeals against citations dropped to nearly zero the following year.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L150_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional court-appointed guardian program's caseworker turnover had grown so severe that some children went months without an assigned caseworker at all. The program restructured caseloads and introduced a formal mentorship track for new caseworkers. Every child in the program had an assigned caseworker within a week for the first time in its history.",
-            "options": [
-                "A regional court-appointed guardian program's caseworker turnover had grown so severe that some children went months without an assigned caseworker at all.",
-                "The program restructured caseloads and introduced a formal mentorship track for new caseworkers.",
-                "Every child in the program had an assigned caseworker within a week for the first time in its history.",
-                "Several children still went without an assigned caseworker for months."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Check whether each option matches what actually happens once the restructuring takes effect.",
-            "explanation": "Because every child has a caseworker within a week for the first time in the program's history, an option claiming several still went without one contradicts that outcome.",
-            "storyKeyEvents": [
-                "A regional court-appointed guardian program's caseworker turnover had grown so severe that some children went months without an assigned caseworker at all.",
-                "The program restructured caseloads and introduced a formal mentorship track for new caseworkers.",
-                "Every child in the program had an assigned caseworker within a week for the first time in its history.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L150_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional agricultural extension office's pest-forecasting model had missed so many outbreaks that farmers stopped consulting its warnings entirely. Entomologists incorporated real-time trap data from a network of farms across the region. The model correctly predicted every major outbreak in the following growing season.",
-            "options": [
-                "The model missed even more outbreaks in the following growing season.",
-                "A regional agricultural extension office's pest-forecasting model had missed so many outbreaks that farmers stopped consulting its warnings entirely.",
-                "Entomologists incorporated real-time trap data from a network of farms across the region.",
-                "The model correctly predicted every major outbreak in the following growing season."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Track cause and effect: real-time trap data leads to correctly predicting every major outbreak. One option reverses that.",
-            "explanation": "Because the model predicts every major outbreak correctly, an option claiming it missed even more reverses that measured outcome.",
-            "storyKeyEvents": [
-                "A regional agricultural extension office's pest-forecasting model had missed so many outbreaks that farmers stopped consulting its warnings entirely.",
-                "Entomologists incorporated real-time trap data from a network of farms across the region.",
-                "The model correctly predicted every major outbreak in the following growing season.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L150_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional maritime rescue coordination center's response-time records had grown so unreliable that a formal inquiry questioned whether its data could be trusted at all. It replaced manual timestamp logging with an automated system tied directly to dispatch records. The inquiry concluded the center's response times were, in fact, well within international standards.",
-            "options": [
-                "A regional maritime rescue coordination center's response-time records had grown so unreliable that a formal inquiry questioned whether its data could be trusted at all.",
-                "The inquiry concluded the center's response times fell far short of international standards.",
-                "The center replaced manual timestamp logging with an automated system tied directly to dispatch records.",
-                "The inquiry concluded the center's response times were, in fact, well within international standards."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Notice what the inquiry actually concludes about the center's response times.",
-            "explanation": "Because the inquiry concludes response times were well within international standards, an option claiming they fell far short reverses that specific finding.",
-            "storyKeyEvents": [
-                "A regional maritime rescue coordination center's response-time records had grown so unreliable that a formal inquiry questioned whether its data could be trusted at all.",
-                "The center replaced manual timestamp logging with an automated system tied directly to dispatch records.",
-                "The inquiry concluded the center's response times were, in fact, well within international standards.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        }
-    ]
+  "gameType": "summarizeStoryWriting",
+  "batchIndex": 15,
+  "levels": "141-150",
+  "quests": [
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L141_Q1",
+      "instruction": "Arrange a short summary: the situation, the turning point, and the central point the story supports.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Mira's grandfather kept every receipt in a shoebox, and the family teased him for it. When the dishwasher broke after eleven months, the shop refused to help until he produced the receipt, and he got a full refund the same day.",
+      "options": [
+        "Keeping records can save a lot of trouble when something goes wrong.",
+        "Old-fashioned habits always beat modern ones.",
+        "When the dishwasher broke, he produced the receipt and got a full refund.",
+        "Mira's grandfather kept every receipt in a shoebox while the family teased him."
+      ],
+      "correctOrder": [3, 2, 0],
+      "hint": "Ask what this one story shows, not what might be true of everything.",
+      "explanation": "The story shows one habit paying off once, so a claim that old habits always win goes far beyond it. The modest point is that keeping records helped him when the dishwasher failed.",
+      "storyKeyEvents": [
+        "Mira's grandfather kept every receipt in a shoebox.",
+        "The dishwasher broke after eleven months.",
+        "He showed the receipt and got a full refund the same day."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L141_Q2",
+      "instruction": "Arrange a short summary: the situation, the turning point, and the central point the story supports.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Pavel was nervous about his first talk, so he practised in front of the class hamster. On the day he stumbled on the first slide but carried on, and by the end the audience was asking questions. Afterwards his teacher said that carrying on after the stumble was what impressed her.",
+      "options": [
+        "Pavel was nervous about his first talk and practised in front of the class hamster.",
+        "Carrying on after a mistake can matter more than avoiding mistakes.",
+        "Practising in front of a pet is the best way to prepare for a talk.",
+        "On the day he stumbled on the first slide but carried on."
+      ],
+      "correctOrder": [0, 3, 1],
+      "hint": "A colourful detail isn't necessarily the point. What does the teacher say mattered?",
+      "explanation": "The hamster is a memorable detail, but the teacher praises Pavel for carrying on. The central point is about recovering after a mistake.",
+      "storyKeyEvents": [
+        "Pavel practised his first talk in front of the class hamster.",
+        "He stumbled on the first slide but carried on.",
+        "The audience was asking questions by the end and his teacher was impressed."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L141_Q3",
+      "instruction": "Arrange a short summary: the situation, the turning point, and the central point the story supports.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Two neighbours had argued for years over a fence. When a storm blew it down, both came out to clear the branches and ended up sharing a pot of tea. They agreed not to rebuild the fence and to share the space.",
+      "options": [
+        "Arguments between neighbours can never be settled.",
+        "Facing a shared problem can bring former rivals together.",
+        "Two neighbours had argued for years over a fence.",
+        "A storm blew the fence down and both neighbours helped clear the branches."
+      ],
+      "correctOrder": [2, 3, 1],
+      "hint": "Does the ending of the story agree or disagree with the statement?",
+      "explanation": "The neighbours ended their dispute, so a claim that such arguments can never be settled contradicts the story. The point is that the storm's shared problem drew them together.",
+      "storyKeyEvents": [
+        "Two neighbours argued for years over a fence.",
+        "A storm blew the fence down and both cleared the branches.",
+        "They agreed not to rebuild it and to share the space."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L142_Q1",
+      "instruction": "Arrange a short summary: the situation, the turning point, and the central point the story supports.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Lars lent his bike to a classmate, who returned it a day late with a flat tyre. Lars was annoyed but helped him patch it, and the following week the classmate fixed Lars's brakes in return.",
+      "options": [
+        "Lars helped him patch the tyre.",
+        "Lars lent his bike to a classmate, who returned it a day late with a flat tyre.",
+        "You should never lend anything to anybody.",
+        "A small kindness, even when annoyed, can be returned."
+      ],
+      "correctOrder": [1, 0, 3],
+      "hint": "Look for a lesson the story tells rather than a rule that someone might draw from part of it.",
+      "explanation": "The story ends well, so a rule against lending doesn't fit it. Lars's help with the tyre led to the classmate's help with the brakes.",
+      "storyKeyEvents": [
+        "Lars lent his bike to a classmate, who returned it late with a flat tyre.",
+        "Lars helped patch the tyre despite being annoyed.",
+        "The classmate fixed Lars's brakes the following week."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L142_Q2",
+      "instruction": "Arrange a short summary that opens with the central point, then gives the situation and the key event.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The school football team lost every match, but they started a tradition of sharing orange slices with the other team after each game. By the end of the season the other teams played more warmly against them, and the shared oranges had become the highlight of match days. The team's goalkeeper also grew three centimetres.",
+      "options": [
+        "A small friendly tradition can change the mood even when the results don't change.",
+        "After each game the team began sharing orange slices with the other side.",
+        "The school football team lost every match.",
+        "The story is mainly about the goalkeeper growing three centimetres."
+      ],
+      "correctOrder": [0, 2, 1],
+      "hint": "One detail is mentioned in passing. Does the story build on it?",
+      "explanation": "The goalkeeper's growth is a side note that the story doesn't develop. The story is about the losing record and the sharing tradition that changed the atmosphere.",
+      "storyKeyEvents": [
+        "The school football team lost every match.",
+        "After each game they shared orange slices with the other team.",
+        "By the end of the season the shared oranges had become the highlight of match days."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L142_Q3",
+      "instruction": "Arrange a short summary that opens with the central point, then gives the situation and the key event.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Ilse tried to teach her grandmother to make a video call. After three frustrating attempts she wrote the steps on a card in large letters and stuck it to the tablet. The next call worked, and her grandmother called back the same evening.",
+      "options": [
+        "After three frustrating attempts, Ilse wrote the steps on a card and stuck it to the tablet.",
+        "Clear written steps can make new technology easier to use.",
+        "The next call worked.",
+        "Ilse's grandmother called back the same evening."
+      ],
+      "correctOrder": [1, 0, 2],
+      "hint": "A single result is not the same as the story's point.",
+      "explanation": "The grandmother's return call is an outcome and doesn't say what Ilse's solution shows. The central point is that written steps made the technology easier.",
+      "storyKeyEvents": [
+        "Ilse's first three attempts to teach her grandmother a video call were frustrating.",
+        "Ilse wrote the steps on a card in large letters and stuck it to the tablet.",
+        "The next call worked and her grandmother called back that evening."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L143_Q1",
+      "instruction": "Arrange a short summary: the situation, the turning point, and the central point the story supports.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Emil was asked to look after his neighbour's shop for one afternoon. A customer paid twenty pounds for a ten-pound item and left before Emil noticed. Emil ran after him with the change, and the customer, out of breath, thanked him and bought a second item.",
+      "options": [
+        "A customer overpaid and left, and Emil ran after him with the change.",
+        "Emil is naturally a very generous person who gives money away.",
+        "Handling a small mistake honestly can win a customer's goodwill.",
+        "Emil minded his neighbour's shop for one afternoon."
+      ],
+      "correctOrder": [3, 0, 2],
+      "hint": "Traits should come from what a character does in the story. What did Emil actually do?",
+      "explanation": "Emil returned change he owed, which is honesty rather than generosity with his own money. The statement invents a trait the story doesn't show.",
+      "storyKeyEvents": [
+        "Emil looked after his neighbour's shop for an afternoon.",
+        "A customer overpaid and left, and Emil ran after him with the change.",
+        "The customer thanked him and bought a second item."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L143_Q2",
+      "instruction": "Arrange a short summary that opens with the central point, then gives the situation and the key event.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The team's slides crashed just before their turn to present. Instead of panicking, Ravi picked up a marker, sketched the main points on the whiteboard and talked the audience through them. The judges said the improvised version was clearer than the slides would have been.",
+      "options": [
+        "Ravi sketched the main points on the whiteboard and talked the audience through them.",
+        "Patience is the key to learning any new skill, however slowly it comes.",
+        "Adapting calmly when a plan fails can turn out well.",
+        "The team's slides crashed just before their turn to present."
+      ],
+      "correctOrder": [2, 3, 0],
+      "hint": "Does the statement describe this story, or a different one?",
+      "explanation": "The story is about improvising under pressure, not learning a skill slowly. Patience-as-a-skill fits another story, not this one.",
+      "storyKeyEvents": [
+        "The team's slides crashed just before their turn to present.",
+        "Ravi sketched the main points on the whiteboard and explained them.",
+        "The judges said the improvised version was clearer than the slides would have been."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L143_Q3",
+      "instruction": "Arrange a short summary: the situation, the turning point, and the central point the story supports.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Anneli's café held a weekly quiz night that nobody attended for a month. She moved it from Wednesday to Friday and offered a free drink to the winning team. By the second Friday, eleven teams had signed up.",
+      "options": [
+        "Anneli's café was struggling because its coffee wasn't good enough.",
+        "Anneli's weekly quiz night had no one attending for a month.",
+        "The timing and a small incentive can make a big difference to attendance.",
+        "Anneli moved it to Friday and offered a free drink to the winning team."
+      ],
+      "correctOrder": [1, 3, 2],
+      "hint": "Does the statement need information the story never gives?",
+      "explanation": "The story says nothing about the coffee or the café failing. The central point rests on the two changes Anneli made and the response.",
+      "storyKeyEvents": [
+        "No one came to Anneli's weekly quiz night for a month.",
+        "Anneli moved the quiz to Friday and offered a free drink to the winning team.",
+        "Eleven teams had signed up by the second Friday."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L144_Q1",
+      "instruction": "Arrange a short summary: the situation, the turning point, and the central point the story supports.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Mr. Faraday tried a new approach in his maths class: pupils explained a problem to a partner before he did. Test scores in that unit rose from an average of 58 to 67. He said he would try it again in the next unit.",
+      "options": [
+        "Average scores in the unit rose from 58 to 67.",
+        "Having pupils explain problems to each other may help them understand.",
+        "Mr. Faraday had pupils explain a problem to a partner before he did.",
+        "Pupils always learn better from each other than from their teachers."
+      ],
+      "correctOrder": [2, 0, 1],
+      "hint": "Look at how strongly the story states its result. Does the statement match it?",
+      "explanation": "One class improved in one unit, so the story supports only that this may help. \"Always\" makes it a sweeping claim that the evidence can't carry.",
+      "storyKeyEvents": [
+        "Mr. Faraday had pupils explain a problem to a partner before he did.",
+        "Average test scores in that unit rose from 58 to 67.",
+        "He said he would try the approach again in the next unit."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L144_Q2",
+      "instruction": "Arrange a short summary: the situation, the turning point, and the central point the story supports.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Chidera arrived early to her interview and used the extra time to read the company's latest newsletter. When the panel asked what she knew about a recent project, she could answer in detail. She was offered the job the next day.",
+      "options": [
+        "A little preparation can make a real difference in an interview.",
+        "Chidera arrived early to her interview and read the company's newsletter.",
+        "The panel asked about a recent project and she answered in detail.",
+        "Arriving early is the only thing that really matters when you go to an interview."
+      ],
+      "correctOrder": [1, 2, 0],
+      "hint": "Does the statement claim more than the story shows?",
+      "explanation": "The story credits her reading and her detailed answer, not arriving early alone. \"The only thing\" is far broader than what happens.",
+      "storyKeyEvents": [
+        "Chidera arrived early to her interview and read the company's newsletter.",
+        "The panel asked about a recent project and she answered in detail.",
+        "She was offered the job the next day."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L144_Q3",
+      "instruction": "Arrange a short summary: the situation, the turning point, and the central point the story supports.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "On the school trip to the coast, Jamila's group lost the trail map in the wind. They decided to follow the coastline and asked a passing walker for landmarks, and they reached the lighthouse only twenty minutes late. Their teacher praised their calm decision.",
+      "options": [
+        "They followed the coastline and asked a passing walker for landmarks.",
+        "The lighthouse was an important place to visit.",
+        "Jamila's group lost the trail map in the wind.",
+        "Staying calm and asking for help can rescue a plan that has gone wrong."
+      ],
+      "correctOrder": [2, 0, 3],
+      "hint": "A place in the story isn't necessarily its message.",
+      "explanation": "The lighthouse is where they ended up, but the story is about how they handled losing the map. Their calm choice and the walker's help are the point.",
+      "storyKeyEvents": [
+        "Jamila's group lost the trail map in the wind.",
+        "They followed the coastline and asked a passing walker for landmarks.",
+        "They reached the lighthouse only twenty minutes late."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L145_Q1",
+      "instruction": "Arrange a short summary: the situation, the turning point, and the central point the story supports.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Kasper had put off replying to his landlord's email for three weeks. When he finally answered, he learned that the deadline for his deposit refund had passed. He resolved to reply to important emails on the same day.",
+      "options": [
+        "Delaying an important reply can have real costs.",
+        "Waiting usually makes problems disappear on their own.",
+        "When he replied, the deadline for his deposit refund had passed.",
+        "Kasper put off replying to his landlord's email for three weeks."
+      ],
+      "correctOrder": [3, 2, 0],
+      "hint": "Compare the statement with what happened to Kasper.",
+      "explanation": "Kasper's delay cost him his refund, which is the opposite of a problem disappearing. The story warns against putting things off.",
+      "storyKeyEvents": [
+        "Kasper put off replying to his landlord's email for three weeks.",
+        "When he finally replied, the deadline for his deposit refund had passed.",
+        "He resolved to answer important emails the same day."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L145_Q2",
+      "instruction": "Arrange a short summary that opens with the central point, then gives the situation and the key event.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Neha spent the weekend clearing out her wardrobe and found six jackets she had forgotten. She donated four to a shelter and kept two. The volunteer at the shelter said winter donations were running low that week.",
+      "options": [
+        "Everyone should give away most of what they own.",
+        "Neha found six forgotten jackets while clearing her wardrobe.",
+        "She donated four of them to a shelter that was short of winter donations.",
+        "Sorting out unused things can help other people as well as yourself."
+      ],
+      "correctOrder": [3, 1, 2],
+      "hint": "Is this a lesson the story teaches, or a much bigger rule?",
+      "explanation": "Neha kept two jackets and gave four, and nothing in the story recommends giving away most possessions. The point is modest: her clear-out helped someone.",
+      "storyKeyEvents": [
+        "Neha spent the weekend clearing out her wardrobe.",
+        "She found six jackets she had forgotten.",
+        "She donated four jackets to a shelter that was short of winter donations."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L145_Q3",
+      "instruction": "Arrange a short summary: the situation, the turning point, and the central point the story supports.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The bus driver, Mr. Osei, noticed an elderly passenger struggling with a heavy bag and lowered the bus so she could step on easily. She thanked him, and a young man offered her his seat. Meanwhile the ticket machine printed the wrong date.",
+      "options": [
+        "One considerate act can encourage others to help.",
+        "He lowered the bus for her, and a young man then offered her his seat.",
+        "Mr. Osei noticed an elderly passenger struggling with a heavy bag.",
+        "The story is mainly about a faulty ticket machine."
+      ],
+      "correctOrder": [2, 1, 0],
+      "hint": "Some detail is mentioned only in passing. What does the story keep returning to?",
+      "explanation": "The ticket machine appears in a single closing line and changes nothing. The story centres on the driver's consideration and the young man's response.",
+      "storyKeyEvents": [
+        "Mr. Osei noticed an elderly passenger struggling with a heavy bag.",
+        "He lowered the bus so she could step on easily.",
+        "A young man offered her his seat."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L146_Q1",
+      "instruction": "Arrange a short summary: the situation, the turning point, and the central point the story supports.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Tuan's team practised the same corner routine every week but kept losing the ball. Their coach filmed a practice, and when they watched the recording they saw that two players always ran to the same spot. They changed the positions, and in the next match they scored twice from corners.",
+      "options": [
+        "Watching yourself can reveal problems you don't notice in the moment.",
+        "Tuan's team practised the same corner routine every week but kept losing the ball.",
+        "The coach filmed a practice and the team saw two players running to the same spot.",
+        "Tuan's team scored twice from corners in the very next match they played."
+      ],
+      "correctOrder": [1, 2, 0],
+      "hint": "An outcome is a result. Ask what the outcome shows.",
+      "explanation": "Scoring twice is what happened afterwards, not what it means. The central point is that the recording revealed a hidden mistake.",
+      "storyKeyEvents": [
+        "Tuan's team practised the same corner routine every week but kept losing the ball.",
+        "The coach filmed a practice and the team saw two players running to the same spot.",
+        "After changing the positions the team scored twice from corners."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L146_Q2",
+      "instruction": "Arrange a short summary: the situation, the turning point, and the central point the story supports.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "When the deadline for the group project was moved forward, Saskia divided the tasks into small pieces and asked each teammate to choose two. Everyone finished their pieces the day before, and the group submitted early.",
+      "options": [
+        "Saskia is bossy and likes to control her team.",
+        "The deadline for the group project was moved forward.",
+        "Splitting a big job into small pieces can make it manageable.",
+        "Saskia divided the work into small pieces and each teammate chose two."
+      ],
+      "correctOrder": [1, 3, 2],
+      "hint": "Does the story show her acting this way, or is it a guess?",
+      "explanation": "Saskia asked teammates to choose their own pieces, which doesn't fit bossiness. The story supports the point that small pieces made the job manageable.",
+      "storyKeyEvents": [
+        "The deadline for the group project was moved forward.",
+        "Saskia divided the tasks into small pieces and each teammate chose two.",
+        "Everyone finished early and the group submitted ahead of time."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L146_Q3",
+      "instruction": "Arrange a short summary that opens with the central point, then gives the situation and the key event.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Roberto's neighbour kept her spare key under the doormat, and Roberto suggested a safer place. She moved it to a lockbox. A month later she locked herself out, opened the box and was back inside within a minute.",
+      "options": [
+        "Roberto's neighbour kept her spare key under the doormat.",
+        "Neighbours should trust each other with everything, including their keys.",
+        "A sensible backup plan can pay off when something goes wrong.",
+        "She moved it to a lockbox, and a month later used it after locking herself out."
+      ],
+      "correctOrder": [2, 0, 3],
+      "hint": "Ask whether the statement is about a key and a backup, or about trust in general.",
+      "explanation": "Trust isn't what the story is about; the outcome hinges on the lockbox. The point is that a backup plan paid off.",
+      "storyKeyEvents": [
+        "Roberto's neighbour kept her spare key under the doormat.",
+        "Roberto suggested a safer place, and she moved the key to a lockbox.",
+        "A month later she locked herself out and got back in within a minute."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L147_Q1",
+      "instruction": "Arrange a short summary: the situation, the turning point, and the central point the story supports.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The town's museum began opening for free on the first Sunday of each month. Visitor numbers on those Sundays rose from around a hundred to nearly four hundred, and many people returned on other days. The museum's shop sales also rose.",
+      "options": [
+        "Visitor numbers on those Sundays rose from about a hundred to nearly four hundred.",
+        "Free entry can bring new visitors who come back again.",
+        "The town's museum began opening for free on the first Sunday of each month.",
+        "Free entry has made this museum the most popular in the country."
+      ],
+      "correctOrder": [2, 0, 1],
+      "hint": "Does the statement need facts about other museums?",
+      "explanation": "The story says nothing about other museums, so a country-wide ranking can't be drawn from it. The supported point is about new visitors returning.",
+      "storyKeyEvents": [
+        "The town's museum began opening free on the first Sunday of each month.",
+        "Visitor numbers on those Sundays rose from about a hundred to nearly four hundred.",
+        "Many people returned on other days and shop sales also rose."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L147_Q2",
+      "instruction": "Arrange a short summary that opens with the central point, then gives the situation and the key event.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Mrs. Duarte introduced five minutes of silent reading at the start of each lesson. After a term the class handed in more homework on time, and pupils said they felt calmer. She decided to continue it next term.",
+      "options": [
+        "After a term the class handed in more homework on time and felt calmer.",
+        "Silent reading solves every discipline problem in schools.",
+        "A short, calm start may help settle a class.",
+        "Mrs. Duarte introduced five minutes of silent reading at the start of each lesson."
+      ],
+      "correctOrder": [2, 3, 0],
+      "hint": "Check how many classes and how many problems the story covers.",
+      "explanation": "One class and one term can only support a modest \"may help\". A claim about every problem in every school is far beyond the story.",
+      "storyKeyEvents": [
+        "Mrs. Duarte introduced five minutes of silent reading at the start of each lesson.",
+        "After a term the class handed in more homework on time.",
+        "Pupils said they felt calmer and she decided to continue."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L147_Q3",
+      "instruction": "Arrange a short summary: the situation, the turning point, and the central point the story supports.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Tobias helped a stranger jump-start her car in a car park. She insisted on buying him a coffee, and they discovered that they worked in the same building. Later that month she introduced him to a colleague who hired him for a freelance project.",
+      "options": [
+        "She bought him a coffee and they found they worked in the same building.",
+        "Tobias helped a stranger jump-start her car in a car park.",
+        "A small act of help can lead to unexpected connections.",
+        "Helping strangers always leads to a new job, a new friend or a lasting partnership."
+      ],
+      "correctOrder": [1, 0, 2],
+      "hint": "Which word makes the statement bigger than what happened once?",
+      "explanation": "It happened once in this story, and the word \"always\" turns it into a rule. The safer point is that the help led to an unexpected connection.",
+      "storyKeyEvents": [
+        "Tobias helped a stranger jump-start her car.",
+        "She bought him a coffee and they found they worked in the same building.",
+        "She later introduced him to a colleague who hired him for a freelance project."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L148_Q1",
+      "instruction": "Arrange a short summary: the situation, the turning point, and the central point the story supports.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "For one week in December the lighthouse keeper's log records only the weather and the number of ships that passed. On the last day he added a line: \"Lamp cleaned twice; no incident.\" Historians later used the log to trace the shipping lanes.",
+      "options": [
+        "The lighthouse keeper recorded the weather and the ships that passed each day.",
+        "Ordinary routine records can become valuable evidence later.",
+        "Historians later used the log to trace the shipping lanes.",
+        "The keeper wrote \"Lamp cleaned twice; no incident\" on the last day."
+      ],
+      "correctOrder": [0, 2, 1],
+      "hint": "A quoted line is a detail. What does the whole story say about the log?",
+      "explanation": "The quoted line is one entry among many and isn't the point of the story. What matters is that everyday records later helped historians.",
+      "storyKeyEvents": [
+        "The lighthouse keeper's log for one December week recorded the weather and the ships that passed.",
+        "On the last day he added a line saying the lamp had been cleaned twice.",
+        "Historians later used the log to trace the shipping lanes."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L148_Q2",
+      "instruction": "Arrange a short summary that opens with the central point, then gives the situation and the key event.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Mona and Ilkay both wanted the same parking space. After a week of arguing, they agreed to alternate it each day and hung a simple calendar in the office. Within a month they had stopped complaining, and a third colleague asked to join the swap.",
+      "options": [
+        "They agreed to alternate it each day and hung a calendar in the office.",
+        "A simple, fair arrangement can end an argument.",
+        "Fair arrangements only make office conflicts worse over time, never better.",
+        "Mona and Ilkay argued for a week over the same parking space."
+      ],
+      "correctOrder": [1, 3, 0],
+      "hint": "Look at what happened after they agreed.",
+      "explanation": "After the arrangement they stopped complaining and a colleague wanted to join in, which is the opposite of things getting worse.",
+      "storyKeyEvents": [
+        "Mona and Ilkay argued for a week over the same parking space.",
+        "They agreed to alternate it daily and hung a calendar in the office.",
+        "Within a month they stopped complaining and a third colleague asked to join."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L148_Q3",
+      "instruction": "Arrange a short summary: the situation, the turning point, and the central point the story supports.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Baptiste forgot to book the coach for his team's away match. He phoned the organisers, apologised, and arranged a smaller van at his own cost so the team could travel. The team made the match, and they won it.",
+      "options": [
+        "Baptiste forgot to book the coach for his team's away match.",
+        "He phoned the organisers, apologised, and arranged a smaller van.",
+        "Owning up to a mistake and fixing it can restore trust.",
+        "Leaders should always pay for everyone else's mistakes out of pocket."
+      ],
+      "correctOrder": [0, 1, 2],
+      "hint": "Does the story say what leaders should do in general?",
+      "explanation": "The story only shows Baptiste fixing his own error. A rule for all leaders about paying for others' mistakes is a lesson the story doesn't state.",
+      "storyKeyEvents": [
+        "Baptiste forgot to book the coach for the away match.",
+        "He phoned the organisers, apologised and arranged a smaller van at his own cost.",
+        "The team reached the match and won it."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L149_Q1",
+      "instruction": "Arrange a short summary that opens with the central point, then gives the situation and the key event.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Anouk's flat was so cold that she started sleeping in a hat. After two weeks she checked the boiler settings and found the timer set to switch off at midnight. She corrected it, and the flat stayed warm all night. Her upstairs neighbour, meanwhile, was learning the trumpet.",
+      "options": [
+        "Checking the settings first can solve a problem that seems bigger than it is.",
+        "She found the boiler timer set to switch off at midnight and corrected it.",
+        "The story is mainly about a neighbour who was learning the trumpet.",
+        "Anouk's flat was so cold that she started sleeping in a hat."
+      ],
+      "correctOrder": [0, 3, 1],
+      "hint": "One detail is a side note. Is the trumpet part of what solves Anouk's problem?",
+      "explanation": "The trumpet has no effect on the cold flat. The story is about a simple setting that had been causing the trouble.",
+      "storyKeyEvents": [
+        "Anouk's flat was so cold that she slept in a hat.",
+        "She checked the boiler settings and found the timer switched off at midnight.",
+        "She corrected it and the flat stayed warm all night."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L149_Q2",
+      "instruction": "Arrange a short summary: the situation, the turning point, and the central point the story supports.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Grigor's phone battery kept dying by lunchtime. After reading online reviews, he installed an app that showed which apps used the most power, and he turned off two that ran constantly. The battery lasted until evening.",
+      "options": [
+        "He installed an app that showed which apps used the most power and turned off two.",
+        "Finding out what drains a resource makes it easier to fix.",
+        "Grigor's phone battery lasted until the evening on that same day.",
+        "Grigor's phone battery kept dying by lunchtime."
+      ],
+      "correctOrder": [3, 0, 1],
+      "hint": "The result tells you what happened. What does the whole story teach?",
+      "explanation": "The battery lasting until evening is the outcome, not the point it illustrates. The central point is that finding the drain made the fix possible.",
+      "storyKeyEvents": [
+        "Grigor's phone battery kept dying by lunchtime.",
+        "He installed an app that showed which apps used the most power and turned off two.",
+        "The battery lasted until evening."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L149_Q3",
+      "instruction": "Arrange a short summary: the situation, the turning point, and the central point the story supports.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The new cashier, Olesya, made three mistakes on her first day. Her supervisor showed her a checklist and sat beside her for an hour. By the end of the week she was scanning items faster than anyone else.",
+      "options": [
+        "Olesya is naturally clumsy and unsuited to cashier work.",
+        "Her supervisor showed her a checklist and sat beside her for an hour.",
+        "Olesya made three mistakes on her first day as a cashier.",
+        "Patient training can help a new employee improve quickly."
+      ],
+      "correctOrder": [2, 1, 3],
+      "hint": "Do her mistakes describe her nature, or her first day?",
+      "explanation": "She improved fast after training, which contradicts a claim that she is unsuited to the job. The story is about how support helped her improve.",
+      "storyKeyEvents": [
+        "Olesya made three mistakes on her first day.",
+        "Her supervisor showed her a checklist and sat beside her for an hour.",
+        "By the end of the week she scanned items faster than anyone else."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L150_Q1",
+      "instruction": "Choose the situation, the turning point, and the message the story actually supports, in that order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "For years the villagers of Oakby disagreed about whether to build a bridge over the stream. When floods cut off the school for a week, the argument ended. The council built a footbridge within a month, funded by donations from families who had once opposed it.",
+      "options": [
+        "Governments always act faster than individuals.",
+        "The villagers of Oakby had disagreed for years about building a bridge over the stream.",
+        "Floods cut off the school for a week, and the argument ended.",
+        "A shared hardship can settle a long disagreement."
+      ],
+      "correctOrder": [1, 2, 3],
+      "hint": "Does the statement fit the flood and the donations, or an unrelated idea?",
+      "explanation": "The story is about a shared hardship changing minds. A general claim about governments acting faster doesn't come from anything in it.",
+      "storyKeyEvents": [
+        "The villagers of Oakby disagreed for years about building a bridge over the stream.",
+        "Floods cut off the school for a week.",
+        "The council built a footbridge within a month, funded by donations from families who had once opposed it."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L150_Q2",
+      "instruction": "Choose the situation, the turning point, and the message the story actually supports, in that order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The price labels in Ruben's shop were tiny, and customers ignored them and kept asking staff for prices. Ruben switched to bold signs at each shelf. Afterwards fewer customers asked, and staff spent less time answering questions.",
+      "options": [
+        "The price labels in Ruben's shop were tiny, so customers kept asking staff for prices.",
+        "Bold signs raised the shop's profits by twenty per cent.",
+        "Clearer information can save time for both customers and staff.",
+        "Ruben switched to bold price signs at each shelf."
+      ],
+      "correctOrder": [0, 3, 2],
+      "hint": "Watch out for a precise-sounding number the story never gives.",
+      "explanation": "The story mentions fewer questions and less staff time, but no profit figure. A number the text doesn't contain can't be part of its message.",
+      "storyKeyEvents": [
+        "The price labels in Ruben's shop were tiny and customers kept asking staff for prices.",
+        "Ruben switched to bold signs at each shelf.",
+        "Fewer customers asked and staff spent less time answering questions."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L150_Q3",
+      "instruction": "Choose the situation, the turning point, and the message the story actually supports, in that order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "After a month of walking to work instead of driving, Bea noticed that she arrived more awake and saved on parking fees. Her colleague started walking too, though only twice a week.",
+      "options": [
+        "Walking to work makes everyone healthier and richer.",
+        "Walking to work brought Bea some noticeable benefits.",
+        "Bea began walking to work instead of driving.",
+        "After a month she arrived more awake and saved on parking fees."
+      ],
+      "correctOrder": [2, 3, 1],
+      "hint": "How far do the story's facts reach? One person, or everyone?",
+      "explanation": "The story reports what happened to Bea, and \"everyone\" and \"richer\" go well beyond it. The supported point is limited to her own benefits.",
+      "storyKeyEvents": [
+        "Bea began walking to work instead of driving.",
+        "After a month she arrived more awake and saved on parking fees.",
+        "Her colleague started walking too, though only twice a week."
+      ]
+    }
+  ]
 }

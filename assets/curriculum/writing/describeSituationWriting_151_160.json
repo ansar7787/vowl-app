@@ -5,1173 +5,1173 @@
     "quests": [
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L151_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE FULL CLEANUP DAY, INCLUDING THE UNEXPECTED PROBLEM AND HOW IT WAS RESOLVED",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You chose a college major your parents strongly disapproved of, believing it offered little financial security. Describe how you explained your decision to them.",
+            "situation": "A neighborhood organizes a community cleanup day, but a shortage of garbage bags threatens to interrupt the event halfway through. Describe the full day, from the initial planning to how the unexpected shortage was resolved.",
             "emojis": [
-                "🎓",
-                "📚",
-                "😟",
-                "💬"
+                "✅",
+                "🧤",
+                "🗑️",
+                "😟"
             ],
             "keywords": {
                 "0": [
-                    "CHOOSE",
-                    "MAJOR",
-                    "PARENTS"
+                    "FINISH",
+                    "COMPLETE",
+                    "SATISFIED"
                 ],
                 "1": [
-                    "DISAPPROVE",
-                    "FINANCIAL",
-                    "SECURITY"
+                    "VOLUNTEERS",
+                    "GATHER",
+                    "MORNING"
                 ],
                 "2": [
-                    "EXPLAIN",
-                    "DECISION",
-                    "PREPARE"
+                    "BAGS",
+                    "RUNOUT",
+                    "SHORTAGE"
                 ],
                 "3": [
-                    "CONVERSATION",
-                    "CONFIDENT",
-                    "RESPECT"
+                    "ORGANIZER",
+                    "SCRAMBLE",
+                    "SOLUTION"
                 ]
             },
-            "minWords": 56,
-            "hint": "Describe the reasons you gave and how your parents eventually responded.",
-            "explanation": "Confident answers give clear personal reasons while acknowledging the parents' concerns respectfully.",
-            "modelAnswer": "Confident answers give clear personal reasons while acknowledging the parents' concerns respectfully. Describe the reasons you gave and how your parents eventually responded. This serves as a model answer for the situation."
+            "minWords": 55,
+            "hint": "Move through three clear stages: the event starting smoothly, the unexpected shortage, and the specific solution that let it continue.",
+            "explanation": "Multi-stage descriptions at this level should move cleanly through a beginning, a disruption, and a resolution, giving each stage enough detail that the reader can follow the full arc of the event without confusion.",
+            "modelAnswer": "Around thirty volunteers gather at eight in the morning, splitting into small groups to tackle different sections of the park, and for the first hour, everything proceeds exactly as planned. By midday, though, the organizer realizes with dismay that the supply of garbage bags has already run out, far sooner than anyone anticipated, and several volunteers stand around uncertain what to do next. Quick thinking saves the day when one volunteer remembers a nearby hardware store, dashing over to buy several more rolls, and within twenty minutes the cleanup resumes, finishing successfully by early afternoon with the whole park looking noticeably tidier."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L151_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE FULL FUNDRAISER PLANNING, INCLUDING THE UNEXPECTED PROBLEM AND HOW IT WAS RESOLVED",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "A small bakery you had supported for years suddenly raised its prices well above nearby competitors, and you had to decide whether to keep going there. Describe your decision.",
+            "situation": "A school plans an outdoor bake sale fundraiser, but a sudden weather forecast threatens to force a last-minute change. Describe the full planning process, the unexpected problem, and how it was resolved.",
             "emojis": [
-                "🥐",
-                "💰",
-                "😕",
-                "🤔"
+                "🌧️",
+                "😰",
+                "✅",
+                "🧁"
             ],
             "keywords": {
                 "0": [
-                    "SMALLBAKERY",
-                    "SUPPORT",
-                    "YEARS"
+                    "FORECAST",
+                    "RAIN",
+                    "WARN"
                 ],
                 "1": [
-                    "RAISEPRICE",
-                    "ABOVE",
-                    "COMPETITOR"
+                    "TEACHERS",
+                    "SCRAMBLE",
+                    "RELOCATE"
                 ],
                 "2": [
-                    "DECIDE",
-                    "KEEPGOING",
-                    "LOYAL"
+                    "SUCCEED",
+                    "INDOOR",
+                    "PROCEED"
                 ],
                 "3": [
-                    "DECISION",
-                    "VALUE",
-                    "BALANCE"
+                    "PLAN",
+                    "WEEKS",
+                    "ORGANIZE"
                 ]
             },
-            "minWords": 56,
-            "hint": "Explain what factors mattered most in your final decision.",
-            "explanation": "Balanced answers weigh loyalty and cost fairly before explaining a clear final choice.",
-            "modelAnswer": "Balanced answers weigh loyalty and cost fairly before explaining a clear final choice. Explain what factors mattered most in your final decision. This serves as a model answer for the situation."
+            "minWords": 55,
+            "hint": "Show the weeks of planning first, then the forecast disrupting it, and finally the specific relocation solution that saved the event.",
+            "explanation": "A multi-stage plan disrupted by an external factor, such as weather, is described clearly by showing how far along the original plan was before the disruption, which helps the reader understand exactly what had to change.",
+            "modelAnswer": "Teachers and parent volunteers spend nearly three weeks organizing tables, baked goods, and a raffle for the school's annual outdoor bake sale, scheduled for the following Saturday. Just two days before the event, an unwelcome weather forecast predicts heavy rain for the entire afternoon, throwing the careful planning into sudden uncertainty. Rather than cancelling outright, the organizing committee scrambles to secure the school gymnasium as a backup location, quickly notifying families through email, and the fundraiser ultimately proceeds indoors, raising nearly as much money as originally hoped despite the last-minute scramble."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L151_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE FULL CHARITY RUN PLANNING, INCLUDING THE UNEXPECTED PROBLEM AND HOW IT WAS RESOLVED",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Managing chronic pain while staying fully engaged at work required finding small adjustments that didn't draw attention from colleagues. Describe the changes you made.",
+            "situation": "A local charity organizes a five-kilometer run through downtown, but a last-minute road closure forces a change to the planned route. Describe the full planning process, the unexpected problem, and how it was resolved.",
             "emojis": [
-                "🩺",
-                "💼",
-                "😣",
-                "⚙️"
+                "🏃",
+                "✅",
+                "🚧",
+                "😳"
             ],
             "keywords": {
                 "0": [
-                    "CHRONICPAIN",
-                    "MANAGE",
-                    "ENGAGE"
+                    "ROUTE",
+                    "MAP",
+                    "DESIGN"
                 ],
                 "1": [
-                    "WORK",
-                    "ADJUSTMENT",
-                    "SMALL"
+                    "RACE",
+                    "PROCEED",
+                    "SUCCESSFUL"
                 ],
                 "2": [
-                    "DRAWATTENTION",
-                    "COLLEAGUE",
-                    "AVOID"
+                    "CLOSURE",
+                    "ANNOUNCE",
+                    "UNEXPECTED"
                 ],
                 "3": [
-                    "CHANGE",
-                    "COPE",
-                    "MAINTAIN"
+                    "ORGANIZER",
+                    "REDESIGN",
+                    "QUICKLY"
                 ]
             },
             "minWords": 56,
-            "hint": "Describe specific, subtle changes that made your workday more manageable.",
-            "explanation": "Practical answers describe concrete adjustments, showing how daily discomfort was managed without drama.",
-            "modelAnswer": "Practical answers describe concrete adjustments, showing how daily discomfort was managed without drama. Describe specific, subtle changes that made your workday more manageable. This serves as a model answer for the situation."
+            "hint": "Show the original route being carefully planned, then the sudden closure, and finally the organizer's quick redesign of the course.",
+            "explanation": "Event descriptions involving public infrastructure, such as a road closure, benefit from showing the specific practical challenge of adapting an existing plan under real time pressure, rather than simply stating that a new plan was made.",
+            "modelAnswer": "For months, the charity's small organizing team carefully maps out a five-kilometer route through the heart of downtown, coordinating with the city for road permits along the way. Just three days before the race, the city announces an unexpected emergency road closure directly along a key stretch of the planned course, forcing the team into a frantic scramble. Working late into the night, the lead organizer redesigns a slightly shorter alternate route using nearby side streets, quickly updating maps and signage before sunrise, and the race ultimately proceeds smoothly the following morning, with most runners barely noticing the last-minute change."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L152_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE FULL ROAD TRIP DAY, INCLUDING THE UNEXPECTED DETOUR AND THE REPRIORITIZED PLAN",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "After a company merger, your new team followed very different norms than you were used to, and the first weeks felt disorienting. Describe how you adjusted.",
+            "situation": "A family sets out on a carefully planned road trip, but an unexpected highway closure forces them to detour and reconsider their priorities for the rest of the day. Describe the full day, the detour, and how the family adjusted their plans.",
             "emojis": [
-                "💼",
-                "🔄",
-                "😕",
-                "📋"
+                "🗺️",
+                "🚧",
+                "✅",
+                "🚗"
             ],
             "keywords": {
                 "0": [
-                    "MERGER",
-                    "NEWTEAM",
-                    "DIFFERENT"
+                    "RECONSIDER",
+                    "PRIORITIZE",
+                    "DECIDE"
                 ],
                 "1": [
-                    "NORMS",
-                    "USEDTO",
-                    "DISORIENT"
+                    "CLOSURE",
+                    "DETOUR",
+                    "UNEXPECTED"
                 ],
                 "2": [
-                    "FIRSTWEEKS",
-                    "ADJUST",
-                    "OBSERVE"
+                    "ARRIVE",
+                    "LATER",
+                    "STILLENJOY"
                 ],
                 "3": [
-                    "ADAPT",
-                    "FITIN",
-                    "LEARN"
+                    "DEPART",
+                    "EARLY",
+                    "EXCITED"
                 ]
             },
-            "minWords": 57,
-            "hint": "Describe one or two specific norms that felt unfamiliar and how you adapted.",
-            "explanation": "Concrete answers name specific differences in workplace culture and describe a genuine adjustment period.",
-            "modelAnswer": "Concrete answers name specific differences in workplace culture and describe a genuine adjustment period. Describe one or two specific norms that felt unfamiliar and how you adapted. This serves as a model answer for the situation."
+            "minWords": 56,
+            "hint": "Show the family's original plan clearly, then the detour disrupting it, and finally which planned stops they chose to keep or drop.",
+            "explanation": "Reprioritizing a plan mid-journey is described convincingly when the writer shows a specific choice being made, such as skipping one stop to save time, rather than a vague statement that the family adjusted.",
+            "modelAnswer": "The family leaves home at dawn, excited about a full day that includes a scenic overlook, a small roadside museum, and a late lunch at a recommended diner before finally reaching their destination by evening. An unexpected highway closure due to construction forces a lengthy detour through unfamiliar back roads, eating up nearly two extra hours they had not accounted for. Faced with the lost time, the parents quickly decide to skip the museum entirely, prioritizing the scenic overlook and a quick lunch instead, and though they arrive at their destination later than planned, everyone agrees the trip still felt worthwhile."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L152_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE FULL BUSINESS TRIP, INCLUDING THE VISA ISSUE AND THE REPRIORITIZED PLAN",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "A relative who had never repaid previous loans asked you for money again, and you had to decide how to respond without damaging the relationship. Describe your decision.",
+            "situation": "A business traveler's carefully scheduled international trip is thrown into chaos when a visa issue surfaces at the airport. Describe the full trip, the unexpected problem, and how priorities were reshuffled to manage it.",
             "emojis": [
-                "💰",
-                "👨‍👩‍👧‍👦",
-                "😕",
-                "🗣️"
+                "📄",
+                "✈️",
+                "✅",
+                "😰"
             ],
             "keywords": {
                 "0": [
-                    "RELATIVE",
-                    "NEVERREPAY",
-                    "PREVIOUS"
+                    "VISA",
+                    "ISSUE",
+                    "FLAG"
                 ],
                 "1": [
-                    "LOAN",
-                    "ASKAGAIN",
-                    "MONEY"
+                    "SCHEDULE",
+                    "MEETINGS",
+                    "THREE"
                 ],
                 "2": [
-                    "DECIDE",
-                    "RESPOND",
-                    "WITHOUT"
+                    "RESCHEDULE",
+                    "PRIORITIZE",
+                    "SALVAGE"
                 ],
                 "3": [
-                    "DAMAGE",
-                    "RELATIONSHIP",
-                    "HONEST"
+                    "EMBASSY",
+                    "CALL",
+                    "URGENT"
                 ]
             },
-            "minWords": 57,
-            "hint": "Explain what you decided and how you communicated it kindly but firmly.",
-            "explanation": "Strong answers set a clear boundary while explaining the reasoning kindly, protecting both money and relationship.",
-            "modelAnswer": "Strong answers set a clear boundary while explaining the reasoning kindly, protecting both money and relationship. Explain what you decided and how you communicated it kindly but firmly. This serves as a model answer for the situation."
+            "minWords": 56,
+            "hint": "Show the original tightly packed schedule first, then the visa problem disrupting it, and finally which meetings were prioritized or postponed.",
+            "explanation": "Professional travel disruptions are described convincingly through the specific reshuffling of a schedule, showing which commitments were kept and which were sacrificed, rather than a vague statement that the trip was stressful.",
+            "modelAnswer": "With three important client meetings scheduled across two countries in four days, the traveler arrives at the airport confident everything is in order, only to be pulled aside by an official who flags an issue with her visa documentation. After a tense hour on the phone with the embassy, she manages to resolve the paperwork, but the delay costs her the first scheduled meeting entirely. Recognizing she cannot recover the lost time, she quickly reprioritizes, calling ahead to combine two remaining meetings into one longer session, and ultimately salvages the trip's most important business relationships despite losing nearly a full day."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L152_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE FULL BACKPACKING TRIP, INCLUDING THE MISSED CONNECTION AND THE REPRIORITIZED PLAN",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your passport was stolen on the second day of a trip abroad, forcing you to navigate an unfamiliar embassy process while still trying to enjoy the visit. Describe what you did.",
+            "situation": "A backpacker's carefully planned multi-city itinerary is disrupted when she misses a crucial train connection. Describe the full trip, the unexpected problem, and how her priorities shifted as a result.",
             "emojis": [
-                "🛂",
-                "😨",
-                "🏛️",
-                "📋"
+                "✅",
+                "🚆",
+                "🎒",
+                "😩"
             ],
             "keywords": {
                 "0": [
-                    "PASSPORT",
-                    "STEAL",
-                    "SECONDDAY"
+                    "ADJUST",
+                    "SKIP",
+                    "SALVAGE"
                 ],
                 "1": [
-                    "ABROAD",
-                    "FORCE",
-                    "NAVIGATE"
+                    "MISS",
+                    "CONNECTION",
+                    "DELAY"
                 ],
                 "2": [
-                    "EMBASSY",
-                    "PROCESS",
-                    "UNFAMILIAR"
+                    "ITINERARY",
+                    "PLAN",
+                    "FOURCITIES"
                 ],
                 "3": [
-                    "MANAGE",
-                    "PATIENT",
-                    "RESOLVE"
+                    "OPTIONS",
+                    "CONSIDER",
+                    "LIMITED"
                 ]
             },
-            "minWords": 57,
-            "hint": "Describe the steps you took at the embassy and how you kept calm.",
-            "explanation": "Clear travel answers walk through the practical steps taken to resolve a stressful, unfamiliar problem.",
-            "modelAnswer": "Clear travel answers walk through the practical steps taken to resolve a stressful, unfamiliar problem. Describe the steps you took at the embassy and how you kept calm. This serves as a model answer for the situation."
+            "minWords": 56,
+            "hint": "Show the original four-city plan first, then the missed connection, and finally the specific city she decides to cut from her itinerary.",
+            "explanation": "Travel itineraries disrupted mid-trip are described clearly when a specific location is named as being dropped from the plan, giving the reprioritization a concrete, believable shape rather than a vague adjustment.",
+            "modelAnswer": "Having mapped out a tight but exciting itinerary across four different cities over ten days, the backpacker arrives at the station only to watch her connecting train pull away exactly two minutes before she reaches the platform. With the next available train not departing until the following morning, she quickly realizes she cannot fit all four cities into her remaining schedule without exhausting herself completely. After weighing her options over a cup of coffee at the station, she decides to skip the smallest, least essential city on her list entirely, salvaging the rest of her trip and arriving at her final destination only slightly behind schedule."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L153_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW THE THEATER TEAM HANDLED THE LIGHTING FAILURE DURING TECH WEEK",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "A close friend's posts online had grown increasingly erratic over several weeks, and you weren't sure whether saying something would help or overstep. Describe what you decided.",
+            "situation": "During the final tech rehearsal before opening night, a local theater production experiences a complete lighting failure just as the crew is finalizing cues. Describe how the director, stage crew, and actors each responded to the crisis.",
             "emojis": [
-                "📱",
-                "😟",
-                "💭",
-                "💬"
+                "✅",
+                "🎭",
+                "💡",
+                "😰"
             ],
             "keywords": {
                 "0": [
-                    "FRIEND",
-                    "POST",
-                    "ERRATIC"
+                    "REPAIR",
+                    "RESUME",
+                    "RELIEVED"
                 ],
                 "1": [
-                    "SEVERALWEEKS",
-                    "UNSURE",
-                    "SAY"
+                    "DIRECTOR",
+                    "PAUSE",
+                    "REASSESS"
                 ],
                 "2": [
-                    "HELP",
-                    "OVERSTEP",
-                    "WORRY"
+                    "CREW",
+                    "INSPECT",
+                    "WIRING"
                 ],
                 "3": [
-                    "DECIDE",
-                    "REACHOUT",
-                    "GENTLE"
+                    "ACTORS",
+                    "WAIT",
+                    "RUNLINES"
                 ]
             },
-            "minWords": 57,
-            "hint": "Describe how you approached the conversation with care.",
-            "explanation": "Caring answers describe a gentle, specific way of checking in without sounding accusatory.",
-            "modelAnswer": "Caring answers describe a gentle, specific way of checking in without sounding accusatory. Describe how you approached the conversation with care. This serves as a model answer for the situation."
+            "minWords": 56,
+            "hint": "Give the director, the stage crew, and the actors each a distinct role in responding to the crisis, rather than describing the team as a single unit.",
+            "explanation": "Complex real-world crises involving several distinct roles are described best when each role's specific contribution is shown separately, since this reflects how a genuine production team actually divides responsibility under pressure.",
+            "modelAnswer": "Just as the crew finishes programming the final lighting cues for opening night, every light in the theater suddenly goes dark, plunging the stage into confused silence. The director immediately calls a pause, calmly reassessing the schedule while the lighting crew scrambles backstage to inspect the wiring, tracing the fault to a blown circuit within twenty tense minutes. Meanwhile, the actors use the unexpected downtime productively, running lines quietly in a corner of the green room, and once the lights flicker back to life, the entire team resumes rehearsal with renewed focus, finishing the final cues just before midnight."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L153_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW THE RESTAURANT TEAM HANDLED OPENING NIGHT PRESSURE",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Moving to a new city where you knew absolutely no one meant rebuilding a social life almost entirely from scratch. Describe your first few months.",
+            "situation": "On the opening night of a new restaurant, an unexpectedly large crowd overwhelms both the kitchen and front-of-house staff at once. Describe how the kitchen team and the front-of-house team each responded to the pressure.",
             "emojis": [
-                "🏙️",
-                "😶",
-                "🤝",
-                "📅"
+                "👨‍🍳",
+                "😓",
+                "✅",
+                "🍽️"
             ],
             "keywords": {
                 "0": [
-                    "MOVE",
-                    "NEWCITY",
-                    "KNOWNOONE"
+                    "HOSTESS",
+                    "APOLOGIZE",
+                    "MANAGE"
                 ],
                 "1": [
-                    "REBUILD",
-                    "SOCIALLIFE",
-                    "SCRATCH"
+                    "WAITSTAFF",
+                    "PRIORITIZE",
+                    "TABLES"
                 ],
                 "2": [
-                    "FIRSTMONTHS",
-                    "LONELY",
-                    "TRY"
+                    "SETTLE",
+                    "RHYTHM",
+                    "SUCCEED"
                 ],
                 "3": [
-                    "CONNECT",
-                    "COMMUNITY",
-                    "SETTLE"
+                    "KITCHEN",
+                    "OVERWHELM",
+                    "ORDERS"
                 ]
             },
-            "minWords": 57,
-            "hint": "Describe specific ways you tried to meet people and how it went.",
-            "explanation": "Good answers name specific efforts, like joining groups, and honestly describe both struggles and progress.",
-            "modelAnswer": "Good answers name specific efforts, like joining groups, and honestly describe both struggles and progress. Describe specific ways you tried to meet people and how it went. This serves as a model answer for the situation."
+            "minWords": 56,
+            "hint": "Give the kitchen staff and the front-of-house staff each their own specific response to the overwhelming crowd, showing how the two teams coordinated.",
+            "explanation": "Restaurant crises are naturally suited to role-based description, since kitchen staff and front-of-house staff face genuinely different pressures at once, and describing both separately shows the full scope of a demanding opening night.",
+            "modelAnswer": "Word of the new restaurant's opening spreads faster than expected, and by seven o'clock the small dining room overflows with far more guests than the reservation list had prepared them for. In the kitchen, the head chef quickly reorganizes stations, prioritizing the simpler dishes first to keep tickets moving, while out front, the hostess apologizes repeatedly to waiting guests and the waitstaff carefully juggle tables, prioritizing the customers who arrived earliest. By nine o'clock, the chaotic rush finally settles into a manageable rhythm, and the exhausted but proud team closes the night considering their opening a genuine success."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L153_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW THE SCHOOL PLAY TEAM HANDLED THE COSTUME MALFUNCTION",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You need to write a message declining a job offer you had initially been excited about, after realizing the role wasn't the right fit. Describe what you write.",
+            "situation": "Just minutes before the school play begins, a lead actor's costume tears badly backstage. Describe how the stage manager, the costume crew, and the actor each responded under the time pressure.",
             "emojis": [
-                "💼",
-                "✉️",
-                "😕",
-                "🙏"
+                "🎭",
+                "✅",
+                "🧵",
+                "😰"
             ],
             "keywords": {
                 "0": [
-                    "DECLINE",
-                    "JOBOFFER",
-                    "INITIALLY"
+                    "STAGEMANAGER",
+                    "ALERT",
+                    "TIMER"
                 ],
                 "1": [
-                    "EXCITED",
-                    "REALIZE",
-                    "ROLE"
+                    "READY",
+                    "CURTAIN",
+                    "RELIEF"
                 ],
                 "2": [
-                    "NOTRIGHT",
-                    "FIT",
-                    "DECIDE"
+                    "COSTUMECREW",
+                    "STITCH",
+                    "RAPID"
                 ],
                 "3": [
-                    "WRITE",
-                    "POLITE",
-                    "GRATEFUL"
+                    "ACTOR",
+                    "NERVOUS",
+                    "WAIT"
                 ]
             },
-            "minWords": 57,
-            "hint": "Explain your reason briefly while thanking them for the opportunity.",
-            "explanation": "Professional decline messages stay brief, polite, and grateful, without over-explaining the reasons.",
-            "modelAnswer": "Professional decline messages stay brief, polite, and grateful, without over-explaining the reasons. Explain your reason briefly while thanking them for the opportunity. This serves as a model answer for the situation."
+            "minWords": 56,
+            "hint": "Give the stage manager, the costume crew, and the actor each a distinct, specific action within the tight time pressure of the crisis.",
+            "explanation": "Time-pressured crises with several roles are described most convincingly when the specific time remaining, such as minutes before curtain, is stated clearly, since it grounds each person's urgent action within a believable, shared deadline.",
+            "modelAnswer": "With only seven minutes remaining before the curtain rises, a costume crew member gasps in horror as the seam along the lead actor's sleeve rips open completely while he pulls on his jacket. The stage manager immediately checks her watch and calmly redirects two other cast members to stall the opening announcement by a minute, buying precious time, while the costume crew works furiously with a needle and thread, stitching the tear with surprising speed. The actor stands nervously still throughout, careful not to move his arm, and the moment the last stitch is tied off, he rushes onstage just as the curtain finally begins to rise."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L154_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE FULL CHAIN OF EVENTS FOLLOWING THE SOFTWARE BUG",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your book club split over whether to read a controversial novel that some members found genuinely upsetting. Describe how the group reached a decision.",
+            "situation": "A small software bug in a company's app triggers a chain of increasingly serious consequences over the course of one difficult week. Describe the full chain of events, from the initial bug to the final resolution.",
             "emojis": [
-                "📚",
-                "😕",
-                "💬",
-                "🤝"
+                "📞",
+                "😰",
+                "✅",
+                "🐛"
             ],
             "keywords": {
                 "0": [
-                    "BOOKCLUB",
-                    "SPLIT",
-                    "CONTROVERSIAL"
+                    "MEDIA",
+                    "NOTICE",
+                    "COVERAGE"
                 ],
                 "1": [
-                    "NOVEL",
-                    "MEMBER",
-                    "UPSETTING"
+                    "CUSTOMERS",
+                    "AFFECT",
+                    "COMPLAIN"
                 ],
                 "2": [
-                    "DISAGREE",
-                    "DISCUSS",
-                    "LISTEN"
+                    "FIX",
+                    "RELEASE",
+                    "APOLOGIZE"
                 ],
                 "3": [
-                    "DECISION",
-                    "COMPROMISE",
-                    "RESPECT"
+                    "BUG",
+                    "SLIP",
+                    "UNNOTICE"
                 ]
             },
-            "minWords": 57,
-            "hint": "Describe the different opinions and how the group finally decided.",
-            "explanation": "Balanced answers show different viewpoints fairly before explaining how the group reached its final choice.",
-            "modelAnswer": "Balanced answers show different viewpoints fairly before explaining how the group reached its final choice. Describe the different opinions and how the group finally decided. This serves as a model answer for the situation."
+            "minWords": 56,
+            "hint": "Trace each consequence back to the one before it, showing how a small technical mistake grew into a larger public issue over several days.",
+            "explanation": "Longer cause-and-effect chains gain strength when each stage is clearly caused by the one before it, using phrases like as a result or which led to, so the reader can follow the escalation logically from start to finish.",
+            "modelAnswer": "A minor coding error slips past testing and goes unnoticed until it quietly begins double-charging a small percentage of customers during checkout, a problem that first surfaces through a handful of confused support tickets. Within two days, the number of affected customers grows into the thousands, which leads several frustrated users to post publicly on social media, catching the attention of a local tech journalist who publishes a short but embarrassing article about the glitch. Facing mounting public pressure, the engineering team works through the night to isolate and fix the root cause, releasing a patch within twenty-four hours along with a public apology and automatic refunds, ultimately containing the damage before it could grow any further."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L154_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE FULL CHAIN OF EVENTS FOLLOWING THE IRRIGATION FAILURE",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "A symptom you found embarrassing to discuss had been bothering you for weeks before you finally worked up the courage to mention it to your doctor. Describe the appointment.",
+            "situation": "A malfunctioning irrigation system on a farm triggers a chain of increasingly serious consequences over the course of several days. Describe the full chain of events, from the initial failure to the final resolution.",
             "emojis": [
-                "🩺",
-                "😳",
-                "💬",
-                "✅"
+                "💧",
+                "🌾",
+                "✅",
+                "😟"
             ],
             "keywords": {
                 "0": [
-                    "SYMPTOM",
-                    "EMBARRASS",
-                    "DISCUSS"
+                    "CROPS",
+                    "WILT",
+                    "NOTICE"
                 ],
                 "1": [
-                    "BOTHER",
-                    "WEEKS",
-                    "COURAGE"
+                    "PUMP",
+                    "FAIL",
+                    "SILENT"
                 ],
                 "2": [
-                    "MENTION",
-                    "DOCTOR",
-                    "FINALLY"
+                    "REPAIR",
+                    "RESTORE",
+                    "SAVE"
                 ],
                 "3": [
-                    "APPOINTMENT",
-                    "RELIEF",
-                    "HONEST"
+                    "FARMER",
+                    "INVESTIGATE",
+                    "DIAGNOSE"
                 ]
             },
-            "minWords": 57,
-            "hint": "Describe what made it hard to bring up and how the doctor responded.",
-            "explanation": "Honest health answers acknowledge the discomfort of the topic while showing the relief of addressing it.",
-            "modelAnswer": "Honest health answers acknowledge the discomfort of the topic while showing the relief of addressing it. Describe what made it hard to bring up and how the doctor responded. This serves as a model answer for the situation."
+            "minWords": 56,
+            "hint": "Trace each consequence in the chain back to the pump failure, showing how the problem developed unnoticed before finally being caught and fixed.",
+            "explanation": "Agricultural cause-and-effect chains benefit from showing a delay in detection, since a problem like an irrigation failure often goes unnoticed for a period before its effects become visible, which adds realism to the chain.",
+            "modelAnswer": "A worn seal in the farm's main irrigation pump fails quietly overnight, cutting off water to an entire section of crops without triggering any alarm, since the automated system continues reporting normal operation. Over the following three days, the affected plants begin visibly wilting under the summer sun, and it is only when the farmer walks the fields personally that he notices the alarming change and traces the problem back to the silent pump. Racing against time to save what remains of the crop, he orders an emergency replacement part overnight, manually watering the worst-affected rows himself in the meantime, and the repaired system, restored within forty-eight hours, ultimately saves most of the section from permanent damage."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L154_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE FULL CHAIN OF EVENTS FOLLOWING THE TRAFFIC LIGHT MALFUNCTION",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "An intern you were mentoring reminded you strongly of your own early struggles, and you had to decide how much of your own story to share. Describe what you told them.",
+            "situation": "A malfunctioning traffic light at a busy intersection triggers a chain of increasingly serious consequences during rush hour. Describe the full chain of events, from the initial malfunction to the final resolution.",
             "emojis": [
-                "💼",
-                "🌱",
-                "😊",
-                "💬"
+                "✅",
+                "🚗",
+                "🚦",
+                "😤"
             ],
             "keywords": {
                 "0": [
-                    "INTERN",
-                    "MENTOR",
-                    "REMIND"
+                    "RESTORE",
+                    "FLOW",
+                    "RESOLVE"
                 ],
                 "1": [
-                    "OWNSTRUGGLE",
-                    "EARLY",
-                    "DECIDE"
+                    "TRAFFIC",
+                    "BACKUP",
+                    "GRIDLOCK"
                 ],
                 "2": [
-                    "HOWMUCH",
-                    "SHARE",
-                    "STORY"
+                    "LIGHT",
+                    "STUCKRED",
+                    "MALFUNCTION"
                 ],
                 "3": [
-                    "TELL",
-                    "ENCOURAGE",
-                    "RELATE"
+                    "OFFICER",
+                    "DISPATCH",
+                    "DIRECT"
                 ]
             },
-            "minWords": 57,
-            "hint": "Describe the specific advice or story you chose to share.",
-            "explanation": "Warm mentoring answers share a specific, relevant experience that offers real encouragement.",
-            "modelAnswer": "Warm mentoring answers share a specific, relevant experience that offers real encouragement. Describe the specific advice or story you chose to share. This serves as a model answer for the situation."
+            "minWords": 56,
+            "hint": "Trace how the single stuck light spreads into a much larger traffic problem across several blocks before being resolved.",
+            "explanation": "Infrastructure failures are effective for practicing cause-and-effect chains, since a single small malfunction, a stuck traffic light, can be shown spreading its effects outward across a wider area in a clear, traceable sequence.",
+            "modelAnswer": "A single traffic light at a busy downtown intersection becomes stuck on red in every direction at once, a small technical glitch that quickly begins backing up cars in all four approaching lanes. Within fifteen minutes, the resulting gridlock spreads outward, affecting three surrounding blocks as frustrated drivers attempt increasingly risky detours through side streets never designed for such heavy traffic. City dispatch finally sends a traffic officer to manually direct vehicles through the intersection, restoring some order while a repair crew works to fix the underlying electrical fault, and by the time the light returns to normal operation nearly an hour later, the resulting congestion takes almost as long to fully clear."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L155_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW THE EVENT PLANNER REPRIORITIZED AFTER THE SPEAKER CANCELLED",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You began noticing your father repeating stories and forgetting recent conversations, and had to decide how gently to raise the concern with him. Describe the conversation.",
+            "situation": "On the morning of a major conference, the keynote speaker suddenly cancels due to illness. Describe how the event planner reprioritized the day's schedule to manage the crisis.",
             "emojis": [
-                "👴",
-                "💭",
-                "😟",
-                "💬"
+                "✅",
+                "🎤",
+                "😨",
+                "📋"
             ],
             "keywords": {
                 "0": [
-                    "NOTICE",
-                    "FATHER",
-                    "REPEAT"
+                    "REPLACE",
+                    "BACKUP",
+                    "SUCCEED"
                 ],
                 "1": [
-                    "FORGET",
-                    "RECENT",
-                    "CONVERSATION"
+                    "CANCEL",
+                    "MORNINGOF",
+                    "ILLNESS"
                 ],
                 "2": [
-                    "DECIDE",
-                    "GENTLY",
-                    "RAISE"
+                    "PLANNER",
+                    "SCRAMBLE",
+                    "REACT"
                 ],
                 "3": [
-                    "CONCERN",
-                    "CONVERSATION",
-                    "COMPASSION"
+                    "REORGANIZE",
+                    "SCHEDULE",
+                    "SHUFFLE"
                 ]
             },
-            "minWords": 58,
-            "hint": "Describe how you brought up the topic without alarming him.",
-            "explanation": "Compassionate answers approach a sensitive topic gently, balancing honesty with reassurance.",
-            "modelAnswer": "Compassionate answers approach a sensitive topic gently, balancing honesty with reassurance. Describe how you brought up the topic without alarming him. This serves as a model answer for the situation."
+            "minWords": 57,
+            "hint": "Show the planner's immediate reaction to the crisis, then the specific reshuffling of the schedule that followed to manage the sudden gap.",
+            "explanation": "Reprioritization under pressure is described convincingly through the specific new arrangement made, such as moving other sessions earlier, rather than a vague statement that the planner handled it well.",
+            "modelAnswer": "Just two hours before the conference doors open, the event planner receives a panicked phone call from the keynote speaker's assistant, explaining that a sudden illness makes it impossible for him to attend. Fighting a rising sense of panic, she quickly scans her list of confirmed panelists, identifying one respected industry expert already scheduled for a smaller afternoon session and asking whether he might expand his talk to fill the morning keynote slot instead. He agrees within minutes, and the planner rapidly rearranges the rest of the day's schedule to accommodate the change, sending updated agendas to volunteers just as the first attendees begin arriving, and the conference opens on time despite the earlier chaos."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L155_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW THE CHARGE NURSE REPRIORITIZED DURING A BUSY SHIFT",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "An appliance broke just two weeks after its warranty ended, and you had to negotiate with the manufacturer over who should pay for repairs. Describe the negotiation.",
+            "situation": "A hospital charge nurse must quickly reprioritize staff assignments when three patients arrive simultaneously needing urgent attention. Describe the situation and how she reorganized the team's priorities.",
             "emojis": [
-                "🔧",
-                "💰",
-                "😤",
-                "📞"
+                "🧑‍⚕️",
+                "😰",
+                "✅",
+                "🏥"
             ],
             "keywords": {
                 "0": [
-                    "APPLIANCE",
-                    "BREAK",
-                    "TWOWEEKS"
+                    "NURSE",
+                    "ASSESS",
+                    "QUICK"
                 ],
                 "1": [
-                    "WARRANTY",
-                    "END",
-                    "NEGOTIATE"
+                    "REASSIGN",
+                    "STAFF",
+                    "REDISTRIBUTE"
                 ],
                 "2": [
-                    "MANUFACTURER",
-                    "PAY",
-                    "REPAIR"
+                    "STABILIZE",
+                    "MANAGE",
+                    "CALM"
                 ],
                 "3": [
-                    "OUTCOME",
-                    "PERSIST",
-                    "RESOLVE"
+                    "ARRIVE",
+                    "SIMULTANEOUS",
+                    "THREE"
                 ]
             },
-            "minWords": 58,
-            "hint": "Describe the arguments you made and how the company finally responded.",
-            "explanation": "Persistent answers describe specific arguments used and a realistic outcome, whether favorable or not.",
-            "modelAnswer": "Persistent answers describe specific arguments used and a realistic outcome, whether favorable or not. Describe the arguments you made and how the company finally responded. This serves as a model answer for the situation."
+            "minWords": 57,
+            "hint": "Show the sudden influx of patients first, then the specific reassignment decisions the charge nurse made to manage the competing needs.",
+            "explanation": "Healthcare-related reprioritization is described convincingly through specific staffing decisions, showing exactly who was reassigned where, which demonstrates real decision-making under pressure rather than a vague statement about a busy shift.",
+            "modelAnswer": "Within the same ten-minute window, three separate patients arrive at the emergency department, each requiring immediate attention for entirely different reasons, leaving the charge nurse only seconds to make several difficult decisions at once. Quickly assessing the severity of each case, she reassigns two nurses from a quieter section of the ward to assist, keeping the most experienced staff member on the most critical patient while directing a newer nurse to handle the more stable case under close supervision. Within twenty minutes, all three patients are stabilized and receiving appropriate care, a result the exhausted team credits directly to her calm, rapid reorganization of their usual priorities."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L155_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW THE FOREMAN REPRIORITIZED AFTER THE WEATHER FORECAST CHANGED",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your child came home upset after being excluded by a group of classmates for several days in a row, and you had to decide how to support them. Describe your response.",
+            "situation": "A construction foreman must reprioritize the day's tasks after an unexpected weather forecast threatens to delay a critical concrete pour. Describe the situation and how he reorganized the crew's priorities.",
             "emojis": [
-                "🎒",
-                "😢",
-                "🤗",
-                "💬"
+                "🏗️",
+                "✅",
+                "🌧️",
+                "😟"
             ],
             "keywords": {
                 "0": [
-                    "CHILD",
-                    "UPSET",
-                    "EXCLUDE"
+                    "FORECAST",
+                    "CHANGE",
+                    "WARN"
                 ],
                 "1": [
-                    "CLASSMATE",
-                    "SEVERALDAYS",
-                    "ROW"
+                    "COMPLETE",
+                    "BEFORE",
+                    "RAIN"
                 ],
                 "2": [
-                    "DECIDE",
-                    "SUPPORT",
-                    "LISTEN"
+                    "FOREMAN",
+                    "RECALCULATE",
+                    "URGENT"
                 ],
                 "3": [
-                    "RESPOND",
-                    "COMFORT",
-                    "GUIDE"
+                    "CREW",
+                    "REASSIGN",
+                    "ACCELERATE"
                 ]
             },
-            "minWords": 58,
-            "hint": "Describe what you said to comfort your child and any steps you took next.",
-            "explanation": "Supportive answers combine emotional comfort with a practical next step, like talking to a teacher.",
-            "modelAnswer": "Supportive answers combine emotional comfort with a practical next step, like talking to a teacher. Describe what you said to comfort your child and any steps you took next. This serves as a model answer for the situation."
+            "minWords": 57,
+            "hint": "Show the forecast changing the original plan first, then the foreman's specific decisions about which tasks to accelerate or postpone.",
+            "explanation": "Construction and outdoor work provide a natural setting for reprioritization writing, since weather forecasts frequently force sudden changes, and showing the foreman's specific accelerated task order demonstrates practical, time-sensitive decision-making.",
+            "modelAnswer": "Checking the weather forecast during his morning coffee, the foreman realizes with concern that rain, originally expected in the late evening, has now been moved up to arrive by early afternoon, directly threatening a critical concrete pour scheduled for later that day. Recognizing the pour absolutely cannot happen in the rain without ruining the foundation, he immediately reorganizes the crew, pulling workers from less urgent tasks like fencing and landscaping to help accelerate the pour instead. Through several hours of intense, coordinated effort, the team finishes the entire pour nearly three hours ahead of the original schedule, sealing it just as the first heavy drops of rain begin to fall."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L156_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE WEDDING COORDINATOR'S FULL DAY, INCLUDING THE ONE UNEXPECTED HICCUP",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "A stranded traveler you had just met at the station asked for help getting to a city hours away, and you had to weigh the risk against your own schedule. Describe your decision.",
+            "situation": "A wedding coordinator manages a carefully timed schedule throughout an entire wedding day, encountering one unexpected hiccup along the way. Describe the full day chronologically, including how the hiccup was resolved.",
             "emojis": [
-                "🚉",
-                "😟",
-                "🤔",
-                "🤝"
+                "😅",
+                "⏰",
+                "✅",
+                "💒"
             ],
             "keywords": {
                 "0": [
-                    "STRANDED",
-                    "TRAVELER",
-                    "JUSTMET"
+                    "ADJUST",
+                    "CALL",
+                    "RESOLVE"
                 ],
                 "1": [
-                    "ASK",
-                    "HELP",
-                    "HOURSAWAY"
+                    "HICCUP",
+                    "LATE",
+                    "VENDOR"
                 ],
                 "2": [
-                    "WEIGH",
-                    "RISK",
-                    "SCHEDULE"
+                    "EVENING",
+                    "CELEBRATE",
+                    "SUCCESS"
                 ],
                 "3": [
-                    "DECISION",
-                    "KIND",
-                    "CAUTIOUS"
+                    "MORNING",
+                    "SETUP",
+                    "ARRIVE"
                 ]
             },
-            "minWords": 58,
-            "hint": "Explain what you decided and how you balanced caution with kindness.",
-            "explanation": "Thoughtful answers weigh personal safety realistically while showing genuine consideration for a stranger in need.",
-            "modelAnswer": "Thoughtful answers weigh personal safety realistically while showing genuine consideration for a stranger in need. Explain what you decided and how you balanced caution with kindness. This serves as a model answer for the situation."
+            "minWords": 57,
+            "hint": "Move through the wedding day in clear chronological order, from setup to the ceremony to the reception, weaving in the one hiccup at the appropriate point.",
+            "explanation": "Chronological control across a long day means moving smoothly through each stage in order, without skipping ahead or doubling back, while still finding a natural place within that sequence to insert the one disruption.",
+            "modelAnswer": "By seven in the morning, the coordinator is already at the venue overseeing the setup of chairs and floral arrangements, checking off each task against her detailed timeline with practiced efficiency. Around noon, a brief hiccup arrives when the catering truck, meant to arrive by one, calls to report a flat tire delaying them by nearly an hour, forcing her to quickly rearrange the cocktail hour to buy extra time. Despite the scare, the ceremony begins exactly on schedule at four o'clock, and by the time the reception winds down late that evening, the coordinator finally allows herself a relieved smile, having steered the entire day through its one bump without the guests ever noticing."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L156_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE RACE DIRECTOR'S FULL MORNING, INCLUDING THE ONE UNEXPECTED HICCUP",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You noticed a minor but real safety issue at your workplace that management seemed reluctant to address, and had to decide whether to escalate the concern. Describe what you did.",
+            "situation": "A marathon race director manages a carefully timed schedule throughout race morning, encountering one unexpected hiccup along the way. Describe the full morning chronologically, including how the hiccup was resolved.",
             "emojis": [
-                "💼",
-                "⚠️",
-                "😕",
-                "📋"
+                "⏰",
+                "🏃",
+                "✅",
+                "😅"
             ],
             "keywords": {
                 "0": [
-                    "NOTICE",
-                    "MINOR",
-                    "SAFETY"
+                    "HICCUP",
+                    "BARRICADE",
+                    "MISSING"
                 ],
                 "1": [
-                    "MANAGEMENT",
-                    "RELUCTANT",
-                    "ADDRESS"
+                    "DAWN",
+                    "SETUP",
+                    "VOLUNTEERS"
                 ],
                 "2": [
-                    "DECIDE",
-                    "ESCALATE",
-                    "CONCERN"
-                ],
-                "3": [
-                    "ACT",
-                    "DOCUMENT",
-                    "PERSIST"
-                ]
-            },
-            "minWords": 58,
-            "hint": "Describe the specific steps you took to raise the issue formally.",
-            "explanation": "Responsible answers describe a clear, documented process for raising a safety concern appropriately.",
-            "modelAnswer": "Responsible answers describe a clear, documented process for raising a safety concern appropriately. Describe the specific steps you took to raise the issue formally. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L156_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "After weeks of answering work messages late into the night, you decided to set a firm boundary around your availability after hours. Describe the change you made.",
-            "emojis": [
-                "📱",
-                "🌙",
-                "😮‍💨",
-                "✅"
-            ],
-            "keywords": {
-                "0": [
-                    "WEEKS",
-                    "ANSWER",
-                    "LATENIGHT"
-                ],
-                "1": [
-                    "MESSAGE",
-                    "DECIDE",
-                    "FIRM"
-                ],
-                "2": [
-                    "BOUNDARY",
-                    "AVAILABILITY",
-                    "AFTERHOURS"
-                ],
-                "3": [
-                    "CHANGE",
-                    "COMMUNICATE",
-                    "MAINTAIN"
-                ]
-            },
-            "minWords": 58,
-            "hint": "Describe the specific boundary you set and how colleagues reacted.",
-            "explanation": "Clear boundary-setting answers state the specific rule and describe how it was communicated to others.",
-            "modelAnswer": "Clear boundary-setting answers state the specific rule and describe how it was communicated to others. Describe the specific boundary you set and how colleagues reacted. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L157_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "A newly diagnosed relative needed your family recipe adapted to strict dietary limits, and testing substitutes took several imperfect attempts. Describe the process.",
-            "emojis": [
-                "🍲",
-                "🩺",
-                "😅",
-                "✅"
-            ],
-            "keywords": {
-                "0": [
-                    "RELATIVE",
-                    "DIAGNOSE",
-                    "RECIPE"
-                ],
-                "1": [
-                    "ADAPT",
-                    "STRICTDIET",
-                    "LIMIT"
-                ],
-                "2": [
-                    "TEST",
-                    "SUBSTITUTE",
-                    "IMPERFECT"
-                ],
-                "3": [
-                    "PROCESS",
-                    "SUCCEED",
-                    "SHARE"
-                ]
-            },
-            "minWords": 58,
-            "hint": "Describe specific substitutions you tried and which ones finally worked.",
-            "explanation": "Practical food answers name specific ingredient swaps and describe the trial and error involved.",
-            "modelAnswer": "Practical food answers name specific ingredient swaps and describe the trial and error involved. Describe specific substitutions you tried and which ones finally worked. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L157_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You were invited to an event that conflicted with a close friend's request to spend that same evening together, and you had to choose between them. Describe your decision.",
-            "emojis": [
-                "🎉",
-                "😕",
-                "🤔",
-                "💬"
-            ],
-            "keywords": {
-                "0": [
-                    "INVITE",
-                    "EVENT",
-                    "CONFLICT"
-                ],
-                "1": [
-                    "CLOSEFRIEND",
-                    "REQUEST",
-                    "SAMEEVENING"
-                ],
-                "2": [
-                    "CHOOSE",
-                    "BETWEEN",
-                    "DECIDE"
-                ],
-                "3": [
-                    "DECISION",
-                    "EXPLAIN",
-                    "COMPROMISE"
-                ]
-            },
-            "minWords": 58,
-            "hint": "Explain how you made the choice and what you told the person you couldn't join.",
-            "explanation": "Considerate answers explain the reasoning behind the choice and show care for the person left out.",
-            "modelAnswer": "Considerate answers explain the reasoning behind the choice and show care for the person left out. Explain how you made the choice and what you told the person you couldn't join. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L157_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Supporting your partner through their first months of therapy meant learning how to be helpful without overstepping into the therapist's role. Describe how you adjusted.",
-            "emojis": [
-                "🩺",
-                "🤗",
-                "😌",
-                "💬"
-            ],
-            "keywords": {
-                "0": [
-                    "SUPPORT",
-                    "PARTNER",
-                    "FIRSTMONTHS"
-                ],
-                "1": [
-                    "THERAPY",
-                    "LEARN",
-                    "HELPFUL"
-                ],
-                "2": [
-                    "OVERSTEP",
-                    "THERAPISTROLE",
-                    "AVOID"
+                    "FINISH",
+                    "CELEBRATE",
+                    "SUCCESS"
                 ],
                 "3": [
                     "ADJUST",
-                    "LISTEN",
-                    "PATIENT"
-                ]
-            },
-            "minWords": 58,
-            "hint": "Describe specific ways you offered support without giving unwanted advice.",
-            "explanation": "Sensitive answers describe concrete supportive actions while respecting the limits of your own role.",
-            "modelAnswer": "Sensitive answers describe concrete supportive actions while respecting the limits of your own role. Describe specific ways you offered support without giving unwanted advice. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L158_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Co-parenting became more complicated as your child's needs changed, requiring new conversations with your ex about the existing schedule. Describe how you renegotiated it.",
-            "emojis": [
-                "👨‍👩‍👧",
-                "😕",
-                "📅",
-                "🤝"
-            ],
-            "keywords": {
-                "0": [
-                    "COPARENT",
-                    "COMPLICATE",
-                    "CHILD"
-                ],
-                "1": [
-                    "NEEDCHANGE",
-                    "REQUIRE",
-                    "CONVERSATION"
-                ],
-                "2": [
-                    "EX",
-                    "EXISTING",
-                    "SCHEDULE"
-                ],
-                "3": [
-                    "RENEGOTIATE",
-                    "COOPERATE",
-                    "FLEXIBLE"
-                ]
-            },
-            "minWords": 58,
-            "hint": "Describe the specific changes discussed and how the conversation went.",
-            "explanation": "Cooperative answers focus on the child's needs and describe a specific, workable new arrangement.",
-            "modelAnswer": "Cooperative answers focus on the child's needs and describe a specific, workable new arrangement. Describe the specific changes discussed and how the conversation went. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L158_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You need to write a message to your landlord about mold you suspect could be affecting your family's health. Describe what you write.",
-            "emojis": [
-                "🏠",
-                "😟",
-                "✉️",
-                "⚠️"
-            ],
-            "keywords": {
-                "0": [
-                    "LANDLORD",
-                    "MOLD",
-                    "SUSPECT"
-                ],
-                "1": [
-                    "AFFECT",
-                    "FAMILY",
-                    "HEALTH"
-                ],
-                "2": [
-                    "DOCUMENT",
-                    "EVIDENCE",
-                    "SERIOUS"
-                ],
-                "3": [
-                    "WRITE",
-                    "FIRM",
-                    "POLITE"
-                ]
-            },
-            "minWords": 58,
-            "hint": "Mention specific evidence and what action you are requesting.",
-            "explanation": "Effective messages state the problem clearly, mention evidence, and request a specific action.",
-            "modelAnswer": "Effective messages state the problem clearly, mention evidence, and request a specific action. Mention specific evidence and what action you are requesting. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L158_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "A mistake in your report affected a client's order, and you had to decide how to correct it while keeping their trust. Describe what you did.",
-            "emojis": [
-                "💼",
-                "😳",
-                "📋",
-                "🤝"
-            ],
-            "keywords": {
-                "0": [
-                    "MISTAKE",
-                    "REPORT",
-                    "AFFECT"
-                ],
-                "1": [
-                    "CLIENT",
-                    "ORDER",
-                    "DECIDE"
-                ],
-                "2": [
-                    "CORRECT",
-                    "KEEPTRUST",
-                    "QUICKLY"
-                ],
-                "3": [
-                    "ACT",
-                    "APOLOGIZE",
+                    "REDIRECT",
                     "RESOLVE"
                 ]
             },
+            "minWords": 57,
+            "hint": "Move through race morning in clear chronological order, from setup to the start to the finish line, weaving in the one hiccup at the appropriate point.",
+            "explanation": "Race-day logistics offer a natural, time-pressured setting for chronological description, since the tight schedule between setup and the actual race start leaves little room for delay, making the one hiccup feel especially urgent.",
+            "modelAnswer": "At four in the morning, the race director walks the course with a small team of volunteers, double-checking water stations and mile markers against a schedule she has refined for months. Just ninety minutes before the start, a hiccup emerges when an entire section of barricades meant for a key intersection never arrives from the rental company, forcing her to hastily redirect a group of volunteers to form a human barrier instead. Runners cross the starting line precisely on time at seven o'clock, seemingly unaware of the earlier scramble, and by the time the last finisher crosses the line hours later, the director finally exhales, considering the morning a genuine, if narrowly averted, success."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L156_Q3",
+            "instruction": "DESCRIBE THE OFFICE MOVE COORDINATOR'S FULL DAY, INCLUDING THE ONE UNEXPECTED HICCUP",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A company relocates its entire office to a new building in a single carefully planned day, encountering one unexpected hiccup along the way. Describe the full day chronologically, including how the hiccup was resolved.",
+            "emojis": [
+                "✅",
+                "🏢",
+                "📦",
+                "😅"
+            ],
+            "keywords": {
+                "0": [
+                    "EVENING",
+                    "SETTLE",
+                    "SUCCESS"
+                ],
+                "1": [
+                    "HICCUP",
+                    "ELEVATOR",
+                    "BROKEN"
+                ],
+                "2": [
+                    "MORNING",
+                    "MOVERS",
+                    "ARRIVE"
+                ],
+                "3": [
+                    "ADJUST",
+                    "STAIRS",
+                    "REROUTE"
+                ]
+            },
+            "minWords": 57,
+            "hint": "Move through the office move day in clear chronological order, from the movers' arrival to the final setup, weaving in the one hiccup naturally into the sequence.",
+            "explanation": "Workplace logistics, like an office relocation, provide a professional context for chronological writing, and showing the specific physical obstacle, such as a broken elevator, gives the hiccup concrete, believable weight within the day.",
+            "modelAnswer": "By eight in the morning, a fleet of moving trucks arrives outside the old office, and a coordinated team begins carefully labeling and loading furniture according to a detailed floor plan for the new building. Around eleven, a serious hiccup strikes when the new building's freight elevator suddenly breaks down, forcing the moving crew to carry heavy equipment up four flights of stairs by hand, adding nearly three exhausting hours to the timeline. Despite the setback, the last desk finally settles into place just as the sun sets, and the coordinator, surveying the newly organized office, feels genuine relief that the move, hiccup and all, is finally complete."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L157_Q1",
+            "instruction": "DESCRIBE THE WRITER'S DAY, INCLUDING THE SEVERAL INTERRUPTIONS SHE FACED",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A writer sets aside an entire day to finish an important novel draft, but faces several separate interruptions throughout the day. Describe the day and how she managed each interruption while still making progress.",
+            "emojis": [
+                "✅",
+                "✍️",
+                "📚",
+                "😤"
+            ],
+            "keywords": {
+                "0": [
+                    "EVENING",
+                    "FINISH",
+                    "SATISFIED"
+                ],
+                "1": [
+                    "MORNING",
+                    "BEGIN",
+                    "FOCUSED"
+                ],
+                "2": [
+                    "DELIVERY",
+                    "INTERRUPT",
+                    "DOORBELL"
+                ],
+                "3": [
+                    "CALL",
+                    "SECOND",
+                    "UNEXPECTED"
+                ]
+            },
+            "minWords": 57,
+            "hint": "Show at least two separate interruptions occurring at different points in the day, each briefly derailing her focus before she returns to the draft.",
+            "explanation": "Stacking several distinct interruptions within one task tests the writer's ability to keep the underlying task, finishing the draft, visible throughout the description, rather than letting the interruptions completely take over the narrative.",
+            "modelAnswer": "Settling in at her desk by seven in the morning with a full pot of coffee, the writer manages nearly two productive hours before a delivery driver's insistent knocking pulls her away from an important scene. She barely resettles into her rhythm when an unexpected phone call from her editor, checking on the deadline, costs her another twenty minutes of concentration just after lunch. Determined not to lose the whole day, she silences her phone entirely for the final stretch, and despite the earlier disruptions, manages to finish the last chapter just before midnight, closing her laptop with a tired but genuine sense of accomplishment."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L157_Q2",
+            "instruction": "DESCRIBE THE RESEARCHER'S DAY, INCLUDING THE SEVERAL INTERRUPTIONS THEY FACED",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A researcher plans an entire day to conduct a delicate lab experiment, but faces several separate interruptions throughout the process. Describe the day and how they managed each interruption while still completing the experiment.",
+            "emojis": [
+                "🔬",
+                "😤",
+                "✅",
+                "🧪"
+            ],
+            "keywords": {
+                "0": [
+                    "POWEROUTAGE",
+                    "BRIEF",
+                    "INTERRUPT"
+                ],
+                "1": [
+                    "COLLEAGUE",
+                    "QUESTION",
+                    "DISTRACT"
+                ],
+                "2": [
+                    "COMPLETE",
+                    "RESULTS",
+                    "RELIEVED"
+                ],
+                "3": [
+                    "BEGIN",
+                    "PREPARE",
+                    "CAREFUL"
+                ]
+            },
             "minWords": 58,
-            "hint": "Describe the specific correction you made and how you communicated it to the client.",
-            "explanation": "Accountable answers name the mistake honestly and describe a swift, clear correction.",
-            "modelAnswer": "Accountable answers name the mistake honestly and describe a swift, clear correction. Describe the specific correction you made and how you communicated it to the client. This serves as a model answer for the situation."
+            "hint": "Show at least two separate interruptions occurring at different points in the experiment, each briefly threatening the delicate process before it is resumed.",
+            "explanation": "In a technical or scientific setting, stacking interruptions against a delicate, time-sensitive process, such as a lab experiment, raises the stakes naturally, since each disruption genuinely threatens to ruin hours of careful preparation.",
+            "modelAnswer": "The researcher begins the delicate experiment at nine sharp, carefully measuring each reagent with practiced precision, fully aware that even a small mistake could ruin weeks of preparation. Barely an hour in, a brief power outage across the building threatens to disrupt the temperature-controlled equipment, sending a jolt of panic through the lab until backup power kicks in just moments later. A curious colleague's well-meaning questions cost another twenty minutes of concentration in the early afternoon, but by carefully tracking the timing throughout each disruption, the researcher manages to complete every step exactly as planned, finally recording clean, usable results just before the equipment's scheduled shutdown that evening."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L157_Q3",
+            "instruction": "DESCRIBE THE HOMEOWNER'S WEEK, INCLUDING THE SEVERAL INTERRUPTIONS THEY FACED DURING THE RENOVATION",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A homeowner plans a week-long kitchen renovation, but faces several separate interruptions throughout the project. Describe the week and how they managed each interruption while still finishing on schedule.",
+            "emojis": [
+                "🔨",
+                "✅",
+                "🏠",
+                "😤"
+            ],
+            "keywords": {
+                "0": [
+                    "BEGIN",
+                    "DEMOLISH",
+                    "MONDAY"
+                ],
+                "1": [
+                    "FINISH",
+                    "SATURDAY",
+                    "RELIEVED"
+                ],
+                "2": [
+                    "SUPPLIER",
+                    "DELAY",
+                    "MATERIALS"
+                ],
+                "3": [
+                    "PLUMBER",
+                    "RESCHEDULE",
+                    "CONFLICT"
+                ]
+            },
+            "minWords": 58,
+            "hint": "Show at least two separate interruptions occurring on different days of the week, each threatening the renovation timeline before being resolved.",
+            "explanation": "Longer projects spanning several days, like a home renovation, allow interruptions to be spread naturally across separate days rather than crammed into a single afternoon, which mirrors how real extended projects actually unfold.",
+            "modelAnswer": "The renovation begins Monday morning with the satisfying sound of demolition, as the old cabinets and countertops come down exactly on the schedule the homeowner had carefully planned for weeks. By Wednesday, an unexpected supplier delay pushes back the delivery of the new cabinets by two full days, forcing a frustrating pause in the middle of the project, and then on Thursday, the plumber calls to reschedule due to an unrelated emergency job elsewhere. Refusing to let the setbacks derail the whole timeline, the homeowner juggles phone calls and rearranges the remaining tasks around the available tradespeople, and remarkably, the last coat of paint dries just in time for Saturday, exactly as originally planned despite the week's repeated obstacles."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L158_Q1",
+            "instruction": "DESCRIBE HOW THE HOSPITAL COORDINATED BETWEEN DEPARTMENTS DURING A BUSY DAY",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A hospital must coordinate between the surgery department, the nursing staff, and the administrative office, each with different priorities, during an unusually busy day. Describe the situation and how the departments worked together.",
+            "emojis": [
+                "📋",
+                "🧑‍⚕️",
+                "✅",
+                "🏥"
+            ],
+            "keywords": {
+                "0": [
+                    "ADMIN",
+                    "COORDINATE",
+                    "SCHEDULE"
+                ],
+                "1": [
+                    "NURSING",
+                    "STRETCH",
+                    "SHORTSTAFF"
+                ],
+                "2": [
+                    "MANAGE",
+                    "COOPERATE",
+                    "RESOLVE"
+                ],
+                "3": [
+                    "SURGERY",
+                    "BACKLOG",
+                    "URGENT"
+                ]
+            },
+            "minWords": 58,
+            "hint": "Show each department's specific pressure separately, then describe the coordination effort that brought their differing priorities together.",
+            "explanation": "Multi-department coordination is described convincingly when each department's distinct pressure, surgical backlog, nursing shortage, scheduling complexity, is shown separately before the resolution reveals how they were brought into alignment.",
+            "modelAnswer": "By mid-morning, the surgery department faces an unexpected backlog of urgent cases, while the already understaffed nursing team struggles to keep pace with the increased patient load spilling over from the emergency room. Recognizing the growing strain, the administrative office steps in to coordinate, temporarily reassigning nurses from a quieter ward and adjusting the surgical schedule to prioritize the most critical cases first. Through several tense hours of constant phone calls and shifting assignments, the three departments manage to align their competing priorities, and by evening, every urgent case has been seen, a result the hospital's director later credits directly to the unusually smooth cross-department cooperation that day."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L158_Q2",
+            "instruction": "DESCRIBE HOW THE TECH COMPANY COORDINATED BETWEEN DEPARTMENTS DURING A PRODUCT LAUNCH",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A tech company must coordinate between its engineering team, marketing team, and customer support team, each with different priorities, during a major product launch. Describe the situation and how the departments worked together.",
+            "emojis": [
+                "📢",
+                "💻",
+                "✅",
+                "🧑‍💻"
+            ],
+            "keywords": {
+                "0": [
+                    "MARKETING",
+                    "PROMOTE",
+                    "PRESS"
+                ],
+                "1": [
+                    "ENGINEERING",
+                    "FINALIZE",
+                    "BUGFIX"
+                ],
+                "2": [
+                    "ALIGN",
+                    "LAUNCH",
+                    "SUCCESSFUL"
+                ],
+                "3": [
+                    "SUPPORT",
+                    "PREPARE",
+                    "ANTICIPATE"
+                ]
+            },
+            "minWords": 58,
+            "hint": "Show each team's distinct focus separately, engineering fixing bugs, marketing promoting, support preparing, then describe how their combined efforts led to a successful launch.",
+            "explanation": "Corporate cross-team coordination is described well when each department's specific responsibility is named clearly, since this shows the reader that a successful launch depends on several genuinely different kinds of work happening simultaneously.",
+            "modelAnswer": "In the final days before launch, the engineering team works around the clock fixing last-minute bugs discovered during final testing, while the marketing team races to finalize press releases and coordinate with journalists eager for an exclusive first look. Meanwhile, the customer support team prepares detailed documentation and trains extra staff, anticipating a surge of questions once the product goes live. On launch morning, all three departments join a single coordination call to align their final timing, and when the product officially releases without a single major issue, the shared relief across every team makes clear just how much their combined, carefully coordinated effort had actually mattered."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L158_Q3",
+            "instruction": "DESCRIBE HOW THE SCHOOL COORDINATED BETWEEN GROUPS DURING A SNOW DAY DECISION",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A school district must coordinate between teachers, school administration, and parents, each with different concerns, while deciding whether to close school due to a coming snowstorm. Describe the situation and how the groups' differing priorities were managed.",
+            "emojis": [
+                "✅",
+                "🏫",
+                "❄️",
+                "👨‍👩‍👧"
+            ],
+            "keywords": {
+                "0": [
+                    "DECIDE",
+                    "ANNOUNCE",
+                    "MANAGE"
+                ],
+                "1": [
+                    "TEACHERS",
+                    "CONCERN",
+                    "COMMUTE"
+                ],
+                "2": [
+                    "FORECAST",
+                    "WORSEN",
+                    "UNCERTAIN"
+                ],
+                "3": [
+                    "PARENTS",
+                    "WORRY",
+                    "CHILDCARE"
+                ]
+            },
+            "minWords": 58,
+            "hint": "Show the differing concerns of teachers and parents separately, then describe how the administration weighed both before making and announcing a final decision.",
+            "explanation": "Community decisions involving several stakeholder groups, teachers and parents, for example, are described well when each group's genuinely different concern, commute safety versus childcare arrangements, is acknowledged before the final decision is shown.",
+            "modelAnswer": "As the weather forecast grows increasingly uncertain throughout the evening, teachers begin messaging the administration with concerns about hazardous morning commutes on icy roads, while worried parents flood the school's phone line asking about last-minute childcare arrangements should classes be cancelled. Weighing both groups' legitimate but competing concerns against the latest weather data, the superintendent makes the difficult call to close school entirely, sending out an automated announcement by nine that evening. Though the decision inconveniences some working parents scrambling for care, the icy roads the following morning ultimately confirm that the cautious choice, balancing safety against convenience, was almost certainly the right one."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L159_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE FULL MUSIC FESTIVAL DAY, INCLUDING THE WEATHER, TECHNICAL FAILURE, AND ARTIST DISPUTE",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "A talented student came to you torn between a stable career their family expected and a creative path they were passionate about. Describe the advice you gave.",
+            "situation": "A large outdoor music festival faces a sudden weather change, a major technical failure, and an unexpected dispute between two performing artists, all within the same afternoon. Describe how the organizers managed all three challenges.",
             "emojis": [
-                "🎓",
-                "🎨",
-                "😕",
-                "💬"
+                "✅",
+                "🎪",
+                "⛈️",
+                "🎤"
             ],
             "keywords": {
                 "0": [
-                    "TALENTED",
-                    "STUDENT",
-                    "TORN"
+                    "ORGANIZER",
+                    "MANAGE",
+                    "RESOLVE"
                 ],
                 "1": [
-                    "STABLE",
-                    "FAMILYEXPECT",
-                    "CREATIVE"
+                    "WEATHER",
+                    "SHIFT",
+                    "THREATEN"
                 ],
                 "2": [
-                    "PASSIONATE",
-                    "PATH",
-                    "ADVICE"
+                    "SPEAKERS",
+                    "FAIL",
+                    "TECHNICAL"
                 ],
                 "3": [
-                    "GUIDE",
-                    "BALANCE",
-                    "SUPPORT"
+                    "ARTISTS",
+                    "DISPUTE",
+                    "SCHEDULE"
                 ]
             },
             "minWords": 59,
-            "hint": "Describe what questions you asked to help the student think it through.",
-            "explanation": "Thoughtful advice answers guide rather than decide, helping the student weigh both paths themselves.",
-            "modelAnswer": "Thoughtful advice answers guide rather than decide, helping the student weigh both paths themselves. Describe what questions you asked to help the student think it through. This serves as a model answer for the situation."
+            "hint": "Address each of the three separate problems in turn, showing the organizers responding to each one without losing control of the overall event.",
+            "explanation": "This level combines three genuinely distinct kinds of problems, environmental, technical, and interpersonal, within one event, and managing all three within a single coherent description tests whether the writer can juggle complexity without letting the narrative become confusing.",
+            "modelAnswer": "Midway through the afternoon, dark clouds gather ominously over the festival grounds just as the main stage's entire sound system suddenly cuts out during a headlining performance, sending the sound crew into a frantic scramble to diagnose a blown amplifier. While technicians work to restore the audio, festival organizers simultaneously find themselves mediating a heated disagreement backstage between two artists over which act should perform first given the shortened remaining time. Through a combination of quick technical fixes, a diplomatic compromise on the schedule, and a stroke of luck as the threatening storm ultimately passes just north of the venue, the festival's organizers manage to salvage the evening, and the crowd, largely unaware of the chaos happening behind the scenes, leaves thoroughly satisfied."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L159_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE FULL EMERGENCY DEPARTMENT SHIFT AFTER THE BUS ACCIDENT",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Buying a major appliance secondhand could save significant money, but you weren't sure the risk of hidden problems was worth it. Describe how you made the decision.",
+            "situation": "A hospital emergency department must manage a sudden influx of patients after a minor bus accident sends over a dozen people with various injuries to the hospital at once. Describe how the department coordinated its response.",
             "emojis": [
-                "🛋️",
-                "💰",
-                "🤔",
-                "🔍"
+                "🚌",
+                "🧑‍⚕️",
+                "✅",
+                "🏥"
             ],
             "keywords": {
                 "0": [
-                    "MAJORAPPLIANCE",
-                    "SECONDHAND",
-                    "SAVE"
+                    "TRIAGE",
+                    "ASSESS",
+                    "PRIORITIZE"
                 ],
                 "1": [
-                    "SIGNIFICANT",
-                    "MONEY",
-                    "UNSURE"
+                    "STAFF",
+                    "MOBILIZE",
+                    "ADDITIONAL"
                 ],
                 "2": [
-                    "RISK",
-                    "HIDDENPROBLEM",
-                    "WORTH"
+                    "TREAT",
+                    "STABILIZE",
+                    "MANAGE"
                 ],
                 "3": [
-                    "DECISION",
-                    "RESEARCH",
-                    "CHOOSE"
+                    "ACCIDENT",
+                    "MINOR",
+                    "MULTIPLE"
                 ]
             },
             "minWords": 59,
-            "hint": "Explain what research helped you feel confident in the final choice.",
-            "explanation": "Practical answers describe specific research steps that reduced the risk before committing to the purchase.",
-            "modelAnswer": "Practical answers describe specific research steps that reduced the risk before committing to the purchase. Explain what research helped you feel confident in the final choice. This serves as a model answer for the situation."
+            "hint": "Show the department's triage process organizing the sudden influx of patients by severity, then describe how additional staff were mobilized to handle the load.",
+            "explanation": "Mass-casualty style situations, even relatively minor ones like a bus accident, are described convincingly through the specific process of triage, sorting patients by urgency, which shows a realistic, organized response rather than simple chaos.",
+            "modelAnswer": "Word arrives just before noon that a city bus involved in a minor collision is sending over a dozen passengers, most with cuts, bruises, and a few possible fractures, directly to the emergency department within minutes. The charge nurse immediately begins triaging arrivals by severity in the hallway, quickly identifying two patients requiring priority attention while directing the rest to a temporary overflow area set up in the waiting room. Additional staff, called in from other floors, arrive within twenty minutes to help manage the sudden load, and by early afternoon, every patient has been assessed and treated, the department's well-practiced emergency protocols proving more than capable of handling the unexpected surge."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L159_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE CITY'S RESPONSE TO THE BURST WATER MAIN AFFECTING SEVERAL BLOCKS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "A disagreement with your closest friend had quietly lingered for months without either of you addressing it directly. Describe how you finally resolved it.",
+            "situation": "A major water main bursts unexpectedly, cutting off water service to several city blocks and flooding a busy street. Describe how the city's public works department, emergency services, and affected residents coordinated their response.",
             "emojis": [
-                "👫",
-                "😕",
-                "💬",
+                "💧",
+                "✅",
+                "🚧",
+                "🏙️"
+            ],
+            "keywords": {
+                "0": [
+                    "BURST",
+                    "FLOOD",
+                    "SUDDEN"
+                ],
+                "1": [
+                    "RESIDENTS",
+                    "NOTIFY",
+                    "MANAGE"
+                ],
+                "2": [
+                    "PUBLICWORKS",
+                    "ISOLATE",
+                    "VALVE"
+                ],
+                "3": [
+                    "EMERGENCY",
+                    "REROUTE",
+                    "TRAFFIC"
+                ]
+            },
+            "minWords": 59,
+            "hint": "Show public works, emergency services, and affected residents each responding separately, then describe how their combined efforts restored the situation.",
+            "explanation": "Municipal emergencies affecting a whole community are described well when three distinct groups, technical crews, emergency responders, and residents, are each given their own specific role in the response, rather than treating the city as a single vague entity.",
+            "modelAnswer": "A major water main suddenly bursts beneath a busy commercial street, sending a torrent of water flooding across the pavement and quickly cutting off service to nearly six surrounding blocks. Public works crews rush to locate and shut off the correct valve, a process complicated by outdated maps that costs them nearly an hour of valuable time, while emergency services simultaneously work to reroute traffic away from the growing flood. Affected residents and business owners, notified through emergency alerts and door-to-door visits, largely cooperate by moving vehicles and temporarily closing shops, and by evening, with the valve finally isolated and repair crews working through the night, water service begins gradually returning to the neighborhood."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L160_Q1",
+            "instruction": "DESCRIBE THE FULL PRODUCT LAUNCH DAY, COMBINING THE TECHNICAL FAILURE, SCHEDULING CONFLICT, AND PRESS MANAGEMENT",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A company's major product launch day is complicated by a critical technical failure, a scheduling conflict between two key speakers, and the need to manage an increasingly impatient press room, all unfolding at once. Describe the full day and how the team managed all three challenges together.",
+            "emojis": [
+                "📰",
+                "💻",
+                "✅",
+                "🚀"
+            ],
+            "keywords": {
+                "0": [
+                    "PRESS",
+                    "IMPATIENT",
+                    "QUESTION"
+                ],
+                "1": [
+                    "SPEAKERS",
+                    "CONFLICT",
+                    "OVERLAP"
+                ],
+                "2": [
+                    "LAUNCH",
+                    "MANAGE",
+                    "SUCCESSFUL"
+                ],
+                "3": [
+                    "FAILURE",
+                    "SERVER",
+                    "CRASH"
+                ]
+            },
+            "minWords": 60,
+            "hint": "Weave all three problems together into one connected account, showing how the team addressed them simultaneously rather than one after another in isolation.",
+            "explanation": "At the highest level of complexity, several distinct problems unfold at once rather than in a clean sequence, and the strongest descriptions show the team genuinely juggling all three simultaneously, which better reflects how real high-stakes days actually unfold.",
+            "modelAnswer": "Just as the press room fills with dozens of journalists eager for their first look at the new product, the company's demo server suddenly crashes under unexpectedly heavy testing traffic, threatening to derail the entire presentation before it even begins. At nearly the same moment, the event coordinator realizes with alarm that two key speakers have been mistakenly scheduled for the identical ten-minute slot, forcing a hurried, whispered negotiation backstage while engineers frantically work to restore the server in a separate room. Meanwhile, in the press room itself, a junior communications staffer skillfully stalls the growing impatience with an impromptu Q&A session about the company's history, buying just enough time for both crises to resolve, and when the actual presentation finally begins only twelve minutes late, most journalists barely notice how close the entire morning had come to collapsing into chaos."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L160_Q2",
+            "instruction": "DESCRIBE THE FULL WEDDING DAY, COMBINING THE VENDOR ISSUE, WEATHER CHANGE, AND FAMILY TENSION",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A large family wedding is complicated by a caterer arriving with the wrong menu, a sudden shift in weather threatening the outdoor ceremony, and simmering tension between two family members who have not spoken in years, all surfacing on the same day. Describe the full day and how these challenges were managed together.",
+            "emojis": [
+                "🌧️",
+                "💒",
+                "✅",
+                "👨‍👩‍👧‍👦"
+            ],
+            "keywords": {
+                "0": [
+                    "WEATHER",
+                    "THREATEN",
+                    "DARKEN"
+                ],
+                "1": [
+                    "CATERER",
+                    "WRONGMENU",
+                    "ARRIVE"
+                ],
+                "2": [
+                    "CEREMONY",
+                    "PROCEED",
+                    "SUCCESSFUL"
+                ],
+                "3": [
+                    "FAMILY",
+                    "TENSION",
+                    "AVOID"
+                ]
+            },
+            "minWords": 61,
+            "hint": "Weave the vendor problem, the weather threat, and the family tension together into one connected account, rather than resolving each one separately before moving to the next.",
+            "explanation": "Personal, high-emotion events like weddings combine practical crises with interpersonal ones, and the most sophisticated descriptions show these different kinds of tension, a logistical problem and a family conflict, unfolding and being managed together within the same tightly connected timeline.",
+            "modelAnswer": "Barely two hours before the ceremony, the wedding coordinator discovers the caterer has arrived with an entirely different menu than the one contracted, while dark clouds simultaneously gather ominously over the outdoor garden venue, threatening the carefully arranged seating. Amid the growing logistical chaos, the bride's mother quietly pulls her own estranged sister aside for the first real conversation between them in nearly five years, an overdue reconciliation the coordinator only vaguely senses happening in a corner of the tent while frantically negotiating a partial menu fix with the flustered caterer. As the first raindrops finally begin to fall just as the ceremony concludes safely under a hastily erected canopy, the family, now quietly closer than it has been in years, gathers for photographs, the day's tangled crises somehow resolving into what everyone later calls an unexpectedly perfect wedding."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L160_Q3",
+            "instruction": "DESCRIBE THE FULL DISASTER RELIEF RESPONSE AFTER THE STORM, COMBINING LOGISTICS, VOLUNTEERS, AND TRIAGE",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "After a severe storm damages a small coastal town, the local disaster relief effort must coordinate complicated logistics, manage an overwhelming number of volunteers, and prioritize which affected households need help first. Describe the full response and how these challenges were managed together.",
+            "emojis": [
+                "✅",
+                "🏘️",
+                "🌪️",
                 "🤝"
             ],
             "keywords": {
                 "0": [
-                    "DISAGREE",
-                    "CLOSEFRIEND",
-                    "LINGER"
+                    "RESPOND",
+                    "REBUILD",
+                    "GRADUAL"
                 ],
                 "1": [
-                    "MONTHS",
-                    "NEITHER",
-                    "ADDRESS"
+                    "VOLUNTEERS",
+                    "OVERWHELM",
+                    "ORGANIZE"
                 ],
                 "2": [
-                    "DIRECTLY",
-                    "FINALLY",
-                    "DECIDE"
+                    "DAMAGE",
+                    "ASSESS",
+                    "WIDESPREAD"
                 ],
                 "3": [
-                    "RESOLVE",
-                    "HONEST",
-                    "RELIEF"
-                ]
-            },
-            "minWords": 59,
-            "hint": "Describe what finally prompted the conversation and how it went.",
-            "explanation": "Genuine answers describe the discomfort of avoidance and the relief of finally addressing it honestly.",
-            "modelAnswer": "Genuine answers describe the discomfort of avoidance and the relief of finally addressing it honestly. Describe what finally prompted the conversation and how it went. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L160_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Dividing overtime fairly among a team that resisted extra hours required a system everyone could accept as reasonable. Describe how you structured it.",
-            "emojis": [
-                "💼",
-                "⏰",
-                "😐",
-                "📋"
-            ],
-            "keywords": {
-                "0": [
-                    "DIVIDE",
-                    "OVERTIME",
-                    "FAIRLY"
-                ],
-                "1": [
-                    "TEAM",
-                    "RESIST",
-                    "EXTRAHOURS"
-                ],
-                "2": [
-                    "SYSTEM",
-                    "ACCEPT",
-                    "REASONABLE"
-                ],
-                "3": [
-                    "STRUCTURE",
-                    "ROTATE",
-                    "AGREE"
-                ]
-            },
-            "minWords": 59,
-            "hint": "Describe the specific system you proposed and how the team responded.",
-            "explanation": "Fair management answers describe a specific, transparent system rather than a vague promise of fairness.",
-            "modelAnswer": "Fair management answers describe a specific, transparent system rather than a vague promise of fairness. Describe the specific system you proposed and how the team responded. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L160_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your tour guide seemed unprepared and gave conflicting information throughout the day, leaving your group unsure whether to trust the plan. Describe how you handled it.",
-            "emojis": [
-                "🗺️",
-                "😕",
-                "🤷",
-                "🗣️"
-            ],
-            "keywords": {
-                "0": [
-                    "TOURGUIDE",
-                    "UNPREPARE",
-                    "CONFLICT"
-                ],
-                "1": [
-                    "INFORMATION",
-                    "GROUP",
-                    "UNSURE"
-                ],
-                "2": [
-                    "TRUST",
-                    "PLAN",
-                    "HANDLE"
-                ],
-                "3": [
-                    "SPEAKUP",
-                    "VERIFY",
-                    "ADAPT"
-                ]
-            },
-            "minWords": 59,
-            "hint": "Describe what you did to make sure the group's day still went well.",
-            "explanation": "Resourceful travel answers describe practical steps taken to verify information and keep the group on track.",
-            "modelAnswer": "Resourceful travel answers describe practical steps taken to verify information and keep the group on track. Describe what you did to make sure the group's day still went well. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L160_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Balancing caregiving for an aging parent with managing your own health condition left little time for either to be done well. Describe how you found a workable rhythm.",
-            "emojis": [
-                "👵",
-                "🩺",
-                "😮‍💨",
-                "📅"
-            ],
-            "keywords": {
-                "0": [
-                    "BALANCE",
-                    "CAREGIVE",
-                    "AGING"
-                ],
-                "1": [
-                    "MANAGE",
-                    "OWNHEALTH",
-                    "LITTLETIME"
-                ],
-                "2": [
-                    "NEITHER",
-                    "DONE",
-                    "WELL"
-                ],
-                "3": [
-                    "RHYTHM",
+                    "TRIAGE",
                     "PRIORITIZE",
-                    "SUPPORT"
+                    "URGENT"
                 ]
             },
-            "minWords": 59,
-            "hint": "Describe specific adjustments that helped you manage both responsibilities.",
-            "explanation": "Realistic answers name specific trade-offs and support systems used to manage two demanding responsibilities.",
-            "modelAnswer": "Realistic answers name specific trade-offs and support systems used to manage two demanding responsibilities. Describe specific adjustments that helped you manage both responsibilities. This serves as a model answer for the situation."
+            "minWords": 62,
+            "hint": "Weave the logistical, volunteer-management, and prioritization challenges together into one connected account, showing the coordination center managing all three at the same time.",
+            "explanation": "Community disaster response, the most complex scenario in this level, requires holding logistics, human coordination, and urgent prioritization together simultaneously, and a strong description shows a coordination center genuinely juggling all three rather than treating them as separate, sequential problems.",
+            "modelAnswer": "Within hours of the storm passing, the local relief coordination center faces an overwhelming logistical puzzle, tracking damaged roads that block access to nearly a third of the town while simultaneously fielding calls from hundreds of eager volunteers arriving faster than anyone can meaningfully organize them. A small team quickly establishes a triage system, prioritizing elderly residents and families with young children whose homes suffered structural damage over those merely without power, even as the volunteer coordinator scrambles to match untrained arrivals with appropriate tasks rather than letting enthusiasm outpace actual need. By the second day, a workable rhythm finally emerges, damaged roads slowly clearing to open new routes, volunteers organized into efficient teams matched to specific streets, and the most urgent households receiving help first, proving that even amid genuine chaos, careful coordination can gradually restore order."
         }
     ]
 }

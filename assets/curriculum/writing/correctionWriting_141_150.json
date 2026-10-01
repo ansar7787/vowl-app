@@ -11,13 +11,13 @@
             "passage": "Never [I have seen] such a sudden improvement in a patient's condition before.",
             "options": [
                 "have I seen",
-                "did I saw",
-                "I saw",
-                "I have seen"
+                "I have seen",
+                "have seen I",
+                "I had seen"
             ],
             "correctAnswer": "have I seen",
-            "hint": "Negative adverbials like 'Never' at the start of a sentence trigger inverted word order, with the auxiliary first.",
-            "explanation": "When 'Never' begins a sentence for emphasis, the auxiliary inverts with the subject: 'have I seen,' not 'I have seen.'",
+            "hint": "After a negative adverbial like 'Never' at the start of a sentence, the auxiliary and subject invert.",
+            "explanation": "When 'Never' opens a sentence for emphasis, the auxiliary moves before the subject: 'have I seen,' not the normal statement order.",
             "errorCount": 3
         },
         {
@@ -29,12 +29,12 @@
             "options": [
                 "she did eat",
                 "did she eat",
-                "she ate",
-                "ate she"
+                "ate she",
+                "she ate"
             ],
             "correctAnswer": "did she eat",
-            "hint": "'Not only' at the start of a sentence triggers inverted word order with an auxiliary verb.",
-            "explanation": "After 'Not only' at the start, the auxiliary inverts with the subject: 'did she eat,' not 'she ate.'",
+            "hint": "'Not only' at the start of a sentence also triggers subject-auxiliary inversion.",
+            "explanation": "'Not only' at the beginning of a sentence requires inversion: 'did she eat,' using the auxiliary 'did' before the subject.",
             "errorCount": 3
         },
         {
@@ -44,14 +44,14 @@
             "interactionType": "typing",
             "passage": "Rarely [doctors have witnessed] a recovery as remarkable as this one in their careers.",
             "options": [
-                "did doctors witness",
+                "doctors had witnessed",
+                "have witnessed doctors",
                 "have doctors witnessed",
-                "doctors witnessed",
                 "doctors have witnessed"
             ],
             "correctAnswer": "have doctors witnessed",
-            "hint": "'Rarely' at the start of a sentence triggers inverted word order.",
-            "explanation": "Negative adverbials such as 'Rarely' at the front require inversion: 'have doctors witnessed,' not the normal order.",
+            "hint": "'Rarely' at the start of a sentence triggers the same inversion pattern.",
+            "explanation": "Fronting 'rarely' for emphasis requires inversion: 'have doctors witnessed,' with the auxiliary before the subject.",
             "errorCount": 3
         },
         {
@@ -61,14 +61,14 @@
             "interactionType": "typing",
             "passage": "Never [I have seen] such an emotional ending to a film before in my life.",
             "options": [
-                "have I seen",
                 "I have seen",
-                "did I saw",
-                "I saw"
+                "I had seen",
+                "have seen I",
+                "have I seen"
             ],
             "correctAnswer": "have I seen",
-            "hint": "Negative adverbials like 'Never' at the start of a sentence trigger inverted word order.",
-            "explanation": "'Never' at the front of a sentence requires the auxiliary to invert with the subject: 'have I seen,' not 'I have seen.'",
+            "hint": "Front-placed 'Never' always triggers subject-auxiliary inversion.",
+            "explanation": "'Never' at the start of a sentence for emphasis requires the auxiliary before the subject: 'have I seen.'",
             "errorCount": 3
         },
         {
@@ -78,14 +78,14 @@
             "interactionType": "typing",
             "passage": "Not only [the album was] a hit, but it also won several major awards that year.",
             "options": [
+                "the album did",
                 "was the album",
-                "the album was",
-                "the album did become",
-                "did the album become"
+                "did the album",
+                "the album was"
             ],
             "correctAnswer": "was the album",
-            "hint": "'Not only' at the start of a sentence triggers inverted word order.",
-            "explanation": "After 'Not only,' the verb 'be' inverts directly with the subject: 'was the album,' not 'the album was.'",
+            "hint": "The auxiliary 'was' needs to move before the subject after fronted 'Not only.'",
+            "explanation": "'Not only' at the start requires inversion: 'was the album,' moving the auxiliary before the subject.",
             "errorCount": 3
         },
         {
@@ -95,14 +95,14 @@
             "interactionType": "typing",
             "passage": "Little [the director knew] that the small independent film would become a worldwide hit.",
             "options": [
+                "did the director know",
                 "the director did know",
-                "knew the director",
                 "the director knew",
-                "did the director know"
+                "knew the director"
             ],
             "correctAnswer": "did the director know",
-            "hint": "'Little' at the start of a sentence with this meaning triggers inverted word order.",
-            "explanation": "'Little' meaning 'almost not at all' at the start requires inversion: 'did the director know,' not 'the director knew.'",
+            "hint": "'Little' used this way at the start of a sentence also triggers inversion, with 'did' as the auxiliary.",
+            "explanation": "Fronted 'Little' for emphasis requires inversion with 'did': 'did the director know,' not the normal statement word order.",
             "errorCount": 3
         },
         {
@@ -112,14 +112,14 @@
             "interactionType": "typing",
             "passage": "It was [her] that suggested rescheduling the meeting, not me, if I remember correctly.",
             "options": [
-                "she",
-                "that she",
-                "who she",
-                "her"
+                "hers",
+                "herself",
+                "her",
+                "she"
             ],
             "correctAnswer": "she",
-            "hint": "Think about the subject pronoun needed in the structure 'It was [person] who/that...'",
-            "explanation": "Cleft sentences with 'It was...who/that' need a subject pronoun like 'she,' not the object pronoun 'her.'",
+            "hint": "In this cleft structure, the pronoun functions as the subject of the following clause, which needs the subject form.",
+            "explanation": "In 'It was ___ that...' cleft sentences, the pronoun acts as the subject of the clause that follows, so the subject form 'she' is correct rather than the object form 'her.'",
             "errorCount": 3
         },
         {
@@ -130,13 +130,13 @@
             "passage": "[It] I really need right now is a clear answer from your team about the plan.",
             "options": [
                 "That",
+                "Which",
                 "What",
-                "It",
-                "This"
+                "It"
             ],
             "correctAnswer": "What",
-            "hint": "Think about the structure 'What [someone] needs is...' used to emphasize a specific thing.",
-            "explanation": "Cleft sentences emphasizing a need begin with 'What,' not 'It': 'What I really need is...'",
+            "hint": "This cleft sentence emphasizes the thing needed, which requires a different opening word entirely.",
+            "explanation": "'What...is' cleft sentences begin with 'What,' not 'It,' to emphasize the specific thing needed: 'What I really need is...'",
             "errorCount": 3
         },
         {
@@ -146,14 +146,14 @@
             "interactionType": "typing",
             "passage": "It was the misunderstanding [who] caused all this confusion between the two teams.",
             "options": [
-                "which one",
-                "who",
+                "which",
                 "that",
-                "what"
+                "who",
+                "whom"
             ],
             "correctAnswer": "that",
-            "hint": "Think about the structure 'It was [thing] that...' used to emphasize a cause.",
-            "explanation": "Cleft sentences with 'It was...that' use 'that' for things and causes, not 'who,' which is for people.",
+            "hint": "The word being described here is a thing (a misunderstanding), not a person.",
+            "explanation": "Since 'misunderstanding' is a thing, not a person, the cleft sentence needs 'that' (or 'which'), not 'who.'",
             "errorCount": 3
         },
         {
@@ -163,14 +163,14 @@
             "interactionType": "typing",
             "passage": "It was my neighbor [which] helped me fix the leaking pipe in the kitchen.",
             "options": [
-                "which",
-                "that one",
-                "what",
-                "who"
+                "who",
+                "whom",
+                "whose",
+                "which"
             ],
             "correctAnswer": "who",
-            "hint": "Think about the structure 'It was [person] who...' used to emphasize who performed an action.",
-            "explanation": "Cleft sentences with 'It was...who' use 'who' for people, not 'which,' which is for things.",
+            "hint": "The word being described is a person, not a thing.",
+            "explanation": "Since 'neighbor' is a person, the cleft sentence needs 'who,' not 'which,' which is reserved for things.",
             "errorCount": 3
         },
         {
@@ -180,14 +180,14 @@
             "interactionType": "typing",
             "passage": "[It] really annoys me is when people don't reply to messages for days.",
             "options": [
-                "This",
-                "What",
                 "It",
-                "That"
+                "Which",
+                "That",
+                "What"
             ],
             "correctAnswer": "What",
-            "hint": "Think about the structure 'What [someone] feels is...' used to emphasize a specific feeling.",
-            "explanation": "Cleft sentences highlighting a feeling begin with 'What,' not 'It': 'What really annoys me is...'",
+            "hint": "This cleft sentence emphasizes an idea, which requires a specific opening word.",
+            "explanation": "'What...is' cleft sentences begin with 'What' to emphasize an idea or situation: 'What really annoys me is...'",
             "errorCount": 3
         },
         {
@@ -197,14 +197,14 @@
             "interactionType": "typing",
             "passage": "It was the constant noise from the street [who] kept me awake most of the night.",
             "options": [
-                "which one",
-                "that",
+                "which",
                 "who",
-                "what"
+                "that",
+                "whom"
             ],
             "correctAnswer": "that",
-            "hint": "This cleft pattern singles out a cause using 'It was...that.'",
-            "explanation": "Cleft sentences with 'It was...that' use 'that' for causes, not 'who,' which is reserved for people.",
+            "hint": "The subject here is a thing (noise), not a person.",
+            "explanation": "Since 'noise' is a thing, the cleft sentence needs 'that' (or 'which'), not 'who,' which only refers to people.",
             "errorCount": 3
         },
         {
@@ -214,14 +214,14 @@
             "interactionType": "typing",
             "passage": "You [shouldn't have] studied so much; the test turned out to be very easy.",
             "options": [
-                "mustn't have",
-                "can't have",
+                "couldn't have",
+                "shouldn't have",
                 "needn't have",
-                "shouldn't have"
+                "mustn't have"
             ],
             "correctAnswer": "needn't have",
-            "hint": "Think about a past action that turned out to be unnecessary, not a mistaken one.",
-            "explanation": "'Needn't have' shows an action was unnecessary, fitting overpreparing for an easy test, not 'shouldn't have,' which criticizes a mistake.",
+            "hint": "The studying wasn't wrong, just unnecessary — which phrase expresses an action that wasn't needed?",
+            "explanation": "'Needn't have' expresses that an action was unnecessary, but not wrong. Since studying isn't a mistake, only unneeded, 'needn't have studied' fits better than 'shouldn't have.'",
             "errorCount": 3
         },
         {
@@ -231,14 +231,14 @@
             "interactionType": "typing",
             "passage": "You [needn't have] copied your friend's homework; now you're both in serious trouble.",
             "options": [
-                "needn't have",
                 "mustn't have",
-                "shouldn't have",
-                "can't have"
+                "needn't have",
+                "couldn't have",
+                "shouldn't have"
             ],
             "correctAnswer": "shouldn't have",
-            "hint": "Think about a past action that was a mistake, not simply unnecessary.",
-            "explanation": "'Shouldn't have' criticizes a past mistake, like copying homework, not 'needn't have,' which means it was simply unnecessary.",
+            "hint": "This action had negative consequences, suggesting it was actually a mistake, not just unnecessary.",
+            "explanation": "'Shouldn't have' expresses regret over a wrong action with negative consequences, fitting the trouble that followed. 'Needn't have' would only suggest it was unneeded, not wrong.",
             "errorCount": 3
         },
         {
@@ -248,14 +248,14 @@
             "interactionType": "typing",
             "passage": "She [needn't have] left her notes at home; the presentation went really badly as a result.",
             "options": [
-                "can't have",
-                "needn't have",
+                "couldn't have",
+                "shouldn't have",
                 "mustn't have",
-                "shouldn't have"
+                "needn't have"
             ],
             "correctAnswer": "shouldn't have",
-            "hint": "Think about a past action that was a mistake leading to a negative outcome.",
-            "explanation": "'Shouldn't have' criticizes a past mistake that caused a problem, not 'needn't have,' which means it was unnecessary.",
+            "hint": "The negative outcome shows this was a genuine mistake, not just an unneeded action.",
+            "explanation": "Because the action led to a bad outcome, 'shouldn't have left' correctly expresses regret over a mistake, rather than 'needn't have,' which implies the action was simply unnecessary.",
             "errorCount": 3
         },
         {
@@ -266,13 +266,13 @@
             "passage": "You [shouldn't have] stayed so late; the deadline was actually extended that afternoon.",
             "options": [
                 "needn't have",
-                "mustn't have",
-                "can't have",
-                "shouldn't have"
+                "shouldn't have",
+                "couldn't have",
+                "mustn't have"
             ],
             "correctAnswer": "needn't have",
-            "hint": "This modal shows effort was spent on something that wasn't actually required.",
-            "explanation": "'Needn't have' shows an action was unnecessary, here staying late when the deadline changed, not 'shouldn't have.'",
+            "hint": "Staying late wasn't wrong, just unnecessary, since the deadline changed.",
+            "explanation": "Since staying late turned out to be unneeded rather than a mistake, 'needn't have stayed' is the correct phrase, not 'shouldn't have.'",
             "errorCount": 3
         },
         {
@@ -282,14 +282,14 @@
             "interactionType": "typing",
             "passage": "He [needn't have] sent that email without checking it first; it had several mistakes.",
             "options": [
-                "can't have",
+                "couldn't have",
                 "shouldn't have",
                 "needn't have",
                 "mustn't have"
             ],
             "correctAnswer": "shouldn't have",
-            "hint": "This modal criticizes a choice that turned out to be a genuine error.",
-            "explanation": "'Shouldn't have' criticizes a past mistake, here sending an unchecked email, not 'needn't have.'",
+            "hint": "The negative result (mistakes in the email) shows this was an actual error, not simply unnecessary.",
+            "explanation": "Because the email contained mistakes, 'shouldn't have sent' expresses regret over an actual error, rather than 'needn't have,' which only implies something unneeded.",
             "errorCount": 3
         },
         {
@@ -300,13 +300,13 @@
             "passage": "We [shouldn't have] rushed the report; the client postponed the meeting anyway that day.",
             "options": [
                 "mustn't have",
-                "can't have",
-                "needn't have",
-                "shouldn't have"
+                "couldn't have",
+                "shouldn't have",
+                "needn't have"
             ],
             "correctAnswer": "needn't have",
-            "hint": "Think about an action that turned out to be unnecessary, given later events.",
-            "explanation": "'Needn't have' shows the effort was unnecessary, since the meeting was postponed, not 'shouldn't have.'",
+            "hint": "Rushing wasn't a mistake in itself, just unnecessary, since the meeting was postponed.",
+            "explanation": "Since the rushing turned out to be unneeded due to the postponed meeting, 'needn't have rushed' is correct rather than 'shouldn't have.'",
             "errorCount": 3
         },
         {
@@ -316,14 +316,14 @@
             "interactionType": "typing",
             "passage": "The agent recommended that we [booked] our tickets a month in advance for the trip.",
             "options": [
-                "will book",
-                "books",
                 "book",
-                "booked"
+                "booked",
+                "are booking",
+                "will book"
             ],
             "correctAnswer": "book",
-            "hint": "After 'recommend that,' the subjunctive uses the base form of the verb, regardless of subject.",
-            "explanation": "The subjunctive after 'recommend that' uses the base verb form for all subjects: 'book,' not 'booked.'",
+            "hint": "After 'recommend that,' the subjunctive mood requires the base verb, regardless of subject or tense.",
+            "explanation": "The subjunctive mood after 'recommend that' uses the base verb form for every subject: 'recommend that we book,' not 'booked.'",
             "errorCount": 3
         },
         {
@@ -333,14 +333,14 @@
             "interactionType": "typing",
             "passage": "Our guide insisted that everyone [stays] with the group at all times during the tour.",
             "options": [
-                "will stay",
+                "stayed",
                 "stays",
                 "stay",
-                "stayed"
+                "will stay"
             ],
             "correctAnswer": "stay",
-            "hint": "After 'insist that,' the subjunctive uses the base form of the verb, not the -s form.",
-            "explanation": "The subjunctive mood after 'insist that' takes the base verb form: 'stay,' not 'stays,' regardless of the subject.",
+            "hint": "The subjunctive after 'insist that' always uses the base form, even with a singular-feeling subject like 'everyone.'",
+            "explanation": "The subjunctive requires the base verb 'stay' after 'insisted that,' even though 'everyone' might suggest the usual -s ending.",
             "errorCount": 3
         },
         {
@@ -350,14 +350,14 @@
             "interactionType": "typing",
             "passage": "It is essential that each passenger [shows] their passport at check-in before boarding.",
             "options": [
-                "shows",
-                "will show",
                 "showed",
+                "will show",
+                "shows",
                 "show"
             ],
             "correctAnswer": "show",
-            "hint": "After 'It is essential that,' the subjunctive uses the base form of the verb, not the -s form.",
-            "explanation": "Subjunctive structures like 'it is essential that' require the base verb form: 'show,' not 'shows.'",
+            "hint": "After expressions like 'it is essential that,' the subjunctive base form is required.",
+            "explanation": "'It is essential that' triggers the subjunctive, requiring the base verb form 'show,' not the third-person singular 'shows.'",
             "errorCount": 3
         },
         {
@@ -368,13 +368,13 @@
             "passage": "My mother suggested that we [took] a family photo before everyone leaves for the airport.",
             "options": [
                 "took",
-                "take",
                 "will take",
-                "takes"
+                "take",
+                "are taking"
             ],
             "correctAnswer": "take",
-            "hint": "After 'suggest that,' the subjunctive uses the base form of the verb, not the past tense.",
-            "explanation": "The subjunctive after 'suggest that' uses the base verb form for all subjects: 'take,' not 'took.'",
+            "hint": "'Suggest that' triggers the subjunctive base form, regardless of tense.",
+            "explanation": "The subjunctive after 'suggested that' uses the base verb form: 'suggested that we take,' not the past tense 'took.'",
             "errorCount": 3
         },
         {
@@ -384,14 +384,14 @@
             "interactionType": "typing",
             "passage": "My father insisted that my brother [helps] him with the heavy moving boxes.",
             "options": [
-                "will help",
+                "help",
                 "helped",
                 "helps",
-                "help"
+                "will help"
             ],
             "correctAnswer": "help",
-            "hint": "Following 'insist that,' the verb stays in its base form regardless of subject.",
-            "explanation": "Subjunctive structures after 'insist that' require the base verb form: 'help,' not 'helps.'",
+            "hint": "'Insist that' requires the subjunctive base form, even with a third-person singular subject.",
+            "explanation": "The subjunctive after 'insisted that' uses the base form 'help,' even though 'my brother' would normally take '-s' in the ordinary present tense.",
             "errorCount": 3
         },
         {
@@ -401,14 +401,14 @@
             "interactionType": "typing",
             "passage": "It's important that every family member [is] involved in the final decision.",
             "options": [
-                "is",
-                "will be",
                 "was",
-                "be"
+                "be",
+                "will be",
+                "is"
             ],
             "correctAnswer": "be",
-            "hint": "After 'It's important that,' the subjunctive uses the base form 'be,' not 'is.'",
-            "explanation": "The subjunctive mood always uses 'be' rather than 'is' or 'are,' regardless of the subject.",
+            "hint": "Expressions like 'it's important that' trigger the subjunctive mood, which always uses one unchanging base form of the verb 'to be.'",
+            "explanation": "'It's important that' triggers the subjunctive, and the base form of 'be' is simply 'be,' not 'is.'",
             "errorCount": 3
         },
         {
@@ -418,14 +418,14 @@
             "interactionType": "typing",
             "passage": "The store stayed open, [whereas] with reduced hours, during the entire holiday period.",
             "options": [
-                "whereas",
-                "because",
                 "notwithstanding",
-                "albeit"
+                "whereas",
+                "albeit",
+                "in that"
             ],
             "correctAnswer": "albeit",
-            "hint": "Think about a connector meaning 'although,' often placed right before a short phrase, not one comparing two facts.",
-            "explanation": "'Albeit' means 'although' and precedes a short phrase, not 'whereas,' which contrasts two complete facts.",
+            "hint": "This connector introduces a brief qualifying phrase within the same clause, not a comparison between two clauses.",
+            "explanation": "'Albeit' introduces a brief concession within the same sentence flow: 'stayed open, albeit with reduced hours.' 'Whereas' compares two separate, parallel facts instead.",
             "errorCount": 3
         },
         {
@@ -433,16 +433,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "The complaints, [albeit] valid, did not change the store's official return policy.",
+            "passage": "The complaints, [notwithstanding] valid, did not change the store's official return policy.",
             "options": [
-                "albeit",
-                "because",
                 "whereas",
-                "notwithstanding"
+                "in that",
+                "notwithstanding",
+                "albeit"
             ],
-            "correctAnswer": "notwithstanding",
-            "hint": "Think about a formal connector meaning 'despite,' placed after the noun it modifies, not one meaning 'although.'",
-            "explanation": "'Notwithstanding' means 'despite' and can follow the noun it refers to, unlike 'albeit,' which precedes a short phrase.",
+            "correctAnswer": "albeit",
+            "hint": "This connector introduces a brief concessive adjective and fits a different word than 'despite.'",
+            "explanation": "'Albeit' directly precedes an adjective to concede a point briefly: 'the complaints, albeit valid.' 'Notwithstanding' normally pairs with a full noun phrase, not a lone adjective like this.",
             "errorCount": 3
         },
         {
@@ -452,14 +452,14 @@
             "interactionType": "typing",
             "passage": "Online shoppers want fast delivery, [albeit] in-store shoppers prioritize seeing the product first.",
             "options": [
-                "albeit",
                 "whereas",
-                "notwithstanding",
-                "because"
+                "in that",
+                "albeit",
+                "notwithstanding"
             ],
             "correctAnswer": "whereas",
-            "hint": "Think about a connector used to contrast two different groups' preferences, not one meaning 'although.'",
-            "explanation": "'Whereas' contrasts two different preferences, not 'albeit,' which precedes a short descriptive phrase.",
+            "hint": "This sentence compares two different groups' priorities side by side.",
+            "explanation": "'Whereas' compares two contrasting groups or facts directly, fitting the comparison between online and in-store shoppers. 'Albeit' introduces a brief qualifier, not a full comparison.",
             "errorCount": 3
         },
         {
@@ -469,14 +469,14 @@
             "interactionType": "typing",
             "passage": "The restaurant remained popular, [albeit] several negative reviews appearing online recently.",
             "options": [
-                "albeit",
-                "because",
+                "in that",
+                "notwithstanding",
                 "whereas",
-                "notwithstanding"
+                "albeit"
             ],
             "correctAnswer": "notwithstanding",
-            "hint": "Think about a formal connector meaning 'despite,' followed by a noun phrase, not one meaning 'although.'",
-            "explanation": "'Notwithstanding' means 'despite' and introduces a contrasting fact, not 'albeit,' which precedes a short phrase.",
+            "hint": "This connector, meaning 'despite,' fits before the noun phrase describing the obstacle.",
+            "explanation": "'Notwithstanding' means 'despite' and can precede a noun phrase: 'notwithstanding several negative reviews.' 'Albeit' typically introduces an adjective, not a full noun phrase like this.",
             "errorCount": 3
         },
         {
@@ -486,14 +486,14 @@
             "interactionType": "typing",
             "passage": "The dish was delicious, [whereas] a little too spicy for some of the guests.",
             "options": [
-                "notwithstanding",
+                "in that",
                 "whereas",
-                "because",
-                "albeit"
+                "albeit",
+                "notwithstanding"
             ],
             "correctAnswer": "albeit",
-            "hint": "Think about a connector meaning 'although,' followed by a brief descriptive phrase, not one comparing two facts.",
-            "explanation": "'Albeit' means 'although' and is followed by a brief phrase, not 'whereas,' which contrasts two complete facts.",
+            "hint": "This connector introduces a brief qualifying phrase within the same sentence.",
+            "explanation": "'Albeit' fits as a brief concession within one sentence: 'delicious, albeit a little too spicy.' 'Whereas' would require a full contrasting clause instead.",
             "errorCount": 3
         },
         {
@@ -503,14 +503,14 @@
             "interactionType": "typing",
             "passage": "Some diners prefer bold flavors, [albeit] others enjoy simpler, milder dishes instead.",
             "options": [
+                "whereas",
                 "notwithstanding",
-                "albeit",
-                "because",
-                "whereas"
+                "in that",
+                "albeit"
             ],
             "correctAnswer": "whereas",
-            "hint": "Think about a connector used to contrast two different preferences, not one meaning 'although.'",
-            "explanation": "'Whereas' contrasts two groups' tastes within a sentence, not 'albeit,' which precedes a short phrase.",
+            "hint": "This sentence compares two groups' differing preferences.",
+            "explanation": "'Whereas' directly compares two contrasting groups, fitting this comparison of diner preferences. 'Albeit' only introduces a brief qualifier, not a full comparison.",
             "errorCount": 3
         }
     ]

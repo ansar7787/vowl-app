@@ -8,16 +8,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "Each of my neighbors [are friendly] to new families on our street.",
+            "passage": "Each of the apartments on this floor [have] its own balcony.",
             "options": [
-                "being friendly",
-                "is friendly",
-                "were friendly",
-                "be friendly"
+                "have had",
+                "having",
+                "has",
+                "are having"
             ],
-            "correctAnswer": "is friendly",
-            "hint": "Look at the subject 'Each' - it is always treated as singular, even before 'of my neighbors.'",
-            "explanation": "'Each' is a singular indefinite pronoun, so it needs the singular verb 'is,' not 'are.'",
+            "correctAnswer": "has",
+            "hint": "Find the true subject of the verb — is it 'the apartments' or the word 'Each'?",
+            "explanation": "'Each' is the grammatical subject, and 'each' is always singular, even when it is followed by a plural phrase like 'of the apartments.' So the verb must be singular: 'has.'",
             "errorCount": 3
         },
         {
@@ -25,16 +25,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "Everyone in my family [are happy] about the new house.",
+            "passage": "Every player on the team [know] the new coach's rules by now.",
             "options": [
-                "were happy",
-                "be happy",
-                "is happy",
-                "being happy"
+                "have known",
+                "knowed",
+                "are knowing",
+                "knows"
             ],
-            "correctAnswer": "is happy",
-            "hint": "The subject 'Everyone' looks like it refers to many people, but grammatically it is singular.",
-            "explanation": "'Everyone' is grammatically singular, so it takes the singular verb 'is,' not the plural 'are.'",
+            "correctAnswer": "knows",
+            "hint": "'Every' pairs with a singular verb, no matter how many players there are.",
+            "explanation": "Words like 'every' always take a singular verb because they refer to members of a group one at a time. The correct form here is 'knows.'",
             "errorCount": 3
         },
         {
@@ -42,16 +42,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "Either of my parents [are able] to pick me up after school today.",
+            "passage": "Everybody at the meeting [agree] that the new schedule works better.",
             "options": [
-                "is able",
-                "were able",
-                "be able",
-                "being able"
+                "are agreeing",
+                "agrees",
+                "have agreed",
+                "agreeed"
             ],
-            "correctAnswer": "is able",
-            "hint": "The subject 'Either' refers to one of two people, so think about the matching singular verb.",
-            "explanation": "'Either' is singular, meaning 'one or the other,' so it requires the singular verb 'is.'",
+            "correctAnswer": "agrees",
+            "hint": "'Everybody' feels like a group of people, but grammatically it counts as one.",
+            "explanation": "Indefinite pronouns such as 'everybody,' 'everyone,' and 'everything' are always singular, so they need a singular verb: 'agrees.'",
             "errorCount": 3
         },
         {
@@ -59,16 +59,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "Each of the students [are responsible] for bringing their own textbook.",
+            "passage": "Neither of the two routes [look] faster during rush hour.",
             "options": [
-                "be responsible",
-                "were responsible",
-                "is responsible",
-                "being responsible"
+                "looks",
+                "looking",
+                "were looking",
+                "have looked"
             ],
-            "correctAnswer": "is responsible",
-            "hint": "The subject 'Each' is always singular, regardless of how many students follow it.",
-            "explanation": "'Each' takes a singular verb, so the correct form is 'is responsible,' not 'are responsible.'",
+            "correctAnswer": "looks",
+            "hint": "'Neither' means 'not one and not the other' — think of it as one thing at a time.",
+            "explanation": "'Neither' is grammatically singular because it refers to one of two options, not both together. The correct verb is 'looks.'",
             "errorCount": 3
         },
         {
@@ -76,16 +76,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "Neither of the answers [are correct], according to the teacher.",
+            "passage": "Somebody in the waiting room [leave] their umbrella by the front desk.",
             "options": [
-                "were correct",
-                "is correct",
-                "be correct",
-                "being correct"
+                "have left",
+                "left",
+                "leaves",
+                "leaving"
             ],
-            "correctAnswer": "is correct",
-            "hint": "The subject 'Neither' refers to not one of the two, and is treated as singular.",
-            "explanation": "'Neither' is a singular indefinite pronoun, so it pairs with the singular verb 'is.'",
+            "correctAnswer": "left",
+            "hint": "The past-tense clue ('by the front desk' after the fact) tells you which tense fits — check if a form is missing entirely or just wrong.",
+            "explanation": "This sentence describes a completed past action, so the simple past 'left' is required. 'Somebody' is still singular, but the tense — not agreement — is the issue here.",
             "errorCount": 3
         },
         {
@@ -93,16 +93,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "Somebody in the classroom [are talking] loudly during the quiet test.",
+            "passage": "No one on the flight [complain] about the delay, surprisingly.",
             "options": [
-                "were talking",
-                "being talking",
-                "be talking",
-                "is talking"
+                "complains",
+                "have complain",
+                "complained",
+                "complaining"
             ],
-            "correctAnswer": "is talking",
-            "hint": "The subject 'Somebody' refers to one unknown person and is always singular.",
-            "explanation": "'Somebody' is singular, so the present continuous needs the singular auxiliary 'is,' not 'are.'",
+            "correctAnswer": "complained",
+            "hint": "Look for a time signal in the sentence that points to the past.",
+            "explanation": "The context describes a single past event, so the simple past tense 'complained' is correct. Indefinite pronouns like 'no one' still take a singular verb form in every tense.",
             "errorCount": 3
         },
         {
@@ -110,16 +110,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "My manager always [check] the schedule before assigning new tasks.",
+            "passage": "Our regional manager usually [visit] each branch once a month.",
             "options": [
-                "checks",
-                "checked",
-                "checking",
-                "check"
+                "visiting",
+                "visit",
+                "is visit",
+                "visits"
             ],
-            "correctAnswer": "checks",
-            "hint": "The subject 'my manager' is singular (he/she), so the verb needs an ending added.",
-            "explanation": "Singular subjects like 'my manager' require an -s ending on the verb in the simple present: 'checks.'",
+            "correctAnswer": "visits",
+            "hint": "The subject 'manager' is one person doing a repeated action — what ending does a present-tense verb need for 'he/she/it'?",
+            "explanation": "With a singular third-person subject like 'manager,' present-tense verbs need an -s ending for habitual actions: 'visits.'",
             "errorCount": 3
         },
         {
@@ -127,16 +127,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "Our accounting department [handle] all the invoices for the company.",
+            "passage": "This bakery [close] early on Sundays because of low demand.",
             "options": [
-                "handled",
-                "handle",
-                "handling",
-                "handles"
+                "closes",
+                "is closing",
+                "closing",
+                "close"
             ],
-            "correctAnswer": "handles",
-            "hint": "Think of 'our accounting department' as a single unit, like 'it,' which needs the matching verb ending.",
-            "explanation": "Singular collective subjects like 'department' take the -s verb form in the simple present: 'handles.'",
+            "correctAnswer": "closes",
+            "hint": "Treat 'this bakery' the same way you would treat 'it.'",
+            "explanation": "'Bakery' is singular and takes the third-person -s form in the simple present: 'closes.' Adding '-ing' or dropping the -s breaks subject-verb agreement.",
             "errorCount": 3
         },
         {
@@ -144,16 +144,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "She usually [arrive] at the office before everyone else.",
+            "passage": "The customer support line [answer] calls twenty-four hours a day.",
             "options": [
-                "arrived",
-                "arrives",
-                "arriving",
-                "arrive"
+                "answers",
+                "answer",
+                "is answer",
+                "answering"
             ],
-            "correctAnswer": "arrives",
-            "hint": "The subject 'she' is singular, so think about the verb ending needed in the simple present.",
-            "explanation": "With singular subjects such as 'she,' the simple present verb takes an -s ending: 'arrives.'",
+            "correctAnswer": "answers",
+            "hint": "A singular subject describing a routine fact needs the -s ending.",
+            "explanation": "'The customer support line' is singular, so the habitual-fact verb must take -s: 'answers.' This is a general truth about the service, so simple present is correct.",
             "errorCount": 3
         },
         {
@@ -161,16 +161,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "This airline always [offer] free snacks on international flights.",
+            "passage": "My cousin's bookstore [carry] a small selection of rare first editions.",
             "options": [
-                "offered",
-                "offering",
-                "offer",
-                "offers"
+                "is carrying",
+                "carring",
+                "carry",
+                "carries"
             ],
-            "correctAnswer": "offers",
-            "hint": "The subject 'this airline' is singular, so the verb needs an ending added.",
-            "explanation": "Singular subjects like 'this airline' require an -s ending on the verb in the simple present: 'offers.'",
+            "correctAnswer": "carries",
+            "hint": "Verbs ending in a consonant + y usually change the y to i before adding the ending — check the spelling rule.",
+            "explanation": "For third-person singular subjects, verbs ending in a consonant + 'y' change to '-ies': 'carry' becomes 'carries.'",
             "errorCount": 3
         },
         {
@@ -178,16 +178,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "My travel agent usually [recommend] budget-friendly hotels near the airport.",
+            "passage": "The night shift supervisor [watch] the security cameras until dawn.",
             "options": [
-                "recommend",
-                "recommended",
-                "recommends",
-                "recommending"
+                "watchs",
+                "watch",
+                "watches",
+                "is watch"
             ],
-            "correctAnswer": "recommends",
-            "hint": "The subject 'my travel agent' is singular, so think about the matching verb ending.",
-            "explanation": "With a singular subject, the simple present verb takes an -s ending: 'recommends.'",
+            "correctAnswer": "watches",
+            "hint": "Verbs ending in -ch, -sh, -ss, or -x usually add -es, not just -s.",
+            "explanation": "Verbs ending in 'ch' add '-es' in the third-person singular, so 'watch' becomes 'watches.' Simply adding 's' would be misspelled.",
             "errorCount": 3
         },
         {
@@ -195,16 +195,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "The local guide [know] every hidden street in the old town.",
+            "passage": "That online course [teach] students how to budget their money.",
             "options": [
-                "knowing",
-                "knows",
-                "know",
-                "knowed"
+                "teach",
+                "teaches",
+                "is teach",
+                "teachs"
             ],
-            "correctAnswer": "knows",
-            "hint": "The subject 'the local guide' is singular, so the verb needs an -s ending, and remember this verb is irregular.",
-            "explanation": "'Know' is irregular but still follows the -s rule for singular subjects in the simple present: 'knows,' not 'knowed.'",
+            "correctAnswer": "teaches",
+            "hint": "Apply the same -es rule you would use for 'watch' or 'catch.'",
+            "explanation": "Verbs ending in 'ch' take '-es' for third-person singular subjects, so the correct form is 'teaches,' not 'teachs.'",
             "errorCount": 3
         },
         {
@@ -212,16 +212,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "My grandmother has three [childs] who all live in different cities.",
+            "passage": "The farm down the road keeps several [sheeps] in the back field.",
             "options": [
-                "children",
-                "childs",
-                "childrens",
-                "childes"
+                "a sheep",
+                "sheeps",
+                "sheepes",
+                "sheep"
             ],
-            "correctAnswer": "children",
-            "hint": "Think about the irregular plural form of the word 'child.'",
-            "explanation": "'Child' has an irregular plural form, 'children,' not the regular 'childs.'",
+            "correctAnswer": "sheep",
+            "hint": "Some animal names stay exactly the same whether you mean one or many.",
+            "explanation": "'Sheep' is an irregular noun with an identical singular and plural form, so 'sheeps' is never correct — the plural is simply 'sheep.'",
             "errorCount": 3
         },
         {
@@ -229,16 +229,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "Both of my [brother-in-laws] are coming to the family reunion this year.",
+            "passage": "Two [mans] from the delivery company dropped off the new couch.",
             "options": [
-                "brothers-in-laws",
-                "brother-in-law's",
-                "brother-in-laws",
-                "brothers-in-law"
+                "mans",
+                "mens",
+                "men",
+                "manes"
             ],
-            "correctAnswer": "brothers-in-law",
-            "hint": "In compound nouns like this, the main noun usually takes the plural ending, not the last word.",
-            "explanation": "In compound nouns such as 'brother-in-law,' the core noun 'brother' becomes plural: 'brothers-in-law.'",
+            "correctAnswer": "men",
+            "hint": "This noun changes its vowel in the middle rather than adding an ending.",
+            "explanation": "'Man' has an irregular plural formed by changing the vowel: 'man' becomes 'men,' not 'mans.'",
             "errorCount": 3
         },
         {
@@ -246,16 +246,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "There are two [babys] sleeping peacefully in the next room.",
+            "passage": "My grandmother keeps her [photoes] from the 1970s in a leather album.",
             "options": [
-                "babies",
-                "babys",
-                "babes",
-                "babies's"
+                "photos",
+                "photoies",
+                "photoes",
+                "photo's"
             ],
-            "correctAnswer": "babies",
-            "hint": "Nouns ending in a consonant + y usually change 'y' to 'i' before adding -es.",
-            "explanation": "'Baby' ends in a consonant + y, so its plural changes the y to i and adds -es: 'babies.'",
+            "correctAnswer": "photos",
+            "hint": "Words ending in -o that come from shortened forms (like 'photo' from 'photograph') usually just add -s.",
+            "explanation": "'Photo' forms its plural by simply adding 's': 'photos.' Not all nouns ending in -o take '-es' — this depends on the word's origin.",
             "errorCount": 3
         },
         {
@@ -263,16 +263,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "I need to buy two new [knifes] for my kitchen drawer.",
+            "passage": "The tailor sharpened both pairs of [scissor] before the fitting.",
             "options": [
-                "knive's",
-                "knives",
-                "knifes's",
-                "knifes"
+                "sissors",
+                "scissors",
+                "scissores",
+                "scissor"
             ],
-            "correctAnswer": "knives",
-            "hint": "Nouns ending in -fe often change to -ves in the plural.",
-            "explanation": "Some nouns ending in -fe change to -ves in the plural, so 'knife' becomes 'knives,' not 'knifes.'",
+            "correctAnswer": "scissors",
+            "hint": "Some tools that have two joined parts are always treated as plural.",
+            "explanation": "'Scissors' refers to a single tool but is always used in its plural form, similar to 'glasses' or 'pants.' The singular 'scissor' is not standard here.",
             "errorCount": 3
         },
         {
@@ -280,16 +280,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "The store sells several [mouses] for use with desktop computers.",
+            "passage": "The vet examined all three [gooses] before letting them back in the pen.",
             "options": [
-                "mices",
-                "mouses",
-                "mice",
-                "mouse's"
+                "gooses",
+                "geese",
+                "goose's",
+                "geeses"
             ],
-            "correctAnswer": "mice",
-            "hint": "This is an irregular plural noun - think about the special form used for more than one 'mouse.'",
-            "explanation": "'Mouse' has an irregular plural form, 'mice,' rather than the regular 'mouses.'",
+            "correctAnswer": "geese",
+            "hint": "This bird's plural form changes its vowel sound, similar to 'foot' becoming 'feet.'",
+            "explanation": "'Goose' has an irregular plural, 'geese,' formed by an internal vowel change rather than an added ending.",
             "errorCount": 3
         },
         {
@@ -297,16 +297,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "She bought three [pair] of shoes during the big weekend sale.",
+            "passage": "We need three new [loafs] of bread for the weekend barbecue.",
             "options": [
-                "pair",
-                "paires",
-                "pairs",
-                "payrs"
+                "loafs",
+                "loafes",
+                "loaves",
+                "loaves's"
             ],
-            "correctAnswer": "pairs",
-            "hint": "Since the sentence already says 'three,' the noun needs to be in its plural form.",
-            "explanation": "After a number greater than one, the countable noun must be plural: 'three pairs,' not 'three pair.'",
+            "correctAnswer": "loaves",
+            "hint": "Nouns ending in -f often change to -ves in the plural — think of 'leaf' becoming 'leaves.'",
+            "explanation": "Many nouns ending in 'f' change the 'f' to 'v' and add 'es' in the plural, so 'loaf' becomes 'loaves.'",
             "errorCount": 3
         },
         {
@@ -314,16 +314,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "Could you pass me [a apple] from the fruit bowl, please?",
+            "passage": "The intern requested [a hour] off to attend a family event.",
             "options": [
-                "an apple",
-                "a apple",
-                "apple",
-                "the apple's"
+                "a hour",
+                "the hour",
+                "an hours",
+                "an hour"
             ],
-            "correctAnswer": "an apple",
-            "hint": "Listen to the sound at the start of 'apple' - is it a vowel sound or a consonant sound?",
-            "explanation": "We use 'an' before words starting with a vowel sound, so it should be 'an apple,' not 'a apple.'",
+            "correctAnswer": "an hour",
+            "hint": "Listen to the sound the next word starts with, not just its first letter.",
+            "explanation": "'Hour' begins with a silent 'h,' so it starts with a vowel sound and needs 'an,' not 'a.' Article choice depends on sound, not spelling.",
             "errorCount": 3
         },
         {
@@ -331,16 +331,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "I had [an sandwich] for lunch, and it was delicious.",
+            "passage": "She ordered [a espresso] while she waited for her train.",
             "options": [
-                "a sandwich",
-                "sandwich",
-                "the sandwich's",
-                "an sandwich"
+                "an espresso",
+                "the espresso",
+                "an espressos",
+                "a espresso"
             ],
-            "correctAnswer": "a sandwich",
-            "hint": "Listen to the sound at the start of 'sandwich' - is it a vowel sound or a consonant sound?",
-            "explanation": "'Sandwich' starts with a consonant sound, so it follows 'a,' not 'an': 'a sandwich.'",
+            "correctAnswer": "an espresso",
+            "hint": "'Espresso' starts with a vowel sound, so which article fits?",
+            "explanation": "Because 'espresso' begins with a vowel sound, it takes 'an,' not 'a.' The rule is based on pronunciation, not the letter itself.",
             "errorCount": 3
         },
         {
@@ -348,16 +348,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "We already talked about [a restaurant] you suggested yesterday, remember?",
+            "passage": "He is [a honest] reviewer who never exaggerates his opinions.",
             "options": [
-                "an restaurant",
-                "the restaurant",
-                "restaurant",
-                "a restaurant"
+                "an honest",
+                "an honesty",
+                "a honesty",
+                "a honest"
             ],
-            "correctAnswer": "the restaurant",
-            "hint": "Think about whether this restaurant is new information or something already mentioned.",
-            "explanation": "Once something has already been mentioned, English uses 'the,' not 'a,' to refer back to it.",
+            "correctAnswer": "an honest",
+            "hint": "The 'h' in this word is silent, so the word effectively begins with a vowel sound.",
+            "explanation": "'Honest' starts with a silent 'h,' so the spoken sound is a vowel, which requires 'an honest' rather than 'a honest.'",
             "errorCount": 3
         },
         {
@@ -365,16 +365,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "I just bought [an new laptop] for my online classes.",
+            "passage": "I finally found [a keys] to the storage locker in my coat pocket.",
             "options": [
-                "an new laptop",
-                "a new laptop",
-                "the new laptop's",
-                "new laptop"
+                "an keys",
+                "the keys",
+                "a keys",
+                "keys the"
             ],
-            "correctAnswer": "a new laptop",
-            "hint": "Listen to the first sound of 'new' - is it a vowel or a consonant sound?",
-            "explanation": "'New' starts with a consonant sound, so the article should be 'a,' not 'an': 'a new laptop.'",
+            "correctAnswer": "the keys",
+            "hint": "Since 'keys' is already plural, could 'a' ever be the right article for it?",
+            "explanation": "'A' and 'an' only pair with singular countable nouns, never with plurals. Because 'the keys' were specific and already known from context, 'the' is the correct choice.",
             "errorCount": 3
         },
         {
@@ -382,16 +382,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "She is looking for [a old charger] that fits her phone exactly.",
+            "passage": "We finally reached [a hotel] we had booked online weeks earlier.",
             "options": [
-                "old charger",
-                "the old charger's",
-                "a old charger",
-                "an old charger"
+                "hotel",
+                "an hotel",
+                "a hotel",
+                "the hotel"
             ],
-            "correctAnswer": "an old charger",
-            "hint": "Listen to the first sound of the word right after the article.",
-            "explanation": "'Old' begins with a vowel sound, so the article should be 'an,' not 'a': 'an old charger.'",
+            "correctAnswer": "the hotel",
+            "hint": "Was this hotel a brand-new mention, or something the speaker already had in mind?",
+            "explanation": "Because the hotel had already been booked and was specific to the speaker, it requires the definite article 'the,' not the indefinite 'a.'",
             "errorCount": 3
         },
         {
@@ -399,16 +399,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "Please turn off [a computer] in the meeting room before you leave.",
+            "passage": "Could you switch off [a printer] in the copy room before you go?",
             "options": [
-                "computer",
-                "the computer",
-                "a computer",
-                "an computer"
+                "a printer",
+                "printer",
+                "the printer",
+                "an printer"
             ],
-            "correctAnswer": "the computer",
-            "hint": "Think about whether this is one specific, already-known computer, not just any computer.",
-            "explanation": "'The' is used because it refers to one specific, already-known computer, not just any computer.",
+            "correctAnswer": "the printer",
+            "hint": "The listener already knows exactly which printer is meant, since there's presumably one specific printer in that room.",
+            "explanation": "When both speaker and listener know exactly which item is meant, English uses 'the,' not 'a.' Here, 'the printer' refers to a specific, known object.",
             "errorCount": 3
         },
         {
@@ -416,16 +416,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "The doctor is waiting for you [on the small clinic] on Park Street.",
+            "passage": "The receptionist asked me to wait [on the lobby] until my name was called.",
             "options": [
-                "in the small clinic",
-                "at the small clinic",
-                "on the small clinic",
-                "to the small clinic"
+                "to the lobby",
+                "at the lobby",
+                "in the lobby",
+                "on the lobby"
             ],
-            "correctAnswer": "in the small clinic",
-            "hint": "Think of a clinic as an enclosed space - which preposition do we use for being inside a place?",
-            "explanation": "We use 'in' for enclosed spaces like buildings, so it should be 'in the clinic,' not 'on the clinic.'",
+            "correctAnswer": "in the lobby",
+            "hint": "Think about enclosed spaces — do you stand 'on' a room or 'in' it?",
+            "explanation": "For enclosed spaces like rooms or buildings, English uses 'in,' not 'on.' 'On' is reserved for surfaces, so 'in the lobby' is correct.",
             "errorCount": 3
         },
         {
@@ -433,16 +433,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "There is a small bandage [in your left hand] from the minor cut.",
+            "passage": "Please sign your name [in the bottom] of the delivery form.",
             "options": [
-                "to your left hand",
-                "on your left hand",
-                "in your left hand",
-                "at your left hand"
+                "on the bottom",
+                "at the bottom",
+                "by the bottom",
+                "in the bottom"
             ],
-            "correctAnswer": "on your left hand",
-            "hint": "Think about something resting on a surface, like skin, rather than inside something.",
-            "explanation": "We use 'on' for things that touch a surface, so a bandage is 'on' your hand, not 'in' your hand.",
+            "correctAnswer": "at the bottom",
+            "hint": "For a specific point or position on a page, one preposition is more natural than the others.",
+            "explanation": "'At the bottom' is the standard way to refer to a specific point on a page or document; 'in the bottom' is not natural English in this context.",
             "errorCount": 3
         },
         {
@@ -450,16 +450,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "My next appointment with the dentist is [in the new health center] downtown.",
+            "passage": "There's a small stain [in the sleeve] of my new jacket.",
             "options": [
-                "at the new health center",
-                "on the new health center",
-                "to the new health center",
-                "in the new health center"
+                "over the sleeve",
+                "at the sleeve",
+                "in the sleeve",
+                "on the sleeve"
             ],
-            "correctAnswer": "at the new health center",
-            "hint": "Think of this as naming a specific place or address, not describing being physically inside it.",
-            "explanation": "'At' is commonly used before the name of a specific place, such as a health center, rather than 'in.'",
+            "correctAnswer": "on the sleeve",
+            "hint": "A stain sits on a surface, not inside an enclosed space.",
+            "explanation": "Because a sleeve is a surface rather than an enclosed area, English uses 'on': 'on the sleeve.'",
             "errorCount": 3
         },
         {
@@ -467,16 +467,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "We watched the whole match [at the new stadium] downtown last night.",
+            "passage": "I watched the entire ceremony [in my phone] while I was at work.",
             "options": [
-                "on the new stadium",
-                "in the new stadium",
-                "at the new stadium",
-                "to the new stadium"
+                "on my phone",
+                "at my phone",
+                "by my phone",
+                "in my phone"
             ],
-            "correctAnswer": "in the new stadium",
-            "hint": "Think of a stadium as a large enclosed area you go inside.",
-            "explanation": "Large enclosed spaces such as stadiums usually take 'in,' not 'at': 'in the stadium.'",
+            "correctAnswer": "on my phone",
+            "hint": "Screens and devices you view content through usually pair with a different preposition than enclosed spaces.",
+            "explanation": "We say 'on' a screen or device (on TV, on my phone) because the image appears on its surface, not inside it.",
             "errorCount": 3
         },
         {
@@ -484,16 +484,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "There is a great comedy show [in TV] tonight that everyone is talking about.",
+            "passage": "The award ceremony took place [on a grand hotel] downtown.",
             "options": [
-                "on TV",
-                "to TV",
-                "in TV",
-                "at TV"
+                "on a grand hotel",
+                "to a grand hotel",
+                "in on a hotel",
+                "at a grand hotel"
             ],
-            "correctAnswer": "on TV",
-            "hint": "Remember the special preposition we always use with screens and broadcasts.",
-            "explanation": "We always say 'on TV,' not 'in TV,' when talking about programs being broadcast.",
+            "correctAnswer": "at a grand hotel",
+            "hint": "Think of a hotel as a specific point or venue rather than a surface.",
+            "explanation": "'At' is used for specific venues or points of activity, so 'at a grand hotel' is correct; 'on a hotel' is not standard usage.",
             "errorCount": 3
         },
         {
@@ -501,16 +501,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "The band is performing [in the music festival] this weekend downtown.",
+            "passage": "She left her umbrella [on the taxi] on her way to the airport.",
             "options": [
-                "in the music festival",
-                "to the music festival",
-                "at the music festival",
-                "on the music festival"
+                "in the taxi",
+                "on the taxi",
+                "at the taxi",
+                "by the taxi"
             ],
-            "correctAnswer": "at the music festival",
-            "hint": "Think about naming a specific event, not a closed space you step inside.",
-            "explanation": "'At' is used before events such as festivals, parties, or concerts, rather than 'in.'",
+            "correctAnswer": "in the taxi",
+            "hint": "A taxi is an enclosed vehicle, similar to a car or a room.",
+            "explanation": "Enclosed vehicles like cars and taxis take 'in,' while open vehicles like buses or trains can take 'on.' Here, 'in the taxi' is correct.",
             "errorCount": 3
         }
     ]

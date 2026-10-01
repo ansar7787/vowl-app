@@ -8,21 +8,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a business contact exploring a potential collaboration.",
+            "prompt": "You are thinking of renting a flat and want more details before booking a viewing. Lay out the email to the letting agent.",
             "options": [
-                "Yours sincerely,\nDiana Thornton",
-                "Dear Mr Adeyemi,",
-                "Subject: Interest in exploring a potential business partnership",
-                "I am the managing director of clearview solutions and believe there may be a mutually beneficial opportunity to collaborate on sustainable packaging."
+                "Kind regards,\nSanjana Rao",
+                "I saw the listing for Flat 2 on Mill Lane and am interested in viewing it. Could you tell me whether bills are included in the rent and when the flat is available?",
+                "Subject: Flat 2, 14 Mill Lane: further details",
+                "Dear Mr Hargreaves,"
             ],
             "correctOrder": [
                 2,
-                1,
                 3,
+                1,
                 0
             ],
-            "hint": "The purpose and interest are in the subject; the contact is addressed formally by name; the sender's role and the opportunity are introduced in the body; 'YOURS SINCERELY' closes professionally.",
-            "explanation": "Introducing your own role ('Managing Director of Clearview Solutions') immediately establishes credibility. The phrase 'mutually beneficial' signals that you see value for both parties, not just your own company.",
+            "hint": "Bring the listing you saw and the exact questions together, so the agent can answer in one reply.",
+            "explanation": "Naming the property in the subject lets the agent find the listing. Two clear questions about bills and dates are easier to answer than 'please send more information'.",
             "formalityLevel": "Formal"
         },
         {
@@ -30,21 +30,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to your insurance provider asking about coverage for a specific claim.",
+            "prompt": "Subject: Difficulty of the Ridge Trail / Greeting: Dear Visitor Centre, / Arrange the rest of this email from someone planning a walk with a young child.",
             "options": [
-                "Subject: Question about claim coverage under policy ref: hm2201",
-                "Dear Claims Team,",
-                "I would like to know whether my current home insurance policy covers accidental damage to kitchen appliances and, if so, how to make a claim.",
-                "Kind regards,\nMelanie Cox"
+                "I am planning to walk the Ridge Trail with my six-year-old daughter next weekend.",
+                "Any advice about parking would also be very welcome.",
+                "Is the path suitable for young children, and are there any steep or exposed sections?",
+                "Yours faithfully,\nRoisin Gallagher"
             ],
             "correctOrder": [
                 0,
-                1,
                 2,
+                1,
                 3
             ],
-            "hint": "Policy reference and coverage query are in the subject; the claims team is addressed by role, not name; two linked questions are in the body; 'KIND REGARDS' closes the insurance correspondence politely.",
-            "explanation": "Using the policy reference number in the subject allows the claims team to access your policy before replying, making the response more accurate and faster. Two-part questions like 'whether it's covered AND how to claim' save a follow-up email.",
+            "hint": "Give the reader the circumstances first, because they change the answer.",
+            "explanation": "The visitor centre cannot say if a trail is suitable without knowing who will walk it. Giving the child's age first turns a general question into one they can answer confidently.",
             "formalityLevel": "Formal"
         },
         {
@@ -52,21 +52,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a supplier following up on an outstanding delivery order.",
+            "prompt": "You are a foreign student who needs to know which documents to bring for your visa interview. Subject: Documents needed for visa interview / Greeting: Dear Sir or Madam, / Arrange the body and sign-off.",
             "options": [
-                "Dear Supply Team,",
-                "I am writing to follow up on order number 5512 placed on 4 april, which was due for delivery by 18 april but has not yet arrived.",
-                "Subject: Follow-up on outstanding order no. 5512",
-                "Regards,\nGarrett Lee"
+                "I would also like to know whether photocopies are acceptable.",
+                "I have an interview at your consulate on Tuesday, 15 April, for a student visa.",
+                "Yours faithfully,\nDuc Nguyen",
+                "Could you please send me a full list of the documents I need to bring?"
             ],
             "correctOrder": [
-                2,
-                0,
                 1,
-                3
+                3,
+                0,
+                2
             ],
-            "hint": "Order number and follow-up purpose are in the subject; the team is addressed; specific order number, order date, and expected delivery date are all in the body.",
-            "explanation": "Three specific data points - order number, order date, and delivery deadline - make it very easy for the supplier to identify and investigate your order immediately. Objective facts are more persuasive than expressions of frustration.",
+            "hint": "Appointment first, main request second, smaller detail last.",
+            "explanation": "The consulate's staff need the appointment date to see which procedure applies. The list is the main request, so it comes before the smaller question about photocopies.",
             "formalityLevel": "Formal"
         },
         {
@@ -74,65 +74,65 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a pharmacist asking about renewing a repeat prescription.",
+            "prompt": "You want to book a check-up for your dog. Structure the email to the vet.",
             "options": [
-                "Dear Pharmacy Team,",
-                "I would like to request a renewal of my repeat prescription for amoxicillin and wonder if I need to come in or if this can be done by email.",
-                "Many thanks,\nJulia Smart",
-                "Subject: Request to renew repeat prescription"
+                "Dear Dr Ferreira,",
+                "I would like to book Milo's annual check-up and vaccinations. Mornings are best for me, ideally before the end of the month.",
+                "Subject: Appointment request for Milo, annual check-up",
+                "Kind regards,\nSophie Dupont"
             ],
             "correctOrder": [
-                3,
+                2,
                 0,
                 1,
-                2
+                3
             ],
-            "hint": "The medication and request are in the subject; the pharmacy team is addressed; the medication name and process question are in the body; 'MANY THANKS' closes the healthcare request.",
-            "explanation": "Naming the medication ('Amoxicillin') specifically avoids any confusion. Asking whether the renewal can be done remotely ('by email') shows consideration for your own time and the pharmacy's workload.",
-            "formalityLevel": "Formal"
+            "hint": "State the purpose of the visit and your availability, so the clinic can suggest a time.",
+            "explanation": "Clinics can respond faster when you name both the reason for the appointment and when you're free. 'Mornings' and 'before the end of the month' gives them a search window without you fixing an exact time.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L32_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a specialist doctor asking for a second medical opinion.",
+            "prompt": "Subject: Booking the meeting room for Thursday / Greeting: Hi Facilities Team, / Arrange the body and sign-off.",
             "options": [
-                "Yours sincerely,\nAndrew Ford",
-                "I was recently diagnosed with a condition by another specialist and, following careful consideration, I would like to seek a second opinion at your clinic.",
-                "Dear Dr Patel,",
-                "Subject: Request for second opinion on recent diagnosis"
+                "We will be hosting a client presentation for about eight people.",
+                "Please let me know if the room is free, and whether you can set up the projector.",
+                "Thanks,\nPatricia Lund",
+                "Could I book Meeting Room B on Thursday, 22 May, from 2 to 4 pm?"
             ],
             "correctOrder": [
                 3,
-                2,
+                0,
                 1,
-                0
+                2
             ],
-            "hint": "The purpose is diplomatically stated in the subject; the doctor is addressed formally by name; the reason for seeking a second opinion is given respectfully; 'YOURS SINCERELY' closes professionally.",
-            "explanation": "'Following careful consideration' signals that this decision was not impulsive, which is important in a medical context. The diplomatic phrasing avoids implying the first doctor was wrong, which is both polite and appropriate.",
-            "formalityLevel": "Formal"
+            "hint": "Request first, then the reason that explains the size or equipment, and finally the confirmation you need.",
+            "explanation": "The booking details are the core of the message. The purpose (client presentation for eight) helps the team choose the right room, and the last sentence tells them what confirmation you expect.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L32_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a hospital booking team to arrange a health screening appointment.",
+            "prompt": "You'd like to visit a university before applying. Subject: Request for a campus tour / Greeting: Dear Admissions Office, / Arrange the body and sign-off.",
             "options": [
-                "Subject: Booking request for over-50s health screening",
-                "I am fifty-two years old and would like to book a place on your over-50s health screening programme - please could you advise on available dates?",
-                "Yours faithfully,\nDavid Marsh",
-                "Dear Screening Unit,"
+                "I am considering applying for the Architecture degree next year.",
+                "Yours faithfully,\nAdebayo Ogunleye",
+                "I will be in Edinburgh from 3 to 5 August and would like to join a campus tour if one is available.",
+                "Could you let me know how to book a place?"
             ],
             "correctOrder": [
                 0,
+                2,
                 3,
-                1,
-                2
+                1
             ],
-            "hint": "The screening type and age group are in the subject; the correct unit is addressed by role, not name; age, request, and date question are in the body; the closing must match this unnamed greeting.",
-            "explanation": "Stating your age ('fifty-two') immediately confirms your eligibility for the over-50s programme. 'Please could you advise' is a polite, professional phrasing for requesting information from a healthcare organisation.",
+            "hint": "Your interest, your dates, then the request for how to proceed.",
+            "explanation": "The office needs your degree interest so that they can offer the right tour, and your dates so they can check availability. Asking how to book gives them a clear reply to write.",
             "formalityLevel": "Formal"
         },
         {
@@ -140,12 +140,12 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a removal company asking about the cost of moving house.",
+            "prompt": "You bought a jacket that doesn't fit and want to return it. Arrange the email.",
             "options": [
-                "Dear Removals Team,",
-                "Subject: Quote request for house removal - july availability",
-                "I am moving from a three-bedroom house in leeds to manchester in july and would like a quote for your removal and packing services.",
-                "Kind regards,\nPauline Webb"
+                "Dear Returns Team,",
+                "Subject: Return request for order 30918",
+                "I bought a navy jacket (size M) on 2 April, but it is too small. Could you tell me how to return it for a refund?",
+                "Kind regards,\nEmily Okafor"
             ],
             "correctOrder": [
                 1,
@@ -153,8 +153,8 @@
                 2,
                 3
             ],
-            "hint": "Month, type of service, and quote request are in the subject; the team is addressed by role, not name; all relevant moving details are in the body; 'KIND REGARDS' closes the service enquiry.",
-            "explanation": "Providing specific details - number of bedrooms, origin, and destination - in the body gives the removal company enough information to generate an accurate quote rather than a vague estimate.",
+            "hint": "Include the order number, what is wrong and what outcome you want.",
+            "explanation": "Returns staff need three things: which order, why it is being returned, and whether you want a refund or exchange. Giving all of them in the first message avoids extra emails.",
             "formalityLevel": "Formal"
         },
         {
@@ -162,21 +162,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a storage company asking about renting a unit.",
+            "prompt": "Your headphones stopped working eight months into a one-year warranty. Subject: Faulty headphones under warranty / Greeting: Dear Support Team, / Arrange the body and sign-off.",
             "options": [
-                "Subject: Enquiry about self-storage unit sizes and prices",
-                "Kind regards,\nRuth Olson",
-                "Dear Storage Solutions Team,",
-                "I need to store the contents of a one-bedroom flat for approximately three months and would like information on available unit sizes and monthly costs."
+                "The left earpiece stopped working last week, even after charging and resetting.",
+                "Yours faithfully,\nDominic Reyes",
+                "Could you tell me how to arrange a repair or replacement?",
+                "I bought a pair of Aura X headphones in September, and they are still under warranty."
             ],
             "correctOrder": [
+                3,
                 0,
                 2,
-                3,
                 1
             ],
-            "hint": "Storage type and pricing are in the subject; the team is addressed; volume of belongings and duration are in the body; 'KIND REGARDS' closes the straightforward service enquiry.",
-            "explanation": "Describing what needs to be stored ('contents of a one-bedroom flat') gives the storage company enough context to suggest an appropriate unit size. Always confirm the duration when enquiring about storage, as prices often vary.",
+            "hint": "Establish that you're entitled to help, then describe the fault and what you tried.",
+            "explanation": "Noting the warranty first shows why you have a right to support. Mentioning the steps you tried prevents the standard reply 'have you tried turning it off and on?'.",
             "formalityLevel": "Formal"
         },
         {
@@ -184,21 +184,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to your landlord giving one month's notice to vacate a rented property.",
+            "prompt": "You'd like to exchange a gift for another colour, but you have no receipt. Subject: Exchange without a receipt / Greeting: Dear Manager, / Arrange the body and sign-off.",
             "options": [
-                "Dear Mrs Thompson,",
-                "I am writing to give you one calendar month's formal notice of my intention to vacate the above property, with my last day being 31 august.",
-                "Subject: One month's notice to vacate - flat 2, 9 spring road",
-                "Yours sincerely,\nClare Hunt"
+                "Unfortunately the giver did not include a receipt, but I still have the tags and the original packaging.",
+                "Kind regards,\nFatima Sheikh",
+                "I received a scarf from your shop as a birthday gift, and I would like to exchange it for a different colour.",
+                "Would it be possible to arrange an exchange, or should I ask for a gift receipt?"
             ],
             "correctOrder": [
                 2,
                 0,
-                1,
-                3
+                3,
+                1
             ],
-            "hint": "The notice type and property address are in the subject; the landlord is addressed formally; the notice period and exact leave date are stated in the body; 'YOURS SINCERELY' closes the legal correspondence.",
-            "explanation": "Specifying the exact leave date ('31 August') avoids any dispute over when the notice period ends. The phrase 'formal notice of my intention to vacate' uses the correct legal language expected in tenancy correspondence.",
+            "hint": "State the request, explain the obstacle honestly, and offer what you do have.",
+            "explanation": "The obstacle (no receipt) is stated openly, immediately followed by evidence that the item is unused. Ending with an alternative question keeps the shop able to help in either way.",
             "formalityLevel": "Formal"
         },
         {
@@ -206,21 +206,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a running club to register for an upcoming marathon.",
+            "prompt": "A parcel you were expecting on Monday still hasn't arrived. Set out the email.",
             "options": [
-                "Subject: Marathon registration enquiry - november race",
-                "Many thanks,\nStuart Mills",
-                "Dear Race Registration Team,",
-                "I am keen to enter the november marathon and would like to know how to register, what the entry fee is, and the registration deadline."
+                "My parcel was due on Monday, but it has not arrived, and the tracking page has not changed since Friday. Could you tell me where it is?",
+                "Subject: Missing parcel, order 55620, due Monday",
+                "Dear Customer Service,",
+                "Kind regards,\nHarriet Cole"
             ],
             "correctOrder": [
-                0,
+                1,
                 2,
-                3,
-                1
+                0,
+                3
             ],
-            "hint": "Month and event type are in the subject; the registration team is addressed; three specific questions are grouped in the body; 'MANY THANKS' closes the sporting enquiry.",
-            "explanation": "Asking three related questions in one clear sentence - how to register, the fee, and the deadline - is efficient and professional. Grouping questions means the recipient can answer everything in one response.",
+            "hint": "Give the order, what was promised, what you have seen, and what you want to know.",
+            "explanation": "The order number helps them locate it, the promised date sets the standard, and mentioning the tracking page shows you have already checked. The final question directs their reply.",
             "formalityLevel": "Formal"
         },
         {
@@ -228,21 +228,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a local council asking about safe cycling routes.",
+            "prompt": "You need your delivery to go to your office instead. Subject: Change of delivery address for order 71204 / Greeting: Dear Sir or Madam, / Arrange the body and sign-off.",
             "options": [
-                "Dear Transport Planning Team,",
-                "Subject: Request for information on safe cycling routes",
-                "Yours faithfully,\nBecky Lane",
-                "I have recently started cycling to work and would like to know if the council has a recommended route map for safe cycling in the town centre."
+                "Yours faithfully,\nLaszlo Nagy",
+                "I will not be at home this week, and the office reception can accept parcels.",
+                "Could you confirm by email that the change has been made before it is dispatched?",
+                "Please change the delivery address for order 71204 to 22 Harbour Street, Bristol, BS1 4RT."
             ],
             "correctOrder": [
-                1,
-                0,
                 3,
-                2
+                1,
+                2,
+                0
             ],
-            "hint": "Cycling and safety are in the subject; the correct council team is addressed by role, not name; the reason for cycling and the specific request are in the body; the closing must match this unnamed greeting.",
-            "explanation": "Mentioning 'recently started cycling to work' shows you are a genuine new cyclist, not just a researcher. Asking for a 'recommended route map' is specific and gives the council a clear, actionable request to respond to.",
+            "hint": "The change requested must be impossible to miss; then reasons; then the confirmation you require.",
+            "explanation": "In address changes, the new address must be unmistakable, so it goes in the first sentence. The reason is secondary, and the confirmation request protects against a parcel going to the old address.",
             "formalityLevel": "Formal"
         },
         {
@@ -250,43 +250,43 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a sports centre asking about one-to-one tennis coaching.",
+            "prompt": "You want your neighbour Ms Perera to accept a parcel while you are at work. Subject: Parcel on Wednesday? / Greeting: Hi Ms Perera, / Arrange the message.",
             "options": [
-                "I am an intermediate tennis player looking to improve my game and would like to know if you offer individual coaching sessions and what the hourly rate is.",
-                "Dear Sports Centre Manager,",
-                "Best regards,\nWendy Brooks",
-                "Subject: Enquiry about one-to-one tennis coaching"
+                "Many thanks,\nGeorge",
+                "I hope you're well.",
+                "Would you be able to take it in for me? I'd be happy to pick it up as soon as I get back.",
+                "I'm expecting a parcel on Wednesday, but I won't be home until 6 pm."
             ],
             "correctOrder": [
-                3,
                 1,
-                0,
-                2
+                3,
+                2,
+                0
             ],
-            "hint": "The sport and coaching type are in the subject; the manager is addressed by role, not name; ability level, request, and hourly rate question are in the body; 'BEST REGARDS' closes warmly.",
-            "explanation": "Identifying your ability level ('intermediate') is very useful for a coach or sports centre to know, as it determines the coaching approach. Asking about both availability and hourly rate in one email streamlines the enquiry process.",
-            "formalityLevel": "Formal"
+            "hint": "A neighbourly favour begins gently, then explains the situation, then asks.",
+            "explanation": "When you ask a neighbour for a favour, the polite greeting first makes the request feel less abrupt. The short explanation shows the need, and the ask is phrased as a question, not an instruction.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L35_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to your company's IT helpdesk reporting a computer fault.",
+            "prompt": "You left your wallet on the 8:10 train from Leeds. Put together the email to the train company.",
             "options": [
-                "Best regards,\nSimon Taylor",
-                "My laptop has failed to start since this morning and I am unable to access any files or attend my online meetings - please could you assist urgently?",
-                "Dear It Helpdesk,",
-                "Subject: Urgent - laptop not starting since this morning"
+                "Subject: Lost wallet on the 8:10 Leeds to Sheffield train",
+                "Yours faithfully,\nPriya Menon",
+                "I believe I left a brown leather wallet on the 8:10 train from Leeds to Sheffield on Tuesday. It contains a bank card and a student ID in the name of Priya Menon.",
+                "Dear Lost Property Team,"
             ],
             "correctOrder": [
+                0,
                 3,
                 2,
-                1,
-                0
+                1
             ],
-            "hint": "The urgency and fault are clear in the subject; the IT team is addressed professionally; the problem, impact, and urgency are in the body; 'BEST REGARDS' closes the internal work email.",
-            "explanation": "Using 'URGENT' in the subject when it genuinely is urgent is appropriate. Describing the impact ('unable to attend meetings') helps IT prioritise your ticket over non-urgent requests.",
+            "hint": "Give identifying details that only the owner would know, but not details that would be unsafe to share.",
+            "explanation": "A description of the item and where it was lost helps staff search. Naming the ID card gives proof of ownership. Notice that you do not need to list card numbers or passwords.",
             "formalityLevel": "Formal"
         },
         {
@@ -294,43 +294,43 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to your IT manager asking about the process for renewing software licenses.",
+            "prompt": "You found a phone in a café and want to contact the owner through the lock screen email. Subject: I found your phone / Greeting: Hello, / Arrange the message.",
             "options": [
-                "Subject: Question about software licence renewal process",
-                "Dear It Manager,",
-                "Best regards,\nNaomi Foster",
-                "Several of our team's software licences are due to expire next month and I would like to know the process for renewing them and any associated costs."
+                "Best wishes,\nJorge",
+                "You can collect it any day before 6 pm, and please bring some ID.",
+                "I found a phone with this email address on its lock screen in Café Verde this afternoon.",
+                "I gave it to the manager, who will keep it safely behind the counter."
             ],
             "correctOrder": [
-                0,
-                1,
+                2,
                 3,
-                2
+                1,
+                0
             ],
-            "hint": "License renewal and process are in the subject; the IT manager is addressed; the expiry timeline, process, and cost questions form the body; 'BEST REGARDS' closes professionally.",
-            "explanation": "Flagging that licences are expiring 'next month' creates the right sense of urgency without being alarmist. Asking about both the process AND costs means you are gathering all the information needed to manage the renewal.",
-            "formalityLevel": "Formal"
+            "hint": "Explain what you found, where it is now, and what the owner must do.",
+            "explanation": "A message from a stranger should reassure quickly. Saying where the phone is and how to collect it, without asking for anything, lets the owner act immediately.",
+            "formalityLevel": "Informal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L35_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to your IT team reporting a potential cybersecurity concern.",
+            "prompt": "Your suitcase hasn't arrived after a flight. Subject: Delayed luggage, flight LH902, bag tag 4417 / Greeting: Dear Baggage Services, / Arrange the body and sign-off.",
             "options": [
-                "I received an email this morning that appears to be a phishing attempt - I did not click any links but am forwarding it to you for analysis.",
-                "Best regards,\nHugh Baker",
-                "Subject: Urgent - possible phishing email received",
-                "Dear Security Team,"
+                "My suitcase did not arrive at Frankfurt airport on 12 October.",
+                "Please tell me where it is and deliver it to Hotel Rheinblick as soon as it is found.",
+                "Yours faithfully,\nAisha Karim",
+                "It is a large green case with a red ribbon on the handle, and my tag number is 4417."
             ],
             "correctOrder": [
-                2,
-                3,
                 0,
-                1
+                3,
+                1,
+                2
             ],
-            "hint": "Urgency and type of threat are in the subject; the security team is addressed; the nature of the email, the user's response, and next action are in the body.",
-            "explanation": "The phrase 'I did not click any links' is crucial - it tells the security team that no breach has occurred. Reporting potential phishing immediately (even when you have not clicked) helps protect the whole organisation.",
+            "hint": "First the problem, then how to identify the item, and finally where you need it.",
+            "explanation": "Baggage staff look for the tag number first, which is why it is in the subject. They then need a physical description, and finally the address where to send the bag.",
             "formalityLevel": "Formal"
         },
         {
@@ -338,21 +338,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a consulate asking about the visa application process.",
+            "prompt": "You have a hospital appointment and need to leave school at lunchtime on Friday. Subject: Permission to leave early on Friday / Greeting: Dear Mr Olsen, / Arrange the body and sign-off.",
             "options": [
-                "Subject: Enquiry about visa requirements for visiting spain",
-                "I am a british citizen planning to visit spain for three weeks in august and would like to know whether a visa is required and how to apply.",
-                "Yours faithfully,\nMaria Grant",
-                "Dear Visa Services Team,"
+                "She has an orthodontist appointment at 1:15 pm.",
+                "I am writing to ask permission for Freya to leave school at 12:30 on Friday.",
+                "Yours sincerely,\nClaire Bergman",
+                "I will collect her from the school office and provide a note tomorrow."
             ],
             "correctOrder": [
+                1,
                 0,
                 3,
-                1,
                 2
             ],
-            "hint": "Destination and visa query are in the subject; the correct team is addressed by role, not name; nationality, trip duration, and two specific questions are in the body; the closing must match this unnamed greeting.",
-            "explanation": "Providing nationality ('British citizen') and trip duration immediately helps the consulate give an accurate answer, as visa requirements depend heavily on both factors. Asking whether a visa is needed AND how to apply is a logical two-step question.",
+            "hint": "The request, then its reason, then how it will be handled.",
+            "explanation": "Asking for permission works best when you make the request obvious and show how you will minimise disruption. Offering to collect her in person answers the school's most likely concern.",
             "formalityLevel": "Formal"
         },
         {
@@ -360,43 +360,43 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to the passport office asking about renewing a passport urgently.",
+            "prompt": "You'd like to work from home next Friday. Subject: Working from home on 13 June / Greeting: Hi Natasha, / Arrange the body and sign-off.",
             "options": [
-                "Subject: Urgent passport renewal - travel date in three weeks",
-                "Kind regards,\nFiona James",
-                "Dear Passport Services,",
-                "My passport is due to expire in one month and I am travelling in three weeks - please could you advise on the process for an urgent passport renewal?"
+                "I'll be online for all my meetings and will finish the report by the end of the day.",
+                "I have a boiler engineer coming between 9 and 12, and I can't move the appointment.",
+                "Would it be all right if I worked from home next Friday, 13 June?",
+                "Thanks,\nCarlos"
             ],
             "correctOrder": [
-                0,
                 2,
-                3,
-                1
+                1,
+                0,
+                3
             ],
-            "hint": "Urgency and travel timeline are in the subject; the passport team is addressed by role, not name; the expiry date, travel date, and urgent request are all in the body; 'KIND REGARDS' closes efficiently.",
-            "explanation": "Including specific timeframes ('expires in one month', 'travelling in three weeks') creates a clear, factual picture of the urgency. The contrast between these two dates is what justifies requesting the expedited process.",
-            "formalityLevel": "Formal"
+            "hint": "The question, the reason, and reassurance about productivity.",
+            "explanation": "Managers grant permission more easily when the reason is specific and their main worry (work getting done) is addressed. This is why the last sentence lists what you will do.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L36_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a government authority asking about replacing a lost identity document.",
+            "prompt": "You want to record a lecture because you have a hearing difficulty. Subject: Request to record lectures / Greeting: Dear Professor Bell, / Arrange the body and sign-off.",
             "options": [
-                "Subject: Request for information on replacing a lost driving licence",
-                "Dear Dvla Services Team,",
-                "I have recently lost my driving licence and would like to know the process for applying for a replacement and how long it is likely to take.",
-                "Yours faithfully,\nBen Watts"
+                "I have a hearing difficulty, and I would find it very helpful to record your lectures.",
+                "I am a second-year student in your Economics module.",
+                "The recordings would be for my own revision only, and I would delete them after the exam.",
+                "Kind regards,\nMichael Adeyemi"
             ],
             "correctOrder": [
-                0,
                 1,
+                0,
                 2,
                 3
             ],
-            "hint": "Document type and replacement request are in the subject; the relevant authority is addressed by role, not name; the situation and two key questions are in the body; the closing must match this unnamed greeting.",
-            "explanation": "Asking both about the process AND the processing time in one email gives you all the information you need. 'How long it is likely to take' is a practical question that helps with planning if you need the licence for a specific date.",
+            "hint": "Introduce yourself, give the request and reason, then reassure the professor about use.",
+            "explanation": "Personal reasons are shared only as far as needed. The final sentence tackles copyright and privacy concerns before the professor needs to raise them.",
             "formalityLevel": "Formal"
         },
         {
@@ -404,153 +404,153 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a bank enquiring about personal loan options.",
+            "prompt": "You are choosing between two subjects for next year and want your former teacher's advice. Arrange the email.",
             "options": [
-                "Subject: Enquiry about personal loan options",
-                "I am looking to borrow £5,000 for home improvements and would like to know what personal loan rates and repayment periods are available to existing customers.",
-                "Best regards,\nChris Norton",
-                "Dear Loans Team,"
+                "Subject: Advice on choosing my subjects",
+                "Dear Mrs Dlamini,",
+                "Best wishes,\nThabo",
+                "I am trying to decide between Geography and Computer Science for next year. As you know me well, I would really value your advice."
             ],
             "correctOrder": [
                 0,
-                3,
                 1,
+                3,
                 2
             ],
-            "hint": "Loan purpose and amount are in the subject; the loans team is addressed by role, not name; loan amount, purpose, and two specific questions are in the body; 'BEST REGARDS' closes the financial correspondence professionally.",
-            "explanation": "Specifying the loan amount and purpose ('home improvements') immediately allows the bank to identify appropriate loan products. Asking specifically as 'existing customers' may unlock preferential rates.",
-            "formalityLevel": "Formal"
+            "hint": "State the choice, then say why you're asking this particular person.",
+            "explanation": "Advice requests work when you explain the decision clearly and why the reader is well placed to help. Flattery is not needed; simple honesty about their knowledge of you is enough.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L37_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a financial adviser asking about investment options for savings.",
+            "prompt": "Subject: Learning the new invoicing software / Greeting: Hi Paolo, / Arrange the body of the message from a colleague.",
             "options": [
-                "I have £10,000 in savings that I would like to invest over the next five years and I am interested in your professional advice on the best available options.",
-                "Subject: Enquiry about investment options for £10,000 savings",
-                "Dear Ms Henry,",
-                "Yours sincerely,\nGary Blake"
+                "Do you have any tips, or could you show me for ten minutes?",
+                "Thanks in advance,\nDeborah",
+                "I'm finding it hard to create recurring invoices.",
+                "I noticed you already use the new invoicing software."
             ],
             "correctOrder": [
-                1,
+                3,
                 2,
                 0,
-                3
+                1
             ],
-            "hint": "Amount, timeframe, and investment purpose are in the subject; the adviser is addressed formally by name; the key facts - amount, horizon, and advice request - are in the body.",
-            "explanation": "Giving both the investment amount AND the time horizon ('five years') enables the financial adviser to recommend suitable products at the right risk level. Seeking 'professional advice' frames this as a formal consultation.",
-            "formalityLevel": "Formal"
+            "hint": "Notice, problem, request for help.",
+            "explanation": "Explaining why you're asking him (he already uses it) makes the request natural. Offering a specific amount of time (ten minutes) makes it easier to agree.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L37_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to your bank reporting a suspected fraudulent charge on your account.",
+            "prompt": "You're thinking of buying a used car from a private seller. Subject: Advice on buying a second-hand car / Greeting: Hi Uncle Femi, / Arrange the message to a relative who knows about cars.",
             "options": [
-                "I noticed an unrecognised charge of £87.50 on my account on 12 june and believe it may be fraudulent - I would like this investigated and my card blocked immediately.",
-                "Subject: Urgent - suspected fraudulent transaction on my account",
-                "Yours faithfully,\nLaura Hunt",
-                "Dear Fraud Team,"
+                "I'm thinking of buying a used Honda Fit that has 60,000 miles and costs £6,500.",
+                "Thank you,\nBisi",
+                "Would you be willing to come and look at it with me, or tell me what to check?",
+                "I'd feel much more confident with your help."
             ],
             "correctOrder": [
-                1,
-                3,
                 0,
-                2
+                2,
+                3,
+                1
             ],
-            "hint": "Urgency and fraud are in the subject; the fraud team is addressed; the transaction amount, date, and two requests (investigate AND block) are in the body; 'YOURS FAITHFULLY' closes (no named recipient).",
-            "explanation": "Providing the exact charge amount and date makes it easier for the fraud team to identify the transaction immediately. Asking for both an investigation AND card blocking shows you understand the appropriate two-pronged response to potential fraud.",
-            "formalityLevel": "Formal"
+            "hint": "Give specifics, ask for the help, and finish with why it matters to you.",
+            "explanation": "Specifics allow the uncle to judge whether the deal sounds reasonable. Giving him two ways to help (attend or advise) means he can say yes to one even if he is busy.",
+            "formalityLevel": "Informal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L38_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to your energy provider to report a gas leak concern.",
+            "prompt": "You're organising a car share to a tournament and need to know who's driving. Subject: Lifts to Saturday's tournament / Greeting: Hi everyone, / Arrange the body and sign-off.",
             "options": [
-                "Subject: Urgent - possible gas leak at my property",
-                "I have detected a smell that may indicate a gas leak at my property - I have evacuated the building and am requesting immediate assistance.",
-                "Yours faithfully,\nPeter Wood",
-                "Dear Emergency Services Team,"
+                "Thanks,\nBen",
+                "I can take three people, but we need two more cars.",
+                "Please reply by Thursday to say whether you can drive or need a lift.",
+                "We need to leave the school at 7:30 am on Saturday to arrive by 9."
             ],
             "correctOrder": [
-                0,
                 3,
                 1,
-                2
+                2,
+                0
             ],
-            "hint": "Urgency and safety risk are in the subject; the emergency team is addressed; the situation, action taken, and request are in the body; 'YOURS FAITHFULLY' closes this emergency communication.",
-            "explanation": "In an emergency email, the subject line must communicate urgency and risk immediately. Stating that you have already evacuated shows you have taken the correct safety action, which is important information for the emergency response team.",
-            "formalityLevel": "Formal"
+            "hint": "The group needs the timing, the shortage and the response deadline in a sensible order.",
+            "explanation": "Group emails should make the action easy to spot: everyone has to reply, so the deadline is placed in the closing sentence. The 'two more cars' shows the size of the problem.",
+            "formalityLevel": "Informal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L38_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to your energy supplier requesting installation of a smart meter.",
+            "prompt": "You are trying to find a date for a leaving party. Subject: Choosing a date for Hana's leaving party / Greeting: Hi all, / Arrange the body and sign-off.",
             "options": [
-                "I am an existing customer and would like to arrange installation of a smart meter at my home - could you advise on availability and the installation process?",
-                "Subject: Request to install a smart meter at my property",
-                "Dear Smart Meter Team,",
-                "Kind regards,\nSusan Riley"
+                "Hana's last day is Friday, 27 June, and we would like to organise a small leaving party.",
+                "Please reply with your preference by Monday, and I will book the place.",
+                "The two options are lunch that day or drinks the evening before.",
+                "Cheers,\nLuca"
             ],
             "correctOrder": [
-                1,
-                2,
                 0,
+                2,
+                1,
                 3
             ],
-            "hint": "The request type is in the subject; the right team is addressed; existing customer status, two questions about availability and process are in the body; 'KIND REGARDS' closes the customer service email.",
-            "explanation": "Identifying yourself as an 'existing customer' at the start of the body helps the representative locate your account. Asking both about availability (when?) and process (how?) in one email is efficient.",
-            "formalityLevel": "Formal"
+            "hint": "Context, then options, then deadline for the reply.",
+            "explanation": "Offering two options is easier to reply to than 'When are you free?'. The deadline tells everyone when the decision will be made.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L38_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to your energy provider asking to query an unexpectedly high bill.",
+            "prompt": "You are setting up a group project meeting and need everyone's availability. Subject: Meeting time for our presentation / Greeting: Hello team, / Arrange the message.",
             "options": [
-                "Dear Billing Team,",
-                "Kind regards,\nJulie Cross",
-                "My energy bill for march was significantly higher than usual and I would like an explanation as to why the charges are so much greater than previous months.",
-                "Subject: Query about unusually high energy bill - account no. el4417"
+                "Thanks,\nAmira",
+                "We need to meet before the presentation on 20 March.",
+                "Could everybody tell me which of these times suits you by tomorrow evening?",
+                "I can do Monday after 3 pm, Tuesday morning, or Wednesday all day."
             ],
             "correctOrder": [
+                1,
                 3,
-                0,
                 2,
-                1
+                0
             ],
-            "hint": "Account number and bill query are in the subject; the billing team is addressed by role, not name; the billing month and comparison to previous months are in the body; 'KIND REGARDS' closes the query politely.",
-            "explanation": "Including your account number in the subject is the most important step in billing queries - it allows the team to pull up your account and billing history immediately. Referencing 'previous months' asks them to investigate the discrepancy.",
-            "formalityLevel": "Formal"
+            "hint": "State the need, list what you can do, then ask everyone for a response.",
+            "explanation": "Listing your own options first makes replying easier. Setting a deadline for replies means you can fix the meeting without waiting indefinitely.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L39_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to your university asking to change your module choices.",
+            "prompt": "You have been offered a job but have accepted another one. Subject: Re: Offer of Data Analyst position / Greeting: Dear Ms Verma, / Arrange the body and sign-off.",
             "options": [
-                "I am currently studying ba english in year two and would like to swap the victorian literature module for the contemporary writing module for this semester.",
-                "Dear Academic Registry,",
-                "Yours faithfully,\nAmy Price",
-                "Subject: Module change request - student id 20194456"
+                "I appreciated the time your team spent with me and wish you every success.",
+                "Yours sincerely,\nMartin Keller",
+                "Thank you very much for offering me the Data Analyst position.",
+                "After careful thought, I have decided to accept another offer, so I must decline."
             ],
             "correctOrder": [
+                2,
                 3,
-                1,
                 0,
-                2
+                1
             ],
-            "hint": "Student ID and change type are in the subject; the registry is addressed by role, not name; specific course, year, and module names are in the body; the closing must match this unnamed greeting.",
-            "explanation": "Including your student ID in the subject allows registry to locate your record before they open the email. Using the full module names ('Victorian Literature', 'Contemporary Writing') avoids any ambiguity about which courses you mean.",
+            "hint": "Thank them, decline clearly and end graciously.",
+            "explanation": "Employers remember polite refusals. Being clear in the second sentence prevents confusion, and a courteous ending keeps a professional door open.",
             "formalityLevel": "Formal"
         },
         {
@@ -558,109 +558,109 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a university accommodation office asking about room availability.",
+            "prompt": "You've been asked to join the school's parent committee but don't have the time. Subject: Re: Parent committee / Greeting: Dear Ms Sokolova, / Arrange the message.",
             "options": [
-                "Subject: Enquiry about student accommodation for next academic year",
-                "I am a second-year student and would like to know whether en-suite rooms in university halls are available for next year and how to apply.",
-                "Dear Accommodation Office,",
-                "Kind regards,\nRose Hall"
+                "I'd be glad to help with the summer fair, though, if a one-off task is useful.",
+                "Thank you for thinking of me for the parent committee.",
+                "I'm sorry, but I don't have enough time to give it the attention it deserves.",
+                "Kind regards,\nThomas Reid"
             ],
             "correctOrder": [
-                0,
-                2,
                 1,
+                2,
+                0,
                 3
             ],
-            "hint": "Year group and accommodation type are in the subject; the accommodation office is addressed by role, not name; year of study, room type, and process question are in the body; 'KIND REGARDS' closes.",
-            "explanation": "Specifying 'en-suite' shows you know what type of accommodation you want. Asking about availability AND the application process in one email is efficient and shows forward planning.",
-            "formalityLevel": "Formal"
+            "hint": "Appreciate, decline, and offer something smaller.",
+            "explanation": "A refusal followed by a smaller offer shows goodwill. It also avoids the awkwardness of a flat 'no'.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L39_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to your university scholarship office enquiring about funding eligibility.",
+            "prompt": "A colleague asks you to work an extra shift, but you already have plans. Subject: Re: Extra shift on Sunday / Greeting: Hi Iris, / Arrange the reply.",
             "options": [
-                "I am an international student from nigeria currently in my first year and would like to know whether I am eligible to apply for any of your available scholarships.",
-                "Best regards,\nChibuzor Okafor",
-                "Dear Scholarships Team,",
-                "Subject: Scholarship eligibility enquiry - international student"
+                "I have a family event that I made plans for weeks ago.",
+                "Thanks,\nDaniel",
+                "I'm afraid I can't cover Sunday's shift.",
+                "I hope you find someone, and I'm happy to take a shift next week if that helps."
             ],
             "correctOrder": [
-                3,
                 2,
                 0,
+                3,
                 1
             ],
-            "hint": "Eligibility and student status are in the subject; the scholarships team is addressed; key identifying information (nationality, year) and the eligibility question are in the body.",
-            "explanation": "Providing nationality ('Nigeria') and year of study is essential - scholarship eligibility often depends on both. The question 'whether I am eligible' is more practical than asking for a list of all scholarships.",
-            "formalityLevel": "Formal"
+            "hint": "A firm but friendly refusal has a clear 'no', a short reason and, if possible, an alternative.",
+            "explanation": "A short refusal is more honest than a vague reply. Including a reason makes it less personal, and an alternative shows you are still willing to help.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L40_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a garage reporting a fault with your car.",
+            "prompt": "Your team-mate asked to swap sports kit numbers with you, but you prefer to keep yours. Subject: Re: Swapping numbers / Greeting: Hi Adam, / Arrange the friendly reply.",
             "options": [
-                "Subject: Car fault report - strange noise from engine",
-                "Dear Service Team,",
-                "My car has been making a clicking sound from the engine when accelerating for the past week and I would like to book a diagnostic appointment.",
-                "Kind regards,\nStuart James"
+                "I hope that's okay, and I'm happy to help you pick a different one!",
+                "Thanks for asking about the kit numbers.",
+                "Cheers,\nNiall",
+                "I'd rather keep number 7, because I've had it since the first season."
             ],
             "correctOrder": [
-                0,
                 1,
-                2,
-                3
+                3,
+                0,
+                2
             ],
-            "hint": "The fault type and urgency are in the subject; the service team is addressed by role, not name; the symptom, duration, and specific booking request are in the body; 'KIND REGARDS' closes professionally.",
-            "explanation": "Describing the fault precisely ('clicking sound when accelerating') is more useful to a mechanic than saying 'something sounds wrong'. Requesting a 'diagnostic appointment' shows you know the correct automotive terminology.",
-            "formalityLevel": "Formal"
+            "hint": "Tone is casual, but the refusal is still clear.",
+            "explanation": "Even among friends, a refusal works best when it is direct and kind. Explaining the sentimental value gives the reason without making Adam feel rejected.",
+            "formalityLevel": "Informal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L40_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to the DVLA asking how to book a vehicle inspection.",
+            "prompt": "You want to ask your manager to approve funding for a short training course. Subject: Request to attend the Excel training course / Greeting: Dear Mr Bianchi, / Arrange the body and sign-off.",
             "options": [
-                "Dear Dvla Enquiries Team,",
-                "I have recently imported a vehicle and would like to know how to book the required inspection and what documents I need to bring.",
-                "Subject: Question about booking an mot-equivalent inspection",
-                "Best regards,\nRaimund Braun"
+                "Kind regards,\nSandra Lopes",
+                "It would help me build the monthly reports faster, and I could share what I learn with the team.",
+                "I would like to ask for approval to attend the two-day Excel course on 9 and 10 July.",
+                "The fee is £340, and I have attached the course outline."
             ],
             "correctOrder": [
                 2,
-                0,
                 1,
-                3
+                3,
+                0
             ],
-            "hint": "Inspection purpose and vehicle type are in the subject; the team is addressed by role, not name; the reason for the inspection and document question are in the body; 'BEST REGARDS' closes formally.",
-            "explanation": "Mentioning 'recently imported' immediately explains why you need this particular type of inspection. Asking about documents to bring is essential so you don't have to make a second trip if something is missing.",
-            "formalityLevel": "Formal"
+            "hint": "Request, benefit to the employer, then cost.",
+            "explanation": "A manager decides based on value. Benefit comes before cost, so the cost is read in context. The attachment keeps the message short.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L40_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a council disputing a parking fine.",
+            "prompt": "You are contacting a tenant support helpline after a flood in your flat. Subject: Urgent: water leak in flat 6C / Greeting: Dear Housing Support, / Arrange the message.",
             "options": [
-                "I am writing to formally appeal against penalty notice 118274 issued on 14 may, as I believe it was issued incorrectly because I held a valid parking permit at the time.",
-                "Dear Parking Appeals Team,",
-                "Subject: Formal appeal against parking penalty notice no. 118274",
-                "Yours faithfully,\nDenise Hunt"
+                "Please call me on 07700 900123 to arrange an emergency visit.",
+                "I have turned off the water supply, but I need an engineer as soon as possible.",
+                "Yours faithfully,\nMaya Singh",
+                "Water is leaking through the bathroom ceiling of flat 6C and has reached the hallway."
             ],
             "correctOrder": [
-                2,
+                3,
                 1,
                 0,
-                3
+                2
             ],
-            "hint": "The appeal and penalty notice number are in the subject; the appeals team is addressed formally; the notice number, issue date, and grounds for appeal are all in the body.",
-            "explanation": "Including the penalty notice number in the subject line is essential for appeals as it identifies which fine you are disputing. Stating your specific grounds ('held a valid permit') is far more effective than simply saying the fine is wrong.",
+            "hint": "In an urgent email, the problem and the action come before background.",
+            "explanation": "In emergencies, the reader needs facts first: what is happening, what you already did, and how to reach you. Politeness remains, but there is no room for long explanations.",
             "formalityLevel": "Formal"
         }
     ]

@@ -1,607 +1,577 @@
 {
-    "gameType": "opinionWriting",
-    "batchIndex": 20,
-    "levels": "191-200",
-    "quests": [
-        {
-            "id": "WRT_OPINIONWRITING_L191_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The enormous financial cost of space exploration is justified by the benefits it delivers.",
-            "options": [
-                "Space exploration resources could address urgent existential problems including poverty and climate change on Earth.",
-                "International space competition accelerates geopolitical tension rather than producing cooperative benefit.",
-                "Space exploration drives technological innovation that produces transformative civilian applications.",
-                "Humanity's long-term survival requires the capability to become a multi-planetary species."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about the innovation and survival case for space exploration investment (Pros) and the opportunity cost and geopolitical concerns (Cons).",
-            "explanation": "Space drives transformative technological innovation and developing multi-planetary capacity is essential for long-term survival (Pros), but enormous resources could address urgent Earth problems, and international space competition accelerates geopolitical tension rather than cooperation (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L191_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Private space companies are more efficient than national agencies at driving space exploration forward.",
-            "options": [
-                "Private space exploration extracts public goods from shared heritage for private profit without democratic accountability.",
-                "SpaceX and other commercial operators have dramatically reduced launch costs and accelerated development timelines.",
-                "National security and public science objectives require government-directed rather than commercially driven exploration.",
-                "Commercial competition drives innovation in ways that government monopolies structurally cannot replicate."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Consider private sector efficiency in space exploration (Pros) and the public goods, accountability, and mission concerns (Cons).",
-            "explanation": "Commercial operators have dramatically cut costs and drive innovation that government monopolies cannot match (Pros), but private extraction of space public goods lacks democratic accountability, and national security and public science require government-directed missions (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L191_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "International cooperation in space exploration produces greater scientific and strategic benefits than competition.",
-            "options": [
-                "The International Space Station demonstrates that cooperative space programmes can transcend geopolitical rivalry.",
-                "Space cooperation provides an asymmetric benefit to nations that lack independent launch capacity.",
-                "Pooling resources through international cooperation allows more ambitious missions than any nation can fund alone.",
-                "Technological advantage in space is a genuine strategic asset that nations are unwilling to share with competitors."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about international space cooperation versus competition (Pros for cooperation) and the asymmetric benefit and strategic asset concerns (Cons).",
-            "explanation": "The ISS demonstrates cooperation transcending geopolitics, and pooled resources enable more ambitious missions (Pros), but cooperation benefits less capable nations asymmetrically, and space technological advantage is a genuine strategic asset nations are unwilling to share with geopolitical rivals (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L192_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The transhumanist movement poses greater risks to humanity than the benefits it promises.",
-            "options": [
-                "Human suffering and limitation have driven art, meaning, and moral development throughout history.",
-                "Radical human enhancement would create profound inequalities between those who can and cannot access modification.",
-                "Technological enhancement of limited capabilities is a natural extension of tools humans have always used.",
-                "Transforming human nature undermines the shared biological basis of mutual understanding and moral community."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about the inequality and human nature case against transhumanism (Pros) and the continuity of tool use counter (Cons).",
-            "explanation": "Radical enhancement creates profound access inequalities and undermines the shared biology grounding moral community (Pros), but human enhancement is a natural extension of the tools - eyeglasses, vaccines, prosthetics - that humanity has always used (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L192_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Life extension technologies threaten to create permanent gerontocracies that stifle generational renewal.",
-            "options": [
-                "People living longer already work, lead, and contribute well beyond what previous generations managed.",
-                "Individual choices about longevity should not be overridden by sociological concerns about political renewal.",
-                "Radical life extension would allow the same individuals to accumulate power and wealth indefinitely.",
-                "Intergenerational power transfer is essential for societies to adapt to new circumstances and values."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Consider the gerontocracy and generational renewal case against life extension (Pros) and the current longevity trends and individual choice counters (Cons).",
-            "explanation": "Radical life extension concentrates power indefinitely and prevents the generational renewal essential for social adaptation (Pros), but people already successfully lead and contribute well into advanced age, and individual longevity choices should not be overridden by sociological concerns (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L192_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Transhumanism raises profound questions about what it means to remain recognisably human.",
-            "options": [
-                "Fundamental alterations to cognition, mortality, and embodiment may produce beings no longer continuous with humanity.",
-                "Identity and humanity are dynamic and culturally constructed rather than fixed biological properties.",
-                "Humans have always changed through technology and culture without ceasing to be recognisably human.",
-                "Philosophical continuity of identity is essential to maintaining the moral obligations that ground human community."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about the identity continuity and moral community case against radical transhumanism (Pros) and the dynamic identity and historical change counters (Cons).",
-            "explanation": "Radical alterations to cognition and embodiment may break continuity with human identity and undermine grounding of moral obligations (Pros), but identity and humanity are dynamic constructs, and humans have changed profoundly through technology without ceasing to be recognisably human (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L193_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The prospect of digital immortality raises profound and unresolvable questions about personal identity.",
-            "options": [
-                "If psychological continuity is sufficient for identity, a sufficiently accurate mind copy may constitute the same person.",
-                "The philosophical question of what constitutes identity is unresolved, making confident claims in either direction premature.",
-                "A digital copy of a person's mind is not that person - it is a new entity with memories of being someone else.",
-                "Digital immortality based on copying rather than continuity creates a profound metaphysical identity paradox."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about the copy-not-continuity problem of digital immortality (Pros) and the psychological continuity and philosophical uncertainty counters (Cons).",
-            "explanation": "A digital mind copy is not the same person but a new entity with inherited memories - not genuine continuity (Pros), but psychological continuity theories suggest accurate mind copying may constitute identity, and the underlying philosophical question is unresolved (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L193_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Digital immortality would represent the ultimate triumph of individual existence over mortality.",
-            "options": [
-                "Extending consciousness beyond biological death represents the highest fulfilment of human desire for self-continuation.",
-                "Indefinite digital existence might produce profound psychological problems including meaninglessness and stagnation.",
-                "A world of digitally immortal beings would face catastrophic resource and social organisation challenges.",
-                "Digital preservation of minds would allow accumulated knowledge and wisdom to persist indefinitely."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Consider the self-continuation and knowledge preservation case for digital immortality (Pros) and the psychological and social organisation concerns (Cons).",
-            "explanation": "Digital immortality fulfils the human desire for continuity and preserves accumulated knowledge indefinitely (Pros), but indefinite existence risks profound psychological stagnation and meaninglessness, and a world of digitally immortal beings faces catastrophic social organisation challenges (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L193_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Pursuing digital immortality reveals a problematic refusal to accept the finitude essential to human meaning.",
-            "options": [
-                "Mortality gives human life urgency, poignancy, and the drive to create meaning within finite time.",
-                "The value of finitude does not require that everyone should experience it if technology permits alternatives.",
-                "Acceptance of death is central to many wisdom traditions' understanding of a well-lived human life.",
-                "Philosophical traditions that celebrate finitude reflect specific cultural conditions rather than universal truths."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about finitude as constitutive of human meaning and why its acceptance matters (Pros) and the optionality and cultural specificity counters (Cons).",
-            "explanation": "Mortality creates urgency and meaning-making drive essential to human experience, and acceptance of death is central to multiple wisdom traditions (Pros), but finitude's value does not require universal application, and death-acceptance philosophies reflect specific cultural contexts rather than universal truths (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L194_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The rights and interests of future generations should be enshrined in current law.",
-            "options": [
-                "Future generations' preferences cannot be known, making legal representation philosophically problematic.",
-                "Representatives speaking for future generations risk substituting their own present values for authentic future interests.",
-                "Future generations will live with the consequences of decisions made today but cannot participate in making them.",
-                "Legally entrenching future generations' interests creates enforceable political obligations to act beyond electoral cycles."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about the representation and legal obligation case for future generation rights (Pros) and the knowability and substitution concerns (Cons).",
-            "explanation": "Future generations bear consequences of current decisions without representation, and legal entrenchment overcomes short electoral cycles (Pros), but future preferences cannot be known and appointed representatives risk substituting their own present values for authentic future interests (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L194_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Welsh and other existing future generations commissioners demonstrate that institutional representation is workable.",
-            "options": [
-                "The Welsh Future Generations Commissioner has successfully influenced long-term planning in practical and demonstrable ways.",
-                "Commissioner models depend on political goodwill and can be defunded or ignored when their conclusions are inconvenient.",
-                "The scope of current commissioners is limited to domestic legislation and cannot address global future generation interests.",
-                "Institutional commissioners can represent long-term interests without claiming to know unknowable future preferences."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Consider the Welsh model as evidence that future generation representation is workable (Pros) and the political dependency and scope concerns (Cons).",
-            "explanation": "The Welsh Commissioner has demonstrably influenced long-term planning and represents long-term interests without claiming to know future preferences (Pros), but commissioner models depend on political goodwill that can be withdrawn, and domestic scope cannot address global future generation interests (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L194_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "A constitutional duty to future generations would be more durable than advisory commissioners.",
-            "options": [
-                "Constitutional duties to future generations create justiciable obligations that courts may interpret beyond democratic intent.",
-                "Constitutional duties require future governments to consider long-term consequences regardless of political preference.",
-                "Constitutional rigidity may prevent necessary adaptation when future circumstances differ from those anticipated.",
-                "Constitutional entrenchment survives changes in government that commissioner models do not."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about constitutional duties as more durable than commissioners (Pros) and the judicial overreach and rigidity concerns (Cons).",
-            "explanation": "Constitutional duties require long-term consideration regardless of political preference and survive government changes (Pros), but constitutional duties create justiciable obligations that courts may interpret beyond democratic intent, and constitutional rigidity prevents adaptation to unanticipated future circumstances (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L195_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Meritocracy is ultimately a comforting myth that entrenches rather than reduces inequality.",
-            "options": [
-                "Some degree of reward proportional to effort and contribution is both motivationally and morally necessary.",
-                "Meritocracy is a standard that can be progressively better approximated through policy even if never fully achieved.",
-                "Meritocratic outcomes reflect starting conditions rather than pure merit, laundering inherited advantage as earned.",
-                "Belief in meritocracy reduces support for redistribution by attributing economic failure to individual shortcomings."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about the inherited advantage and redistribution-reducing case against meritocracy (Pros) and the motivation and approximation counters (Cons).",
-            "explanation": "Meritocratic outcomes reflect inherited advantage and belief in meritocracy reduces support for redistribution by blaming individuals for structurally caused failure (Pros), but some effort-proportional reward is motivationally and morally necessary, and meritocracy remains a valuable aspiration even if imperfect in practice (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L195_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Luck egalitarianism provides a more honest foundation for distributive justice than meritocracy.",
-            "options": [
-                "The distinction between chosen actions and unchosen circumstances is practically difficult to draw clearly.",
-                "Luck egalitarianism may produce harsh outcomes for those whose bad circumstances resulted from their own choices.",
-                "Luck egalitarianism distinguishes between inequalities arising from chosen actions versus unchosen circumstances.",
-                "Compensating for bad brute luck while allowing inequalities from voluntary choice reflects genuine moral responsibility."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Consider luck egalitarianism as an honest alternative to meritocracy (Pros) and the practical distinction and harsh outcomes concerns (Cons).",
-            "explanation": "Luck egalitarianism honestly distinguishes voluntary choices from unchosen circumstances, grounding genuine moral responsibility (Pros), but the chosen-unchosen distinction is practically difficult to draw, and the theory can produce harsh outcomes for those whose circumstances partly resulted from their own decisions (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L195_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Structural inequality requires structural solutions that go beyond rethinking meritocracy.",
-            "options": [
-                "The ideological legitimation that meritocracy provides for inequality makes challenging its premises essential.",
-                "Redistributive taxation, universal public services, and labour market reform address structural inequality more directly.",
-                "Structural reform and ideological critique are complementary - dismantling both the practice and the justification.",
-                "Philosophical critiques of meritocracy without structural change produce academic discourse rather than material improvement."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about structural solutions as more effective than meritocracy critique (Pros) and the ideological critique necessity and complementarity concerns (Cons).",
-            "explanation": "Taxation, public services, and labour reform address structural inequality more directly than philosophical critique (Pros), but meritocracy's ideological legitimation of inequality makes challenging its premises essential, and structural reform and ideological critique are complementary rather than competing (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L196_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The sense of conscious free will is an illusion generated by deterministic neurological processes.",
-            "options": [
-                "The causal closure of the physical does not exclude emergent mental causation at the level of conscious experience.",
-                "Compatibilist accounts show that meaningful freedom is compatible with determinism at lower physical levels.",
-                "Neuroscientific experiments show decisions occur in the brain before conscious awareness of choosing emerges.",
-                "Physical determinism at the neurological level leaves no causal role for a consciousness that 'freely' decides."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about the neuroscience and determinism case against free will (Pros) and the emergent causation and compatibilism counters (Cons).",
-            "explanation": "Brain decisions precede conscious awareness and physical determinism leaves no causal role for free consciousness (Pros), but emergent mental causation is compatible with physical determinism, and compatibilist free will accounts show meaningful freedom is compatible with lower-level determinism (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L196_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The social and moral consequences of abandoning belief in free will would be catastrophic.",
-            "options": [
-                "Moral responsibility, criminal justice, and interpersonal relationships all presuppose genuine freedom to choose.",
-                "Societies that abandon free will belief lose the motivational foundations for effort, responsibility, and improvement.",
-                "Moral and legal responsibility systems can be grounded in consequentialist rather than free will foundations.",
-                "Humans naturally experience agency and this phenomenological fact has social and moral significance regardless of its ultimate metaphysical status."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Consider the social and moral consequences case for maintaining free will belief (Pros) and the consequentialist grounding and phenomenological reality counters (Cons).",
-            "explanation": "Moral responsibility, justice, and relationships presuppose free choice and abandoning free will undermines motivation and responsibility (Pros), but responsibility systems can be consequentially grounded, and the phenomenological experience of agency has social significance regardless of its metaphysical reality (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L196_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Compatibilism offers the most philosophically coherent account of freedom and responsibility.",
-            "options": [
-                "Compatibilism may simply relabel determinism rather than providing genuine freedom of the kind moral intuitions require.",
-                "Compatibilism reconciles determinism with meaningful freedom by defining freedom as acting from one's own reasons without external compulsion.",
-                "Compatible free will grounds responsibility and moral practice without requiring metaphysically dubious libertarian agency.",
-                "Hard determinism may be the more honest position even if its moral and social implications are deeply uncomfortable."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about compatibilism as the most coherent freedom account (Pros) and the relabelling charge and hard determinism honesty concerns (Cons).",
-            "explanation": "Compatibilism reconciles determinism with freedom and grounds responsibility without requiring metaphysically dubious libertarian agency (Pros), but compatibilism may simply relabel determinism, and hard determinism may be more intellectually honest even if its implications are deeply uncomfortable (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L197_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "National happiness and wellbeing should replace GDP as the primary measure of a country's success.",
-            "options": [
-                "Happiness and wellbeing are subjective and culturally variable, making cross-national comparison unreliable.",
-                "GDP measures economic activity, not what that activity delivers in terms of human flourishing and quality of life.",
-                "Countries optimising for wellbeing rather than growth produce better health, social cohesion, and life satisfaction.",
-                "Government policies targeting subjective wellbeing are vulnerable to manipulation of how wellbeing is measured and reported."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about the flourishing and wellbeing measurement case for replacing GDP (Pros) and the subjectivity and manipulation concerns (Cons).",
-            "explanation": "GDP measures activity not flourishing, and wellbeing-optimising countries produce better health and social outcomes (Pros), but wellbeing is subjective and culturally variable making comparison unreliable, and policies targeting wellbeing measures are vulnerable to statistical manipulation (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L197_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The Genuine Progress Indicator and similar metrics offer more honest measures of economic prosperity.",
-            "options": [
-                "Multiple competing metrics create policy incoherence when different measures point in different directions.",
-                "GPI adjusts GDP for inequality, environmental degradation, unpaid care work, and other factors GDP ignores.",
-                "The political economy of GDP is deeply entrenched and alternatives face powerful institutional resistance.",
-                "Accounting for externalities through adjusted indicators reveals that economic growth often destroys genuine prosperity."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Consider GPI and adjusted metrics as better prosperity measures (Pros) and the policy incoherence and institutional resistance concerns (Cons).",
-            "explanation": "GPI adjusts for inequality and environmental destruction revealing how GDP growth can mask genuine prosperity loss (Pros), but competing metrics create policy incoherence and GDP's political-economic entrenchment makes institutional transition extremely difficult (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L197_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "A dashboard of indicators rather than any single metric best captures multidimensional national progress.",
-            "options": [
-                "Dashboard indicators are politically vulnerable when governments selectively emphasise whichever metrics look best.",
-                "Without a primary metric, political actors lack clear accountability for overall national progress.",
-                "Multiple complementary indicators capture different dimensions of wellbeing without reducing them to a single number.",
-                "Dashboard approaches enable nuanced policy that improves different welfare dimensions simultaneously and appropriately."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about dashboard approaches versus single metrics for measuring national progress (Pros) and the cherry-picking and accountability concerns (Cons).",
-            "explanation": "Multiple complementary indicators capture wellbeing dimensions that no single number can represent (Pros), but dashboards are vulnerable to selective political emphasis on favourable metrics, and without a primary indicator, governments lack clear accountability for overall national welfare (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L198_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Capitalism as currently practised is fundamentally incompatible with genuine human flourishing.",
-            "options": [
-                "Capitalism structurally requires treating labour, nature, and human attention as commodities subject to exploitation.",
-                "Capitalism has produced the greatest improvement in human living standards in recorded history.",
-                "Capitalism's flaws are features of current forms that reformed market economies can substantially address.",
-                "Market imperatives drive short-termism that systematically prioritises profit over human and ecological wellbeing."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about the commodification and short-termism case against capitalism and human flourishing (Pros) and the historical improvement and reform capacity counters (Cons).",
-            "explanation": "Capitalism commodifies labour and nature and drives short-termism that prioritises profit over wellbeing (Pros), but it has produced unprecedented living standard improvements and reformed market economies can substantially address capitalism's structural flaws (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L198_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Market economies can be reformed to serve human flourishing without replacing capitalism.",
-            "options": [
-                "Regulated market economies with strong welfare states, like the Nordic model, demonstrate better flourishing outcomes.",
-                "Markets efficiently allocate most goods and services - the task is to correct market failures through policy.",
-                "Nordic-style social democracy depends on specific historical and cultural conditions not easily transferable.",
-                "Even the most successful regulated capitalisms depend on continued growth that eventually meets ecological limits."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Consider social democratic reform as making capitalism compatible with flourishing (Pros) and the cultural specificity and ecological growth concerns (Cons).",
-            "explanation": "Nordic regulated market economies demonstrate superior flourishing outcomes and markets efficiently allocate most goods (Pros), but Nordic social democracy depends on specific conditions not easily transferable, and successful regulated capitalisms still depend on growth that eventually meets ecological limits (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L198_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The failures of actually existing alternatives to capitalism provide insufficient grounds for defending it.",
-            "options": [
-                "The failure of twentieth-century state socialism does not demonstrate that no better alternative to capitalism exists.",
-                "Alternatives to capitalism face the same incentive and coordination problems that brought down existing alternatives.",
-                "New economic models including commons-based systems and cooperative economies offer unexplored alternatives.",
-                "Defending capitalism's worst features by pointing to failed alternatives reflects a failure of political imagination."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about the beyond capitalism exploration case (Pros) and the coordination problems and incentive structure counters (Cons).",
-            "explanation": "Failed state socialism does not prove no better alternative exists and commons-based and cooperative models remain unexplored (Pros), but alternatives face the same coordination and incentive problems that destroyed existing alternatives, and defending capitalism by pointing to failures reflects political imagination failure (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L199_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The development of artificial general intelligence represents an unacceptable existential risk.",
-            "options": [
-                "The existential risk from misaligned AGI is speculative and may not materialise within any relevant timeframe.",
-                "Pausing AGI development cedes competitive advantage to less safety-conscious actors.",
-                "An AGI significantly more capable than humans could pursue goals misaligned with human values in uncontrollable ways.",
-                "The difficulty of specifying human values precisely enough to guarantee aligned AGI behaviour may be unsolvable."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about the misalignment and control case for treating AGI as existential risk (Pros) and the speculative timeline and competitive concerns (Cons).",
-            "explanation": "Misaligned AGI pursuing unspecifiable human values in uncontrollable ways poses genuine existential risk (Pros), but the risk timeline is speculative and halting development cedes advantage to less safety-conscious competitors who will not pause (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L199_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The alignment problem is solvable and AGI need not pose an existential threat.",
-            "options": [
-                "Rapid progress in interpretability, RLHF, and constitutional AI demonstrates tractable paths to value alignment.",
-                "Safety research is advancing alongside capability research, with growing institutional commitment to alignment.",
-                "Safety research consistently lags capability development, and alignment may not be solved before AGI arrives.",
-                "Institutional safety commitments are commercially fragile and vulnerable to competitive pressure to deploy prematurely."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Consider the solvability and progress case on the alignment problem (Pros) and the lag and commercial fragility concerns (Cons).",
-            "explanation": "Interpretability, RLHF, and constitutional AI demonstrate tractable alignment paths with growing institutional commitment (Pros), but safety lags capability development, and commercial competitive pressure makes institutional safety commitments fragile when deployment opportunities arise (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L199_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Global governance of AGI development is necessary to prevent catastrophic unilateral deployment.",
-            "options": [
-                "States competing for strategic AGI advantage have powerful incentives to defect from any cooperative agreement.",
-                "A single actor's unilateral AGI deployment without adequate safety testing poses global rather than merely local risks.",
-                "International AGI governance can establish minimum safety standards and verification mechanisms.",
-                "Verification of AGI capability levels and safety properties is technically extremely difficult across secretive programmes."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about the global governance case for managing AGI risk (Pros) and the defection incentives and verification concerns (Cons).",
-            "explanation": "Unilateral AGI deployment poses global risks requiring international governance with minimum safety standards (Pros), but geopolitical competition creates strong defection incentives from cooperative agreements, and verifying AGI capabilities across secretive programmes is technically extremely difficult (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L200_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Truth is always culturally constructed and therefore can never be fully objective or universal.",
-            "options": [
-                "All knowledge is filtered through cultural frameworks, language, and social practices that shape what can be known.",
-                "Mathematical theorems and physical constants hold regardless of the cultural context in which they are discovered.",
-                "Radical truth relativism is self-refuting - the claim that truth is relative must itself claim to be true.",
-                "The history of science reveals that even physical truth claims are historically and culturally situated."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about the cultural mediation and scientific situatedness case for truth relativism (Pros) and the mathematics and self-refutation concerns (Cons).",
-            "explanation": "All knowledge is culturally filtered and the history of science reveals situatedness even in physical truth claims (Pros), but mathematical truths and physical constants transcend cultural contexts, and radical relativism is self-refuting because the relativist claim itself purports to be objectively true (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L200_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Scientific realism provides the most defensible account of objective knowledge.",
-            "options": [
-                "The history of scientific revolutions shows that even well-confirmed theories are later overturned.",
-                "Pessimistic meta-induction suggests current science is as likely to be fundamentally wrong as past theories proved to be.",
-                "Science's track record of predictive success provides compelling evidence for mind-independent reality.",
-                "The convergence of different scientific methods on the same conclusions suggests genuine truth rather than social construction."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Consider scientific realism as the best account of objective knowledge (Pros) and the scientific revolutions and pessimistic meta-induction concerns (Cons).",
-            "explanation": "Science's predictive success and methodological convergence provide compelling evidence for mind-independent reality (Pros), but scientific revolutions show even confirmed theories fall, and pessimistic meta-induction suggests current theories are likely as wrong as past ones proved to be (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L200_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Pragmatism offers the most useful account of truth for practical human purposes.",
-            "options": [
-                "Pragmatic truth - what works reliably in practice - provides a functional criterion usable across cultural contexts.",
-                "Pragmatism's 'what works' criterion assumes agreement on what constitutes working that cultures do not always share.",
-                "Pragmatic truth accounts cannot ground normative claims about what we ought to value or how we ought to live.",
-                "Pragmatism avoids both absolute relativism and metaphysically demanding realism, serving practical reasoning better."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about pragmatism as the most useful truth account for practical purposes (Pros) and the working-agreement and normative grounding concerns (Cons).",
-            "explanation": "Pragmatic truth provides a functional criterion usable across contexts and avoids extremes of relativism and demanding realism (Pros), but 'what works' assumes cross-cultural agreement on success criteria that often does not exist, and pragmatism cannot ground normative claims about values and how to live (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        }
-    ]
+  "gameType": "opinionWriting",
+  "batchIndex": 20,
+  "levels": "191-200",
+  "quests": [
+    {
+      "id": "WRT_OPINIONWRITING_L191_Q1",
+      "instruction": "Choose the strongest paragraph.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "An employee proposes that the company require two shared office days a week instead of three. Which paragraph has the best claim, evidence and explanation?",
+      "options": [
+        "Two shared office days would keep the benefits of face-to-face work while giving staff more flexibility. The office has 200 desks and a new café on the ground floor. A third day adds commuting time without adding much joint work.",
+        "Three office days is an unfair burden on tired staff. In our team survey, 14 of 18 said most collaboration happens early in the week. It is cruel to make people commute even more.",
+        "Two shared office days would be better. In our team survey, 14 of 18 said most collaboration happens early in the week. Everyone else in the company would surely agree with this result.",
+        "Two shared office days would keep the benefits of face-to-face work while giving staff more flexibility. In our team survey, 14 of 18 said most collaboration happens early in the week. A third day adds commuting time without adding much joint work, so two days protects both goals."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Check that the evidence supports the claim, the explanation links them and the tone stays professional.",
+      "explanation": "The best paragraph offers relevant survey evidence and explains the trade-off. The alternatives overgeneralise, rely on emotion or use irrelevant detail.",
+      "structureGuide": "Claim → Evidence → Explanation"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L191_Q2",
+      "instruction": "Which objection should the employee expect to be taken most seriously?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "The manager is reviewing a proposal to reduce office days from three to two.",
+      "options": [
+        "The office has a limited number of desks on busy days, so staff might struggle to find a place to sit.",
+        "Junior staff may lose informal learning from sitting near experienced colleagues.",
+        "The office lease has already been paid for the year, so the company would waste money if it cut office days.",
+        "Some staff enjoy the coffee from the office machine, and many say it is the best part of the working day."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "A serious objection concerns a real effect on people and on the goal of the policy.",
+      "explanation": "Reduced learning for junior staff affects the aims of office days. The other points are minor or unrelated.",
+      "structureGuide": "Objection"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L191_Q3",
+      "instruction": "Choose the best concession and reply.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Respond to the manager's concern about junior staff.",
+      "options": [
+        "Junior staff do gain from working alongside colleagues, so the two shared days could be the same for whole teams, with mentoring calls on the other days.",
+        "Junior staff should be able to learn independently from online material, so no adjustment is needed to the two-day plan.",
+        "Junior staff matter most to the company's future, so all staff should be in the office for three days each week.",
+        "Learning happens everywhere, at home and in the office, so the number of office days does not really matter."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Accept what is valid and adapt the plan.",
+      "explanation": "This reply concedes the value of proximity and offers a practical fix. The others dismiss, overreact or minimise.",
+      "structureGuide": "Concession → Rebuttal"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L192_Q1",
+      "instruction": "Choose the position that best balances efficiency and access.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A council wants to move routine services online.",
+      "options": [
+        "Online services have benefits and drawbacks that councils should consider carefully before making any changes to the way they work.",
+        "Councils should keep paper forms because not everyone likes computers, and residents should not be pushed to change.",
+        "Councils can move routine services online if they keep a phone and in-person option for residents who cannot use digital services.",
+        "Councils should move all services online because digital is the future of public service, and residents will soon get used to it."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "A balanced position takes a side and protects the people it might harm.",
+      "explanation": "This position supports the change and names a safeguard. The others are one-sided or avoid a position.",
+      "structureGuide": "Claim → Condition"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L192_Q2",
+      "instruction": "Which evidence best shows that an online-only service could exclude some residents?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Which evidence shows that some residents could not use an online-only service?",
+      "options": [
+        "In a survey of 200 residents over 70, 68 said they had no reliable internet access at home.",
+        "Online forms are usually processed faster than paper forms, so residents get an answer in a matter of days.",
+        "Most residents in the town use the internet every day, and many of them prefer to do their business online.",
+        "The council's website was redesigned and improved last year, and it now works well on phones and tablets."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Evidence of exclusion must show who cannot use the service.",
+      "explanation": "The survey shows a group without access. The others do not concern exclusion or support the other side.",
+      "structureGuide": "Claim → Evidence"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L192_Q3",
+      "instruction": "What is the main weakness in this argument?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Since 90% of residents used the online form last year, nobody needs the phone line.'",
+      "options": [
+        "It attacks people who prefer the phone, by suggesting that they are old-fashioned and slow to change.",
+        "It relies on a sample that is too small, because it only includes people who happened to use the form.",
+        "It confuses cause with correlation, because it assumes the online form is the reason that people stopped calling.",
+        "It treats a majority as everyone and ignores the minority who may depend on the phone."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Ask who the 10% might be.",
+      "explanation": "Ninety percent is a majority, not everybody. Some residents may have no alternative.",
+      "structureGuide": "Reasoning → Flaw"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L193_Q1",
+      "instruction": "Choose the fairest and most specific thesis.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A town is debating a curfew on amplified music at outdoor events.",
+      "options": [
+        "Outdoor events should end by 10:30 p.m. on weeknights, with later finishes on a few agreed weekend dates, so residents can sleep while the town keeps its festivals.",
+        "Outdoor events and residents both have rights, so a curfew may or may not help, and the town should keep an open mind.",
+        "Outdoor events should finish whenever organisers choose, since festivals benefit the whole town and bring in visitors.",
+        "Outdoor events should end by 10:30 p.m. every night because residents matter more than festivals, and sleep should come first."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "A fair thesis recognises both sides and still commits to a position.",
+      "explanation": "This thesis proposes specific times and balances residents and events. The others favour one side or avoid a position.",
+      "structureGuide": "Thesis → Balance"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L193_Q2",
+      "instruction": "Choose the best sentence for a letter to festival organisers.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Residents want earlier finishes on weeknights.",
+      "options": [
+        "We value the festival, and we ask that amplified music end by 10:30 p.m. on weeknights, as several residents with young children find later finishes hard.",
+        "Festival organisers clearly do not care about local families, or they would have shortened the hours by now.",
+        "The noise from your festival is a disgrace and must stop, because it has kept the whole street awake for three nights.",
+        "Please consider residents when planning future events, as noise is something that concerns a number of us on the street."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Combine respect, a precise request and a reason.",
+      "explanation": "The best sentence is polite and specific with a reason. The alternatives accuse, demand or are vague.",
+      "structureGuide": "Audience → Tone"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L193_Q3",
+      "instruction": "Choose the best way to complete the paragraph.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Organisers argue that later finishes support local businesses. That is a fair point, and ____'",
+      "options": [
+        "but businesses can find other ways to earn money, so a strict curfew would not do them much harm.",
+        "however, residents' sleep is more important than trade, so the curfew should apply to every event.",
+        "an extra hour on two weekend dates would give traders most of the benefit while limiting disturbance.",
+        "so the curfew should be removed for all events, because the town's businesses deserve the extra hours."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Concede and then propose a compromise.",
+      "explanation": "The correct ending accepts the point and proposes a limited change. The remaining options reject or dismiss.",
+      "structureGuide": "Concession → Reply"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L194_Q1",
+      "instruction": "Choose the strongest thesis.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A company is considering unlimited holiday.",
+      "options": [
+        "Unlimited holiday can work only if managers model taking leave and teams agree minimum cover; otherwise staff tend to take less time off.",
+        "Unlimited holiday is the best policy for employees, who will finally have real freedom over how they spend their time.",
+        "Unlimited holiday has strengths and weaknesses that companies should think about carefully before they make any decision.",
+        "Unlimited holiday is a trick to avoid paying for unused days, and staff should be cautious about accepting it."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "The best thesis names the conditions for success.",
+      "explanation": "The best thesis takes a position with conditions. The others exaggerate, accuse or avoid a position.",
+      "structureGuide": "Thesis → Condition"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L194_Q2",
+      "instruction": "What assumption does the argument depend on?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'With unlimited holiday, staff will rest more, so productivity will rise.'",
+      "options": [
+        "That holidays cost the company nothing.",
+        "That productivity is easy to measure precisely.",
+        "That staff enjoy their jobs more than other people do.",
+        "That staff will actually take more time off, not less."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "What must happen for 'rest more' to be true?",
+      "explanation": "The argument assumes that unlimited holiday leads to more leave taken. If people take less, the conclusion fails.",
+      "structureGuide": "Reasoning → Assumption"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L194_Q3",
+      "instruction": "Which data would best test whether unlimited holiday leads to more rest?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Choose the strongest evidence to collect.",
+      "options": [
+        "Staff opinions of the policy collected in its first week, when most people are still getting used to it.",
+        "The number of other companies that have adopted a similar policy over the past few years.",
+        "The average number of days taken before and after the policy, by team.",
+        "The cost of the software used to record leave, compared with the cost of the old paper system."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "The data must show actual behaviour over time.",
+      "explanation": "Days taken before and after directly measures the change. Early opinions, popularity and software costs do not.",
+      "structureGuide": "Assumption → Test"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L195_Q1",
+      "instruction": "Choose the strongest topic sentence for a paragraph proposing limited phone use in class.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A school is debating phones in lessons.",
+      "options": [
+        "Phones are part of modern life, so schools cannot ignore them any more, and lessons should be built around them.",
+        "Phones in class have advantages and disadvantages that are worth exploring, and teachers may wish to consider them.",
+        "Allowing phones only for teacher-approved learning apps could turn a distraction into a classroom tool, provided the rules are clear and enforced.",
+        "Students want to use their phones in class, and schools should respect students' wishes when they set the rules."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "A strong topic sentence takes a position with a condition.",
+      "explanation": "The correct sentence proposes a limited use with conditions. The alternatives use popularity, preference or avoid a position.",
+      "structureGuide": "Topic Sentence → Condition"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L195_Q2",
+      "instruction": "Which reply best treats the concern that some students cannot afford phones?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "The concern is about fairness.",
+      "options": [
+        "Cost should not stop the school from modernising its lessons, so the plan should go ahead with phones as it stands.",
+        "Students without phones can simply borrow one from a friend for the lesson, so no special arrangement is needed.",
+        "Most students already own phones, so this is a minor concern, and the school should not spend time worrying about it.",
+        "That is a real equity issue, so lessons would use school tablets or shared devices for anyone without a phone, and no task would require a personal device."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Take the fairness concern seriously and offer a fix.",
+      "explanation": "This reply accepts the concern and provides a practical solution. The remaining options dismiss or minimise it.",
+      "structureGuide": "Objection → Rebuttal"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L195_Q3",
+      "instruction": "Choose the best revision.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'Phones will make lessons amazing and fix boredom forever.'",
+      "options": [
+        "Phones can make lessons better, and sometimes they may not, so it is hard to say what the overall effect will be.",
+        "Phones make lessons more interactive, which is good for learning, and this is why more schools are allowing them.",
+        "Phones could make some lessons more interactive, for example when students use a quiz app to check understanding, but they will not fix disengagement on their own.",
+        "Phones will make most lessons more engaging and will rarely cause any problems, provided teachers give clear instructions."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Replace overstatement with an example and a limit.",
+      "explanation": "This revision offers a specific example and admits a limit. The alternatives still overpromise or stay vague.",
+      "structureGuide": "Revision → Qualification"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L196_Q1",
+      "instruction": "Choose the most defensible claim.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A shared building is deciding whether residents may use smart doorbells that record video.",
+      "options": [
+        "Smart doorbells improve safety, so residents should decide for themselves what their devices record, inside or outside.",
+        "Residents should be allowed smart doorbells inside their own doors but not recording shared hallways, since hallway footage captures neighbours who have not agreed.",
+        "Smart doorbells are an invasion of privacy and should be banned from the building, whatever benefit residents may claim.",
+        "Smart doorbells raise privacy and safety issues that the building should consider, and residents should discuss them together."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "A defensible claim sets a limit tied to a reason.",
+      "explanation": "The right claim allows the device but limits recording of shared space, with a reason. The others ban, permit everything or avoid a position.",
+      "structureGuide": "Claim → Limit"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L196_Q2",
+      "instruction": "Which evidence best supports the claim that recording hallways can improve safety?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Which evidence best shows that recording a hallway can reduce package theft?",
+      "options": [
+        "Package thefts are annoying and inconvenient for residents, and many people have to collect parcels from a depot.",
+        "Cameras are a common feature of modern doorbells, and most models now come with night vision and a phone app.",
+        "After cameras were installed on one landing, reported package thefts fell from seven to one over six months.",
+        "Some residents say they feel safer when cameras are present, especially when they return home late in the evening."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Look for a measured change linked to the cameras.",
+      "explanation": "The fall in thefts after the cameras is measurable. The rest describe availability, feelings or annoyance.",
+      "structureGuide": "Claim → Evidence"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L196_Q3",
+      "instruction": "Choose the best reply to 'If you have nothing to hide, you have nothing to fear.'",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A resident uses this argument to defend hallway recording.",
+      "options": [
+        "Privacy is not only about hiding wrongdoing; neighbours can reasonably expect that their comings and goings are not recorded and stored by others.",
+        "Neighbours who object are probably hiding something themselves, since honest people are rarely troubled by being filmed.",
+        "Recording is only harmful when the footage is misused, so the important thing is to have rules about who can see it.",
+        "People who value privacy should live somewhere else, where the buildings do not use cameras in the communal areas."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "The reply should challenge the assumption behind the argument.",
+      "explanation": "This reply corrects the assumption that privacy concerns imply wrongdoing. The others accuse, dismiss or accept the flawed premise.",
+      "structureGuide": "Rebuttal → Assumption"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L197_Q1",
+      "instruction": "Choose the strongest thesis.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A national park is considering a small per-visitor levy.",
+      "options": [
+        "National parks are national treasures, so visitors should be willing to pay a levy to help look after them.",
+        "A levy is the only way to protect the national park from the damage caused by large numbers of tourists.",
+        "A levy has advantages and disadvantages that the park should weigh before it reaches a decision about the plan.",
+        "A small per-visitor levy would fund trail repairs and rangers, provided local residents and school groups are exempt."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "A strong thesis names the purpose and a fair condition.",
+      "explanation": "The best thesis links the levy to specific uses and protects access for some groups. The others exaggerate, use emotion or avoid a position.",
+      "structureGuide": "Thesis → Condition"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L197_Q2",
+      "instruction": "What is the weakness in this reasoning?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Erosion is worst in summer, so tourists must be the only cause.'",
+      "options": [
+        "It attacks tourists instead of giving a reason, and it assumes that visitors do not care about the park.",
+        "It offers only two options to choose from, and it ignores other reasons that might explain the damage to the trails.",
+        "It relies on a survey with too few people, and it does not say how the erosion was measured in the park.",
+        "Timing alone does not show tourists are the only cause, since weather and trail design may also matter."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "A pattern in time does not identify a single cause.",
+      "explanation": "This answer notes other possible causes. The other options describe flaws not present.",
+      "structureGuide": "Reasoning → Cause"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L197_Q3",
+      "instruction": "Choose the best reply to the concern that a levy will exclude lower-income families.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A visitor levy could make the park harder to reach for low-income families. Reply while keeping the plan.",
+      "options": [
+        "Free entry days, family discounts and exemptions for school groups would protect access while still raising funds.",
+        "Lower-income families can visit other parks if they cannot pay, so the levy does not reduce their choices much.",
+        "The levy is small, so it will not affect anyone, and there is no need to make special arrangements for families.",
+        "Families who care about the park will find the money to pay, so the levy will not stop them from visiting."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "The best reply keeps the plan while protecting access.",
+      "explanation": "The best reply proposes specific measures. The others dismiss or assume.",
+      "structureGuide": "Objection → Rebuttal"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L198_Q1",
+      "instruction": "Choose the strongest thesis.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A shop offers a discount only to customers who use its loyalty app.",
+      "options": [
+        "Shops that use apps are just collecting data to make more money, and customers should refuse to take part in it.",
+        "Shops should offer the same discount at the till, because requiring an app means customers must hand over personal data to get the price.",
+        "Loyalty apps are annoying, and shops should stop using them altogether, because customers should not have to install anything.",
+        "Loyalty apps have both benefits and drawbacks for shoppers, and shops should think about how best to use them."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "The thesis should state the change and give a reason.",
+      "explanation": "The best thesis proposes a specific change and gives a fair reason. The alternatives insult, accuse or avoid a position.",
+      "structureGuide": "Thesis → Reason"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L198_Q2",
+      "instruction": "Which evidence best supports the claim that app-only discounts disadvantage some customers?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Which evidence shows that some customers cannot use an app-only discount?",
+      "options": [
+        "The shop's app has been downloaded 20,000 times, and most of the downloads were in the last year.",
+        "Loyalty apps track purchases to create personal offers, and they can suggest products that a customer often buys.",
+        "Many shops offer app-only deals during the year, and some of them run special offers on the app every week.",
+        "In the shop's own survey, 40% of customers over 65 said they do not use smartphone apps."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Evidence of disadvantage shows who cannot use the app.",
+      "explanation": "The survey shows a group who cannot access the discount. The rest describe the app.",
+      "structureGuide": "Claim → Evidence"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L198_Q3",
+      "instruction": "Choose the best revision for the shop owner.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'Your app-only discount is unfair and greedy.'",
+      "options": [
+        "The app-only discount excludes some of our regular customers, and I think that the shop should change the way it works.",
+        "Your app-only discount seems unfair to a number of customers, and I hope that you will think about changing it soon.",
+        "Some of our regular customers cannot use the app, so I would like to ask whether the same discount could be offered at the till.",
+        "It would be nice if the discount were available to everyone, because that would be a friendlier way to run the shop."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "The revision should be polite, specific and constructive.",
+      "explanation": "The right revision names the problem and makes a request. The rest remain vague or blunt.",
+      "structureGuide": "Revision → Audience"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L199_Q1",
+      "instruction": "Choose the strongest paragraph.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A student council argues for a student representative on panels that hire teachers.",
+      "options": [
+        "Schools should include a student representative on panels that hire teachers. Students see daily classroom practice that an interview cannot show. Many other schools already do this, and it works well for them, so ours should too.",
+        "Schools should include a student representative on panels that hire teachers. Students see daily classroom practice that an interview cannot show. Some worry that students lack professional judgement, but a representative would add a view rather than cast a vote, so experience and student insight both count.",
+        "Schools should include a student representative on panels that hire teachers. Students are the people who are most affected by the decision. Anyone who disagrees clearly does not care about students, and their objections should be ignored.",
+        "Students should have a say in hiring teachers because they know best. Students see daily classroom practice that an interview cannot show. Nobody understands teaching better than students, so they should have the deciding vote."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Check for a claim, relevant support, a fair treatment of the objection and a respectful tone.",
+      "explanation": "This paragraph states the objection fairly and answers it. The remaining options use insults, popularity or overstatement.",
+      "structureGuide": "Claim → Reason → Concession → Rebuttal"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L199_Q2",
+      "instruction": "What is the weakness in the critic's argument?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A critic says: 'Students would only pick the most entertaining teacher, so the idea is silly.'",
+      "options": [
+        "It relies on a sample that is too small, because it is based on the opinions of only a handful of students.",
+        "It confuses correlation with cause, because it assumes that students who like a teacher must also learn more.",
+        "It dismisses the idea with an unfair caricature instead of answering the point that students would give input, not decide.",
+        "It offers only two choices, because it suggests that either students decide or they have no say at all."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Compare the critic's description with what is actually proposed.",
+      "explanation": "The critic exaggerates the proposal into 'students pick' when the proposal is for input. This is a strawman.",
+      "structureGuide": "Reasoning → Flaw"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L199_Q3",
+      "instruction": "Choose the best conclusion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "The paragraph argued for a student voice on hiring panels, with the final decision left to staff.",
+      "options": [
+        "Giving students a voice, but not the final say, would improve hiring decisions and show that the school takes their experience seriously.",
+        "Hiring panels have many members, and students are only one kind of possible member, so their role should be small.",
+        "This is only one idea, and there may be better ways to involve students, so the school could look into other options.",
+        "Students should decide who teaches them, because they are the ones who sit in the classes every day of the year."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "The conclusion should match the argument's limits.",
+      "explanation": "The best conclusion restates the balanced proposal and its benefits. The others overstate, describe or retreat.",
+      "structureGuide": "Conclusion"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L200_Q1",
+      "instruction": "Choose the strongest thesis.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A school is deciding whether to publish class exam-ranking lists. Which thesis takes a fair position and gives a reason?",
+      "options": [
+        "Schools should share exam rankings privately with each student alongside personal targets, because private feedback keeps the motivation to improve while avoiding public embarrassment.",
+        "Exam rankings can help some students and hurt others, which is worth thinking about carefully before schools decide what to do about them.",
+        "Schools should stop publishing ranking lists altogether because they are cruel, and everyone knows that they make many students feel bad about themselves.",
+        "Schools should publish ranking lists because competition is good for all students, and it prepares them for the pressures they will meet later in life."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "The strongest thesis has a clear position, a reason and a balanced view of the goal.",
+      "explanation": "This thesis acknowledges the value of motivation and offers an alternative. The remaining options are emotional, one-sided or avoid a position.",
+      "structureGuide": "Thesis → Reason"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L200_Q2",
+      "instruction": "Choose the best response.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A parent says: 'Ranking lists motivate students by showing them where they stand.' Respond with concession, rebuttal and respect.",
+      "options": [
+        "Motivation is not a good reason for publishing the lists, because the harm to weaker students is far greater than any benefit that stronger students might gain.",
+        "Many schools publish ranking lists, so there must be something in the idea, and it would be wrong to dismiss a practice that has lasted so long.",
+        "Some students may be motivated by seeing where they stand, and that matters; but a public list also exposes those who are struggling, so private rankings with targets would keep the motivation and reduce the harm.",
+        "Public lists motivate nobody, since students hate them, and any school that publishes them is ignoring what its own students say about the practice."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "A strong response concedes what is valid, replies with a reason and offers a solution.",
+      "explanation": "This response accepts the motivation point, explains the harm and proposes an alternative. The alternatives dismiss, exaggerate or use popularity.",
+      "structureGuide": "Concession → Rebuttal → Solution"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L200_Q3",
+      "instruction": "Choose the best revision of the paragraph.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'Ranking lists are cruel and everyone knows they ruin students. They are cruel because they make students feel bad. Nobody benefits from ranking lists.'",
+      "options": [
+        "Public ranking lists can discourage students who are already struggling, and they show little about individual progress; private feedback and personal targets would motivate students without exposing them.",
+        "Public ranking lists are harmful and rarely help students, so schools should stop publishing them and look for other ways to raise standards.",
+        "Ranking lists make many students feel bad about themselves, which is a good reason for schools to stop using them and to try something new.",
+        "Ranking lists are unfair to students, and private feedback would be better for students, who would then feel more respected by their teachers."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Fix the overgeneralisation, the repetition and the missing reason all at once.",
+      "explanation": "The correct revision limits the claim, gives a reason and proposes an alternative. The other choices keep vague claims or repetition.",
+      "structureGuide": "Claim → Reason → Solution"
+    }
+  ]
 }

@@ -8,21 +8,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write a calm, sophisticated email leading a small organisation's stakeholders through a significant reputational crisis.",
+            "prompt": "A client believes you agreed to deliver on the 10th; the contract says the 17th. Frame: Subject: Delivery date: clarifying 10 or 17 July / Greeting: Dear Mr Okonkwo, / Sign-off: Kind regards, Freya Lindholm. Lay out the body.",
             "options": [
-                "Dear Supporters,",
-                "Subject: A direct, honest update on where we stand",
-                "I won't pretend this week has been easy, but I want you to hear directly from me that we have commissioned an independent review of what went wrong, we will publish its findings in full, and we will not ask for your continued trust until we have genuinely earned it back.",
-                "With humility and resolve,\nMargaret Okonjo"
+                "Please tell me by Friday whether you would like us to arrange that.",
+                "Thank you for your message, and I can see why the 10th was a natural date to expect.",
+                "Our contract, signed on 3 May, states that delivery is by 17 July, and my email of 12 June, which I have attached, gave the same date.",
+                "I do want to help with your event on the 12th, so I have checked, and we could deliver a partial shipment of 60% on the 10th."
             ],
             "correctOrder": [
                 1,
-                0,
                 2,
-                3
+                3,
+                0
             ],
-            "hint": "Calm honesty is signalled directly in the subject; supporters are addressed together; genuine acknowledgement and three concrete commitments are in the body; the closing conveys both humility and determination.",
-            "explanation": "Admitting plainly that 'this week has been easy' is not true builds far more credibility than a defensive or overly polished statement during a crisis. Committing to publish an independent review 'in full', rather than a summary, signals genuine accountability rather than managed reputation control.",
+            "hint": "Acknowledge his view, correct the fact using documents, and then solve the actual problem.",
+            "explanation": "Understanding the assumption avoids blame. Citing the contract and email keeps the correction factual, and the partial shipment addresses the need behind the misunderstanding.",
             "formalityLevel": "Formal"
         },
         {
@@ -30,21 +30,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an eloquent email to stakeholders navigating a significant, unexpected organisational setback with honesty and resolve.",
+            "prompt": "A supervisor thinks a student missed a submission that was in fact sent. Piece together the student's email.",
             "options": [
-                "Dear Trustees,",
-                "The loss of our largest funder was a genuine blow, and I won't minimise how seriously this affects our plans for next year, but having spent the week reviewing our options, I believe we can adapt our programme rather than abandon it, and I would like to walk you through how.",
-                "With determination for what comes next,\nDesmond Atkinson",
-                "Subject: An honest update, and our path forward"
+                "Dear Professor Ng,",
+                "I sent it from my university account on 20 June at 4:12 pm, and I have attached the sent-mail confirmation and the file again. I'm sorry if it went to your spam folder, and I'd be grateful if you could confirm receipt.\n\nYours sincerely,\nNaledi Mokoena",
+                "Subject: Submission of my thesis draft on 20 June, confirmation attached",
+                "Thank you for your email; I understand that you did not receive my thesis draft."
             ],
             "correctOrder": [
-                3,
+                2,
                 0,
-                1,
-                2
+                3,
+                1
             ],
-            "hint": "Honest acknowledgement of setback is signalled in the subject; trustees are addressed together; genuine seriousness balanced with resolve and a specific next step are in the body; the closing conveys real determination.",
-            "explanation": "Refusing to 'minimise' the seriousness of the setback shows trustees the leader is being genuinely honest, not spinning bad news. Following the honest acknowledgement immediately with a considered path forward - adapting rather than abandoning - transforms the message from simply delivering bad news into demonstrating real leadership.",
+            "hint": "Do not accuse. Provide proof and solve the problem.",
+            "explanation": "Proof is offered as help, not as an attack. The polite suggestion about the spam folder avoids blaming the supervisor.",
             "formalityLevel": "Formal"
         },
         {
@@ -52,34 +52,12 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write a masterful email de-escalating a serious conflict between two major stakeholders in a shared project.",
+            "prompt": "A colleague thinks you missed a meeting that was rescheduled without notice. The subject line, greeting and sign-off are already written (Subject: Re: Missed the 3 pm meeting / Hi Vikram, / Thanks, Lucille). Arrange the body.",
             "options": [
-                "Dear Both Teams,",
-                "Subject: Finding our way through this together",
-                "With confidence in what we can resolve together,\nFiona Macleod",
-                "I can see that both sides genuinely believe they are protecting the project's best interests, which tells me this is a disagreement about approach rather than goals, so before anything else, I would like us to spend one meeting simply agreeing what success looks like for everyone involved."
-            ],
-            "correctOrder": [
-                1,
-                0,
-                3,
-                2
-            ],
-            "hint": "A unifying, de-escalating tone is signalled in the subject; both teams are addressed together; a generous reframing of the conflict and a specific first step are in the body; the closing conveys genuine confidence.",
-            "explanation": "Reframing the conflict as shared good intentions expressed through different approaches, rather than opposing goals, immediately lowers the emotional temperature of the disagreement. Proposing to first agree on 'what success looks like' establishes common ground before tackling the specific point of contention.",
-            "formalityLevel": "Formal"
-        },
-        {
-            "id": "WRT_WRITINGEMAIL_L172_Q1",
-            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
-            "subtype": "writingEmail",
-            "interactionType": "writing",
-            "prompt": "Write a thoughtful email articulating a significant values-based business decision to sceptical co-founders.",
-            "options": [
-                "Subject: Why I believe we should turn down this contract",
-                "I know turning down a contract this size feels counterintuitive, but the client has been explicit that they want us to prioritise speed over the accessibility standards we have built our reputation on, and I don't believe any short-term revenue is worth compromising the principle that made us who we are.",
-                "Dear Co-founders,",
-                "With conviction, and openness to your views,\nTariq Hussain"
+                "I'm sorry that I wasn't at the meeting; I have just seen that it was moved from 4 pm to 3 pm.",
+                "Could you tell me what was decided?",
+                "The change doesn't appear in my calendar, but I don't want to make this about who was at fault.",
+                "I can act on my part today."
             ],
             "correctOrder": [
                 0,
@@ -87,8 +65,30 @@
                 1,
                 3
             ],
-            "hint": "A principled, confident position is signalled in the subject; co-founders are addressed together; the specific conflict and the underlying value at stake are in the body; the closing balances conviction with openness.",
-            "explanation": "Acknowledging directly that the decision 'feels counterintuitive' shows self-awareness rather than blind idealism. Naming the specific, concrete conflict - speed versus accessibility standards - grounds an abstract values argument in a real, decidable business situation.",
+            "hint": "Apologise for the effect, mention the cause once, focus on the next step.",
+            "explanation": "Mentioning the calendar gap explains without blaming, and shifting to action stops the dispute.",
+            "formalityLevel": "Semi-formal"
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L172_Q1",
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+            "subtype": "writingEmail",
+            "interactionType": "writing",
+            "prompt": "You are writing to a partner whose first language is not English. Structure an email that is clear and avoids idioms.",
+            "options": [
+                "Please tell me if this time is not suitable.\n\nKind regards,\nLorcan Dyer",
+                "We will discuss the delivery schedule and the price for the second order. I will send the agenda by Tuesday.",
+                "Subject: Meeting on Thursday 10 July at 3 pm (Tokyo time)",
+                "Dear Mr Sato,\n\nI would like to confirm our meeting on Thursday 10 July at 3 pm Tokyo time."
+            ],
+            "correctOrder": [
+                2,
+                3,
+                1,
+                0
+            ],
+            "hint": "Use plain, direct sentences and give the time zone.",
+            "explanation": "For international readers, short sentences and explicit details help. Avoid idioms such as 'touch base' or 'circle back'.",
             "formalityLevel": "Formal"
         },
         {
@@ -96,43 +96,43 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an eloquent email explaining a principled decision to decline a lucrative but ethically questionable opportunity.",
+            "prompt": "You are declining a request from a colleague in a culture where a direct 'no' may seem rude. The subject line, greeting and sign-off are already written (Subject: Re: Your request for a longer deadline / Dear Mr Nair, / With best regards, Camille Roux). Arrange the body.",
             "options": [
-                "Dear Board,",
-                "With a clear conscience and continued commitment to our values,\nCeleste Dubois",
-                "Subject: Why I have decided not to proceed with this partnership",
-                "While the financial terms offered are undeniably attractive, I cannot reconcile partnering with a company whose labour practices have been repeatedly questioned with the values we ask our own staff to uphold every day, so I have decided, with full confidence, to decline this opportunity."
+                "Thank you for your message and for explaining the situation so clearly.",
+                "Could we look together at which parts of the work could be simplified so that the date can be met?",
+                "So it will be difficult to extend it.",
+                "We are very keen to help, but the deadline is fixed by the client."
             ],
             "correctOrder": [
-                2,
                 0,
                 3,
+                2,
                 1
             ],
-            "hint": "A principled decision is signalled clearly in the subject; the board is addressed together; genuine acknowledgement of the appeal and a clear, values-based reasoning are in the body; the closing conveys real conviction.",
-            "explanation": "Acknowledging the terms are 'undeniably attractive' before declining shows the decision was genuinely weighed, not made carelessly. Framing the reasoning around consistency - the values 'we ask our own staff to uphold' - gives the ethical argument real, practical grounding rather than abstract principle alone.",
-            "formalityLevel": "Formal"
+            "hint": "Soften the refusal by focusing on shared problem solving.",
+            "explanation": "Some cultures value indirectness. Focusing on the constraint and inviting a joint solution keeps the relationship intact.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L172_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write a sophisticated email respectfully navigating a disagreement about organisational values with a colleague.",
+            "prompt": "Put together an email to a senior professor abroad who is used to formal titles.",
             "options": [
-                "With respect for your conviction,\nKwabena Mensah",
-                "Dear Priya,",
-                "I can tell we see the sustainability pledge differently - you seeing it as an important symbolic commitment, me worrying we might not be able to deliver on it fully - and rather than either of us digging in, I would genuinely like to understand what makes this feel so important to you.",
-                "Subject: Wanting to understand your perspective better"
+                "Dear Professor Zhang,\n\nI am writing with great respect for your work on hydrology, which has guided my research.",
+                "I am a Master's student at the University of Nairobi, and I would be honoured to ask whether you might advise me on my application to your department.",
+                "Subject: Request for advice on doctoral applications",
+                "I understand that you are very busy, and I will be grateful for any reply.\n\nYours sincerely,\nOtieno Wekesa"
             ],
             "correctOrder": [
-                3,
-                1,
                 2,
-                0
+                0,
+                1,
+                3
             ],
-            "hint": "A curious, respectful tone is signalled in the subject; the colleague is addressed by first name; both perspectives are named fairly and a genuine desire to understand is in the body; the closing conveys real respect.",
-            "explanation": "Naming both perspectives fairly and specifically, rather than only defending your own view, shows genuine respect for a colleague's differing values. Asking to understand 'what makes this feel so important' to them, rather than simply arguing your position, is a mature, sophisticated way to navigate a values disagreement without it becoming personal.",
+            "hint": "Formal register and honorific language suit this reader.",
+            "explanation": "Formal titles and respectful phrases matter to some readers. This email stays clear without becoming over-elaborate.",
             "formalityLevel": "Formal"
         },
         {
@@ -140,21 +140,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an eloquent email proposing to establish a lasting annual community tradition.",
+            "prompt": "Arrange the report to a senior manager about a workplace accident. Focus on facts.",
             "options": [
-                "Dear Community Committee,",
-                "Subject: Starting something that could outlast all of us",
-                "With hope for something lasting,\nRoisin Delaney",
-                "Rather than letting this year's successful harvest festival be a one-off, I would like to propose we formally establish it as an annual tradition, with a simple handbook so that future organisers - long after any of us are involved - can carry it forward without starting from scratch."
+                "At 10:40 am on 3 June, a forklift driven by a trainee collided with a racking unit in Aisle 6, and one pallet fell.",
+                "Dear Mr Thornton,",
+                "No one was injured, but the rack has been damaged. The area has been cordoned off, and the incident has been logged in the accident book.\n\nI recommend that we review supervision for trainee drivers, and I will send a full report by Friday.\n\nYours sincerely,\nJoyce Adeniyi",
+                "Subject: Incident report: forklift collision, Warehouse B, 3 June"
             ],
             "correctOrder": [
+                3,
                 1,
                 0,
-                3,
                 2
             ],
-            "hint": "A vision beyond the present moment is signalled in the subject; the committee is addressed together; the origin, the specific proposal, and a practical mechanism for continuity are in the body; the closing conveys hope for legacy.",
-            "explanation": "Explicitly thinking beyond the current organisers - 'long after any of us are involved' - reflects genuine institution-building rather than a one-off event. Proposing a practical tool, a simple handbook, shows the vision is grounded in a concrete mechanism for actually achieving lasting continuity.",
+            "hint": "What happened, what harm, what has been done, what next.",
+            "explanation": "Incident emails need time, place and facts. A recommendation and a date for the full report show control of the situation.",
             "formalityLevel": "Formal"
         },
         {
@@ -162,43 +162,43 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write a sophisticated email securing a founding partner for a significant new community initiative.",
+            "prompt": "Lay out an email reporting a cybersecurity concern to the IT department.",
             "options": [
-                "Subject: Would you be a founding partner in something new?",
-                "Dear Ms Asante,",
-                "With great hope for what we could build,\nVikram Malhotra",
-                "We are launching a new mentorship programme pairing local professionals with school leavers from under-resourced backgrounds, and given your own journey from this community into your career, we can think of no one better to help us shape the programme as a founding partner from the very beginning."
+                "I received an email at 9:10 this morning claiming to be from HR, asking me to confirm my password through a link.",
+                "Dear IT Security,",
+                "Subject: Possible phishing email: please investigate",
+                "I did not click the link, but I forwarded the email as an attachment. Others may have received it, so please could you warn staff?\n\nThank you,\nPedro Matos"
             ],
             "correctOrder": [
-                0,
+                2,
                 1,
-                3,
-                2
+                0,
+                3
             ],
-            "hint": "An invitation to shape something new is signalled in the subject; the potential partner is addressed formally by name; the initiative's purpose and a personal, meaningful reason for the invitation are in the body; the closing conveys shared hope.",
-            "explanation": "Referencing the specific individual's 'own journey from this community' makes the invitation deeply personal rather than a generic ask to a list of local professionals. Positioning them as a 'founding partner... from the very beginning' offers genuine influence over the programme's shape, which is far more compelling than being asked to join something already fixed.",
-            "formalityLevel": "Formal"
+            "hint": "What you saw, what you did, what you need.",
+            "explanation": "Saying what you did not do (click the link) helps IT assess the risk. The request for a wider warning helps protect colleagues.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L173_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an eloquent email reflecting on and formally recording an organisation's founding story for its records.",
+            "prompt": "Piece together the email in which a nurse reports a near-miss to a ward manager.",
             "options": [
-                "As we approach our tenth anniversary, I think it is time we properly record how this all began - three of us meeting in a café with nothing but a shared frustration and a napkin sketch - before the details fade from memory and are lost to everyone who comes after us.",
-                "Subject: Putting our founding story down on paper at last",
-                "With pride in where we began,\nAgnieszka Nowakowska",
-                "Dear Founding Members,"
+                "Subject: Near-miss report: medication label, Ward 4, 12 June",
+                "I would like to report a near-miss on Ward 4 at about 6 pm on 12 June.",
+                "Two medications with similar labels were stored side by side, and I noticed the mistake before giving the wrong one to a patient. I suggest separating them and adding a warning sticker.\n\nYours sincerely,\nNurse Halima Halvorsen",
+                "Dear Ms Gutierrez,"
             ],
             "correctOrder": [
-                1,
-                3,
                 0,
+                3,
+                1,
                 2
             ],
-            "hint": "A milestone anniversary anchors the reflective subject; founding members are addressed together; a vivid, specific origin memory and the reason for preserving it are in the body; the closing conveys quiet pride.",
-            "explanation": "Recalling a vivid, specific detail - 'a café', 'a napkin sketch' - brings a founding story to life far more than a general summary of how the organisation started. Framing the record as something to preserve 'before the details fade' gives genuine urgency and purpose to what might otherwise seem like a purely sentimental exercise.",
+            "hint": "Report the event, the mistake avoided, and the improvement.",
+            "explanation": "A near-miss report is about learning. Being factual and suggesting a fix helps the team.",
             "formalityLevel": "Formal"
         },
         {
@@ -206,21 +206,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write a masterful email of full, genuine apology after a serious professional error that affected many people.",
+            "prompt": "Your company caused a client to lose a sale. Frame: Subject: Our apology and what we will do / Greeting: Dear Ms Whitfield, / Sign-off: Yours sincerely, Kieran Boyd, Director. Set out the body.",
             "options": [
-                "Subject: A full and unreserved apology",
-                "Dear All Affected Customers,",
-                "There is no way to soften this: our error caused genuine disruption to your plans, and while I cannot undo that, I can tell you that every person on our team understands how seriously we have let you down, and we are committed to earning back your confidence through our actions, not just our words.",
-                "With sincere and unreserved apologies,\nLeandro Silva"
+                "I would welcome a call to hear how else we can put this right.",
+                "We understand that this affected your busiest morning and probably cost you sales.",
+                "We have refunded this month's fee of £1,200, and we would like to offer a further three months' service free of charge.",
+                "I am very sorry that our system failure on 6 June prevented your customers from ordering for four hours."
             ],
             "correctOrder": [
-                0,
+                3,
                 1,
                 2,
-                3
+                0
             ],
-            "hint": "Full accountability is signalled directly in the subject; affected customers are addressed together; genuine, undiluted acknowledgement and a values-based commitment are in the body; the closing conveys sincere, unreserved regret.",
-            "explanation": "Refusing to soften the message ('there is no way to soften this') is a deliberate, powerful choice that signals total honesty rather than corporate deflection. Committing to earning back trust 'through our actions, not just our words' sets a standard the organisation can genuinely be held to going forward.",
+            "hint": "Own the failure, show you understand the impact, offer remedy, invite dialogue.",
+            "explanation": "An apology is stronger when it names the impact on the client's business. The remedy is concrete, and the call shows a willingness to listen.",
             "formalityLevel": "Formal"
         },
         {
@@ -228,21 +228,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an eloquent email extending reconciliation to an estranged family member after many years apart.",
+            "prompt": "Arrange the apology from a school to a family after a lost pupil belonging.",
             "options": [
-                "Dear Robert,",
-                "With hope, and no expectations,\nYoshiko Murakami",
-                "I have thought about reaching out many times over the years and always found a reason not to, but I don't want another year to pass without at least trying - I don't expect everything to be resolved in one email, but I would be grateful for the chance to talk, whenever you feel ready.",
-                "Subject: It's been too long, and I'd like that to change"
+                "We are sorry that Idris's coat was lost during the trip on Tuesday, and I know it was a gift.",
+                "Subject: Apology about Idris's missing coat",
+                "We have searched the coach and the museum, and we cannot find it. The school will replace it with a coat of the same type, and Ms Green will contact you to arrange this.\n\nYours sincerely,\nMilan Cole, Deputy Head",
+                "Dear Mr and Mrs Bakr,"
             ],
             "correctOrder": [
+                1,
                 3,
                 0,
-                2,
-                1
+                2
             ],
-            "hint": "A heartfelt, honest opener suits the sensitive subject; an estranged relative is addressed directly by name; genuine vulnerability and realistic, patient expectations are in the body; the closing conveys hope without pressure.",
-            "explanation": "Admitting honestly that you 'always found a reason not to' reach out shows real vulnerability rather than a polished, easy reconciliation attempt. Explicitly not expecting 'everything to be resolved in one email' removes pressure from the other person, making them far more likely to respond openly rather than defensively.",
+            "hint": "Empathy, effort, remedy, contact.",
+            "explanation": "Acknowledging that it was a gift shows understanding. Describing the search and the replacement shows the school took it seriously.",
             "formalityLevel": "Formal"
         },
         {
@@ -250,43 +250,43 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write a sophisticated email thoughtfully addressing a significant historical wrong within an organisation's past.",
+            "prompt": " The subject line, greeting and sign-off are already written (Subject: Apology and correction: your performance review / Dear Ayesha, / Kind regards, Oliver). Arrange the body.",
             "options": [
-                "Having reviewed our archives more closely, we have come to understand that several founding decisions excluded people who should have been welcomed from the start, and rather than leave this unspoken, we believe our organisation is stronger for acknowledging it honestly and committing to do better going forward.",
-                "Subject: Acknowledging a part of our history we have not adequately addressed",
-                "With humility and commitment to our future,\nBarnaby Reid",
-                "Dear Members,"
+                "I have corrected them, and the new review is attached; I'm sorry for the worry this caused.",
+                "I'd be glad to meet if you want to discuss it.",
+                "I used last year's targets by mistake, and the ratings were therefore unfair.",
+                "I owe you an apology for the performance review I sent on Friday."
             ],
             "correctOrder": [
-                1,
                 3,
+                2,
                 0,
-                2
+                1
             ],
-            "hint": "A thoughtful, honest reckoning is signalled in the subject; members are addressed together; genuine acknowledgement of a specific historical failing and a forward-looking commitment are in the body; the closing conveys humility.",
-            "explanation": "Being specific about what was found - decisions that 'excluded people who should have been welcomed' - shows genuine reckoning rather than a vague, deflecting statement. Framing the acknowledgement as making the organisation 'stronger', rather than simply admitting fault, models mature institutional accountability.",
-            "formalityLevel": "Formal"
+            "hint": "Apology first, explanation of the error, correction, offer to meet.",
+            "explanation": "The apology is direct and the cause is simple. A corrected document and an offer to talk repair the damage.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L175_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an eloquent email presenting a compelling long-term vision to an organisation's stakeholders.",
+            "prompt": "You are coordinating between a venue and a client over a price increase. The subject line, greeting and sign-off are already written (Subject: Venue price increase: options for your 20 September event / Dear Ms Danso, / Kind regards, Helena Skarsgård). Arrange the body.",
             "options": [
-                "Subject: Where I believe we could be in ten years",
-                "Imagine a version of this organisation where every child in the city has access to a musical instrument, regardless of their family's income - that is the vision I would like us to work towards over the next decade, starting with the modest but concrete step of doubling our instrument loan scheme this year.",
-                "Dear All,",
-                "With belief in what we can build,\nChioma Ezeudu"
+                "Could you tell me which option you prefer by Thursday?",
+                "I have asked whether the increase can be waived, and they may agree if we confirm by the end of this week.",
+                "The venue has told me that its hire fee will rise from £3,000 to £3,600 for 20 September because of a change in its terms.",
+                "Alternatively, we could move the event to 27 September, when the old price still applies."
             ],
             "correctOrder": [
-                0,
                 2,
                 1,
-                3
+                3,
+                0
             ],
-            "hint": "A bold, inspiring vision is signalled in the subject; the whole audience is addressed together; a vivid future image and a modest, concrete first step are in the body; the closing conveys genuine belief.",
-            "explanation": "Painting a vivid, specific picture of the future - 'every child... access to a musical instrument' - is far more inspiring than an abstract mission statement. Pairing the bold long-term vision with one 'modest but concrete' first step makes the ambition feel achievable rather than merely aspirational.",
+            "hint": "Explain the change, what you have done, the options, and the deadline.",
+            "explanation": "Telling the client you have already asked for a waiver shows you are protecting their interests. Presenting two options with a deadline enables a decision.",
             "formalityLevel": "Formal"
         },
         {
@@ -294,34 +294,34 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write a sophisticated email navigating a significant strategic disagreement with genuine wisdom and tact.",
+            "prompt": " The subject line, greeting and sign-off are already written (Subject: Agreeing a shared date for the new website / Dear Ms Jha and Mr Imhoff, / Best wishes, Mirela Pop). Arrange the body.",
             "options": [
-                "With respect for your thinking,\nStellan Bergqvist",
-                "Subject: A different way of looking at our strategy",
-                "I respect your case for expanding quickly, and I don't think either of us is wrong, but I wonder if the real question isn't speed versus caution at all - it's whether we have the right people in place to grow well, which I think is something we could actually agree on quite easily.",
-                "Dear Daniel,"
+                "I suggest that we launch a basic site on 1 October and add the campaign pages by 15 October.",
+                "Both your teams need the new website live.",
+                "But for different reasons: Marketing for the campaign on 15 October and Sales for the trade show on 1 October.",
+                "Would this work for both of you, or do you see a better way?"
             ],
             "correctOrder": [
                 1,
-                3,
                 2,
-                0
+                0,
+                3
             ],
-            "hint": "A wise, reframing tone is signalled in the subject; the colleague is addressed by first name; genuine respect and a sophisticated reframing of the real underlying question are in the body; the closing conveys real respect.",
-            "explanation": "Explicitly stating 'I don't think either of us is wrong' before disagreeing reflects genuine wisdom rather than simply defending a position. Reframing the entire debate around a deeper, shared question - readiness rather than speed - is a sophisticated move that can reveal common ground where none seemed to exist.",
-            "formalityLevel": "Formal"
+            "hint": "Show that you understand both needs before proposing.",
+            "explanation": "Naming each team's need shows fairness. A phased solution can satisfy both, and the open question invites improvement.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L175_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write a masterful email securing genuine buy-in from a team for a bold, uncertain new direction.",
+            "prompt": " The subject line, greeting and sign-off are already written (Subject: Repairs at Elm Court: proposal on behalf of residents / Dear Mr Hargrove, / Yours sincerely, Bernadette Ibe). Arrange the body.",
             "options": [
-                "Dear Team,",
-                "With trust in this team,\nImogen Ashcroft",
-                "Subject: A bold idea, and why I believe it's worth the risk",
-                "I won't pretend this new direction is risk-free, but having weighed it carefully, I believe the greater risk is staying exactly where we are while the market moves on without us, so I would like to ask for your trust as we take this step together, with every voice welcome along the way."
+                "We understand that the work is costly, so we propose that the roof is done first, by the end of September, and the door in January.",
+                "We would welcome a meeting to discuss this.",
+                "I am writing on behalf of eleven residents of Elm Court about the outstanding repairs to the roof and the entrance door.",
+                "In return, we would agree not to make separate complaints in the meantime."
             ],
             "correctOrder": [
                 2,
@@ -329,8 +329,8 @@
                 3,
                 1
             ],
-            "hint": "Honest acknowledgement of risk is signalled in the subject; the whole team is addressed together; genuine honesty, a reframed comparison, and an invitation to participate are in the body; the closing conveys genuine trust.",
-            "explanation": "Refusing to pretend the new direction is 'risk-free' builds far more genuine trust with a team than false confidence. Reframing the comparison - the risk of standing still versus the risk of change - is a persuasive, sophisticated argument that shifts how the team perceives the decision entirely.",
+            "hint": "Say who you represent, propose a phased plan, offer something in exchange.",
+            "explanation": "A united voice is more powerful. Showing understanding of costs and offering something in return makes the proposal more likely to be accepted.",
             "formalityLevel": "Formal"
         },
         {
@@ -338,21 +338,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write a thoughtful email discussing estate and legacy wishes with family, with warmth and clarity.",
+            "prompt": "Piece together the email requesting a copy of your personal data from a company.",
             "options": [
-                "Dear Sarah And Tom,",
-                "I want to talk through my wishes with you now, while I am perfectly well, so that nothing is ever left unclear or difficult for you to work out later - this isn't about anything being wrong, just about me wanting to spare you both any uncertainty down the line.",
-                "With all my love,\nDad",
-                "Subject: Some thoughts I'd like to share with you both, while I'm well"
+                "Subject: Subject access request: personal data held about Rosa Delgado",
+                "Dear Data Protection Officer,",
+                "Please provide a copy of all personal data you hold about me, including account records and customer service notes. My customer number is 10488, and I understand you should reply within one month.\n\nYours faithfully,\nRosa Delgado",
+                "I am writing to make a subject access request under data protection law."
             ],
             "correctOrder": [
-                3,
                 0,
                 1,
+                3,
                 2
             ],
-            "hint": "A reassuring, proactive tone opens the sensitive subject; children are addressed together by name; explicit reassurance and the loving reason for raising it now are in the body; the closing conveys warm, parental love.",
-            "explanation": "Explicitly stating this is happening 'while I am perfectly well' immediately reassures the family this isn't triggered by worrying news. Framing the purpose as sparing the children 'any uncertainty down the line' reflects genuine parental care, turning a potentially difficult topic into an act of love.",
+            "hint": "Purpose, precise request, identifier, legal timeline.",
+            "explanation": "A clear reference to the type of request lets the officer handle it correctly. The customer number lets them find you quickly.",
             "formalityLevel": "Formal"
         },
         {
@@ -360,21 +360,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an eloquent email proposing to establish a memorial scholarship in someone's honour.",
+            "prompt": "Set out the email requesting removal of an outdated photo from a website.",
             "options": [
-                "With love, in margaret's memory,\nThe Family",
-                "Subject: Honouring margaret's memory in a way she would have loved",
-                "Dear Family And Friends,",
-                "Rather than flowers, we would like to establish a small annual scholarship in margaret's name for a local student pursuing nursing, the career she loved so deeply for forty years, and we would be grateful for any contributions, however small, towards making this a lasting tribute."
+                "Dear Webmaster,",
+                "A photograph of me taken at your 2018 conference is still shown on your 'Past events' page, at the URL below.",
+                "Subject: Request to remove a photograph of me from your website",
+                "I no longer wish it to be published, and I would be grateful if you could remove it within 14 days and confirm by email.\n\nYours faithfully,\nAmelia Hart"
             ],
             "correctOrder": [
-                1,
                 2,
-                3,
-                0
+                0,
+                1,
+                3
             ],
-            "hint": "A meaningful tribute idea is signalled in the subject; family and friends are addressed warmly together; a specific, personally meaningful cause and an invitation to contribute are in the body; the closing honours the memory.",
-            "explanation": "Connecting the scholarship directly to something the person 'loved so deeply' makes the tribute feel personal and fitting, rather than a generic memorial gesture. Explicitly welcoming contributions 'however small' invites genuine participation from everyone, not just those who can give significantly.",
+            "hint": "Identify the item exactly and state your request and deadline.",
+            "explanation": "Giving the URL and a clear deadline makes it easy to act. Asking for confirmation lets you check that it has been done.",
             "formalityLevel": "Formal"
         },
         {
@@ -382,21 +382,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write a sophisticated email to a local historical society offering to preserve significant family history records.",
+            "prompt": "Structure the email requesting information from a public body under freedom of information rules.",
             "options": [
-                "Among my late grandfather's belongings, we found a complete set of letters he wrote home while serving locally during the war, and rather than let them sit unseen in a drawer, we would like to offer them to your archive, where future researchers might find them genuinely valuable.",
-                "Dear Archives Team,",
-                "Yours faithfully,\nRafael Dos Santos",
-                "Subject: Offering to donate my grandfather's wartime letters to your archive"
+                "Dear FOI Officer,",
+                "Subject: Freedom of Information request: council spending on street lighting",
+                "Under the Freedom of Information Act, I would like to request information about the council's spending on street lighting.",
+                "Please provide the annual totals for 2021 to 2024, and, if possible, a breakdown by ward. A spreadsheet would be most helpful.\n\nYours faithfully,\nMalcolm Sanders"
             ],
             "correctOrder": [
-                3,
                 1,
                 0,
-                2
+                2,
+                3
             ],
-            "hint": "A meaningful historical offer is signalled in the subject; the archives team is addressed by role, not name; the discovery and the reasoning for donating are in the body; the closing must match this unnamed greeting.",
-            "explanation": "Describing the letters specifically - 'a complete set', 'written home... during the war' - gives the archive team enough detail to judge their genuine historical value. Framing the donation around not letting them 'sit unseen in a drawer' reflects real understanding of an archive's purpose: preserving history for others, not just the family.",
+            "hint": "Cite the legal basis, be precise about what and how you want it.",
+            "explanation": "Specific years and format prevent a vague reply. The legal reference tells the officer which procedure applies.",
             "formalityLevel": "Formal"
         },
         {
@@ -404,56 +404,34 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an eloquent email negotiating a principled compromise on a matter of genuine ethical significance.",
+            "prompt": "You are angry about a colleague's public criticism. Arrange the email you would actually send after you have calmed down.",
             "options": [
-                "I understand your concern that delaying the launch costs us momentum, and I also believe we cannot launch without proper accessibility testing, so rather than choosing between these, I would like to propose a phased launch to a small group first, which protects both our timeline and our standards.",
-                "Subject: A compromise I believe honours both our concerns",
-                "Dear Rebecca,",
-                "With respect for what matters to both of us,\nAdaeze Ikechukwu"
+                "I wanted to talk to you about a comment you made in yesterday's meeting about my report.",
+                "It felt like criticism in front of the team, and I would find it easier to discuss any concerns with you privately first. Could we have a coffee this week to talk about it?\n\nThanks,\nEllie",
+                "Subject: About yesterday's meeting",
+                "Hi Niall,"
             ],
             "correctOrder": [
-                1,
                 2,
+                3,
                 0,
-                3
+                1
             ],
-            "hint": "A principled compromise is signalled in the subject; the colleague is addressed by first name; both genuine concerns are named fairly and a creative middle path is in the body; the closing conveys mutual respect.",
-            "explanation": "Naming both concerns as genuinely valid, rather than dismissing either, models the kind of principled negotiation that doesn't sacrifice ethics for expediency or vice versa. Proposing a specific creative solution - a phased launch - shows that seemingly opposed priorities can sometimes both be honoured with the right idea.",
-            "formalityLevel": "Formal"
+            "hint": "Describe what happened and how it affected you, then propose a private conversation.",
+            "explanation": "Stating your experience (it felt like criticism) is less confrontational than accusing. Suggesting a private talk gives him a chance to respond.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L177_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write a sophisticated email respectfully but firmly declining to compromise on a matter of core principle.",
+            "prompt": "Put together the email in which you ask a friend to understand why you were upset.",
             "options": [
-                "Dear Mr Halvorsen,",
-                "I have genuinely tried to find a middle ground on this, but removing the independent safety review would compromise something I am not willing to compromise on, even if it means we cannot proceed with this particular partnership - I hope you can respect where this boundary comes from.",
-                "Subject: Why I cannot move on this particular point",
-                "With respect, but without compromise on this point,\nPiotr Zielinski"
-            ],
-            "correctOrder": [
-                2,
-                0,
-                1,
-                3
-            ],
-            "hint": "A firm but respectful stance is signalled in the subject; the business contact is addressed formally by name; genuine effort at compromise and a clear, principled boundary are in the body; the closing conveys firm respect.",
-            "explanation": "Stating you have 'genuinely tried to find a middle ground' shows this refusal isn't stubbornness but a considered limit reached after real effort. Being willing to lose the partnership 'even if' necessary demonstrates the principle is authentic, not merely a negotiating tactic.",
-            "formalityLevel": "Formal"
-        },
-        {
-            "id": "WRT_WRITINGEMAIL_L177_Q3",
-            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
-            "subtype": "writingEmail",
-            "interactionType": "writing",
-            "prompt": "Write a masterful email finding unexpected common ground in a seemingly intractable disagreement.",
-            "options": [
-                "Subject: I think we might want the same thing, actually",
-                "Having read your objection to our proposal carefully, I realised we both want the same outcome - a safe, thriving high street - we have simply been arguing about different means to get there, so I would love the chance to show you how our revised plan might actually deliver what you've been asking for all along.",
-                "With hope for a shared way forward,\nHannah Okafor",
-                "Dear Councillor Ashworth,"
+                "Subject: Thinking about Saturday",
+                "I've been thinking about what happened on Saturday, and I wanted to write because I don't want it to hang between us.",
+                "I was hurt when you cancelled at the last minute, since I'd been looking forward to it for weeks. I'd like to hear how things were for you, too, and I hope we can meet soon.\n\nWith love,\nOluwaseun",
+                "Hi Nkechi,"
             ],
             "correctOrder": [
                 0,
@@ -461,8 +439,30 @@
                 1,
                 2
             ],
-            "hint": "An unexpected, unifying insight is signalled in the subject; the councillor is addressed formally by role and name; a generous reading of the disagreement and a specific, hopeful proposal are in the body; the closing conveys shared hope.",
-            "explanation": "Identifying the shared underlying goal - 'a safe, thriving high street' - beneath what looked like total opposition is a genuinely sophisticated diplomatic insight. Framing your revised plan as delivering 'what you've been asking for all along' invites the other party to see your proposal as fulfilling their own goals, not defeating them.",
+            "hint": "Vulnerability, explanation, invitation.",
+            "explanation": "Starting with the wish to preserve the friendship makes the hurt easier to hear. Inviting her side shows that you are not only blaming her.",
+            "formalityLevel": "Informal"
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L177_Q3",
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+            "subtype": "writingEmail",
+            "interactionType": "writing",
+            "prompt": "Assemble the email from a manager who has to say goodbye to a team member who is being made redundant.",
+            "options": [
+                "Dear Gareth,",
+                "Subject: Your position at Brightwater",
+                "Your role will end on 31 August, as the department is closing, and this is not a reflection on your performance. HR will send details of your notice pay and support, and I am happy to provide a reference.\n\nYours sincerely,\nDiane Farrow",
+                "Following our meeting this morning, I want to confirm in writing what we discussed and to thank you for your work."
+            ],
+            "correctOrder": [
+                1,
+                0,
+                3,
+                2
+            ],
+            "hint": "Confirm the facts kindly and clearly, reassure about reasons, describe support.",
+            "explanation": "Difficult news should have been given in person, and this written confirmation gives clear facts. Stating that it is not about performance and offering a reference show respect.",
             "formalityLevel": "Formal"
         },
         {
@@ -470,21 +470,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an eloquent email offering hard-won wisdom to a younger person facing a significant life decision.",
+            "prompt": "Lay out the summary email to a director who has not read the full 40-page report.",
             "options": [
-                "With belief in you,\nDimitri Papadopoulos",
-                "I faced a very similar decision myself twenty years ago, and what I wish someone had told me then is that there is rarely a perfect choice, only a right-enough one made with care - whatever you decide, trust that you are thinking it through far more carefully than most people ever do.",
-                "Subject: Some thoughts, for whatever they're worth",
-                "Dear James,"
+                "Subject: Summary: customer churn review, action needed on pricing",
+                "I recommend a 6-month price freeze for small accounts, which we estimate would cost £180,000 and save £420,000 in lost revenue.\n\nThe full report is attached; page 5 has the analysis.\n\nKind regards,\nHarvey Munro",
+                "The three main findings are: churn is highest among small accounts, satisfaction has not fallen, and competitors have held prices.",
+                "Dear Ms Alvarez,\n\nOur review found that customer churn rose to 14% this year, and most departures follow the price rise in March."
             ],
             "correctOrder": [
-                2,
+                0,
                 3,
-                1,
-                0
+                2,
+                1
             ],
-            "hint": "A humble, generous offer of wisdom opens the subject; a younger person is addressed warmly by first name; personal experience and a genuinely useful piece of perspective are in the body; the closing conveys real belief in them.",
-            "explanation": "Sharing a specific personal parallel - 'a very similar decision myself twenty years ago' - gives the advice real, earned authority rather than generic reassurance. Offering the genuinely useful insight that there is 'no perfect choice, only a right-enough one' is the kind of hard-won wisdom that only comes from real experience.",
+            "hint": "Conclusion, key findings, recommendation with numbers, pointer to detail.",
+            "explanation": "A summary should let a director decide without reading the report. The numbers justify the recommendation, and the page reference helps if she wants proof.",
             "formalityLevel": "Formal"
         },
         {
@@ -492,65 +492,65 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write a sophisticated email as a mentor gracefully stepping back to let a mentee find their own way.",
+            "prompt": " The subject line, greeting and sign-off are already written (Subject: Summary of the Halden contract thread / Hi Shona, / Best, Wesley). Arrange the body.",
             "options": [
-                "With great pride in how far you've come,\nWendy Achterberg",
-                "Watching how confidently you handled that negotiation last week without asking me first told me something important: you no longer need me checking your work, so while I will always be here if you want to talk things through, I think it's time I step back and let you trust your own judgement fully.",
-                "Dear Sophie,",
-                "Subject: I think you're ready to fly without me"
+                "Legal has said this is possible if we add a notice period of 60 days.",
+                "They accept our price, but they asked for a penalty-free exit after month 6.",
+                "The decision needed from you is whether to agree, and Legal needs your answer by Friday.",
+                "Here is a short summary so you don't have to read all 32 messages. Halden wants a 12-month term, and we prefer 24."
             ],
             "correctOrder": [
                 3,
-                2,
                 1,
-                0
+                0,
+                2
             ],
-            "hint": "A proud, generous tone opens the subject; the mentee is addressed warmly by first name; a specific piece of evidence and a graceful, supportive step back are in the body; the closing conveys genuine pride.",
-            "explanation": "Citing a specific recent example - handling a negotiation 'without asking me first' - gives concrete evidence for the decision, rather than a vague sense that it's 'time'. Explicitly remaining available 'if you want to talk things through' ensures the mentee doesn't feel abandoned, just trusted.",
-            "formalityLevel": "Formal"
+            "hint": "What the thread is about, the positions, the decision needed.",
+            "explanation": "A summary that ends with the decision needed helps the new person act. It also saves time.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L178_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an eloquent email of gratitude to someone who shaped your life's direction many years ago.",
+            "prompt": " The subject line, greeting and sign-off are already written (Subject: Workshop summary: three changes from 1 September / Dear all, / Best wishes, Noah). Arrange the body.",
             "options": [
-                "You probably won't remember telling a nervous fifteen-year-old that her science project showed 'real scientific thinking', but that single sentence is the reason I became a researcher, and I wanted you to know, twenty years later, just how much those words have shaped my entire life.",
-                "Dear Mr Fenwick,",
-                "With deep and lasting gratitude,\nSamuel Otieno",
-                "Subject: Something I should have told you years ago"
+                "Thank you to everyone who came to the workshop on Tuesday.",
+                "We agreed three changes: team meetings will be shortened to thirty minutes, project updates will be sent every Friday, and all requests will go through one shared inbox.",
+                "Here is a summary for those who could not attend.",
+                "These begin on 1 September, and the slides are attached if you would like more detail."
             ],
             "correctOrder": [
-                3,
-                1,
                 0,
-                2
+                2,
+                1,
+                3
             ],
-            "hint": "A humble, specific memory opens the subject; a former teacher is addressed formally by name; a vivid remembered moment and its life-changing impact are in the body; the closing conveys deep, lasting gratitude.",
-            "explanation": "Recalling the exact words spoken - 'real scientific thinking' - decades later shows just how profoundly a single sentence can shape a life, which is far more powerful than a general thank-you. Naming the precise timeframe, 'a nervous fifteen-year-old... twenty years later', gives the gratitude real, moving weight.",
-            "formalityLevel": "Formal"
+            "hint": "Thanks, the outcomes, when they begin, where the details are.",
+            "explanation": "People who missed the event want the results and the effective date. The slides are optional.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L179_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write a sophisticated email tactfully suggesting a founder bring in additional leadership support as the organisation outgrows what one person can manage alone.",
+            "prompt": "You need to ask a busy expert for a favour and tell them exactly what you're asking. Structure the email.",
             "options": [
-                "Dear Marcus,",
-                "Subject: Something I've been thinking about, with only respect",
-                "With enormous respect for what you've built,\nClementine Ross",
-                "Watching you carry this organisation from an idea to where it is today has been remarkable, which is exactly why I want to gently raise whether bringing in an operations director might free you to focus on the vision only you can provide, rather than the day-to-day details pulling you in every direction."
+                "I would need your comments by 15 July, but I entirely understand if this is not possible.\n\nYours sincerely,\nBongani Khumalo",
+                "Dear Professor Sallis,\n\nI am a doctoral student at Leeds, and I have read your work on coastal erosion with admiration.",
+                "Would you be willing to read a 600-word abstract of my paper and tell me whether the argument is clear? It would take about fifteen minutes.",
+                "Subject: Request: reading a 600-word abstract by 15 July"
             ],
             "correctOrder": [
-                1,
-                0,
                 3,
-                2
+                1,
+                2,
+                0
             ],
-            "hint": "A deeply respectful, careful tone opens the subject; the founder is addressed by first name; genuine admiration and a tactful, framing-as-a-gift suggestion are in the body; the closing conveys enormous respect.",
-            "explanation": "Leading with genuine, specific admiration for what the founder has 'carried... from an idea' protects their dignity before raising a delicate suggestion. Framing the proposal as freeing them for 'the vision only you can provide' turns a potentially sensitive suggestion into a genuine compliment about their unique value.",
+            "hint": "Define the request precisely in size and time, and make refusal easy.",
+            "explanation": "Telling an expert how much work you are asking for makes it easier to agree. Explicitly allowing them to decline is courteous.",
             "formalityLevel": "Formal"
         },
         {
@@ -558,34 +558,12 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an eloquent email addressing a significant, delicate disagreement between long-time friends who are also business partners.",
+            "prompt": "Build an email that asks for a discount conditional on a large order.",
             "options": [
-                "Subject: I don't want this to cost us our friendship",
-                "Dear Tom,",
-                "With lasting friendship, above all else,\nNnamdi Ezealor",
-                "We have been friends for twenty years and business partners for five, and I never want the second thing to damage the first, so before we discuss the budget disagreement any further, I want you to know that our friendship matters to me far more than being right about this one decision."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3,
-                2
-            ],
-            "hint": "A heartfelt priority is stated directly in the subject; a close friend is addressed by first name; the dual history and an explicit reassurance of priorities are in the body; the closing affirms friendship above all.",
-            "explanation": "Explicitly naming both relationships - 'friends for twenty years and business partners for five' - acknowledges the real complexity of the situation honestly. Stating clearly that the friendship 'matters... far more than being right' sets the emotional tone for the whole conversation before the actual disagreement is even discussed.",
-            "formalityLevel": "Formal"
-        },
-        {
-            "id": "WRT_WRITINGEMAIL_L179_Q3",
-            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
-            "subtype": "writingEmail",
-            "interactionType": "writing",
-            "prompt": "Write a masterful email of profound thanks marking the end of a life-changing mentorship.",
-            "options": [
-                "With a gratitude too deep for words,\nBeatriz Monteiro",
-                "Subject: How do you thank someone for changing your life?",
-                "Dear Dr Asante,",
-                "I have started this email several times, because no words feel adequate for someone who took a chance on a struggling student and, through years of patience, helped her become a doctor herself - so I will simply say that every patient I ever help will, in some small way, be helped by you too."
+                "If you can offer 8% off the standard price, we will place the order this month and would consider a regular supply agreement.\n\nCould you let us know your response by 10 July?\n\nYours sincerely,\nRachel Beckford",
+                "Subject: Discount for an order of 2,000 units",
+                "Dear Mr Sahin,",
+                "We are considering placing an order for 2,000 units of the ergonomic chair, which is larger than our usual order."
             ],
             "correctOrder": [
                 1,
@@ -593,30 +571,52 @@
                 3,
                 0
             ],
-            "hint": "A profound, humble opener suits the subject; the mentor is addressed formally by name and title; genuine difficulty finding words and a beautiful, lasting tribute are in the body; the closing conveys immeasurable gratitude.",
-            "explanation": "Admitting to having 'started this email several times' conveys just how significant the gratitude is more powerfully than any single polished sentence could. The closing image - every future patient being helped 'by you too' - is a genuinely eloquent way of expressing how one person's investment can ripple outward for a lifetime.",
+            "hint": "Volume, conditional request, deadline.",
+            "explanation": "Conditional requests should say exactly what you would do in return. A deadline tells the supplier when the offer ends.",
             "formalityLevel": "Formal"
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L179_Q3",
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+            "subtype": "writingEmail",
+            "interactionType": "writing",
+            "prompt": "Arrange the email in which a volunteer asks a charity for extra responsibility.",
+            "options": [
+                "Dear Ms Farouk,",
+                "I could coordinate the new volunteers, and I have experience in training from my previous job. Would you be open to discussing this?\n\nKind regards,\nJoseph Ekong",
+                "I have enjoyed volunteering on Saturdays for the past year, and I would like to do more if it would be helpful.",
+                "Subject: Would I be able to take on more responsibility?"
+            ],
+            "correctOrder": [
+                3,
+                0,
+                2,
+                1
+            ],
+            "hint": "Show commitment, offer a specific role, invite a conversation.",
+            "explanation": "Offering a specific role and evidence of skill makes it easier for the charity to say yes. The question at the end invites discussion.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L180_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an eloquent email reflecting on lessons learned from a significant failure, shared generously to help others.",
+            "prompt": "A customer's complaint is partly unfair. The subject line, greeting and sign-off are already written (Subject: Re: Your complaint about order 88201 / Dear Mr Owens, / Yours sincerely, Kirsten Lowe). Arrange the body.",
             "options": [
-                "Three years ago we lost nearly everything by expanding too fast without the systems to support it, and while it was painful to live through, I would rather share exactly what went wrong than let another founder learn the same lesson the hard way we did.",
-                "With hope this saves someone else the pain we felt,\nCallum Ferguson",
-                "Dear Fellow Founders,",
-                "Subject: What our biggest failure taught us - shared in case it helps you"
+                "So we are unable to refund the item itself; I have attached our terms in case they are useful.",
+                "However, the damage to the box was reported to us after 30 days.",
+                "Thank you for writing, and I am sorry that you were disappointed with the delivery.",
+                "You are right that the courier arrived late, and we have refunded the delivery fee."
             ],
             "correctOrder": [
-                3,
                 2,
-                0,
-                1
+                3,
+                1,
+                0
             ],
-            "hint": "Vulnerable honesty about failure opens the subject; fellow founders are addressed together; genuine acknowledgement of pain and a generous motivation for sharing are in the body; the closing conveys hope for others.",
-            "explanation": "Being specific and honest about the failure - 'lost nearly everything by expanding too fast' - rather than a vague, sanitised lesson makes the reflection genuinely useful to other founders. Framing the motivation as sparing others 'the same lesson the hard way' turns a painful personal story into a genuinely generous act.",
+            "hint": "Agree with what is fair, decline what is not, and explain.",
+            "explanation": "Acknowledging the valid part of the complaint makes the refusal more credible. Sharing the terms makes it transparent.",
             "formalityLevel": "Formal"
         },
         {
@@ -624,43 +624,43 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write a sophisticated email proposing a bold, unconventional solution to a long-standing, seemingly unsolvable community problem.",
+            "prompt": "Lay out the email in which a team leader asks a struggling employee how to help.",
             "options": [
-                "Subject: An unconventional idea for our twenty-year parking problem",
-                "With optimism for a fresh approach,\nEsther Adeyinka",
-                "Dear Council Committee,",
-                "Every conventional solution to our parking shortage has been tried and has failed over the past twenty years, so I would like to propose something genuinely different: a resident-run car-sharing scheme that could reduce the number of cars on our street by a third within two years, if we are willing to try something new."
+                "Dear Trina,",
+                "Subject: Checking in",
+                "I wanted to check in, as I have noticed that the last two deadlines have been harder than usual.",
+                "I would like to understand what is getting in the way and how I can help. Would you be open to a chat on Thursday, or would you prefer to reply by email first?\n\nKind regards,\nJasper"
             ],
             "correctOrder": [
+                1,
                 0,
                 2,
-                3,
-                1
+                3
             ],
-            "hint": "Bold, unconventional thinking is signalled in the subject; the committee is addressed together; acknowledgement of past failed attempts and a genuinely creative proposal are in the body; the closing conveys fresh optimism.",
-            "explanation": "Establishing that 'every conventional solution... has failed' justifies why an unconventional idea deserves serious consideration rather than automatic dismissal. Providing a specific, measurable target - reducing cars 'by a third within two years' - gives a bold idea the concrete substance needed to be taken seriously.",
-            "formalityLevel": "Formal"
+            "hint": "Show care, state the observation, and offer two ways to respond.",
+            "explanation": "Describing what you have noticed avoids blame. Offering options gives the employee control.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L180_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write a masterful email marking a significant personal and professional turning point, looking to the future with wisdom and hope.",
+            "prompt": "Piece together the email that accepts a job offer while negotiating the start date.",
             "options": [
-                "Dear Friends And Colleagues,",
-                "With gratitude for the past and hope for what's ahead,\nMateus Pereira",
-                "After twenty years building someone else's vision, I am finally starting my own practice - terrified, grateful, and more ready than I have ever been, carrying every lesson these years have taught me into whatever comes next.",
-                "Subject: A new chapter, written with everything I've learned so far"
+                "Dear Ms Waweru,",
+                "I would like to ask whether the start date could be 1 September instead of 18 August, as I need to give my current employer four weeks' notice.\n\nI will sign and return the contract as soon as we have agreed the date.\n\nYours sincerely,\nPeter Ochieng",
+                "Subject: Re: Offer of employment: Programme Coordinator",
+                "Thank you very much for the offer, which I am delighted to accept."
             ],
             "correctOrder": [
-                3,
-                0,
                 2,
+                0,
+                3,
                 1
             ],
-            "hint": "A milestone turning point is signalled in the subject; friends and colleagues are addressed warmly together; honest emotion and a hopeful sense of readiness are in the body; the closing balances gratitude and hope.",
-            "explanation": "Naming three honest, contrasting emotions together - 'terrified, grateful, and more ready than I have ever been' - captures the genuine complexity of a major life turning point far better than simple excitement alone would. Explicitly carrying forward 'every lesson these years have taught me' ties the ending gracefully to a hopeful new beginning.",
+            "hint": "Accept, request one change with a reason, state your next step.",
+            "explanation": "Accepting first shows good faith before you make a request. The reason is legitimate, and the promise to sign shows commitment.",
             "formalityLevel": "Formal"
         }
     ]

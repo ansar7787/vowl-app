@@ -5,572 +5,602 @@
     "quests": [
         {
             "id": "WRT_SHORTANSWERWRITING_L1_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Reply as you would in a real conversation. Each word should appear in your answer.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Describe what you do every morning before leaving your home.",
+            "prompt": "A new classmate smiles and asks who you are. Introduce yourself in one sentence.",
             "options": [
-                "wake",
-                "eat",
-                "ready"
+                "hello",
+                "from",
+                "name"
             ],
-            "sampleAnswer": "I wake up early, eat a healthy breakfast, and get myself ready before leaving the house.",
-            "hint": "Put your three actions in the order they really happen and link them with commas and 'and'.",
-            "explanation": "Simple present tense describes habits and routines. Listing actions with 'and' creates a natural compound sentence.",
+            "sampleAnswer": "Hello, my name is Rita and I am from Brazil.",
+            "hint": "Begin with a greeting, then use the fixed pattern 'my name is' before your name.",
+            "explanation": "'My name is...' and 'I am from...' are the two most common introduction patterns, and 'and' joins them into one smooth sentence.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "from",
+                "hello",
+                "name"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L1_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a description in one sentence that a stranger could picture. Work in each of the three words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about a family member and something helpful they do at home.",
+            "prompt": "You are at the lost-and-found desk. Describe your bag so the clerk can find it.",
             "options": [
-                "mother",
-                "help",
-                "dinner"
+                "color",
+                "small",
+                "bag"
             ],
-            "sampleAnswer": "My mother helps the whole family by cooking a warm dinner every single evening.",
-            "hint": "Name the person first, then say what they do and how often, using 'by + -ing' to explain the method.",
-            "explanation": "The structure 'helps by + gerund' explains the method of helping and is more precise than 'helps with'.",
+            "sampleAnswer": "My bag is small, and the color is dark green.",
+            "hint": "Name the object first. After 'is', put the describing word, then use 'and' for a second detail.",
+            "explanation": "'Is' connects a noun to its description. Giving two details, such as size and color, makes a description useful and not just correct.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "bag",
+                "color",
+                "small"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L1_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Explain it in a single sentence so the other person understands. Each word should appear in your answer.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Describe how you keep your bedroom neat and organized.",
+            "prompt": "Your friend cannot find her keys. Tell her where they are.",
             "options": [
-                "clean",
-                "room",
-                "tidy"
+                "table",
+                "keys",
+                "on"
             ],
-            "sampleAnswer": "I clean my room every weekend to keep it tidy and comfortable for the whole week.",
-            "hint": "Say what you clean and when, then add 'to keep it...' to give your reason.",
-            "explanation": "Adding a purpose clause like 'to keep it tidy' explains why you do something, which is a small but important step beyond a basic sentence.",
+            "sampleAnswer": "Your keys are on the table.",
+            "hint": "Keys is plural, so choose 'are'. End with the place.",
+            "explanation": "A place word like 'on' tells the listener exactly where to look, and the verb must agree with the noun: one key is, two keys are.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "keys",
+                "on",
+                "table"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L2_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Give a clear, direct answer in one clear sentence. Include the three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Describe how you buy food and groceries for your home.",
+            "prompt": "A friend asks when your weekday starts. Give the time.",
             "options": [
-                "buy",
-                "store",
-                "list"
+                "at",
+                "get up",
+                "weekdays"
             ],
-            "sampleAnswer": "I write a shopping list before I go to the store so that I buy only what I need.",
-            "hint": "Put the planning step before the shopping step, and use 'so that' to connect your reason.",
-            "explanation": "'So that' introduces a purpose clause. It is more formal and precise than just using 'so'.",
+            "sampleAnswer": "I get up at six thirty on weekdays.",
+            "hint": "Follow the pattern: I + action + at + time.",
+            "explanation": "Use 'at' with clock times and 'on' with days. The simple present ('I get up') describes something that repeats.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "at",
+                "get up",
+                "weekdays"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L2_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Reply as you would in a real conversation in a single sentence. Use the three words meaningfully.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Explain what you do at home when you feel hungry.",
+            "prompt": "Someone asks who you usually have lunch with.",
             "options": [
-                "cook",
-                "meal",
-                "hungry"
+                "usually",
+                "with",
+                "lunch"
             ],
-            "sampleAnswer": "When I feel hungry in the afternoon, I cook a simple meal using whatever ingredients I have.",
-            "hint": "Start with the trigger ('When I feel...') before describing what you do next.",
-            "explanation": "'When' clauses express a condition or trigger. They are the foundation of cause-and-effect sentence writing.",
+            "sampleAnswer": "I usually have lunch with two friends from my class.",
+            "hint": "Frequency words like 'usually' go before the main verb, not after it.",
+            "explanation": "The frequency adverb sits between the subject and the verb: 'I usually have', not 'I have usually'.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "lunch",
+                "usually",
+                "with"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L2_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Answer in one clear sentence, adding one useful detail. Work in each of the three words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about a quiet activity you do to relax after a busy day.",
+            "prompt": "A visitor asks how you get to work or school. Say how, and how long it takes.",
             "options": [
-                "read",
-                "book",
-                "relax"
+                "bus",
+                "minutes",
+                "take"
             ],
-            "sampleAnswer": "After a long day, I like to read a good book and relax completely before going to sleep.",
-            "hint": "Open with a time phrase, then join two actions together with 'and'.",
-            "explanation": "The time phrase 'After a long day' gives context - it shows why the relaxing activity is needed.",
+            "sampleAnswer": "I take the bus, and it takes about twenty minutes.",
+            "hint": "Give two facts: the transport first, then the time. 'It takes' is the natural way to give a duration.",
+            "explanation": "'Take' works for both the vehicle (take the bus) and the duration (it takes twenty minutes), so one verb covers two useful ideas.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "bus",
+                "minutes",
+                "take"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L3_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Paint a clear, concrete picture in one clear sentence. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Describe your study habits and how you prepare for school lessons.",
+            "prompt": "A friend is meeting your neighbor at the station. Describe how he or she looks.",
             "options": [
-                "study",
-                "class",
-                "notes"
+                "tall",
+                "glasses",
+                "hair"
             ],
-            "sampleAnswer": "I study every evening and take detailed notes in each class to help me remember the lessons.",
-            "hint": "Mention two separate study habits joined with 'and', then close with a 'to help me...' reason.",
-            "explanation": "Purpose infinitives like 'to help me remember' explain why you do something - a useful habit for clear writing.",
+            "sampleAnswer": "She is tall, has short dark hair, and wears glasses.",
+            "hint": "Use 'is' for height, 'has' for hair, and 'wears' for things people put on.",
+            "explanation": "Each verb fits a different kind of information: be for general description, have for features, wear for clothes and accessories.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "glasses",
+                "hair",
+                "tall"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L3_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Reply as you would in a real conversation in a single sentence. Your answer should contain all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Explain what you do to stay dry when it rains outside.",
+            "prompt": "A new teammate asks what your friend does for a living.",
             "options": [
-                "rain",
-                "umbrella",
-                "wet"
+                "works",
+                "company",
+                "as"
             ],
-            "sampleAnswer": "Whenever it rains, I carry an umbrella with me so I do not get wet on the way to school.",
-            "hint": "Start with 'Whenever' to show this happens every time, then explain what you do and why.",
-            "explanation": "Negative purpose clauses ('so I do not get wet') show you are thinking about consequences - a mature writing skill.",
+            "sampleAnswer": "My friend Omar works as a driver for a delivery company.",
+            "hint": "Name the person, then 'works as' plus the job. Do not forget the -s on 'works'.",
+            "explanation": "Third-person singular verbs need -s. 'Work as' names the job, while 'work for' names the employer.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "as",
+                "company",
+                "works"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L3_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Describe it clearly in one clear sentence. Include the three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Describe how you travel to school or work in the morning.",
+            "prompt": "Your friend cannot see you in a busy train station. Tell her what you are wearing.",
             "options": [
-                "bus",
-                "school",
-                "morning"
+                "black",
+                "jacket",
+                "wearing"
             ],
-            "sampleAnswer": "Every morning, I take the bus to school, which is a reliable and affordable way to commute.",
-            "hint": "Cover when, how, and where you travel, then add a short opinion about the journey.",
-            "explanation": "A non-defining relative clause ('which is a reliable way') adds an extra opinion without starting a new sentence.",
+            "sampleAnswer": "I'm wearing a black jacket, and I'm standing next to the coffee stand.",
+            "hint": "Use 'I'm wearing' for clothes right now. Put the color before the clothing word.",
+            "explanation": "The present continuous describes what is true at this moment, and adjectives such as colors come before the noun: a black jacket.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "black",
+                "jacket",
+                "wearing"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L4_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Answer in a single sentence, adding one useful detail. Each word should appear in your answer.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Describe a fun afternoon you have spent with your friends outside.",
+            "prompt": "A friend wants to visit and asks what is near your home. Name one place.",
             "options": [
-                "play",
+                "there",
                 "park",
-                "fun"
+                "near"
             ],
-            "sampleAnswer": "My friends and I spend most Saturday afternoons playing in the park and having a great deal of fun.",
-            "hint": "Say who you were with and what you did, then describe the fun with a stronger phrase than just 'fun'.",
-            "explanation": "'A great deal of' is a more formal alternative to 'a lot of' and adds polish to descriptive writing.",
+            "sampleAnswer": "There is a small park near my home.",
+            "hint": "Use 'there is' with one thing, then say where it is.",
+            "explanation": "'There is' introduces something for the first time, so it fits any answer to 'What is near...?'",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "near",
+                "park",
+                "there"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L4_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Paint a clear, concrete picture in one clear sentence. Work in each of the three words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about a food you really enjoy and explain specifically why you like it.",
+            "prompt": "A new housemate asks what furniture is in the living room. Mention two kinds.",
             "options": [
-                "like",
-                "pizza",
-                "delicious"
+                "chairs",
+                "there",
+                "sofa"
             ],
-            "sampleAnswer": "I really like pizza because it is absolutely delicious and can be customized in endless ways.",
-            "hint": "Name the food, then use 'because' to give two reasons joined with 'and'.",
-            "explanation": "Intensifiers ('absolutely', 'extremely', 'incredibly') strengthen adjectives and add expressive force to writing.",
+            "sampleAnswer": "There is a sofa, and there are two chairs by the window.",
+            "hint": "Use 'there is' for one thing and 'there are' for more than one. Both can appear in one sentence.",
+            "explanation": "The verb after 'there' agrees with what comes next: there is a sofa, there are two chairs.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "chairs",
+                "sofa",
+                "there"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L4_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a natural reply in one clear sentence. Include the three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Describe what you usually do in the evening before going to sleep.",
+            "prompt": "A visitor asks if your street has a supermarket. Say it does not, and offer another option.",
             "options": [
-                "watch",
-                "show",
-                "bedtime"
+                "but",
+                "supermarket",
+                "isn't"
             ],
-            "sampleAnswer": "Before my bedtime, I usually watch one short show on television to help me unwind after the day.",
-            "hint": "Say what you watch and when, then add a 'to help me...' reason at the end.",
-            "explanation": "'To help me + verb' is a natural purpose infinitive structure - it shows the reason behind your action.",
+            "sampleAnswer": "There isn't a supermarket on my street, but there is one near the station.",
+            "hint": "Start with the negative, then use 'but' to give a helpful alternative.",
+            "explanation": "A negative answer plus 'but' lets you be honest and still helpful, which is what a good reply to a visitor needs.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "but",
+                "isn't",
+                "supermarket"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L5_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Reply as you would in a real conversation in a single sentence. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Describe the relationship you have with a pet and what it enjoys.",
+            "prompt": "A coach asks what you can do well. Give one skill you have and one you don't have yet.",
             "options": [
-                "dog",
-                "walk",
-                "happy"
+                "yet",
+                "can",
+                "but"
             ],
-            "sampleAnswer": "My dog always looks incredibly happy and energetic when I take him for a long walk outside.",
-            "hint": "Describe the dog's feeling first, then use 'when' to link it to what causes it.",
-            "explanation": "'Looks + adjective' describes appearance or emotional state. Adding 'incredibly' boosts the intensity.",
+            "sampleAnswer": "I can cook simple meals, but I can't bake bread yet.",
+            "hint": "Use 'can' with a base verb. Put 'yet' at the end of the negative part.",
+            "explanation": "'Can't ... yet' shows that a skill is still developing, so it sounds more positive than just 'I can't'.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "but",
+                "can",
+                "yet"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L5_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Reply in two short sentences as you would in real life. Work in each of the three words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about a tradition your family follows on weekends or holidays.",
+            "prompt": "A stranger on a train asks if he can sit next to you. Say yes.",
             "options": [
-                "visit",
-                "family",
-                "weekend"
+                "sure",
+                "free",
+                "sit"
             ],
-            "sampleAnswer": "Every weekend, our whole family visits our grandparents, which has become a treasured tradition.",
-            "hint": "Say who is involved and when this happens, then add a comment on why it matters to you.",
-            "explanation": "Relative clauses beginning with 'which has become' add a sense of time and emotional significance.",
+            "sampleAnswer": "Sure, please sit down. This seat is free.",
+            "hint": "Answer the question first, then add a short comment about the seat.",
+            "explanation": "A quick answer word followed by one short detail sounds friendly and natural in everyday speech.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "free",
+                "sit",
+                "sure"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L5_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Reply in one sentence as you would in real life. Include all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Describe a team sport you play and what you enjoy most about it.",
+            "prompt": "A friend invites you to the cinema tonight, but you are busy. Reply politely and suggest another time.",
             "options": [
-                "play",
-                "football",
-                "team"
+                "tomorrow",
+                "sorry",
+                "can't"
             ],
-            "sampleAnswer": "I play football with my school team every Friday and love the excitement of competing together.",
-            "hint": "Name the sport, your team, and when you play, then say what you enjoy about it.",
-            "explanation": "'Love the excitement of + gerund' ('competing together') adds personal feeling - this engages the reader.",
+            "sampleAnswer": "Sorry, I can't come tonight, but I'm free tomorrow.",
+            "hint": "Say sorry first, give the refusal, then offer a new time with 'but'.",
+            "explanation": "A polite refusal has three parts: apology, refusal, alternative. 'But' connects the refusal to the new offer.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "can't",
+                "sorry",
+                "tomorrow"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L6_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Say what you think in one sentence, and support it. Include the three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Describe how you dress differently depending on the season or weather.",
+            "prompt": "Which day of the week do you like best? Give a short reason.",
             "options": [
-                "cold",
-                "winter",
-                "coat"
+                "like",
+                "because",
+                "best"
             ],
-            "sampleAnswer": "During the cold winter months, I always wear a thick wool coat to stay warm when I go outside.",
-            "hint": "Name the season and weather first, then explain your clothing choice with 'to stay warm'.",
-            "explanation": "'To stay warm' is a concise purpose infinitive. Adding it upgrades a factual sentence to an explanatory one.",
+            "sampleAnswer": "I like Friday best because the work week is almost over.",
+            "hint": "Answer with the day first. 'Because' introduces your reason.",
+            "explanation": "'Because' answers 'why?' inside the same sentence, so the listener gets your choice and your reason together.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "because",
+                "best",
+                "like"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L6_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "State your opinion and give a reason in a single sentence. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Describe how your household grows or prepares its own food at home.",
+            "prompt": "A friend loves rainy days. Tell her one thing you don't like about them.",
             "options": [
-                "grow",
-                "garden",
-                "fresh"
+                "because",
+                "wet",
+                "don't"
             ],
-            "sampleAnswer": "We grow fresh tomatoes and herbs in our garden and use them to prepare homemade meals.",
-            "hint": "Say what you grow and where, then connect it to how you use it with 'and'.",
-            "explanation": "Connecting a source ('grow vegetables') and its use ('prepare meals') shows a complete and purposeful action.",
+            "sampleAnswer": "I don't like rainy days because my shoes always get wet.",
+            "hint": "Use 'don't like' plus a noun, then give a specific reason.",
+            "explanation": "A specific reason ('my shoes get wet') is more convincing than a general one ('it's bad').",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "because",
+                "don't",
+                "wet"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L6_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Say why in one clear sentence, with the reason stated clearly. Work in each of the three words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Describe an important daily hygiene or health habit you always follow.",
+            "prompt": "A friend asks why you keep going to the same café, gym, or barber.",
             "options": [
-                "brush",
-                "teeth",
-                "morning"
+                "staff",
+                "because",
+                "friendly"
             ],
-            "sampleAnswer": "Every morning, I brush my teeth carefully before eating breakfast to protect them from decay.",
-            "hint": "Name the habit and when you do it, then explain the purpose with 'to protect'.",
-            "explanation": "Purpose infinitives are more informative than plain verbs - they answer the question 'Why do you do this?'",
+            "sampleAnswer": "I keep going there because the staff are friendly.",
+            "hint": "'Keep going' shows a habit. Give one concrete reason after 'because'.",
+            "explanation": "Staff is a group word and takes 'are' in most English. A concrete reason makes the answer sound sincere.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "because",
+                "friendly",
+                "staff"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L7_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a brief account in one sentence. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how you greet someone you know when you first see them.",
+            "prompt": "A colleague asks how your weekend was. Say one place you went and one thing you did there.",
             "options": [
-                "meet",
-                "friend",
-                "smile"
+                "walked",
+                "weekend",
+                "went"
             ],
-            "sampleAnswer": "Whenever I meet a friend I have not seen for a while, I always greet them with a warm smile.",
-            "hint": "Use 'Whenever' to show this always happens, then describe the greeting itself.",
-            "explanation": "'Whenever' is stronger than 'when' because it stresses that the action happens every time, without exception.",
+            "sampleAnswer": "Last weekend I went to the lake and walked around it twice.",
+            "hint": "Start with a time word, then two past verbs joined by 'and'. 'Go' becomes 'went'.",
+            "explanation": "Irregular verbs (go, went) must be memorized, while regular verbs simply add -ed (walk, walked).",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "walked",
+                "weekend",
+                "went"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L7_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a brief account in one sentence. Each word should appear in your answer.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Explain why drinking enough water every day is essential for your health.",
+            "prompt": "Tell a friend what you bought the last time you went shopping and how you felt about the price.",
             "options": [
-                "drink",
-                "water",
-                "healthy"
+                "last",
+                "bought",
+                "cost"
             ],
-            "sampleAnswer": "I make sure to drink at least eight glasses of water daily because it keeps the body healthy and energized.",
-            "hint": "State the amount you drink, then give two separate benefits joined with 'and'.",
-            "explanation": "Using two benefits ('healthy and energized') creates a balanced sentence and shows broader understanding.",
+            "sampleAnswer": "Last week I bought a new jacket, and it cost less than I expected.",
+            "hint": "'Buy' becomes 'bought'. Add your feeling about the price after 'and'.",
+            "explanation": "Past-tense verbs place the story firmly in the past. 'Cost' does not change in the past, which is one more irregular form to notice.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "bought",
+                "cost",
+                "last"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L7_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Share the experience in one sentence. Include the three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how a good teacher explains lessons to help students understand.",
+            "prompt": "Tell a friend one interesting thing you saw on your way to work or school today.",
             "options": [
-                "teacher",
-                "explain",
-                "understand"
+                "saw",
+                "street",
+                "way"
             ],
-            "sampleAnswer": "My teacher explains every lesson with great clarity and uses real examples to help all students understand.",
-            "hint": "Describe what the teacher does, then explain who benefits using 'to help + someone + verb'.",
-            "explanation": "'To help all students understand' is a purpose infinitive with an object. It is a highly natural English structure.",
+            "sampleAnswer": "I saw a street musician playing a violin on my way to work.",
+            "hint": "Use 'saw', the past of 'see', and finish with 'on my way to...'.",
+            "explanation": "'On my way to' is a natural phrase for anything you notice during a journey.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "saw",
+                "street",
+                "way"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L8_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Describe it clearly in a single sentence. Use all three words naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about celebrating a birthday for someone in your family.",
+            "prompt": "A friend wants to know what the weather was like yesterday where you live.",
             "options": [
-                "celebrate",
-                "birthday",
-                "gift"
+                "yesterday",
+                "was",
+                "cloudy"
             ],
-            "sampleAnswer": "We celebrate my sister's birthday every year with a home-cooked meal and a thoughtful personal gift.",
-            "hint": "Say who you celebrate and how, then mention the gift with 'and a...'.",
-            "explanation": "'With + noun phrase' ('with a home-cooked meal') describes the manner - a flexible and widely used structure.",
+            "sampleAnswer": "It was cloudy yesterday, but it wasn't cold.",
+            "hint": "Use 'it was' for weather and add a contrast with 'but'.",
+            "explanation": "'Was' and 'were' are the past of 'am/is/are'. Weather descriptions always use 'it was'.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "cloudy",
+                "was",
+                "yesterday"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L8_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a brief account in one clear sentence. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Describe a creative hobby or art activity that you enjoy doing at home.",
+            "prompt": "Tell a friend how your first day at a new school, job, or class was.",
             "options": [
-                "paint",
-                "picture",
-                "colors"
+                "nervous",
+                "was",
+                "first"
             ],
-            "sampleAnswer": "In my free time, I love to paint colorful pictures using a wide variety of colors to express my mood.",
-            "hint": "Name the hobby and what you create, then explain what it means to you with 'to express'.",
-            "explanation": "'To express my mood' is a purpose clause that adds a personal and creative dimension to a simple description.",
+            "sampleAnswer": "My first day was exciting, but I was nervous in the morning.",
+            "hint": "Use 'was' for the day and again for your feeling. 'But' shows the change.",
+            "explanation": "'Was' can describe events (the day was exciting) and feelings (I was nervous), and 'but' shows how the feeling changed.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "first",
+                "nervous",
+                "was"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L8_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Reply in one sentence as you would in real life. Include all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about your favourite type of music and why it matters to you.",
+            "prompt": "Your friend says she called you at eight last night and you did not answer. Tell her where you were.",
             "options": [
-                "listen",
-                "music",
-                "enjoy"
+                "sorry",
+                "was",
+                "phone"
             ],
-            "sampleAnswer": "Every evening, I listen to soft instrumental music because I genuinely enjoy how it calms my mind.",
-            "hint": "Say when you listen and to what kind of music, then explain the feeling it gives you.",
-            "explanation": "'How it calms my mind' is a noun clause acting as the object of 'enjoy' - a natural structure worth practicing early.",
+            "sampleAnswer": "Sorry, I was at the gym, and my phone was in my locker.",
+            "hint": "Apologize first, then use 'was' for both your location and the phone's location.",
+            "explanation": "'I was at + place' answers 'Where were you?', and a second 'was' explains why the call was missed.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "phone",
+                "sorry",
+                "was"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L9_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Say what will happen in one clear sentence. Use the three words meaningfully.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Describe how you prepare a simple lunch for yourself on a regular day.",
+            "prompt": "A friend asks what you are going to do tomorrow morning. Give one plan.",
             "options": [
-                "prepare",
-                "lunch",
-                "simple"
+                "going to",
+                "morning",
+                "tomorrow"
             ],
-            "sampleAnswer": "On most weekdays, I prepare a simple but satisfying lunch using fresh vegetables and leftover ingredients.",
-            "hint": "Say when you do this, then describe the meal with two adjectives joined by 'but'.",
-            "explanation": "Using two contrasting adjectives ('simple but satisfying') adds nuance and avoids one-dimensional descriptions.",
+            "sampleAnswer": "Tomorrow morning I'm going to clean the kitchen and do the laundry.",
+            "hint": "Use 'am going to' plus a base verb for something you have already decided.",
+            "explanation": "'Going to' is the natural choice for plans that already exist in your mind.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "going to",
+                "morning",
+                "tomorrow"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L9_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write the message in one clear sentence in a polite tone. Make sure all three words fit the meaning.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Describe the neighborhood where you live and the people around you.",
+            "prompt": "Invite a friend to do something together next Saturday. Write it as a question.",
             "options": [
-                "live",
-                "neighbors",
-                "friendly"
+                "together",
+                "want",
+                "Saturday"
             ],
-            "sampleAnswer": "I live in a quiet, tree-lined area where the neighbors are incredibly friendly and always willing to help.",
-            "hint": "Describe where you live, then use 'where' to add a detail about the people there.",
-            "explanation": "A relative clause ('where the neighbors are') adds information about a place - it is more elegant than two short sentences.",
+            "sampleAnswer": "Do you want to go hiking together on Saturday?",
+            "hint": "Start with 'Do you want to' and add the activity and the day.",
+            "explanation": "'Do you want to...?' is a friendly, low-pressure way to invite someone.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "Saturday",
+                "together",
+                "want"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L9_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Describe the plan in one clear sentence. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Describe how you organize your time to complete both homework and studying.",
+            "prompt": "Dark clouds are moving in. Tell a friend what you think will happen and what to do.",
             "options": [
-                "finish",
-                "homework",
-                "study"
+                "will",
+                "umbrella",
+                "rain"
             ],
-            "sampleAnswer": "I always finish my homework first and then set aside focused time to study for upcoming lessons.",
-            "hint": "Explain your order of tasks using 'first' and 'and then'.",
-            "explanation": "'Set aside time' is a phrasal verb that sounds natural and shows intentionality - more precise than 'I study later'.",
+            "sampleAnswer": "It will rain soon, so take an umbrella.",
+            "hint": "Use 'will' for a prediction based on what you can see, then give a short instruction.",
+            "explanation": "'Will' expresses a prediction, and 'so' plus a command turns the prediction into useful advice.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "rain",
+                "umbrella",
+                "will"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L10_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Reply as you would in a real conversation in a single sentence. Work in each of the three words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Explain why leaving home early helps you manage a busy morning commute.",
+            "prompt": "Say which day of your week is the busiest and why.",
             "options": [
-                "leave",
-                "early",
-                "traffic"
+                "classes",
+                "because",
+                "busiest"
             ],
-            "sampleAnswer": "I leave home early every morning to avoid the heavy traffic that builds up after eight o'clock.",
-            "hint": "State what you do and use 'to avoid' for your reason, then add a detail about the traffic.",
-            "explanation": "A defining relative clause ('that builds up after eight') adds a specific factual detail that justifies your action.",
+            "sampleAnswer": "Tuesday is my busiest day because I have classes in the morning and work in the evening.",
+            "hint": "Choose the day, then give the reason with 'because'. The reason can have two parts.",
+            "explanation": "The superlative 'busiest' compares one day with all the others, and 'because' explains the comparison.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "because",
+                "busiest",
+                "classes"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L10_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Share the experience in one clear sentence. Include all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why being kind and helpful to friends is something you value.",
+            "prompt": "Tell a friend something you finished yesterday that you are happy about.",
             "options": [
-                "help",
-                "friend",
-                "kind"
+                "yesterday",
+                "proud",
+                "finished"
             ],
-            "sampleAnswer": "I always try to help my friends when they are struggling because being kind costs nothing but means everything.",
-            "hint": "Explain why kindness matters with 'because', then end with a contrast using 'but'.",
-            "explanation": "Contrasting pairs ('costs nothing but means everything') create a memorable and emphatic sentence - a rhetorical skill.",
+            "sampleAnswer": "Yesterday I finished the report I was working on, and I'm proud of it.",
+            "hint": "Use a past verb for the finished action, then switch to the present for how you feel now.",
+            "explanation": "Notice the change of tense: the action is finished (past), but the feeling still exists now (present).",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "finished",
+                "proud",
+                "yesterday"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L10_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Say what will happen in a single sentence. Use the three words meaningfully.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about your favourite time of year and what you most enjoy about it.",
+            "prompt": "Say how you will rest once this week is over.",
             "options": [
-                "love",
-                "summer",
-                "warm"
+                "after",
+                "rest",
+                "will"
             ],
-            "sampleAnswer": "I love summer above all other seasons because the warm weather creates the perfect conditions for outdoor activities.",
-            "hint": "Name the season, say how much you like it, then explain the reason with a full 'because' clause.",
-            "explanation": "A full reason clause ('because the warm weather creates perfect conditions') is more informative than just 'because it is nice'.",
+            "sampleAnswer": "After this week, I will rest by staying home and watching old films.",
+            "hint": "Begin with 'After' plus a time, then describe your plan with 'will'.",
+            "explanation": "Starting with 'After...' puts the future plan in order. 'By + -ing' explains how you will do something.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "after",
+                "rest",
+                "will"
             ]
         }
     ]

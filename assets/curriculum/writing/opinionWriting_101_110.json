@@ -1,607 +1,579 @@
 {
-    "gameType": "opinionWriting",
-    "batchIndex": 11,
-    "levels": "101-110",
-    "quests": [
-        {
-            "id": "WRT_OPINIONWRITING_L101_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "University education should be provided free of charge to all qualifying students.",
-            "options": [
-                "Universally free university education is enormously expensive and requires major tax increases to fund.",
-                "Free university primarily benefits graduates who go on to earn more, representing a middle-class subsidy.",
-                "Free higher education removes the financial barrier that prevents talented lower-income students from progressing.",
-                "A highly educated workforce generates economic returns that far outweigh the cost of public investment."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about the access and economic returns case for free university (Pros) and the funding and equity concerns (Cons).",
-            "explanation": "Free university removes financial barriers and generates economic returns through a more educated workforce (Pros), but it is enormously costly and primarily benefits higher-earning graduates, making it a regressive use of public funds (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L101_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Free higher education produces a more innovative, adaptable, and skilled national economy.",
-            "options": [
-                "Countries with free university systems still face significant skills shortages in key technical sectors.",
-                "Vocational training and apprenticeships produce more economically relevant skills for many sectors.",
-                "Nations with well-educated, debt-free workforces demonstrate stronger long-term economic performance.",
-                "Students who graduate without debt are more willing to take entrepreneurial risks and drive innovation."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Consider the economic innovation case for free university (Pros) and the skills mismatch and alternative concerns (Cons).",
-            "explanation": "Debt-free graduates take greater entrepreneurial risks and educated workforces show stronger economic performance (Pros), but free university doesn't automatically address skills shortages, and vocational routes may better serve many economic needs (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L101_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Student loans are a fair and sustainable mechanism for funding higher education.",
-            "options": [
-                "The psychological burden of large student debt negatively affects graduates' mental health and life decisions.",
-                "Income-contingent loans ensure graduates pay only when they earn enough, protecting lower-income students.",
-                "High debt levels deter students from lower-income families even when effective repayment protection exists.",
-                "Loan systems spread the cost of education to those who benefit most from the financial returns of a degree."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about loan systems as a fair funding mechanism (Pros) and the psychological and deterrence concerns (Cons).",
-            "explanation": "Income-contingent loans protect lower earners and direct costs to those who benefit from graduate premiums (Pros), but debt burden affects mental health and deters lower-income students even when practical repayment protections exist (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L102_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Continuous assessment should replace traditional end-of-year examinations in schools.",
-            "options": [
-                "Continuous assessment reduces the high-stakes pressure of a single exam determining a student's entire grade.",
-                "Continuous assessment is vulnerable to inconsistency, teacher bias, and grade inflation between schools.",
-                "Some students perform best under the clear, standardised conditions of a final examination.",
-                "Ongoing assessment provides richer, more accurate data about student progress throughout the year."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about the case for replacing exams with continuous assessment (Pros) and the fairness and accuracy concerns (Cons).",
-            "explanation": "Continuous assessment reduces single-event pressure and provides richer progress data (Pros), but vulnerability to teacher bias and grade inflation raises fairness concerns, and some students genuinely perform best in final exam conditions (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L102_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Traditional examinations provide a fair and consistent measure of student attainment.",
-            "options": [
-                "Standardised exams are marked anonymously, reducing the scope for conscious or unconscious bias.",
-                "Exam performance is strongly correlated with socioeconomic background and privately funded preparation.",
-                "A single high-stakes test fails to capture creativity, collaboration, and the full range of student ability.",
-                "Examinations test recall, synthesis, and performance under pressure - skills valuable in adult life."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Consider the fairness and skills case for traditional examinations (Pros) and the socioeconomic and breadth concerns (Cons).",
-            "explanation": "Anonymous standardised marking reduces bias and exams test valuable pressure-performance skills (Pros), but results strongly correlate with socioeconomic background and private tutoring, and exams miss creativity and collaborative ability (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L102_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "A mixed model combining coursework and examinations best serves all students.",
-            "options": [
-                "Managing coursework and examinations simultaneously increases workload stress for students and teachers.",
-                "Combining formats allows different types of learner to demonstrate their abilities in appropriate ways.",
-                "Mixed models can be gamed by students who focus effort strategically on whichever component weighs more.",
-                "Mixed models reduce the extreme risk of a student's entire future depending on one bad exam day."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about mixed assessment models as an optimal solution (Pros) and the practical and gaming concerns (Cons).",
-            "explanation": "Mixed models serve different learner types and reduce single-event risk (Pros), but simultaneous demands increase stress, and strategic gaming of assessment weightings undermines the model's integrity (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L103_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Independent fee-paying schools should be abolished to improve educational equality.",
-            "options": [
-                "Private schools produce excellent academic outcomes and abolishing them denies parental choice.",
-                "Fee-paying schools concentrate educational resources and social advantage among the already privileged.",
-                "Parents have the legal and moral right to spend their money on education as they choose.",
-                "Abolishing private schools would force investment into the state sector, benefiting the majority."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about the equality case for abolishing private schools (Pros) and the rights and outcome concerns (Cons).",
-            "explanation": "Private schools concentrate advantage and their abolition would redirect investment to state education (Pros), but they produce strong academic outcomes and abolition infringes parental freedom to choose and fund education (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L103_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Private schools reinforce class privilege and undermine social cohesion.",
-            "options": [
-                "Private schools instil discipline, leadership, and excellence that benefit their alumni and the wider economy.",
-                "Fee-paying schools network alumni into positions of disproportionate economic and political power.",
-                "Segregation of education by income creates separate social worlds that damage national cohesion.",
-                "Social segregation exists in state education too through housing and selective school systems."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Consider the class privilege and social cohesion arguments against private schools (Pros) and the counterarguments (Cons).",
-            "explanation": "Private school alumni networks perpetuate disproportionate power, and income-based education segregation damages cohesion (Pros), but private schools develop valuable qualities, and social segregation persists in state education through housing and selection (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L103_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Integrating private school resources into the state system would benefit all children.",
-            "options": [
-                "Compulsorily integrating private schools would be legally complex and face sustained judicial challenge.",
-                "The abrupt removal of school choice would cause political backlash and undermine reform credibility.",
-                "Former private school facilities, teachers, and expertise could dramatically raise standards state-wide.",
-                "Equal access to high-quality educational facilities would significantly reduce opportunity inequality."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about the integration of private school resources (Pros) and the legal and political challenges (Cons).",
-            "explanation": "Integrating private facilities and expertise could dramatically raise state school standards (Pros), but compulsory integration faces serious legal obstacles and politically damaging backlash that would undermine the credibility of reform (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L104_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Young people should be encouraged to take a gap year before starting university.",
-            "options": [
-                "Gap years are prohibitively expensive for students from lower-income backgrounds.",
-                "A structured gap year develops maturity, self-awareness, and clarity about future educational direction.",
-                "Students who take gap years often perform better academically through greater focus and motivation.",
-                "Universities prefer direct entry students and some defer students lose their place or momentum entirely."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about the personal development case for gap years (Pros) and the equity and practical concerns (Cons).",
-            "explanation": "Gap years build maturity and improve academic performance through greater focus (Pros), but high costs make them accessible mainly to wealthier students, and universities sometimes prefer or require direct entry (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L104_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Gap years provide valuable work and volunteer experience that enhances graduate employability.",
-            "options": [
-                "Many gap year programmes are commercially exploitative and deliver little genuine personal development.",
-                "Structured work or volunteering in gap years develops professional skills that classroom study cannot.",
-                "Academic skills atrophy during prolonged study breaks, making the return to higher education harder.",
-                "Employers value the initiative, independence, and global awareness that gap year experience demonstrates."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Consider the employability benefits of gap years (Pros) and the quality and academic disruption concerns (Cons).",
-            "explanation": "Gap years build professional skills and signal initiative to employers (Pros), but many programmes are commercially exploitative, and academic skills can deteriorate significantly during extended breaks from study (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L104_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Gap years are most valuable when they involve structured learning or social purpose.",
-            "options": [
-                "Volunteering, working, or studying abroad during a gap year builds genuine cross-cultural competence.",
-                "A purposefully planned gap year produces clearer thinking about future study and career paths.",
-                "Gap year activities vary enormously in quality, and most benefit the privileged more than the disadvantaged.",
-                "Universities could better serve students by incorporating real-world learning within degree programmes."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about the value of structured gap years (Pros) and the equity and curricular alternative concerns (Cons).",
-            "explanation": "Structured gap years build cross-cultural competence and career clarity (Pros), but quality varies enormously and the benefits accrue disproportionately to those who can afford meaningful experiences (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L105_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "All children should learn computer coding from primary school onwards.",
-            "options": [
-                "Teacher shortages in computer science make consistent, high-quality coding teaching extremely difficult.",
-                "Digital literacy skills, not coding per se, may be more broadly valuable for most future workers.",
-                "Coding education equips children with foundational digital skills essential in a technology-driven economy.",
-                "Learning to code develops logical thinking, problem-solving, and computational reasoning across subjects."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about the skills case for universal coding education (Pros) and the teacher capacity and relevance concerns (Cons).",
-            "explanation": "Coding builds essential digital skills and develops logical reasoning (Pros), but teacher shortages make quality delivery difficult, and broad digital literacy may be more universally valuable than coding specifically (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L105_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Early coding education builds creative problem-solving skills valuable across all disciplines.",
-            "options": [
-                "Coding is a rapidly evolving field where skills taught today may be obsolete within a decade.",
-                "Programming challenges develop structured thinking and iterative problem-solving applicable anywhere.",
-                "AI tools are increasingly able to generate code, reducing the long-term value of manual coding skills.",
-                "Students who can build and create with technology approach other subjects with greater analytical confidence."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Consider the broader problem-solving case for coding education (Pros) and the obsolescence and AI concerns (Cons).",
-            "explanation": "Coding builds transferable analytical and creative problem-solving skills (Pros), but the field evolves rapidly and AI-generated code reduces the long-term value of manual coding as a core curriculum subject (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L105_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Coding education must be matched with strong ethics and critical digital literacy teaching.",
-            "options": [
-                "Teaching children to build technology without teaching them to evaluate its impact is irresponsible.",
-                "Ethics education in computing is hard to deliver effectively given teachers' limited philosophical training.",
-                "Children benefit most from learning the how of coding before the philosophical why of its applications.",
-                "Critical digital thinking prepares children to be responsible, reflective technology creators and users."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about coding ethics as a necessary complement to technical coding education (Pros) and the delivery challenges (Cons).",
-            "explanation": "Coding without ethics education risks creating powerful but irresponsible technology builders (Pros), but delivering meaningful ethics teaching is difficult given teacher training limitations, and technical foundations typically precede applied ethical thinking (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L106_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Standardised national tests are an accurate and fair measure of student ability.",
-            "options": [
-                "Common standardised tests allow objective comparison of student performance across all schools.",
-                "Standardised tests measure a very narrow range of skills, excluding creativity, resilience, and collaboration.",
-                "Test results are strongly predicted by socioeconomic background, measuring advantage as much as ability.",
-                "Standardised assessments ensure accountability and flag underperforming schools for targeted intervention."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about the fairness and accountability case for standardised testing (Pros) and the breadth and equity concerns (Cons).",
-            "explanation": "Standardised tests enable objective comparison and school accountability (Pros), but they measure a narrow range of skills and results are heavily predicted by socioeconomic advantage rather than pure ability (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L106_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Standardised testing narrows the curriculum and reduces the quality of education.",
-            "options": [
-                "Teaching to the test leads schools to prioritise tested subjects at the expense of broader learning.",
-                "Without standardised measures, it becomes impossible to reliably identify and close performance gaps.",
-                "Excessive focus on assessment preparation creates anxiety and reduces intrinsic motivation to learn.",
-                "Well-designed tests can assess a broad range of skills if curriculum and assessment are aligned properly."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Consider the curriculum narrowing argument against standardised testing (Pros) and the accountability counter (Cons).",
-            "explanation": "Test-focused teaching narrows curriculum and damages intrinsic motivation (Pros), but without standardised measures identifying and closing performance gaps becomes very difficult (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L106_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Alternative assessment methods can measure student achievement more accurately than standardised tests.",
-            "options": [
-                "Alternative assessments introduce inconsistency and teacher bias that disadvantages some students.",
-                "Portfolio-based and project assessments capture creativity, depth of thinking, and complex problem-solving.",
-                "School-based assessment is harder to aggregate into the national data needed to drive systemic improvement.",
-                "Teacher-assessed work over time provides a richer and more contextualised picture of each student."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about alternative assessments as superior measures of student achievement (Pros) and the comparability and bias concerns (Cons).",
-            "explanation": "Portfolio and project-based assessments capture creativity and complex thinking (Pros), but they introduce teacher bias and inconsistency, and are difficult to aggregate into the national data needed for systemic educational improvement (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L107_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The school day should be extended until six in the evening.",
-            "options": [
-                "Extended school hours allow time for both academic study and meaningful extracurricular enrichment.",
-                "Longer school days reduce the childcare burden on working parents and enable greater economic participation.",
-                "Extended hours increase teacher workload beyond what is currently sustainable in the profession.",
-                "Very long school days produce diminishing academic returns and may harm student wellbeing."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about the case for extended school days (Pros) and the teacher and student wellbeing concerns (Cons).",
-            "explanation": "Extended days allow academic and enrichment time and reduce childcare burdens (Pros), but unsustainable teacher workload and diminishing returns on long days raise serious wellbeing and quality concerns (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L107_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Longer school days would improve outcomes for students from disadvantaged backgrounds.",
-            "options": [
-                "Disadvantaged students benefit most from extended structured learning that supplements limited home support.",
-                "Longer mandatory days can feel punitive and disengaging to students who are already struggling.",
-                "More time at school reduces inequality in access to academic support, facilities, and enrichment activities.",
-                "The quality of additional time matters more than its quantity - more poor teaching helps no one."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Consider the equity case for extended school days (Pros) and the quality and engagement concerns (Cons).",
-            "explanation": "Extended days provide additional structured support for disadvantaged students (Pros), but mandatory longer hours risk disengagement for struggling students, and additional time must be high-quality to deliver any benefit (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L107_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Schools should use additional time to focus on wellbeing and enrichment rather than academics.",
-            "options": [
-                "Time after core hours could develop sport, arts, and social-emotional skills that exams do not assess.",
-                "Extending school specifically for non-academic purposes may not justify the significant staffing and resource costs.",
-                "Enrichment activities in extended school time provide a safer and more productive alternative to unsupervised afternoons.",
-                "Children also need unstructured free time to develop creativity, independence, and self-directed play."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about using extended school time for wellbeing and enrichment (Pros) and the cost and free time concerns (Cons).",
-            "explanation": "Extended time for enrichment and wellbeing develops skills exams miss and provides safe, productive afternoons (Pros), but significant staffing costs may not be justified, and children need unstructured time for creativity and independence (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L108_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Teachers should receive salaries comparable to those of medical doctors.",
-            "options": [
-                "Pay parity with medicine would attract highly qualified graduates into a profession crucial to society.",
-                "Properly compensated teachers invest more deeply in professional development and classroom quality.",
-                "Teacher salary parity with doctors would require unsustainable levels of public funding.",
-                "Salary alone does not address the workload, bureaucracy, and lack of professional autonomy that drives teachers out."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about pay parity with doctors as a teacher retention and quality strategy (Pros) and the cost and systemic concerns (Cons).",
-            "explanation": "Doctor-level pay attracts high-quality graduates and motivates deeper professional investment (Pros), but the cost is enormous, and salary alone cannot address the workload and autonomy issues that drive teacher attrition (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L108_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Raising teacher pay significantly would transform the teaching profession's social status.",
-            "options": [
-                "Higher salaries signal society's valuation of education and attract high-achieving graduates to teaching.",
-                "Countries with highly paid teachers consistently demonstrate stronger educational outcomes nationally.",
-                "Social status is not determined by salary alone - professional autonomy and respect matter as much.",
-                "Teacher salaries would need to increase dramatically in many countries before achieving meaningful status change."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Consider whether higher teacher pay transforms professional status (Pros) and the complexity of status (Cons).",
-            "explanation": "Higher pay signals social valuation and correlates internationally with stronger educational outcomes (Pros), but status is also shaped by professional autonomy and societal respect, and meaningful salary increases would require enormous public investment (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L108_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Improving teacher working conditions matters more than salary increases for retention.",
-            "options": [
-                "Reduced administrative burden, greater autonomy, and smaller class sizes would keep more teachers in the profession.",
-                "Without adequate pay, working condition improvements will not attract talented graduates into teaching.",
-                "Competitive graduate salaries in other professions make teaching financially unviable for many despite good conditions.",
-                "Teachers who leave cite excessive workload more often than salary as their primary reason for leaving."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about working conditions versus salary as the key driver of teacher retention (Pros for conditions) and the graduate market concern (Cons).",
-            "explanation": "Reduced workload, autonomy, and class size improvements address the primary reasons teachers leave (Pros), but without competitive salaries, the financial comparison with other graduate professions makes teaching unattractive regardless of conditions (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L109_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Religious education should be an optional rather than compulsory school subject.",
-            "options": [
-                "Optional RE respects the plurality of belief, including non-belief, in modern secular societies.",
-                "Compulsory RE promotes cultural literacy about the beliefs that have shaped human history and society.",
-                "Optional RE risks creating knowledge gaps about major world religions affecting millions of citizens.",
-                "Students who choose RE will engage with it more meaningfully and benefit more from the experience."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about the case for making RE optional (Pros) and what would be lost without universal provision (Cons).",
-            "explanation": "Optional RE respects religious diversity and non-belief, producing more engaged voluntary learners (Pros), but compulsory RE builds cultural literacy about beliefs central to history and global societies (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L109_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Compulsory religious education builds understanding and respect across faith communities.",
-            "options": [
-                "Learning about diverse religions in school reduces prejudice and builds empathy between different communities.",
-                "RE taught dogmatically promotes one religion over others rather than building genuine understanding.",
-                "Cultural and ethical understanding can be effectively built through humanities subjects without specifically religious content.",
-                "Shared RE classes in multicultural schools can create spaces for meaningful interfaith dialogue."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Consider the tolerance and interfaith case for compulsory RE (Pros) and the delivery and alternatives concerns (Cons).",
-            "explanation": "Compulsory RE reduces religious prejudice and creates interfaith dialogue opportunities in diverse schools (Pros), but dogmatic teaching promotes one faith over others, and humanities subjects can develop cultural and ethical understanding without specifically religious content (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L109_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Religious education should evolve into comparative ethics and philosophy of religion.",
-            "options": [
-                "A comparative and philosophical approach builds critical thinking about fundamental questions of values.",
-                "Diluting specific religious content disappoints faith communities who value traditional RE for their children.",
-                "An inclusive ethics curriculum serves all students, regardless of personal religious belief or background.",
-                "Teachers trained in traditional RE may lack the philosophical preparation to deliver reformed curricula."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about reforming RE into comparative ethics (Pros) and the faith community and teacher capacity concerns (Cons).",
-            "explanation": "Comparative ethics builds critical thinking and serves all students regardless of belief (Pros), but faith communities value traditional specific religious content, and teachers need retraining that goes beyond their current preparation (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L110_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Single-sex schools produce better academic outcomes than co-educational institutions.",
-            "options": [
-                "Girls in single-sex environments show greater confidence in STEM subjects without peer socialisation pressures.",
-                "Removing gender social dynamics from the classroom helps both boys and girls focus on academic work.",
-                "Research on single-sex school outcomes is methodologically contested and highly context-dependent.",
-                "Single-sex schools deny young people the mixed-gender social experience essential for adult life."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about the academic case for single-sex schooling (Pros) and the evidence quality and social concerns (Cons).",
-            "explanation": "Girls show STEM confidence gains and reduced gender socialisation pressure in single-sex settings (Pros), but research evidence is contested and methodologically limited, and single-sex schools deny the mixed-gender social experience vital for adult life (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L110_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Single-sex schools reinforce gender norms and limit students' social development.",
-            "options": [
-                "Single-sex schools report higher academic engagement and greater willingness to challenge gender norms.",
-                "Many students perform significantly better in the lower-pressure social environment of single-sex education.",
-                "Educating boys and girls separately perpetuates gender stereotypes about academic interests and abilities.",
-                "Students in single-sex schools are less prepared for the co-educational professional and social world."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Consider the gender norms and social development argument against single-sex schools (Pros) and the performance counter (Cons).",
-            "explanation": "Separate schooling perpetuates gender stereotypes and limits preparation for mixed-gender adult life (Pros), but single-sex schools report better academic engagement and can create environments where students challenge rather than conform to gender norms (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L110_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "School choice between single-sex and co-educational options is a matter for families.",
-            "options": [
-                "Parental choice in education respects family values, cultural practices, and children's individual learning needs.",
-                "Preserving single-sex options uses resources that could improve the majority co-educational sector.",
-                "Allowing single-sex schooling preserves institutional practices that reinforce gender inequality.",
-                "A diverse educational landscape that includes both models produces richer collective knowledge about effective schooling."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about educational choice as the right approach (Pros) and the resource and equity concerns (Cons).",
-            "explanation": "Parental choice respects diverse values and creates a rich educational landscape (Pros), but maintaining single-sex options uses resources that could benefit the co-educational majority and preserves institutional practices that some argue reinforce gender inequality (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        }
-    ]
+  "gameType": "opinionWriting",
+  "batchIndex": 11,
+  "levels": "101-110",
+  "quests": [
+    {
+      "id": "WRT_OPINIONWRITING_L101_Q1",
+      "instruction": "Choose the hidden assumption the argument depends on.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Our sales dropped after we changed the logo, so the new logo is bad for business.'",
+      "options": [
+        "The logo change, not something else, caused the drop.",
+        "Logos are important for every business.",
+        "Sales always fall in the summer months.",
+        "The old logo was popular with customers."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Ask what must be true for the conclusion to follow.",
+      "explanation": "The argument assumes the logo caused the fall in sales. Without that assumption, the timing alone proves nothing.",
+      "structureGuide": "Claim → Assumption"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L101_Q2",
+      "instruction": "Which assumption does the argument rely on?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'The bakery is always crowded, so it must have the best bread in town.'",
+      "options": [
+        "Crowds show that its bread is better than other bakeries' bread.",
+        "The bakery is popular in other towns as well.",
+        "Crowded shops are usually noisy for customers.",
+        "Bakeries make their bread early in the morning."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "The argument moves from 'crowded' to 'best'. What links them?",
+      "explanation": "The argument assumes that crowds are caused by quality. Crowds could also come from location or price.",
+      "structureGuide": "Claim → Assumption"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L101_Q3",
+      "instruction": "Which assumption is hidden in the argument?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'She scored highly in the interview, so she will be a great team player.'",
+      "options": [
+        "Interviews are held in meeting rooms at most companies.",
+        "Interview performance predicts how well someone works with a team.",
+        "The interview was long enough to ask many questions.",
+        "Team players should be able to speak clearly."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "What must you believe for the first statement to support the second?",
+      "explanation": "The conclusion is only supported if interview scores predict teamwork. The other statements are not required.",
+      "structureGuide": "Claim → Assumption"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L102_Q1",
+      "instruction": "Choose the assumption that connects the reason to the claim.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: The school should serve free breakfast. Reason: Hungry students cannot concentrate.",
+      "options": [
+        "Students concentrate best in the afternoon.",
+        "Some students arrive at school without having eaten.",
+        "The school kitchen is large enough for everyone.",
+        "Breakfast is the most expensive meal of the day."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "The reason only supports the claim if there are hungry students.",
+      "explanation": "The argument assumes some students really do arrive hungry. Otherwise free breakfast would not help.",
+      "structureGuide": "Reason → Assumption → Claim"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L102_Q2",
+      "instruction": "Which assumption links the reason to the claim?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: The shop should open earlier. Reason: Commuters would buy coffee on their way to work.",
+      "options": [
+        "All commuters start work at exactly the same time.",
+        "Coffee is the most profitable product in the shop.",
+        "The shop already has enough staff for early hours.",
+        "Enough commuters pass the shop early and would stop to buy."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "The reason works only if the customers exist.",
+      "explanation": "The argument depends on commuters actually passing and stopping. Profit, timing and staffing are separate issues.",
+      "structureGuide": "Reason → Assumption → Claim"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L102_Q3",
+      "instruction": "Choose the assumption the argument needs.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: The library should stock more graphic novels. Reason: Teenagers enjoy them.",
+      "options": [
+        "Teenagers do not read anything except graphic novels.",
+        "Graphic novels cost less than most other books to buy.",
+        "More teenagers would visit and borrow if graphic novels were available.",
+        "Graphic novels are shorter than most other types of book."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "What must happen for the reason to help the library?",
+      "explanation": "The claim assumes that enjoyment turns into more visits and loans. Length, exclusivity and price are not required.",
+      "structureGuide": "Reason → Assumption → Claim"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L103_Q1",
+      "instruction": "Which conclusion goes beyond what the data show?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Data: Cities with more ice cream shops also have more sunburn cases.",
+      "options": [
+        "More study would be needed to know why the pattern exists.",
+        "Ice cream shops and sunburn cases tend to appear together.",
+        "Ice cream shops cause sunburn.",
+        "Both may be linked to hot weather in those cities."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "A pattern showing two things together does not prove one causes the other.",
+      "explanation": "Ice cream and sunburn both rise with hot weather. The statement that one causes the other is unsupported.",
+      "structureGuide": "Evidence → Conclusion"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L103_Q2",
+      "instruction": "Which conclusion is best supported?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Data: Students who use the library often tend to get higher marks.",
+      "options": [
+        "Frequent library use is linked to higher marks, though other factors may play a role.",
+        "Marks would rise for everyone if the library opened longer, because students would then have more time to study.",
+        "Going to the library causes students to get higher marks, so schools should require students to visit each week.",
+        "Students who get high marks must spend a lot of time in the library, since that is where the best students work."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Choose the sentence that describes the pattern without overstating it.",
+      "explanation": "The best sentence reports a link and admits other factors. The alternatives claim cause or predict outcomes.",
+      "structureGuide": "Evidence → Conclusion"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L103_Q3",
+      "instruction": "Which sentence confuses correlation with cause?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Data: People who own dogs walk more each week.",
+      "options": [
+        "Walking more may be one reason dog owners report better fitness.",
+        "People who own dogs tend to walk more each week.",
+        "Since dog owners walk more, owning a dog makes people healthier.",
+        "Dog ownership and walking often go together in this data."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Which sentence claims that one thing makes another happen?",
+      "explanation": "The right answer jumps from a pattern to a healthier result caused by ownership. The other statements stay with the pattern or suggest a possibility.",
+      "structureGuide": "Evidence → Conclusion"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L104_Q1",
+      "instruction": "Choose a plausible alternative explanation for the pattern.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Data: Employees who drink a lot of coffee report more headaches.",
+      "options": [
+        "Coffee is sold in cafés, shops and vending machines, and its price varies a great deal from place to place.",
+        "People with stressful jobs may both drink more coffee and get more headaches.",
+        "Headaches are painful and can affect a person's whole day, especially when they last into the evening.",
+        "Most employees work in offices with several floors, and many of them have to climb stairs during the day."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Look for a third factor that could explain both.",
+      "explanation": "Stress could lead to both coffee drinking and headaches. The other statements do not explain the pattern.",
+      "structureGuide": "Evidence → Alternative Explanation"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L104_Q2",
+      "instruction": "Choose the best alternative explanation.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Data: Children with more books at home get higher test scores.",
+      "options": [
+        "Some children prefer video games to reading, so they may score lower on the reading tests at school.",
+        "Test scores are recorded by teachers at the school and are then sent to parents at the end of each term.",
+        "Families with more books may also have more time and money to support learning.",
+        "Books are printed on paper and are sold in shops, in libraries and at school book fairs."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Which sentence offers another factor behind the pattern?",
+      "explanation": "Family resources could explain both the books and the scores. The others don't offer another cause.",
+      "structureGuide": "Evidence → Alternative Explanation"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L104_Q3",
+      "instruction": "Select the TWO possible explanations for the pattern.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Data: Cafés near the university have more customers on weekdays.",
+      "options": [
+        "Term time brings many extra people to the area.",
+        "Universities have libraries and lecture halls.",
+        "Students have free time between classes.",
+        "Cafés sell tea, coffee and small snacks."
+      ],
+      "correctOrder": [
+        0,
+        2
+      ],
+      "hint": "Ask what could bring more customers on weekdays.",
+      "explanation": "Student breaks and extra people in term time explain weekday crowds. The other choices describe cafés or universities without explaining the pattern.",
+      "structureGuide": "Evidence → Alternative Explanation"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L105_Q1",
+      "instruction": "Which conclusion is too broad for the evidence?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Evidence: Three customers complained about the new menu.",
+      "options": [
+        "Customers dislike the new menu.",
+        "Three customers complained about the new menu.",
+        "Some customers have complained about the new menu.",
+        "More feedback is needed to see how widespread the complaint is."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "The evidence is three people. What can be said about all customers?",
+      "explanation": "Three complaints don't show what all customers think. The other statements stay within the evidence.",
+      "structureGuide": "Evidence → Generalization"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L105_Q2",
+      "instruction": "Which claim does the evidence support?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Evidence: I visited a city once, and my taxi driver was rude.",
+      "options": [
+        "Taxi drivers in that city are rude.",
+        "People in that city are unfriendly.",
+        "That city has poor customer service.",
+        "The driver I met on my visit was rude."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "One experience can only support a claim about that experience.",
+      "explanation": "The evidence covers one driver. The other claims generalise to a group, a city or a service.",
+      "structureGuide": "Evidence → Generalization"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L105_Q3",
+      "instruction": "Choose the best way to fix the hasty generalization.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'I tried two online courses and they were boring, so online courses are boring.'",
+      "options": [
+        "The two online courses I tried were boring, so I want to try more before deciding.",
+        "Online courses are always boring, as I have already shown.",
+        "Online courses are probably boring for most people who try them.",
+        "Two courses are enough to say that online learning fails."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Limit the claim to what you have actually experienced.",
+      "explanation": "This revision limits the claim to two courses and suggests more evidence. The remaining options still generalise.",
+      "structureGuide": "Evidence → Generalization"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L106_Q1",
+      "instruction": "Choose the most accurate sentence.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Topic: exercise and sleep.",
+      "options": [
+        "Everyone finds that exercise helps them sleep better.",
+        "No one sleeps well without regular exercise.",
+        "Many people find that exercise helps them sleep better.",
+        "Exercise always helps people to sleep well."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Words like 'everyone', 'always' and 'no one' leave no room for exceptions.",
+      "explanation": "'Many people' is accurate and leaves room for exceptions. The alternatives use absolute words that are easy to disprove.",
+      "structureGuide": "Claim → Qualification"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L106_Q2",
+      "instruction": "Choose the revision that removes the overgeneralization.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'Teenagers never listen to advice.'",
+      "options": [
+        "All teenagers refuse to take advice from adults.",
+        "Some teenagers ignore advice, especially when it feels like an order.",
+        "Teenagers hardly ever listen to advice at all.",
+        "Teenagers do not listen to advice from anyone, ever."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "A more accurate claim limits how many people it covers and gives conditions.",
+      "explanation": "The correct revision limits the claim and adds a condition. The remaining options are still absolute.",
+      "structureGuide": "Claim → Qualification"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L106_Q3",
+      "instruction": "Which sentence claims only what the evidence supports?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Evidence: In a survey of 40 staff at one company, 30 said they like flexible hours.",
+      "options": [
+        "Flexible hours are the best system for every company.",
+        "Most of the staff surveyed at this company like flexible hours.",
+        "Workers everywhere like flexible hours.",
+        "Everyone prefers flexible hours to fixed ones."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Keep the claim as narrow as the sample.",
+      "explanation": "The best sentence refers to the surveyed staff at one company. The other choices apply to all workers or all companies.",
+      "structureGuide": "Evidence → Qualified Claim"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L107_Q1",
+      "instruction": "Which sample would give the most reliable opinions about a new bus timetable?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Choose the best group to ask.",
+      "options": [
+        "Friends and family of the person writing the survey.",
+        "People who chose to comment on a social media post.",
+        "Passengers at one stop during the morning rush.",
+        "Passengers chosen at random at different stops and times."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "A good sample represents the whole group.",
+      "explanation": "A random mix at different places and times reflects all passengers. The others are narrow, close to the writer or self-selected.",
+      "structureGuide": "Evidence → Sample"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L107_Q2",
+      "instruction": "Why is this survey unreliable?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A gym asked members as they left whether they enjoy exercise. Ninety-five percent said yes, so the writer concludes 'most people enjoy exercise.'",
+      "options": [
+        "Ninety-five percent is too high a number to be true.",
+        "Gym members are more likely to enjoy exercise than people in general.",
+        "Members were surveyed in the evening rather than the morning.",
+        "The survey asked too few questions about exercise."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Who was left out of the sample?",
+      "explanation": "The sample consists of people who already chose to exercise. The other issues are minor or not evidence of unreliability.",
+      "structureGuide": "Evidence → Sample"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L107_Q3",
+      "instruction": "Which sample would give the fairest result?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Students at the school like the new lunch menu.",
+      "options": [
+        "A poll of teachers about what they think students prefer.",
+        "A survey of students from every year group, chosen randomly.",
+        "A vote by members of the lunch club.",
+        "A survey of students queueing in the canteen on the first day."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "The sample should include the students the claim is about.",
+      "explanation": "Random selection across years represents all students. The remaining options are limited to a small group or ask the wrong people.",
+      "structureGuide": "Evidence → Sample"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L108_Q1",
+      "instruction": "Which conclusion goes too far?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Evidence: The new app has been downloaded 5,000 times.",
+      "options": [
+        "Thousands of people have tried the app.",
+        "The app has been downloaded many times.",
+        "The app is loved by its users.",
+        "Downloads show interest, but not necessarily satisfaction."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Downloading is not the same as liking.",
+      "explanation": "Downloads show people tried it, not that they love it. The other statements stay within the evidence.",
+      "structureGuide": "Evidence → Conclusion"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L108_Q2",
+      "instruction": "Which conclusion is best supported?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Evidence: Sales rose 10% in the month after the new advertisement.",
+      "options": [
+        "The advertisement raised sales by exactly 10%, so the company should make more advertisements like it.",
+        "Sales rose after the advertisement, though other factors might have contributed.",
+        "The advertisement is the best way to raise sales, so the company should stop trying other approaches.",
+        "Every advertisement the company makes will raise sales, so it should increase its advertising budget now."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Choose the sentence that describes what happened without claiming too much.",
+      "explanation": "The best sentence reports the timing and admits other possible causes. The rest claim exact cause or predict the future.",
+      "structureGuide": "Evidence → Conclusion"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L108_Q3",
+      "instruction": "Which sentence draws the strongest conclusion the evidence allows?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Evidence: In a trial with 25 employees, those given quiet rooms finished tasks 15% faster.",
+      "options": [
+        "In this trial, quiet rooms helped these employees finish tasks faster.",
+        "All companies should build quiet rooms immediately, because the trial has proved that they work.",
+        "Quiet rooms are the best way to raise productivity, and companies should try nothing else first.",
+        "Quiet rooms make every employee 15% faster, so the benefit will be the same for all staff."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Stay within the group and result actually measured.",
+      "explanation": "The best sentence is limited to the trial group. The alternatives generalise to everyone, recommend action or compare with other methods.",
+      "structureGuide": "Evidence → Conclusion"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L109_Q1",
+      "instruction": "Which evidence would best test the assumption?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Argument: Later school start times will raise test scores, because students will sleep longer. Assumption: students would use the extra time to sleep.",
+      "options": [
+        "The average test scores of students in other schools, taken from the most recent national report.",
+        "The number of subjects students study each week, compared with the number studied in earlier years.",
+        "The length of the school day in different countries, compared with the length of the day in ours.",
+        "A record of when students actually go to bed after the start time changes."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Test the assumption itself, not the conclusion.",
+      "explanation": "Bedtime records show whether students really sleep more. The other options don't test the assumption.",
+      "structureGuide": "Assumption → Test"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L109_Q2",
+      "instruction": "Which evidence would best test the assumption?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Argument: Free parking would bring more shoppers. Assumption: shoppers avoid the town centre because of parking costs.",
+      "options": [
+        "The price of goods in town centre shops, compared with the prices in the out-of-town stores.",
+        "Interviews with shoppers about why they avoid the town centre.",
+        "The opening hours of the main car park, compared with the opening hours of the shops nearby.",
+        "The number of parking spaces in the town centre, counted on a typical weekday afternoon."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Which evidence would show the shoppers' actual reasons?",
+      "explanation": "Asking shoppers reveals whether parking costs really stop them. The alternatives concern spaces, goods or hours.",
+      "structureGuide": "Assumption → Test"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L109_Q3",
+      "instruction": "Which evidence would best test the assumption?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Argument: A smartphone app will make customers loyal. Assumption: customers will actually use the app.",
+      "options": [
+        "A list of the features the app will include, such as offers, reminders and a simple loyalty card.",
+        "A pilot where a small group uses the app and their repeat visits are tracked.",
+        "Reviews of unrelated apps from other companies, collected from the online store over several years.",
+        "The cost of developing the app for the shop, including design, testing and the first year of support."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "The test should measure real behaviour.",
+      "explanation": "A pilot shows whether customers use the app and return. The remaining options describe features, costs or unrelated apps.",
+      "structureGuide": "Assumption → Test"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L110_Q1",
+      "instruction": "Which hidden assumption does the argument rely on?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Most students at the school own a smartphone, so all homework should be digital.'",
+      "options": [
+        "Owning a smartphone means students can complete homework on it.",
+        "Digital homework is cheaper for teachers to mark.",
+        "Smartphones have larger screens than laptops or tablets.",
+        "Most students prefer paper homework to digital homework."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Ask what the first statement quietly takes for granted.",
+      "explanation": "The argument assumes owning a phone is enough to do homework. Marking cost, paper preference and screen size are not part of the argument.",
+      "structureGuide": "Claim → Assumption"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L110_Q2",
+      "instruction": "Which conclusion is best supported?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Evidence: Two of the ten new hires resigned within six months.",
+      "options": [
+        "New hires do not like the company.",
+        "The company has a high staff turnover.",
+        "Two of these ten hires left within six months.",
+        "The hiring process was a failure."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Choose the conclusion that stays with the numbers given.",
+      "explanation": "This statement repeats what the evidence shows. The others draw wider conclusions about turnover, opinions or the process.",
+      "structureGuide": "Evidence → Conclusion"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L110_Q3",
+      "instruction": "Select the TWO problems with this reasoning.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Our team had its best sales month after buying a coffee machine, so the coffee machine boosts sales.'",
+      "options": [
+        "It talks about a team instead of a whole company.",
+        "It mentions coffee, which is unrelated to work.",
+        "It ignores other explanations, such as seasonal demand.",
+        "It assumes the machine caused the increase."
+      ],
+      "correctOrder": [
+        2,
+        3
+      ],
+      "hint": "Focus on what the reasoning skips over.",
+      "explanation": "The argument assumes cause and ignores other explanations. Mentioning coffee or a team isn't the flaw.",
+      "structureGuide": "Evidence → Conclusion"
+    }
+  ]
 }

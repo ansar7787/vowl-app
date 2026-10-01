@@ -1,817 +1,637 @@
 {
-    "gameType": "summarizeStoryWriting",
-    "batchIndex": 17,
-    "levels": "161-170",
-    "quests": [
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L161_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "Two competing pharmaceutical firms had spent a decade suing each other over overlapping patent claims on a single molecule. A newly appointed general counsel at one firm proposed a cross-licensing agreement instead of pursuing further litigation. Both firms brought competing generic versions to market within the same fiscal year.",
-            "options": [
-                "Only one of the two firms managed to bring a version to market that year.",
-                "Two competing pharmaceutical firms had spent a decade suing each other over overlapping patent claims on a single molecule.",
-                "A newly appointed general counsel at one firm proposed a cross-licensing agreement instead of pursuing further litigation.",
-                "Both firms brought competing generic versions to market within the same fiscal year."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Notice what actually happens with both firms once the cross-licensing agreement is in place.",
-            "explanation": "Because both firms bring versions to market the same year, an option claiming only one succeeded contradicts that specific outcome.",
-            "storyKeyEvents": [
-                "Two competing pharmaceutical firms had spent a decade suing each other over overlapping patent claims on a single molecule.",
-                "A newly appointed general counsel at one firm proposed a cross-licensing agreement instead of pursuing further litigation.",
-                "Both firms brought competing generic versions to market within the same fiscal year.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L161_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A multinational retailer's supply chain had grown so fragile that a single port closure halted deliveries across an entire continent. Executives diversified sourcing across three geographically separated ports rather than relying on one. A subsequent closure at one of the three ports caused only a minor, localized delay.",
-            "options": [
-                "A multinational retailer's supply chain had grown so fragile that a single port closure halted deliveries across an entire continent.",
-                "A subsequent port closure again halted deliveries across the entire continent.",
-                "Executives diversified sourcing across three geographically separated ports rather than relying on one.",
-                "A subsequent closure at one of the three ports caused only a minor, localized delay."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Check whether each option matches the scale of disruption from the subsequent closure.",
-            "explanation": "Because the subsequent closure causes only a minor, localized delay, an option claiming it again halted continent-wide deliveries contradicts that specific scale.",
-            "storyKeyEvents": [
-                "A multinational retailer's supply chain had grown so fragile that a single port closure halted deliveries across an entire continent.",
-                "Executives diversified sourcing across three geographically separated ports rather than relying on one.",
-                "A subsequent closure at one of the three ports caused only a minor, localized delay.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L161_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national broadcaster's flagship investigative program had lost nearly a third of its audience after switching to a shorter runtime. Producers restored the original runtime but moved the broadcast to a later evening slot. The audience recovered fully within two broadcast seasons.",
-            "options": [
-                "A national broadcaster's flagship investigative program had lost nearly a third of its audience after switching to a shorter runtime.",
-                "Producers restored the original runtime but moved the broadcast to a later evening slot.",
-                "The audience continued shrinking despite the schedule change.",
-                "The audience recovered fully within two broadcast seasons."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you what actually happens to the audience over two seasons.",
-            "explanation": "Because the audience recovers fully within two seasons, an option claiming it kept shrinking contradicts that measured recovery.",
-            "storyKeyEvents": [
-                "A national broadcaster's flagship investigative program had lost nearly a third of its audience after switching to a shorter runtime.",
-                "Producers restored the original runtime but moved the broadcast to a later evening slot.",
-                "The audience recovered fully within two broadcast seasons.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L162_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional court's interpretation of a specific tax statute had been so inconsistent that two businesses in identical circumstances received opposite rulings. An appellate panel issued a binding interpretation resolving the ambiguity for all future cases. The business that had received the unfavorable ruling successfully appealed under the new binding interpretation.",
-            "options": [
-                "A regional court's interpretation of a specific tax statute had been so inconsistent that two businesses in identical circumstances received opposite rulings.",
-                "An appellate panel issued a binding interpretation resolving the ambiguity for all future cases.",
-                "The business that had received the unfavorable ruling successfully appealed under the new binding interpretation.",
-                "The business that had received the unfavorable ruling chose not to appeal at all."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Notice what the disadvantaged business actually does once the binding interpretation is issued.",
-            "explanation": "Because that business successfully appeals under the new interpretation, an option claiming it chose not to appeal contradicts that specific action.",
-            "storyKeyEvents": [
-                "A regional court's interpretation of a specific tax statute had been so inconsistent that two businesses in identical circumstances received opposite rulings.",
-                "An appellate panel issued a binding interpretation resolving the ambiguity for all future cases.",
-                "The business that had received the unfavorable ruling successfully appealed under the new binding interpretation.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L162_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional energy consortium's long-term supply contract had locked in prices so far above the eventual market rate that member utilities faced mounting losses. Consortium lawyers negotiated an early exit clause tied to a specific market-index threshold. Member utilities exercised that clause the moment the index crossed the agreed threshold.",
-            "options": [
-                "Member utilities let the exit clause expire without ever using it.",
-                "A regional energy consortium's long-term supply contract had locked in prices so far above the eventual market rate that member utilities faced mounting losses.",
-                "Consortium lawyers negotiated an early exit clause tied to a specific market-index threshold.",
-                "Member utilities exercised that clause the moment the index crossed the agreed threshold."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Check whether the utilities actually use the exit clause once the threshold is crossed.",
-            "explanation": "Because utilities exercise the clause the moment the threshold is crossed, an option claiming they let it expire unused contradicts that action.",
-            "storyKeyEvents": [
-                "A regional energy consortium's long-term supply contract had locked in prices so far above the eventual market rate that member utilities faced mounting losses.",
-                "Consortium lawyers negotiated an early exit clause tied to a specific market-index threshold.",
-                "Member utilities exercised that clause the moment the index crossed the agreed threshold.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L162_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A cross-border logistics firm's customs declarations had been flagged so often for discrepancies that two neighboring countries considered a joint audit. The firm voluntarily opened its records to both countries' customs authorities before any audit was formally announced. Both countries closed their inquiries without finding any wrongdoing.",
-            "options": [
-                "A cross-border logistics firm's customs declarations had been flagged so often for discrepancies that two neighboring countries considered a joint audit.",
-                "Both countries formally announced a joint audit before the firm opened its records.",
-                "The firm voluntarily opened its records to both countries' customs authorities before any audit was formally announced.",
-                "Both countries closed their inquiries without finding any wrongdoing."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Notice the actual order of events: does the audit announcement or the voluntary disclosure come first?",
-            "explanation": "Because the firm opens its records before any audit was formally announced, an option reversing that order contradicts the sequence described.",
-            "storyKeyEvents": [
-                "A cross-border logistics firm's customs declarations had been flagged so often for discrepancies that two neighboring countries considered a joint audit.",
-                "The firm voluntarily opened its records to both countries' customs authorities before any audit was formally announced.",
-                "Both countries closed their inquiries without finding any wrongdoing.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L163_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional airline and its largest competitor had matched each other's fare cuts for so long that both carriers approached insolvency. Both carriers independently and without coordination raised fares on their most contested routes within the same month. Regulators investigated the simultaneous increases but found no evidence of unlawful coordination.",
-            "options": [
-                "A regional airline and its largest competitor had matched each other's fare cuts for so long that both carriers approached insolvency.",
-                "Both carriers independently and without coordination raised fares on their most contested routes within the same month.",
-                "Regulators found clear evidence that the two carriers had coordinated the increases unlawfully.",
-                "Regulators investigated the simultaneous increases but found no evidence of unlawful coordination."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Notice what regulators actually conclude after investigating the simultaneous fare increases.",
-            "explanation": "Because regulators find no evidence of unlawful coordination, an option claiming they found clear evidence of it reverses that specific finding.",
-            "storyKeyEvents": [
-                "A regional airline and its largest competitor had matched each other's fare cuts for so long that both carriers approached insolvency.",
-                "Both carriers independently and without coordination raised fares on their most contested routes within the same month.",
-                "Regulators investigated the simultaneous increases but found no evidence of unlawful coordination.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L163_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional dairy cooperative's export certification had been suspended after a single contaminated batch was traced back to one member farm. The cooperative isolated that farm's output entirely while certifying every other member farm individually. Export certification was restored for every farm except the one linked to the contamination.",
-            "options": [
-                "A regional dairy cooperative's export certification had been suspended after a single contaminated batch was traced back to one member farm.",
-                "The cooperative isolated that farm's output entirely while certifying every other member farm individually.",
-                "Export certification was restored for every farm except the one linked to the contamination.",
-                "Export certification was restored for every farm, including the one linked to the contamination."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Check whether the contaminated farm's certification is actually restored along with the others.",
-            "explanation": "Because certification is restored for every farm except the one linked to contamination, an option including that farm in the restoration contradicts that specific exception.",
-            "storyKeyEvents": [
-                "A regional dairy cooperative's export certification had been suspended after a single contaminated batch was traced back to one member farm.",
-                "The cooperative isolated that farm's output entirely while certifying every other member farm individually.",
-                "Export certification was restored for every farm except the one linked to the contamination.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L163_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national broadcasting union and a major network had failed to reach a contract agreement despite eleven rounds of formal negotiation. Both sides agreed to binding arbitration on the two remaining unresolved issues only. The arbitrator's ruling on those two issues allowed the full contract to be finalized.",
-            "options": [
-                "The union rejected the arbitrator's ruling and continued the strike indefinitely.",
-                "A national broadcasting union and a major network had failed to reach a contract agreement despite eleven rounds of formal negotiation.",
-                "Both sides agreed to binding arbitration on the two remaining unresolved issues only.",
-                "The arbitrator's ruling on those two issues allowed the full contract to be finalized."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you whether the contract is actually finalized.",
-            "explanation": "Because the arbitrator's ruling allows the full contract to be finalized, an option claiming the union rejected it and continued striking contradicts that resolution.",
-            "storyKeyEvents": [
-                "A national broadcasting union and a major network had failed to reach a contract agreement despite eleven rounds of formal negotiation.",
-                "Both sides agreed to binding arbitration on the two remaining unresolved issues only.",
-                "The arbitrator's ruling on those two issues allowed the full contract to be finalized.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L164_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A biotechnology firm's flagship drug had shown promising results in two independent trials but failed to replicate in a third, larger trial. Statisticians discovered the third trial had enrolled a patient population with a key genetic difference from the first two. A fourth trial matching the original population confirmed the drug's original promising results.",
-            "options": [
-                "A biotechnology firm's flagship drug had shown promising results in two independent trials but failed to replicate in a third, larger trial.",
-                "The firm discontinued the drug's development after the third trial's results.",
-                "Statisticians discovered the third trial had enrolled a patient population with a key genetic difference from the first two.",
-                "A fourth trial matching the original population confirmed the drug's original promising results."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Notice what the firm actually does once the genetic difference is identified.",
-            "explanation": "Because a fourth trial confirms the original results, an option showing the firm discontinuing development after the third trial contradicts that later confirmation.",
-            "storyKeyEvents": [
-                "A biotechnology firm's flagship drug had shown promising results in two independent trials but failed to replicate in a third, larger trial.",
-                "Statisticians discovered the third trial had enrolled a patient population with a key genetic difference from the first two.",
-                "A fourth trial matching the original population confirmed the drug's original promising results.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L164_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A shipping conglomerate's two largest subsidiaries had spent years competing for the same regional clients, undercutting each other's margins. Corporate leadership merged the two subsidiaries' regional sales teams into a single unit. Combined regional margins exceeded what either subsidiary had achieved independently.",
-            "options": [
-                "A shipping conglomerate's two largest subsidiaries had spent years competing for the same regional clients, undercutting each other's margins.",
-                "Corporate leadership merged the two subsidiaries' regional sales teams into a single unit.",
-                "Combined regional margins fell below what either subsidiary had achieved independently.",
-                "Combined regional margins exceeded what either subsidiary had achieved independently."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Track cause and effect: merging the sales teams leads to margins exceeding either subsidiary's prior results. One option reverses that.",
-            "explanation": "Because combined margins exceed what either achieved alone, an option claiming they fell below reverses that measured outcome.",
-            "storyKeyEvents": [
-                "A shipping conglomerate's two largest subsidiaries had spent years competing for the same regional clients, undercutting each other's margins.",
-                "Corporate leadership merged the two subsidiaries' regional sales teams into a single unit.",
-                "Combined regional margins exceeded what either subsidiary had achieved independently.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L164_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national library's rare manuscript collection had two separate items catalogued under the same accession number for nearly a century. Archivists discovered the error while cross-referencing the collection against a newly acquired donor's private records. Both manuscripts were assigned separate accession numbers and correctly attributed for the first time.",
-            "options": [
-                "A national library's rare manuscript collection had two separate items catalogued under the same accession number for nearly a century.",
-                "Archivists discovered the error while cross-referencing the collection against a newly acquired donor's private records.",
-                "Both manuscripts were assigned separate accession numbers and correctly attributed for the first time.",
-                "Only one of the two manuscripts was ever correctly reattributed."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Check whether both manuscripts actually receive separate, correct attribution.",
-            "explanation": "Because both manuscripts are correctly attributed, an option claiming only one was ever reattributed contradicts that complete resolution.",
-            "storyKeyEvents": [
-                "A national library's rare manuscript collection had two separate items catalogued under the same accession number for nearly a century.",
-                "Archivists discovered the error while cross-referencing the collection against a newly acquired donor's private records.",
-                "Both manuscripts were assigned separate accession numbers and correctly attributed for the first time.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L165_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional water utility and a neighboring agricultural district had disputed the same aquifer's allocation rights for over a decade. Both parties commissioned a joint hydrological study rather than continuing separate, conflicting assessments. The joint study's findings formed the basis of an allocation agreement both parties signed.",
-            "options": [
-                "The agricultural district rejected the joint study's findings and continued the dispute.",
-                "A regional water utility and a neighboring agricultural district had disputed the same aquifer's allocation rights for over a decade.",
-                "Both parties commissioned a joint hydrological study rather than continuing separate, conflicting assessments.",
-                "The joint study's findings formed the basis of an allocation agreement both parties signed."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Notice what the agricultural district actually does once the joint study is complete.",
-            "explanation": "Because both parties sign an allocation agreement based on the study, an option showing the district rejecting the findings contradicts that resolution.",
-            "storyKeyEvents": [
-                "A regional water utility and a neighboring agricultural district had disputed the same aquifer's allocation rights for over a decade.",
-                "Both parties commissioned a joint hydrological study rather than continuing separate, conflicting assessments.",
-                "The joint study's findings formed the basis of an allocation agreement both parties signed.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L165_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national telecommunications carrier and a smaller regional competitor had both claimed the same underused frequency band for expansion. Regulators split the band, awarding each carrier a distinct, non-overlapping portion. Both carriers expanded their networks using their respective portions without further dispute.",
-            "options": [
-                "A national telecommunications carrier and a smaller regional competitor had both claimed the same underused frequency band for expansion.",
-                "The national carrier challenged the split and was awarded the entire band.",
-                "Regulators split the band, awarding each carrier a distinct, non-overlapping portion.",
-                "Both carriers expanded their networks using their respective portions without further dispute."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you whether the national carrier actually challenges and wins the entire band.",
-            "explanation": "Because both carriers expand using their respective portions without further dispute, an option showing a successful challenge for the entire band contradicts that resolution.",
-            "storyKeyEvents": [
-                "A national telecommunications carrier and a smaller regional competitor had both claimed the same underused frequency band for expansion.",
-                "Regulators split the band, awarding each carrier a distinct, non-overlapping portion.",
-                "Both carriers expanded their networks using their respective portions without further dispute.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L165_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "Two regional hospital networks had spent years disputing which one held the rights to a shared trauma-response contract with the state. The state proposed splitting trauma response by geographic zone rather than awarding a single exclusive contract. Both networks accepted the zoned arrangement and response times improved across the entire region.",
-            "options": [
-                "Two regional hospital networks had spent years disputing which one held the rights to a shared trauma-response contract with the state.",
-                "The state proposed splitting trauma response by geographic zone rather than awarding a single exclusive contract.",
-                "One network rejected the zoned arrangement and continued the legal dispute alone.",
-                "Both networks accepted the zoned arrangement and response times improved across the entire region."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Check whether both networks actually accept the zoned arrangement.",
-            "explanation": "Because both networks accept the arrangement and response times improve, an option showing one network rejecting it contradicts that mutual acceptance.",
-            "storyKeyEvents": [
-                "Two regional hospital networks had spent years disputing which one held the rights to a shared trauma-response contract with the state.",
-                "The state proposed splitting trauma response by geographic zone rather than awarding a single exclusive contract.",
-                "Both networks accepted the zoned arrangement and response times improved across the entire region.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L166_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national grid operator's two regional divisions had each blamed the other for a cascading blackout that affected several million customers. An independent engineering review traced the actual cause to a single relay failure in a division neither had blamed. Both divisions jointly funded upgrades to prevent a similar failure across the entire grid.",
-            "options": [
-                "A national grid operator's two regional divisions had each blamed the other for a cascading blackout that affected several million customers.",
-                "An independent engineering review traced the actual cause to a single relay failure in a division neither had blamed.",
-                "Both divisions jointly funded upgrades to prevent a similar failure across the entire grid.",
-                "Each division continued blaming the other even after the review's findings."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Notice how both divisions actually respond once the independent review identifies the true cause.",
-            "explanation": "Because both divisions jointly fund upgrades after the review, an option claiming they kept blaming each other contradicts that collaborative response.",
-            "storyKeyEvents": [
-                "A national grid operator's two regional divisions had each blamed the other for a cascading blackout that affected several million customers.",
-                "An independent engineering review traced the actual cause to a single relay failure in a division neither had blamed.",
-                "Both divisions jointly funded upgrades to prevent a similar failure across the entire grid.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L166_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional insurance pool's two largest member companies had disagreed for years over how claims from a shared catastrophe fund should be split. An actuarial consultant proposed splitting claims proportionally to each company's total premium volume. Both companies adopted the proportional formula without further dispute.",
-            "options": [
-                "One company rejected the proportional formula and withdrew from the pool entirely.",
-                "A regional insurance pool's two largest member companies had disagreed for years over how claims from a shared catastrophe fund should be split.",
-                "An actuarial consultant proposed splitting claims proportionally to each company's total premium volume.",
-                "Both companies adopted the proportional formula without further dispute."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Check whether both companies actually adopt the proposed formula.",
-            "explanation": "Because both companies adopt the formula without further dispute, an option showing one withdrawing entirely contradicts that mutual agreement.",
-            "storyKeyEvents": [
-                "A regional insurance pool's two largest member companies had disagreed for years over how claims from a shared catastrophe fund should be split.",
-                "An actuarial consultant proposed splitting claims proportionally to each company's total premium volume.",
-                "Both companies adopted the proportional formula without further dispute.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L166_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "Two rival seed companies had each claimed patent rights to a nearly identical drought-resistant crop variety developed independently. A patent tribunal determined both varieties had been developed independently and genuinely differed in one key genetic marker. Both companies received separate patents and were free to sell their respective varieties.",
-            "options": [
-                "Two rival seed companies had each claimed patent rights to a nearly identical drought-resistant crop variety developed independently.",
-                "The tribunal awarded the sole patent to just one of the two companies.",
-                "A patent tribunal determined both varieties had been developed independently and genuinely differed in one key genetic marker.",
-                "Both companies received separate patents and were free to sell their respective varieties."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you whether both companies actually receive separate patents.",
-            "explanation": "Because both companies receive separate patents, an option claiming only one received the sole patent contradicts that dual outcome.",
-            "storyKeyEvents": [
-                "Two rival seed companies had each claimed patent rights to a nearly identical drought-resistant crop variety developed independently.",
-                "A patent tribunal determined both varieties had been developed independently and genuinely differed in one key genetic marker.",
-                "Both companies received separate patents and were free to sell their respective varieties.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L167_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national research consortium's two lead scientists had reached opposite conclusions from what appeared to be the same underlying dataset. A data-integrity audit found one dataset had silently excluded a subset of outlier results the other had included. Reanalyzing both datasets with matching criteria produced a single, consistent conclusion both scientists accepted.",
-            "options": [
-                "A national research consortium's two lead scientists had reached opposite conclusions from what appeared to be the same underlying dataset.",
-                "A data-integrity audit found one dataset had silently excluded a subset of outlier results the other had included.",
-                "The two scientists continued publishing contradictory conclusions even after the audit.",
-                "Reanalyzing both datasets with matching criteria produced a single, consistent conclusion both scientists accepted."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Notice what actually happens to the scientists' conclusions once the datasets are reanalyzed.",
-            "explanation": "Because reanalysis produces a single conclusion both accept, an option claiming they kept publishing contradictory conclusions afterward contradicts that resolution.",
-            "storyKeyEvents": [
-                "A national research consortium's two lead scientists had reached opposite conclusions from what appeared to be the same underlying dataset.",
-                "A data-integrity audit found one dataset had silently excluded a subset of outlier results the other had included.",
-                "Reanalyzing both datasets with matching criteria produced a single, consistent conclusion both scientists accepted.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L167_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional bar association's ethics committee had issued two conflicting opinions on the same disputed billing practice within the same year. The committee's chair called an emergency session to resolve the contradiction before the next annual review. The emergency session produced a single, unified opinion adopted unanimously.",
-            "options": [
-                "A regional bar association's ethics committee had issued two conflicting opinions on the same disputed billing practice within the same year.",
-                "The committee's chair called an emergency session to resolve the contradiction before the next annual review.",
-                "The emergency session produced a single, unified opinion adopted unanimously.",
-                "The contradiction remained unresolved going into the next annual review."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Check whether the contradiction is actually resolved before the next annual review.",
-            "explanation": "Because the emergency session produces a unanimous unified opinion, an option claiming the contradiction remained unresolved contradicts that outcome.",
-            "storyKeyEvents": [
-                "A regional bar association's ethics committee had issued two conflicting opinions on the same disputed billing practice within the same year.",
-                "The committee's chair called an emergency session to resolve the contradiction before the next annual review.",
-                "The emergency session produced a single, unified opinion adopted unanimously.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L167_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A multinational bank's two regional compliance offices had each cleared the same suspicious transaction independently, unaware the other had also reviewed it. A centralized compliance audit discovered both offices had missed the same red flag in the transaction's origin. The bank froze the account and reported the transaction to regulators immediately after the audit.",
-            "options": [
-                "The bank took no further action after the audit's findings.",
-                "A multinational bank's two regional compliance offices had each cleared the same suspicious transaction independently, unaware the other had also reviewed it.",
-                "A centralized compliance audit discovered both offices had missed the same red flag in the transaction's origin.",
-                "The bank froze the account and reported the transaction to regulators immediately after the audit."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you whether the bank actually acts on the audit's findings.",
-            "explanation": "Because the bank freezes the account and reports the transaction immediately, an option claiming it took no further action contradicts that response.",
-            "storyKeyEvents": [
-                "A multinational bank's two regional compliance offices had each cleared the same suspicious transaction independently, unaware the other had also reviewed it.",
-                "A centralized compliance audit discovered both offices had missed the same red flag in the transaction's origin.",
-                "The bank froze the account and reported the transaction to regulators immediately after the audit.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L168_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national arts council's two regional panels had rated the same touring exhibition so differently that funding decisions became inconsistent across regions. The council merged both panels into a single national review board with a unified rubric. Funding decisions for touring exhibitions became consistent across every region the following cycle.",
-            "options": [
-                "A national arts council's two regional panels had rated the same touring exhibition so differently that funding decisions became inconsistent across regions.",
-                "Funding decisions remained just as inconsistent across regions the following cycle.",
-                "The council merged both panels into a single national review board with a unified rubric.",
-                "Funding decisions for touring exhibitions became consistent across every region the following cycle."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Track cause and effect: a unified rubric leads to consistent funding decisions. One option reverses that.",
-            "explanation": "Because decisions become consistent across every region, an option claiming they remained just as inconsistent reverses that measured outcome.",
-            "storyKeyEvents": [
-                "A national arts council's two regional panels had rated the same touring exhibition so differently that funding decisions became inconsistent across regions.",
-                "The council merged both panels into a single national review board with a unified rubric.",
-                "Funding decisions for touring exhibitions became consistent across every region the following cycle.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L168_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national customs service's two border crossings had applied the same tariff schedule so differently that importers routinely rerouted shipments to whichever crossing charged less. Headquarters standardized tariff calculation software identically across both crossings. Tariff assessments became identical at both crossings, eliminating the incentive to reroute shipments.",
-            "options": [
-                "A national customs service's two border crossings had applied the same tariff schedule so differently that importers routinely rerouted shipments to whichever crossing charged less.",
-                "Headquarters standardized tariff calculation software identically across both crossings.",
-                "Importers continued rerouting shipments to whichever crossing charged less.",
-                "Tariff assessments became identical at both crossings, eliminating the incentive to reroute shipments."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Check whether each option matches what actually happens to shipment rerouting after standardization.",
-            "explanation": "Because assessments become identical, eliminating the rerouting incentive, an option claiming rerouting continued contradicts that measured outcome.",
-            "storyKeyEvents": [
-                "A national customs service's two border crossings had applied the same tariff schedule so differently that importers routinely rerouted shipments to whichever crossing charged less.",
-                "Headquarters standardized tariff calculation software identically across both crossings.",
-                "Tariff assessments became identical at both crossings, eliminating the incentive to reroute shipments.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L168_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional utility commission's two staff economists had produced sharply different cost projections for the same proposed pipeline. An external reviewer found one projection had used outdated steel-price data from three years earlier. The corrected projection became the commission's official cost estimate for the pipeline.",
-            "options": [
-                "A regional utility commission's two staff economists had produced sharply different cost projections for the same proposed pipeline.",
-                "An external reviewer found one projection had used outdated steel-price data from three years earlier.",
-                "The corrected projection became the commission's official cost estimate for the pipeline.",
-                "The commission adopted the projection based on outdated data as its official estimate."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Notice which projection the commission actually adopts as its official estimate.",
-            "explanation": "Because the corrected projection becomes the official estimate, an option claiming the outdated one was adopted instead contradicts that specific choice.",
-            "storyKeyEvents": [
-                "A regional utility commission's two staff economists had produced sharply different cost projections for the same proposed pipeline.",
-                "An external reviewer found one projection had used outdated steel-price data from three years earlier.",
-                "The corrected projection became the commission's official cost estimate for the pipeline.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L169_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national securities regulator's two enforcement divisions had each opened separate, uncoordinated investigations into the same trading firm. Senior leadership consolidated both investigations under a single lead investigator to avoid duplicated effort. The consolidated investigation concluded in half the time either separate investigation would likely have taken.",
-            "options": [
-                "The consolidated investigation took longer than either separate investigation had originally projected.",
-                "A national securities regulator's two enforcement divisions had each opened separate, uncoordinated investigations into the same trading firm.",
-                "Senior leadership consolidated both investigations under a single lead investigator to avoid duplicated effort.",
-                "The consolidated investigation concluded in half the time either separate investigation would likely have taken."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Track cause and effect: consolidation leads to the investigation concluding faster. One option reverses that.",
-            "explanation": "Because the consolidated investigation concludes in half the projected time, an option claiming it took longer reverses that measured outcome.",
-            "storyKeyEvents": [
-                "A national securities regulator's two enforcement divisions had each opened separate, uncoordinated investigations into the same trading firm.",
-                "Senior leadership consolidated both investigations under a single lead investigator to avoid duplicated effort.",
-                "The consolidated investigation concluded in half the time either separate investigation would likely have taken.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L169_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national maritime authority's two regional offices had issued conflicting safety certifications to the same class of fishing vessel. Headquarters revoked both regional certifications and issued a single national standard instead. Every vessel in that class was recertified under the unified national standard within the year.",
-            "options": [
-                "A national maritime authority's two regional offices had issued conflicting safety certifications to the same class of fishing vessel.",
-                "Several vessels in that class remained uncertified at year's end.",
-                "Headquarters revoked both regional certifications and issued a single national standard instead.",
-                "Every vessel in that class was recertified under the unified national standard within the year."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Check whether every vessel in the class is actually recertified within the year.",
-            "explanation": "Because every vessel is recertified within the year, an option claiming several remained uncertified contradicts that complete outcome.",
-            "storyKeyEvents": [
-                "A national maritime authority's two regional offices had issued conflicting safety certifications to the same class of fishing vessel.",
-                "Headquarters revoked both regional certifications and issued a single national standard instead.",
-                "Every vessel in that class was recertified under the unified national standard within the year.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L169_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national food-safety agency's two testing laboratories had reported different contamination thresholds for the same imported product line. An independent review found one laboratory's equipment had not been recalibrated in over two years. Recalibrating that equipment brought both laboratories' results into close agreement.",
-            "options": [
-                "A national food-safety agency's two testing laboratories had reported different contamination thresholds for the same imported product line.",
-                "An independent review found one laboratory's equipment had not been recalibrated in over two years.",
-                "The two laboratories' results diverged even further after the recalibration.",
-                "Recalibrating that equipment brought both laboratories' results into close agreement."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Notice what actually happens to the two laboratories' results after recalibration.",
-            "explanation": "Because recalibration brings both results into close agreement, an option claiming they diverged even further reverses that measured outcome.",
-            "storyKeyEvents": [
-                "A national food-safety agency's two testing laboratories had reported different contamination thresholds for the same imported product line.",
-                "An independent review found one laboratory's equipment had not been recalibrated in over two years.",
-                "Recalibrating that equipment brought both laboratories' results into close agreement.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L170_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national air-traffic authority's two adjacent control sectors had each cleared conflicting flight paths through the same congested corridor. Controllers from both sectors adopted a shared real-time coordination protocol for that specific corridor. No further path conflicts in that corridor have been recorded in the two years since.",
-            "options": [
-                "A national air-traffic authority's two adjacent control sectors had each cleared conflicting flight paths through the same congested corridor.",
-                "Controllers from both sectors adopted a shared real-time coordination protocol for that specific corridor.",
-                "No further path conflicts in that corridor have been recorded in the two years since.",
-                "Path conflicts in that corridor became even more frequent after the new protocol."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Check whether each option matches what the passage says about conflicts in the two years since.",
-            "explanation": "Because no further conflicts have been recorded in two years, an option claiming they became more frequent contradicts that record.",
-            "storyKeyEvents": [
-                "A national air-traffic authority's two adjacent control sectors had each cleared conflicting flight paths through the same congested corridor.",
-                "Controllers from both sectors adopted a shared real-time coordination protocol for that specific corridor.",
-                "No further path conflicts in that corridor have been recorded in the two years since.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L170_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional bar exam board's two grading panels had produced pass rates so different that candidates in one region protested the disparity. The board introduced a shared calibration exercise requiring both panels to grade identical sample answers first. Pass rates between the two panels converged within a narrow, statistically expected range.",
-            "options": [
-                "Pass rates between the two panels remained just as disparate as before.",
-                "A regional bar exam board's two grading panels had produced pass rates so different that candidates in one region protested the disparity.",
-                "The board introduced a shared calibration exercise requiring both panels to grade identical sample answers first.",
-                "Pass rates between the two panels converged within a narrow, statistically expected range."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Track cause and effect: shared calibration leads to converging pass rates. One option reverses that.",
-            "explanation": "Because pass rates converge within an expected range, an option claiming they remained just as disparate reverses that measured outcome.",
-            "storyKeyEvents": [
-                "A regional bar exam board's two grading panels had produced pass rates so different that candidates in one region protested the disparity.",
-                "The board introduced a shared calibration exercise requiring both panels to grade identical sample answers first.",
-                "Pass rates between the two panels converged within a narrow, statistically expected range.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L170_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A multinational auditing firm's two regional practices had reached opposite conclusions about the same client's financial statements. The firm's global quality-review office examined both practices' underlying workpapers directly. The review determined one practice had failed to apply the firm's own updated accounting guidance.",
-            "options": [
-                "A multinational auditing firm's two regional practices had reached opposite conclusions about the same client's financial statements.",
-                "The review found both practices had applied the guidance correctly and simply disagreed in judgment.",
-                "The firm's global quality-review office examined both practices' underlying workpapers directly.",
-                "The review determined one practice had failed to apply the firm's own updated accounting guidance."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Notice what the review actually determines about the two practices' work.",
-            "explanation": "Because the review finds one practice failed to apply the updated guidance, an option claiming both applied it correctly reverses that specific finding.",
-            "storyKeyEvents": [
-                "A multinational auditing firm's two regional practices had reached opposite conclusions about the same client's financial statements.",
-                "The firm's global quality-review office examined both practices' underlying workpapers directly.",
-                "The review determined one practice had failed to apply the firm's own updated accounting guidance.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        }
-    ]
+  "gameType": "summarizeStoryWriting",
+  "batchIndex": 17,
+  "levels": "161-170",
+  "quests": [
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L161_Q1",
+      "instruction": "The story has a main thread and a side thread. Choose the three statements that carry the main thread across both paragraphs, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Nadia's neighbourhood association wanted to turn an empty lot into a small playground. They asked the council for permission and were told they needed a safety inspection first, which would cost four hundred pounds. Nadia started a sponsored walk to raise the money.\n\nForty people joined the walk and raised five hundred pounds. The inspector visited in March and approved the site with two small changes, and volunteers built the playground in May. Meanwhile a dispute over who owned the fence at the edge of the lot was settled by the council in a single letter.",
+      "options": [
+        "After the inspection was passed, volunteers built the playground in May.",
+        "Nadia's sponsored walk raised £500.",
+        "A dispute over who owned the fence at the edge of the lot was settled by a single council letter.",
+        "The council required a £400 safety inspection before allowing a playground on the empty lot."
+      ],
+      "correctOrder": [3, 1, 0],
+      "hint": "Look for the thread that starts in the first paragraph and ends in the second.",
+      "explanation": "The fence dispute has its own resolution and doesn't help or block the playground. The main thread is the required inspection, the fundraising walk, and the building of the playground.",
+      "storyKeyEvents": [
+        "The council required a £400 safety inspection before allowing a playground on the empty lot.",
+        "Nadia's sponsored walk raised £500.",
+        "After the inspection was passed, volunteers built the playground in May."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L161_Q2",
+      "instruction": "Choose the three statements that give the most complete compressed summary of both paragraphs, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Hamza had moved to the city for a job in the autumn. The flat he rented was small but had a view of the river. His manager asked him to lead a training day for new staff, and Hamza had never taught anyone before.\n\nHe asked a colleague, Pilar, to watch a practice run and give notes. She suggested cutting the slides in half and adding two exercises. On the day the new staff stayed engaged all morning, and two of them thanked him afterwards.",
+      "options": [
+        "Hamza rented a small flat with a view of the river after moving to the city for his job.",
+        "Hamza, who had never taught before, was asked to lead a training day for new staff.",
+        "On the day the new staff stayed engaged all morning.",
+        "A colleague, Pilar, watched a practice run and suggested halving the slides and adding two exercises."
+      ],
+      "correctOrder": [1, 3, 2],
+      "hint": "Setting details in the opening paragraph aren't always part of the main thread.",
+      "explanation": "The flat and its view describe where Hamza lives but play no part in the training day. The summary needs the request, the practice run and its advice, and the engaged staff.",
+      "storyKeyEvents": [
+        "Hamza, who had never taught before, was asked to lead a training day for new staff.",
+        "A colleague, Pilar, watched a practice run and suggested halving the slides and adding two exercises.",
+        "On the day the new staff stayed engaged all morning."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L161_Q3",
+      "instruction": "The story has a main thread and a side thread. Choose the three statements that carry the main thread across both paragraphs, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The bookshop café had been losing money for months. The owner, Carlota, noticed that most customers left after one coffee. She replaced the small tables with two long shared ones.\n\nWithin a month strangers were chatting over the tables, and many stayed for a second drink. Separately, the shop raised its book prices by five per cent. By spring the café was making a small profit.",
+      "options": [
+        "The café returned to profit because the shop raised its book prices.",
+        "She replaced the small tables with two long shared ones.",
+        "Customers stayed for second drinks, and by spring the café made a small profit.",
+        "Carlota noticed the café was losing money because most customers left after one coffee."
+      ],
+      "correctOrder": [3, 1, 2],
+      "hint": "Check which event the story links to the café's recovery, not just which came before it.",
+      "explanation": "The price rise is a separate change in the shop, and the story ties the café's recovery to the shared tables and the second drinks. Linking the profit to the prices reverses the story's cause.",
+      "storyKeyEvents": [
+        "Carlota noticed the café was losing money because most customers left after one coffee.",
+        "She replaced the small tables with two long shared ones.",
+        "Customers stayed for second drinks, and by spring the café made a small profit."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L162_Q1",
+      "instruction": "One statement is true but doesn't belong to the main thread. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Tuva's jazz trio lost its piano when the church sold it. Tuva asked members to bring ideas, and a garage, a library and the music school two streets away were suggested. She wrote to the music school offering to pay a small hourly fee.\n\nThe school agreed to lend a room and a piano on Thursday evenings for half the fee she offered. The trio rehearsed there all winter, and in December it played at the school's open evening, where two new members joined.",
+      "options": [
+        "The trio lost its piano when the church sold it.",
+        "The music school agreed to lend a room and piano on Thursday evenings for half the fee offered.",
+        "The trio played at the school's open evening in December and two new members joined.",
+        "Members suggested a garage, a library and the music school as places to rehearse."
+      ],
+      "correctOrder": [0, 1, 2],
+      "hint": "A list of possibilities is not the same as the choice that was made.",
+      "explanation": "The garage and library were only ideas, and the story follows the music school. The main thread is the lost piano, the school's offer, and the December performance.",
+      "storyKeyEvents": [
+        "The trio lost its piano when the church sold it.",
+        "The music school agreed to lend a room and piano on Thursday evenings for half the fee offered.",
+        "The trio played at the school's open evening in December and two new members joined."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L162_Q2",
+      "instruction": "The story has a main thread and a side thread. Choose the three statements that carry the main thread across both paragraphs, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The town's swimming club needed a new coach after Mr. Bell retired. The committee advertised the post and interviewed three candidates. They chose Ms. Ferro, who had coached a county team for six years.\n\nIn her first month she rearranged the lanes by speed rather than age, and times improved across the club. Mr. Bell, meanwhile, moved to the coast and took up sailing.",
+      "options": [
+        "Ms. Ferro rearranged the lanes by speed, and times improved across the club.",
+        "The committee interviewed three candidates after Mr. Bell retired.",
+        "Mr. Bell, the retired coach, moved to the coast and took up sailing.",
+        "They chose Ms. Ferro, an experienced county coach."
+      ],
+      "correctOrder": [1, 3, 0],
+      "hint": "Ask whose story each sentence belongs to, especially near the end.",
+      "explanation": "Mr. Bell's move follows his retirement but doesn't affect the club's new coach or its swimmers. The main thread is the search, the choice of Ms. Ferro, and the improved times.",
+      "storyKeyEvents": [
+        "The committee interviewed three candidates after Mr. Bell retired.",
+        "They chose Ms. Ferro, an experienced county coach.",
+        "Ms. Ferro rearranged the lanes by speed, and times improved across the club."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L162_Q3",
+      "instruction": "Choose the three statements that give the most complete compressed summary of both paragraphs, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Ansgar's bike was stolen from outside the library on Monday. He reported it to the police and posted a photo on the neighbourhood group.\n\nOn Thursday a neighbour spotted it locked outside a café across town. Ansgar confirmed the frame number, and the police recovered it. He bought a stronger lock that same week.",
+      "options": [
+        "After buying a stronger lock, Ansgar posted a photo of the bike.",
+        "Ansgar reported the stolen bike to the police and posted a photo on the neighbourhood group.",
+        "A neighbour spotted the bike locked outside a café across town.",
+        "After Ansgar confirmed the frame number, the police recovered it."
+      ],
+      "correctOrder": [1, 2, 3],
+      "hint": "Check the order across the two paragraphs.",
+      "explanation": "The lock was bought after the bike was found, while the photo was posted right after the theft. Reversing them puts the end of the story before its beginning.",
+      "storyKeyEvents": [
+        "Ansgar reported the stolen bike to the police and posted a photo on the neighbourhood group.",
+        "A neighbour spotted the bike locked outside a café across town.",
+        "After Ansgar confirmed the frame number, the police recovered it."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L163_Q1",
+      "instruction": "The story has a main thread and a side thread. Choose the three statements that carry the main thread across both paragraphs, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The village shop's sales fell in the spring. Its owner, Yara, suspected the new supermarket nearby, but a customer survey said people mostly wanted longer opening hours. Yara decided to open until eight instead of six.\n\nIn the first month sales rose by a fifth, especially between six and eight. The supermarket, meanwhile, had cut its prices that same month.",
+      "options": [
+        "The village shop's sales fell in the spring.",
+        "Sales rose because the supermarket cut its prices.",
+        "In the first month sales rose by a fifth, especially between six and eight.",
+        "A survey showed people wanted longer hours, so Yara opened until eight."
+      ],
+      "correctOrder": [0, 3, 2],
+      "hint": "Look at when the extra sales happened to see what they came from.",
+      "explanation": "The extra sales came mostly between six and eight, the new hours, so the supermarket's price cut can't explain them. The summary follows the drop, the survey and the change, and the rise.",
+      "storyKeyEvents": [
+        "The village shop's sales fell in the spring.",
+        "A survey showed people wanted longer hours, so Yara opened until eight.",
+        "In the first month sales rose by a fifth, especially between six and eight."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L163_Q2",
+      "instruction": "Choose the three statements that give the most complete compressed summary of both paragraphs, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Lior trained for a year to run a marathon in under four hours. He followed a plan, ran five days a week, and joined a running group for long weekend runs.\n\nOn race day he had a strong first half, but cramp slowed him after thirty kilometres, and he finished in four hours and eleven minutes. He was pleased to have finished, and he signed up for the next year's race.",
+      "options": [
+        "He finished in four hours and eleven minutes and signed up for next year's race.",
+        "Cramp slowed him after thirty kilometres on race day.",
+        "Lior trained for a year to run a marathon in under four hours.",
+        "Lior finished the marathon in under four hours."
+      ],
+      "correctOrder": [2, 1, 0],
+      "hint": "Compare the target with what the finish time actually was.",
+      "explanation": "His target was under four hours, but he finished in 4:11. The story is about a goal narrowly missed and a decision to try again.",
+      "storyKeyEvents": [
+        "Lior trained for a year to run a marathon in under four hours.",
+        "Cramp slowed him after thirty kilometres on race day.",
+        "He finished in four hours and eleven minutes and signed up for next year's race."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L163_Q3",
+      "instruction": "The story has a main thread and a side thread. Choose the three statements that carry the main thread across both paragraphs, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The library ran a scheme in which residents could borrow tools, from drills to ladders. At first only a few people knew about it, so the librarian, Mr. Ito, put a display near the door and mentioned it in the newsletter.\n\nBy June the tools were being borrowed sixty times a month. One resident, Mrs. Green, borrowed a ladder to clean her gutters.",
+      "options": [
+        "Mrs. Green borrowed a ladder from the library to clean her gutters.",
+        "Mr. Ito put a display near the door and mentioned the scheme in the newsletter.",
+        "Only a few people knew about the library's tool-lending scheme.",
+        "By June the tools were being borrowed sixty times a month."
+      ],
+      "correctOrder": [2, 1, 3],
+      "hint": "An example of one borrower is not the same as the trend the story describes.",
+      "explanation": "Mrs. Green's ladder is one instance of the scheme in use, not a step in how it grew. The thread is the low awareness, the display and newsletter, and the rise to sixty loans.",
+      "storyKeyEvents": [
+        "Only a few people knew about the library's tool-lending scheme.",
+        "Mr. Ito put a display near the door and mentioned the scheme in the newsletter.",
+        "By June the tools were being borrowed sixty times a month."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L164_Q1",
+      "instruction": "Choose the three statements that give the most complete compressed summary of both paragraphs, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Kwame spent three weekends restoring his father's old radio. He replaced two worn capacitors, cleaned the dial and re-soldered a loose wire, following a guide he found online.\n\nWhen he switched it on, the radio crackled and then played a station clearly. Kwame sat for a while listening and thinking of how his father used to hum along. He gave the radio to his father for his birthday.",
+      "options": [
+        "Kwame gave the restored radio to his father for his birthday.",
+        "Kwame sat listening for a while and thought of how his father used to hum along to it.",
+        "Kwame spent three weekends restoring his father's old radio.",
+        "When he switched it on, the radio crackled and then played a station clearly."
+      ],
+      "correctOrder": [2, 3, 0],
+      "hint": "A memory or thought is not an event in the plot.",
+      "explanation": "Kwame's thoughts add feeling but nothing changes because of them. The summary follows the restoration, the radio working, and the gift.",
+      "storyKeyEvents": [
+        "Kwame spent three weekends restoring his father's old radio.",
+        "When he switched it on, the radio crackled and then played a station clearly.",
+        "Kwame gave the restored radio to his father for his birthday."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L164_Q2",
+      "instruction": "The story has a main thread and a side thread. Choose the three statements that carry the main thread across both paragraphs, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The town's charity shop was running out of storage space, so the manager, Dalia, asked local firms for empty rooms. A removal company offered a warehouse corner for free, and volunteers moved the surplus stock in one Saturday.\n\nThe shop's window display improved as the shelves cleared, and sales rose by ten per cent. Separately, a burst pipe in the toilet was fixed by a volunteer plumber within an hour.",
+      "options": [
+        "A removal company offered a free warehouse corner, and volunteers moved the surplus stock in a Saturday.",
+        "With the shelves cleared, the window display improved and sales rose by ten per cent.",
+        "A burst pipe in the toilet was fixed by a volunteer plumber within an hour.",
+        "The charity shop ran out of storage space, and Dalia asked local firms for empty rooms."
+      ],
+      "correctOrder": [3, 0, 1],
+      "hint": "\"Separately\" points to a side thread. Follow the storage story.",
+      "explanation": "The burst pipe is a different problem solved on its own. The storage thread runs from the lack of space, to the warehouse corner, to improved sales.",
+      "storyKeyEvents": [
+        "The charity shop ran out of storage space, and Dalia asked local firms for empty rooms.",
+        "A removal company offered a free warehouse corner, and volunteers moved the surplus stock in a Saturday.",
+        "With the shelves cleared, the window display improved and sales rose by ten per cent."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L164_Q3",
+      "instruction": "One statement is true but doesn't belong to the main thread. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Elif's university seminar group had to present a joint report. Elif had joined the group late and hadn't met two of the members. She proposed a shared document with a section for each person.\n\nBy the deadline everyone had filled in their section, and Elif merged them into one report. The lecturer said it read as a single argument.",
+      "options": [
+        "Elif proposed a shared document with a section for each person in her group's joint report.",
+        "Elif merged the sections and the lecturer said the report read as a single argument.",
+        "Elif had joined the group late and hadn't met two of the members.",
+        "By the deadline everyone had filled in their section."
+      ],
+      "correctOrder": [0, 3, 1],
+      "hint": "Ask whether a detail about how she came to the group is needed to follow the report's story.",
+      "explanation": "The late joining explains nothing about how the report came together. The main thread is her proposal, everyone's contributions, and the merged report.",
+      "storyKeyEvents": [
+        "Elif proposed a shared document with a section for each person in her group's joint report.",
+        "By the deadline everyone had filled in their section.",
+        "Elif merged the sections and the lecturer said the report read as a single argument."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L165_Q1",
+      "instruction": "The story has a main thread and a side thread. Choose the three statements that carry the main thread across both paragraphs, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The new bus shelter on Hill Road was often wet inside because the rain ran in. Commuters complained to the council, which sent an engineer.\n\nThe engineer found that the drainage channel had been fitted backwards. A contractor refitted it in one afternoon. The council also installed a new timetable board at the stop, and the shelter stayed dry in the next rainfall.",
+      "options": [
+        "The shelter on Hill Road was often wet inside, and commuters complained to the council.",
+        "The shelter stayed dry because the council installed a new timetable board.",
+        "The engineer found that the drainage channel had been fitted backwards.",
+        "A contractor refitted the channel, and the shelter stayed dry in the next rainfall."
+      ],
+      "correctOrder": [0, 2, 3],
+      "hint": "Which change addresses the water, and which one only adds information?",
+      "explanation": "A timetable board has nothing to do with rain running into the shelter. The dry shelter follows the engineer's finding and the refitted channel.",
+      "storyKeyEvents": [
+        "The shelter on Hill Road was often wet inside, and commuters complained to the council.",
+        "The engineer found that the drainage channel had been fitted backwards.",
+        "A contractor refitted the channel, and the shelter stayed dry in the next rainfall."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L165_Q2",
+      "instruction": "One statement is true but doesn't belong to the main thread. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Ruth's tenants' association wanted to reduce noise from the stairwell. Members suggested carpet, rubber mats or signs asking people to be quiet. The association tried rubber mats on the first two floors for a month.\n\nNoise fell noticeably on those floors, so the association raised money from the tenants and fitted mats on all six floors by the summer.",
+      "options": [
+        "Noise fell noticeably on those floors.",
+        "Members suggested carpet, rubber mats or signs asking people to be quiet.",
+        "The tenants raised money and fitted mats on all six floors by the summer.",
+        "The association tried rubber mats on the first two floors to reduce stairwell noise."
+      ],
+      "correctOrder": [3, 0, 2],
+      "hint": "A list of options is different from the option that was tried.",
+      "explanation": "The brainstormed options were only ideas, and the story follows the trial of the mats. The thread is the trial, the improvement, and the full installation.",
+      "storyKeyEvents": [
+        "The association tried rubber mats on the first two floors to reduce stairwell noise.",
+        "Noise fell noticeably on those floors.",
+        "The tenants raised money and fitted mats on all six floors by the summer."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L165_Q3",
+      "instruction": "The story has a main thread and a side thread. Choose the three statements that carry the main thread across both paragraphs, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Pedro's grandfather's watch shop had been open for forty years but was losing customers to online sellers. Pedro started a website selling repairs by post: customers sent their watches in a padded envelope and received them fixed within a week.\n\nWithin six months half of the shop's income came from postal repairs. Pedro's cousin, who used to work at the shop, opened a bakery in another town.",
+      "options": [
+        "The old watch shop was losing customers to online sellers.",
+        "Pedro started a website offering repairs by post.",
+        "Pedro's cousin, who used to work at the shop, opened a bakery in another town.",
+        "Within six months half of the shop's income came from postal repairs."
+      ],
+      "correctOrder": [0, 1, 3],
+      "hint": "Someone else's later move doesn't belong to the shop's story.",
+      "explanation": "The cousin's bakery has no link to the watch shop's recovery. The main thread is the lost customers, the postal service, and the new income.",
+      "storyKeyEvents": [
+        "The old watch shop was losing customers to online sellers.",
+        "Pedro started a website offering repairs by post.",
+        "Within six months half of the shop's income came from postal repairs."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L166_Q1",
+      "instruction": "Choose the three statements that give the most complete compressed summary of both paragraphs, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Wanda's daughter asked for a bigger bedroom, but the family couldn't afford to move. Wanda measured the box room and the study and worked out that the two rooms could swap.\n\nThey spent a weekend swapping the furniture and repainting the study wall. By Sunday evening the daughter was sleeping in the bigger room, and the box room had become a tidy study.",
+      "options": [
+        "The daughter slept in the bigger room before Wanda had measured the rooms.",
+        "After a weekend of moving furniture, the daughter slept in the bigger room by Sunday evening.",
+        "Wanda measured the rooms and worked out that the box room and the study could swap.",
+        "The daughter wanted a bigger room, but the family couldn't afford to move."
+      ],
+      "correctOrder": [3, 2, 1],
+      "hint": "Decide which of the two things the family did before the other.",
+      "explanation": "The measuring came first and the sleeping in the bigger room came at the end of the weekend. Reversing them contradicts the sequence.",
+      "storyKeyEvents": [
+        "The daughter wanted a bigger room, but the family couldn't afford to move.",
+        "Wanda measured the rooms and worked out that the box room and the study could swap.",
+        "After a weekend of moving furniture, the daughter slept in the bigger room by Sunday evening."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L166_Q2",
+      "instruction": "The story has a main thread and a side thread. Choose the three statements that carry the main thread across both paragraphs, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Gideon's plumbing business had many missed calls because he worked alone and could not answer while on a job. He hired a part-time receptionist who answered calls three mornings a week.\n\nBookings rose by a third in two months. Gideon also repainted his van bright blue that spring.",
+      "options": [
+        "Bookings rose by a third in two months.",
+        "Gideon missed many calls because he worked alone and couldn't answer while on a job.",
+        "He hired a part-time receptionist to answer calls three mornings a week.",
+        "Bookings rose because the van was repainted bright blue."
+      ],
+      "correctOrder": [1, 2, 0],
+      "hint": "Which change fixes the problem of missed calls?",
+      "explanation": "The missed calls were the problem, and the receptionist answered them. The van's paint is a separate change that the story doesn't link to bookings.",
+      "storyKeyEvents": [
+        "Gideon missed many calls because he worked alone and couldn't answer while on a job.",
+        "He hired a part-time receptionist to answer calls three mornings a week.",
+        "Bookings rose by a third in two months."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L166_Q3",
+      "instruction": "Choose the three statements that give the most complete compressed summary of both paragraphs, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Sunniva's class aimed to raise five hundred pounds for a school trip with a car wash. They washed cars for two Saturdays, and volunteers handed out leaflets in the street.\n\nThey raised three hundred and eighty pounds, short of the target. The head teacher matched the remainder from the school fund, and the trip went ahead.",
+      "options": [
+        "They raised £380, short of the target.",
+        "Sunniva's class planned a car wash to raise five hundred pounds for a school trip.",
+        "The head teacher covered the remainder from the school fund and the trip went ahead.",
+        "The class raised the full five hundred pounds from the car wash."
+      ],
+      "correctOrder": [1, 0, 2],
+      "hint": "Compare the target with what the class actually raised.",
+      "explanation": "They raised £380, not £500, which is why the head teacher covered the rest. The summary follows the target, the shortfall, and the head teacher's help.",
+      "storyKeyEvents": [
+        "Sunniva's class planned a car wash to raise five hundred pounds for a school trip.",
+        "They raised £380, short of the target.",
+        "The head teacher covered the remainder from the school fund and the trip went ahead."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L167_Q1",
+      "instruction": "One statement is true but doesn't belong to the main thread. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The office introduced a no-meeting rule for Friday afternoons so staff could do focused work. At first several managers ignored it and kept scheduling calls, so the director sent a reminder and blocked their calendars.\n\nAfter two months a survey showed that staff felt less rushed. One designer, Marit, finished a long-delayed project on a single Friday afternoon. The rule was extended to Thursday mornings.",
+      "options": [
+        "Marit finished a long-delayed project on a single Friday afternoon.",
+        "After two months a survey showed staff felt less rushed.",
+        "The office introduced a no-meeting rule for Friday afternoons.",
+        "The director sent a reminder and blocked calendars after some managers ignored the rule."
+      ],
+      "correctOrder": [2, 3, 1],
+      "hint": "One person's example doesn't replace the wider trend the story reports.",
+      "explanation": "Marit's project illustrates the rule's effect, but it isn't part of the sequence that got the rule working. The thread is the rule, the reminder, and the survey result.",
+      "storyKeyEvents": [
+        "The office introduced a no-meeting rule for Friday afternoons.",
+        "The director sent a reminder and blocked calendars after some managers ignored the rule.",
+        "After two months a survey showed staff felt less rushed."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L167_Q2",
+      "instruction": "The story has a main thread and a side thread. Choose the three statements that carry the main thread across both paragraphs, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Every morning Odd cycled past the abandoned petrol station and wondered what it could become. He wrote to the council with an idea for a community bike workshop.\n\nThe council agreed to a six-month trial. The workshop opened in May, and by August seventy bikes had been repaired for local families. Odd said afterwards that he still felt proud every time he passed.",
+      "options": [
+        "The council agreed to a six-month trial.",
+        "The workshop opened in May, and by August seventy bikes had been repaired for local families.",
+        "Odd wrote to the council with an idea for a bike workshop in the abandoned petrol station.",
+        "Odd said he still felt proud every time he passed the workshop."
+      ],
+      "correctOrder": [2, 0, 1],
+      "hint": "A feeling described at the end isn't part of what happened.",
+      "explanation": "Odd's pride is his own reaction and doesn't change the workshop. The main thread is the letter, the trial, and the repaired bikes.",
+      "storyKeyEvents": [
+        "Odd wrote to the council with an idea for a bike workshop in the abandoned petrol station.",
+        "The council agreed to a six-month trial.",
+        "The workshop opened in May, and by August seventy bikes had been repaired for local families."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L167_Q3",
+      "instruction": "Choose the three statements that give the most complete compressed summary of both paragraphs, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The residents' association wanted to cut food waste at its monthly community lunch. The cook, Mr. Vega, started serving smaller portions with free seconds and asked people to scrape plates into a labelled bin.\n\nWithin a term the weight of thrown-away food fell by a third. Meanwhile the hall's freezer broke and was replaced under warranty.",
+      "options": [
+        "The association wanted to cut food waste at its monthly lunch.",
+        "Within a term the weight of thrown-away food fell by a third.",
+        "Mr. Vega served smaller portions with free seconds and asked people to scrape plates into a labelled bin.",
+        "The hall's freezer broke down and was then replaced under warranty."
+      ],
+      "correctOrder": [0, 2, 1],
+      "hint": "\"Meanwhile\" often introduces something unrelated. Does it matter here?",
+      "explanation": "The freezer breakdown was fixed under warranty and doesn't affect the waste at the lunches. The story follows the aim, the new serving method, and the reduction.",
+      "storyKeyEvents": [
+        "The association wanted to cut food waste at its monthly lunch.",
+        "Mr. Vega served smaller portions with free seconds and asked people to scrape plates into a labelled bin.",
+        "Within a term the weight of thrown-away food fell by a third."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L168_Q1",
+      "instruction": "The story has a main thread and a side thread. Choose the three statements that carry the main thread across both paragraphs, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Bilal had worked at the printing firm for eleven years and knew every machine. When the firm bought a new digital press, the manager asked him to learn it.\n\nHe spent two weeks with the supplier's technician and wrote a one-page guide for the night staff. By March the whole team could run the press, and jobs were finished a day faster.",
+      "options": [
+        "Bilal spent two weeks with the technician and wrote a one-page guide for the night staff.",
+        "Bilal had worked at the printing firm for eleven years and knew every machine.",
+        "The firm bought a new digital press and the manager asked Bilal to learn it.",
+        "By March the team could run the press and jobs were finished a day faster."
+      ],
+      "correctOrder": [2, 0, 3],
+      "hint": "Some background explains why a character was chosen. Is it needed to follow what happened?",
+      "explanation": "His eleven years' service is background about him and doesn't change the events. The story is the new press, the training and guide, and the faster jobs.",
+      "storyKeyEvents": [
+        "The firm bought a new digital press and the manager asked Bilal to learn it.",
+        "Bilal spent two weeks with the technician and wrote a one-page guide for the night staff.",
+        "By March the team could run the press and jobs were finished a day faster."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L168_Q2",
+      "instruction": "One statement is true but doesn't belong to the main thread. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Two students, Philippa and Anselm, agreed to tutor each other: Philippa helped Anselm with statistics, and Anselm helped Philippa with essay structure. They met in the library each Wednesday.\n\nBy the exam, Anselm's statistics mark had risen from a pass to a merit, and Philippa's essay mark had gone up by ten points. Philippa also joined the university choir that term.",
+      "options": [
+        "By the exam, Anselm's statistics mark and Philippa's essay mark had both risen.",
+        "Philippa's essay mark rose because she joined the university choir.",
+        "They met in the library each Wednesday.",
+        "Philippa and Anselm agreed to tutor each other in statistics and essay structure."
+      ],
+      "correctOrder": [3, 2, 0],
+      "hint": "Which activity does the story link to the marks?",
+      "explanation": "The choir is mentioned as a separate activity, and the story ties the marks to the weekly tutoring. Crediting the choir gets the cause wrong.",
+      "storyKeyEvents": [
+        "Philippa and Anselm agreed to tutor each other in statistics and essay structure.",
+        "They met in the library each Wednesday.",
+        "By the exam, Anselm's statistics mark and Philippa's essay mark had both risen."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L168_Q3",
+      "instruction": "The story has a main thread and a side thread. Choose the three statements that carry the main thread across both paragraphs, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The hospital pharmacy's waiting times were long. Staff considered longer opening hours, more staff or a text-message system. They trialled the text-message system for a month, telling patients when prescriptions were ready.\n\nWaiting times fell from forty minutes to fifteen, so the pharmacy adopted texting permanently and added a second pick-up counter.",
+      "options": [
+        "Waiting times fell from forty minutes to fifteen.",
+        "The pharmacy's waiting times were long, so staff trialled a text-message system for a month.",
+        "Staff considered longer opening hours, more staff or a text-message system.",
+        "The pharmacy adopted texting permanently and added a second pick-up counter."
+      ],
+      "correctOrder": [1, 0, 3],
+      "hint": "A set of possible options isn't what happened.",
+      "explanation": "Considering options is different from choosing one. The story's thread is the trial, the fall in waiting times, and the permanent change.",
+      "storyKeyEvents": [
+        "The pharmacy's waiting times were long, so staff trialled a text-message system for a month.",
+        "Waiting times fell from forty minutes to fifteen.",
+        "The pharmacy adopted texting permanently and added a second pick-up counter."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L169_Q1",
+      "instruction": "Choose the three statements that give the most complete compressed summary of both paragraphs, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Nell's band needed a bigger practice room after adding a drummer. The community centre offered the old storeroom if the band cleared it out, and the band spent a weekend doing so.\n\nThey painted the walls and put up foam panels, and by June they were rehearsing there twice a week. The community centre's manager, who had offered the room, retired at the end of the summer.",
+      "options": [
+        "After painting and adding foam panels, the band was rehearsing there twice a week by June.",
+        "Nell's band needed a bigger room after adding a drummer, and the community centre offered its old storeroom.",
+        "The community centre's manager retired at the end of the summer.",
+        "The band spent a weekend clearing the storeroom."
+      ],
+      "correctOrder": [1, 3, 0],
+      "hint": "An event about another person at the end isn't the band's story.",
+      "explanation": "The manager's retirement is a later side note. The band's thread is the offer, the clearing, and the rehearsals.",
+      "storyKeyEvents": [
+        "Nell's band needed a bigger room after adding a drummer, and the community centre offered its old storeroom.",
+        "The band spent a weekend clearing the storeroom.",
+        "After painting and adding foam panels, the band was rehearsing there twice a week by June."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L169_Q2",
+      "instruction": "The story has a main thread and a side thread. Choose the three statements that carry the main thread across both paragraphs, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The town's charity fun run had too few marshals. The organiser asked local clubs, and the rugby club promised ten volunteers.\n\nOn the day the rugby volunteers stood at each junction, and the run finished without a single wrong turn. The organiser then sent each club a thank-you letter.",
+      "options": [
+        "The organiser sent each club a thank-you letter before asking the clubs for marshals.",
+        "The rugby club promised ten volunteers.",
+        "The charity fun run had too few marshals.",
+        "On the day the volunteers stood at each junction and there were no wrong turns."
+      ],
+      "correctOrder": [2, 1, 3],
+      "hint": "Check whether thanking came before or after asking.",
+      "explanation": "The thank-you letters were sent after the run, not before the request. Reversing them turns the ending into a beginning.",
+      "storyKeyEvents": [
+        "The charity fun run had too few marshals.",
+        "The rugby club promised ten volunteers.",
+        "On the day the volunteers stood at each junction and there were no wrong turns."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L169_Q3",
+      "instruction": "One statement is true but doesn't belong to the main thread. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The village pond had turned green with algae. The parish council asked a local ecologist, who found that fertiliser from the nearby field was running into the water. She recommended a strip of tall grass along the field's edge.\n\nThe farmer planted the strip that autumn, and by the following summer the water was clearer. The council also added a new bench beside the pond.",
+      "options": [
+        "The water became clearer because the council added a new bench.",
+        "The farmer planted the strip, and by the following summer the water was clearer.",
+        "The ecologist found fertiliser running in from the nearby field and recommended a strip of tall grass.",
+        "The village pond turned green with algae."
+      ],
+      "correctOrder": [3, 2, 1],
+      "hint": "Which change touches the fertiliser that caused the problem?",
+      "explanation": "The bench doesn't reduce the fertiliser reaching the pond. The clearer water follows the ecologist's finding and the grass strip.",
+      "storyKeyEvents": [
+        "The village pond turned green with algae.",
+        "The ecologist found fertiliser running in from the nearby field and recommended a strip of tall grass.",
+        "The farmer planted the strip, and by the following summer the water was clearer."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L170_Q1",
+      "instruction": "Choose the three statements that give the most complete compressed summary of both paragraphs, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Astrid wanted her small publishing house to release twelve books in the year. She hired two freelance editors and set a monthly schedule.\n\nBy December nine books were out and three were delayed by a printing problem. Astrid moved the three to January and planned a bigger budget for next year.",
+      "options": [
+        "By December nine books were out and three were delayed by a printing problem.",
+        "Astrid aimed to publish twelve books in the year and hired two freelance editors.",
+        "Astrid moved the three delayed books to January.",
+        "All twelve books were published by December, exactly as Astrid had planned."
+      ],
+      "correctOrder": [1, 0, 2],
+      "hint": "Compare the goal with the result the story reports.",
+      "explanation": "Only nine books were out, and three were delayed, which is why Astrid moved them to January. Claiming all twelve appeared reverses the outcome.",
+      "storyKeyEvents": [
+        "Astrid aimed to publish twelve books in the year and hired two freelance editors.",
+        "By December nine books were out and three were delayed by a printing problem.",
+        "Astrid moved the three delayed books to January."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L170_Q2",
+      "instruction": "The story has a main thread and a side thread. Choose the three statements that carry the main thread across both paragraphs, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The scout troop's leaders had no system for tracking the children's progress toward badges. A volunteer, Mr. Rao, created a shared spreadsheet where leaders noted each scout's attendance and skills after every meeting.\n\nAfter a season the leaders could see who was improving and who needed help. One scout's record showed he had missed a third of the meetings, and Mr. Rao phoned his parents. Parents began asking to see the sheet.",
+      "options": [
+        "The scout troop's leaders had no system for tracking progress toward badges.",
+        "Mr. Rao created a shared spreadsheet for leaders to note attendance and skills.",
+        "After a season the leaders could see who was improving and who needed help.",
+        "One scout's record showed he had missed a third of the meetings."
+      ],
+      "correctOrder": [0, 1, 2],
+      "hint": "A particular case shows the system at work. Is it the system's story?",
+      "explanation": "The scout with the missed meetings is an example of the sheet being used, not a step in setting it up. The thread is the missing system, the spreadsheet, and the season's clear picture.",
+      "storyKeyEvents": [
+        "The scout troop's leaders had no system for tracking progress toward badges.",
+        "Mr. Rao created a shared spreadsheet for leaders to note attendance and skills.",
+        "After a season the leaders could see who was improving and who needed help."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L170_Q3",
+      "instruction": "One statement is true but doesn't belong to the main thread. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Mira and her friends had two weekends to shoot a short film they had spent a year writing. On the first weekend it rained, so they filmed the indoor scenes first and moved the outdoor scenes to the second weekend.\n\nOn the second weekend the sun came out and the last scene was filmed at dusk. Mira said later that the whole year felt like a dream. They screened the film at a local café in September.",
+      "options": [
+        "On the second weekend the sun came out and the last scene was filmed at dusk.",
+        "Mira said later that the whole year felt like a dream.",
+        "They screened the film at a local café in September.",
+        "Mira and her friends filmed the indoor scenes first when it rained on the first weekend."
+      ],
+      "correctOrder": [3, 0, 2],
+      "hint": "A remark about how she felt isn't a step in making the film.",
+      "explanation": "Mira's comment reflects on the experience but adds no event. The thread is the change of schedule, the final scene, and the screening.",
+      "storyKeyEvents": [
+        "Mira and her friends filmed the indoor scenes first when it rained on the first weekend.",
+        "On the second weekend the sun came out and the last scene was filmed at dusk.",
+        "They screened the film at a local café in September."
+      ]
+    }
+  ]
 }

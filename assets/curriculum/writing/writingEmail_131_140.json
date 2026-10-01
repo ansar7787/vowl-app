@@ -8,21 +8,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email proposing an internal move to a completely different department within your company.",
+            "prompt": "A customer wrote: 'Do you ship the oak bookcase to Ireland, and how long does it take?' The subject line, greeting and sign-off are already written (Subject: Re: Oak bookcase delivery to Ireland / Dear Mr Byrne, / Kind regards, Mirabel Ferro, Woodhouse Furniture). Arrange the body.",
             "options": [
-                "Subject: Exploring a move into the product team",
-                "Dear Rebecca,",
-                "Having spent the last three years in customer support, I have developed a genuine interest in product development and have been informally shadowing the product team on fridays, so I would like to ask whether we could discuss a formal transfer once a suitable opening arises.",
-                "Best regards,\nMargaret Okonjo"
+                "The shipping charge is €45, and it is shown at checkout once you enter your address.",
+                "Thank you for your interest in the oak bookcase.",
+                "Yes, we deliver to Ireland, and delivery normally takes seven to ten working days.",
+                "Please let us know if you have any other questions."
             ],
             "correctOrder": [
-                0,
                 1,
                 2,
+                0,
                 3
             ],
-            "hint": "The specific move is named in the subject; the manager is addressed by first name; your background, the concrete evidence of initiative, and the specific request are in the body; 'BEST REGARDS' closes professionally.",
-            "explanation": "Mentioning that you have already been 'informally shadowing the product team' shows genuine, demonstrated interest rather than a passing idea. Asking to discuss a transfer 'once a suitable opening arises' is realistic and considerate of the company's current staffing needs.",
+            "hint": "Answer the question in the first sentence, then add the cost detail.",
+            "explanation": "A good service reply answers the customer's exact question straight away. Extra information (cost) comes second because it is helpful, not central.",
             "formalityLevel": "Formal"
         },
         {
@@ -30,21 +30,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email proposing a job-share arrangement to your manager for your current role.",
+            "prompt": "A customer asked whether a laptop charger is compatible with two models. Lay out the reply, which must be accurate and helpful.",
             "options": [
-                "Dear Daniel,",
-                "Subject: Proposal - job-share arrangement for my role",
-                "Best regards,\nChidiebere Okonkwo",
-                "Having spoken informally with a colleague who is also interested in reduced hours, I would like to propose that we split my current role into a job-share, each working two and a half days with a half-day handover overlap to ensure nothing is missed between us."
+                "Thank you for your question. The 65W charger works with the Zenbook 14, but it is not suitable for the Aspire 5, which needs a 90W model.",
+                "We stock the 90W charger for £34.99, and I have included the link below.\n\nBest wishes,\nOwen Pryor, Technical Support",
+                "Dear Ms Pemberton,",
+                "Subject: Re: Charger compatibility with Zenbook 14 and Aspire 5"
             ],
             "correctOrder": [
-                1,
-                0,
                 3,
-                2
+                2,
+                0,
+                1
             ],
-            "hint": "The specific arrangement is named in the subject; the manager is addressed by first name; the background and a detailed, workable structure are in the body; 'BEST REGARDS' closes professionally.",
-            "explanation": "Proposing a specific structure, including a handover overlap, shows you have thought through the practical challenges of a job-share, not just the appeal of reduced hours. Mentioning that a colleague is already on board makes the proposal immediately actionable rather than hypothetical.",
+            "hint": "Give both answers plainly, then offer a solution.",
+            "explanation": "When the answer is partly no, saying so clearly prevents a wrong purchase. Offering the correct product turns the limitation into service.",
             "formalityLevel": "Formal"
         },
         {
@@ -52,21 +52,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email formally requesting a temporary secondment to another team or project.",
+            "prompt": "A customer left a vague message: 'My order is wrong.' The subject line, greeting and sign-off are already written (Subject: Re: Your order: we would like to help / Dear Customer, / Kind regards, Tasha Coleman). Arrange the body.",
             "options": [
-                "I understand the analytics team is looking for temporary support on the customer insights project, and given my background in data, I would like to formally request a three-month secondment, with my current responsibilities covered by someone within our team during that time.",
-                "Dear Priya,",
-                "Best regards,\nFolasade Banjoko",
-                "Subject: Request for a three-month secondment to the analytics team"
+                "A photo would help if the item is damaged or incorrect.",
+                "Could you tell us your order number and what is different from what you expected?",
+                "I am sorry to hear that there is a problem with your order, and I would like to put it right.",
+                "We will reply within one working day."
             ],
             "correctOrder": [
-                3,
+                2,
                 1,
                 0,
-                2
+                3
             ],
-            "hint": "The specific duration and destination are in the subject; the manager is addressed by first name; the relevant background and a plan for covering your absence are in the body; 'BEST REGARDS' closes professionally.",
-            "explanation": "Specifying an exact duration ('three-month secondment') makes the request feel like a defined, low-risk trial rather than an open-ended departure. Proactively addressing how your current role would be covered removes the manager's most obvious objection before they even raise it.",
+            "hint": "Show empathy, ask for exactly the details required, promise timing.",
+            "explanation": "A specific request for information avoids repeated back-and-forth. Promising a response time reassures the customer.",
             "formalityLevel": "Formal"
         },
         {
@@ -74,21 +74,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email escalating a warranty dispute directly to a manufacturer after the retailer failed to help.",
+            "prompt": "Set out the email from a customer whose washing machine failed after fourteen months, when the warranty is two years.",
             "options": [
-                "Dear Customer Care Team,",
-                "Having been told by the retailer that this is a manufacturing fault outside their control, I am contacting you directly regarding my washing machine, which stopped working after just four months, well within the two-year warranty period stated on your website.",
-                "Yours faithfully,\nOluwatosin Adebayo",
-                "Subject: Warranty claim - retailer unable to resolve, escalating to you directly"
+                "It is still within the two-year warranty. I have attached the receipt and a video of the fault, and would like to arrange a repair or replacement.\n\nYours faithfully,\nCynthia Bello",
+                "Subject: Warranty claim: Hydra 7 washing machine, serial HX-49128",
+                "I bought a Hydra 7 washing machine from your store on 5 April last year, and it stopped spinning on 2 June.",
+                "Dear Customer Service,"
             ],
             "correctOrder": [
-                3,
-                0,
                 1,
-                2
+                3,
+                2,
+                0
             ],
-            "hint": "The escalation and reason are clear in the subject; the manufacturer is addressed by role, not name; the retailer's position, the fault, and the warranty terms are in the body; the closing must match this unnamed greeting.",
-            "explanation": "Explaining that the retailer redirected you to the manufacturer justifies going directly to head office rather than appearing to skip a step. Citing the exact warranty period from their own website removes any ambiguity about whether the claim is valid.",
+            "hint": "Product, purchase date, problem, warranty, evidence, request.",
+            "explanation": "A warranty claim is stronger when it establishes eligibility first. The video and receipt let the company decide without asking more questions.",
             "formalityLevel": "Formal"
         },
         {
@@ -96,21 +96,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email formally requesting compensation from a contractor after a home renovation was completed to a poor standard.",
+            "prompt": " The subject line, greeting and sign-off are already written (Subject: Re: Warranty claim HX-49128 / Dear Ms Bello, / Yours sincerely, Nigel Storey). Arrange the body.",
             "options": [
-                "Subject: Formal request for remedial work - kitchen renovation",
-                "Yours sincerely,\nAdaeze Okoro",
-                "Having now had two independent tradespeople look at the tiling, both have confirmed the work does not meet a reasonable standard, so I would like to formally request that you either return to complete the remedial work at no additional cost or refund the relevant portion of the invoice.",
-                "Dear Mr Connolly,"
+                "Our engineer has reviewed them and concluded that the cracked screen was caused by an impact.",
+                "Accidental damage is not covered by the warranty, so we are unable to repair it free of charge.",
+                "We can offer a repair for £89, and I would be happy to arrange this if you would like.",
+                "Thank you for sending the photographs."
             ],
             "correctOrder": [
-                0,
                 3,
-                2,
-                1
+                0,
+                1,
+                2
             ],
-            "hint": "The formal request is central to the subject; the contractor is addressed by name; independent evidence and two acceptable remedies are in the body; the closing matches this named greeting.",
-            "explanation": "Citing two independent professional opinions makes the complaint about verified quality, not personal dissatisfaction. Offering two acceptable outcomes - remedial work or a partial refund - gives the contractor a clear, fair way to resolve the matter rather than a single ultimatum.",
+            "hint": "Explain the reasoning before the decision; offer an option.",
+            "explanation": "Explaining the basis of the decision makes it easier to accept. A paid repair option shows the company is trying to help despite the refusal.",
             "formalityLevel": "Formal"
         },
         {
@@ -118,12 +118,12 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email negotiating a fair settlement with a contractor after a dispute over the standard of completed work.",
+            "prompt": "Build the customer's response asking for a second review of a rejected claim.",
             "options": [
-                "Dear Ms Ferreira,",
-                "Subject: Proposed way to settle our disagreement",
-                "Rather than continue going back and forth, I would like to propose a practical solution: I will pay the outstanding £400 balance in full if you agree to send someone to repair the two cracked tiles we discussed, which I believe is a fair resolution for both of us.",
-                "Best regards,\nDesmond Atkinson"
+                "Dear Mr Storey,",
+                "Subject: Request for a further review of claim HX-49128",
+                "Thank you for your explanation of the decision on my claim.",
+                "I respectfully disagree that the damage was caused by an impact, because the fault appeared while the appliance was in normal use. I would be grateful if a second engineer could examine it, and I can be available at any time next week.\n\nYours sincerely,\nCynthia Bello"
             ],
             "correctOrder": [
                 1,
@@ -131,8 +131,8 @@
                 2,
                 3
             ],
-            "hint": "A practical, forward-looking tone is in the subject; the contractor is addressed by name; a specific proposed exchange - payment for repair - is in the body; 'BEST REGARDS' closes on fair terms.",
-            "explanation": "Proposing an exact exchange - full payment in return for a specific repair - gives both sides something concrete to agree to, ending a stalemate. Framing the outcome as 'fair for both of us' signals genuine compromise rather than a one-sided demand.",
+            "hint": "Accept the message received, state disagreement politely, propose a solution.",
+            "explanation": "Acknowledging the explanation shows you read it. Suggesting a second inspection is a specific, reasonable next step.",
             "formalityLevel": "Formal"
         },
         {
@@ -140,21 +140,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write a sensitive email to a sibling proposing that the family begin discussing power of attorney arrangements for an ageing parent.",
+            "prompt": "Arrange the email from a company informing a customer that a delivery will be late.",
             "options": [
-                "Love,\nClaire",
-                "I know this isn't an easy topic, but given mum's recent health scare, I think it would be wise for us to start a gentle conversation with her about setting up power of attorney while she is still fully able to make that decision herself, rather than waiting until it feels urgent.",
-                "Subject: A sensitive topic we should probably discuss",
-                "Dear James,"
+                "I am writing to let you know that your sofa will be delivered on Friday 20 June instead of Tuesday 17 June.",
+                "The manufacturer's lorry broke down, and we are sorry for the inconvenience. If Friday is not suitable, please reply, and we will arrange another date.\n\nYours sincerely,\nPauline Rowe",
+                "Subject: Update on your order 55107: new delivery date",
+                "Dear Mr Nkosi,"
             ],
             "correctOrder": [
                 2,
                 3,
-                1,
-                0
+                0,
+                1
             ],
-            "hint": "A gentle, careful framing is used in the subject; a sibling is addressed by first name; the sensitive context and a reasoned, timely suggestion are in the body; 'LOVE' closes as a family member.",
-            "explanation": "Acknowledging directly that 'this isn't an easy topic' shows emotional awareness before raising something difficult. Emphasising that the conversation should happen 'while she is still fully able to make that decision herself' respects the parent's autonomy rather than making decisions about her.",
+            "hint": "New date first, then the reason, then how to change it.",
+            "explanation": "The date is the information the customer needs most. Giving a reason briefly and offering flexibility shows respect.",
             "formalityLevel": "Formal"
         },
         {
@@ -162,21 +162,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write a formal email to a school requesting a formal assessment of your child's additional learning needs.",
+            "prompt": "A customer asks for compensation for a delayed delivery that spoiled an event. Assemble the email.",
             "options": [
-                "Dear Mrs Adeyemi,",
-                "Yours sincerely,\nGodwin And Kemi Nnaji",
-                "Subject: Request for a formal learning needs assessment",
-                "Having noticed that our son continues to struggle with reading despite extra support this term, we would like to formally request that the school arrange a proper assessment to check whether an underlying learning difference might be contributing to the difficulty."
+                "I ordered a banner for my daughter's graduation party on 14 June, and it was promised for 9 June.",
+                "Subject: Request for compensation: order 63320, delivered two days late",
+                "It arrived on 11 June, after the event had been rescheduled, and I would like to know whether you can offer a partial refund.\n\nYours faithfully,\nGrace Otieno",
+                "Dear Sir or Madam,"
             ],
             "correctOrder": [
-                2,
-                0,
+                1,
                 3,
-                1
+                0,
+                2
             ],
-            "hint": "The formal request is central to the subject; the teacher is addressed by name; the pattern already observed and the specific, reasoned request are in the body; the closing matches this named greeting, signed by both parents.",
-            "explanation": "Mentioning that the struggle persists 'despite extra support this term' shows the usual measures have already been tried, justifying a more formal step. Framing the request around checking for 'an underlying learning difference' focuses on the child's wellbeing rather than blaming the school.",
+            "hint": "State the promised date, the actual date, the impact and your proposal.",
+            "explanation": "Describing the mismatch and its effect makes the request understandable. Asking for a partial refund is a reasonable proposal.",
             "formalityLevel": "Formal"
         },
         {
@@ -184,21 +184,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write a tactful email to siblings proposing a fair approach to a sensitive family inheritance conversation.",
+            "prompt": "Lay out the reply to a customer who has chased a delayed order angrily.",
             "options": [
-                "Subject: A gentle suggestion about dad's will",
-                "I don't want this to feel awkward between us, but I think it might be helpful if the three of us sat down together before meeting the solicitor, just so we are all aligned and dad isn't put in the middle of any disagreements between us.",
-                "Dear Sarah And Tom,",
-                "Love,\nMichael"
+                "Subject: Re: Where is my order?",
+                "It is now with the courier and will be delivered tomorrow before 6 pm. I have refunded the delivery charge, and you can track it using the link below.\n\nYours sincerely,\nMaria Andersson",
+                "Dear Mr Chowdhury,",
+                "I understand your frustration, and I am sorry that your order 71234 is late."
             ],
             "correctOrder": [
                 0,
                 2,
-                1,
-                3
+                3,
+                1
             ],
-            "hint": "A careful, reassuring tone is signalled in the subject; siblings are addressed together by name; genuine care about family harmony and a practical, protective suggestion are in the body; 'LOVE' closes warmly as family.",
-            "explanation": "Naming the risk directly - not wanting it to feel 'awkward' - shows self-awareness about how sensitive the topic is. Framing the meeting as protecting the parent from being 'put in the middle' reframes the conversation around care for the parent, not the siblings' own interests.",
+            "hint": "Empathy, solution, compensation, tracking.",
+            "explanation": "Recognising frustration calms the tone. Giving a firm time and a refund replaces uncertainty with something concrete.",
             "formalityLevel": "Formal"
         },
         {
@@ -206,21 +206,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email submitting a research ethics application to a university committee, explained in plain terms.",
+            "prompt": "Piece together the email asking to change the size of an order that has not shipped yet.",
             "options": [
-                "Dear Ethics Committee,",
-                "Yours faithfully,\nFiona Macleod",
-                "Subject: Ethics application submission - interview-based study",
-                "I am submitting my application for a study involving interviews with fifteen participants about their experiences of remote working, and I have included a consent form, a debrief sheet, and a clear explanation of how participant data will be anonymised throughout."
+                "Could you change the size before it is dispatched? If it has already left, please tell me how to arrange an exchange.\n\nYours faithfully,\nPilar Herrera",
+                "I placed order 82019 this morning for a pair of boots in size 40, but I need size 42.",
+                "Subject: Urgent size change: order 82019, not yet dispatched",
+                "Dear Orders Team,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
-            "hint": "The study type is named in the subject; the committee is addressed by role, not name; the study's scope and the three key documents included are in the body; the closing must match this unnamed greeting.",
-            "explanation": "Listing the specific documents included - consent form, debrief sheet, anonymisation plan - shows the committee the application is complete, reducing the chance of it being sent back for missing information. Stating the exact number of participants and topic gives reviewers the scope at a glance.",
+            "hint": "Order, change, backup plan.",
+            "explanation": "Speed matters here, so the order number and change come first. A fallback question avoids a second email if the order has shipped.",
             "formalityLevel": "Formal"
         },
         {
@@ -228,21 +228,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email making a well-reasoned case to your employer for a three-month career break.",
+            "prompt": " The subject line, greeting and sign-off are already written (Subject: Re: Size change for order 82019 / Dear Ms Herrera, / Yours sincerely, Otis Bell). Arrange the body.",
             "options": [
-                "Dear Annika,",
-                "Having worked continuously for seven years without an extended break, I would like to request three months of unpaid leave next spring, and I have already identified two colleagues who could cover my key responsibilities between them during my absence.",
-                "Subject: Request for a three-month career break",
-                "Best regards,\nOluwadamilola Adesida"
+                "Thank you for contacting us so quickly.",
+                "Unfortunately your order had already been dispatched when your message arrived.",
+                "You can return the boots free of charge within 30 days, and we will send size 42 at no extra cost once the return arrives.",
+                "So we cannot change it."
             ],
             "correctOrder": [
-                2,
                 0,
                 1,
-                3
+                3,
+                2
             ],
-            "hint": "The specific request is in the subject; the manager is addressed by first name; your tenure, the reasoning, and a concrete coverage plan are in the body; 'BEST REGARDS' closes professionally.",
-            "explanation": "Citing your tenure ('seven years without an extended break') gives the request context and shows this isn't a sudden or frequent ask. Having already identified cover for your responsibilities removes the main practical concern before the manager even has to think about it.",
+            "hint": "Thanks, refusal with the reason, alternative.",
+            "explanation": "Thanking the customer for acting quickly is polite, and explaining why the change is impossible is honest. The alternative process is the useful part.",
             "formalityLevel": "Formal"
         },
         {
@@ -250,43 +250,43 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email formally responding to being denied a promotion, requesting detailed feedback for the future.",
+            "prompt": "Structure the email that adds a delivery instruction to an existing order.",
             "options": [
-                "Subject: Thank you for letting me know - requesting feedback",
-                "Thank you for taking the time to explain the decision - while I am naturally disappointed, I would find it very helpful to understand specifically what the successful candidate demonstrated that I did not, so that I can focus my development in the right areas before the next opportunity arises.",
-                "Best regards,\nChioma Ezeigwe",
-                "Dear Marcus,"
+                "The flat is 12B, and the concierge is on duty until 8 pm.\n\nThank you,\nAmina Hassan",
+                "Hello,",
+                "Subject: Delivery instruction for order 91044",
+                "Could you please add a note to order 91044 asking the courier to leave the parcel with the concierge if I am not in?"
             ],
             "correctOrder": [
-                0,
-                3,
+                2,
                 1,
-                2
+                3,
+                0
             ],
-            "hint": "A gracious, forward-looking tone is in the subject; the manager is addressed by first name; genuine acceptance and a specific, developmental request for feedback are in the body; 'BEST REGARDS' closes professionally.",
-            "explanation": "Accepting the decision gracefully before asking for feedback keeps the relationship positive and shows maturity. Asking specifically what the successful candidate 'demonstrated that I did not' invites concrete, comparative feedback rather than vague reassurance.",
-            "formalityLevel": "Formal"
+            "hint": "A small change needs a clear instruction and the needed details.",
+            "explanation": "A short request with the practical details (flat number, concierge hours) is easy for the company to add.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L135_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write a cover email accompanying a small nonprofit's grant application to a funding body.",
+            "prompt": "Build the email from a customer whose support ticket has had no reply for five days.",
             "options": [
-                "Please find attached our application for £8,000 to expand our after-school literacy programme, which currently supports forty children across three local schools, and we would be happy to arrange a site visit if that would be helpful to your assessment.",
-                "Yours faithfully,\nTariq Hussain",
-                "Dear Grants Team,",
-                "Subject: Grant application - after-school literacy programme"
+                "I cannot access my invoices, which I need for my accounts on Friday. Could someone update me today?\n\nYours faithfully,\nHarold Mwangi",
+                "Dear Support Team,",
+                "I opened ticket 2231 on 9 June about my account being locked, and I have not had any reply.",
+                "Subject: No reply to ticket 2231: still unresolved after five days"
             ],
             "correctOrder": [
                 3,
+                1,
                 2,
-                0,
-                1
+                0
             ],
-            "hint": "The exact amount and purpose are in the subject; the grants team is addressed by role, not name; the current impact and an offer of further evidence are in the body; the closing must match this unnamed greeting.",
-            "explanation": "Stating the current reach ('forty children across three local schools') gives the funder concrete evidence the programme already works before asking for expansion funding. Offering a site visit shows confidence and transparency about the programme's real-world impact.",
+            "hint": "Reference, timeline, impact, request.",
+            "explanation": "The ticket number and dates show the delay is factual. Explaining the consequence and setting a time makes it easier to prioritise.",
             "formalityLevel": "Formal"
         },
         {
@@ -294,21 +294,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email formally thanking a major donor and reporting on the impact of their gift.",
+            "prompt": " The subject line, greeting and sign-off are already written (Subject: Re: Ticket 2231: your account is now unlocked / Dear Mr Mwangi, / Kind regards, Deborah Rutherford). Arrange the body.",
             "options": [
-                "With sincere gratitude,\nFlorence Adebayo",
-                "Dear Mr Hargreaves,",
-                "Thanks to your generous donation earlier this year, we were able to provide winter coats to over 200 children in our area, and I wanted to share a few photos from the distribution day so you can see the direct impact of your support.",
-                "Subject: The difference your gift has made - an update"
+                "I have now unlocked your account and reset your password, which was sent to your registered email address.",
+                "I am sorry for the delay in replying to your ticket.",
+                "We had an unusually high volume of requests.",
+                "Please try to log in and tell me if you have any further difficulty."
             ],
             "correctOrder": [
-                3,
                 1,
                 2,
-                0
+                0,
+                3
             ],
-            "hint": "The tone of genuine appreciation is in the subject; the donor is addressed formally by name; a specific, measurable outcome and a personal touch (photos) are in the body; the closing conveys heartfelt thanks.",
-            "explanation": "Giving a specific, measurable outcome ('over 200 children') turns a general thank-you into tangible proof of impact, which matters enormously to donors. Offering to share photos makes the update feel personal and real, rather than a routine report.",
+            "hint": "Apologise briefly, then give the solution.",
+            "explanation": "A short explanation for the delay avoids sounding defensive. The solution is more important than a long apology.",
             "formalityLevel": "Formal"
         },
         {
@@ -316,21 +316,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email proposing a partnership between your small charity and another local community organisation.",
+            "prompt": "Arrange the second follow-up to a business that still has not fixed a problem.",
             "options": [
-                "Best regards,\nCeleste Dubois",
-                "Dear Ms Okafor,",
-                "Subject: A possible partnership between our organisations",
-                "Having admired your organisation's work with local families for some time, I think there could be real value in combining our food bank's resources with your established community network, and I would love to explore whether a joint monthly distribution event might work for both of us."
+                "Subject: Second follow-up on ticket 2231: escalation requested",
+                "I have written twice about my locked account, on 9 and 14 June, and I have received no response.",
+                "Dear Support Manager,",
+                "I would be grateful if you could escalate this to someone who can help, and confirm by Friday that my account is unlocked.\n\nYours faithfully,\nHarold Mwangi"
             ],
             "correctOrder": [
+                0,
                 2,
                 1,
-                3,
-                0
+                3
             ],
-            "hint": "A collaborative proposal is signalled in the subject; the contact is addressed by name; genuine admiration and a specific, mutually beneficial idea are in the body; 'BEST REGARDS' closes warmly and professionally.",
-            "explanation": "Naming a specific reason for admiration ('work with local families') makes the outreach feel genuine rather than a generic partnership pitch. Proposing one concrete idea - a joint monthly event - gives the other organisation something specific to react to rather than an open-ended suggestion to 'work together'.",
+            "hint": "Say what has been tried, what you ask, and by when.",
+            "explanation": "Listing dates shows a clear history. Asking for escalation with a deadline is firmer without being rude.",
             "formalityLevel": "Formal"
         },
         {
@@ -338,21 +338,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email negotiating relocation support with your employer before an international transfer.",
+            "prompt": " The subject line, greeting and sign-off are already written (Subject: Change to your monthly charge from 1 August / Dear Ms Salazar, / Yours sincerely, Daniel Fisher). Arrange the body.",
             "options": [
-                "Dear Hr Team,",
-                "Ahead of my transfer to the berlin office in september, I would like to ask what relocation support is typically offered, particularly regarding temporary accommodation for the first month and any assistance with the visa application process for my partner.",
-                "Subject: Relocation support - berlin transfer",
-                "Best regards,\nKwabena Mensah"
+                "This is because of an annual price adjustment that appears in your contract.",
+                "You can find the details in section 4 of your agreement.",
+                "If you have any questions, please call us free on 0800 000 0000.",
+                "From 1 August, your monthly broadband charge will rise from £28 to £31."
             ],
             "correctOrder": [
-                2,
+                3,
                 0,
                 1,
-                3
+                2
             ],
-            "hint": "The transfer and destination are in the subject; HR is addressed by role, not name; the timing and two specific areas of support requested are in the body; 'BEST REGARDS' closes professionally.",
-            "explanation": "Asking about two distinct, practical needs - temporary housing and a partner's visa - covers the areas that most affect a smooth international move. Mentioning the exact timing helps HR check what support is realistic to arrange in time.",
+            "hint": "State the change, explain, and provide contact.",
+            "explanation": "Customers need the amount and the date before the reason. Pointing to the contract clause shows transparency.",
             "formalityLevel": "Formal"
         },
         {
@@ -360,21 +360,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write a respectful email to a new landlord overseas, navigating unfamiliar rental customs by asking clarifying questions.",
+            "prompt": "Piece together the customer's reply questioning the price rise.",
             "options": [
-                "Best regards,\nHiroshi Tanaka",
-                "Dear Mr Almeida,",
-                "As this is my first time renting in portugal, I want to make sure I understand the process correctly before signing - could you confirm whether the deposit is typically held by a third party, and what the usual notice period is if I need to leave early?",
-                "Subject: A few questions before signing the lease"
+                "However, I read section 4 and it says increases would be limited to £2 a year. Could you please clarify how the £3 rise complies with this?\n\nYours sincerely,\nPriya Salazar",
+                "Subject: Re: Change to my monthly charge",
+                "Dear Mr Fisher,",
+                "Thank you for the explanation of the price change from £28 to £31."
             ],
             "correctOrder": [
-                3,
                 1,
                 2,
+                3,
                 0
             ],
-            "hint": "A polite acknowledgement of unfamiliarity is in the subject; the landlord is addressed by name; the context and two specific, practical questions are in the body; 'BEST REGARDS' closes respectfully.",
-            "explanation": "Being upfront that this is 'my first time renting' here invites the landlord to explain things clearly rather than assuming familiarity with local customs. Asking two specific, practical questions shows genuine preparation rather than general nervousness about the process.",
+            "hint": "Acknowledge, cite the specific clause, ask a precise question.",
+            "explanation": "Quoting the contract makes the question difficult to ignore. Asking for clarification is firm but non-hostile.",
             "formalityLevel": "Formal"
         },
         {
@@ -382,21 +382,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a former employer requesting documentation needed for an overseas work visa application.",
+            "prompt": "Set out the company's admission of an error and correction.",
             "options": [
-                "Subject: Documentation request for my visa application",
-                "Yours sincerely,\nRoisin Delaney",
-                "Dear Mr Nakashima,",
-                "As part of my visa application for my upcoming move to canada, I have been asked to provide a letter confirming my job title, salary, and employment dates during my time at your company, and I would be very grateful if this could be provided on official letterhead."
+                "Thank you for your careful reading of the contract. You are right, and I am sorry that we applied the wrong increase.",
+                "Your monthly charge will remain £30 rather than £31, and we will credit the extra £1 for the months already billed.\n\nYours sincerely,\nDaniel Fisher",
+                "Dear Ms Salazar,",
+                "Subject: Correction to your monthly charge"
             ],
             "correctOrder": [
-                0,
-                2,
                 3,
+                2,
+                0,
                 1
             ],
-            "hint": "The specific documentation need is in the subject; the former employer is addressed by name; the context and the exact details required are in the body; the closing matches this named greeting.",
-            "explanation": "Listing precisely what the visa office requires - job title, salary, dates - saves the former employer from having to guess the correct format. Requesting official letterhead specifically shows awareness that immigration authorities often require this level of formality.",
+            "hint": "Acknowledge the customer's point, own the error, give correction.",
+            "explanation": "Agreeing plainly builds trust. Saying exactly what will change removes doubt.",
             "formalityLevel": "Formal"
         },
         {
@@ -404,56 +404,12 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "You run a small business. Write an email diplomatically explaining a price increase to your loyal customers.",
+            "prompt": "Arrange the email cancelling a subscription and declining a discount offer.",
             "options": [
-                "Subject: An honest update about our prices from next month",
-                "Dear Valued Customers,",
-                "With thanks for your continued support,\nThe Team At Mill Lane Bakery",
-                "After holding our prices for three years despite rising ingredient costs, we have had to make a small increase of 50p across our menu from next month, and we wanted you to hear this directly from us rather than notice it without explanation."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3,
-                2
-            ],
-            "hint": "Honesty about the change is signalled in the subject; loyal customers are addressed warmly as a group; the history, the specific small increase, and the reason for writing proactively are in the body; the closing thanks them warmly.",
-            "explanation": "Mentioning that prices were held for 'three years' frames the increase as a last resort, not a routine decision. Explaining that you wanted customers to 'hear this directly' rather than notice it unexplained builds trust even while delivering unwelcome news.",
-            "formalityLevel": "Formal"
-        },
-        {
-            "id": "WRT_WRITINGEMAIL_L137_Q2",
-            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
-            "subtype": "writingEmail",
-            "interactionType": "writing",
-            "prompt": "You run a small business. Write an email replying to a customer who complained publicly on social media, aiming to resolve the issue privately.",
-            "options": [
-                "With sincere apologies,\nRajiv Mehta",
-                "I saw your post about the delayed order and I am genuinely sorry this happened - rather than going back and forth publicly, I would love the chance to put this right directly, so could you let me know your order number so I can look into it personally today?",
-                "Subject: So sorry about your experience - let's sort this out",
-                "Dear Ms Harrington,"
-            ],
-            "correctOrder": [
-                2,
-                3,
-                1,
-                0
-            ],
-            "hint": "A genuine, non-defensive apology is signalled in the subject; the customer is addressed by name; acknowledgement, a reason for moving the conversation private, and a specific next step are in the body; the closing conveys real regret.",
-            "explanation": "Acknowledging the post directly, rather than ignoring it, shows the business is genuinely listening rather than avoiding public criticism. Moving the conversation to a private channel while still responding warmly protects both the customer's experience and the business's reputation.",
-            "formalityLevel": "Formal"
-        },
-        {
-            "id": "WRT_WRITINGEMAIL_L137_Q3",
-            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
-            "subtype": "writingEmail",
-            "interactionType": "writing",
-            "prompt": "You run a small business. Write an email announcing that your shop is relocating, with grace and reassurance for customers.",
-            "options": [
-                "After five wonderful years on high street, we are moving to a larger space on church lane from 1 september, which will finally give us room for the seating area so many of you have asked for over the years.",
-                "See you there,\nThe Team At Riverside Coffee",
-                "Subject: Exciting news - we're moving (just down the road!)",
-                "Dear Customers,"
+                "Thank you for offering a discount to keep my membership.",
+                "I appreciate it, but I have decided to cancel because I am moving abroad and will not be able to use the service. Please confirm the cancellation date and that no further payments will be taken.\n\nBest wishes,\nMarisol Vega",
+                "Subject: Re: Your offer of 30% off",
+                "Dear Anders,"
             ],
             "correctOrder": [
                 2,
@@ -461,8 +417,52 @@
                 0,
                 1
             ],
-            "hint": "Genuine excitement is signalled in the subject; customers are addressed warmly as a group; the history, the new location, and a benefit for customers are in the body; a warm, inviting sign-off closes it.",
-            "explanation": "Framing the move around a benefit customers have specifically requested ('the seating area so many of you have asked for') turns potentially unsettling news into something to look forward to. Naming the exact new location and date removes any uncertainty about where and when to find the business.",
+            "hint": "Thank, decline firmly, give a reason, request confirmation.",
+            "explanation": "Being clear stops the company from making further offers. Asking for confirmation protects you from unwanted charges.",
+            "formalityLevel": "Semi-formal"
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L137_Q2",
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+            "subtype": "writingEmail",
+            "interactionType": "writing",
+            "prompt": " The subject line, greeting and sign-off are already written (Subject: Your membership has been cancelled / Dear Marisol, / With best wishes for your move, Anders Holm). Arrange the body.",
+            "options": [
+                "But I confirm that your membership will end on 30 June.",
+                "We are sorry to see you go.",
+                "If you ever return, your saved progress will still be here.",
+                "No further payments will be taken, and you can use the app until that date."
+            ],
+            "correctOrder": [
+                1,
+                0,
+                3,
+                2
+            ],
+            "hint": "Confirmation, what happens, a warm close.",
+            "explanation": "The confirmation answers her main concern. A friendly personal ending suits a brand that wants goodwill.",
+            "formalityLevel": "Semi-formal"
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L137_Q3",
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+            "subtype": "writingEmail",
+            "interactionType": "writing",
+            "prompt": "Put together an email from a customer asking a company to stop marketing messages.",
+            "options": [
+                "Please remove my email address, isabel.marin@example.com, from all your marketing lists.",
+                "Dear Sir or Madam,",
+                "I have unsubscribed twice, but I continue to receive weekly offers. Please confirm in writing that this has been done.\n\nYours faithfully,\nIsabel Marin",
+                "Subject: Request to stop marketing emails"
+            ],
+            "correctOrder": [
+                3,
+                1,
+                0,
+                2
+            ],
+            "hint": "Instruction first, with details, then evidence of the problem.",
+            "explanation": "The instruction is unambiguous. Mentioning the failed unsubscribe attempts shows why you have written and supports a request for confirmation.",
             "formalityLevel": "Formal"
         },
         {
@@ -470,21 +470,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "You run a small business. Write an email pitching a collaboration idea to a local content creator.",
+            "prompt": "Assemble the email requesting an accessible seat at a theatre.",
             "options": [
-                "I have followed your baking content for a while and think your style would be a great fit for our new sourdough range, so I would love to send you a free hamper to try with no obligation to post, just to see if it sparks any ideas for your audience.",
-                "Subject: A collaboration idea for your channel",
-                "Dear Isabella,",
-                "Best regards,\nVikram Malhotra"
+                "Subject: Wheelchair space needed: 'The Tempest', 18 October",
+                "Could you tell me which seats are available and whether there is step-free access from the street?\n\nYours faithfully,\nEvelyn Marsh",
+                "I would like to book two tickets for 'The Tempest' on 18 October, including one wheelchair space and a seat for my companion.",
+                "Dear Box Office,"
             ],
             "correctOrder": [
-                1,
-                2,
                 0,
-                3
+                3,
+                2,
+                1
             ],
-            "hint": "A specific, complimentary opening is in the subject; the content creator is addressed by first name; genuine familiarity with their work and a low-pressure offer are in the body; 'BEST REGARDS' closes professionally.",
-            "explanation": "Referencing specific content ('your baking content') shows genuine familiarity rather than a mass-sent pitch. Explicitly removing pressure ('no obligation to post') makes the offer far more appealing and likely to be accepted than a demand for guaranteed coverage.",
+            "hint": "State the booking, the specific requirement and the information you need.",
+            "explanation": "Specific requirements are easier to meet. Asking about step-free access helps you plan the journey.",
             "formalityLevel": "Formal"
         },
         {
@@ -492,21 +492,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email proposing a paid partnership feature to a local newspaper or publication.",
+            "prompt": "Arrange the email requesting a large-print version of a document.",
             "options": [
-                "I noticed your 'meet your local traders' series and think our ten-year-old family business would make for an interesting feature, so I would like to ask what a sponsored placement would cost and what it would typically include.",
-                "Best regards,\nAgnieszka Nowakowska",
-                "Subject: Partnership proposal - featured local business series",
-                "Dear Advertising Team,"
+                "I am partially sighted and would like to receive the tenancy agreement in large print.",
+                "Subject: Request for a large-print copy of the tenancy agreement",
+                "Could you send it by post, or let me know if there is a digital version compatible with a screen reader?\n\nYours faithfully,\nMr A. Okoye",
+                "Dear Housing Team,"
             ],
             "correctOrder": [
-                2,
+                1,
                 3,
                 0,
-                1
+                2
             ],
-            "hint": "Reference to an existing series anchors the subject; the advertising team is addressed by role, not name; genuine interest and two specific practical questions are in the body; 'BEST REGARDS' closes professionally.",
-            "explanation": "Referencing an existing series by name shows you have done research rather than sending a generic pitch. Asking both about cost and what's included covers the two things a small business genuinely needs to know before committing to any paid feature.",
+            "hint": "State the need and offer alternatives you can use.",
+            "explanation": "You do not need to give medical details. Offering two possible formats gives the organisation options.",
             "formalityLevel": "Formal"
         },
         {
@@ -514,21 +514,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write a plain-English email pitching your small business idea to a potential investor.",
+            "prompt": "Piece together the email requesting a quiet room at an exam centre.",
             "options": [
-                "Best regards,\nLeandro Silva",
-                "Subject: Investment opportunity - growing our local delivery service",
-                "Our local grocery delivery service has grown to 300 regular customers in just eighteen months without any outside funding, and we are now looking for £25,000 to buy a second van and hire one more driver, so we would love the chance to show you our numbers in person.",
-                "Dear Mr Ashworth,"
+                "Dear Exams Officer,",
+                "I would like to ask whether I could sit my exam on 10 June in a separate quiet room.",
+                "Subject: Request for a quiet room: exam on 10 June, candidate no. 40771",
+                "I have anxiety difficulties, and I have attached a letter from my doctor. I would be grateful to know what further evidence you need.\n\nYours sincerely,\nGideon Ayers"
             ],
             "correctOrder": [
-                1,
-                3,
                 2,
-                0
+                0,
+                1,
+                3
             ],
-            "hint": "A specific, evidence-based opening is in the subject; the potential investor is addressed by name; growth so far, the exact ask, and its purpose are in the body; 'BEST REGARDS' closes confidently.",
-            "explanation": "Leading with a specific, verifiable achievement ('300 regular customers in eighteen months without any outside funding') builds credibility before any request for money. Stating exactly what the investment would buy - a van and a driver - shows the funds have a clear, sensible purpose.",
+            "hint": "Request, reason, evidence, next step.",
+            "explanation": "A short, factual reason with evidence is usually enough. Asking what else you need shows willingness to cooperate.",
             "formalityLevel": "Formal"
         },
         {
@@ -536,21 +536,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write a formal thank-you email to a client as a long, successful project comes to an end.",
+            "prompt": "Set out the email from a diner who received poor service and wants the manager to know.",
             "options": [
-                "As we complete the final handover of your rebrand this week, I wanted to say how much we have enjoyed working with your team over the past six months, and I hope the new brand serves the business well for many years to come.",
-                "Subject: Thank you as we wrap up the rebrand project",
-                "Dear Ms Oyelaran,",
-                "With thanks and best wishes,\nYoshiko Murakami"
+                "Subject: Feedback on our visit on Saturday 21 June",
+                "The staff were pleasant, but nobody told us about the delay. We would like you to know, and I would welcome a reply.\n\nYours faithfully,\nElliott James",
+                "Dear Manager,",
+                "We dined at your restaurant on Saturday at 7:30 pm, and were disappointed that we waited over an hour for our main courses."
             ],
             "correctOrder": [
-                1,
-                2,
                 0,
-                3
+                2,
+                3,
+                1
             ],
-            "hint": "A warm sense of closure is signalled in the subject; the client is addressed formally by name; the project's completion, genuine appreciation, and a hopeful note about the future are in the body; the closing conveys warmth and goodwill.",
-            "explanation": "Marking the exact moment of completion ('the final handover this week') gives the message a clear sense of occasion rather than a routine sign-off. Ending with a genuine hope for the brand's future shows continued investment in the client's success beyond the contract itself.",
+            "hint": "Facts, then balanced comment, then what you want.",
+            "explanation": "Naming the time and the delay keeps the message factual. Acknowledging pleasant staff shows fairness.",
             "formalityLevel": "Formal"
         },
         {
@@ -558,21 +558,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write a heartfelt but professional email to a team celebrating a colleague's retirement after many years of service.",
+            "prompt": " The subject line, greeting and sign-off are already written (Subject: Re: Feedback on your visit on 21 June / Dear Mr James, / Yours sincerely, Claudia Ferretti, Manager). Arrange the body.",
             "options": [
-                "As david prepares to retire after an incredible thirty years with the company, I wanted to take a moment to recognise the countless colleagues he has mentored and the steady, calm presence he has brought to every team he has been part of.",
-                "Dear All,",
-                "Subject: Celebrating david's 30 years with us",
-                "With great respect,\nBarnaby Reid"
+                "The kitchen was short-staffed that evening, but we should have kept you informed.",
+                "Thank you for taking the time to write to us.",
+                "I am sorry that you waited so long and were not told about the delay.",
+                "I would like to invite you and a guest for dinner, which will be on us."
             ],
             "correctOrder": [
-                2,
                 1,
+                2,
                 0,
                 3
             ],
-            "hint": "A celebratory milestone is in the subject; the whole team is addressed together; specific, genuine recognition of the person's contribution is in the body; the closing conveys real respect.",
-            "explanation": "Citing the exact milestone ('thirty years') gives the tribute real weight and specificity. Naming concrete qualities - mentoring others, a calm presence - makes the recognition feel personal and earned, rather than a generic retirement message.",
+            "hint": "Thank, apologise, explain, invite.",
+            "explanation": "A sincere reply includes what the business will do. The invitation is a gesture that reopens the relationship.",
             "formalityLevel": "Formal"
         },
         {
@@ -580,43 +580,43 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email formally closing out a consulting engagement with a summary of what was achieved.",
+            "prompt": "Arrange the email from a gym member who reports that equipment has been broken for weeks.",
             "options": [
-                "Dear Mr Halvorsen,",
-                "Best regards,\nChioma Ezeudu",
-                "As our three-month engagement draws to a close, I wanted to summarise what we achieved together: a revised workflow that has already reduced processing time by 20%, and a training plan your team can continue to build on independently going forward.",
-                "Subject: Closing summary - operations review engagement"
+                "I have been a member for four years, and I am writing about the treadmills at the Westgate branch.",
+                "Dear Ms Harker,",
+                "Subject: Broken treadmills at the Westgate branch",
+                "Three of the five have displayed 'out of order' signs for over a month. Could you tell me when they will be repaired or replaced?\n\nKind regards,\nSamuel Iwu"
             ],
             "correctOrder": [
-                3,
-                0,
                 2,
-                1
+                1,
+                0,
+                3
             ],
-            "hint": "A clear sense of closure is in the subject; the client is addressed by name; a specific, measurable outcome and what the client can continue independently are in the body; 'BEST REGARDS' closes professionally.",
-            "explanation": "Providing a measurable result ('reduced processing time by 20%') gives the client concrete proof of value from the engagement. Mentioning what the team can 'continue to build on independently' reassures the client that your departure won't undo the progress made.",
-            "formalityLevel": "Formal"
+            "hint": "Establish credibility, state the facts, ask for a timeline.",
+            "explanation": "Mentioning your membership shows you are a loyal customer. Asking for a timeline invites a practical answer.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L140_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email as a manager mediating between two team members in conflict, proposing a constructive way forward.",
+            "prompt": "Put together the email closing a support case and asking for feedback.",
             "options": [
-                "Having heard both of your perspectives separately, it seems the core issue is unclear ownership of the client handover process rather than anything personal between you, so I would like to propose we meet together this week to agree a clear, written process going forward.",
-                "Subject: A way forward for you both",
-                "Dear Sophie And Marcus,",
-                "Best regards,\nStellan Bergqvist"
+                "We will close case 7714 in seven days unless you tell us there is a problem.\n\nIf you have a moment, we would appreciate your feedback in the short survey below.\n\nKind regards,\nEmilio Vargas",
+                "Subject: Your case 7714 has been resolved",
+                "Dear Ms Kaur,",
+                "I am glad to confirm that the problem with your invoice has been fixed, and the corrected version is attached."
             ],
             "correctOrder": [
                 1,
                 2,
-                0,
-                3
+                3,
+                0
             ],
-            "hint": "A resolution-focused tone is in the subject; both colleagues are addressed together by name; a neutral reframing of the issue and a specific proposed next step are in the body; 'BEST REGARDS' closes constructively.",
-            "explanation": "Reframing the conflict as a process issue rather than a personal one ('nothing personal between you') helps both parties feel less defensive going into a shared conversation. Proposing a specific outcome - a written process - gives the meeting a clear, practical purpose rather than simply airing grievances again.",
+            "hint": "Resolution, what happens next, request for feedback.",
+            "explanation": "The customer first needs to know that the issue is resolved. The closing timeline and survey are secondary.",
             "formalityLevel": "Formal"
         },
         {
@@ -624,44 +624,44 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email formally requesting an exception to a standard policy due to genuinely unusual circumstances, with reasoning.",
+            "prompt": " The subject line, greeting and sign-off are already written (Subject: Thank you for solving my problem / Dear Emilio, / Kind regards, Harpreet Kaur). Arrange the body.",
             "options": [
-                "I understand your standard policy only allows refunds within thirty days, but as I was hospitalised for most of that period and unable to test the equipment, I would like to formally request an exception given these genuinely unusual circumstances.",
-                "Yours faithfully,\nImogen Ashcroft",
-                "Subject: Request for an exception to the standard refund policy",
-                "Dear Customer Services,"
+                "I wanted to thank you for fixing my invoice so quickly.",
+                "You explained everything clearly and were patient with my questions.",
+                "Please pass my thanks to your manager.",
+                "It made a stressful situation much easier."
             ],
             "correctOrder": [
-                2,
-                3,
                 0,
-                1
+                1,
+                3,
+                2
             ],
-            "hint": "The request for an exception is central to the subject; customer services is addressed by role, not name; acknowledgement of the standard policy and the specific unusual circumstance are in the body; the closing must match this unnamed greeting.",
-            "explanation": "Explicitly acknowledging the standard policy first shows you understand you are asking for something outside the norm, not simply ignoring the rules. Providing a specific, verifiable reason - hospitalisation - gives the company genuine grounds to make a fair exception.",
-            "formalityLevel": "Formal"
+            "hint": "Thanks, reason, request to pass on.",
+            "explanation": "Specific compliments are valuable to service staff. Asking to inform the manager helps the agent get recognition.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L140_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email professionally proposing to end a long-standing but underperforming supplier relationship.",
+            "prompt": "Lay out the email from a company inviting a customer to a loyalty scheme after a resolved issue.",
             "options": [
-                "Subject: A difficult but necessary conversation about our arrangement",
-                "After five good years working together, I want to be honest with you that the last three deliveries have fallen short of the standard we have relied on, and having seen no improvement despite raising this twice, we have regretfully decided to move our account to another supplier from next month.",
-                "Dear Mr Oyelaran,",
-                "With thanks for your years of service,\nRafael Dos Santos"
+                "Dear Mr Adebayo,",
+                "As a thank-you, we would like to invite you to join our loyalty scheme, which gives 10% off your next purchase.\n\nYou can join using the code below before 31 July.\n\nBest wishes,\nRebecca Hill",
+                "Subject: A thank-you for your patience",
+                "Thank you for your patience while we resolved the problem with your order."
             ],
             "correctOrder": [
-                0,
                 2,
-                1,
-                3
+                0,
+                3,
+                1
             ],
-            "hint": "Difficulty is acknowledged honestly in the subject; the supplier is addressed by name; genuine appreciation for the history, the specific reasons, and the clear decision are in the body; the closing thanks them for the relationship.",
-            "explanation": "Acknowledging 'five good years' before delivering difficult news shows the relationship was valued, not dismissed lightly. Referencing that the issue was 'raised twice' before this decision demonstrates the supplier had a fair opportunity to improve before the account was moved.",
-            "formalityLevel": "Formal"
+            "hint": "Thanks, offer, action and deadline.",
+            "explanation": "The thanks is sincere before the offer. Ending with the instruction and date makes it easy to act.",
+            "formalityLevel": "Semi-formal"
         }
     ]
 }

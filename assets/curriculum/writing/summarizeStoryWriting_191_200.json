@@ -1,817 +1,637 @@
 {
-    "gameType": "summarizeStoryWriting",
-    "batchIndex": 20,
-    "levels": "191-200",
-    "quests": [
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L191_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A central bank's forward guidance had committed to holding rates steady until a specific inflation threshold was durably met, language markets interpreted as a firm, unconditional promise. When inflation data briefly touched the threshold for a single month before receding, the bank raised rates anyway, citing the word durably in its original language. Markets that had priced in continued steady rates absorbed the increase as consistent with the bank's original, more conditional wording.",
-            "options": [
-                "Markets accused the bank of breaking an unconditional promise it had never actually made.",
-                "A central bank's forward guidance had committed to holding rates steady until a specific inflation threshold was durably met, language markets interpreted as a firm, unconditional promise.",
-                "When inflation data briefly touched the threshold for a single month before receding, the bank raised rates anyway, citing the word durably in its original language.",
-                "Markets that had priced in continued steady rates absorbed the increase as consistent with the bank's original, more conditional wording."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Notice exactly how markets react once they reconsider the bank's original conditional wording.",
-            "explanation": "Because markets absorb the increase as consistent with the original conditional wording, an option claiming they accused the bank of breaking a promise contradicts that measured reaction.",
-            "storyKeyEvents": [
-                "A central bank's forward guidance had committed to holding rates steady until a specific inflation threshold was durably met, language markets interpreted as a firm, unconditional promise.",
-                "When inflation data briefly touched the threshold for a single month before receding, the bank raised rates anyway, citing the word durably in its original language.",
-                "Markets that had priced in continued steady rates absorbed the increase as consistent with the bank's original, more conditional wording.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L191_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A treaty's most-favored-nation clause guaranteed one signatory the same terms extended to any other trading partner, but the clause itself was silent on services excluded by a separate side letter. When a third country later negotiated favorable terms for one of those excluded services, the original signatory demanded equivalent treatment under the clause. An arbitral panel ruled the side letter's exclusion controlled, and the signatory's demand was denied.",
-            "options": [
-                "A treaty's most-favored-nation clause guaranteed one signatory the same terms extended to any other trading partner, but the clause itself was silent on services excluded by a separate side letter.",
-                "The arbitral panel ruled the most-favored-nation clause overrode the side letter's exclusion entirely.",
-                "When a third country later negotiated favorable terms for one of those excluded services, the original signatory demanded equivalent treatment under the clause.",
-                "An arbitral panel ruled the side letter's exclusion controlled, and the signatory's demand was denied."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you which document the panel actually rules controls.",
-            "explanation": "Because the panel rules the side letter's exclusion controls, an option claiming the broader clause overrode it entirely reverses that specific ruling.",
-            "storyKeyEvents": [
-                "A treaty's most-favored-nation clause guaranteed one signatory the same terms extended to any other trading partner, but the clause itself was silent on services excluded by a separate side letter.",
-                "When a third country later negotiated favorable terms for one of those excluded services, the original signatory demanded equivalent treatment under the clause.",
-                "An arbitral panel ruled the side letter's exclusion controlled, and the signatory's demand was denied.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L191_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A merger agreement's material-adverse-change clause excused termination only for events that disproportionately affected the target relative to its industry as a whole. When an industry-wide downturn hit the target's sector, the acquirer tried to invoke the clause to walk away from the deal. A court held the downturn affected the entire industry equally, so the clause did not apply, and the acquirer was ordered to close.",
-            "options": [
-                "A merger agreement's material-adverse-change clause excused termination only for events that disproportionately affected the target relative to its industry as a whole.",
-                "When an industry-wide downturn hit the target's sector, the acquirer tried to invoke the clause to walk away from the deal.",
-                "The court agreed the industry-wide downturn qualified as a disproportionate, excusing event under the clause.",
-                "A court held the downturn affected the entire industry equally, so the clause did not apply, and the acquirer was ordered to close."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Notice what the court actually concludes about whether the downturn was disproportionate.",
-            "explanation": "Because the court finds the downturn affected the industry equally rather than disproportionately, an option claiming it qualified as excusing reverses that specific finding.",
-            "storyKeyEvents": [
-                "A merger agreement's material-adverse-change clause excused termination only for events that disproportionately affected the target relative to its industry as a whole.",
-                "When an industry-wide downturn hit the target's sector, the acquirer tried to invoke the clause to walk away from the deal.",
-                "A court held the downturn affected the entire industry equally, so the clause did not apply, and the acquirer was ordered to close.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L192_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A licensing agreement granted exclusive rights to a specific field of use, a term the parties had never precisely defined in the contract itself. The licensee began selling a new product the licensor argued fell outside that undefined field, while the licensee argued it fell squarely within it. A court construed the ambiguous term against the licensor, who had drafted the original agreement, and ruled in the licensee's favor.",
-            "options": [
-                "A licensing agreement granted exclusive rights to a specific field of use, a term the parties had never precisely defined in the contract itself.",
-                "The licensee began selling a new product the licensor argued fell outside that undefined field, while the licensee argued it fell squarely within it.",
-                "A court construed the ambiguous term against the licensor, who had drafted the original agreement, and ruled in the licensee's favor.",
-                "The court construed the ambiguous term against the licensee and ruled in the licensor's favor."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Check whether the court actually rules in favor of the licensor or the licensee.",
-            "explanation": "Because the court construes the ambiguity against the drafting licensor and rules for the licensee, an option reversing that outcome contradicts the ruling.",
-            "storyKeyEvents": [
-                "A licensing agreement granted exclusive rights to a specific field of use, a term the parties had never precisely defined in the contract itself.",
-                "The licensee began selling a new product the licensor argued fell outside that undefined field, while the licensee argued it fell squarely within it.",
-                "A court construed the ambiguous term against the licensor, who had drafted the original agreement, and ruled in the licensee's favor.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L192_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A reinsurance treaty's follow-the-fortunes clause bound the reinsurer to the primary insurer's good-faith claim decisions, even ones the reinsurer considered generous. The primary insurer settled a disputed claim for an amount the reinsurer believed exceeded the policy's actual exposure. A tribunal found the settlement was made in good faith and ordered the reinsurer to honor its full share regardless.",
-            "options": [
-                "The tribunal found the settlement was made in bad faith and relieved the reinsurer of its obligation entirely.",
-                "A reinsurance treaty's follow-the-fortunes clause bound the reinsurer to the primary insurer's good-faith claim decisions, even ones the reinsurer considered generous.",
-                "The primary insurer settled a disputed claim for an amount the reinsurer believed exceeded the policy's actual exposure.",
-                "A tribunal found the settlement was made in good faith and ordered the reinsurer to honor its full share regardless."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Notice what the tribunal actually finds about the good faith of the original settlement.",
-            "explanation": "Because the tribunal finds the settlement was made in good faith, an option claiming it found bad faith and relieved the reinsurer reverses that specific finding.",
-            "storyKeyEvents": [
-                "A reinsurance treaty's follow-the-fortunes clause bound the reinsurer to the primary insurer's good-faith claim decisions, even ones the reinsurer considered generous.",
-                "The primary insurer settled a disputed claim for an amount the reinsurer believed exceeded the policy's actual exposure.",
-                "A tribunal found the settlement was made in good faith and ordered the reinsurer to honor its full share regardless.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L192_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A franchise agreement's non-compete clause barred the franchisee from operating a similar business within a defined radius for two years after termination. After termination, the franchisee opened a business the franchisor argued was similar, while the franchisee argued it served a fundamentally different market. A court found the new business served a fundamentally different market and declined to enforce the non-compete against it.",
-            "options": [
-                "A franchise agreement's non-compete clause barred the franchisee from operating a similar business within a defined radius for two years after termination.",
-                "The court found the new business was substantially similar and enforced the non-compete in full.",
-                "After termination, the franchisee opened a business the franchisor argued was similar, while the franchisee argued it served a fundamentally different market.",
-                "A court found the new business served a fundamentally different market and declined to enforce the non-compete against it."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you whether the court actually enforces or declines to enforce the clause.",
-            "explanation": "Because the court finds a fundamentally different market and declines enforcement, an option claiming it found similarity and enforced the clause reverses that outcome.",
-            "storyKeyEvents": [
-                "A franchise agreement's non-compete clause barred the franchisee from operating a similar business within a defined radius for two years after termination.",
-                "After termination, the franchisee opened a business the franchisor argued was similar, while the franchisee argued it served a fundamentally different market.",
-                "A court found the new business served a fundamentally different market and declined to enforce the non-compete against it.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L193_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A joint-venture agreement's deadlock provision required an independent chairperson to cast the tie-breaking vote only after both partners certified in writing that good-faith negotiation had failed. One partner sought the chairperson's tie-breaking vote after only verbally, rather than in writing, stating that negotiations had failed. The chairperson declined to vote, citing the missing written certification required by the agreement's precise terms.",
-            "options": [
-                "A joint-venture agreement's deadlock provision required an independent chairperson to cast the tie-breaking vote only after both partners certified in writing that good-faith negotiation had failed.",
-                "One partner sought the chairperson's tie-breaking vote after only verbally, rather than in writing, stating that negotiations had failed.",
-                "The chairperson cast the tie-breaking vote despite the missing written certification.",
-                "The chairperson declined to vote, citing the missing written certification required by the agreement's precise terms."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Check whether the chairperson actually votes or declines given the missing written certification.",
-            "explanation": "Because the chairperson declines to vote citing the missing certification, an option claiming the vote was cast anyway contradicts that specific refusal.",
-            "storyKeyEvents": [
-                "A joint-venture agreement's deadlock provision required an independent chairperson to cast the tie-breaking vote only after both partners certified in writing that good-faith negotiation had failed.",
-                "One partner sought the chairperson's tie-breaking vote after only verbally, rather than in writing, stating that negotiations had failed.",
-                "The chairperson declined to vote, citing the missing written certification required by the agreement's precise terms.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L193_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A syndicated loan agreement's cross-default clause treated a default on any other debt above a defined threshold as an automatic default on the syndicated loan itself. The borrower defaulted on a small, unrelated debt that fell just below the defined threshold amount. The syndicate's lead bank confirmed the cross-default clause was not triggered, since the defaulted amount fell below the threshold.",
-            "options": [
-                "A syndicated loan agreement's cross-default clause treated a default on any other debt above a defined threshold as an automatic default on the syndicated loan itself.",
-                "The borrower defaulted on a small, unrelated debt that fell just below the defined threshold amount.",
-                "The syndicate's lead bank confirmed the cross-default clause was not triggered, since the defaulted amount fell below the threshold.",
-                "The lead bank declared an automatic default on the syndicated loan under the cross-default clause."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Notice whether the cross-default clause is actually triggered given the amount involved.",
-            "explanation": "Because the lead bank confirms the clause was not triggered since the amount fell below threshold, an option claiming default was declared contradicts that specific confirmation.",
-            "storyKeyEvents": [
-                "A syndicated loan agreement's cross-default clause treated a default on any other debt above a defined threshold as an automatic default on the syndicated loan itself.",
-                "The borrower defaulted on a small, unrelated debt that fell just below the defined threshold amount.",
-                "The syndicate's lead bank confirmed the cross-default clause was not triggered, since the defaulted amount fell below the threshold.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L193_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A supply agreement's force majeure clause excused delayed delivery for events beyond the reasonable control of the supplier, a standard the contract left undefined. A regional labor strike delayed the supplier's shipment, though the supplier had available alternative shipping routes it chose not to use. An arbitrator ruled the availability of alternative routes meant the delay was not truly beyond the supplier's reasonable control.",
-            "options": [
-                "The arbitrator ruled the strike alone was sufficient to excuse the delay regardless of alternative routes.",
-                "A supply agreement's force majeure clause excused delayed delivery for events beyond the reasonable control of the supplier, a standard the contract left undefined.",
-                "A regional labor strike delayed the supplier's shipment, though the supplier had available alternative shipping routes it chose not to use.",
-                "An arbitrator ruled the availability of alternative routes meant the delay was not truly beyond the supplier's reasonable control."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you exactly what the arbitrator's ruling turns on.",
-            "explanation": "Because the arbitrator's ruling turns on the availability of alternative routes, an option claiming the strike alone was sufficient contradicts that specific reasoning.",
-            "storyKeyEvents": [
-                "A supply agreement's force majeure clause excused delayed delivery for events beyond the reasonable control of the supplier, a standard the contract left undefined.",
-                "A regional labor strike delayed the supplier's shipment, though the supplier had available alternative shipping routes it chose not to use.",
-                "An arbitrator ruled the availability of alternative routes meant the delay was not truly beyond the supplier's reasonable control.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L194_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A shareholder agreement's tag-along right allowed minority holders to join any sale by the majority holder, but only for sales exceeding a defined ownership-percentage threshold. The majority holder arranged a series of smaller sales, each individually falling just below that threshold. A court aggregated the related sales and held the combined total triggered the tag-along right after all.",
-            "options": [
-                "A shareholder agreement's tag-along right allowed minority holders to join any sale by the majority holder, but only for sales exceeding a defined ownership-percentage threshold.",
-                "The court treated each sale separately and found the tag-along right was never triggered.",
-                "The majority holder arranged a series of smaller sales, each individually falling just below that threshold.",
-                "A court aggregated the related sales and held the combined total triggered the tag-along right after all."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Notice whether the court actually aggregates the sales or treats each one separately.",
-            "explanation": "Because the court aggregates the related sales and finds the right triggered, an option claiming it treated them separately and found no trigger contradicts that ruling.",
-            "storyKeyEvents": [
-                "A shareholder agreement's tag-along right allowed minority holders to join any sale by the majority holder, but only for sales exceeding a defined ownership-percentage threshold.",
-                "The majority holder arranged a series of smaller sales, each individually falling just below that threshold.",
-                "A court aggregated the related sales and held the combined total triggered the tag-along right after all.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L194_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "An employment agreement's clawback provision required repayment of a bonus only if a subsequent restatement of financial results was caused by the executive's own misconduct. A restatement occurred due to an accounting error made by a different department entirely unconnected to the executive. The board declined to invoke the clawback, since the restatement was not caused by the executive's own misconduct.",
-            "options": [
-                "An employment agreement's clawback provision required repayment of a bonus only if a subsequent restatement of financial results was caused by the executive's own misconduct.",
-                "A restatement occurred due to an accounting error made by a different department entirely unconnected to the executive.",
-                "The board invoked the clawback regardless of which department had caused the restatement.",
-                "The board declined to invoke the clawback, since the restatement was not caused by the executive's own misconduct."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Check whether the board actually invokes or declines the clawback given the cause of the restatement.",
-            "explanation": "Because the board declines the clawback since misconduct was absent, an option claiming it invoked the clawback regardless contradicts that specific decision.",
-            "storyKeyEvents": [
-                "An employment agreement's clawback provision required repayment of a bonus only if a subsequent restatement of financial results was caused by the executive's own misconduct.",
-                "A restatement occurred due to an accounting error made by a different department entirely unconnected to the executive.",
-                "The board declined to invoke the clawback, since the restatement was not caused by the executive's own misconduct.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L194_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A distribution agreement's exclusivity clause was conditioned on the distributor meeting an annual minimum-purchase requirement specified in a separate schedule. The distributor missed the minimum by a small margin due to a documented, temporary supply shortage from the manufacturer's own factory. A court held the manufacturer's own shortage excused the shortfall, and exclusivity remained intact for the following year.",
-            "options": [
-                "A distribution agreement's exclusivity clause was conditioned on the distributor meeting an annual minimum-purchase requirement specified in a separate schedule.",
-                "The distributor missed the minimum by a small margin due to a documented, temporary supply shortage from the manufacturer's own factory.",
-                "A court held the manufacturer's own shortage excused the shortfall, and exclusivity remained intact for the following year.",
-                "The court held the distributor's shortfall voided exclusivity regardless of the shortage's cause."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Read the ending closely: it tells you whether exclusivity actually remains intact or is voided.",
-            "explanation": "Because the court holds exclusivity remained intact due to the manufacturer's own shortage, an option claiming it was voided regardless contradicts that ruling.",
-            "storyKeyEvents": [
-                "A distribution agreement's exclusivity clause was conditioned on the distributor meeting an annual minimum-purchase requirement specified in a separate schedule.",
-                "The distributor missed the minimum by a small margin due to a documented, temporary supply shortage from the manufacturer's own factory.",
-                "A court held the manufacturer's own shortage excused the shortfall, and exclusivity remained intact for the following year.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L195_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A settlement agreement's confidentiality clause barred either party from disclosing its terms, with a narrow exception for disclosures required by law. One party disclosed the settlement's terms in response to a voluntary industry survey, not a legal requirement. A court found the voluntary survey did not fall under the required-by-law exception and held that party in breach.",
-            "options": [
-                "The court found the voluntary survey response fell within the required-by-law exception.",
-                "A settlement agreement's confidentiality clause barred either party from disclosing its terms, with a narrow exception for disclosures required by law.",
-                "One party disclosed the settlement's terms in response to a voluntary industry survey, not a legal requirement.",
-                "A court found the voluntary survey did not fall under the required-by-law exception and held that party in breach."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Notice whether the court actually finds the exception applies to a voluntary disclosure.",
-            "explanation": "Because the court finds the voluntary survey falls outside the exception and holds a breach, an option claiming the exception applied contradicts that specific finding.",
-            "storyKeyEvents": [
-                "A settlement agreement's confidentiality clause barred either party from disclosing its terms, with a narrow exception for disclosures required by law.",
-                "One party disclosed the settlement's terms in response to a voluntary industry survey, not a legal requirement.",
-                "A court found the voluntary survey did not fall under the required-by-law exception and held that party in breach.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L195_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A commercial lease's co-tenancy clause allowed a tenant to pay reduced rent if occupancy in the shopping center fell below a stated percentage threshold. Occupancy fell below that threshold, but only because of stores under construction that were contractually committed and set to open soon. A court counted the committed, soon-to-open stores toward occupancy and found the threshold had not actually been breached.",
-            "options": [
-                "A commercial lease's co-tenancy clause allowed a tenant to pay reduced rent if occupancy in the shopping center fell below a stated percentage threshold.",
-                "The court excluded the committed stores and found the tenant was entitled to reduced rent.",
-                "Occupancy fell below that threshold, but only because of stores under construction that were contractually committed and set to open soon.",
-                "A court counted the committed, soon-to-open stores toward occupancy and found the threshold had not actually been breached."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Check whether the court actually counts the committed stores toward occupancy or excludes them.",
-            "explanation": "Because the court counts the committed stores and finds no breach of the threshold, an option claiming it excluded them and found reduced rent owed contradicts that ruling.",
-            "storyKeyEvents": [
-                "A commercial lease's co-tenancy clause allowed a tenant to pay reduced rent if occupancy in the shopping center fell below a stated percentage threshold.",
-                "Occupancy fell below that threshold, but only because of stores under construction that were contractually committed and set to open soon.",
-                "A court counted the committed, soon-to-open stores toward occupancy and found the threshold had not actually been breached.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L195_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A partnership agreement's dissolution clause required unanimous partner consent for any sale of the partnership's core intellectual property. A majority of partners approved a licensing arrangement they characterized as distinct from an outright sale of the intellectual property. A court held the licensing arrangement's terms were functionally equivalent to a sale, requiring the unanimous consent that had never been obtained.",
-            "options": [
-                "A partnership agreement's dissolution clause required unanimous partner consent for any sale of the partnership's core intellectual property.",
-                "A majority of partners approved a licensing arrangement they characterized as distinct from an outright sale of the intellectual property.",
-                "The court held the licensing arrangement was genuinely distinct from a sale and did not require unanimous consent.",
-                "A court held the licensing arrangement's terms were functionally equivalent to a sale, requiring the unanimous consent that had never been obtained."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you what the court actually concludes about the licensing arrangement.",
-            "explanation": "Because the court holds the arrangement was functionally equivalent to a sale requiring unanimous consent, an option claiming it was genuinely distinct contradicts that finding.",
-            "storyKeyEvents": [
-                "A partnership agreement's dissolution clause required unanimous partner consent for any sale of the partnership's core intellectual property.",
-                "A majority of partners approved a licensing arrangement they characterized as distinct from an outright sale of the intellectual property.",
-                "A court held the licensing arrangement's terms were functionally equivalent to a sale, requiring the unanimous consent that had never been obtained.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L196_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A credit agreement's negative-covenant restricted the borrower from incurring additional debt senior to the existing lender's claim, a term the agreement never explicitly defined. The borrower later took on debt secured by a specific asset the original lender had never taken a security interest in. A court held the new debt was not senior with respect to any asset the original lender actually held an interest in, and found no breach.",
-            "options": [
-                "A credit agreement's negative-covenant restricted the borrower from incurring additional debt senior to the existing lender's claim, a term the agreement never explicitly defined.",
-                "The borrower later took on debt secured by a specific asset the original lender had never taken a security interest in.",
-                "A court held the new debt was not senior with respect to any asset the original lender actually held an interest in, and found no breach.",
-                "The court held the new debt breached the negative covenant regardless of which specific asset secured it."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Notice precisely what the court's finding of no breach actually depends on.",
-            "explanation": "Because the court's finding turns on the specific asset the original lender never held an interest in, an option ignoring that distinction and finding a breach regardless contradicts that reasoning.",
-            "storyKeyEvents": [
-                "A credit agreement's negative-covenant restricted the borrower from incurring additional debt senior to the existing lender's claim, a term the agreement never explicitly defined.",
-                "The borrower later took on debt secured by a specific asset the original lender had never taken a security interest in.",
-                "A court held the new debt was not senior with respect to any asset the original lender actually held an interest in, and found no breach.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L196_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A publishing contract's right-of-first-refusal clause gave the original publisher the chance to match any competing offer for the author's next work. The author received a competing offer and properly notified the original publisher, who declined to match it within the contractual window. The author signed with the competing publisher, and a court confirmed the right of first refusal had been fully satisfied.",
-            "options": [
-                "A court found the original publisher's right of first refusal remained unsatisfied and blocked the new deal.",
-                "A publishing contract's right-of-first-refusal clause gave the original publisher the chance to match any competing offer for the author's next work.",
-                "The author received a competing offer and properly notified the original publisher, who declined to match it within the contractual window.",
-                "The author signed with the competing publisher, and a court confirmed the right of first refusal had been fully satisfied."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Check whether the court actually blocks the new deal or confirms the right was satisfied.",
-            "explanation": "Because the court confirms the right of first refusal was fully satisfied, an option claiming it blocked the new deal contradicts that specific finding.",
-            "storyKeyEvents": [
-                "A publishing contract's right-of-first-refusal clause gave the original publisher the chance to match any competing offer for the author's next work.",
-                "The author received a competing offer and properly notified the original publisher, who declined to match it within the contractual window.",
-                "The author signed with the competing publisher, and a court confirmed the right of first refusal had been fully satisfied.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L196_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A construction contract's liquidated-damages clause set a fixed daily penalty for delays, but excused delays caused by the owner's own late design approvals. The project finished late, and the contractor argued the delay stemmed entirely from the owner's own slow approval process. An arbitrator agreed the owner's delayed approvals caused the entire delay and excused the contractor from any liquidated damages.",
-            "options": [
-                "A construction contract's liquidated-damages clause set a fixed daily penalty for delays, but excused delays caused by the owner's own late design approvals.",
-                "The arbitrator held the contractor liable for the full liquidated damages despite the owner's delayed approvals.",
-                "The project finished late, and the contractor argued the delay stemmed entirely from the owner's own slow approval process.",
-                "An arbitrator agreed the owner's delayed approvals caused the entire delay and excused the contractor from any liquidated damages."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you what the arbitrator actually decides about liability.",
-            "explanation": "Because the arbitrator excuses the contractor given the owner's own delay, an option holding the contractor fully liable anyway contradicts that specific ruling.",
-            "storyKeyEvents": [
-                "A construction contract's liquidated-damages clause set a fixed daily penalty for delays, but excused delays caused by the owner's own late design approvals.",
-                "The project finished late, and the contractor argued the delay stemmed entirely from the owner's own slow approval process.",
-                "An arbitrator agreed the owner's delayed approvals caused the entire delay and excused the contractor from any liquidated damages.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L197_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A venture financing round's anti-dilution provision protected early investors from a future down round, defined narrowly as a new financing priced below the prior round's specific valuation. The company later raised a new round at a valuation technically equal to, rather than below, the prior round's figure. A court held an equal valuation did not meet the provision's narrow definition of a down round, and no anti-dilution adjustment applied.",
-            "options": [
-                "A venture financing round's anti-dilution provision protected early investors from a future down round, defined narrowly as a new financing priced below the prior round's specific valuation.",
-                "The company later raised a new round at a valuation technically equal to, rather than below, the prior round's figure.",
-                "The court held the equal valuation qualified as a down round and triggered the anti-dilution adjustment.",
-                "A court held an equal valuation did not meet the provision's narrow definition of a down round, and no anti-dilution adjustment applied."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Notice what the court actually concludes about whether an equal valuation counts as a down round.",
-            "explanation": "Because the court holds an equal valuation does not meet the narrow definition, an option claiming it triggered the adjustment contradicts that specific ruling.",
-            "storyKeyEvents": [
-                "A venture financing round's anti-dilution provision protected early investors from a future down round, defined narrowly as a new financing priced below the prior round's specific valuation.",
-                "The company later raised a new round at a valuation technically equal to, rather than below, the prior round's figure.",
-                "A court held an equal valuation did not meet the provision's narrow definition of a down round, and no anti-dilution adjustment applied.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L197_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A licensing dispute turned on whether a software update constituted a derivative work under the original license, a term the agreement left undefined beyond a short illustrative list. The update in question modified the software's interface but reused none of the original underlying source code. A court held that reusing none of the underlying code meant the update fell outside the license's derivative-work definition.",
-            "options": [
-                "A licensing dispute turned on whether a software update constituted a derivative work under the original license, a term the agreement left undefined beyond a short illustrative list.",
-                "The update in question modified the software's interface but reused none of the original underlying source code.",
-                "A court held that reusing none of the underlying code meant the update fell outside the license's derivative-work definition.",
-                "The court held the interface modification alone was sufficient to qualify the update as a derivative work."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Check whether the court's ruling actually turns on the interface change or on the underlying code.",
-            "explanation": "Because the court's ruling turns on the code being entirely original, an option basing the outcome on the interface modification alone contradicts that specific reasoning.",
-            "storyKeyEvents": [
-                "A licensing dispute turned on whether a software update constituted a derivative work under the original license, a term the agreement left undefined beyond a short illustrative list.",
-                "The update in question modified the software's interface but reused none of the original underlying source code.",
-                "A court held that reusing none of the underlying code meant the update fell outside the license's derivative-work definition.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L197_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A commercial arbitration clause designated a specific city as the exclusive venue, language one party argued should be read narrowly to cover only in-person hearings. A dispute arose during a period when hearings in that city were conducted entirely by video conference due to unrelated circumstances. A tribunal held the venue clause was satisfied by a hearing administered under that city's rules, regardless of the physical format.",
-            "options": [
-                "The tribunal held the video-conference format failed to satisfy the exclusive-venue clause entirely.",
-                "A commercial arbitration clause designated a specific city as the exclusive venue, language one party argued should be read narrowly to cover only in-person hearings.",
-                "A dispute arose during a period when hearings in that city were conducted entirely by video conference due to unrelated circumstances.",
-                "A tribunal held the venue clause was satisfied by a hearing administered under that city's rules, regardless of the physical format."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you what the tribunal actually decides about the format's effect on venue.",
-            "explanation": "Because the tribunal holds the clause was satisfied regardless of physical format, an option claiming the video format failed to satisfy it entirely contradicts that ruling.",
-            "storyKeyEvents": [
-                "A commercial arbitration clause designated a specific city as the exclusive venue, language one party argued should be read narrowly to cover only in-person hearings.",
-                "A dispute arose during a period when hearings in that city were conducted entirely by video conference due to unrelated circumstances.",
-                "A tribunal held the venue clause was satisfied by a hearing administered under that city's rules, regardless of the physical format.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L198_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A joint-development agreement's ownership clause assigned each party rights to inventions primarily attributable to its own personnel, without further defining that threshold. An invention emerged from a project where one party's personnel contributed the initial concept and the other's contributed the working implementation. A tribunal held the implementing party's contribution was primarily attributable under the clause and assigned it sole ownership.",
-            "options": [
-                "A joint-development agreement's ownership clause assigned each party rights to inventions primarily attributable to its own personnel, without further defining that threshold.",
-                "The tribunal held the conceiving party's contribution was primarily attributable and assigned it sole ownership instead.",
-                "An invention emerged from a project where one party's personnel contributed the initial concept and the other's contributed the working implementation.",
-                "A tribunal held the implementing party's contribution was primarily attributable under the clause and assigned it sole ownership."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Notice which party's contribution the tribunal actually treats as primarily attributable.",
-            "explanation": "Because the tribunal attributes the invention primarily to the implementing party, an option assigning ownership to the conceiving party instead contradicts that specific finding.",
-            "storyKeyEvents": [
-                "A joint-development agreement's ownership clause assigned each party rights to inventions primarily attributable to its own personnel, without further defining that threshold.",
-                "An invention emerged from a project where one party's personnel contributed the initial concept and the other's contributed the working implementation.",
-                "A tribunal held the implementing party's contribution was primarily attributable under the clause and assigned it sole ownership.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L198_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A shareholder derivative claim alleged the board approved excessive executive compensation, though the company's bylaws granted the board broad discretion in good faith. Discovery revealed the board had relied on an independent compensation consultant's benchmarking data before approving the package. A court held reliance on independent benchmarking satisfied the good-faith standard and dismissed the derivative claim.",
-            "options": [
-                "A shareholder derivative claim alleged the board approved excessive executive compensation, though the company's bylaws granted the board broad discretion in good faith.",
-                "Discovery revealed the board had relied on an independent compensation consultant's benchmarking data before approving the package.",
-                "The court held the reliance on independent benchmarking was irrelevant and allowed the claim to proceed to trial.",
-                "A court held reliance on independent benchmarking satisfied the good-faith standard and dismissed the derivative claim."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Check whether the court actually dismisses the claim or allows it to proceed given the benchmarking evidence.",
-            "explanation": "Because the court dismisses the claim based on the benchmarking evidence satisfying good faith, an option claiming it allowed the case to proceed anyway contradicts that dismissal.",
-            "storyKeyEvents": [
-                "A shareholder derivative claim alleged the board approved excessive executive compensation, though the company's bylaws granted the board broad discretion in good faith.",
-                "Discovery revealed the board had relied on an independent compensation consultant's benchmarking data before approving the package.",
-                "A court held reliance on independent benchmarking satisfied the good-faith standard and dismissed the derivative claim.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L198_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A supply chain contract's indemnification clause covered losses directly caused by a supplier's defective component, language the parties disputed applied to purely consequential losses. A defective component caused a production line stoppage, which in turn caused the buyer to miss an unrelated, separate customer's delivery deadline. An arbitrator held the missed deadline was too far removed to be directly caused by the defect, and denied indemnification for that specific loss.",
-            "options": [
-                "A supply chain contract's indemnification clause covered losses directly caused by a supplier's defective component, language the parties disputed applied to purely consequential losses.",
-                "A defective component caused a production line stoppage, which in turn caused the buyer to miss an unrelated, separate customer's delivery deadline.",
-                "An arbitrator held the missed deadline was too far removed to be directly caused by the defect, and denied indemnification for that specific loss.",
-                "The arbitrator held the missed deadline was directly caused by the defect and awarded full indemnification for it."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Read the ending closely: it tells you whether the arbitrator actually awards or denies indemnification for the missed deadline.",
-            "explanation": "Because the arbitrator denies indemnification for the too-far-removed loss, an option claiming full indemnification was awarded for it contradicts that specific ruling.",
-            "storyKeyEvents": [
-                "A supply chain contract's indemnification clause covered losses directly caused by a supplier's defective component, language the parties disputed applied to purely consequential losses.",
-                "A defective component caused a production line stoppage, which in turn caused the buyer to miss an unrelated, separate customer's delivery deadline.",
-                "An arbitrator held the missed deadline was too far removed to be directly caused by the defect, and denied indemnification for that specific loss.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L199_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A private equity fund's limited partnership agreement capped the general partner's carried interest unless returns exceeded a specific hurdle rate calculated on a whole-fund basis. Some individual portfolio investments performed exceptionally well while others performed poorly, though the fund's blended overall return fell just short of the hurdle. An auditor confirmed the whole-fund calculation controlled, and the carried-interest cap applied despite the strong individual performers.",
-            "options": [
-                "The auditor confirmed the strong individual investments alone were sufficient to exceed the hurdle and lift the cap.",
-                "A private equity fund's limited partnership agreement capped the general partner's carried interest unless returns exceeded a specific hurdle rate calculated on a whole-fund basis.",
-                "Some individual portfolio investments performed exceptionally well while others performed poorly, though the fund's blended overall return fell just short of the hurdle.",
-                "An auditor confirmed the whole-fund calculation controlled, and the carried-interest cap applied despite the strong individual performers."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Notice what the auditor's confirmation actually turns on: individual investments or the whole-fund blend.",
-            "explanation": "Because the auditor confirms the whole-fund calculation controls and the cap applies, an option basing the outcome on individual investments alone contradicts that specific confirmation.",
-            "storyKeyEvents": [
-                "A private equity fund's limited partnership agreement capped the general partner's carried interest unless returns exceeded a specific hurdle rate calculated on a whole-fund basis.",
-                "Some individual portfolio investments performed exceptionally well while others performed poorly, though the fund's blended overall return fell just short of the hurdle.",
-                "An auditor confirmed the whole-fund calculation controlled, and the carried-interest cap applied despite the strong individual performers.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L199_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A commercial real estate purchase agreement's due-diligence contingency allowed the buyer to withdraw for any material defect discovered during inspection, without further definition. Inspection revealed a defect that would cost a small fraction of the purchase price to repair, though it affected the building's primary structural support. A court held the defect's structural nature, not its repair cost, made it material, and upheld the buyer's withdrawal.",
-            "options": [
-                "A commercial real estate purchase agreement's due-diligence contingency allowed the buyer to withdraw for any material defect discovered during inspection, without further definition.",
-                "The court held the low repair cost meant the defect was not material, and denied the buyer's withdrawal.",
-                "Inspection revealed a defect that would cost a small fraction of the purchase price to repair, though it affected the building's primary structural support.",
-                "A court held the defect's structural nature, not its repair cost, made it material, and upheld the buyer's withdrawal."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Check whether the court's ruling turns on the defect's structural nature or its repair cost.",
-            "explanation": "Because the court's ruling turns on the structural nature of the defect rather than its repair cost, an option basing the outcome on the low cost contradicts that specific reasoning.",
-            "storyKeyEvents": [
-                "A commercial real estate purchase agreement's due-diligence contingency allowed the buyer to withdraw for any material defect discovered during inspection, without further definition.",
-                "Inspection revealed a defect that would cost a small fraction of the purchase price to repair, though it affected the building's primary structural support.",
-                "A court held the defect's structural nature, not its repair cost, made it material, and upheld the buyer's withdrawal.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L199_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A cross-licensing settlement between two competitors included a most-favored-licensee clause requiring equal terms be offered to either party if better terms were later given to any third party. One competitor later gave a third party better terms, but only as part of a broader settlement resolving an unrelated dispute entirely. An arbitrator held the broader settlement context meant the better terms did not trigger the most-favored-licensee clause.",
-            "options": [
-                "A cross-licensing settlement between two competitors included a most-favored-licensee clause requiring equal terms be offered to either party if better terms were later given to any third party.",
-                "One competitor later gave a third party better terms, but only as part of a broader settlement resolving an unrelated dispute entirely.",
-                "The arbitrator held the better terms triggered the clause regardless of the broader settlement context.",
-                "An arbitrator held the broader settlement context meant the better terms did not trigger the most-favored-licensee clause."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you what the arbitrator's ruling actually depends on.",
-            "explanation": "Because the arbitrator's ruling depends on the broader settlement context excusing the terms, an option claiming the clause was triggered regardless of that context contradicts that reasoning.",
-            "storyKeyEvents": [
-                "A cross-licensing settlement between two competitors included a most-favored-licensee clause requiring equal terms be offered to either party if better terms were later given to any third party.",
-                "One competitor later gave a third party better terms, but only as part of a broader settlement resolving an unrelated dispute entirely.",
-                "An arbitrator held the broader settlement context meant the better terms did not trigger the most-favored-licensee clause.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L200_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A multinational joint-venture's governing charter required supermajority board approval for any extraordinary capital expenditure, a term left undefined beyond a small illustrative list of examples. Management approved a large expenditure that matched none of the charter's listed examples but exceeded every one of them in dollar value. A tribunal held the expenditure's scale alone brought it within the spirit of the extraordinary-expenditure requirement, voiding management's unilateral approval.",
-            "options": [
-                "A multinational joint-venture's governing charter required supermajority board approval for any extraordinary capital expenditure, a term left undefined beyond a small illustrative list of examples.",
-                "Management approved a large expenditure that matched none of the charter's listed examples but exceeded every one of them in dollar value.",
-                "A tribunal held the expenditure's scale alone brought it within the spirit of the extraordinary-expenditure requirement, voiding management's unilateral approval.",
-                "The tribunal held that failing to match any listed example meant the expenditure fell outside the requirement entirely."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Notice what the tribunal's ruling actually turns on: the listed examples or the expenditure's scale.",
-            "explanation": "Because the tribunal's ruling turns on the expenditure's scale bringing it within the requirement's spirit, an option basing the outcome purely on the absence of a listed match contradicts that specific reasoning.",
-            "storyKeyEvents": [
-                "A multinational joint-venture's governing charter required supermajority board approval for any extraordinary capital expenditure, a term left undefined beyond a small illustrative list of examples.",
-                "Management approved a large expenditure that matched none of the charter's listed examples but exceeded every one of them in dollar value.",
-                "A tribunal held the expenditure's scale alone brought it within the spirit of the extraordinary-expenditure requirement, voiding management's unilateral approval.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L200_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A sovereign wealth fund's investment mandate barred allocations to any entity controlled by a sanctioned party, a standard requiring more than mere minority ownership. The fund identified a target company in which a sanctioned party held a significant minority stake but no board seats or veto rights. Compliance counsel concluded the absence of board seats or veto rights meant the sanctioned party did not exercise control, and cleared the investment.",
-            "options": [
-                "Compliance counsel concluded the minority stake alone was sufficient to establish control and blocked the investment.",
-                "A sovereign wealth fund's investment mandate barred allocations to any entity controlled by a sanctioned party, a standard requiring more than mere minority ownership.",
-                "The fund identified a target company in which a sanctioned party held a significant minority stake but no board seats or veto rights.",
-                "Compliance counsel concluded the absence of board seats or veto rights meant the sanctioned party did not exercise control, and cleared the investment."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Check whether counsel's conclusion actually turns on the size of the stake or on governance rights.",
-            "explanation": "Because counsel's conclusion turns on the absence of board seats or veto rights, an option basing the block purely on stake size contradicts that specific reasoning.",
-            "storyKeyEvents": [
-                "A sovereign wealth fund's investment mandate barred allocations to any entity controlled by a sanctioned party, a standard requiring more than mere minority ownership.",
-                "The fund identified a target company in which a sanctioned party held a significant minority stake but no board seats or veto rights.",
-                "Compliance counsel concluded the absence of board seats or veto rights meant the sanctioned party did not exercise control, and cleared the investment.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L200_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A treaty-based investment protection standard guaranteed foreign investors fair and equitable treatment, a phrase international tribunals have long debated without a single fixed definition. A host state changed a regulatory framework the investor had relied on, though the change applied equally to every domestic and foreign competitor alike. A tribunal held that a change applying equally to all competitors did not, by itself, breach the fair-and-equitable-treatment standard.",
-            "options": [
-                "A treaty-based investment protection standard guaranteed foreign investors fair and equitable treatment, a phrase international tribunals have long debated without a single fixed definition.",
-                "The tribunal held any regulatory change disrupting the investor's expectations automatically breached the standard.",
-                "A host state changed a regulatory framework the investor had relied on, though the change applied equally to every domestic and foreign competitor alike.",
-                "A tribunal held that a change applying equally to all competitors did not, by itself, breach the fair-and-equitable-treatment standard."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Notice precisely what the tribunal's ruling requires beyond a mere disruption of expectations.",
-            "explanation": "Because the tribunal holds an equally applied change does not by itself breach the standard, an option claiming any disruption automatically breaches it contradicts that carefully qualified ruling.",
-            "storyKeyEvents": [
-                "A treaty-based investment protection standard guaranteed foreign investors fair and equitable treatment, a phrase international tribunals have long debated without a single fixed definition.",
-                "A host state changed a regulatory framework the investor had relied on, though the change applied equally to every domestic and foreign competitor alike.",
-                "A tribunal held that a change applying equally to all competitors did not, by itself, breach the fair-and-equitable-treatment standard.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        }
-    ]
+  "gameType": "summarizeStoryWriting",
+  "batchIndex": 20,
+  "levels": "191-200",
+  "quests": [
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L191_Q1",
+      "instruction": "Choose the three statements that give the best concise, paraphrased summary, in the order the events happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "When Ms. Haddad opened the envelope in June, she learned that her small translation agency had won the contract to translate a city's tourist guides into six languages. It had not been an easy route to the contract.\n\nThe previous November the agency had lost its biggest client, and in January Ms. Haddad had cut her own salary to keep her two translators employed. In March she began contacting tourism offices directly, and one of them invited the agency to submit a trial chapter, which impressed the panel.",
+      "options": [
+        "Ms. Haddad stopped paying herself entirely to keep her two translators employed.",
+        "In June the agency won the contract to translate a city's tourist guides into six languages.",
+        "In March she approached tourism offices directly, and one invited a trial chapter that impressed its panel.",
+        "After losing its biggest client in November, the agency struggled, and in January Ms. Haddad cut her own salary to keep her translators."
+      ],
+      "correctOrder": [3, 2, 1],
+      "hint": "Compare how much each sentence says she gave up. Is it a cut, or everything?",
+      "explanation": "The story says she cut her salary, which is not the same as stopping it altogether. The statement exaggerates the sacrifice while the rest of the chain stays the same.",
+      "storyKeyEvents": [
+        "After losing its biggest client in November, the agency struggled, and in January Ms. Haddad cut her own salary to keep her translators.",
+        "In March she approached tourism offices directly, and one invited a trial chapter that impressed its panel.",
+        "In June the agency won the contract to translate a city's tourist guides into six languages."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L191_Q2",
+      "instruction": "Reconstruct the central conflict, the key action, and the result, in the order they happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The flooding on Marlow Lane stopped as suddenly as it had begun once the council cleared a blocked culvert in October. For three autumns the lane had flooded after every heavy storm.\n\nResidents first assumed the river was overflowing, but a retired engineer, Mr. Tanaka, traced the water to a culvert clogged with leaves and a collapsed pipe. After he sent photographs to the council, a crew cleared and relined the culvert within two weeks.",
+      "options": [
+        "For three autumns Marlow Lane flooded after heavy storms, which residents put down to the river.",
+        "The council cleared and relined the culvert within two weeks, ending the floods.",
+        "Mr. Tanaka sent photographs to the council because the lane had stopped flooding.",
+        "Mr. Tanaka traced the water to a blocked, collapsed culvert and sent photographs to the council."
+      ],
+      "correctOrder": [0, 3, 1],
+      "hint": "Which came first: the photographs or the end of the flooding?",
+      "explanation": "The photographs prompted the repair, and the flooding stopped afterwards. The statement turns the result into the reason.",
+      "storyKeyEvents": [
+        "For three autumns Marlow Lane flooded after heavy storms, which residents put down to the river.",
+        "Mr. Tanaka traced the water to a blocked, collapsed culvert and sent photographs to the council.",
+        "The council cleared and relined the culvert within two weeks, ending the floods."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L191_Q3",
+      "instruction": "One statement is plausible but distorts the story. Arrange the other three in the order the events happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The string quartet's performance at the regional festival nearly did not happen. The coach carrying the players broke down on the motorway an hour before their slot.\n\nThe leader, Mr. Reyes, phoned the organisers and asked to swap places with the last group. The school sent a replacement coach, which arrived within the hour, while a passing lorry driver waved and offered the musicians a flask of tea. The quartet played last and won second prize.",
+      "options": [
+        "Mr. Reyes asked to swap to the last slot, and a replacement coach arrived within the hour.",
+        "A passing lorry driver offered the musicians a flask of tea, which saved the performance.",
+        "The quartet played last and won second prize.",
+        "The coach carrying the quartet broke down on the motorway an hour before their slot."
+      ],
+      "correctOrder": [3, 0, 2],
+      "hint": "Who or what actually solved the problem of getting there on time?",
+      "explanation": "The tea was a kind gesture that did nothing to get the quartet there. What saved the performance was the slot swap and the replacement coach.",
+      "storyKeyEvents": [
+        "The coach carrying the quartet broke down on the motorway an hour before their slot.",
+        "Mr. Reyes asked to swap to the last slot, and a replacement coach arrived within the hour.",
+        "The quartet played last and won second prize."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L192_Q1",
+      "instruction": "Choose the three statements that give the best concise, paraphrased summary, in the order the events happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "By the time the first customers arrived at Noor's new bookshop in September, she had spent eight months preparing it. The lease had been signed in January, but the shelves were not delivered until May.\n\nWhile she waited for the shelves, Noor ordered stock and built a mailing list through a newsletter. When the shelves finally came, a friend helped her assemble them over two weekends, and the shop opened on the first Saturday of September.",
+      "options": [
+        "While waiting, she ordered stock and built a mailing list through a newsletter.",
+        "Noor signed the lease in January, but the shelves were not delivered until May.",
+        "Noor opened the bookshop as soon as she had signed the lease.",
+        "After assembling the shelves with a friend, she opened the shop on the first Saturday of September."
+      ],
+      "correctOrder": [1, 0, 3],
+      "hint": "Count the months the story gives between signing the lease and opening.",
+      "explanation": "The shop opened in September, eight months after the lease was signed. The statement removes the long wait and the shelves' delay.",
+      "storyKeyEvents": [
+        "Noor signed the lease in January, but the shelves were not delivered until May.",
+        "While waiting, she ordered stock and built a mailing list through a newsletter.",
+        "After assembling the shelves with a friend, she opened the shop on the first Saturday of September."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L192_Q2",
+      "instruction": "Reconstruct the central conflict, the key action, and the result, in the order they happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Ilya stopped taking the 7:40 bus in February and began cycling to work, a change his colleagues noticed immediately. For years he had arrived at the office tired and late.\n\nIt began when his employer introduced a scheme providing secure bike storage and showers. Ilya tried it for one week, found that the ride took only twenty-five minutes, and kept going. By summer he was arriving earlier than anyone else.",
+      "options": [
+        "He found the ride took only twenty-five minutes, kept going, and by summer arrived earlier than anyone else.",
+        "Ilya started cycling to impress his manager and win a promotion.",
+        "His employer introduced secure bike storage and showers, and Ilya tried cycling for a week.",
+        "For years Ilya arrived at the office tired and late after taking the bus."
+      ],
+      "correctOrder": [3, 2, 0],
+      "hint": "Look for the reason the story supplies for the change.",
+      "explanation": "The change began with the employer's scheme and Ilya's discovery of how short the ride was. A wish to win a promotion appears nowhere in the story.",
+      "storyKeyEvents": [
+        "For years Ilya arrived at the office tired and late after taking the bus.",
+        "His employer introduced secure bike storage and showers, and Ilya tried cycling for a week.",
+        "He found the ride took only twenty-five minutes, kept going, and by summer arrived earlier than anyone else."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L192_Q3",
+      "instruction": "One statement is plausible but distorts the story. Arrange the other three in the order the events happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Zarina's sister's wedding was held in the garden of an old hotel. The forecast had been poor for days, so the family had planned to move the ceremony indoors.\n\nOn the morning, a break in the clouds led the hotel manager to recommend staying outside, and the family agreed. While the guests were taking their seats, a waiter dropped a tray of glasses and the staff cleared it up in minutes. The ceremony took place under dry skies, and rain only began during the speeches.",
+      "options": [
+        "Because of a poor forecast, the family planned to move the wedding ceremony indoors.",
+        "On the morning, the manager recommended staying outside after a break in the clouds, and the family agreed.",
+        "The ceremony took place under dry skies, with rain only starting during the speeches.",
+        "A waiter dropped a tray of glasses, and the staff cleared it up within minutes."
+      ],
+      "correctOrder": [0, 1, 2],
+      "hint": "One event is a small incident that doesn't touch the ceremony's plan.",
+      "explanation": "The dropped tray was cleared in minutes and didn't affect where the ceremony was held. The wedding's thread is the forecast, the decision to stay outside, and the dry ceremony.",
+      "storyKeyEvents": [
+        "Because of a poor forecast, the family planned to move the wedding ceremony indoors.",
+        "On the morning, the manager recommended staying outside after a break in the clouds, and the family agreed.",
+        "The ceremony took place under dry skies, with rain only starting during the speeches."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L193_Q1",
+      "instruction": "Choose the three statements that give the best concise, paraphrased summary, in the order the events happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Fadila's café survived its first winter because of a decision she made in October. Sales had been poor since the summer, and her bank account was almost empty.\n\nTen years earlier she had worked in a hotel kitchen, where she learned to cook for large groups. In October she offered the café as a supplier of office lunches, delivering trays to nearby firms. Orders from three firms covered her rent through the winter.",
+      "options": [
+        "In October she began supplying office lunches, delivering trays to nearby firms.",
+        "Orders from three firms covered her rent through the winter.",
+        "Sales at Fadila's café had been poor since summer, and her bank account was almost empty.",
+        "Ten years earlier Fadila had learned to cook for large groups in a hotel kitchen."
+      ],
+      "correctOrder": [2, 0, 1],
+      "hint": "A sentence about the past may explain a skill without being an event of this winter.",
+      "explanation": "Her hotel experience is background from a decade before. This winter's story is the poor sales, the office lunches, and the orders that paid the rent.",
+      "storyKeyEvents": [
+        "Sales at Fadila's café had been poor since summer, and her bank account was almost empty.",
+        "In October she began supplying office lunches, delivering trays to nearby firms.",
+        "Orders from three firms covered her rent through the winter."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L193_Q2",
+      "instruction": "Reconstruct the central conflict, the key action, and the result, in the order they happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The town's old cinema reopened in May after being closed for six years. Volunteers had cleaned the seats, repainted the lobby and fixed the projector over the winter.\n\nThe first screening, a black-and-white comedy, sold out within two days of being announced. The volunteers hope to add a monthly children's matinee next year if funds allow.",
+      "options": [
+        "The volunteers will add a monthly children's matinee next year.",
+        "The first screening, a black-and-white comedy, sold out within two days of being announced.",
+        "Over the winter volunteers cleaned the seats, repainted the lobby and fixed the projector.",
+        "The cinema reopened in May after six years."
+      ],
+      "correctOrder": [2, 3, 1],
+      "hint": "A hope for next year hasn't happened yet.",
+      "explanation": "The matinee is only a hope, conditional on funds. The story's events are the restoration, the reopening, and the sold-out screening.",
+      "storyKeyEvents": [
+        "Over the winter volunteers cleaned the seats, repainted the lobby and fixed the projector.",
+        "The cinema reopened in May after six years.",
+        "The first screening, a black-and-white comedy, sold out within two days of being announced."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L193_Q3",
+      "instruction": "One statement is plausible but distorts the story. Arrange the other three in the order the events happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "At the end of the semester, Hiroki discovered that he had failed a module by two marks. He emailed the module leader on a Sunday evening, attaching his coursework and a short note.\n\nThe leader replied on Monday that two questions had been marked wrongly and agreed to re-mark the paper. The new mark raised Hiroki's grade to a pass, and he was able to continue to the next year.",
+      "options": [
+        "Hiroki discovered that he had failed a module by two marks.",
+        "The module leader found two questions marked wrongly and agreed to re-mark the paper.",
+        "Hiroki emailed the module leader on a Sunday evening, attaching his coursework and a short note.",
+        "The re-mark gave him a pass and he continued to the next year."
+      ],
+      "correctOrder": [0, 1, 3],
+      "hint": "Ask whether a statement describes the key action or only the logistics around it.",
+      "explanation": "The email's day and attachments are details of how he asked, and they leave out the finding that two questions were misgraded. The summary needs the failure, the re-mark decision, and the pass.",
+      "storyKeyEvents": [
+        "Hiroki discovered that he had failed a module by two marks.",
+        "The module leader found two questions marked wrongly and agreed to re-mark the paper.",
+        "The re-mark gave him a pass and he continued to the next year."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L194_Q1",
+      "instruction": "Choose the three statements that give the best concise, paraphrased summary, in the order the events happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "A new rule at the community centre required groups to register their weekly bookings online. At first several older groups found the process confusing and stopped attending.\n\nThe manager, Ms. Greer, held two drop-in sessions to help people register and wrote a one-page guide in large print. Within a month all but one of the groups had returned, and bookings were easier to manage.",
+      "options": [
+        "Online systems always exclude older people unless staff intervene.",
+        "Ms. Greer held two drop-in sessions and wrote a large-print guide.",
+        "Within a month all but one group had returned.",
+        "A new online registration rule confused several older groups, who stopped attending."
+      ],
+      "correctOrder": [3, 1, 2],
+      "hint": "The story is about one centre. Does the statement stay within it?",
+      "explanation": "A rule about all online systems and all older people is far broader than one community centre's experience. The summary should report what happened there.",
+      "storyKeyEvents": [
+        "A new online registration rule confused several older groups, who stopped attending.",
+        "Ms. Greer held two drop-in sessions and wrote a large-print guide.",
+        "Within a month all but one group had returned."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L194_Q2",
+      "instruction": "Reconstruct the central conflict, the key action, and the result, in the order they happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Emilia's marathon training was going well until a work trip in the ninth week kept her away from her usual routes for ten days. She ran in hotel gyms and on unfamiliar streets, covering about half her usual distance.\n\nWhen she returned, she restarted at a lower weekly mileage and built up again over three weeks. On race day she finished in four hours and five minutes, ten minutes slower than her goal.",
+      "options": [
+        "She finished the marathon in 4:05, ten minutes slower than her goal.",
+        "She resumed at a lower mileage and built up over three weeks.",
+        "A ten-day work trip in week nine cut Emilia's running to about half her usual distance.",
+        "Emilia stopped running completely during the trip and finished fifty minutes behind her goal."
+      ],
+      "correctOrder": [2, 1, 0],
+      "hint": "Compare how much she ran during the trip and how far behind she finished.",
+      "explanation": "She ran about half her usual distance and finished ten minutes behind. The statement exaggerates both the stoppage and the lateness.",
+      "storyKeyEvents": [
+        "A ten-day work trip in week nine cut Emilia's running to about half her usual distance.",
+        "She resumed at a lower mileage and built up over three weeks.",
+        "She finished the marathon in 4:05, ten minutes slower than her goal."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L194_Q3",
+      "instruction": "One statement is plausible but distorts the story. Arrange the other three in the order the events happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The village's annual fete was cancelled one year because too few volunteers came forward, and many residents felt the village had lost something.\n\nA new parish clerk, Mr. Dunn, called a meeting and asked each person to commit to one hour of help, rather than a whole day. Forty people signed up, and the fete returned the next summer.",
+      "options": [
+        "The village fete was cancelled because too few volunteers came forward.",
+        "Forty people signed up and the fete returned the next summer.",
+        "Too few volunteers came forward because the fete had been cancelled.",
+        "The new parish clerk asked people to commit to just one hour instead of a whole day."
+      ],
+      "correctOrder": [0, 3, 1],
+      "hint": "Which came first: the shortage or the cancellation?",
+      "explanation": "The shortage of volunteers caused the cancellation. The statement reverses the cause.",
+      "storyKeyEvents": [
+        "The village fete was cancelled because too few volunteers came forward.",
+        "The new parish clerk asked people to commit to just one hour instead of a whole day.",
+        "Forty people signed up and the fete returned the next summer."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L195_Q1",
+      "instruction": "Choose the three statements that give the best concise, paraphrased summary, in the order the events happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The university's computer lab was due to close for the summer, but the final-year students asked to keep it open for their dissertations. The head of department said that opening it would cost extra for supervision.\n\nA lecturer, Dr. Ramos, offered to supervise the lab two evenings a week, and a technician agreed to stay one extra hour. The lab stayed open until the end of August. A first-year student brought biscuits for the supervisors on the final evening.",
+      "options": [
+        "Dr. Ramos offered to supervise two evenings a week, and a technician agreed to stay an extra hour.",
+        "Final-year students asked to keep the computer lab open over the summer, but supervision would cost extra.",
+        "A first-year student who brought biscuits for the supervisors kept the lab open.",
+        "The lab stayed open until the end of August."
+      ],
+      "correctOrder": [1, 0, 3],
+      "hint": "A thank-you gesture at the end isn't the reason the lab stayed open.",
+      "explanation": "The biscuits came on the final evening and had nothing to do with the lab staying open. The supervisors' offers solved the problem.",
+      "storyKeyEvents": [
+        "Final-year students asked to keep the computer lab open over the summer, but supervision would cost extra.",
+        "Dr. Ramos offered to supervise two evenings a week, and a technician agreed to stay an extra hour.",
+        "The lab stayed open until the end of August."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L195_Q2",
+      "instruction": "Reconstruct the central conflict, the key action, and the result, in the order they happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Liv's application to the design residency was successful, and she moved to the city in October. Getting there took almost a year of preparation.\n\nShe first drafted a portfolio in December, then spent the spring revising it with her tutor. In June she submitted it, and the residency's decision arrived in September.",
+      "options": [
+        "Liv's residency decision arrived the day after she submitted her portfolio.",
+        "Liv drafted a portfolio in December and revised it with her tutor through the spring.",
+        "She submitted the portfolio in June.",
+        "The residency's decision arrived in September and she moved to the city in October."
+      ],
+      "correctOrder": [1, 2, 3],
+      "hint": "Look at the months between submission and the decision.",
+      "explanation": "She submitted in June and the decision came in September. The statement closes the three-month gap.",
+      "storyKeyEvents": [
+        "Liv drafted a portfolio in December and revised it with her tutor through the spring.",
+        "She submitted the portfolio in June.",
+        "The residency's decision arrived in September and she moved to the city in October."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L195_Q3",
+      "instruction": "One statement is plausible but distorts the story. Arrange the other three in the order the events happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "In April the supermarket on Elm Road replaced its three checkouts with six self-service machines. Customers praised the shorter queues, but one machine was often out of order.\n\nThe manager, Mr. Boyd, kept two staffed checkouts for older customers and hired a technician for the machines. By autumn queue times were down by half and complaints about breakdowns had almost stopped.",
+      "options": [
+        "The manager kept two staffed checkouts and hired a technician for the machines.",
+        "The supermarket replaced the checkouts to cut staff wages.",
+        "The supermarket swapped three checkouts for six self-service machines, which shortened queues, though one often broke.",
+        "By autumn queue times were down by half and complaints about breakdowns had almost stopped."
+      ],
+      "correctOrder": [2, 0, 3],
+      "hint": "Does the story say why the machines were installed?",
+      "explanation": "No reason is given for the change, and staffed checkouts were actually kept. The wage motive is an invention.",
+      "storyKeyEvents": [
+        "The supermarket swapped three checkouts for six self-service machines, which shortened queues, though one often broke.",
+        "The manager kept two staffed checkouts and hired a technician for the machines.",
+        "By autumn queue times were down by half and complaints about breakdowns had almost stopped."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L196_Q1",
+      "instruction": "Choose the three statements that give the best concise, paraphrased summary, in the order the events happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The regional rugby club reached the cup final for the first time in thirty years. Their coach, Mr. Tane, had spent the season rebuilding the team around younger players.\n\nOn the final day the club's chairman spent the morning settling a dispute about parking at the ground. In the match the young players held a ten-point lead, lost it in the last ten minutes, and won in extra time.",
+      "options": [
+        "In the final the young players lost a ten-point lead but won in extra time.",
+        "On the final day the chairman spent the morning settling a parking dispute at the ground.",
+        "Over the season the coach, Mr. Tane, rebuilt the team around younger players.",
+        "The club reached the cup final for the first time in thirty years."
+      ],
+      "correctOrder": [2, 3, 0],
+      "hint": "An event on the same day can still be a side story.",
+      "explanation": "The parking dispute was the chairman's own business and didn't affect the team or the match. The thread is the rebuilt team, the final, and the extra-time win.",
+      "storyKeyEvents": [
+        "Over the season the coach, Mr. Tane, rebuilt the team around younger players.",
+        "The club reached the cup final for the first time in thirty years.",
+        "In the final the young players lost a ten-point lead but won in extra time."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L196_Q2",
+      "instruction": "Reconstruct the central conflict, the key action, and the result, in the order they happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Matilde rebuilt her late grandfather's mantel clock over three months and brought it to the repair café for its final test. A volunteer, Mr. Ohm, found that one spring needed replacing.\n\nWhen her grandfather was alive he had repaired clocks for neighbours in the village. Mr. Ohm fitted a new spring, and the clock chimed and kept time. Matilde left the café with the working clock.",
+      "options": [
+        "Her grandfather had repaired clocks for neighbours in the village.",
+        "At the repair café Mr. Ohm found one spring needed replacing and fitted a new one.",
+        "Matilde spent three months rebuilding her grandfather's mantel clock.",
+        "The clock chimed and kept time, and Matilde took it home."
+      ],
+      "correctOrder": [2, 1, 3],
+      "hint": "A sentence about the grandfather's past is background, not part of this rebuild.",
+      "explanation": "What the grandfather did when he was alive explains Matilde's interest but isn't one of the steps of the rebuild. The steps are the rebuilding, the new spring, and the working clock.",
+      "storyKeyEvents": [
+        "Matilde spent three months rebuilding her grandfather's mantel clock.",
+        "At the repair café Mr. Ohm found one spring needed replacing and fitted a new one.",
+        "The clock chimed and kept time, and Matilde took it home."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L196_Q3",
+      "instruction": "One statement is plausible but distorts the story. Arrange the other three in the order the events happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The village shop's loyalty scheme began in March and had signed up two hundred shoppers by June.\n\nIt gave one point for each pound spent, with a free item every hundred points, and sales to scheme members rose by a quarter. The owner said she would extend it to the village hall café next year.",
+      "options": [
+        "It gave a point for each pound spent and a free item every hundred points, and sales to members rose by a quarter.",
+        "By June two hundred shoppers had signed up.",
+        "The owner will extend the scheme to the village hall café next year.",
+        "The village shop began a loyalty scheme in March."
+      ],
+      "correctOrder": [3, 0, 1],
+      "hint": "Next year hasn't happened. Does the story report it as an event?",
+      "explanation": "The extension is only a plan for next year. The reported events are the launch, the scheme's terms and effect, and the number who joined.",
+      "storyKeyEvents": [
+        "The village shop began a loyalty scheme in March.",
+        "It gave a point for each pound spent and a free item every hundred points, and sales to members rose by a quarter.",
+        "By June two hundred shoppers had signed up."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L197_Q1",
+      "instruction": "Choose the three statements that give the best concise, paraphrased summary, in the order the events happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The students' union ran a clothes swap in the main hall on Tuesday. It had been planned by the sustainability officer, Ms. Kamau, who had booked the hall for three hours and ordered forty clothes rails.\n\nNearly three hundred students attended, and by the end almost every rail was empty. Leftover clothes were donated to a charity shop, and the union decided to hold the swap each term.",
+      "options": [
+        "Nearly three hundred students attended, and almost every rail was empty by the end.",
+        "The union's sustainability officer planned a clothes swap in the main hall.",
+        "Leftover clothes went to a charity shop, and the union decided to hold the swap each term.",
+        "Ms. Kamau had booked the hall for three hours and ordered forty clothes rails."
+      ],
+      "correctOrder": [1, 0, 2],
+      "hint": "Booking details describe the planning, not what the planning led to.",
+      "explanation": "The hall's booking length and the number of rails are true but make the summary heavy without adding to what happened. The summary needs the plan, the turnout, and the follow-up decision.",
+      "storyKeyEvents": [
+        "The union's sustainability officer planned a clothes swap in the main hall.",
+        "Nearly three hundred students attended, and almost every rail was empty by the end.",
+        "Leftover clothes went to a charity shop, and the union decided to hold the swap each term."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L197_Q2",
+      "instruction": "Reconstruct the central conflict, the key action, and the result, in the order they happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Karl's team had been losing time to unclear meeting agendas. After a month of trying a standard agenda template, the team found that meetings ran fifteen minutes shorter.\n\nThe team then added a rule that each item must have an owner, and decisions were recorded at the end of each meeting. Within a quarter the team's lead said missed deadlines had halved.",
+      "options": [
+        "Standard agenda templates fix every team's meeting problems.",
+        "Within a quarter missed deadlines had halved.",
+        "The team added a rule that each item must have an owner and that decisions be recorded.",
+        "Unclear agendas wasted Karl's team's time, so it tried a standard template and meetings ran fifteen minutes shorter."
+      ],
+      "correctOrder": [3, 2, 1],
+      "hint": "Is the statement about Karl's team, or about all teams?",
+      "explanation": "The story reports one team's results over a month and a quarter. A claim that templates fix every team's problems goes beyond that.",
+      "storyKeyEvents": [
+        "Unclear agendas wasted Karl's team's time, so it tried a standard template and meetings ran fifteen minutes shorter.",
+        "The team added a rule that each item must have an owner and that decisions be recorded.",
+        "Within a quarter missed deadlines had halved."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L197_Q3",
+      "instruction": "One statement is plausible but distorts the story. Arrange the other three in the order the events happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Tove's mother's shop sold hand-knitted scarves, and sales had dipped slightly in the spring. Tove suggested selling on a craft website as well as in the shop.\n\nShe set up an online store in May and photographed forty scarves, and orders from outside the town started within a week. By December online sales were a third of the shop's total.",
+      "options": [
+        "Spring sales of the shop's hand-knitted scarves dipped slightly, so Tove suggested selling online.",
+        "By December online sales made up a third of the shop's total.",
+        "Tove set up an online store in May with forty photographed scarves.",
+        "Sales collapsed in the spring, and online sales became the whole business by December."
+      ],
+      "correctOrder": [0, 2, 1],
+      "hint": "Compare how big the dip and the online share were.",
+      "explanation": "Sales dipped slightly, and online sales reached a third, not the whole business. The statement magnifies both.",
+      "storyKeyEvents": [
+        "Spring sales of the shop's hand-knitted scarves dipped slightly, so Tove suggested selling online.",
+        "Tove set up an online store in May with forty photographed scarves.",
+        "By December online sales made up a third of the shop's total."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L198_Q1",
+      "instruction": "Choose the three statements that give the best concise, paraphrased summary, in the order the events happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The hospital's records team stopped losing patient files after it introduced a barcode system in the autumn. For years paper files had been misplaced about twice a week.\n\nA trial on one ward showed that scanning files in and out made each file's location clear. After the trial the system was rolled out to all wards within three months.",
+      "options": [
+        "The system was rolled out to all wards within three months, ending the losses.",
+        "For years paper files were misplaced about twice a week.",
+        "The hospital trialled barcode scanning because files had stopped being lost.",
+        "A trial on one ward showed that scanning made each file's location clear."
+      ],
+      "correctOrder": [1, 3, 0],
+      "hint": "Which came first: the lost files or the scanning?",
+      "explanation": "Files were being lost, and that is why scanning was tried. The statement puts the end of the problem before the cure.",
+      "storyKeyEvents": [
+        "For years paper files were misplaced about twice a week.",
+        "A trial on one ward showed that scanning made each file's location clear.",
+        "The system was rolled out to all wards within three months, ending the losses."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L198_Q2",
+      "instruction": "Reconstruct the central conflict, the key action, and the result, in the order they happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The city's annual science festival was in danger after its main sponsor withdrew two months before the event. The organiser, Dr. Mensah, had to cut the budget by a third.\n\nShe reduced the festival from five days to three and asked the university to lend its lecture halls free of charge. A student volunteer designed the new poster in an evening. The festival went ahead and drew eight thousand visitors.",
+      "options": [
+        "The festival went ahead and drew eight thousand visitors.",
+        "Dr. Mensah shortened the festival to three days and got the university halls free of charge.",
+        "A student volunteer designed the new poster, which rescued the festival.",
+        "The main sponsor withdrew two months before the festival, forcing a one-third budget cut."
+      ],
+      "correctOrder": [3, 1, 0],
+      "hint": "A helpful task isn't the same as what rescued the festival.",
+      "explanation": "The poster was a useful extra, but the festival was saved by the shorter schedule and the free halls. The statement gives the student the main credit.",
+      "storyKeyEvents": [
+        "The main sponsor withdrew two months before the festival, forcing a one-third budget cut.",
+        "Dr. Mensah shortened the festival to three days and got the university halls free of charge.",
+        "The festival went ahead and drew eight thousand visitors."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L198_Q3",
+      "instruction": "One statement is plausible but distorts the story. Arrange the other three in the order the events happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Within a year of the council's anti-litter campaign, the number of bags collected from the beach had fallen by half. The campaign had begun slowly.\n\nIn the first three months the council only put up signs, and the amount of litter barely changed. Then it added more bins and fines, and over the next nine months the litter fell steadily.",
+      "options": [
+        "Over the next nine months litter fell steadily, halving the bags collected within a year.",
+        "For three months the council only put up signs and litter barely changed.",
+        "The council then added more bins and fines.",
+        "Litter on the beach halved the moment the signs went up."
+      ],
+      "correctOrder": [1, 2, 0],
+      "hint": "Did the litter drop straight away, or only after the other steps?",
+      "explanation": "The signs alone changed little, and the halving took a year. The statement collapses the timeline into an instant.",
+      "storyKeyEvents": [
+        "For three months the council only put up signs and litter barely changed.",
+        "The council then added more bins and fines.",
+        "Over the next nine months litter fell steadily, halving the bags collected within a year."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L199_Q1",
+      "instruction": "Choose the three statements that give the best concise, paraphrased summary, in the order the events happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Georgi moved his small accountancy firm out of the city centre in March. Rents had risen, and the firm's four staff were spending long hours commuting from the suburbs.\n\nHe found a unit above a dentist's surgery near the suburban station, and the move took one weekend. After the move staff arrived earlier and billable hours rose by ten per cent.",
+      "options": [
+        "Rising rents and long commutes led Georgi to look for premises outside the city centre.",
+        "Georgi moved to be nearer to a competitor's clients.",
+        "He moved the firm to a unit near the suburban station over one weekend.",
+        "Staff arrived earlier and billable hours rose by ten per cent."
+      ],
+      "correctOrder": [0, 2, 3],
+      "hint": "What reasons does the story give for the move?",
+      "explanation": "The story gives rising rents and long commutes as the reasons. A competitor's clients are never mentioned.",
+      "storyKeyEvents": [
+        "Rising rents and long commutes led Georgi to look for premises outside the city centre.",
+        "He moved the firm to a unit near the suburban station over one weekend.",
+        "Staff arrived earlier and billable hours rose by ten per cent."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L199_Q2",
+      "instruction": "Reconstruct the central conflict, the key action, and the result, in the order they happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Candice's hiking group had planned to climb the ridge on Saturday, but fog covered the summit. The leader, Mr. Ng, checked the forecast and suggested a lower circular route through the woods.\n\nOn the way one hiker's boot lace snapped and was replaced with a spare in a minute. The group completed the woodland circuit in four hours, and the fog lifted just as they returned to the car park.",
+      "options": [
+        "One hiker's boot lace snapped and was replaced with a spare in a minute.",
+        "Fog covered the ridge, so Mr. Ng suggested a lower woodland circuit.",
+        "The fog lifted just as they returned to the car park.",
+        "The group completed the circuit in four hours."
+      ],
+      "correctOrder": [1, 3, 2],
+      "hint": "A fault fixed in a minute is rarely a main event.",
+      "explanation": "The lace was replaced at once and the group's route and timing were unaffected. The thread is the fog, the woodland circuit, and the clearing weather.",
+      "storyKeyEvents": [
+        "Fog covered the ridge, so Mr. Ng suggested a lower woodland circuit.",
+        "The group completed the circuit in four hours.",
+        "The fog lifted just as they returned to the car park."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L199_Q3",
+      "instruction": "One statement is plausible but distorts the story. Arrange the other three in the order the events happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The library's reading challenge reached its target of five thousand books in October, two months early. The librarian, Ms. Pike, credited a change she had made in the spring.\n\nIn an earlier year the challenge had struggled to reach three thousand. In the spring Ms. Pike let children choose any book, including comics and audiobooks, rather than a set list. Children's reading logs filled rapidly over the summer.",
+      "options": [
+        "Children's reading logs filled rapidly over the summer.",
+        "In an earlier year the challenge had struggled to reach three thousand books.",
+        "The challenge reached its target of five thousand books in October, two months early.",
+        "In the spring Ms. Pike let children choose any book, including comics and audiobooks, instead of a set list."
+      ],
+      "correctOrder": [3, 0, 2],
+      "hint": "A past year's result isn't one of this year's steps.",
+      "explanation": "The earlier year's shortfall is background from before the change. This year's events are the new rule, the filled logs, and the early target.",
+      "storyKeyEvents": [
+        "In the spring Ms. Pike let children choose any book, including comics and audiobooks, instead of a set list.",
+        "Children's reading logs filled rapidly over the summer.",
+        "The challenge reached its target of five thousand books in October, two months early."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L200_Q1",
+      "instruction": "Choose the three statements that give the best concise, paraphrased summary, in the order the events happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The Lindqvist family finished renovating their kitchen on the last day of September, three weeks later than planned. The delay began when the builder discovered damp behind the old cupboards.\n\nThe builder treated the wall, which took ten days, and the family postponed the delivery of the new units. When the units arrived, fitting them took only four days. The family plans to repaint the hallway next spring.",
+      "options": [
+        "Fitting the units took four days, and the kitchen was finished on 30 September, three weeks late.",
+        "The family plans to repaint the hallway next spring.",
+        "The wall was treated over ten days and the family postponed the delivery of the new units.",
+        "The builder discovered damp behind the old cupboards, which delayed the renovation."
+      ],
+      "correctOrder": [3, 2, 0],
+      "hint": "Plans for next spring aren't part of the kitchen's story.",
+      "explanation": "The hallway is a future plan unrelated to the kitchen's delay or completion. The kitchen's story is the damp, the treatment, and the finish.",
+      "storyKeyEvents": [
+        "The builder discovered damp behind the old cupboards, which delayed the renovation.",
+        "The wall was treated over ten days and the family postponed the delivery of the new units.",
+        "Fitting the units took four days, and the kitchen was finished on 30 September, three weeks late."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L200_Q2",
+      "instruction": "Reconstruct the central conflict, the key action, and the result, in the order they happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "At the start of the project the tool library had only a hundred members and an annual budget of two thousand pounds. The organiser, Mr. Owusu, believed that the main obstacle was awareness.\n\nHe printed three hundred leaflets and left them at the library, the post office and two cafés, and posted a short video on the town's social media page. Within a year the membership had tripled.",
+      "options": [
+        "The tool library had only a hundred members, and Mr. Owusu believed low awareness was the obstacle.",
+        "He spread the word with leaflets and a short online video.",
+        "Within a year membership had tripled.",
+        "Mr. Owusu printed three hundred leaflets and left them at the library, the post office and two cafés."
+      ],
+      "correctOrder": [0, 1, 2],
+      "hint": "Does the list of places add anything to the summary?",
+      "explanation": "The number of leaflets and the places are true details that crowd out the video and the result. The summary needs the problem, the outreach, and the tripled membership.",
+      "storyKeyEvents": [
+        "The tool library had only a hundred members, and Mr. Owusu believed low awareness was the obstacle.",
+        "He spread the word with leaflets and a short online video.",
+        "Within a year membership had tripled."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L200_Q3",
+      "instruction": "One statement is plausible but distorts the story. Arrange the other three in the order the events happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "A neighbourhood sports club introduced a buddy system for new members in January. Each newcomer was paired with an experienced member who came to the first three sessions with them.\n\nBy June the club's dropout rate among new members had fallen from forty to twenty per cent. The coach said that the first weeks were when most people decided whether to stay.",
+      "options": [
+        "The club introduced a buddy system in January, pairing newcomers with experienced members for their first three sessions.",
+        "Buddy systems stop everyone from leaving any club.",
+        "The coach said the first weeks were when most people decided whether to stay.",
+        "By June the dropout rate among new members had fallen from forty to twenty per cent."
+      ],
+      "correctOrder": [0, 3, 2],
+      "hint": "Does the story say anything about every club and everyone?",
+      "explanation": "It reports one club's dropout rate halving, not that nobody leaves. The statement turns a single result into a universal claim.",
+      "storyKeyEvents": [
+        "The club introduced a buddy system in January, pairing newcomers with experienced members for their first three sessions.",
+        "By June the dropout rate among new members had fallen from forty to twenty per cent.",
+        "The coach said the first weeks were when most people decided whether to stay."
+      ]
+    }
+  ]
 }

@@ -10,14 +10,14 @@
             "interactionType": "typing",
             "passage": "The customer [acknowledged] that the product had been defective from the very start.",
             "options": [
-                "said",
-                "mentioned",
                 "acknowledged",
-                "alleged"
+                "alleged",
+                "acclaimed",
+                "contended"
             ],
             "correctAnswer": "alleged",
-            "hint": "Think about a reporting verb meaning to claim something without proof yet, not one meaning to admit something.",
-            "explanation": "'Alleged' reports an unproven claim, often in disputes, not 'acknowledged,' which means to admit something is true.",
+            "hint": "The context suggests this is an unproven claim by the customer, not an admitted fact.",
+            "explanation": "'Alleged' means to claim something without proof, fitting a customer's unverified complaint. 'Acknowledged' would incorrectly suggest the company admitted the defect.",
             "errorCount": 3
         },
         {
@@ -27,14 +27,14 @@
             "interactionType": "typing",
             "passage": "The store manager [acknowledged] that the delay was due to a supplier issue, before later denying it.",
             "options": [
-                "said",
-                "told",
+                "acclaimed",
+                "alleged",
                 "contended",
                 "acknowledged"
             ],
             "correctAnswer": "contended",
-            "hint": "Think about a reporting verb meaning to argue firmly that something is true, not one meaning to admit it.",
-            "explanation": "'Contended' means to argue firmly for a position, not 'acknowledged,' which simply means to admit something.",
+            "hint": "The phrase 'before later denying it' shows this was an argued claim, not an admitted fact.",
+            "explanation": "'Contended' means to argue a position firmly, fitting a claim that was later reversed. 'Acknowledged' would suggest a genuine, lasting admission, which contradicts the later denial.",
             "errorCount": 3
         },
         {
@@ -44,14 +44,14 @@
             "interactionType": "typing",
             "passage": "The company [contended] that the packaging error had caused some confusion among customers.",
             "options": [
-                "told",
+                "acclaimed",
                 "acknowledged",
                 "contended",
-                "mentioned"
+                "alleged"
             ],
             "correctAnswer": "acknowledged",
-            "hint": "Think about a reporting verb meaning to admit that something is true, not one meaning to argue a position.",
-            "explanation": "'Acknowledged' means to admit that something is true, not 'contended,' which means to argue firmly for a claim.",
+            "hint": "The context here suggests a genuine admission of fault, not an argued claim.",
+            "explanation": "'Acknowledged' means to admit something as true, fitting a company genuinely accepting responsibility. 'Contended' would suggest the company was arguing a disputed position instead.",
             "errorCount": 3
         },
         {
@@ -61,14 +61,14 @@
             "interactionType": "typing",
             "passage": "The food critic [acknowledged] that the new chef lacked real experience in fine dining.",
             "options": [
-                "told",
-                "alleged",
                 "acknowledged",
-                "said"
+                "contended",
+                "alleged",
+                "acclaimed"
             ],
             "correctAnswer": "alleged",
-            "hint": "Think about a reporting verb meaning to claim something without firm proof, not one meaning to admit it.",
-            "explanation": "'Alleged' reports an unproven, critical claim, not 'acknowledged,' which means to admit something is true.",
+            "hint": "This is presented as an unverified claim by the critic, not a confirmed fact.",
+            "explanation": "'Alleged' fits an unproven claim made by the critic, rather than 'acknowledged,' which would suggest a confirmed, admitted fact.",
             "errorCount": 3
         },
         {
@@ -78,14 +78,14 @@
             "interactionType": "typing",
             "passage": "The nutritionist [acknowledged] that the diet plan was based on outdated research, before defending it anyway.",
             "options": [
-                "told",
-                "acknowledged",
-                "said",
-                "contended"
+                "contended",
+                "alleged",
+                "acclaimed",
+                "acknowledged"
             ],
             "correctAnswer": "contended",
-            "hint": "Think about a reporting verb meaning to argue firmly for a position, not one meaning to admit it.",
-            "explanation": "'Contended' means to argue a position firmly, not 'acknowledged,' which means to simply admit something.",
+            "hint": "The phrase 'before defending it anyway' suggests this was an argued position, not a genuine admission.",
+            "explanation": "'Contended' fits an argued position later defended despite criticism, rather than 'acknowledged,' which would suggest genuine agreement with the criticism.",
             "errorCount": 3
         },
         {
@@ -95,14 +95,14 @@
             "interactionType": "typing",
             "passage": "The restaurant owner [contended] that the wait times had been longer than usual lately, and apologized.",
             "options": [
-                "told",
                 "contended",
-                "said",
+                "alleged",
+                "acclaimed",
                 "acknowledged"
             ],
             "correctAnswer": "acknowledged",
-            "hint": "This reporting verb shows that someone accepted a fact, often reluctantly.",
-            "explanation": "'Acknowledged' means to accept that something is true, not 'contended,' which means to argue firmly for a claim.",
+            "hint": "The apology that follows suggests genuine acceptance of the fact, not a disputed claim.",
+            "explanation": "'Acknowledged' fits a genuine admission followed by an apology, rather than 'contended,' which would suggest the owner was disputing the claim.",
             "errorCount": 3
         },
         {
@@ -112,14 +112,14 @@
             "interactionType": "typing",
             "passage": "The company's decision to [updation] the system led to significant downtime across all departments.",
             "options": [
+                "updating",
+                "updatement",
                 "update",
-                "updater",
-                "updates",
                 "updation"
             ],
             "correctAnswer": "update",
-            "hint": "Think about which form is the correct verb, since this slot needs an infinitive after 'to.'",
-            "explanation": "After 'to,' the base verb form is required: 'to update,' not the non-standard noun form 'updation.'",
+            "hint": "This word functions as a verb here (an action the company decided to take), not a noun.",
+            "explanation": "'Updation' is not a standard English word. The correct verb form is 'update,' matching 'decided to update the system.'",
             "errorCount": 3
         },
         {
@@ -130,13 +130,13 @@
             "passage": "The [implement] of the new policy caused confusion among the engineering team that week.",
             "options": [
                 "implement",
-                "implementation",
-                "implemented",
-                "implementing"
+                "implementment",
+                "implementing",
+                "implementation"
             ],
             "correctAnswer": "implementation",
-            "hint": "In formal writing, verbs are often turned into nouns ending in -tion to function as the subject of a sentence.",
-            "explanation": "Nominalization changes verbs into nouns, here 'implement' becomes 'implementation' to act as a subject, not stay a verb.",
+            "hint": "This word functions as a noun here (the subject of the sentence), not a verb.",
+            "explanation": "The sentence needs the noun form 'implementation,' referring to the process of putting something into effect, not the verb 'implement.'",
             "errorCount": 3
         },
         {
@@ -146,14 +146,14 @@
             "interactionType": "typing",
             "passage": "Researchers are studying the [impactful] of artificial intelligence on the job market.",
             "options": [
-                "impacting",
-                "impacted",
                 "impact",
+                "impactment",
+                "impacting",
                 "impactful"
             ],
             "correctAnswer": "impact",
-            "hint": "Think about the noun form needed after 'the' and before 'of.'",
-            "explanation": "'Impact' functions as a noun here, fitting 'the impact of [something] on [something],' not the adjective 'impactful.'",
+            "hint": "This word functions as a noun here (the object being studied), not an adjective.",
+            "explanation": "The sentence needs the noun 'impact,' referring to the effect being studied. 'Impactful' is an adjective and cannot function as the object of 'studying.'",
             "errorCount": 3
         },
         {
@@ -163,14 +163,14 @@
             "interactionType": "typing",
             "passage": "The [affective] of regular exercise on mental health has been well documented by researchers.",
             "options": [
-                "affective",
-                "affecting",
+                "effectual",
                 "effect",
-                "affected"
+                "affecting",
+                "affective"
             ],
             "correctAnswer": "effect",
-            "hint": "Think about the noun form needed after 'the' and before 'of,' not an adjective.",
-            "explanation": "'Effect' is a noun meaning 'result,' fitting 'the effect of [something] on [something],' not the adjective 'affective.'",
+            "hint": "This word functions as a noun here (the subject of the sentence), referring to a result.",
+            "explanation": "The sentence needs the noun 'effect,' referring to a documented outcome. 'Affective,' an adjective related to emotion, doesn't fit this grammatical role.",
             "errorCount": 3
         },
         {
@@ -180,14 +180,14 @@
             "interactionType": "typing",
             "passage": "Early [detect] of the disease can significantly improve treatment outcomes for patients.",
             "options": [
-                "detected",
+                "detectment",
                 "detection",
-                "detecting",
-                "detect"
+                "detect",
+                "detecting"
             ],
             "correctAnswer": "detection",
-            "hint": "In formal writing, verbs are often turned into nouns ending in -tion.",
-            "explanation": "Nominalization turns 'detect' into the noun 'detection,' fitting its role as the subject, not staying a bare verb.",
+            "hint": "This word is the subject performing the action of 'can improve' — which part of speech can occupy that role?",
+            "explanation": "The sentence needs the noun form 'detection,' referring to the act of finding something early. The bare verb 'detect' cannot function as a subject here.",
             "errorCount": 3
         },
         {
@@ -197,14 +197,14 @@
             "interactionType": "typing",
             "passage": "The [develop] of this new vaccine took over a decade of dedicated research.",
             "options": [
-                "developed",
+                "development",
+                "developement",
                 "developing",
-                "develop",
-                "development"
+                "develop"
             ],
             "correctAnswer": "development",
-            "hint": "In formal writing, verbs are often turned into nouns ending in -ment.",
-            "explanation": "Nominalization turns 'develop' into the noun 'development,' allowing it to function as the subject, not stay a bare verb.",
+            "hint": "Something 'took over a decade' — what part of speech names a process like that, and can act as the subject of a sentence?",
+            "explanation": "The sentence needs the noun 'development,' referring to the process of creating something over time. The bare verb 'develop' cannot serve as the subject.",
             "errorCount": 3
         },
         {
@@ -215,13 +215,13 @@
             "passage": "The film received [wide acclaim] from critics around the world after its premiere.",
             "options": [
                 "broad acclaim",
-                "large acclaim",
                 "wide acclaim",
+                "large acclaim",
                 "widespread acclaim"
             ],
             "correctAnswer": "widespread acclaim",
-            "hint": "Think about the precise collocation used to describe acclaim that is found everywhere.",
-            "explanation": "'Widespread acclaim' is the standard, precise collocation, not 'wide acclaim,' which sounds slightly off.",
+            "hint": "This noun for praise usually pairs with just one particular intensifying adjective in natural, idiomatic English — the others sound almost right but aren't quite standard.",
+            "explanation": "'Widespread acclaim' is the natural, idiomatic collocation for praise received broadly. 'Wide acclaim,' while understandable, sounds less natural in polished writing.",
             "errorCount": 3
         },
         {
@@ -231,14 +231,14 @@
             "interactionType": "typing",
             "passage": "The author's latest novel has sparked considerable [discussion] among literary critics this season.",
             "options": [
-                "talking",
+                "chatter",
+                "conversation",
                 "debate",
-                "discussion",
-                "chat"
+                "discussion"
             ],
             "correctAnswer": "debate",
-            "hint": "Think about the precise noun that collocates naturally with 'considerable' in this context.",
-            "explanation": "'Considerable debate' is the more natural, precise collocation here than 'considerable discussion' in this context.",
+            "hint": "This context describes critics disagreeing and arguing different positions, which calls for a more specific word than 'discussion.'",
+            "explanation": "'Debate' more precisely captures critics disagreeing over differing viewpoints, whereas 'discussion' is more neutral and doesn't imply disagreement as strongly.",
             "errorCount": 3
         },
         {
@@ -249,13 +249,13 @@
             "passage": "The series has built up a [faithful fan base] over the past decade of broadcasting.",
             "options": [
                 "loyal fan base",
-                "faithful fan base",
-                "trustworthy fan base",
-                "reliable fan base"
+                "steady fan base",
+                "reliable fan base",
+                "faithful fan base"
             ],
             "correctAnswer": "loyal fan base",
-            "hint": "Think about the precise adjective that naturally collocates with 'fan base.'",
-            "explanation": "'Loyal fan base' is the standard collocation, more natural than near-synonyms like 'faithful fan base.'",
+            "hint": "This specific noun typically pairs with one particular adjective in natural, polished English.",
+            "explanation": "'Loyal fan base' is the natural, idiomatic collocation in English for describing devoted followers. 'Faithful fan base,' while understandable, is less commonly used in this context.",
             "errorCount": 3
         },
         {
@@ -265,14 +265,14 @@
             "interactionType": "typing",
             "passage": "Please accept our [honest apologies] for the inconvenience this has caused you.",
             "options": [
+                "honest apologies",
                 "real apologies",
                 "sincere apologies",
-                "truthful apologies",
-                "honest apologies"
+                "true apologies"
             ],
             "correctAnswer": "sincere apologies",
-            "hint": "Think about the precise adjective that naturally collocates with 'apologies' in formal writing.",
-            "explanation": "'Sincere apologies' is the standard formal collocation, more natural than near-synonyms like 'honest apologies.'",
+            "hint": "This specific noun typically pairs with one particular adjective in formal, polished English.",
+            "explanation": "'Sincere apologies' is the standard, natural collocation in formal writing. 'Honest apologies,' while understandable, sounds less polished in this context.",
             "errorCount": 3
         },
         {
@@ -282,14 +282,14 @@
             "interactionType": "typing",
             "passage": "We would like to express our [heavy gratitude] for your continued support this year.",
             "options": [
+                "large gratitude",
                 "deepest gratitude",
-                "big gratitude",
                 "heavy gratitude",
-                "large gratitude"
+                "strong gratitude"
             ],
             "correctAnswer": "deepest gratitude",
-            "hint": "Think about the precise superlative adjective that naturally collocates with 'gratitude.'",
-            "explanation": "'Deepest gratitude' is the standard formal collocation for expressing strong thanks, not 'heavy gratitude.'",
+            "hint": "This specific noun typically pairs with one particular superlative adjective in formal English.",
+            "explanation": "'Deepest gratitude' is the natural, idiomatic collocation for expressing strong thanks in formal writing. 'Heavy gratitude' is not a standard English combination.",
             "errorCount": 3
         },
         {
@@ -299,14 +299,14 @@
             "interactionType": "typing",
             "passage": "The negotiations reached a [sudden standstill] after several hours of difficult discussion.",
             "options": [
-                "entire standstill",
                 "sudden standstill",
-                "complete standstill",
-                "total standstill"
+                "heavy standstill",
+                "large standstill",
+                "complete standstill"
             ],
             "correctAnswer": "complete standstill",
-            "hint": "Think about the precise adjective that naturally collocates with 'standstill' to mean fully stopped.",
-            "explanation": "'Complete standstill' is the standard collocation describing something fully stopped, more natural than 'sudden standstill.'",
+            "hint": "This specific noun typically pairs with one particular adjective describing a total stop.",
+            "explanation": "'Complete standstill' is the natural collocation describing negotiations coming to a full stop. 'Sudden standstill,' while understandable, is a less common pairing in this context.",
             "errorCount": 3
         },
         {
@@ -316,14 +316,14 @@
             "interactionType": "typing",
             "passage": "It could be argued that modern life [be] too dependent on convenience these days.",
             "options": [
-                "being",
+                "be",
                 "is",
                 "was",
-                "be"
+                "being"
             ],
             "correctAnswer": "is",
-            "hint": "After 'it could be argued that,' the clause continues with a normal present tense verb, not the base form.",
-            "explanation": "Hedging phrases like 'it could be argued that' are followed by a regular clause: 'that modern life is,' not 'be.'",
+            "hint": "After 'it could be argued that,' the following clause uses ordinary present tense, not the base form.",
+            "explanation": "'It could be argued that' introduces a regular clause with normal subject-verb agreement, requiring 'is,' not the bare base form 'be.'",
             "errorCount": 3
         },
         {
@@ -334,13 +334,13 @@
             "passage": "It would seem [reasonably] that fewer people cook from scratch nowadays compared to the past.",
             "options": [
                 "reasoning",
-                "reasonable",
                 "reasonably",
-                "reason"
+                "reason",
+                "reasonable"
             ],
             "correctAnswer": "reasonable",
-            "hint": "Think about the adjective form needed after the linking verb 'seem,' not the adverb form.",
-            "explanation": "After the linking verb 'seem,' an adjective is required: 'seem reasonable,' not the adverb 'reasonably.'",
+            "hint": "This hedging phrase needs an adjective after 'seem,' not an adverb.",
+            "explanation": "'Seem' is a linking verb that takes an adjective complement, not an adverb: 'seem reasonable,' not 'seem reasonably.'",
             "errorCount": 3
         },
         {
@@ -351,13 +351,13 @@
             "passage": "To some extent, daily habits [is] shaped by the environment we grow up in.",
             "options": [
                 "are",
-                "being",
+                "was",
                 "be",
                 "is"
             ],
             "correctAnswer": "are",
-            "hint": "Think about subject-verb agreement with the plural subject 'daily habits.'",
-            "explanation": "The plural subject 'daily habits' requires the plural verb form 'are,' not the singular 'is,' in this passive structure.",
+            "hint": "Check subject-verb agreement — 'habits' is plural.",
+            "explanation": "Since 'habits' is plural, the verb must agree in number: 'habits are shaped,' not 'habits is shaped.'",
             "errorCount": 3
         },
         {
@@ -367,14 +367,14 @@
             "interactionType": "typing",
             "passage": "It could be argued that standardized tests [reflects] a narrow view of intelligence overall.",
             "options": [
-                "reflected",
-                "reflect",
                 "reflecting",
-                "reflects"
+                "reflects",
+                "reflect",
+                "reflected"
             ],
             "correctAnswer": "reflect",
-            "hint": "After 'it could be argued that,' the subject 'standardized tests' is plural, requiring a plural verb.",
-            "explanation": "The plural subject 'standardized tests' takes the base plural verb form 'reflect,' not the singular 'reflects.'",
+            "hint": "Check subject-verb agreement — 'tests' is plural.",
+            "explanation": "Since the subject 'tests' is plural, the verb must agree: 'tests reflect,' not the singular 'reflects.'",
             "errorCount": 3
         },
         {
@@ -384,14 +384,14 @@
             "interactionType": "typing",
             "passage": "It would seem [reasonably] that students learn better with regular, consistent feedback.",
             "options": [
-                "reason",
-                "reasonably",
                 "reasoning",
-                "reasonable"
+                "reasonable",
+                "reason",
+                "reasonably"
             ],
             "correctAnswer": "reasonable",
-            "hint": "After the linking verb 'seem,' the next word should describe a quality, not an action.",
-            "explanation": "After the linking verb 'seem,' an adjective form is required: 'seem reasonable,' not the adverb 'reasonably.'",
+            "hint": "After the linking verb 'seem,' an adjective is needed, not an adverb.",
+            "explanation": "'Seem' takes an adjective complement: 'seem reasonable.' The adverb 'reasonably' doesn't fit this grammatical pattern.",
             "errorCount": 3
         },
         {
@@ -402,13 +402,13 @@
             "passage": "To some extent, exam results [is] influenced by factors entirely outside the classroom.",
             "options": [
                 "be",
-                "being",
+                "is",
                 "are",
-                "is"
+                "was"
             ],
             "correctAnswer": "are",
-            "hint": "Think about subject-verb agreement with the plural subject 'exam results.'",
-            "explanation": "The plural subject 'exam results' requires the plural verb 'are,' not the singular 'is,' in this passive structure.",
+            "hint": "Check subject-verb agreement — 'results' is plural.",
+            "explanation": "Since 'results' is plural, the verb must agree in number, requiring 'are,' not the singular 'is.'",
             "errorCount": 3
         },
         {
@@ -419,13 +419,13 @@
             "passage": "Had the team communicated more clearly, the project [wouldn't be] delayed for as long as it was.",
             "options": [
                 "wouldn't have been",
-                "won't be",
-                "isn't",
-                "wouldn't be"
+                "wasn't",
+                "wouldn't be",
+                "hadn't been"
             ],
             "correctAnswer": "wouldn't have been",
-            "hint": "This is an inverted third conditional referring entirely to the past, so the main clause uses 'would have.'",
-            "explanation": "Inverted third conditionals about a fully past situation use 'would have' + past participle, not just 'would be.'",
+            "hint": "This is a standard third conditional referring entirely to the past, which needs the full past result form.",
+            "explanation": "Since both the condition and result refer to a completed past situation, the result clause needs 'wouldn't have been,' not the present-tense 'wouldn't be.'",
             "errorCount": 3
         },
         {
@@ -435,14 +435,14 @@
             "interactionType": "typing",
             "passage": "Hardly [we had sat down] when the fire alarm began ringing loudly throughout the building.",
             "options": [
+                "did we sat down",
                 "we had sat down",
-                "had we sat down",
-                "we sat down",
-                "did we sit down"
+                "we did sit down",
+                "had we sat down"
             ],
             "correctAnswer": "had we sat down",
-            "hint": "Starting a sentence with 'Hardly' for dramatic effect requires inverting the auxiliary and subject.",
-            "explanation": "'Hardly' at the start of a sentence triggers inversion: 'had we sat down,' not the normal word order 'we had sat down.'",
+            "hint": "Fronted 'Hardly' triggers subject-auxiliary inversion.",
+            "explanation": "'Hardly' at the start of a sentence for emphasis requires inversion: 'had we sat down,' with the auxiliary before the subject.",
             "errorCount": 3
         },
         {
@@ -452,14 +452,14 @@
             "interactionType": "typing",
             "passage": "So poorly [the meeting was organized] that half the team didn't even attend in the end.",
             "options": [
-                "had the meeting organized",
+                "the meeting did organize",
                 "was the meeting organized",
                 "did the meeting organize",
                 "the meeting was organized"
             ],
             "correctAnswer": "was the meeting organized",
-            "hint": "Fronting an adverb-adjective phrase at the start of a sentence triggers inverted word order.",
-            "explanation": "Fronted phrases like 'So poorly organized' invert with the verb 'be': 'was the meeting organized,' not the normal order.",
+            "hint": "Fronted 'So + adverb' at the start of a sentence triggers inversion of verb and subject.",
+            "explanation": "'So poorly' fronted for emphasis requires inversion: 'was the meeting organized,' with the verb placed before the subject.",
             "errorCount": 3
         },
         {
@@ -470,13 +470,13 @@
             "passage": "Had we checked the weather forecast, we [would take] a different route that morning.",
             "options": [
                 "would take",
-                "had taken",
-                "take",
+                "will take",
+                "would taken",
                 "would have taken"
             ],
             "correctAnswer": "would have taken",
-            "hint": "This is an inverted third conditional, so the main clause uses 'would have' plus the past participle.",
-            "explanation": "Inverted third conditionals keep the standard main clause: 'would have taken,' not just 'would take.'",
+            "hint": "This is a standard third conditional referring entirely to the past.",
+            "explanation": "Since both clauses describe a completed past event, the result clause needs 'would have taken,' the standard third conditional form.",
             "errorCount": 3
         },
         {
@@ -486,14 +486,14 @@
             "interactionType": "typing",
             "passage": "No sooner [the meeting had started] than the projector stopped working completely.",
             "options": [
+                "the meeting did start",
                 "the meeting had started",
                 "had the meeting started",
-                "did the meeting start",
-                "the meeting started"
+                "did the meeting start"
             ],
             "correctAnswer": "had the meeting started",
-            "hint": "Starting a sentence with 'No sooner' for dramatic effect requires inverting the auxiliary and subject.",
-            "explanation": "'No sooner' at the start of a sentence triggers inversion: 'had the meeting started,' not the normal word order.",
+            "hint": "Fronted 'No sooner' triggers subject-auxiliary inversion.",
+            "explanation": "'No sooner' at the start of a sentence requires inversion: 'had the meeting started,' placing the auxiliary before the subject.",
             "errorCount": 3
         },
         {
@@ -503,14 +503,14 @@
             "interactionType": "typing",
             "passage": "Not until we reached the summit [we did truly] appreciate the difficulty of the entire journey.",
             "options": [
-                "we did truly",
                 "did we truly",
-                "we had truly",
-                "had we truly"
+                "did truly we",
+                "we truly did",
+                "we did truly"
             ],
             "correctAnswer": "did we truly",
-            "hint": "Placing 'Not until' at the front of the sentence forces the auxiliary before the subject.",
-            "explanation": "Fronted negative time expressions with 'Not until' require inversion: 'did we truly appreciate,' not the normal order.",
+            "hint": "Fronted 'Not until' triggers subject-auxiliary inversion with 'did.'",
+            "explanation": "'Not until' at the start of a sentence requires inversion: 'did we truly appreciate,' with 'did' placed before the subject.",
             "errorCount": 3
         }
     ]

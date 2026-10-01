@@ -5,572 +5,602 @@
     "quests": [
         {
             "id": "WRT_SHORTANSWERWRITING_L151_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Give a nuanced answer in one clear sentence, acknowledging another side. Use the three words meaningfully.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why every strong argument needs to rest on a claim that does not itself need to be proven.",
+            "prompt": "A city plans a pedestrian-only zone. Contrast how residents and shop owners might see it.",
             "options": [
-                "self-evident",
-                "justify",
-                "assume"
+                "residents",
+                "owners",
+                "whereas"
             ],
-            "sampleAnswer": "Every argument must eventually rest on a self-evident claim that we simply assume rather than justify through further proof.",
-            "hint": "State what every argument eventually needs at its base, then explain why that base doesn't require further proof.",
-            "explanation": "A claim that is 'self-evident' needs no further justification - it's the bedrock every other point in the argument builds upon.",
+            "sampleAnswer": "Residents welcome the pedestrian zone because it reduces noise, whereas shop owners worry that fewer drivers will mean fewer customers.",
+            "hint": "Give each group its own concern and connect them with a contrast word.",
+            "explanation": "Comparing perspectives means explaining why each group reacts as it does, and a contrast word like 'whereas' shows that you present both fairly.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "owners",
+                "residents",
+                "whereas"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L151_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Give a nuanced answer in one clear sentence, acknowledging another side. Work in each of the three words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how a monopsonist employer suppresses wages by exploiting their dominant market position.",
+            "prompt": "A company introduces an open-plan office. Contrast the views of managers and employees.",
             "options": [
-                "monopsony",
-                "wage suppression",
-                "market power"
+                "managers",
+                "employees",
+                "privacy"
             ],
-            "sampleAnswer": "A monopsony employer uses market power to impose wage suppression below the competitive equilibrium wage rate.",
-            "hint": "Use 'A monopsony employer uses market power to impose wage suppression below' and name the benchmark it falls under.",
-            "explanation": "'Below the competitive equilibrium rate' defines wage suppression precisely against the market standard.",
+            "sampleAnswer": "Managers value open-plan offices because they improve communication, but employees often complain that the lack of privacy makes it hard to concentrate.",
+            "hint": "Explain what each group values and why the other group disagrees.",
+            "explanation": "Perspective writing gives each side its own reason, so the reader understands the conflict and not just the two opinions.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "employees",
+                "managers",
+                "privacy"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L151_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Give a nuanced answer in one clear sentence, acknowledging another side. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how a recurring literary symbol operates on multiple levels of meaning beyond the literal.",
+            "prompt": "A new airport runway is proposed. Describe how an airline and nearby residents would see it.",
             "options": [
-                "signify",
-                "beyond",
-                "literal"
+                "nearby",
+                "noise",
+                "airline"
             ],
-            "sampleAnswer": "A recurring symbol can signify meaning that extends far beyond its literal surface across thematic and psychological levels.",
-            "hint": "State what the symbol does beyond its literal meaning, then name two levels it operates on.",
-            "explanation": "'Operating on thematic and psychological levels simultaneously' shows two distinct planes of symbolic meaning.",
+            "sampleAnswer": "An airline would see the runway as a way to handle more flights, while nearby residents would focus on the noise and the effect on their daily lives.",
+            "hint": "Use 'would' to describe what each group is likely to think.",
+            "explanation": "'Would' expresses what people are likely to think or do, which is more accurate than stating their views as certain facts.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "airline",
+                "nearby",
+                "noise"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L152_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Give your reason in one sentence. Use the three words meaningfully.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about what synthesising diverse scholarly sources into a unified argument demonstrates about a writer's academic skill.",
+            "prompt": "Argue that public libraries remain important and give two reasons.",
             "options": [
-                "synthesize",
-                "diverse",
-                "coherent"
+                "reasons",
+                "remain",
+                "free"
             ],
-            "sampleAnswer": "Scholars who synthesize diverse perspectives into coherent arguments demonstrate the highest academic competency available.",
-            "hint": "Describe what scholars do when combining sources well, then rank the skill with a superlative.",
-            "explanation": "'Highest level of academic competency' positions synthesis as the apex of academic writing ability.",
+            "sampleAnswer": "Public libraries remain important for two reasons: they provide free access to information, and they give people a quiet place to work or study.",
+            "hint": "State the conclusion, then present the reasons with parallel structure.",
+            "explanation": "A conclusion followed by two parallel reasons is easy to read, and announcing the number of reasons tells the reader what to expect.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "free",
+                "reasons",
+                "remain"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L152_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Explain in two sentences so the reason is easy to follow. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about the environmental philosophy position that non-human nature possesses value independent of human benefit.",
+            "prompt": "Argue that cities should plant more trees, and give reasons.",
             "options": [
-                "intrinsic",
-                "value",
-                "nonhuman"
+                "air",
+                "shade",
+                "moreover"
             ],
-            "sampleAnswer": "Environmental philosophers argue that nonhuman nature possesses intrinsic value entirely independent of any human use or benefit.",
-            "hint": "State what these philosophers argue about nature's value, then specify what this value doesn't depend on.",
-            "explanation": "'Entirely independent of any human use or benefit' removes all anthropocentric conditions - defining intrinsic value precisely.",
+            "sampleAnswer": "Trees give shade that keeps streets cooler in summer. Moreover, they improve air quality, which makes cities healthier places to live.",
+            "hint": "Give the first reason, then add a stronger one with 'moreover'.",
+            "explanation": "'Moreover' adds a further point that supports the same conclusion, and it often introduces the stronger reason.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "air",
+                "moreover",
+                "shade"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L152_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Give your reason in one clear sentence. Make sure all three words fit the meaning.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about the difference between a claim that must always be true and one that merely happens to be true.",
+            "prompt": "Argue that companies should train managers in communication, and support it with two effects.",
             "options": [
-                "necessary",
-                "contingent",
-                "circumstance"
+                "productivity",
+                "turnover",
+                "conclude"
             ],
-            "sampleAnswer": "A necessary truth holds in every possible circumstance, whereas a contingent truth depends entirely on how things happen to be.",
-            "hint": "Define the first type of truth using 'every', then define the second type using 'depends on'.",
-            "explanation": "Contrasting 'necessary' and 'contingent' with 'whereas' sets up a clean logical distinction that is genuinely useful in careful argument.",
+            "sampleAnswer": "We can conclude that communication training is worthwhile, because it raises productivity and reduces staff turnover.",
+            "hint": "Begin with 'conclude' and name two measurable effects.",
+            "explanation": "'We can conclude' presents a reasoned final position, and measurable effects such as turnover give the reasons weight.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "conclude",
+                "productivity",
+                "turnover"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L153_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Explain the cause and its effect in a single sentence. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how cautious hedging language allows a writer to infer a relationship without overclaiming.",
+            "prompt": "Interest rates are rising. Explain what this means for people who want to buy a home.",
             "options": [
-                "insofar as",
-                "reasonable",
-                "infer"
+                "mortgage",
+                "affordable",
+                "postpone"
             ],
-            "sampleAnswer": "Insofar as the data is reliable, it is reasonable to infer a causal relationship, though further verification is warranted.",
-            "hint": "Open with 'Insofar as' to limit your claim, then add a cautious concession with 'though'.",
-            "explanation": "'Though further verification is warranted' is a formal concessive closer - it adds epistemic humility to the inference.",
+            "sampleAnswer": "Higher rates make a mortgage more expensive, so homes become less affordable, and some buyers may postpone their purchase.",
+            "hint": "Give a direct effect, then a likely reaction from the group.",
+            "explanation": "Implications work best when they name a direct effect and then a plausible reaction, because that shows how a change spreads.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "affordable",
+                "mortgage",
+                "postpone"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L153_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Show how one thing leads to another in one clear sentence. Each word should appear in your answer.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how conflict theorists explain the reproduction of class inequality across generations.",
+            "prompt": "A new privacy law requires apps to ask permission before collecting data. Explain what this means for developers.",
             "options": [
-                "class struggle",
-                "perpetuate",
-                "inequality"
+                "costs",
+                "comply",
+                "data"
             ],
-            "sampleAnswer": "Conflict theorists argue that class struggle perpetuates socio-economic inequality by restricting access to education and opportunity across generations.",
-            "hint": "Name the theory and what it says perpetuates inequality, then list two specific mechanisms.",
-            "explanation": "'Restricting access to education and opportunity' names the two intergenerational transmission mechanisms precisely.",
+            "sampleAnswer": "Developers must comply by redesigning how they collect data, which will raise costs, especially for small companies.",
+            "hint": "Say what must change and who is most affected.",
+            "explanation": "Naming who is most affected shows that the implications are not equal for everyone.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "comply",
+                "costs",
+                "data"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L153_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Show how one thing leads to another in a single sentence. Work in each of the three words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why algorithmic systems require independent oversight to ensure transparency and accountability.",
+            "prompt": "Fuel prices have risen sharply. Explain what this means for a delivery company.",
             "options": [
-                "transparency",
-                "accountability",
-                "audit"
+                "fuel",
+                "pass on",
+                "customers"
             ],
-            "sampleAnswer": "Algorithmic systems must be subject to independent audit to ensure both operational transparency and meaningful public accountability.",
-            "hint": "State what algorithmic systems must undergo, then name two governance standards this ensures.",
-            "explanation": "'Both operational transparency and meaningful public accountability' pairs two distinct governance requirements.",
+            "sampleAnswer": "A delivery company faces higher fuel costs, so it may have to pass on the extra cost to customers or find more efficient routes.",
+            "hint": "Give two possible responses to the price rise and join them with 'or'.",
+            "explanation": "Presenting two possible responses shows that implications often lead to choices, not just results.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "customers",
+                "fuel",
+                "pass on"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L154_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Judge the option in a single sentence and support your judgment. Each word should appear in your answer.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how a novel that shifts between several characters' points of view can enrich its story.",
+            "prompt": "Students who use the library get better grades. Explain what we cannot conclude from this.",
             "options": [
-                "perspective",
-                "multiple voice",
-                "authority"
+                "cannot",
+                "motivated",
+                "conclude"
             ],
-            "sampleAnswer": "Shifting between multiple voices in a novel gives each character's perspective equal authority, preventing any single viewpoint from dominating the story.",
-            "hint": "State what shifting between voices does for each character, then explain what this technique prevents.",
-            "explanation": "Giving each voice 'equal authority' means no single character's view is presented as the objective truth - the reader must weigh them all.",
+            "sampleAnswer": "We cannot conclude that the library improves grades, because motivated students may simply be more likely to use it.",
+            "hint": "Say what the data does not prove and give an alternative explanation.",
+            "explanation": "Naming another possible explanation, such as motivation, shows why one pattern in data can have more than one cause.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "cannot",
+                "conclude",
+                "motivated"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L154_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write an evaluation in one clear sentence that weighs both sides. Include the three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how game theory models the rational choices of strategic agents seeking stable equilibrium outcomes.",
+            "prompt": "People who take vitamins are healthier. Explain why this does not prove that vitamins work.",
             "options": [
-                "game theory",
-                "equilibrium",
-                "rational"
+                "healthier",
+                "lifestyle",
+                "rather than"
             ],
-            "sampleAnswer": "Game theory predicts that rational agents in strategic interactions will converge on a Nash equilibrium as their stable outcome.",
-            "hint": "Name the field and what it predicts about rational agents, then describe the outcome they converge on.",
-            "explanation": "'As their stable outcome' characterises the equilibrium as a resting point of rational strategic behaviour.",
+            "sampleAnswer": "Vitamin users may be healthier because of their overall lifestyle rather than the vitamins themselves.",
+            "hint": "Suggest a hidden factor that could explain the result.",
+            "explanation": "A hidden factor, such as lifestyle, is often the real explanation, and 'rather than' contrasts it with the claimed cause.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "healthier",
+                "lifestyle",
+                "rather than"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L154_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write an evaluation in a single sentence that weighs both sides. Use the three words meaningfully.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about what path dependency means and why historical decisions constrain future institutional options.",
+            "prompt": "A survey about a new service was answered only by customers who wrote to complain. Explain the problem.",
             "options": [
-                "lock-in",
-                "path dependency",
-                "historical"
+                "reflect",
+                "respond",
+                "biased"
             ],
-            "sampleAnswer": "Historical path dependency creates institutional lock-in, constraining future reform by embedding past decisions in present structures.",
-            "hint": "Name the phenomenon that locks in past choices, then explain the mechanism precisely.",
-            "explanation": "'Embedding past decisions in present structures' shows precisely how path dependency operates as a constraining force.",
+            "sampleAnswer": "The results would be biased, because people who respond mostly complain, so they do not reflect the views of all customers.",
+            "hint": "Explain who is missing from the results and how it changes the result.",
+            "explanation": "Bias in who answers a survey changes what the results mean, so good analysis always asks who is missing.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "biased",
+                "reflect",
+                "respond"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L155_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Say what you decided and why in one sentence. Each word should appear in your answer.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how understanding a genre's macro-structure helps writers organise their texts effectively.",
+            "prompt": "Two staff members must handle three projects with different deadlines. Explain how you would allocate the work.",
             "options": [
-                "macro-structure",
-                "genre",
-                "organize"
+                "allocate",
+                "deadline",
+                "delay"
             ],
-            "sampleAnswer": "Understanding a text's macro-structure and genre conventions helps writers organize content logically, coherently, and persuasively.",
-            "hint": "State what understanding structure and genre helps writers do, then list three qualities using adverbs.",
-            "explanation": "Three adverbs ('logically, coherently, and persuasively') name distinct qualities of well-organised academic writing.",
+            "sampleAnswer": "I would allocate the most experienced person to the project with the earliest deadline and accept a short delay on the least urgent one.",
+            "hint": "Explain the principle of the allocation and what you are willing to sacrifice.",
+            "explanation": "Prioritizing under constraints always involves a sacrifice, and naming it openly shows honest decision-making.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "allocate",
+                "deadline",
+                "delay"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L155_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Explain the decision and your reasoning in one clear sentence. Your answer should contain all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about what conceptual metaphor theory reveals about how abstract domains are understood through concrete ones.",
+            "prompt": "You have three days to study for three exams. Explain how you would divide your time.",
             "options": [
-                "conceptual metaphor",
-                "map",
-                "domain"
+                "exam",
+                "weakest",
+                "revise"
             ],
-            "sampleAnswer": "A conceptual metaphor maps the inferential structure of a concrete source domain onto an abstract and poorly understood target domain.",
-            "hint": "Give a common example of a conceptual metaphor, then explain what it maps and why that helps understanding.",
-            "explanation": "Using a concrete example like 'time is money' shows the mechanism directly - we borrow logic from something tangible to make an abstract idea graspable.",
+            "sampleAnswer": "I would spend the most time on my weakest subject and revise the others in shorter sessions, leaving the last evening before each exam for a quick review.",
+            "hint": "Give the principle for the division and a specific plan.",
+            "explanation": "A principle like 'weakest subject first' turns a vague plan into a strategy.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "exam",
+                "revise",
+                "weakest"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L155_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Say what you decided and why in one sentence. Work in each of the three words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how an industry can gain disproportionate influence over the body that is meant to regulate it.",
+            "prompt": "You have one day to prepare for an event with 100 guests. Say what is essential and what you would postpone.",
             "options": [
-                "industry",
-                "regulator",
-                "influence"
+                "postpone",
+                "guests",
+                "essential"
             ],
-            "sampleAnswer": "Regulatory capture occurs when an industry acquires disproportionate influence over the regulator responsible for overseeing its conduct.",
-            "hint": "Name the phenomenon where an industry gains too much sway, then specify over whom.",
-            "explanation": "'Responsible for overseeing its conduct' adds a participial post-modifier that sharpens the irony of regulatory capture.",
+            "sampleAnswer": "The essential tasks are the registration desk and the guests' seating, so I would postpone the decorations until they are needed.",
+            "hint": "Separate what must happen from what can wait.",
+            "explanation": "Separating essential from optional tasks is the core of practical prioritizing, because time is always shorter than the list of things you could do.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "essential",
+                "guests",
+                "postpone"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L156_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Pass the information on in one clear sentence, keeping only what matters. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how Aristotle's three rhetorical appeals work together to create fully persuasive discourse.",
+            "prompt": "Summarize: 'Urban gardens are spreading in many cities. They provide fresh vegetables, bring neighbors together, and reduce heat in summer. Yet finding land is often difficult and expensive.'",
             "options": [
-                "logos",
-                "pathos",
-                "persuasion"
+                "urban",
+                "benefits",
+                "land"
             ],
-            "sampleAnswer": "Effective persuasion combines logos, pathos, and ethos to engage readers intellectually, emotionally, and ethically in one unified appeal.",
-            "hint": "Name the three appeals, then match each to the kind of response it creates in the reader.",
-            "explanation": "Three parallel adverbs ('intellectually, emotionally, and ethically') map directly onto the three Aristotelian appeals.",
+            "sampleAnswer": "Urban gardens offer several benefits, including fresh food, community, and cooling, but their growth is limited by the cost and scarcity of land.",
+            "hint": "Combine the benefits into one phrase and keep the limitation.",
+            "explanation": "A strong summary uses one general phrase for several details and keeps the source's balance.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "benefits",
+                "land",
+                "urban"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L156_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Summarize the key information in one clear sentence. Include the three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why quantum computers are expected to solve certain problems far faster than traditional computers.",
+            "prompt": "Summarize: 'A study found that people who slept less than six hours performed worse on memory tests the next day. Those who slept eight hours remembered nearly twice as much.'",
             "options": [
-                "quantum computer",
-                "traditional",
-                "exponentially"
+                "study",
+                "sleep",
+                "memory"
             ],
-            "sampleAnswer": "Quantum computers can explore many possibilities at once, allowing them to solve certain problems exponentially faster than traditional computers.",
-            "hint": "Name what kind of computer this is, then explain the speed advantage using 'exponentially faster'.",
-            "explanation": "'Exponentially faster' signals a difference in kind, not just degree - the gap widens dramatically as the problem grows larger.",
+            "sampleAnswer": "The study showed that sleep strongly affects memory: people who slept six hours or less performed worse than those who slept eight hours.",
+            "hint": "State the finding and the comparison in one sentence.",
+            "explanation": "A summary of a study states the main finding and the comparison that makes it meaningful.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "memory",
+                "sleep",
+                "study"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L156_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a brief summary in one clear sentence for someone who missed it. Your answer should contain all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how living organisms maintain a stable internal environment despite constant change around them.",
+            "prompt": "Summarize: 'Shipping delays hit several stores last month. Managers said that supplier shortages and strikes at two ports were the main causes. Most stores expect normal deliveries by next month.'",
             "options": [
-                "homeostasis",
-                "stable",
-                "regulate"
+                "delays",
+                "caused",
+                "expect"
             ],
-            "sampleAnswer": "Homeostasis allows organisms to regulate their internal environment and stay stable even as outside conditions constantly shift.",
-            "hint": "Name the biological process, then explain what it helps the organism do despite outside change.",
-            "explanation": "Homeostasis is a foundational concept in biology - it explains everything from body-temperature regulation to blood-sugar control.",
+            "sampleAnswer": "Shipping delays were caused mainly by supplier shortages and port strikes, and most stores expect deliveries to return to normal next month.",
+            "hint": "Include what happened, the main causes, and what is expected next, all in one sentence.",
+            "explanation": "A good summary includes what happened, why it happened, and what comes next, so a reader who missed the original text can still act on it.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "caused",
+                "delays",
+                "expect"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L157_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Explain it in a single sentence so the other person understands. Work in each of the three words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how a foil character reveals the protagonist's defining qualities through deliberate contrast.",
+            "prompt": "'We should open on Sundays because people have free time.' Identify the assumption.",
             "options": [
-                "foil",
-                "juxtapose",
-                "illuminate"
+                "customers",
+                "willing",
+                "assumes"
             ],
-            "sampleAnswer": "A foil character is juxtaposed against the protagonist to illuminate their contrasting moral and psychological qualities.",
-            "hint": "Name the character type, then explain what quality it reveals about the protagonist by contrast.",
-            "explanation": "'Contrasting moral and psychological qualities' covers both ethical and cognitive dimensions of character contrast.",
+            "sampleAnswer": "This argument assumes that customers are willing to shop on Sundays, which may not be true if they prefer to rest.",
+            "hint": "Name what must be true for the reasoning to work.",
+            "explanation": "An assumption is the unstated belief a conclusion depends on, and naming it lets you test whether the argument holds.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "assumes",
+                "customers",
+                "willing"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L157_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Explain it in a single sentence so the other person understands. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how consequentialist ethics judges the moral worth of actions through their outcomes and overall utility.",
+            "prompt": "'Everyone will use the app because it is free.' Identify the assumption.",
             "options": [
-                "consequentialism",
-                "utility",
-                "maximize"
+                "assumption",
+                "price",
+                "useful"
             ],
-            "sampleAnswer": "Consequentialists hold that an action is morally right if and only if it maximizes overall utility for everyone affected.",
-            "hint": "Use 'Consequentialists hold that an action is morally right if and only if it maximizes' and specify scope.",
-            "explanation": "'If and only if' is a logical biconditional - it is precise and eliminates exceptions or ambiguity.",
+            "sampleAnswer": "The assumption is that price is the main reason people use apps, when many people also need it to be useful and easy to use.",
+            "hint": "Say what the argument takes for granted and offer a counterpoint.",
+            "explanation": "Identifying an assumption is stronger when you also explain why it may be wrong.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "assumption",
+                "price",
+                "useful"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L157_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Make the meaning clear in one sentence. Use the three words meaningfully.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how making a strategic concession in negotiation can unlock broader mutually beneficial agreements.",
+            "prompt": "'If we lower our prices, sales will double.' Identify the assumption and its risk.",
             "options": [
-                "concession",
-                "leverage",
-                "agreement"
+                "demand",
+                "margin",
+                "assumes"
             ],
-            "sampleAnswer": "A calculated concession on a minor issue can leverage goodwill and unlock a broader agreement on higher-stakes matters.",
-            "hint": "Name the negotiation move, then describe the bigger outcome it can unlock.",
-            "explanation": "'Unlock a broader agreement on higher-stakes matters' shows that sacrificing less can produce gains of greater importance.",
+            "sampleAnswer": "That assumes that demand will respond strongly to lower prices, but if it doesn't, the company loses margin without gaining customers.",
+            "hint": "Name the assumption and the risk if it is wrong.",
+            "explanation": "Linking an assumption to its risk shows why it matters to check it.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "assumes",
+                "demand",
+                "margin"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L158_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write an evaluation in a single sentence that weighs both sides. Work in each of the three words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how a scholar establishes intellectual authority by engaging critically with existing academic literature.",
+            "prompt": "Evaluate a congestion charge that makes drivers pay to enter the city center.",
             "options": [
-                "position",
-                "assert",
-                "literature"
+                "reduces",
+                "fairness",
+                "charge"
             ],
-            "sampleAnswer": "By asserting a clear scholarly position through sustained critical engagement with the existing literature, the author establishes authority.",
-            "hint": "Describe how a scholar builds authority, then name what kind of engagement with sources this requires.",
-            "explanation": "'Sustained critical engagement' distinguishes serious scholarship from mere citation - it implies analysis, not just reference.",
+            "sampleAnswer": "A congestion charge reduces traffic and pollution, but it raises questions of fairness, since lower-income drivers are hit hardest.",
+            "hint": "Give one effect and one concern, and name the principle behind the concern.",
+            "explanation": "Policy evaluation looks at effect and fairness together, because a policy can work and still be unfair.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "charge",
+                "fairness",
+                "reduces"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L158_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Judge the option in one clear sentence and support your judgment. Include the three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about the theoretical goal of unifying general relativity with quantum mechanics into one coherent framework.",
+            "prompt": "Evaluate a rule that requires households to sort their recycling.",
             "options": [
-                "unify",
-                "relativity",
-                "theory"
+                "enforce",
+                "sorting",
+                "compliance"
             ],
-            "sampleAnswer": "A complete theory of quantum gravity would unify general relativity with quantum mechanics into a single, self-consistent framework.",
-            "hint": "Name the two physics frameworks, then describe the single result their unification would produce.",
-            "explanation": "'Self-consistent framework' is the key criterion - the unified theory must not produce internal contradictions.",
+            "sampleAnswer": "Compulsory sorting can increase recycling rates, but it only works if households understand the rules, compliance is high, and the authorities can enforce them fairly.",
+            "hint": "Say what the policy achieves and what it needs in order to work.",
+            "explanation": "A policy's success depends on compliance, so evaluating it means asking what makes people follow it.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "compliance",
+                "enforce",
+                "sorting"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L158_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Judge the option in a single sentence and support your judgment. Work in each of the three words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how the level of narrative distance shapes how intimately a reader experiences a story's events.",
+            "prompt": "Evaluate a small fee for plastic bags in shops.",
             "options": [
-                "intimate",
-                "detached",
-                "narrative distance"
+                "fee",
+                "behavior",
+                "reduced"
             ],
-            "sampleAnswer": "Narrative distance ranges from intimate first-person immersion to a fully detached, omniscient third-person perspective.",
-            "hint": "Describe the two ends of the narrative-distance scale, from closest to most distant.",
-            "explanation": "'Ranges from X to Y' presents a continuum - acknowledging that narrative distance is scalar, not binary.",
+            "sampleAnswer": "A small fee changes behavior at little cost, and studies have generally reported that bag use is reduced, though the effect can fade over time.",
+            "hint": "Explain why the policy works and one limit.",
+            "explanation": "Evaluating a policy includes its limits, such as effects fading, which show that you have not simply accepted the good news.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "behavior",
+                "fee",
+                "reduced"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L159_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Name the issue and offer a solution in one sentence. Your answer should contain all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how deeply embedded relative clauses add information but can compromise sentence clarity.",
+            "prompt": "Name one risk of holding an outdoor event and a way to reduce it.",
             "options": [
-                "embed",
-                "relative clause",
-                "information"
+                "weather",
+                "risk",
+                "backup"
             ],
-            "sampleAnswer": "Deeply embedded relative clauses add layered information but risk reducing syntactic clarity and increasing cognitive processing load.",
-            "hint": "State what embedded relative clauses add, then name the cost this can create for the reader.",
-            "explanation": "'Increasing cognitive processing load' is more specific than 'confusing readers' - it names the exact cognitive cost.",
+            "sampleAnswer": "The main risk is weather, so we should book a covered backup space in case of rain.",
+            "hint": "Name the risk and a specific way to reduce it.",
+            "explanation": "A good risk answer pairs each risk with a practical action, and 'in case of' explains why the backup exists.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "backup",
+                "risk",
+                "weather"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L159_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Explain the problem and what should be done in one sentence. Each word should appear in your answer.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about the philosophical basis for arguing that political authority requires the consent of those who are governed.",
+            "prompt": "Name one risk in moving company data to a new system and a way to reduce it.",
             "options": [
-                "legitimate",
-                "authority",
-                "consent"
+                "backup",
+                "migration",
+                "lose"
             ],
-            "sampleAnswer": "Legitimate political authority, in liberal democratic theory, depends entirely on the active and ongoing consent of the governed.",
-            "hint": "State what legitimate authority depends on, using two words that stress it must be ongoing.",
-            "explanation": "'Active and ongoing consent' distinguishes genuine participation from one-time or passive acquiescence.",
+            "sampleAnswer": "The main risk in migration is that we could lose data, which we can reduce by making a full backup and testing the transfer on a small sample first.",
+            "hint": "Describe the main danger in the move and give two safeguards that reduce it.",
+            "explanation": "Two safeguards, a full backup and a small test, show layered thinking about risk, because one measure alone may not be enough.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "backup",
+                "lose",
+                "migration"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L159_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Explain the problem and what should be done in one sentence. Make sure all three words fit the meaning.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how revisionist historians challenge and rewrite earlier interpretations of key historical events.",
+            "prompt": "A new hire is starting remotely next week. What could go wrong for her socially, and what would you set up in advance?",
             "options": [
-                "revisionist",
-                "reinterpret",
-                "historiography"
+                "remote",
+                "isolated",
+                "buddy"
             ],
-            "sampleAnswer": "Revisionist historians systematically reinterpret established historiography, reshaping accounts around evidence earlier scholars overlooked.",
-            "hint": "State what revisionist historians do to established accounts, then name the source of their new reading.",
-            "explanation": "'Evidence earlier scholars overlooked' identifies the source of revision - new readings of existing evidence, not necessarily new facts.",
+            "sampleAnswer": "A remote new hire may feel isolated, so assigning a buddy for the first month can help them ask questions and feel connected.",
+            "hint": "Name the human risk and a support measure.",
+            "explanation": "Risks are not only technical, and a specific support measure such as a buddy makes the solution realistic.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "buddy",
+                "isolated",
+                "remote"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L160_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Give a nuanced answer in one clear sentence, acknowledging another side. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how an iteratively developed argument builds toward a conclusive synthesis in an academic essay.",
+            "prompt": "Describe how the owner and local residents might see the closure.",
             "options": [
-                "culminate",
-                "iteratively",
-                "synthesis"
+                "losing",
+                "residents",
+                "owner"
             ],
-            "sampleAnswer": "An argument developed iteratively across each chapter culminates in a synthesis that resolves the essay's central intellectual tensions.",
-            "hint": "Describe how the argument develops across the essay, then name what the final synthesis resolves.",
-            "explanation": "'Resolves the essay's central intellectual tensions' frames the conclusion as a problem-solving move.",
+            "sampleAnswer": "The owner is probably losing money each month, whereas residents see the cinema as a place that keeps the town center alive.",
+            "hint": "Give each group a reason that fits their situation.",
+            "explanation": "Different groups have different stakes, and stating each stake with a reason that fits their situation shows fair and balanced reasoning.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "losing",
+                "owner",
+                "residents"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L160_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Show how one thing leads to another in one sentence. Use all three words naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how apex predators regulate ecosystems through trophic cascades that affect every level below them.",
+            "prompt": "Explain one implication of the closure for nearby businesses.",
             "options": [
-                "trophic cascade",
-                "predator",
-                "regulate"
+                "implication",
+                "footfall",
+                "evening"
             ],
-            "sampleAnswer": "Apex predators regulate entire ecosystems through trophic cascades that influence population dynamics at every trophic level below.",
-            "hint": "Name what apex predators do to an ecosystem, then describe how far the effect reaches.",
-            "explanation": "'At every trophic level below' emphasises the hierarchical reach of the cascade - it propagates downward through the food web.",
+            "sampleAnswer": "An implication is a drop in evening footfall, which could hurt nearby restaurants that depend on cinema visitors.",
+            "hint": "Choose one business type and explain the link.",
+            "explanation": "A clear link between the closure and its effect makes an implication credible.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "evening",
+                "footfall",
+                "implication"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L160_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Recommend an option in a single sentence, with the reason. Make sure all three words fit the meaning.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how deep-sea ecosystems manage to thrive in complete darkness without any sunlight.",
+            "prompt": "Recommend a way to keep the cinema open, and state a condition.",
             "options": [
-                "chemosynthesis",
-                "thrive",
-                "sunlight"
+                "community",
+                "provided",
+                "recommend"
             ],
-            "sampleAnswer": "Deep-sea ecosystems thrive through chemosynthesis, converting chemical energy into food entirely without sunlight.",
-            "hint": "Name the process that replaces photosynthesis in total darkness, then explain what it allows these ecosystems to do.",
-            "explanation": "Chemosynthesis proves that life doesn't strictly need sunlight - it needs an energy source, and chemical reactions can provide one just as well.",
+            "sampleAnswer": "I recommend a community ownership scheme, provided that enough residents commit to buying tickets or shares.",
+            "hint": "Suggest a specific solution and say what must be true.",
+            "explanation": "Recommendations become realistic when you state a condition, because it shows you are aware of what could go wrong.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "community",
+                "provided",
+                "recommend"
             ]
         }
     ]

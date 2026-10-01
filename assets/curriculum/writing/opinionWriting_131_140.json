@@ -1,607 +1,578 @@
 {
-    "gameType": "opinionWriting",
-    "batchIndex": 14,
-    "levels": "131-140",
-    "quests": [
-        {
-            "id": "WRT_OPINIONWRITING_L131_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Immigration has an overall positive effect on host country economies.",
-            "options": [
-                "Immigrants fill critical labour shortages in sectors host economies cannot staff domestically.",
-                "Immigration increases competition for housing and public services, worsening conditions for existing residents.",
-                "The fiscal impact of immigration varies significantly depending on age, skill level, and integration policy.",
-                "Immigrant entrepreneurs and innovators generate new businesses, patents, and economic dynamism."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about the economic benefits of immigration to host countries (Pros) and the service pressure and fiscal variability concerns (Cons).",
-            "explanation": "Immigrants fill labour shortages and drive entrepreneurship and innovation (Pros), but pressure on housing and public services is real, and fiscal impact depends heavily on immigrant characteristics and integration policy quality (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L131_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Immigration enriches the cultural, intellectual, and social life of host societies.",
-            "options": [
-                "Rapid demographic change can cause genuine social anxiety and loss of community cohesion in some areas.",
-                "Diverse immigrant communities bring new ideas, artistic traditions, and intellectual perspectives.",
-                "Cultural exchange through immigration builds the openness and adaptability essential in a globalised world.",
-                "Multiculturalism requires active policy investment to realise its potential benefits rather than inevitable tension."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Consider the cultural enrichment case for immigration (Pros) and the social cohesion and policy requirements (Cons).",
-            "explanation": "Immigration brings cultural diversity, new ideas, and builds global adaptability (Pros), but rapid change can cause social anxiety, and multicultural enrichment requires sustained policy investment to overcome natural community tensions (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L131_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Controlled immigration is essential for managing the fiscal and demographic sustainability of ageing societies.",
-            "options": [
-                "Working-age immigrants contribute taxes that fund the pensions and care of ageing host populations.",
-                "Immigration cannot indefinitely substitute for sustainable domestic birth rates and long-term demographic policy.",
-                "Managed immigration can address demographic imbalances without the economic costs of low birth rates.",
-                "Host country families may feel displaced or undervalued when immigration is presented as a demographic fix."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about immigration as a demographic and fiscal sustainability policy (Pros) and the long-term structural concerns (Cons).",
-            "explanation": "Working-age immigration funds ageing populations' pensions and care through tax contributions (Pros), but immigration cannot permanently substitute for domestic birth rates, and framing people as demographic solutions rather than rights-holders raises ethical concerns (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L132_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Prison systems should prioritise rehabilitation over punishment.",
-            "options": [
-                "Society demands that serious crimes receive proportionate punishment as a matter of justice and deterrence.",
-                "Rehabilitation reduces reoffending rates, protecting the public far more effectively than punishment alone.",
-                "Rehabilitation-only approaches fail to acknowledge the genuine harm that victims suffer from crime.",
-                "Treating prisoners as people capable of change produces better long-term outcomes for communities."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about the public safety and humanistic case for rehabilitation-focused prisons (Pros) and the justice and victim concerns (Cons).",
-            "explanation": "Rehabilitation reduces reoffending and protects communities more effectively (Pros), but justice requires proportionate punishment for serious crimes and rehabilitation-only approaches risk appearing to dismiss the harm victims experience (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L132_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Long prison sentences are ineffective at reducing crime and reoffending rates.",
-            "options": [
-                "International evidence consistently shows that longer sentences do not reduce crime rates more than shorter ones.",
-                "Incarceration removes people from communities, destroying employment, housing, and family ties that prevent reoffending.",
-                "Some serious crimes require long sentences to protect the public regardless of their deterrence value.",
-                "Victims and communities have legitimate expectations that serious offenders face meaningful consequences."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Consider the evidence that long sentences are ineffective (Pros) and the public protection and victim expectation concerns (Cons).",
-            "explanation": "International evidence shows longer sentences do not reduce crime, and incarceration destroys the social ties that prevent reoffending (Pros), but serious crimes require custodial sentences for public protection, and victims have legitimate expectations of proportionate consequences (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L132_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Community sentences and restorative justice are more effective responses than incarceration.",
-            "options": [
-                "Community sentences may not be appropriate for violent or high-risk offenders requiring public protection.",
-                "Public confidence in justice requires visible punishment for serious crime that community orders cannot provide.",
-                "Community sentences allow offenders to maintain employment, family relationships, and community ties.",
-                "Restorative justice involving direct victim-offender dialogue produces better outcomes for both parties."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about community sentences and restorative justice as alternatives to prison (Pros) and their applicability limits (Cons).",
-            "explanation": "Community sentences preserve social ties and restorative justice improves outcomes for victims and offenders (Pros), but they are inappropriate for violent offenders, and visible punishment for serious crime maintains the public confidence justice depends on (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L133_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The personal use of currently illegal drugs should be decriminalised.",
-            "options": [
-                "Decriminalisation allows drug use to be treated as a public health issue rather than a criminal one.",
-                "Decriminalising personal use without regulating supply still leaves criminal drug markets untouched.",
-                "Portugal's decriminalisation model demonstrates reduced drug use and HIV rates, with more people seeking treatment.",
-                "Sending a social message that drug use is acceptable may increase use, particularly among young people."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about the public health and evidence case for drug decriminalisation (Pros) and the supply and normalisation concerns (Cons).",
-            "explanation": "Decriminalisation treats drug use as public health, and Portugal's model shows reduced use and HIV rates (Pros), but decriminalisation without supply regulation leaves criminal markets intact, and normalisation may increase use among young people (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L133_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Drug prohibition creates far greater harms than regulated drug legalisation would.",
-            "options": [
-                "Legal drug markets may expand total drug consumption and associated health harms significantly.",
-                "Prohibition drives drug production and sale into criminal hands, funding organised crime and violence.",
-                "Regulated legal drug markets enable quality control, harm reduction, and consumer safety measures.",
-                "Not all drugs are comparable: regulation appropriate for cannabis may not suit heroin or synthetic opioids."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Consider the harm comparison between prohibition and regulated markets (Pros for legalisation) and the consumption and drug-type concerns (Cons).",
-            "explanation": "Prohibition funds organised crime and prevents quality control, while regulation enables harm reduction (Pros), but legal markets risk expanding total consumption, and different drugs require very different regulatory approaches (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L133_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Addressing the social determinants of drug use is more important than supply-side enforcement.",
-            "options": [
-                "Drug dependence is rooted in poverty, trauma, and social isolation that enforcement cannot address.",
-                "Supply reduction remains necessary to limit the availability and ease of access to harmful substances.",
-                "Social determinant investment and supply control are complementary rather than competing policy approaches.",
-                "Investment in mental health, housing, and social support reduces drug use more effectively than prosecution."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about social determinants versus enforcement as drug policy strategies (Pros for social investment) and their relationship (Cons).",
-            "explanation": "Drug dependence is rooted in poverty, trauma, and isolation that enforcement cannot address, making social investment more effective (Pros), but supply reduction limits availability and social investment is complementary to rather than a substitute for supply-side policy (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L134_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Capital punishment should be abolished in every country without exception.",
-            "options": [
-                "Some crimes are so heinous and certain of guilt that the public and victims demand the ultimate sanction.",
-                "The irreversibility of execution means innocent people executed as a result of miscarriages of justice cannot be compensated.",
-                "Evidence consistently shows that capital punishment does not deter crime more effectively than long imprisonment.",
-                "Countries like Japan and Singapore retain capital punishment while maintaining very low crime rates."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about the irreversibility and deterrence case for abolition (Pros) and the heinousness and deterrence counter-examples (Cons).",
-            "explanation": "Wrongful executions are irreversible and evidence shows capital punishment does not deter crime (Pros), but some crimes are considered to warrant the ultimate sanction, and some retentionist countries demonstrate low crime rates alongside its use (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L134_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Capital punishment is incompatible with civilised societies' values of human dignity.",
-            "options": [
-                "Democracies should respect the democratic will of citizens who support capital punishment for certain crimes.",
-                "The state's deliberate killing of a citizen violates fundamental principles of human rights and dignity.",
-                "Human rights frameworks themselves reflect evolving social consensus rather than fixed universal moral truths.",
-                "Most democratic nations have abolished capital punishment as incompatible with democratic values."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Consider the human dignity and democratic consensus case for abolition (Pros) and the democratic will counter (Cons).",
-            "explanation": "State-sanctioned killing violates human dignity and most democracies have abolished it (Pros), but democratic societies should respect citizens' views that support execution for specific crimes, and human rights frameworks themselves reflect evolving rather than fixed consensus (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L134_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The criminal justice system is too flawed to be trusted with irreversible sentences.",
-            "options": [
-                "Legal systems can be reformed and improved without necessarily abolishing the ultimate sanction.",
-                "Racial and socioeconomic bias systematically disadvantages defendants from marginalised groups in capital cases.",
-                "Wrongful conviction rates demonstrate that the legal system is too fallible to impose irreversible sentences.",
-                "The existence of errors in other serious sentences does not itself justify eliminating capital punishment."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about systemic bias and error as arguments for abolition (Pros) and the reform and logical scope arguments (Cons).",
-            "explanation": "Systemic racial and socioeconomic bias and proven wrongful convictions make irreversible sentences unacceptable (Pros), but systems can be reformed, and the existence of errors in other sentences does not logically require abolishing capital punishment specifically (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L135_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The voting age should be lowered to sixteen in national elections.",
-            "options": [
-                "Sixteen-year-olds lack the life experience and maturity to make considered political judgments.",
-                "Sixteen-year-olds pay taxes, serve in some armed forces, and are subject to adult laws and consequences.",
-                "Evidence from countries like Austria shows sixteen-year-old voters turn out reliably and vote thoughtfully.",
-                "Young people affected by long-term policy decisions deserve a voice in the politicians who make them."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about the rights, impact, and evidence case for votes at 16 (Pros) and the maturity and evidence counterarguments (Cons).",
-            "explanation": "Sixteen-year-olds bear adult legal and fiscal obligations and deserve to shape the long-term decisions affecting them most (Pros), but maturity concerns are genuine, although Austrian evidence shows young voters participate thoughtfully (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L135_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Lowering the voting age would increase young people's long-term civic engagement.",
-            "options": [
-                "Turnout among eighteen to twenty-four year olds is already very low, suggesting apathy that lowering age will not fix.",
-                "Research shows that people who vote first when young develop lasting voting habits into adulthood.",
-                "Allowing sixteen-year-olds to vote at school creates a natural civic education context for first participation.",
-                "Young people's political disengagement reflects party failures to address their interests, not voting age."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Consider the civic engagement case for lowering the voting age (Pros) and the engagement and party responsiveness concerns (Cons).",
-            "explanation": "Voting while young creates lasting habits and school-based first votes create natural civic education moments (Pros), but existing young voter apathy suggests engagement problems won't be solved by lowering the age, and parties must better address young people's interests (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L135_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Votes at sixteen without civic education reform would have limited democratic value.",
-            "options": [
-                "Meaningful democratic participation requires prior education in political institutions, media literacy, and critical thinking.",
-                "Civic education should accompany any lowering of the voting age rather than being a prerequisite for it.",
-                "Without curricular reform, younger voters may be more susceptible to misinformation and emotional manipulation.",
-                "Existing adult voters also vary enormously in civic knowledge without that being grounds for restricting suffrage."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about civic education as a prerequisite for votes at 16 (Pros) and the parallel adult voter knowledge argument (Cons).",
-            "explanation": "Meaningful young voter participation requires prior civic and media literacy education (Pros), but civic education should accompany not precede lowered voting age, and adult voters vary enormously in knowledge without suffrage being restricted on that basis (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L136_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Professional judges should replace juries in serious criminal trials.",
-            "options": [
-                "Jury trials reflect the fundamental democratic principle that citizens should judge their fellow citizens.",
-                "Professional judges apply the law consistently, impartially, and without the emotional bias juries may carry.",
-                "Judges with legal expertise are better equipped to evaluate complex evidence, testimony, and legal argument.",
-                "Lay juries represent community values and common sense that professional judges may lose over time."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about the consistency and expertise case for professional judges (Pros) and the democracy and community values concerns (Cons).",
-            "explanation": "Professional judges apply law consistently and evaluate complex evidence better than juries (Pros), but jury trials embody the democratic principle of peer judgment, and lay juries bring community values that professional judges can lose over long careers (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L136_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Jury trials are vulnerable to media prejudice, cognitive bias, and social pressure.",
-            "options": [
-                "Professional judges are not immune to bias - they simply carry different and less transparent biases.",
-                "Procedural safeguards including strict media rules and juror questionnaires can mitigate jury susceptibility.",
-                "High-profile media coverage of criminal cases makes it very difficult to find genuinely impartial jurors.",
-                "Cognitive biases including racial prejudice demonstrably influence jury verdicts in systematic ways."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Consider whether jury bias justifies replacing juries with judges (Pros) and the judge bias and safeguard counters (Cons).",
-            "explanation": "Media prejudice and cognitive bias demonstrably affect jury verdicts (Pros), but judges carry their own biases, and procedural safeguards including media restrictions and juror selection can substantially mitigate jury susceptibility (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L136_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Hybrid panels of professional judges and lay assessors offer the best of both systems.",
-            "options": [
-                "Hybrid systems create complex power dynamics between professional and lay members that may disadvantage lay voices.",
-                "Mixed panels combine legal expertise with community representation for more balanced verdicts.",
-                "Several European jurisdictions successfully use lay assessor systems that outperform both pure alternatives.",
-                "Designing effective hybrid systems requires significant institutional reform that may not transfer across legal cultures."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about hybrid judge-assessor panels as an optimal system (Pros) and the power dynamics and cultural transfer concerns (Cons).",
-            "explanation": "Mixed panels combine expertise with community representation and European models show they can work well (Pros), but power dynamics may marginalise lay voices, and successful models depend on institutional context that may not transfer (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L137_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Convicted criminals should be named publicly in the national press.",
-            "options": [
-                "Public naming makes rehabilitation almost impossible, perpetually punishing people beyond their sentence.",
-                "Shaming through publicity can increase reoffending by excluding ex-offenders from legitimate society.",
-                "Public naming holds offenders accountable and informs communities of risks in their neighbourhood.",
-                "Publicity surrounding convictions can deter potential offenders from committing similar crimes."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about the accountability and deterrence case for public naming (Pros) and the rehabilitation and reoffending concerns (Cons).",
-            "explanation": "Public naming ensures accountability and community awareness (Pros), but it makes rehabilitation nearly impossible and exclusion from legitimate society through shaming increases rather than reduces reoffending (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L137_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The right to rehabilitation requires a right to privacy after serving a sentence.",
-            "options": [
-                "A completed sentence represents a debt to society that has been paid - public shaming extends punishment indefinitely.",
-                "The public's right to safety information about people in their community outweighs individual privacy claims.",
-                "Ex-offenders who can rebuild lives through privacy are less likely to reoffend, protecting communities better.",
-                "Digital record permanence means even time-limited naming becomes de facto permanent in the internet age."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Consider the rehabilitation privacy case (Pros) and the community safety and digital permanence concerns (Cons).",
-            "explanation": "Privacy after completing a sentence enables rehabilitation and reduces reoffending (Pros), but communities have legitimate safety information interests, and digital permanence means time-limited naming is already effectively permanent (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L137_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Rehabilitation and public safety require graduated transparency rather than blanket naming.",
-            "options": [
-                "Risk assessment for public disclosure is technically complex and creates new discrimination concerns.",
-                "Graduated transparency requires specialist risk assessment capacity that justice systems may lack.",
-                "A risk-proportionate approach to public disclosure balances community safety with rehabilitation needs.",
-                "Sex offender registry models demonstrate that targeted public safety information systems can work effectively."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about graduated risk-proportionate transparency as a middle ground (Pros) and the implementation challenges (Cons).",
-            "explanation": "Risk-proportionate disclosure balances safety and rehabilitation, and sex offender registries show targeted models work (Pros), but complex risk assessment creates discrimination concerns and requires specialist capacity that many justice systems lack (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L138_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Community service is more effective than short prison sentences at reducing reoffending.",
-            "options": [
-                "Community sentences are perceived as insufficiently serious for crimes that cause significant harm.",
-                "Community sentences preserve social bonds, employment, and housing - the protective factors against reoffending.",
-                "Research consistently shows lower reoffending rates for community sentences than equivalent custody.",
-                "Some offenders pose risks to the public that make community supervision inadequate for safety."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about the evidence and protective factors case for community sentences (Pros) and the public perception and safety concerns (Cons).",
-            "explanation": "Community sentences preserve reoffending-protective social bonds and evidence shows lower reoffending rates (Pros), but they lack seriousness for harmful crimes, and some offenders require custody to protect the public (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L138_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Short prison sentences cause serious harm without delivering significant public safety benefits.",
-            "options": [
-                "Custodial sentences even for short periods deliver a clear social message about the seriousness of crime.",
-                "Short custodial sentences of under six months destroy employment, housing, and family relationships.",
-                "Sentencing reform that abolishes short sentences requires investment in community supervision that may be lacking.",
-                "Evidence shows short sentences increase reoffending compared to equivalent community alternatives."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Consider the evidence that short sentences are actively harmful (Pros) and the social message and capacity concerns (Cons).",
-            "explanation": "Short sentences destroy protective social bonds and evidence shows they increase reoffending compared to community alternatives (Pros), but custody delivers an important social signal about criminal seriousness, and abolishing short sentences requires community supervision investment (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L138_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Restorative justice programmes produce better outcomes for both victims and offenders.",
-            "options": [
-                "Restorative justice depends on voluntary participation and is inappropriate where victims refuse or fear contact.",
-                "Restorative approaches work best as supplements to, rather than replacements for, proportionate sentencing.",
-                "Face-to-face dialogue between victims and offenders produces higher victim satisfaction than traditional justice.",
-                "Offenders who engage with restorative justice develop deeper personal accountability for their actions."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about restorative justice's benefits for victims and offenders (Pros) and the voluntariness and complementarity concerns (Cons).",
-            "explanation": "Restorative justice delivers higher victim satisfaction and deeper offender accountability (Pros), but it requires voluntary participation that victims may refuse, and works best alongside rather than as a replacement for proportionate sentencing (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L139_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Social media companies should be legally liable for harmful content posted by users.",
-            "options": [
-                "Platform liability creates powerful financial incentives to invest seriously in content moderation and safety.",
-                "Holding platforms responsible for the amplification of harmful content through their algorithms is just.",
-                "Legal liability for user content would force platforms to over-moderate, harming free speech.",
-                "Small platforms and new entrants cannot afford the legal risk of user content liability and would exit the market."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about the moderation incentive and algorithmic responsibility case for platform liability (Pros) and the free speech and small platform concerns (Cons).",
-            "explanation": "Liability incentivises content safety investment and algorithmic amplification of harm justifies responsibility (Pros), but liability forces over-moderation, damaging free speech, and kills small platforms that cannot afford the legal risk (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L139_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Algorithmic amplification of harmful content makes social media platforms' liability especially clear.",
-            "options": [
-                "Defining harmful content in law is extremely complex, politically contested, and culturally variable.",
-                "Platforms that profit from algorithmically amplifying harmful content have actively chosen to promote it.",
-                "The distinction between passive hosting and active amplification creates a clear basis for liability.",
-                "Algorithmic curation can equally amplify beneficial, educational, and civic content as well as harmful."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Consider the amplification argument for platform liability (Pros) and the definitional and amplification duality concerns (Cons).",
-            "explanation": "Algorithmic profit-driven amplification of harmful content makes platforms active promoters rather than passive hosts (Pros), but defining harmful content in law is contested, and algorithms amplify beneficial content too (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L139_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Transparency requirements and algorithmic auditing are more effective than direct platform liability.",
-            "options": [
-                "Requiring platforms to disclose how their algorithms work enables informed regulatory intervention.",
-                "Transparency without enforcement is insufficient when platforms resist disclosing commercially sensitive systems.",
-                "Independent algorithmic audits can identify and address harms without the over-moderation risks of liability.",
-                "Algorithmic auditing requires substantial technical expertise that regulators typically lack."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about transparency and auditing as alternatives to direct liability (Pros) and the enforcement and expertise concerns (Cons).",
-            "explanation": "Algorithmic transparency and independent audits address harms without triggering over-moderation (Pros), but platforms resist disclosing systems, and regulators lack the technical expertise needed for meaningful algorithmic auditing (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L140_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Whistleblowers who expose wrongdoing should receive full and comprehensive legal protection.",
-            "options": [
-                "Whistleblowers serve the public interest by exposing corruption, fraud, and wrongdoing that affects everyone.",
-                "Unlimited whistleblower protection could shield individuals who leak genuinely sensitive national security information.",
-                "Legal protection enables brave individuals to report wrongdoing without sacrificing their career and livelihood.",
-                "Some whistleblowing claims are malicious, mistaken, or motivated by personal grievance rather than public interest."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about the public interest case for whistleblower protection (Pros) and the security and motivation concerns (Cons).",
-            "explanation": "Whistleblowers serve the public interest and need legal protection to report without career destruction (Pros), but unlimited protection risks shielding national security leaks and malicious or mistaken disclosures motivated by personal grievance (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L140_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Current whistleblower protections are inadequate in most countries.",
-            "options": [
-                "Existing employment and fraud legislation already provides substantial protections for legitimate whistleblowers.",
-                "Many whistleblowers face employer retaliation, dismissal, and prosecution despite nominally existing protections.",
-                "Strengthening protections beyond existing law risks providing cover for opportunistic or malicious disclosures.",
-                "Inadequate protection deters vital disclosures about corporate fraud, public safety breaches, and corruption."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Consider the inadequacy of current whistleblower protections (Pros) and the adequacy of existing law counter (Cons).",
-            "explanation": "Whistleblowers face retaliation despite nominally existing protections, deterring vital disclosures of fraud and safety breaches (Pros), but existing employment and fraud legislation already provides substantial protection for legitimate disclosures, and wider protection risks covering malicious or opportunistic claims (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L140_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Independent whistleblower agencies are essential to protect disclosures from institutional self-interest.",
-            "options": [
-                "An independent body insulates whistleblower investigations from the organisations being reported upon.",
-                "Independent agencies may become bureaucratic, under-resourced, and captured by the industries they oversee.",
-                "Whistleblower cases require contextual knowledge of specific sectors that general agencies may lack.",
-                "Independent agencies with expertise and resources can assess and act on disclosures more effectively."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about independent whistleblower agencies as essential infrastructure (Pros) and the capture and expertise concerns (Cons).",
-            "explanation": "Independent agencies remove institutional conflicts of interest from whistleblower investigations and enable expert assessment (Pros), but agencies risk bureaucratic capture by regulated industries and may lack the sector-specific knowledge needed for complex disclosures (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        }
-    ]
+  "gameType": "opinionWriting",
+  "batchIndex": 14,
+  "levels": "131-140",
+  "quests": [
+    {
+      "id": "WRT_OPINIONWRITING_L131_Q1",
+      "instruction": "Choose the most appropriately cautious claim.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A pilot with 30 staff found fewer late arrivals when hours were flexible.",
+      "options": [
+        "The pilot suggests that flexible hours may reduce lateness.",
+        "The pilot shows that lateness is impossible under flexible hours.",
+        "Flexible hours obviously reduce lateness for all staff everywhere.",
+        "The pilot proves that flexible hours end lateness for good."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "A pilot is a small trial, so the wording should match its size.",
+      "explanation": "'Suggests' and 'may' fit a small trial. The others claim proof or universal results.",
+      "structureGuide": "Claim → Hedging"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L131_Q2",
+      "instruction": "Which sentence uses a suitable amount of hedging?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Choose the sentence that is careful but still clear.",
+      "options": [
+        "Later start times tend to improve alertness in teenagers.",
+        "Later start times always improve alertness in every teenager.",
+        "Later start times are related to being alert in some way.",
+        "Later start times might possibly perhaps have some effect, maybe."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Too much hedging makes a claim unclear; too little makes it absolute.",
+      "explanation": "'Tend to' is careful but still says something definite. One option is over-hedged and one is absolute.",
+      "structureGuide": "Claim → Hedging"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L131_Q3",
+      "instruction": "Which sentence is over-hedged, making the claim unclear?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Choose the weakest sentence.",
+      "options": [
+        "The policy helps most new starters, according to the survey.",
+        "It could perhaps be argued that the policy may possibly help a little, in some ways.",
+        "The policy is likely to help new starters.",
+        "The policy may help new starters settle in more quickly."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Count the softening words.",
+      "explanation": "'Could perhaps', 'may possibly' and 'in some ways' make the claim vague. The other choices are cautious but clear.",
+      "structureGuide": "Claim → Hedging"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L132_Q1",
+      "instruction": "Choose the most precise version.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'The new system is better.'",
+      "options": [
+        "The new system is much better in many ways.",
+        "The new system is a real improvement on the old one.",
+        "The new system works better than it did before.",
+        "The new system cuts booking time from eight minutes to three."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Precise writing says what improved and by how much.",
+      "explanation": "This version names the improvement and gives numbers. The alternatives repeat 'better' in different words.",
+      "structureGuide": "Precision"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L132_Q2",
+      "instruction": "Choose the best revision.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'Students need things to help them study.'",
+      "options": [
+        "Students need quiet spaces and reliable Wi-Fi to study effectively.",
+        "Students need various resources to help them study.",
+        "Students need many things for study purposes.",
+        "Students need stuff that supports their studying."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Replace vague nouns with specific ones.",
+      "explanation": "'Quiet spaces and reliable Wi-Fi' name the resources. The remaining options still use vague words.",
+      "structureGuide": "Precision"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L132_Q3",
+      "instruction": "Choose the most precise word.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Her feedback named two paragraphs and showed how to fix them. It was very ____.'",
+      "options": [
+        "fine",
+        "specific",
+        "interesting",
+        "nice"
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Which word describes what made the feedback useful?",
+      "explanation": "'Specific' describes feedback with details. The other words are general.",
+      "structureGuide": "Precision"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L133_Q1",
+      "instruction": "Choose the revision that replaces exaggeration with evidence.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'The bus is always late, and everybody hates it.'",
+      "options": [
+        "The bus is late all the time, and people are furious about how badly the service is run.",
+        "The bus was late on four of five mornings this week, and several commuters complained.",
+        "The bus is never on time, and nobody in the whole town has a good word to say about it.",
+        "The bus is nearly always late, and most people are sick of waiting in the cold every morning."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Swap 'always' and 'everybody' for facts.",
+      "explanation": "This version counts the late mornings and reports complaints. The alternatives still use sweeping words.",
+      "structureGuide": "Exaggeration → Revision"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L133_Q2",
+      "instruction": "Which sentence avoids exaggeration?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Describing the lunchtime queue.",
+      "options": [
+        "The queue at lunchtime lasts for an eternity.",
+        "The queue at lunchtime is the longest in history.",
+        "The queue at lunchtime often reaches the door.",
+        "Nobody could survive the queue at lunchtime."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Choose the sentence that could actually be observed.",
+      "explanation": "The correct sentence describes something visible. The remaining options use extreme comparisons.",
+      "structureGuide": "Exaggeration → Revision"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L133_Q3",
+      "instruction": "Which revision keeps the point but removes the exaggeration?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'This homework will destroy our weekend.'",
+      "options": [
+        "This homework will kill us before Monday arrives.",
+        "This homework is the worst assignment ever set.",
+        "This homework will completely ruin our lives this weekend.",
+        "This homework will take most of our weekend."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "The complaint about time can be stated without extreme words.",
+      "explanation": "'Take most of our weekend' keeps the complaint but is believable. The alternatives exaggerate.",
+      "structureGuide": "Exaggeration → Revision"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L134_Q1",
+      "instruction": "Choose the best reply.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Priya writes in the team chat: 'I think we should cancel the Friday stand-up.'",
+      "options": [
+        "Cancelling the stand-up would be the dumbest thing we could do, Priya, and I hope nobody agrees with it.",
+        "Whatever you want is fine with me, Priya; it does not matter to me one way or the other.",
+        "I see why it feels repetitive, but it is our only regular chance to spot blockers. Perhaps we could shorten it instead.",
+        "You always want to cancel things, Priya, and it never seems to occur to you that others rely on them."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Good disagreement acknowledges the point and offers an alternative.",
+      "explanation": "The best reply understands the concern and suggests a compromise. The alternatives insult, give up or accuse.",
+      "structureGuide": "Disagreement → Tone"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L134_Q2",
+      "instruction": "Choose the best reply to criticism of your proposal.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A colleague writes: 'Your proposal ignores the cost.'",
+      "options": [
+        "Cost is not the most important factor in this case, so I do not think we need to discuss it further.",
+        "Fine, I will just drop the proposal altogether, since it is obviously not going to satisfy anyone here.",
+        "Thank you for raising cost; I will add a budget section so we can compare it with the current process.",
+        "It does not ignore cost; you clearly did not read the proposal properly before sending your comments."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "A strong reply uses the criticism to improve the proposal.",
+      "explanation": "The right reply accepts the point and offers a fix. The other choices argue defensively or give up.",
+      "structureGuide": "Disagreement → Tone"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L134_Q3",
+      "instruction": "Which reply disagrees while keeping the relationship strong?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A commenter says: 'Dress codes are outdated.'",
+      "options": [
+        "I understand that view. In client-facing jobs, though, a consistent dress code can build trust.",
+        "You have obviously never met a client in your life, or you would not be saying anything like that.",
+        "Dress codes are here to stay in professional workplaces, so you may as well give up on this argument.",
+        "That is a naive thing to say about the workplace, and it shows how little you understand about business."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Acknowledge, then give a reason for your view.",
+      "explanation": "The best reply respects the view and adds a reason. The others insult or dismiss.",
+      "structureGuide": "Disagreement → Tone"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L135_Q1",
+      "instruction": "Choose the most useful product feedback.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "You are writing to the makers of a mobile app.",
+      "options": [
+        "The app is great, no changes needed, and I would recommend it to anybody who asks me about it.",
+        "The app is terrible and needs to be redesigned from the start, because nothing about it works well.",
+        "The checkout button is at the bottom of the screen, and it is grey with white text on the small phones.",
+        "The app is easy to navigate, but the checkout button is hard to find on small screens; moving it higher would help."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Useful feedback names what works, what does not and a fix.",
+      "explanation": "The correct feedback gives a strength, a problem and a suggestion. The others are too harsh, too vague or only descriptive.",
+      "structureGuide": "Feedback"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L135_Q2",
+      "instruction": "Choose the most constructive comment on a presentation.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "You are speaking to a colleague after their talk.",
+      "options": [
+        "Your examples were clear; the slides might be easier to read with less text on each.",
+        "Your slides were too crowded and your talk was boring, so most of the room stopped listening early.",
+        "Great job, there is nothing to improve, and I would not change a single word if I were you.",
+        "I have seen better presentations from new starters, so maybe the slides need to be started again."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Constructive comments are specific and kind.",
+      "explanation": "The correct comment praises something and suggests one improvement. The remaining options insult or give no help.",
+      "structureGuide": "Feedback"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L135_Q3",
+      "instruction": "Which comment would help the writer most?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A classmate reads your essay.",
+      "options": [
+        "Your second paragraph makes a strong claim, but it needs an example to show why it is true.",
+        "Add more detail everywhere in the essay, because more detail makes any essay stronger.",
+        "Your second paragraph is weak, and it does not seem to be as strong as the others in the essay.",
+        "I really liked your essay overall, and I would be happy to read more of your writing in the future."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Helpful comments say where and what to change.",
+      "explanation": "The correct comment names the paragraph and the missing piece. The others are vague.",
+      "structureGuide": "Feedback"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L136_Q1",
+      "instruction": "Choose the most balanced and useful review sentence.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A guest is reviewing a hotel.",
+      "options": [
+        "I stayed at the hotel for three nights in March, and I arrived by train from the airport at noon.",
+        "The location was excellent and the staff were helpful, though the rooms were smaller than the photos suggested.",
+        "Small rooms, terrible value, and rude staff at the desk, so stay away from this place if you can.",
+        "The hotel is fantastic, perfect in every way, and I would tell everybody I know to book it right now."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "A fair review includes details on good and bad points.",
+      "explanation": "The correct sentence gives strengths and one problem with specifics. The remaining options are one-sided or give no opinion.",
+      "structureGuide": "Review"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L136_Q2",
+      "instruction": "Which review sentence gives the reader the most helpful information?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A customer is reviewing a tablet.",
+      "options": [
+        "The battery did not live up to my expectations at all, and I found myself charging it every afternoon.",
+        "The battery is bad, and it was a big disappointment to me after all the praise in the advertisements.",
+        "Disappointing battery, and I would not recommend this tablet to anybody who wants to watch video.",
+        "The battery lasted about six hours of video, less than the twelve advertised."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Look for measurements and comparisons.",
+      "explanation": "This sentence tells the reader the result and how it differs from the claim. The alternatives only say it was poor.",
+      "structureGuide": "Review"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L136_Q3",
+      "instruction": "Which review is fair to a small business even though the writer had a problem?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "The order arrived late.",
+      "options": [
+        "Late again. Typical of small shops, which never seem to care about deadlines or about their customers.",
+        "I have never had a worse experience anywhere, and I would tell all of my friends to avoid this shop.",
+        "My order arrived a week late, but the owner apologised at once and offered a discount.",
+        "The owner is clearly incompetent and should close the shop, since nobody can rely on it to deliver."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "A fair review reports the problem and how it was handled.",
+      "explanation": "The correct review states the problem and the owner's response. The others attack or generalise.",
+      "structureGuide": "Review"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L137_Q1",
+      "instruction": "Choose the best opening for a sceptical manager.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "You want to propose a short trial of a new weekly schedule.",
+      "options": [
+        "There is no point resisting this change, because the decision has already been made at a higher level.",
+        "We all want the team to finish projects on time, so I would like to suggest a small experiment.",
+        "Everyone else on the team already agrees with me on this, so there is little reason to wait longer.",
+        "You have been wrong about scheduling for years now, so I would like you to listen to me for once."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Start with something the reader also cares about.",
+      "explanation": "This opening shares a goal and proposes something modest. The remaining options accuse or pressure.",
+      "structureGuide": "Audience → Common Ground"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L137_Q2",
+      "instruction": "Choose the best sentence for residents who oppose a new car park.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "You support the plan.",
+      "options": [
+        "This plan will happen whether residents like it or not, so the best thing is to accept it now.",
+        "The plan is supported by most of the experts in the field, so residents should trust their advice.",
+        "Residents who disagree simply do not understand the plan, and a clearer leaflet would soon change their minds.",
+        "Like many of you, I care about keeping our street quiet, and that is why I support this plan."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Show that you share the residents' concern.",
+      "explanation": "This sentence finds common ground. The others dismiss, threaten or lean on authority.",
+      "structureGuide": "Audience → Common Ground"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L137_Q3",
+      "instruction": "Which sentence acknowledges the reader's concern before giving evidence?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "You are proposing a trial to a cautious team.",
+      "options": [
+        "Last year's pilot caused no missed appointments, so there is nothing to worry about and no need to discuss it.",
+        "You may worry that a trial will disrupt clients; last year's pilot caused no missed appointments.",
+        "Disruption is unlikely, whatever you may think about it, so the team should agree to the trial at once.",
+        "Clients rarely mind trials of this kind, so the team can take part without any special arrangements."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Name the worry, then respond with evidence.",
+      "explanation": "The correct sentence states the concern respectfully and then gives evidence. The others dismiss it.",
+      "structureGuide": "Audience → Common Ground"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L138_Q1",
+      "instruction": "Which sentence uses a vivid, honest example to persuade?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "You want a shelter at a bus stop.",
+      "options": [
+        "Only fools stand in the rain waiting for a bus, so the people who wait must be responsible for it.",
+        "Last winter, one mother waited forty minutes in the rain with a toddler because the stop has no shelter.",
+        "Everyone knows what winter is like, and nobody should have to stand at a bus stop in the cold.",
+        "Terrible things will happen if we do not act soon, and the council will be blamed for every one of them."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "A good example is specific and true.",
+      "explanation": "The right sentence tells a specific situation. The alternatives are threats, generalisations or insults.",
+      "structureGuide": "Persuasion"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L138_Q2",
+      "instruction": "Which rhetorical question supports the argument without pressuring the reader?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "You want to build a short walk into the working day.",
+      "options": [
+        "Who would disagree with a walking break except a fool who has never felt tired at a desk?",
+        "Do you want to be the person who ruins the plan for everybody by refusing to try it out?",
+        "Are you really so lazy that you refuse to walk for five minutes in the middle of a busy day?",
+        "If a five-minute walk can clear our heads, why not build it into the working day?"
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "A fair question invites thought without insulting anyone.",
+      "explanation": "This question links to a benefit and invites agreement. The remaining options insult.",
+      "structureGuide": "Persuasion"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L138_Q3",
+      "instruction": "Which sentence uses a sensible comparison?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "You are promoting an app that costs £5 a month.",
+      "options": [
+        "The app is better than every other app ever built.",
+        "The app is like a magic wand that fixes everything.",
+        "Paying £5 a month for the app costs less than one takeaway coffee.",
+        "Not buying this app is like throwing your money into the sea."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "A useful comparison helps the reader judge the size or value.",
+      "explanation": "The correct comparison helps the reader see the cost. The remaining options exaggerate.",
+      "structureGuide": "Persuasion"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L139_Q1",
+      "instruction": "Which sentence best suits customers?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Explaining that a new billing system reduces errors.",
+      "options": [
+        "Errors are reduced by half at the database level.",
+        "The system's validation rules reject invalid entries at input.",
+        "You will receive one clear bill each month, with fewer mistakes.",
+        "The system was implemented in the third quarter of this year."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Customers care about what changes for them.",
+      "explanation": "The correct sentence describes the benefit for customers in plain words. The rest are technical or internal.",
+      "structureGuide": "Audience → Wording"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L139_Q2",
+      "instruction": "Which sentence best suits a technical colleague?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Explaining that a new form reduces errors.",
+      "options": [
+        "The form validates entries at input, so malformed dates are rejected before reaching the database.",
+        "We hope everyone enjoys the new look of the form, which uses the company's colours and a friendlier font.",
+        "You will find the form friendlier to use, because the boxes are larger and the instructions are clearer.",
+        "The form is simply better than the old one, and it has been welcomed by most of the staff who tried it."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "A specialist wants to know how it works.",
+      "explanation": "The best sentence explains the mechanism. The other choices describe feelings or vague improvement.",
+      "structureGuide": "Audience → Wording"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L139_Q3",
+      "instruction": "Which sentence best suits a manager deciding on a budget?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Proposing the new form.",
+      "options": [
+        "The form is used by other companies too, including several in our own industry that have adopted it.",
+        "Some staff already like the form, and several have said they would recommend it to their colleagues.",
+        "The new form should save about five staff hours a week, paying for itself within a year.",
+        "The form has a modern look and a pleasant layout, with clear headings and plenty of white space."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "A budget-holder wants cost and benefit.",
+      "explanation": "The best sentence gives the saving and payback time. The remaining options describe appearance, opinion or popularity.",
+      "structureGuide": "Audience → Wording"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L140_Q1",
+      "instruction": "Choose the best sentence for tone, precision and audience.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "You want neighbours to keep music down after 10 p.m.",
+      "options": [
+        "Your music is unbearable and you clearly do not care about anyone else who lives in this building.",
+        "Noise should be lower at night in general, and neighbours should be considerate of each other.",
+        "Some neighbours have complained about noise before now, and the landlord has been made aware of it.",
+        "Would you mind keeping the music down after 10 p.m.? We have young children who wake easily."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "A polite request gives a time and a reason.",
+      "explanation": "This sentence is polite and specific and explains why. The alternatives insult, generalise or blame.",
+      "structureGuide": "Tone → Audience"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L140_Q2",
+      "instruction": "Which revision improves both tone and precision?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'The website is awful and never works.'",
+      "options": [
+        "The website is horrible and always broken.",
+        "The website is not very good, to be honest.",
+        "The website has problems at times.",
+        "The website failed to load on my phone three times today."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Replace judgement words with what actually happened.",
+      "explanation": "This version states specific events. The others are vague or extreme.",
+      "structureGuide": "Tone → Precision"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L140_Q3",
+      "instruction": "Select the TWO sentences that adapt to a sceptical audience.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "You are presenting a new plan to doubtful colleagues.",
+      "options": [
+        "I understand why some of you doubt the plan, so here is what the trial showed.",
+        "Those who doubt the plan simply have not read it, and they can catch up by reading the summary.",
+        "Doubters will be proved wrong soon enough, and we will all be able to look back on this and smile.",
+        "Let me start with the concern I hear most often: cost."
+      ],
+      "correctOrder": [
+        0,
+        3
+      ],
+      "hint": "Choose sentences that treat doubt as reasonable.",
+      "explanation": "The correct sentences acknowledge doubts and address them. The remaining options dismiss or mock.",
+      "structureGuide": "Audience → Common Ground"
+    }
+  ]
 }

@@ -5,1173 +5,1173 @@
     "quests": [
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L41_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE WHY YOU WERE LATE AND WHAT HAPPENED NEXT",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You need to write a polite email to a hotel to complain about noise from a nearby room that kept you awake all night. Describe what you include in the email.",
+            "situation": "You arrived at work forty minutes late this morning because of a problem on your usual route. Describe what caused the delay and what happened when you finally arrived.",
             "emojis": [
-                "🏨",
-                "🔊",
-                "😡",
-                "✉️"
+                "🚦",
+                "🕗",
+                "😅",
+                "💻"
             ],
             "keywords": {
                 "0": [
-                    "HOTEL",
-                    "ROOM",
-                    "STAY"
+                    "TRAFFIC",
+                    "JAM",
+                    "STUCK"
                 ],
                 "1": [
-                    "NOISE",
-                    "LOUD",
-                    "DISTURB"
+                    "FORTY",
+                    "MINUTES",
+                    "LATE"
                 ],
                 "2": [
-                    "SLEEPLESS",
-                    "AWAKE",
-                    "FRUSTRATED"
+                    "APOLOGIZE",
+                    "EXPLAIN",
+                    "RUSH"
                 ],
                 "3": [
-                    "COMPLAIN",
-                    "REQUEST",
-                    "RESOLVE"
+                    "DESK",
+                    "START",
+                    "CATCHUP"
                 ]
             },
-            "minWords": 26,
-            "hint": "Describe the problem clearly and explain what solution you are asking for.",
-            "explanation": "An effective complaint email states the issue specifically and requests a reasonable solution, such as a quieter room or a partial refund.",
-            "modelAnswer": "An effective complaint email states the issue specifically and requests a reasonable solution, such as a quieter room or a partial refund. Describe the problem clearly and explain what solution you are asking for. This serves as a model answer for the situation."
+            "minWords": 25,
+            "hint": "State the cause with because, then use so to introduce what you did as a result.",
+            "explanation": "Because explains a reason within a sentence, while so introduces the result of that reason in the sentence that follows. Using both gives a description a clear logical shape.",
+            "modelAnswer": "I was forty minutes late because a traffic accident blocked the main road near my apartment. There was nothing I could do, so I called my manager to explain. When I finally reached my desk, I apologized quickly and got straight to work."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L41_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE WHY THE PLANT DIED AND WHAT YOU LEARNED",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You decided to switch from driving to cycling to work, but the first week brought several unexpected challenges. Describe what happened.",
+            "situation": "The small plant on your windowsill died after just two weeks. Describe why it happened and what you decided to do differently afterward.",
             "emojis": [
-                "🚲",
-                "🌧️",
-                "😤",
-                "💪"
+                "🪴",
+                "💧",
+                "🥀",
+                "☀️"
             ],
             "keywords": {
                 "0": [
-                    "CYCLE",
-                    "COMMUTE",
-                    "SWITCH"
+                    "OVERWATER",
+                    "SOIL",
+                    "SOAK"
                 ],
                 "1": [
-                    "WEATHER",
-                    "RAIN",
-                    "UNPREDICTABLE"
+                    "LEAVES",
+                    "BROWN",
+                    "DROOP"
                 ],
                 "2": [
-                    "TIRED",
-                    "SORE",
-                    "ADJUST"
+                    "SUNLIGHT",
+                    "LACK",
+                    "SHADE"
                 ],
                 "3": [
-                    "HABIT",
-                    "IMPROVE",
-                    "WORTHWHILE"
+                    "RESEARCH",
+                    "SCHEDULE",
+                    "ADJUST"
                 ]
             },
-            "minWords": 26,
-            "hint": "Describe at least one challenge and how you adjusted to the new routine.",
-            "explanation": "Strong habit-change stories show struggle followed by adaptation, for example: 'The first few rides left me exhausted, but my stamina improved within two weeks.'",
-            "modelAnswer": "Strong habit-change stories show struggle followed by adaptation, for example: 'The first few rides left me exhausted, but my stamina improved within two weeks.' Describe at least one challenge and how you adjusted to the new routine. This serves as a model answer for the situation."
+            "minWords": 25,
+            "hint": "Explain the cause of the plant's death clearly, then describe the change you made because of what happened.",
+            "explanation": "A single cause can lead to a lesson learned, and connecting the two with because and so shows the reader both what went wrong and what changed as a result.",
+            "modelAnswer": "The plant died because I watered it far too often, and the soil never had a chance to dry out. Its leaves turned brown and drooped within days, so I finally read the care instructions and gave my next plant much less water."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L41_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE WHY THE MEETING WAS CANCELLED AND WHAT PEOPLE DID INSTEAD",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your school introduced a new policy banning phones during class, and students had mixed reactions. Describe how the class responded.",
+            "situation": "A team meeting scheduled for this afternoon was suddenly cancelled. Describe why it was cancelled and what your coworkers did with the free time instead.",
             "emojis": [
-                "📱",
-                "🚫",
-                "🏫",
-                "😐"
+                "📅",
+                "❌",
+                "💬",
+                "☕"
             ],
             "keywords": {
                 "0": [
-                    "POLICY",
-                    "BAN",
-                    "PHONE"
+                    "MANAGER",
+                    "SICK",
+                    "ILLNESS"
                 ],
                 "1": [
-                    "ANNOUNCE",
-                    "RULE",
-                    "CLASSROOM"
+                    "CANCEL",
+                    "POSTPONE",
+                    "REASON"
                 ],
                 "2": [
-                    "REACT",
-                    "COMPLAIN",
-                    "UNDERSTAND"
+                    "COLLEAGUES",
+                    "CHAT",
+                    "BREAK"
                 ],
                 "3": [
-                    "ADAPT",
-                    "FOCUS",
-                    "ACCEPT"
+                    "TASKS",
+                    "CATCHUP",
+                    "EMAILS"
                 ]
             },
-            "minWords": 26,
-            "hint": "Mention both the negative and positive reactions before describing the overall result.",
-            "explanation": "Balanced answers present more than one viewpoint, for example: 'Some students complained at first, but most agreed they focused better in class.'",
-            "modelAnswer": "Balanced answers present more than one viewpoint, for example: 'Some students complained at first, but most agreed they focused better in class.' Mention both the negative and positive reactions before describing the overall result. This serves as a model answer for the situation."
+            "minWords": 25,
+            "hint": "Give the reason for the cancellation first, then describe two different things people did afterward.",
+            "explanation": "When an event is cancelled, describing what fills the sudden gap of time shows the reader the real effect of the change, not just the fact that it happened.",
+            "modelAnswer": "The meeting was cancelled because our manager suddenly felt sick and had to go home early. Since we had unexpected free time, some coworkers caught up on emails, while others went for coffee and talked quietly at their desks."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L42_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE PROBLEM AND ITS CONSEQUENCE AT WORK",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your company switched to a four-day work week as a trial, and employees needed to adjust their schedules. Describe how this affected your team.",
+            "situation": "The office printer breaks down right before an important deadline. Describe what happens and the effect this has on the team's work.",
             "emojis": [
-                "📅",
-                "💼",
-                "😊",
+                "🖨️",
+                "⚠️",
+                "📄",
+                "⏰"
+            ],
+            "keywords": {
+                "0": [
+                    "PRINTER",
+                    "JAM",
+                    "BROKEN"
+                ],
+                "1": [
+                    "DEADLINE",
+                    "CLIENT",
+                    "PRESSURE"
+                ],
+                "2": [
+                    "REPORTS",
+                    "DELAYED",
+                    "STACK"
+                ],
+                "3": [
+                    "EMAIL",
+                    "SEND",
+                    "DIGITAL"
+                ]
+            },
+            "minWords": 26,
+            "hint": "Describe the printer problem first, then use so or therefore to explain what the team had to do because of it.",
+            "explanation": "Therefore signals a more formal consequence than so, and is especially useful when describing workplace or professional situations where a clear logical outcome matters.",
+            "modelAnswer": "The office printer jams repeatedly and finally stops working entirely, just an hour before the client presentation. Therefore, the whole team has to send the reports as digital files instead, quickly rewriting the plan for how the meeting will run."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L42_Q2",
+            "instruction": "DESCRIBE FORGETTING SOMETHING AND ITS CONSEQUENCE",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "You leave your umbrella at home on a day when heavy rain is forecast. Describe what happens later in the day as a result.",
+            "emojis": [
+                "☂️",
+                "🌧️",
+                "🚌",
+                "🤧"
+            ],
+            "keywords": {
+                "0": [
+                    "FORGET",
+                    "UMBRELLA",
+                    "MORNING"
+                ],
+                "1": [
+                    "DOWNPOUR",
+                    "SOAKED",
+                    "SUDDEN"
+                ],
+                "2": [
+                    "SHELTER",
+                    "BUSSTOP",
+                    "WAIT"
+                ],
+                "3": [
+                    "COLD",
+                    "SNEEZE",
+                    "SICK"
+                ]
+            },
+            "minWords": 26,
+            "hint": "State what you forgot and why, then use so to connect it to what happens to you later in the day.",
+            "explanation": "A small forgotten detail, like an umbrella, becomes meaningful writing practice when it is clearly linked to a consequence later in the same description.",
+            "modelAnswer": "I leave for work without my umbrella because the morning sky looks clear, but by lunchtime a sudden downpour starts. I have no shelter nearby, so I get completely soaked walking to the bus stop, and by evening I already feel a cold coming on."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L42_Q3",
+            "instruction": "DESCRIBE THE OUTAGE AND ITS EFFECT ON THE EVENING",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "Your home internet suddenly stops working on a Friday evening. Describe what causes the problem and how it changes your family's plans for the evening.",
+            "emojis": [
+                "📡",
+                "😤",
+                "🎲",
+                "📺"
+            ],
+            "keywords": {
+                "0": [
+                    "ROUTER",
+                    "BLINK",
+                    "SIGNAL"
+                ],
+                "1": [
+                    "PROVIDER",
+                    "OUTAGE",
+                    "AREA"
+                ],
+                "2": [
+                    "BOARDGAME",
+                    "CARDS",
+                    "TABLE"
+                ],
+                "3": [
+                    "STREAMING",
+                    "PAUSE",
+                    "BUFFER"
+                ]
+            },
+            "minWords": 26,
+            "hint": "Explain the cause of the outage first, then describe what your family chooses to do instead of the usual evening activity.",
+            "explanation": "When technology fails, a description often works best by showing the old plan interrupted and a new plan taking its place, connected with so or instead.",
+            "modelAnswer": "The router's lights start blinking strangely because of a wider network outage in our area, and our streaming show freezes halfway through an episode. Since there is nothing we can do about it, we pull out an old board game and spend the rest of the evening playing cards at the kitchen table."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L43_Q1",
+            "instruction": "DESCRIBE WHAT HAPPENS WHEN THE ALARM SOUNDS",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A fire alarm suddenly goes off during class at school. Describe what happens when the alarm sounds and how the students and teacher respond.",
+            "emojis": [
+                "🚨",
+                "🏫",
+                "🚪",
+                "👩‍🏫"
+            ],
+            "keywords": {
+                "0": [
+                    "ALARM",
+                    "BLARE",
+                    "SUDDEN"
+                ],
+                "1": [
+                    "TEACHER",
+                    "CALM",
+                    "INSTRUCT"
+                ],
+                "2": [
+                    "STUDENTS",
+                    "LINE",
+                    "FILE"
+                ],
+                "3": [
+                    "EXIT",
+                    "DOOR",
+                    "OUTSIDE"
+                ]
+            },
+            "minWords": 26,
+            "hint": "Use when to introduce the moment the alarm sounds, and describe the reaction that follows immediately.",
+            "explanation": "When introduces an event and its immediate consequence in the same sentence, which is especially useful for describing sudden, unplanned moments.",
+            "modelAnswer": "When the fire alarm suddenly blares through the building, the teacher calmly tells everyone to stop writing and stand up. The students quickly form a line and file out through the nearest exit while she counts heads at the door."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L43_Q2",
+            "instruction": "DESCRIBE WHAT HAPPENS WHILE YOU ARE COOKING",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "You are in the middle of cooking dinner when your phone rings with an unexpected call. Describe what happens while you try to manage both at once.",
+            "emojis": [
+                "🍳",
+                "📱",
+                "😳",
+                "🔥"
+            ],
+            "keywords": {
+                "0": [
+                    "STOVE",
+                    "PAN",
+                    "FLAME"
+                ],
+                "1": [
+                    "PHONE",
+                    "RING",
+                    "VIBRATE"
+                ],
+                "2": [
+                    "JUGGLE",
+                    "BALANCE",
+                    "SWITCH"
+                ],
+                "3": [
+                    "BURN",
+                    "SMOKE",
+                    "SCRAPE"
+                ]
+            },
+            "minWords": 26,
+            "hint": "Use while to show the two things happening at the same time, and describe the small problem this causes.",
+            "explanation": "While is the natural word for two overlapping actions, and showing a minor conflict between them, such as burning food while answering a call, adds realistic tension to a description.",
+            "modelAnswer": "While I am stirring a pot of sauce, my phone starts ringing loudly on the counter. I try to answer it and stir at the same time, but I forget the pan for a moment and end up scraping a slightly burnt layer off the bottom."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L43_Q3",
+            "instruction": "DESCRIBE THE CHANGE WHEN THE ANNOUNCEMENT IS MADE",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A department manager gathers the team to announce some upcoming changes to the company's structure. Describe what happens when the announcement is made and how people react.",
+            "emojis": [
+                "📢",
+                "👔",
+                "😟",
+                "🗒️"
+            ],
+            "keywords": {
+                "0": [
+                    "ANNOUNCEMENT",
+                    "GATHER",
+                    "ROOM"
+                ],
+                "1": [
+                    "MANAGER",
+                    "EXPLAIN",
+                    "CAREFULLY"
+                ],
+                "2": [
+                    "SILENCE",
+                    "FACES",
+                    "TENSE"
+                ],
+                "3": [
+                    "NOTES",
+                    "QUESTIONS",
+                    "ASK"
+                ]
+            },
+            "minWords": 27,
+            "hint": "Use when to introduce the announcement itself, then describe the room's reaction using specific, believable details.",
+            "explanation": "Describing a group's reaction to news works well through small physical details, such as tense faces or sudden silence, rather than a direct statement like everyone was worried.",
+            "modelAnswer": "When the manager finally explains that some teams will be restructured next month, the room goes quiet and several faces look tense. A few people start writing notes, and after a moment someone raises a hand to ask exactly how it will affect their own role."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L44_Q1",
+            "instruction": "DESCRIBE THE ROOM BEFORE AND AFTER THE RENOVATION",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "Your living room recently went through a small renovation. Describe what it looked like before, and what changed after the work was finished.",
+            "emojis": [
+                "🏠",
+                "🔨",
+                "🎨",
+                "🛋️"
+            ],
+            "keywords": {
+                "0": [
+                    "BEFORE",
+                    "CRACKED",
+                    "DATED"
+                ],
+                "1": [
+                    "WORKERS",
+                    "PAINT",
+                    "WALLS"
+                ],
+                "2": [
+                    "AFTER",
+                    "BRIGHT",
+                    "MODERN"
+                ],
+                "3": [
+                    "FURNITURE",
+                    "REARRANGE",
+                    "NEW"
+                ]
+            },
+            "minWords": 27,
+            "hint": "Describe the room clearly before the change, then describe it again after, focusing on what is genuinely different.",
+            "explanation": "A before-and-after structure needs two clearly separated descriptions, since the contrast, not just the final result, is what shows the reader the actual change.",
+            "modelAnswer": "Before the renovation, the living room had cracked plaster and old, faded wallpaper that made the whole space feel dark. After the workers finished painting the walls a soft white, the room felt noticeably brighter, and we rearranged the furniture to make better use of the extra light."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L44_Q2",
+            "instruction": "DESCRIBE YOUR FITNESS BEFORE AND AFTER STARTING A NEW ROUTINE",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "Three months ago, you started a new exercise routine. Describe how your fitness and daily energy were before, and how they have changed since then.",
+            "emojis": [
+                "🏃",
+                "💪",
+                "😮‍💨",
                 "📈"
             ],
             "keywords": {
                 "0": [
-                    "SCHEDULE",
-                    "TRIAL",
-                    "FOURDAYS"
+                    "BEFORE",
+                    "TIRED",
+                    "WINDED"
                 ],
                 "1": [
-                    "ADJUST",
-                    "REORGANIZE",
-                    "PLAN"
+                    "ROUTINE",
+                    "THREEMONTHS",
+                    "REGULAR"
                 ],
                 "2": [
-                    "TEAM",
-                    "PRODUCTIVE",
-                    "EFFICIENT"
-                ],
-                "3": [
-                    "BALANCE",
-                    "SATISFIED",
-                    "RESULT"
-                ]
-            },
-            "minWords": 26,
-            "hint": "Describe what changed in your daily routine and whether the trial succeeded.",
-            "explanation": "Good workplace-change answers connect the policy to a measurable outcome, for example: 'We reorganized our meetings, and productivity actually increased.'",
-            "modelAnswer": "Good workplace-change answers connect the policy to a measurable outcome, for example: 'We reorganized our meetings, and productivity actually increased.' Describe what changed in your daily routine and whether the trial succeeded. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L42_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You decided to travel solo for the first time, and a fellow traveler invited you to join a group tour. Describe how you made your decision.",
-            "emojis": [
-                "🎒",
-                "🌍",
-                "🤝",
-                "🤔"
-            ],
-            "keywords": {
-                "0": [
-                    "SOLO",
-                    "TRAVEL",
-                    "FIRSTTIME"
-                ],
-                "1": [
-                    "STRANGER",
-                    "INVITE",
-                    "GROUP"
-                ],
-                "2": [
-                    "HESITATE",
-                    "CONSIDER",
-                    "TRUST"
-                ],
-                "3": [
-                    "JOIN",
-                    "ENJOY",
-                    "FRIENDSHIP"
-                ]
-            },
-            "minWords": 26,
-            "hint": "Explain what made you hesitant and what convinced you to join the group.",
-            "explanation": "Good decision-making narratives explain both doubt and resolution, for example: 'I was unsure about joining strangers, but their friendliness convinced me to try it.'",
-            "modelAnswer": "Good decision-making narratives explain both doubt and resolution, for example: 'I was unsure about joining strangers, but their friendliness convinced me to try it.' Explain what made you hesitant and what convinced you to join the group. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L42_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your family decided to have a no-screens dinner once a week to spend more quality time together. Describe how the first dinner went.",
-            "emojis": [
-                "📵",
-                "🍽️",
-                "👨‍👩‍👧‍👦",
-                "💬"
-            ],
-            "keywords": {
-                "0": [
-                    "SCREEN",
-                    "RULE",
-                    "DINNER"
-                ],
-                "1": [
-                    "FAMILY",
-                    "WEEKLY",
-                    "DECIDE"
-                ],
-                "2": [
-                    "AWKWARD",
-                    "QUIET",
-                    "UNUSUAL"
-                ],
-                "3": [
-                    "CONVERSATION",
-                    "CONNECT",
-                    "ENJOY"
-                ]
-            },
-            "minWords": 26,
-            "hint": "Describe how the conversation changed once everyone put their phones away.",
-            "explanation": "Good reflective answers show change over the course of an evening, for example: 'At first, the table was quiet, but soon everyone was sharing stories.'",
-            "modelAnswer": "Good reflective answers show change over the course of an evening, for example: 'At first, the table was quiet, but soon everyone was sharing stories.' Describe how the conversation changed once everyone put their phones away. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L43_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You are trying to furnish a small apartment on a tight budget, so you decided to visit several secondhand shops. Describe what you found.",
-            "emojis": [
-                "🛋️",
-                "💵",
-                "🔍",
-                "🏠"
-            ],
-            "keywords": {
-                "0": [
-                    "FURNITURE",
-                    "BUDGET",
-                    "APARTMENT"
-                ],
-                "1": [
-                    "SECONDHAND",
-                    "SHOP",
-                    "VISIT"
-                ],
-                "2": [
-                    "SEARCH",
-                    "COMPARE",
-                    "BARGAIN"
-                ],
-                "3": [
-                    "FURNISH",
-                    "SATISFIED",
-                    "SAVE"
-                ]
-            },
-            "minWords": 27,
-            "hint": "Describe specific items you found and how they fit your budget.",
-            "explanation": "Practical answers mention specific furniture and the money saved, for example: 'I found a sturdy desk for half the regular price at a secondhand shop.'",
-            "modelAnswer": "Practical answers mention specific furniture and the money saved, for example: 'I found a sturdy desk for half the regular price at a secondhand shop.' Describe specific items you found and how they fit your budget. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L43_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You decided to challenge yourself by cooking only with ingredients from a farmers market for one month. Describe how this changed your meals.",
-            "emojis": [
-                "🥕",
-                "🧺",
-                "👨‍🍳",
-                "😋"
-            ],
-            "keywords": {
-                "0": [
-                    "FARMERSMARKET",
-                    "FRESH",
-                    "LOCAL"
-                ],
-                "1": [
-                    "INGREDIENT",
-                    "SEASONAL",
-                    "CHALLENGE"
-                ],
-                "2": [
-                    "COOK",
-                    "CREATIVE",
-                    "EXPERIMENT"
-                ],
-                "3": [
-                    "TASTE",
+                    "ENERGY",
                     "IMPROVE",
-                    "ENJOY"
-                ]
-            },
-            "minWords": 27,
-            "hint": "Describe the kind of ingredients you used and how your cooking changed.",
-            "explanation": "Strong personal-experiment answers show both process and result, for example: 'Cooking with seasonal vegetables forced me to try new recipes I had never attempted before.'",
-            "modelAnswer": "Strong personal-experiment answers show both process and result, for example: 'Cooking with seasonal vegetables forced me to try new recipes I had never attempted before.' Describe the kind of ingredients you used and how your cooking changed. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L43_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "A software update on your computer accidentally changed several important settings right before an online exam. Describe how you managed the situation.",
-            "emojis": [
-                "💻",
-                "⚠️",
-                "⏰",
-                "😬"
-            ],
-            "keywords": {
-                "0": [
-                    "UPDATE",
-                    "SETTINGS",
-                    "CHANGE"
-                ],
-                "1": [
-                    "EXAM",
-                    "ONLINE",
-                    "DEADLINE"
-                ],
-                "2": [
-                    "PANIC",
-                    "TROUBLESHOOT",
-                    "FIX"
+                    "NOTICEABLY"
                 ],
                 "3": [
-                    "RESOLVE",
-                    "SUBMIT",
-                    "RELIEF"
+                    "STAIRS",
+                    "EASILY",
+                    "BREATHE"
                 ]
             },
             "minWords": 27,
-            "hint": "Describe the problem you discovered and the order of steps you used to fix it.",
-            "explanation": "Good crisis-management answers show calm, logical troubleshooting, for example: 'I quickly reset the settings to default and managed to submit my exam just in time.'",
-            "modelAnswer": "Good crisis-management answers show calm, logical troubleshooting, for example: 'I quickly reset the settings to default and managed to submit my exam just in time.' Describe the problem you discovered and the order of steps you used to fix it. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L44_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your workplace introduced a wellness program that encouraged employees to take short breaks for stretching. Describe how this affected your workday.",
-            "emojis": [
-                "🧘",
-                "⏰",
-                "💼",
-                "😌"
-            ],
-            "keywords": {
-                "0": [
-                    "WELLNESS",
-                    "PROGRAM",
-                    "WORKPLACE"
-                ],
-                "1": [
-                    "BREAK",
-                    "STRETCH",
-                    "SCHEDULE"
-                ],
-                "2": [
-                    "ENCOURAGE",
-                    "PARTICIPATE",
-                    "TRY"
-                ],
-                "3": [
-                    "RELAXED",
-                    "PRODUCTIVE",
-                    "BENEFIT"
-                ]
-            },
-            "minWords": 27,
-            "hint": "Describe how the short breaks changed your energy or focus during the day.",
-            "explanation": "Good workplace-wellness answers link a small habit to a noticeable benefit, for example: 'A five-minute stretch break left me feeling more focused for the rest of the afternoon.'",
-            "modelAnswer": "Good workplace-wellness answers link a small habit to a noticeable benefit, for example: 'A five-minute stretch break left me feeling more focused for the rest of the afternoon.' Describe how the short breaks changed your energy or focus during the day. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L44_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You attended a film festival and watched a documentary that completely changed your perspective on a topic. Describe your reaction.",
-            "emojis": [
-                "🎬",
-                "🌍",
-                "🤯",
-                "💭"
-            ],
-            "keywords": {
-                "0": [
-                    "DOCUMENTARY",
-                    "FESTIVAL",
-                    "TOPIC"
-                ],
-                "1": [
-                    "FACT",
-                    "REVEAL",
-                    "SURPRISE"
-                ],
-                "2": [
-                    "REFLECT",
-                    "THINK",
-                    "QUESTION"
-                ],
-                "3": [
-                    "PERSPECTIVE",
-                    "CHANGE",
-                    "INSPIRE"
-                ]
-            },
-            "minWords": 27,
-            "hint": "Describe what specific information changed the way you think about the topic.",
-            "explanation": "Thoughtful review answers connect a specific fact to a personal realization, for example: 'Learning about the issue's real scale made me reconsider my own habits.'",
-            "modelAnswer": "Thoughtful review answers connect a specific fact to a personal realization, for example: 'Learning about the issue's real scale made me reconsider my own habits.' Describe what specific information changed the way you think about the topic. This serves as a model answer for the situation."
+            "hint": "Contrast a specific detail from before, such as being out of breath, with a specific detail from now.",
+            "explanation": "Personal change over time is convincing when a single concrete detail, such as climbing stairs, appears in both the before and after part of the description.",
+            "modelAnswer": "Before I started exercising regularly, I used to get out of breath just climbing two flights of stairs. Three months into my new routine, I can climb the same stairs easily, and my energy noticeably improves throughout the whole day instead of dropping by mid-afternoon."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L44_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE PARK BEFORE AND AFTER THE COMMUNITY CLEANUP",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You need to write a formal message to request a refund for a concert ticket because the event was cancelled. Describe what you write.",
+            "situation": "Your neighborhood organized a cleanup day for the local park. Describe what the park looked like before the event, and how it changed afterward.",
             "emojis": [
-                "🎫",
-                "❌",
-                "💵",
-                "✉️"
+                "🗑️",
+                "🌳",
+                "🧤",
+                "🌷"
             ],
             "keywords": {
                 "0": [
-                    "TICKET",
-                    "CONCERT",
-                    "CANCEL"
+                    "BEFORE",
+                    "LITTER",
+                    "SCATTERED"
                 ],
                 "1": [
-                    "EVENT",
-                    "CANCELLED",
-                    "ANNOUNCE"
+                    "VOLUNTEERS",
+                    "GLOVES",
+                    "BAGS"
                 ],
                 "2": [
-                    "REQUEST",
-                    "REFUND",
-                    "FORMAL"
+                    "AFTER",
+                    "TIDY",
+                    "GREEN"
                 ],
                 "3": [
-                    "DETAILS",
-                    "ORDER",
-                    "RESPONSE"
+                    "FLOWERBEDS",
+                    "PLANT",
+                    "COLORFUL"
                 ]
             },
             "minWords": 27,
-            "hint": "Include the order details and clearly state what you are requesting.",
-            "explanation": "A clear refund request includes order information and a direct request, for example: 'Since the concert was cancelled, I would like to request a full refund for order #4521.'",
-            "modelAnswer": "A clear refund request includes order information and a direct request, for example: 'Since the concert was cancelled, I would like to request a full refund for order #4521.' Include the order details and clearly state what you are requesting. This serves as a model answer for the situation."
+            "hint": "Describe the mess clearly in the before section, then show specific improvements rather than a vague statement like it looked better.",
+            "explanation": "Vague improvement, such as it looked nicer, tells the reader little. Specific improvements, such as new flowerbeds or clean paths, prove the change actually happened.",
+            "modelAnswer": "Before the cleanup, litter was scattered across the grass and the benches were covered in graffiti. On Saturday, dozens of volunteers in gloves filled bags with trash, and by the afternoon the paths were tidy and freshly planted flowerbeds brightened the whole entrance."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L45_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE CHAIN OF EVENTS DURING THE STORM",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You moved into a new neighborhood and decided to introduce yourself to your neighbors. Describe how the first meeting went.",
+            "situation": "A sudden heavy storm this morning caused several things to go wrong on your way to an important exam. Describe the full chain of events, from the storm to your arrival.",
             "emojis": [
-                "🏠",
-                "👋",
-                "🙂",
-                "💬"
+                "🌧️",
+                "🚧",
+                "🚌",
+                "😰"
             ],
             "keywords": {
                 "0": [
-                    "NEIGHBORHOOD",
-                    "MOVE",
-                    "NEW"
+                    "STORM",
+                    "FLOOD",
+                    "STREET"
                 ],
                 "1": [
-                    "INTRODUCE",
-                    "KNOCK",
-                    "GREET"
+                    "BUS",
+                    "CANCEL",
+                    "DIVERTED"
                 ],
                 "2": [
-                    "NERVOUS",
-                    "FRIENDLY",
-                    "CONVERSATION"
+                    "WALK",
+                    "DETOUR",
+                    "SOAKED"
                 ],
                 "3": [
-                    "WELCOME",
-                    "COMMUNITY",
-                    "COMFORTABLE"
+                    "EXAM",
+                    "LATE",
+                    "BREATHLESS"
                 ]
             },
-            "minWords": 27,
-            "hint": "Describe how you felt before knocking and what you talked about.",
-            "explanation": "Good first-impression stories show nervousness turning into comfort, for example: 'I felt a bit nervous, but my neighbor was so friendly that we talked for twenty minutes.'",
-            "modelAnswer": "Good first-impression stories show nervousness turning into comfort, for example: 'I felt a bit nervous, but my neighbor was so friendly that we talked for twenty minutes.' Describe how you felt before knocking and what you talked about. This serves as a model answer for the situation."
+            "minWords": 28,
+            "hint": "Connect each event to the one before it, so the reader sees how one problem caused the next.",
+            "explanation": "A chain of cause and effect works best when each sentence clearly grows out of the one before it, using words like as a result or which meant, rather than simply listing separate events.",
+            "modelAnswer": "Heavy rain flooded part of my street early this morning, which meant my usual bus route was cancelled without warning. I had to walk nearly a mile on a longer detour, arriving completely soaked, and by the time I reached the exam hall, I was breathless and five minutes late."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L45_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE CHAIN OF EVENTS AFTER THE COMPUTER VIRUS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your class was assigned to research a controversial topic and present both sides fairly. Describe how your group divided the research.",
+            "situation": "A virus infected your laptop two days before an important work deadline. Describe the full chain of events that followed, from the infection to how you finally resolved it.",
             "emojis": [
-                "📚",
-                "⚖️",
-                "👥",
-                "📊"
+                "💻",
+                "🦠",
+                "😨",
+                "📧"
             ],
             "keywords": {
                 "0": [
-                    "RESEARCH",
-                    "CONTROVERSIAL",
-                    "TOPIC"
+                    "VIRUS",
+                    "POPUP",
+                    "SUSPICIOUS"
                 ],
                 "1": [
-                    "BALANCE",
-                    "BOTHSIDES",
-                    "FAIR"
+                    "FILES",
+                    "CORRUPT",
+                    "LOST"
                 ],
                 "2": [
-                    "GROUP",
-                    "DIVIDE",
-                    "ASSIGN"
+                    "ITTEAM",
+                    "CONTACT",
+                    "URGENT"
                 ],
                 "3": [
-                    "PRESENT",
-                    "EVIDENCE",
-                    "CONCLUDE"
+                    "APOLOGY",
+                    "EMAIL",
+                    "EXTENSION"
                 ]
             },
-            "minWords": 27,
-            "hint": "Explain how the group made sure both perspectives were represented fairly.",
-            "explanation": "Strong academic answers show structured planning, for example: 'We split into two pairs, each researching one side, then combined our findings into a balanced presentation.'",
-            "modelAnswer": "Strong academic answers show structured planning, for example: 'We split into two pairs, each researching one side, then combined our findings into a balanced presentation.' Explain how the group made sure both perspectives were represented fairly. This serves as a model answer for the situation."
+            "minWords": 28,
+            "hint": "Show how the virus led to lost work, which led to contacting for help, which led to a final resolution.",
+            "explanation": "In a technical chain of events, naming the specific consequence at each stage, lost files, a call for help, a request for more time, keeps a potentially confusing story easy to follow.",
+            "modelAnswer": "A suspicious pop-up infected my laptop with a virus, and within an hour several important files became corrupted and unreadable. Since the deadline was only two days away, I contacted the IT team immediately, and they managed to recover most of the data, though I still had to email my manager asking for one extra day."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L45_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE CHAIN OF EVENTS AFTER THE BROKEN ELEVATOR",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "During a busy season, your manager asked everyone to volunteer for extra shifts. Describe how you decided whether to accept.",
+            "situation": "The elevator in your office building broke down on the morning of an important client meeting. Describe the full chain of events, from discovering the problem to how the meeting finally went.",
             "emojis": [
-                "💼",
-                "⏰",
-                "🤔",
-                "💪"
+                "🛗",
+                "🪜",
+                "😩",
+                "🤝"
             ],
             "keywords": {
                 "0": [
-                    "BUSYSEASON",
-                    "EXTRA",
-                    "SHIFT"
+                    "ELEVATOR",
+                    "OUTOFORDER",
+                    "SIGN"
                 ],
                 "1": [
-                    "VOLUNTEER",
-                    "REQUEST",
-                    "MANAGER"
+                    "STAIRS",
+                    "CLIMB",
+                    "SEVENTH"
                 ],
                 "2": [
-                    "CONSIDER",
-                    "WEIGH",
-                    "DECIDE"
+                    "LATE",
+                    "APOLOGIZE",
+                    "BREATHLESS"
                 ],
                 "3": [
-                    "ACCEPT",
-                    "DECLINE",
-                    "BALANCE"
+                    "MEETING",
+                    "RESCHEDULE",
+                    "SHORTENED"
                 ]
             },
-            "minWords": 27,
-            "hint": "Explain the factors you considered before making your decision.",
-            "explanation": "Good decision-making answers weigh pros and cons, for example: 'I considered my energy level and personal plans before agreeing to one extra shift.'",
-            "modelAnswer": "Good decision-making answers weigh pros and cons, for example: 'I considered my energy level and personal plans before agreeing to one extra shift.' Explain the factors you considered before making your decision. This serves as a model answer for the situation."
+            "minWords": 28,
+            "hint": "Move step by step from finding the elevator broken, to the effort of the stairs, to the effect on the meeting itself.",
+            "explanation": "A physical inconvenience, like broken stairs, becomes a strong cause-and-effect description when each stage adds a small new complication rather than repeating the same idea.",
+            "modelAnswer": "I arrive at the building to find a handwritten out-of-order sign on the elevator, meaning I have to climb seven flights of stairs while carrying a heavy laptop bag. By the time I reach the meeting room, breathless and a few minutes late, we have to shorten the presentation to fit the remaining time."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L46_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW THE NEIGHBORHOOD CHANGED AFTER THE NEW SUPERMARKET OPENED",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You arrived at your destination only to discover that your accommodation had double-booked your room. Describe how the situation was resolved.",
+            "situation": "A large supermarket opened in your neighborhood six months ago. Describe how the area was before, and how daily life has changed since then.",
             "emojis": [
-                "🏨",
+                "🏪",
+                "🚗",
+                "👥",
+                "🛒"
+            ],
+            "keywords": {
+                "0": [
+                    "BEFORE",
+                    "SMALL",
+                    "LIMITED"
+                ],
+                "1": [
+                    "TRAFFIC",
+                    "INCREASE",
+                    "PARKING"
+                ],
+                "2": [
+                    "RESIDENTS",
+                    "CONVENIENT",
+                    "NEARBY"
+                ],
+                "3": [
+                    "PRICES",
+                    "VARIETY",
+                    "OPTIONS"
+                ]
+            },
+            "minWords": 28,
+            "hint": "Describe the situation before the supermarket opened, then explain two clear changes, one positive and one less convenient.",
+            "explanation": "Balanced change description, showing both a benefit and a drawback, is more honest and useful than a description that only praises or only criticizes the change.",
+            "modelAnswer": "Before the supermarket opened, residents had only a small corner shop with limited choices and higher prices. Now people enjoy a much wider variety of products just a short walk away, though the street has also become noticeably busier with cars looking for parking."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L46_Q2",
+            "instruction": "DESCRIBE HOW YOUR DAILY SCHEDULE CHANGED AFTER STARTING A NEW JOB",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "You started a new job two months ago with very different hours than your last one. Describe your old daily schedule, and how it has changed since starting the new job.",
+            "emojis": [
+                "⏰",
+                "💼",
+                "🌅",
+                "🚶"
+            ],
+            "keywords": {
+                "0": [
+                    "OLD",
+                    "LATE",
+                    "START"
+                ],
+                "1": [
+                    "NEWJOB",
+                    "EARLY",
+                    "COMMUTE"
+                ],
+                "2": [
+                    "MORNING",
+                    "WALK",
+                    "QUIET"
+                ],
+                "3": [
+                    "EVENING",
+                    "FREE",
+                    "ADJUST"
+                ]
+            },
+            "minWords": 28,
+            "hint": "Describe your previous routine briefly, then focus on what your mornings and evenings look like now.",
+            "explanation": "Comparing an old routine to a new one works well when the writer picks one specific part of the day, such as mornings, rather than trying to describe the whole day twice.",
+            "modelAnswer": "My old job started at eleven, so I used to sleep late and rush through breakfast. Since starting my new job two months ago, I wake up at six and enjoy a quiet walk before my early shift, though I still find myself adjusting to having less free time in the evenings."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L46_Q3",
+            "instruction": "DESCRIBE HOW A FRIENDSHIP CHANGED AFTER MOVING AWAY",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "Your closest friend moved to a different city a year ago. Describe how your friendship used to look, and how it has changed since the move.",
+            "emojis": [
+                "👭",
+                "✈️",
+                "📱",
+                "☎️"
+            ],
+            "keywords": {
+                "0": [
+                    "BEFORE",
+                    "EVERYDAY",
+                    "NEARBY"
+                ],
+                "1": [
+                    "MOVE",
+                    "DISTANCE",
+                    "FAREWELL"
+                ],
+                "2": [
+                    "MESSAGES",
+                    "TEXT",
+                    "OCCASIONAL"
+                ],
+                "3": [
+                    "CALLS",
+                    "WEEKEND",
+                    "CATCHUP"
+                ]
+            },
+            "minWords": 28,
+            "hint": "Describe how often you used to see each other, then how you keep in touch now, being honest about what has changed.",
+            "explanation": "Describing how a relationship changes over distance requires specific, measurable detail, such as how often you talk now, rather than a vague statement like we are still close.",
+            "modelAnswer": "Before she moved, we used to see each other almost every day and rarely needed to plan anything in advance. Since she left a year ago, we mostly stay in touch through short text messages during the week, though we still try to have a longer video call most weekends."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L47_Q1",
+            "instruction": "DESCRIBE THE REASONS THE SMALL BUSINESS CLOSED",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A small bookshop in your neighborhood closed down after eight years. Describe the different reasons that led to its closure.",
+            "emojis": [
+                "📚",
+                "💰",
+                "🏬",
+                "📉"
+            ],
+            "keywords": {
+                "0": [
+                    "RENT",
+                    "RISE",
+                    "LANDLORD"
+                ],
+                "1": [
+                    "ONLINE",
+                    "COMPETITION",
+                    "CHEAPER"
+                ],
+                "2": [
+                    "CUSTOMERS",
+                    "FEWER",
+                    "FOOTFALL"
+                ],
+                "3": [
+                    "OWNER",
+                    "ANNOUNCE",
+                    "SIGN"
+                ]
+            },
+            "minWords": 28,
+            "hint": "Give at least two separate causes, and explain how they combined to make the business impossible to continue.",
+            "explanation": "Real events often have more than one cause. Naming two or three separate reasons, rather than a single simple explanation, produces a more accurate and mature description.",
+            "modelAnswer": "The bookshop's closure came down to several problems building up at once. The rent had risen sharply over the past two years, and at the same time, more customers began buying books online at much lower prices. With fewer people walking through the door each month, the owner finally decided he could no longer keep it open."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L47_Q2",
+            "instruction": "DESCRIBE THE REASONS THE TEAM LOST THE MATCH",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "Your local football team lost an important match last weekend. Describe the different factors that contributed to the loss.",
+            "emojis": [
+                "⚽",
+                "🤕",
+                "🌧️",
+                "😞"
+            ],
+            "keywords": {
+                "0": [
+                    "INJURY",
+                    "STRIKER",
+                    "SIDELINED"
+                ],
+                "1": [
+                    "WEATHER",
+                    "RAIN",
+                    "SLIPPERY"
+                ],
+                "2": [
+                    "DEFENSE",
+                    "MISTAKES",
+                    "GOALS"
+                ],
+                "3": [
+                    "FANS",
+                    "DISAPPOINTED",
+                    "SILENT"
+                ]
+            },
+            "minWords": 29,
+            "hint": "Mention at least two different factors, such as an injury and a mistake, that both contributed to the result.",
+            "explanation": "Sports results are rarely caused by a single event, so combining a personal factor, like an injury, with a tactical one, like a defensive mistake, models more realistic cause-and-effect writing.",
+            "modelAnswer": "Several factors worked against the team on Saturday. Their star striker was sidelined with an injury just before kickoff, and heavy rain made the pitch slippery and difficult to control. Combined with two costly defensive mistakes in the second half, the team ended up losing three goals to one, leaving the fans silent and disappointed."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L47_Q3",
+            "instruction": "DESCRIBE THE REASONS THE PROJECT WAS DELAYED",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A major project at your workplace was delayed by nearly a month. Describe the different reasons behind the delay.",
+            "emojis": [
+                "📆",
+                "🧑‍💻",
+                "📉",
+                "⚠️"
+            ],
+            "keywords": {
+                "0": [
+                    "SUPPLIER",
+                    "LATE",
+                    "SHIPMENT"
+                ],
+                "1": [
+                    "DEVELOPER",
+                    "QUIT",
+                    "REPLACE"
+                ],
+                "2": [
+                    "BUDGET",
+                    "CUT",
+                    "REDUCED"
+                ],
+                "3": [
+                    "MANAGER",
+                    "EXPLAIN",
+                    "CLIENT"
+                ]
+            },
+            "minWords": 29,
+            "hint": "Combine at least three separate causes, showing how each one added more delay on top of the others.",
+            "explanation": "When several causes stack on top of each other, connecting them with phrases like on top of that or to make things worse shows the reader how a small problem grew into a larger one.",
+            "modelAnswer": "The delay resulted from several problems arriving almost at once. A key supplier shipped materials two weeks late, and shortly afterward, one of our main developers unexpectedly quit. To make things worse, the budget was reduced midway through, forcing the manager to explain to the client why the launch would take an extra month."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L48_Q1",
+            "instruction": "DESCRIBE THE MISTAKE AND HOW IT WAS HANDLED",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A colleague accidentally sends a confidential email to the wrong group of people. Describe what happened and how the situation was handled afterward.",
+            "emojis": [
+                "📧",
+                "😱",
+                "🔁",
+                "🤝"
+            ],
+            "keywords": {
+                "0": [
+                    "EMAIL",
+                    "ATTACH",
+                    "WRONG"
+                ],
+                "1": [
+                    "REALIZE",
+                    "MINUTES",
+                    "LATER"
+                ],
+                "2": [
+                    "RECALL",
+                    "ATTEMPT",
+                    "DELETE"
+                ],
+                "3": [
+                    "APOLOGY",
+                    "FOLLOWUP",
+                    "EXPLAIN"
+                ]
+            },
+            "minWords": 28,
+            "hint": "Explain the mistake clearly, then describe both the immediate reaction and the longer-term response to fix it.",
+            "explanation": "Mistakes in professional settings are best described with two stages: the immediate panic or correction, and the calmer, more considered response that follows once the initial shock passes.",
+            "modelAnswer": "A colleague accidentally attaches a confidential file to an email meant for the whole department instead of just the finance team. She notices the mistake within minutes and tries to recall the message, though not everyone opens it in time. Afterward, she sends a follow-up email explaining the error and apologizing directly to anyone affected."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L48_Q2",
+            "instruction": "DESCRIBE THE INCIDENT AND THE EFFECT ON TRAFFIC",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A driver runs through a red light near a busy intersection, narrowly avoiding a collision. Describe what happens and the effect this has on the traffic and people nearby.",
+            "emojis": [
+                "🚦",
+                "🚗",
+                "😨",
+                "👮"
+            ],
+            "keywords": {
+                "0": [
+                    "LIGHT",
+                    "RED",
+                    "IGNORE"
+                ],
+                "1": [
+                    "BRAKES",
+                    "SCREECH",
+                    "SWERVE"
+                ],
+                "2": [
+                    "PEDESTRIANS",
+                    "JUMP",
+                    "SHOCKED"
+                ],
+                "3": [
+                    "POLICE",
+                    "APPROACH",
+                    "QUESTION"
+                ]
+            },
+            "minWords": 28,
+            "hint": "Describe the moment of the near-collision first, then the reactions of the people who witnessed it.",
+            "explanation": "A sudden dangerous moment is described through immediate physical reactions, such as jumping back or screeching brakes, which show the reader the danger without needing to state it directly.",
+            "modelAnswer": "A car speeds straight through a red light, forcing another driver to slam on the brakes and swerve sharply to avoid a collision. Two pedestrians jump back onto the curb, visibly shaken, and within minutes a police officer arrives to question both drivers about what happened."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L48_Q3",
+            "instruction": "DESCRIBE THE COMPLAINT AND HOW IT ESCALATED",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A customer becomes increasingly frustrated with a delayed delivery and escalates the complaint. Describe how the situation develops and how the company eventually responds.",
+            "emojis": [
+                "📦",
                 "😠",
                 "📞",
                 "✅"
             ],
             "keywords": {
                 "0": [
-                    "ACCOMMODATION",
-                    "DOUBLEBOOK",
-                    "ARRIVE"
-                ],
-                "1": [
-                    "DISCOVER",
-                    "PROBLEM",
-                    "UNEXPECTED"
-                ],
-                "2": [
-                    "COMPLAIN",
-                    "EXPLAIN",
-                    "STAFF"
-                ],
-                "3": [
-                    "RESOLVE",
-                    "ALTERNATIVE",
-                    "COMPENSATE"
-                ]
-            },
-            "minWords": 27,
-            "hint": "Describe how the staff responded and what solution was offered.",
-            "explanation": "Good travel-problem answers show resolution, for example: 'The staff apologized and offered us a free upgrade to a larger room.'",
-            "modelAnswer": "Good travel-problem answers show resolution, for example: 'The staff apologized and offered us a free upgrade to a larger room.' Describe how the staff responded and what solution was offered. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L46_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your family decided to start a weekly tradition of cooking a meal from a different country together. Describe how the first attempt went.",
-            "emojis": [
-                "🌍",
-                "🍲",
-                "👨‍👩‍👧‍👦",
-                "😅"
-            ],
-            "keywords": {
-                "0": [
-                    "TRADITION",
-                    "WEEKLY",
-                    "DIFFERENTCOUNTRY"
-                ],
-                "1": [
-                    "RECIPE",
-                    "UNFAMILIAR",
-                    "FOLLOW"
-                ],
-                "2": [
-                    "TEAMWORK",
-                    "KITCHEN",
-                    "LAUGH"
-                ],
-                "3": [
-                    "RESULT",
-                    "SUCCESS",
-                    "REPEAT"
-                ]
-            },
-            "minWords": 27,
-            "hint": "Describe both the challenges in the kitchen and how the meal turned out.",
-            "explanation": "Good family-tradition answers describe a process with a clear outcome, for example: 'We followed the recipe carefully, made a few mistakes, but the dish turned out delicious anyway.'",
-            "modelAnswer": "Good family-tradition answers describe a process with a clear outcome, for example: 'We followed the recipe carefully, made a few mistakes, but the dish turned out delicious anyway.' Describe both the challenges in the kitchen and how the meal turned out. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L46_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You are comparing subscription plans for a streaming service and trying to decide which one offers the best value. Describe your decision process.",
-            "emojis": [
-                "📺",
-                "💲",
-                "📋",
-                "🤔"
-            ],
-            "keywords": {
-                "0": [
-                    "SUBSCRIPTION",
-                    "PLAN",
-                    "COMPARE"
-                ],
-                "1": [
-                    "STREAMING",
-                    "FEATURE",
-                    "OPTION"
-                ],
-                "2": [
-                    "VALUE",
-                    "PRICE",
-                    "WORTH"
-                ],
-                "3": [
-                    "CHOOSE",
-                    "SIGNUP",
-                    "SATISFIED"
-                ]
-            },
-            "minWords": 27,
-            "hint": "Explain what features matter most to you and how they affected your choice.",
-            "explanation": "Good comparison answers weigh features against cost, for example: 'The cheaper plan had ads, so I chose the slightly more expensive option for an ad-free experience.'",
-            "modelAnswer": "Good comparison answers weigh features against cost, for example: 'The cheaper plan had ads, so I chose the slightly more expensive option for an ad-free experience.' Explain what features matter most to you and how they affected your choice. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L47_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You are trying to reduce food waste at home, so you started planning meals around what was already in your fridge. Describe your new approach.",
-            "emojis": [
-                "🧊",
-                "📝",
-                "♻️",
-                "🥘"
-            ],
-            "keywords": {
-                "0": [
-                    "FRIDGE",
-                    "LEFTOVER",
-                    "WASTE"
-                ],
-                "1": [
-                    "PLAN",
-                    "INVENTORY",
-                    "CHECK"
-                ],
-                "2": [
-                    "CREATIVE",
-                    "COMBINE",
-                    "REUSE"
-                ],
-                "3": [
-                    "REDUCE",
-                    "SAVE",
-                    "SUSTAINABLE"
-                ]
-            },
-            "minWords": 28,
-            "hint": "Describe how checking your fridge first changed the way you cook.",
-            "explanation": "Good sustainability answers connect a habit with a clear benefit, for example: 'By checking the fridge first, I created new recipes and wasted far less food.'",
-            "modelAnswer": "Good sustainability answers connect a habit with a clear benefit, for example: 'By checking the fridge first, I created new recipes and wasted far less food.' Describe how checking your fridge first changed the way you cook. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L47_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your smart home device started giving you strange responses after an update, and you could not figure out why. Describe how you solved it.",
-            "emojis": [
-                "🏠",
-                "🤖",
-                "❓",
-                "🔧"
-            ],
-            "keywords": {
-                "0": [
-                    "SMARTHOME",
-                    "DEVICE",
-                    "UPDATE"
-                ],
-                "1": [
-                    "STRANGE",
-                    "RESPONSE",
-                    "GLITCH"
-                ],
-                "2": [
-                    "TROUBLESHOOT",
-                    "SEARCH",
-                    "FORUM"
-                ],
-                "3": [
-                    "RESET",
-                    "SOLVE",
-                    "NORMAL"
-                ]
-            },
-            "minWords": 28,
-            "hint": "Describe the steps you took to identify and fix the strange behavior.",
-            "explanation": "Good troubleshooting answers show a logical process, for example: 'After searching an online forum, I found that resetting the device solved the problem.'",
-            "modelAnswer": "Good troubleshooting answers show a logical process, for example: 'After searching an online forum, I found that resetting the device solved the problem.' Describe the steps you took to identify and fix the strange behavior. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L47_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You noticed you had been skipping breakfast often, so you decided to plan healthier morning meals. Describe your new breakfast routine.",
-            "emojis": [
-                "🍳",
-                "⏰",
-                "🥗",
-                "💪"
-            ],
-            "keywords": {
-                "0": [
-                    "BREAKFAST",
-                    "SKIP",
-                    "NOTICE"
-                ],
-                "1": [
-                    "PLAN",
-                    "PREPARE",
-                    "MORNING"
-                ],
-                "2": [
-                    "NUTRITIOUS",
-                    "BALANCE",
-                    "QUICK"
-                ],
-                "3": [
-                    "ENERGY",
-                    "FOCUS",
-                    "IMPROVE"
-                ]
-            },
-            "minWords": 28,
-            "hint": "Describe what you used to do and what you changed to improve your mornings.",
-            "explanation": "Good habit-change answers compare before and after, for example: 'I used to skip breakfast entirely, but now I prepare oatmeal the night before to save time.'",
-            "modelAnswer": "Good habit-change answers compare before and after, for example: 'I used to skip breakfast entirely, but now I prepare oatmeal the night before to save time.' Describe what you used to do and what you changed to improve your mornings. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L48_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You auditioned for a community theater play despite having no previous acting experience. Describe how the audition went.",
-            "emojis": [
-                "🎭",
-                "😰",
-                "📋",
-                "🌟"
-            ],
-            "keywords": {
-                "0": [
-                    "AUDITION",
-                    "THEATER",
-                    "COMMUNITY"
-                ],
-                "1": [
-                    "NOEXPERIENCE",
-                    "NERVOUS",
-                    "FIRSTTIME"
-                ],
-                "2": [
-                    "PREPARE",
-                    "LINES",
-                    "PRACTICE"
-                ],
-                "3": [
-                    "RESULT",
-                    "SURPRISE",
-                    "EXCITED"
-                ]
-            },
-            "minWords": 28,
-            "hint": "Describe your nerves beforehand and how the audition turned out.",
-            "explanation": "Good audition stories build tension before a result, for example: 'My hands were shaking as I read my lines, but the director said I had real potential.'",
-            "modelAnswer": "Good audition stories build tension before a result, for example: 'My hands were shaking as I read my lines, but the director said I had real potential.' Describe your nerves beforehand and how the audition turned out. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L48_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You need to send a message to a delivery company explaining that a package was left at the wrong address. Describe what you write.",
-            "emojis": [
-                "📦",
-                "📍",
-                "❌",
-                "✉️"
-            ],
-            "keywords": {
-                "0": [
                     "DELIVERY",
-                    "PACKAGE",
-                    "WRONGADDRESS"
+                    "DELAY",
+                    "WEEK"
                 ],
                 "1": [
-                    "COMPANY",
-                    "TRACKING",
-                    "ORDER"
+                    "CUSTOMER",
+                    "FRUSTRATED",
+                    "CALL"
                 ],
                 "2": [
-                    "EXPLAIN",
-                    "DETAIL",
-                    "LOCATION"
+                    "MANAGER",
+                    "ESCALATE",
+                    "TRANSFER"
                 ],
                 "3": [
-                    "REQUEST",
-                    "RESOLVE",
-                    "REDELIVER"
+                    "REFUND",
+                    "OFFER",
+                    "RESOLVE"
                 ]
             },
-            "minWords": 28,
-            "hint": "Include the order number and clearly explain where the package should have gone.",
-            "explanation": "A clear delivery complaint provides specific details, for example: 'My package, order #7732, was delivered to the wrong building. Could you arrange a redelivery?'",
-            "modelAnswer": "A clear delivery complaint provides specific details, for example: 'My package, order #7732, was delivered to the wrong building. Could you arrange a redelivery?' Include the order number and clearly explain where the package should have gone. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L48_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your building started a recycling program, but many residents were unsure how to sort their waste correctly. Describe how you learned the new system.",
-            "emojis": [
-                "♻️",
-                "🗑️",
-                "❓",
-                "📋"
-            ],
-            "keywords": {
-                "0": [
-                    "RECYCLING",
-                    "PROGRAM",
-                    "BUILDING"
-                ],
-                "1": [
-                    "RESIDENT",
-                    "CONFUSE",
-                    "UNSURE"
-                ],
-                "2": [
-                    "LEARN",
-                    "GUIDE",
-                    "SORT"
-                ],
-                "3": [
-                    "HABIT",
-                    "IMPROVE",
-                    "ENVIRONMENT"
-                ]
-            },
-            "minWords": 28,
-            "hint": "Describe how you found information about the new sorting rules.",
-            "explanation": "Good community-adjustment answers show learning a new system, for example: 'I read the posted guide carefully, and now I sort my recycling correctly every week.'",
-            "modelAnswer": "Good community-adjustment answers show learning a new system, for example: 'I read the posted guide carefully, and now I sort my recycling correctly every week.' Describe how you found information about the new sorting rules. This serves as a model answer for the situation."
+            "minWords": 29,
+            "hint": "Show the complaint growing more serious in stages, from a first message to a final resolution.",
+            "explanation": "Escalation is described through stages of increasing intensity, and showing each stage briefly, rather than jumping straight to the outcome, makes the eventual resolution feel earned.",
+            "modelAnswer": "When a delivery arrives a full week late, the customer sends a short, polite message asking for an update. After no response for two days, she calls the company directly, her frustration clear in her voice, and asks to speak to a manager. The situation only calms down once the manager personally apologizes and offers a full refund."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L49_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE DECISION AND ITS EFFECT ON YOUR DAY",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your teacher asked the class to write a peer review of a classmate's essay, and you had to give honest but kind feedback. Describe what you wrote.",
+            "situation": "You decide to skip breakfast one morning because you are running late. Describe your decision and how it affects the rest of your day.",
             "emojis": [
-                "📝",
-                "🤝",
-                "💬",
-                "✅"
+                "🍳",
+                "⏰",
+                "😩",
+                "🍫"
             ],
             "keywords": {
                 "0": [
-                    "PEERREVIEW",
-                    "ESSAY",
-                    "CLASSMATE"
+                    "SKIP",
+                    "RUSH",
+                    "GRAB"
                 ],
                 "1": [
-                    "HONEST",
-                    "KIND",
-                    "BALANCE"
+                    "STOMACH",
+                    "GROWL",
+                    "EMPTY"
                 ],
                 "2": [
-                    "STRENGTH",
-                    "WEAKNESS",
-                    "POINTOUT"
+                    "FOCUS",
+                    "LOSE",
+                    "DISTRACTED"
                 ],
                 "3": [
-                    "FEEDBACK",
-                    "IMPROVE",
-                    "ENCOURAGE"
+                    "SNACK",
+                    "VENDING",
+                    "MIDMORNING"
                 ]
             },
             "minWords": 28,
-            "hint": "Mention both something positive and something to improve in the feedback.",
-            "explanation": "Good peer-feedback answers balance praise with suggestions, for example: 'Your introduction was strong, but adding more examples would make your argument clearer.'",
-            "modelAnswer": "Good peer-feedback answers balance praise with suggestions, for example: 'Your introduction was strong, but adding more examples would make your argument clearer.' Mention both something positive and something to improve in the feedback. This serves as a model answer for the situation."
+            "hint": "Describe the decision briefly, then trace at least two effects it has later in the morning.",
+            "explanation": "A single small decision can be traced through several later effects, and showing more than one consequence gives the reader a fuller sense of cause and effect over time.",
+            "modelAnswer": "Running fifteen minutes behind schedule, I decide to skip breakfast and rush straight out the door. By ten o'clock, my stomach is growling loudly and I find it hard to focus during a meeting, so I end up buying an overpriced snack from the vending machine just to get through the morning."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L49_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE DECISION TO TAKE A DIFFERENT ROUTE",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your team had to switch to a new project management software, and not everyone adapted quickly. Describe how the transition went.",
+            "situation": "You decide to take a completely different route to work one morning, just to try something new. Describe your decision and what happens as a result.",
             "emojis": [
-                "💻",
-                "📋",
-                "😕",
-                "🤝"
+                "🗺️",
+                "🚲",
+                "🌉",
+                "😮"
             ],
             "keywords": {
                 "0": [
-                    "SOFTWARE",
-                    "SWITCH",
-                    "TEAM"
+                    "ROUTE",
+                    "USUAL",
+                    "CHANGE"
                 ],
                 "1": [
-                    "ADAPT",
-                    "LEARNCURVE",
-                    "CONFUSE"
+                    "BRIDGE",
+                    "CROSS",
+                    "RIVER"
                 ],
                 "2": [
-                    "TRAINING",
-                    "SUPPORT",
-                    "HELP"
+                    "DISCOVER",
+                    "NOTICE",
+                    "CAFÉ"
                 ],
                 "3": [
-                    "ADJUST",
-                    "EFFICIENT",
-                    "SUCCEED"
+                    "LONGER",
+                    "SHORTER",
+                    "TIME"
                 ]
             },
-            "minWords": 28,
-            "hint": "Describe the early difficulties and how the team eventually adapted.",
-            "explanation": "Good transition answers show difficulty followed by improvement, for example: 'A few people struggled at first, but after a training session, the whole team adapted quickly.'",
-            "modelAnswer": "Good transition answers show difficulty followed by improvement, for example: 'A few people struggled at first, but after a training session, the whole team adapted quickly.' Describe the early difficulties and how the team eventually adapted. This serves as a model answer for the situation."
+            "minWords": 29,
+            "hint": "Explain why you chose the different route, then describe something unexpected you discover along the way.",
+            "explanation": "A decision leading to an unexpected discovery is a natural way to combine cause and effect with a small, pleasant surprise, keeping the description from feeling purely functional.",
+            "modelAnswer": "Curious about a shortcut a coworker mentioned, I decide to cycle across the old bridge instead of my usual road. The route turns out to be a few minutes longer, but I discover a small café by the river that I had never noticed before, and I make a mental note to stop there sometime."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L49_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE DECISION TO LEARN A NEW SKILL AND HOW LIFE CHANGED",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "While backpacking through the countryside, you ran out of cash in a town with no ATM nearby. Describe how you managed.",
+            "situation": "Six months ago, you decided to start learning a new language in your free time. Describe your original decision and how it has gradually changed your daily life.",
             "emojis": [
-                "🎒",
-                "💵",
-                "😟",
+                "📖",
+                "🗣️",
+                "📱",
+                "🌍"
+            ],
+            "keywords": {
+                "0": [
+                    "DECIDE",
+                    "APP",
+                    "DOWNLOAD"
+                ],
+                "1": [
+                    "PRACTICE",
+                    "DAILY",
+                    "MINUTES"
+                ],
+                "2": [
+                    "CONFIDENCE",
+                    "IMPROVE",
+                    "GRADUALLY"
+                ],
+                "3": [
+                    "TRAVEL",
+                    "PLAN",
+                    "CONVERSATION"
+                ]
+            },
+            "minWords": 29,
+            "hint": "Describe the original decision briefly, then focus on a gradual change rather than a sudden one.",
+            "explanation": "Long-term change is often gradual rather than sudden, so words like slowly and gradually, along with a specific time marker, help the reader understand that the effect built up over months.",
+            "modelAnswer": "Six months ago, I decided almost on impulse to download a language app during a boring commute. What started as five minutes a day slowly grew into a daily habit, and my confidence gradually improved to the point where I now feel ready to have simple conversations during my planned trip next year."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L50_Q1",
+            "instruction": "DESCRIBE HOW REMOTE WORK CHANGED THE TEAM",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "Your company switched most employees to remote work eighteen months ago. Describe the reasons behind this decision and the different ways it has changed how the team works together.",
+            "emojis": [
+                "🏠",
+                "💻",
+                "📹",
                 "🤝"
             ],
             "keywords": {
                 "0": [
-                    "BACKPACK",
-                    "COUNTRYSIDE",
-                    "CASH"
+                    "POLICY",
+                    "ANNOUNCE",
+                    "SHIFT"
                 ],
                 "1": [
-                    "RUNOUT",
-                    "TOWN",
-                    "NOATM"
+                    "MEETINGS",
+                    "VIDEO",
+                    "SCREEN"
                 ],
                 "2": [
-                    "WORRY",
-                    "ASK",
-                    "SOLUTION"
+                    "FLEXIBLE",
+                    "SCHEDULE",
+                    "BALANCE"
                 ],
                 "3": [
-                    "BORROW",
-                    "MANAGE",
-                    "RELIEVED"
+                    "ISOLATION",
+                    "MISS",
+                    "OFFICE"
                 ]
             },
-            "minWords": 28,
-            "hint": "Describe how you found a solution to your money problem.",
-            "explanation": "Good problem-solving travel stories show resourcefulness, for example: 'A kind shop owner let me pay by card the next day once I explained my situation.'",
-            "modelAnswer": "Good problem-solving travel stories show resourcefulness, for example: 'A kind shop owner let me pay by card the next day once I explained my situation.' Describe how you found a solution to your money problem. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L50_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your parents asked you to help plan a surprise retirement party for a close family friend. Describe your role in the planning.",
-            "emojis": [
-                "🎉",
-                "🤐",
-                "📋",
-                "👨‍👩‍👧‍👦"
-            ],
-            "keywords": {
-                "0": [
-                    "SURPRISE",
-                    "RETIREMENT",
-                    "PARTY"
-                ],
-                "1": [
-                    "SECRET",
-                    "PLAN",
-                    "HIDE"
-                ],
-                "2": [
-                    "ORGANIZE",
-                    "DECORATE",
-                    "INVITE"
-                ],
-                "3": [
-                    "REVEAL",
-                    "JOY",
-                    "SUCCESSFUL"
-                ]
-            },
-            "minWords": 29,
-            "hint": "Describe your specific task and how you kept the surprise a secret.",
-            "explanation": "Good party-planning answers describe specific responsibilities, for example: 'I was in charge of the invitations and made sure no one mentioned the party by accident.'",
-            "modelAnswer": "Good party-planning answers describe specific responsibilities, for example: 'I was in charge of the invitations and made sure no one mentioned the party by accident.' Describe your specific task and how you kept the surprise a secret. This serves as a model answer for the situation."
+            "minWords": 30,
+            "hint": "Explain the original reason for the change, then describe both a benefit and a drawback the team has experienced since.",
+            "explanation": "Describing organizational change well means balancing multiple effects, some positive and some negative, rather than presenting the change as either entirely good or entirely bad.",
+            "modelAnswer": "After a difficult year, the company decided to make remote work permanent for most staff, partly to save on office costs and partly because employees had requested more flexibility. Since then, meetings mostly happen over video calls, and many people appreciate the freedom to plan their own schedules. At the same time, several team members admit they miss the casual conversations that used to happen naturally around the office."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L50_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW THE NEW BIKE LANE CHANGED THE STREET",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You are buying a used car for the first time and brought a mechanic friend to help inspect it. Describe what happened during the inspection.",
+            "situation": "The city added a protected bike lane along your street last year. Describe the reasons for the change and the different effects it has had on residents.",
             "emojis": [
+                "🚲",
                 "🚗",
-                "🔧",
-                "👀",
-                "💰"
+                "🌳",
+                "👨‍👩‍👧"
             ],
             "keywords": {
                 "0": [
-                    "USEDCAR",
-                    "FIRSTTIME",
-                    "BUY"
+                    "COUNCIL",
+                    "DECIDE",
+                    "SAFETY"
                 ],
                 "1": [
-                    "MECHANIC",
-                    "INSPECT",
-                    "CHECK"
+                    "CYCLISTS",
+                    "INCREASE",
+                    "NUMBER"
                 ],
                 "2": [
-                    "ISSUE",
-                    "NOTICE",
-                    "POINTOUT"
+                    "PARKING",
+                    "REDUCE",
+                    "SPACES"
                 ],
                 "3": [
-                    "NEGOTIATE",
-                    "DECIDE",
-                    "PURCHASE"
+                    "CHILDREN",
+                    "RIDE",
+                    "SAFELY"
                 ]
             },
-            "minWords": 29,
-            "hint": "Describe what your friend found and how it affected your final decision.",
-            "explanation": "Good major-purchase answers connect inspection findings to a decision, for example: 'My friend noticed a small engine issue, so I used it to negotiate a lower price.'",
-            "modelAnswer": "Good major-purchase answers connect inspection findings to a decision, for example: 'My friend noticed a small engine issue, so I used it to negotiate a lower price.' Describe what your friend found and how it affected your final decision. This serves as a model answer for the situation."
+            "minWords": 30,
+            "hint": "Explain the safety reasoning behind the lane, then describe how it has affected both cyclists and drivers differently.",
+            "explanation": "Public infrastructure changes affect different groups differently, so showing the effect on at least two groups, cyclists and drivers, gives a more complete and fair description than focusing on only one.",
+            "modelAnswer": "After several accidents involving cyclists, the city council decided to install a protected bike lane along the whole street. Since then, far more people cycle to work each morning, and children can ride to school much more safely than before. However, several drivers have complained about the reduced number of parking spaces near the shops."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L50_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW MOVING TO A SMALLER APARTMENT CHANGED YOUR FAMILY'S HABITS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You decided to grow your own herbs at home to use in cooking, but your first attempt did not go as planned. Describe what happened.",
+            "situation": "Your family moved from a large house into a much smaller apartment last year to save money. Describe the reasons for the move and how it has changed your family's daily habits.",
             "emojis": [
-                "🌿",
-                "🪴",
-                "😅",
-                "🍳"
+                "📦",
+                "🏢",
+                "💰",
+                "🛋️"
             ],
             "keywords": {
                 "0": [
-                    "HERB",
-                    "GROW",
-                    "HOME"
+                    "RENT",
+                    "EXPENSIVE",
+                    "SAVE"
                 ],
                 "1": [
-                    "FIRSTATTEMPT",
-                    "PLANT",
-                    "SOIL"
+                    "SPACE",
+                    "SMALLER",
+                    "SHARE"
                 ],
                 "2": [
-                    "MISTAKE",
-                    "OVERWATER",
-                    "WILT"
+                    "ROUTINES",
+                    "ADJUST",
+                    "ORGANIZE"
                 ],
                 "3": [
-                    "LEARN",
-                    "RETRY",
-                    "SUCCESSFUL"
+                    "CLOSER",
+                    "TOGETHER",
+                    "MEALS"
                 ]
             },
-            "minWords": 29,
-            "hint": "Describe the mistake you made and what you did differently the second time.",
-            "explanation": "Good learning-from-failure answers show growth, for example: 'I overwatered the basil at first, but after researching online, my second attempt thrived.'",
-            "modelAnswer": "Good learning-from-failure answers show growth, for example: 'I overwatered the basil at first, but after researching online, my second attempt thrived.' Describe the mistake you made and what you did differently the second time. This serves as a model answer for the situation."
+            "minWords": 30,
+            "hint": "Explain the financial reason for the move, then describe both a challenge and an unexpected benefit that came from the smaller space.",
+            "explanation": "Personal life changes, like moving home, often produce mixed results, so ending with both a challenge and a genuine benefit gives the description honesty and depth rather than a single simple conclusion.",
+            "modelAnswer": "Rising rent prices forced my family to move from a large house into a much smaller two-bedroom apartment last spring. Sharing less space meant learning to organize our belongings far more carefully, and at first it felt cramped and difficult. Surprisingly, though, we now eat dinner together almost every night, simply because the smaller kitchen makes it easier for everyone to end up in the same room."
         }
     ]
 }

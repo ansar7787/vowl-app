@@ -5,1173 +5,1173 @@
     "quests": [
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L161_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "WRITE A CONCISE INCIDENT SUMMARY",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "After years of quiet distance following a small but unresolved disagreement, you decided it was finally time to reach out to your sibling. Describe how you began that conversation.",
+            "situation": "A minor equipment malfunction caused a brief production delay on the factory floor this morning. Write a concise, professional incident summary describing what happened, the impact, and the resolution.",
             "emojis": [
-                "👫",
-                "😕",
-                "📞",
-                "🤝"
+                "✅",
+                "⚙️",
+                "📋",
+                "⏱️"
             ],
             "keywords": {
                 "0": [
-                    "YEARS",
-                    "QUIETDISTANCE",
-                    "SIBLING"
+                    "IMPACT",
+                    "MINIMAL",
+                    "RESOLVED"
                 ],
                 "1": [
-                    "SMALL",
-                    "UNRESOLVED",
-                    "DISAGREEMENT"
+                    "MALFUNCTION",
+                    "CONVEYOR",
+                    "JAM"
                 ],
                 "2": [
-                    "DECIDE",
-                    "FINALLY",
-                    "REACHOUT"
+                    "DELAY",
+                    "MINUTES",
+                    "PRODUCTION"
                 ],
                 "3": [
-                    "BEGIN",
-                    "VULNERABLE",
-                    "RECONCILE"
+                    "TECHNICIAN",
+                    "REPAIR",
+                    "RESTART"
                 ]
             },
-            "minWords": 59,
-            "hint": "Describe the first thing you said and how your sibling responded.",
-            "explanation": "Genuine reconciliation answers describe a specific, vulnerable first step rather than a vague general apology.",
-            "modelAnswer": "Genuine reconciliation answers describe a specific, vulnerable first step rather than a vague general apology. Describe the first thing you said and how your sibling responded. This serves as a model answer for the situation."
+            "minWords": 60,
+            "hint": "Keep the summary brief and factual, following the pattern of what happened, the impact, and how it was resolved, without unnecessary detail.",
+            "explanation": "Professional incident summaries favor concise, factual language over narrative flourish, following a clear pattern, event, impact, resolution, that lets a busy reader quickly understand what happened without wading through extra description.",
+            "modelAnswer": "At approximately 9:40 this morning, a mechanical jam in the main conveyor belt halted production on Line 2 for thirty-five minutes. The delay affected roughly two hundred units of scheduled output, though downstream shipments were not impacted due to existing buffer stock. A maintenance technician cleared the jam and restarted the line by 10:15, and no further disruption has been reported since. Total impact to the day's production target is estimated at under three percent."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L161_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "WRITE A CONCISE INCIDENT SUMMARY",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You believed your company could adopt a more sustainable practice at reasonable cost, but persuading leadership required more evidence than you first expected. Describe your approach.",
+            "situation": "A customer's account was briefly locked due to a system error during a routine update. Write a concise, professional incident summary describing what happened, the impact, and the resolution.",
             "emojis": [
-                "💼",
-                "🌱",
-                "🤔",
+                "💻",
+                "😕",
+                "✅",
+                "🔒"
+            ],
+            "keywords": {
+                "0": [
+                    "LOCKOUT",
+                    "ACCOUNTS",
+                    "AFFECTED"
+                ],
+                "1": [
+                    "SUPPORT",
+                    "IDENTIFY",
+                    "UNLOCK"
+                ],
+                "2": [
+                    "IMPACT",
+                    "LIMITED",
+                    "RESOLVED"
+                ],
+                "3": [
+                    "SYSTEMERROR",
+                    "UPDATE",
+                    "TRIGGER"
+                ]
+            },
+            "minWords": 60,
+            "hint": "State the cause first, then the scope of the impact using a specific number, and close with the resolution and current status.",
+            "explanation": "Including a specific, quantified scope, such as the number of accounts affected, gives a professional incident summary more credibility than a vague statement that some customers were affected.",
+            "modelAnswer": "During a routine database update at 2:15 PM, a configuration error briefly locked approximately 340 customer accounts out of the mobile application. Affected users were unable to log in for a window of roughly twenty minutes before the support team identified the faulty configuration and rolled back the update. All accounts were automatically restored by 2:40 PM, and no customer data was affected. The team is implementing an additional review step to prevent similar errors in future updates."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L161_Q3",
+            "instruction": "WRITE A CONCISE INCIDENT SUMMARY",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A scheduled software deployment was delayed after a last-minute bug was discovered during final testing. Write a concise, professional incident summary describing what happened, the impact, and the resolution.",
+            "emojis": [
+                "🐛",
+                "✅",
+                "💻",
+                "📅"
+            ],
+            "keywords": {
+                "0": [
+                    "BUG",
+                    "DISCOVER",
+                    "TESTING"
+                ],
+                "1": [
+                    "IMPACT",
+                    "NONE",
+                    "RESOLVED"
+                ],
+                "2": [
+                    "DEPLOYMENT",
+                    "POSTPONE",
+                    "SCHEDULE"
+                ],
+                "3": [
+                    "TEAM",
+                    "PATCH",
+                    "OVERNIGHT"
+                ]
+            },
+            "minWords": 60,
+            "hint": "Report the discovery of the bug factually, then the decision to postpone, and finally the resolution, avoiding emotional language throughout.",
+            "explanation": "Professional summaries of avoided problems, like a caught bug before deployment, should still follow the same factual structure, since even a positive outcome benefits from clear, unembellished reporting rather than celebratory language.",
+            "modelAnswer": "During final quality assurance testing on Tuesday afternoon, engineers identified a bug affecting the checkout flow under specific currency settings, prompting the team to postpone the scheduled 5 PM deployment. The development team resolved the issue overnight, and testing confirmed the fix by 8 AM Wednesday. The deployment proceeded successfully later that morning with no impact to existing production systems. No customer-facing disruption occurred as a result of this delay."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L162_Q1",
+            "instruction": "WRITE A CONCISE PROJECT STATUS UPDATE",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A software development project is currently one week behind its original schedule due to an unexpected integration issue. Write a concise, professional status update describing current progress, the cause of the delay, and the revised timeline.",
+            "emojis": [
+                "📅",
+                "💻",
+                "✅",
                 "📊"
             ],
             "keywords": {
                 "0": [
-                    "BELIEVE",
-                    "SUSTAINABLE",
-                    "REASONABLE"
+                    "TIMELINE",
+                    "REVISE",
+                    "EXTEND"
                 ],
                 "1": [
-                    "PERSUADE",
-                    "LEADERSHIP",
-                    "EVIDENCE"
+                    "INTEGRATION",
+                    "ISSUE",
+                    "UNFORESEEN"
                 ],
                 "2": [
-                    "EXPECT",
-                    "GATHER",
-                    "PREPARE"
+                    "CONFIDENT",
+                    "DELIVER",
+                    "NEWDATE"
                 ],
                 "3": [
-                    "APPROACH",
-                    "PROPOSE",
-                    "CONVINCE"
+                    "PROGRESS",
+                    "EIGHTY",
+                    "PERCENT"
                 ]
             },
-            "minWords": 59,
-            "hint": "Describe the specific evidence you gathered to make your case.",
-            "explanation": "Persuasive workplace answers describe concrete evidence and a clear proposal, not just good intentions.",
-            "modelAnswer": "Persuasive workplace answers describe concrete evidence and a clear proposal, not just good intentions. Describe the specific evidence you gathered to make your case. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L161_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Noticing your teenager's screen time had grown well beyond what felt healthy, you had to figure out how to raise it without starting a shouting match. Describe the conversation.",
-            "emojis": [
-                "📱",
-                "👦",
-                "😐",
-                "💬"
-            ],
-            "keywords": {
-                "0": [
-                    "NOTICE",
-                    "TEENAGER",
-                    "SCREENTIME"
-                ],
-                "1": [
-                    "GROW",
-                    "BEYOND",
-                    "HEALTHY"
-                ],
-                "2": [
-                    "RAISE",
-                    "WITHOUT",
-                    "SHOUTINGMATCH"
-                ],
-                "3": [
-                    "CONVERSATION",
-                    "CALM",
-                    "AGREE"
-                ]
-            },
-            "minWords": 59,
-            "hint": "Describe how you opened the topic calmly and what compromise you reached.",
-            "explanation": "Calm parenting answers describe a specific approach and a realistic compromise both sides could accept.",
-            "modelAnswer": "Calm parenting answers describe a specific approach and a realistic compromise both sides could accept. Describe how you opened the topic calmly and what compromise you reached. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L162_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "After years of rushing through countries just to see more sights, you chose to spend an entire month in a single small town instead. Describe what that slower trip taught you.",
-            "emojis": [
-                "🗺️",
-                "🐌",
-                "😌",
-                "📖"
-            ],
-            "keywords": {
-                "0": [
-                    "YEARS",
-                    "RUSH",
-                    "COUNTRY"
-                ],
-                "1": [
-                    "CHOOSE",
-                    "ENTIREMONTH",
-                    "SMALLTOWN"
-                ],
-                "2": [
-                    "SLOWER",
-                    "TRIP",
-                    "TEACH"
-                ],
-                "3": [
-                    "LEARN",
-                    "APPRECIATE",
-                    "DIFFERENT"
-                ]
-            },
-            "minWords": 59,
-            "hint": "Describe specific moments that only happened because you slowed down.",
-            "explanation": "Reflective travel answers give specific examples of what a slower pace revealed that rushing would have missed.",
-            "modelAnswer": "Reflective travel answers give specific examples of what a slower pace revealed that rushing would have missed. Describe specific moments that only happened because you slowed down. This serves as a model answer for the situation."
+            "minWords": 61,
+            "hint": "State current progress with a specific figure, name the cause of the delay clearly, and give a specific revised delivery date.",
+            "explanation": "Status updates gain credibility through specific, measurable figures, such as a percentage complete or an exact revised date, rather than vague reassurances that everything is progressing well.",
+            "modelAnswer": "As of this week, the project stands at approximately eighty percent completion, having encountered an unforeseen integration issue between the payment gateway and our existing user database. This issue required an additional five days of engineering work to resolve properly rather than applying a temporary workaround. As a result, the original delivery date has been pushed back by one week, with the revised target now set for the 22nd. The team remains confident in meeting this updated timeline given current momentum."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L162_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "WRITE A CONCISE PROJECT STATUS UPDATE",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "A close friend asked for your honest opinion on their creative work, which was, in truth, not very strong yet. Describe how you gave feedback that was both honest and encouraging.",
+            "situation": "A marketing campaign launch is currently on track, though one deliverable is running slightly behind due to a vendor delay. Write a concise, professional status update describing current progress, the specific delay, and next steps.",
             "emojis": [
-                "🎨",
-                "😬",
-                "💬",
-                "🤝"
-            ],
-            "keywords": {
-                "0": [
-                    "CLOSEFRIEND",
-                    "ASK",
-                    "HONEST"
-                ],
-                "1": [
-                    "CREATIVEWORK",
-                    "TRUTH",
-                    "NOTSTRONG"
-                ],
-                "2": [
-                    "FEEDBACK",
-                    "HONEST",
-                    "ENCOURAGE"
-                ],
-                "3": [
-                    "GIVE",
-                    "KIND",
-                    "SPECIFIC"
-                ]
-            },
-            "minWords": 59,
-            "hint": "Describe specific, constructive points you included in your feedback.",
-            "explanation": "Kind but honest feedback answers include specific, constructive suggestions rather than vague praise or criticism.",
-            "modelAnswer": "Kind but honest feedback answers include specific, constructive suggestions rather than vague praise or criticism. Describe specific, constructive points you included in your feedback. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L162_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Learning that a brand you regularly bought from had questionable labor practices left you wondering whether one shopper's choice actually mattered. Describe your decision.",
-            "emojis": [
-                "🛍️",
-                "😕",
-                "🤔",
-                "✅"
-            ],
-            "keywords": {
-                "0": [
-                    "LEARN",
-                    "BRAND",
-                    "REGULARLYBUY"
-                ],
-                "1": [
-                    "QUESTIONABLE",
-                    "LABORPRACTICE",
-                    "WONDER"
-                ],
-                "2": [
-                    "ONESHOPPER",
-                    "CHOICE",
-                    "MATTER"
-                ],
-                "3": [
-                    "DECISION",
-                    "VALUES",
-                    "ACT"
-                ]
-            },
-            "minWords": 59,
-            "hint": "Explain the reasoning behind whatever you decided to do.",
-            "explanation": "Honest answers explore the doubt genuinely before explaining a specific, personal decision.",
-            "modelAnswer": "Honest answers explore the doubt genuinely before explaining a specific, personal decision. Explain the reasoning behind whatever you decided to do. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L163_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Adjusting to daily life with a new physical limitation meant relearning simple tasks you had never before had to think about. Describe your first weeks of adjustment.",
-            "emojis": [
-                "🩺",
-                "🦽",
-                "😮‍💨",
+                "📢",
+                "📊",
+                "✅",
                 "📅"
             ],
             "keywords": {
                 "0": [
-                    "ADJUST",
-                    "DAILYLIFE",
-                    "NEWLIMITATION"
+                    "VENDOR",
+                    "DELAY",
+                    "PRINTING"
                 ],
                 "1": [
-                    "RELEARN",
-                    "SIMPLE",
-                    "TASK"
+                    "CAMPAIGN",
+                    "TRACK",
+                    "MOSTLY"
                 ],
                 "2": [
-                    "NEVERBEFORE",
-                    "THINKABOUT",
-                    "FRUSTRATE"
+                    "LAUNCH",
+                    "CONFIRM",
+                    "DATE"
                 ],
                 "3": [
-                    "WEEKS",
-                    "ADAPT",
-                    "PROGRESS"
+                    "ADJUST",
+                    "PRIORITIZE",
+                    "DIGITAL"
                 ]
             },
-            "minWords": 60,
-            "hint": "Describe a specific task that became newly difficult and how you adapted it.",
-            "explanation": "Grounded answers describe one or two concrete tasks and the specific adaptation found for each.",
-            "modelAnswer": "Grounded answers describe one or two concrete tasks and the specific adaptation found for each. Describe a specific task that became newly difficult and how you adapted it. This serves as a model answer for the situation."
+            "minWords": 61,
+            "hint": "Report the overall status as mostly on track, then isolate the one specific delayed deliverable and the plan to manage it.",
+            "explanation": "Reporting one specific delayed item within an otherwise on-track project, rather than treating the whole project as delayed, gives a more accurate and useful picture for stakeholders deciding what to prioritize.",
+            "modelAnswer": "Overall, the campaign remains on track for its scheduled launch date, with digital assets, social media content, and the email sequence all completed ahead of schedule. The one exception is the printed brochure, currently delayed by three business days due to a supplier issue at our printing vendor. To manage this, the team has prioritized the digital rollout to proceed as planned, with printed materials to follow shortly after launch rather than delaying the entire campaign."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L162_Q3",
+            "instruction": "WRITE A CONCISE PROJECT STATUS UPDATE",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A construction project is currently ahead of schedule following favorable weather conditions over the past month. Write a concise, professional status update describing current progress, the reason for the favorable outcome, and the revised completion estimate.",
+            "emojis": [
+                "✅",
+                "📊",
+                "🏗️",
+                "☀️"
+            ],
+            "keywords": {
+                "0": [
+                    "ESTIMATE",
+                    "REVISE",
+                    "EARLIER"
+                ],
+                "1": [
+                    "WEATHER",
+                    "FAVORABLE",
+                    "DRY"
+                ],
+                "2": [
+                    "PROGRESS",
+                    "AHEAD",
+                    "SCHEDULE"
+                ],
+                "3": [
+                    "FOUNDATION",
+                    "COMPLETE",
+                    "EARLY"
+                ]
+            },
+            "minWords": 61,
+            "hint": "Report the positive progress with a specific figure, explain the reason clearly, and give a specific revised completion estimate.",
+            "explanation": "Positive status updates deserve the same specific, factual treatment as negative ones, since stating exactly why the project is ahead of schedule helps stakeholders understand whether the good fortune is likely to continue.",
+            "modelAnswer": "The project currently sits roughly ten days ahead of its original schedule, largely due to an unusually dry stretch of weather over the past month that allowed foundation work to proceed without the typical rain delays. As a result, the foundation and framing stages are now complete two weeks earlier than initially planned. Based on this progress, the revised completion estimate has moved up to the 3rd of next month, assuming weather conditions remain reasonably cooperative through the final phases."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L163_Q1",
+            "instruction": "WRITE A CONCISE MEETING SUMMARY",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A weekly team meeting covered three main topics: budget review, hiring updates, and an upcoming client presentation. Write a concise, professional summary of the meeting's key points and decisions.",
+            "emojis": [
+                "✅",
+                "📋",
+                "💬",
+                "🗓️"
+            ],
+            "keywords": {
+                "0": [
+                    "DECISION",
+                    "AGREE",
+                    "NEXTSTEPS"
+                ],
+                "1": [
+                    "BUDGET",
+                    "REVIEW",
+                    "UNDERSPENT"
+                ],
+                "2": [
+                    "HIRING",
+                    "CANDIDATE",
+                    "INTERVIEW"
+                ],
+                "3": [
+                    "PRESENTATION",
+                    "ASSIGN",
+                    "PREPARE"
+                ]
+            },
+            "minWords": 61,
+            "hint": "Organize the summary by the three separate topics discussed, giving each one a brief, factual outcome rather than a full narrative of the discussion.",
+            "explanation": "Meeting summaries are most useful when organized by topic rather than chronologically, since a reader who missed the meeting usually wants to quickly find the outcome for each subject rather than follow the conversation in order.",
+            "modelAnswer": "The team reviewed the quarterly budget, confirming that current spending remains eight percent under projection, with no immediate concerns raised. On hiring, two final candidates for the marketing coordinator role were discussed, and the team agreed to schedule final interviews for next week. Regarding the upcoming client presentation, Sarah was assigned to lead the preparation, with a draft due for internal review by Thursday. No other action items were raised during the meeting."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L163_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "WRITE A CONCISE MEETING SUMMARY",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "When your company asked everyone back to the office after years of remote work, you had to make a case for why your role should remain flexible. Describe your proposal.",
+            "situation": "A cross-departmental meeting addressed a recurring customer complaint, a proposed process change, and staffing concerns for the upcoming holiday season. Write a concise, professional summary of the key points and decisions.",
             "emojis": [
-                "💼",
-                "🏠",
-                "😐",
+                "💬",
+                "🗓️",
+                "✅",
                 "📝"
             ],
             "keywords": {
                 "0": [
-                    "COMPANY",
-                    "ASK",
-                    "BACKOFFICE"
+                    "PROCESS",
+                    "PROPOSE",
+                    "CHANGE"
                 ],
                 "1": [
-                    "YEARS",
-                    "REMOTEWORK",
-                    "CASE"
+                    "STAFFING",
+                    "HOLIDAY",
+                    "CONCERN"
                 ],
                 "2": [
-                    "ROLE",
-                    "REMAINFLEXIBLE",
-                    "PROPOSE"
+                    "DECISION",
+                    "APPROVE",
+                    "ASSIGN"
                 ],
                 "3": [
-                    "PROPOSAL",
-                    "EVIDENCE",
-                    "NEGOTIATE"
+                    "COMPLAINT",
+                    "RECURRING",
+                    "ADDRESS"
                 ]
             },
-            "minWords": 60,
-            "hint": "Describe the specific evidence you used to support your case.",
-            "explanation": "Strong proposals include specific evidence of past performance, not just a general preference for flexibility.",
-            "modelAnswer": "Strong proposals include specific evidence of past performance, not just a general preference for flexibility. Describe the specific evidence you used to support your case. This serves as a model answer for the situation."
+            "minWords": 61,
+            "hint": "Summarize each of the three topics separately with its specific outcome, avoiding a full account of who said what during the discussion.",
+            "explanation": "Cross-departmental meeting summaries benefit especially from clear topic separation, since readers from different departments will each care most about the section relevant to their own area of work.",
+            "modelAnswer": "The team addressed a recurring customer complaint regarding delayed order confirmations, tracing the root cause to a delay in the notification system, with a fix scheduled for next sprint. A proposed change to the returns process was discussed and approved in principle, pending a final review by the legal team before implementation. On staffing, the group acknowledged growing concern about holiday season coverage and agreed that department heads would submit temporary staffing requests by the end of the week."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L163_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "WRITE A CONCISE MEETING SUMMARY",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your mother had a habit of sharing personal details about your life with relatives without asking first, and you decided it was time to set a clear boundary. Describe the conversation.",
+            "situation": "A product team meeting reviewed user feedback from a recent beta test, discussed a proposed feature delay, and assigned responsibilities for an upcoming demo. Write a concise, professional summary of the key points and decisions.",
             "emojis": [
-                "👵",
-                "🗣️",
-                "😕",
-                "💬"
+                "🗒️",
+                "✅",
+                "💬",
+                "🗓️"
             ],
             "keywords": {
                 "0": [
-                    "MOTHER",
-                    "HABIT",
-                    "SHARE"
+                    "FEEDBACK",
+                    "BETA",
+                    "REVIEW"
                 ],
                 "1": [
-                    "PERSONALDETAIL",
-                    "RELATIVE",
-                    "WITHOUTASK"
+                    "DECISION",
+                    "AGREE",
+                    "TIMELINE"
                 ],
                 "2": [
-                    "DECIDE",
-                    "CLEARBOUNDARY",
-                    "TIME"
+                    "FEATURE",
+                    "DELAY",
+                    "PROPOSE"
                 ],
                 "3": [
-                    "CONVERSATION",
-                    "RESPECT",
-                    "FIRM"
+                    "DEMO",
+                    "ASSIGN",
+                    "RESPONSIBILITY"
                 ]
             },
-            "minWords": 60,
-            "hint": "Describe exactly what boundary you asked for and how she reacted.",
-            "explanation": "Effective boundary conversations name the specific behavior and the specific change requested.",
-            "modelAnswer": "Effective boundary conversations name the specific behavior and the specific change requested. Describe exactly what boundary you asked for and how she reacted. This serves as a model answer for the situation."
+            "minWords": 62,
+            "hint": "Summarize the feedback discussion, the feature delay decision, and the demo assignment as three clearly separated points.",
+            "explanation": "This kind of product-focused summary shows how technical and creative discussions can still be reported with the same concise, factual clarity used for any other professional meeting.",
+            "modelAnswer": "Beta test feedback was reviewed, with the majority of users praising the redesigned onboarding flow while flagging occasional confusion around the new settings menu. Given this feedback, the team agreed to delay the settings redesign by one sprint in order to address the usability concerns before release. For the upcoming client demo, Marcus was assigned to prepare the presentation while Aisha will handle the live product walkthrough, with a full run-through scheduled for Friday afternoon."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L164_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "WRITE A CONCISE SERVICE ISSUE REPORT",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "A student's schoolwork had been slipping for weeks, and you eventually learned it was connected to a difficult situation at home. Describe how you offered support.",
+            "situation": "Several customers reported intermittent slow loading times on the company website over the past two days. Write a concise, professional report describing the issue, its cause, and the steps taken to resolve it.",
             "emojis": [
-                "🎒",
-                "😟",
-                "💬",
-                "🤗"
+                "🔍",
+                "🐌",
+                "✅",
+                "🌐"
             ],
             "keywords": {
                 "0": [
-                    "STUDENT",
-                    "SCHOOLWORK",
-                    "SLIP"
+                    "ENGINEER",
+                    "OPTIMIZE",
+                    "CACHE"
                 ],
                 "1": [
-                    "WEEKS",
-                    "LEARN",
-                    "DIFFICULTHOME"
+                    "CAUSE",
+                    "SERVER",
+                    "OVERLOAD"
                 ],
                 "2": [
-                    "SITUATION",
-                    "CONNECT",
-                    "OFFER"
+                    "RESOLVE",
+                    "RESTORE",
+                    "NORMAL"
                 ],
                 "3": [
-                    "SUPPORT",
-                    "PATIENT",
-                    "FLEXIBLE"
+                    "REPORT",
+                    "INTERMITTENT",
+                    "SLOWLOADING"
                 ]
             },
-            "minWords": 60,
-            "hint": "Describe the specific accommodations or support you offered.",
-            "explanation": "Caring answers describe specific, practical support rather than only expressing sympathy.",
-            "modelAnswer": "Caring answers describe specific, practical support rather than only expressing sympathy. Describe the specific accommodations or support you offered. This serves as a model answer for the situation."
+            "minWords": 61,
+            "hint": "Describe the reported symptom first, then the diagnosed cause, and finish with the specific technical fix that resolved it.",
+            "explanation": "Service issue reports follow a clear professional structure, symptom, cause, fix, and stating each part plainly and specifically helps technical and non-technical readers alike understand exactly what happened.",
+            "modelAnswer": "Beginning Monday afternoon, several customers reported intermittent slow loading times across the main website, particularly during peak traffic hours between noon and 3 PM. Investigation traced the issue to increased server load following a recent marketing campaign that drove higher-than-expected traffic. Engineers implemented additional caching and adjusted server resource allocation on Tuesday evening, and loading times have since returned to normal levels. Monitoring will continue over the next week to confirm the fix holds under similar traffic conditions."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L164_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "WRITE A CONCISE SERVICE ISSUE REPORT",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You need to write a message reconnecting with an old friend after several years of silence that neither of you had ever explained. Describe what you write.",
+            "situation": "A recurring billing discrepancy affected a small number of subscription customers over the past billing cycle. Write a concise, professional report describing the issue, its cause, and the steps taken to resolve it.",
             "emojis": [
-                "👫",
-                "✉️",
-                "😊",
-                "🤔"
+                "⚠️",
+                "💳",
+                "✅",
+                "🔍"
             ],
             "keywords": {
                 "0": [
-                    "RECONNECT",
-                    "OLDFRIEND",
-                    "SEVERALYEARS"
+                    "CAUSE",
+                    "CODE",
+                    "ERROR"
                 ],
                 "1": [
-                    "SILENCE",
-                    "NEITHER",
-                    "EXPLAIN"
+                    "DISCREPANCY",
+                    "BILLING",
+                    "AFFECT"
                 ],
                 "2": [
-                    "WRITE",
-                    "WARM",
-                    "GENUINE"
+                    "RESOLVE",
+                    "PREVENT",
+                    "MONITOR"
                 ],
                 "3": [
-                    "MESSAGE",
-                    "CURIOUS",
-                    "NOPRESSURE"
+                    "TEAM",
+                    "REFUND",
+                    "CORRECT"
                 ]
             },
-            "minWords": 60,
-            "hint": "Mention a specific shared memory to open the door naturally.",
-            "explanation": "Warm reconnection messages reference a specific shared memory and avoid placing blame for the silence.",
-            "modelAnswer": "Warm reconnection messages reference a specific shared memory and avoid placing blame for the silence. Mention a specific shared memory to open the door naturally. This serves as a model answer for the situation."
+            "minWords": 61,
+            "hint": "State the scope of the billing issue with a specific number, then the technical cause, and close with the corrective action taken for affected customers.",
+            "explanation": "Financial issue reports especially benefit from precise scope figures, since stating exactly how many customers were affected, rather than saying a few, helps stakeholders judge the true seriousness of the problem.",
+            "modelAnswer": "During the most recent billing cycle, approximately 85 subscription customers were incorrectly charged the previous month's rate following a recent price adjustment. Investigation identified a caching error in the billing system that failed to apply the updated pricing to accounts renewed within a specific two-day window. The billing team has since corrected all affected accounts and issued refunds for the overcharged amounts, with confirmation emails sent to each customer. Additional validation checks have been added to prevent similar caching errors during future price changes."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L164_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "WRITE A CONCISE SERVICE ISSUE REPORT",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "A friend who often canceled plans at the last minute had done it again, and you had to decide whether to finally say something about the pattern. Describe your decision.",
+            "situation": "A shipping delay affected online orders placed during a recent weekend sale due to unexpectedly high order volume. Write a concise, professional report describing the issue, its cause, and the steps taken to resolve it.",
             "emojis": [
-                "📅",
-                "😕",
-                "💬",
-                "🤷"
+                "✅",
+                "⏰",
+                "📦",
+                "🔍"
             ],
             "keywords": {
                 "0": [
-                    "FRIEND",
-                    "OFTENCANCEL",
-                    "LASTMINUTE"
+                    "RESOLVE",
+                    "CAUGHTUP",
+                    "NORMAL"
                 ],
                 "1": [
-                    "AGAIN",
-                    "DECIDE",
-                    "FINALLY"
+                    "CAUSE",
+                    "VOLUME",
+                    "UNEXPECTED"
                 ],
                 "2": [
-                    "SAY",
-                    "SOMETHING",
-                    "PATTERN"
+                    "DELAY",
+                    "SHIPPING",
+                    "AFFECT"
                 ],
                 "3": [
-                    "DECISION",
-                    "HONEST",
-                    "RELATIONSHIP"
+                    "WAREHOUSE",
+                    "ADDSTAFF",
+                    "EXPEDITE"
                 ]
             },
-            "minWords": 60,
-            "hint": "Describe what you said and how it affected the friendship.",
-            "explanation": "Honest answers describe a specific, direct conversation rather than continuing to avoid the pattern silently.",
-            "modelAnswer": "Honest answers describe a specific, direct conversation rather than continuing to avoid the pattern silently. Describe what you said and how it affected the friendship. This serves as a model answer for the situation."
+            "minWords": 61,
+            "hint": "Describe the delay and its scope, then the cause tied to order volume, and finish with the specific operational response that resolved it.",
+            "explanation": "Operational reports about fulfillment delays are strengthened by connecting the cause directly to a measurable factor, such as order volume, rather than a vague explanation like the warehouse was busy.",
+            "modelAnswer": "Orders placed during last weekend's promotional sale experienced shipping delays of two to four days beyond the standard processing window, affecting an estimated twelve percent of orders from that period. The delay resulted from order volume nearly triple the typical weekend average, which exceeded the warehouse's standard staffing capacity. Management authorized additional temporary staff and extended shift hours through the following week to clear the backlog, and as of Thursday, all affected orders have shipped, with processing times returning to normal for new orders."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L165_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "WRITE A CONCISE COORDINATION UPDATE",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Realizing your grandmother's recipes existed only in her memory, you decided to sit with her and carefully write each one down before it was too late. Describe that process.",
+            "situation": "Two departments are jointly preparing for an upcoming system migration that requires careful coordination of overlapping responsibilities. Write a concise, professional update describing the current division of responsibilities and outstanding coordination points.",
             "emojis": [
-                "👵",
-                "🍲",
-                "📝",
-                "❤️"
+                "✅",
+                "🖥️",
+                "🤝",
+                "📋"
             ],
             "keywords": {
                 "0": [
-                    "GRANDMOTHER",
-                    "RECIPE",
-                    "ONLYMEMORY"
+                    "OUTSTANDING",
+                    "CLARIFY",
+                    "MEETING"
                 ],
                 "1": [
-                    "DECIDE",
-                    "SIT",
-                    "CAREFULLY"
+                    "MIGRATION",
+                    "PREPARE",
+                    "JOINT"
                 ],
                 "2": [
-                    "WRITEDOWN",
-                    "BEFORE",
-                    "TOOLATE"
+                    "ITTEAM",
+                    "RESPONSIBLE",
+                    "INFRASTRUCTURE"
                 ],
                 "3": [
-                    "PROCESS",
-                    "PRESERVE",
-                    "TREASURE"
+                    "OPERATIONS",
+                    "RESPONSIBLE",
+                    "TRAINING"
                 ]
             },
-            "minWords": 60,
-            "hint": "Describe a specific recipe and detail she shared that surprised you.",
-            "explanation": "Warm answers include a specific recipe detail or story that makes the preservation feel personal.",
-            "modelAnswer": "Warm answers include a specific recipe detail or story that makes the preservation feel personal. Describe a specific recipe and detail she shared that surprised you. This serves as a model answer for the situation."
+            "minWords": 62,
+            "hint": "Clearly state which department is responsible for which part of the project, then note any remaining coordination points that still need clarifying.",
+            "explanation": "Coordination updates between departments work best when responsibilities are stated as clear ownership, this team handles this, that team handles that, since ambiguity about ownership is often the actual source of coordination problems.",
+            "modelAnswer": "The IT team remains responsible for the technical infrastructure migration, including server setup and data transfer, currently tracking on schedule for completion by the 15th. Operations is separately responsible for staff training and updating internal documentation to reflect the new system, with training sessions scheduled for the following week. One outstanding coordination point involves confirming the exact cutover time to minimize disruption to customer-facing systems, which both teams will finalize during Thursday's joint planning call."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L165_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "WRITE A CONCISE COORDINATION UPDATE",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Two teams with genuinely conflicting priorities needed you to mediate a shared plan before a joint deadline arrived. Describe how you brought them to agreement.",
+            "situation": "The events team and the security team are jointly coordinating logistics for an upcoming large conference. Write a concise, professional update describing the current division of responsibilities and outstanding coordination points.",
             "emojis": [
-                "💼",
-                "⚖️",
-                "🗣️",
-                "🤝"
+                "🛡️",
+                "📋",
+                "✅",
+                "🎤"
             ],
             "keywords": {
                 "0": [
-                    "TWOTEAMS",
-                    "CONFLICT",
-                    "PRIORITY"
+                    "EVENTS",
+                    "RESPONSIBLE",
+                    "VENUE"
                 ],
                 "1": [
-                    "MEDIATE",
-                    "SHAREDPLAN",
-                    "DEADLINE"
+                    "SECURITY",
+                    "RESPONSIBLE",
+                    "ACCESS"
                 ],
                 "2": [
-                    "ARRIVE",
-                    "BRINGTOGETHER",
-                    "LISTEN"
+                    "OUTSTANDING",
+                    "CONFIRM",
+                    "BADGES"
                 ],
                 "3": [
-                    "AGREEMENT",
-                    "COMPROMISE",
-                    "ACHIEVE"
+                    "CONFERENCE",
+                    "LOGISTICS",
+                    "JOINT"
                 ]
             },
-            "minWords": 60,
-            "hint": "Describe the compromise both teams finally accepted.",
-            "explanation": "Effective mediation answers describe both sides' priorities and a specific, workable compromise.",
-            "modelAnswer": "Effective mediation answers describe both sides' priorities and a specific, workable compromise. Describe the compromise both teams finally accepted. This serves as a model answer for the situation."
+            "minWords": 62,
+            "hint": "State each team's specific area of responsibility clearly, then identify the one outstanding item both teams still need to resolve together.",
+            "explanation": "This level extends the same clear-ownership structure to a non-technical, event-based context, showing that professional coordination writing applies equally well to logistics as it does to software projects.",
+            "modelAnswer": "The events team continues managing venue logistics, catering arrangements, and speaker scheduling, with all major bookings now confirmed for the three-day conference. Security is separately handling attendee access control and badge verification systems, currently testing the new scanning equipment ahead of the event. One outstanding coordination point involves finalizing the exact badge design and printing timeline, since security requires final attendee numbers from the events team before proceeding, a figure expected to be confirmed by end of week."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L165_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "WRITE A CONCISE COORDINATION UPDATE",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You had a genuinely disappointing experience at a small local business, and had to decide how honest to be in an online review that could meaningfully hurt them. Describe what you wrote.",
+            "situation": "The design team and the engineering team are jointly coordinating the rollout of a redesigned mobile app interface. Write a concise, professional update describing the current division of responsibilities and outstanding coordination points.",
             "emojis": [
+                "🎨",
+                "✅",
                 "💻",
-                "⭐",
-                "😕",
-                "✍️"
+                "📋"
             ],
             "keywords": {
                 "0": [
-                    "DISAPPOINT",
-                    "EXPERIENCE",
-                    "SMALLBUSINESS"
+                    "ROLLOUT",
+                    "REDESIGN",
+                    "JOINT"
                 ],
                 "1": [
-                    "DECIDE",
-                    "HONEST",
-                    "ONLINEREVIEW"
+                    "OUTSTANDING",
+                    "ALIGN",
+                    "TIMELINE"
                 ],
                 "2": [
-                    "MEANINGFULLY",
-                    "HURT",
-                    "CONSIDER"
+                    "DESIGN",
+                    "RESPONSIBLE",
+                    "MOCKUP"
                 ],
                 "3": [
-                    "WRITE",
-                    "FAIR",
-                    "BALANCE"
+                    "ENGINEERING",
+                    "RESPONSIBLE",
+                    "IMPLEMENTATION"
                 ]
             },
-            "minWords": 60,
-            "hint": "Describe how you balanced honesty with fairness in your wording.",
-            "explanation": "Fair reviews describe the specific problem honestly while acknowledging any reasonable context.",
-            "modelAnswer": "Fair reviews describe the specific problem honestly while acknowledging any reasonable context. Describe how you balanced honesty with fairness in your wording. This serves as a model answer for the situation."
+            "minWords": 62,
+            "hint": "State the design and engineering teams' specific responsibilities clearly, then identify the outstanding timeline issue both teams still need to align on.",
+            "explanation": "Design and engineering collaboration is a common source of coordination friction, and clearly separating creative ownership from technical ownership in this kind of update helps prevent the ambiguity that often causes project delays.",
+            "modelAnswer": "The design team has finalized all interface mockups and is currently conducting one final round of usability testing before handoff, expected to complete by Wednesday. Engineering is separately responsible for implementing the approved designs into the production codebase, with initial component work already underway based on earlier draft mockups. One outstanding coordination point remains: engineering needs the final, tested designs no later than Friday to maintain the current rollout timeline, a deadline both teams will confirm during tomorrow's sync meeting."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L166_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "WRITE A CONCISE PERFORMANCE REPORT",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your sibling's divorce left them needing far more emotional support than usual, and you had to figure out how to be present without neglecting your own family. Describe how you balanced both.",
+            "situation": "A quarterly sales report shows overall growth but a notable underperformance in one specific region. Write a concise, professional report describing the overall results, the regional exception, and the planned response.",
             "emojis": [
-                "👫",
-                "💔",
-                "🤗",
+                "📉",
+                "📈",
+                "✅",
+                "📊"
+            ],
+            "keywords": {
+                "0": [
+                    "ANALYZE",
+                    "FACTOR",
+                    "IDENTIFY"
+                ],
+                "1": [
+                    "REGION",
+                    "UNDERPERFORM",
+                    "BELOWTARGET"
+                ],
+                "2": [
+                    "RESPONSE",
+                    "PLAN",
+                    "ADJUST"
+                ],
+                "3": [
+                    "OVERALL",
+                    "GROWTH",
+                    "QUARTER"
+                ]
+            },
+            "minWords": 62,
+            "hint": "Report the overall positive trend with a specific figure, then isolate the one underperforming region, and close with the specific planned response.",
+            "explanation": "Performance reports gain clarity by isolating an exception clearly from the overall trend, rather than letting one region's poor performance blend confusingly into an otherwise positive overall summary.",
+            "modelAnswer": "Overall quarterly sales grew by twelve percent compared to the same period last year, exceeding the company's target across most regions. The notable exception is the southern region, which came in eight percent below its quarterly target, largely attributed to a delayed product launch and stronger-than-expected local competition. In response, the regional sales team has developed a targeted promotional plan for the coming quarter, with additional marketing support approved to help close the gap."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L166_Q2",
+            "instruction": "WRITE A CONCISE PERFORMANCE REPORT",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A customer satisfaction survey shows strong overall scores but a notable dip in one specific service category. Write a concise, professional report describing the overall results, the specific exception, and the planned response.",
+            "emojis": [
+                "😊",
+                "📊",
+                "✅",
+                "📉"
+            ],
+            "keywords": {
+                "0": [
+                    "CATEGORY",
+                    "DIP",
+                    "SPECIFIC"
+                ],
+                "1": [
+                    "SURVEY",
+                    "OVERALL",
+                    "STRONG"
+                ],
+                "2": [
+                    "RESPONSE",
+                    "TRAIN",
+                    "IMPROVE"
+                ],
+                "3": [
+                    "ANALYZE",
+                    "FEEDBACK",
+                    "IDENTIFY"
+                ]
+            },
+            "minWords": 62,
+            "hint": "Report the strong overall satisfaction score first, then isolate the specific category that dipped, and close with the planned response to address it.",
+            "explanation": "Customer feedback reports, like sales reports, benefit from the same pattern of overall result, isolated exception, planned response, which helps a reader quickly understand where genuine attention is actually needed.",
+            "modelAnswer": "Overall customer satisfaction scores this quarter remain strong at 4.6 out of 5, consistent with results from the previous three quarters. The one notable exception is the technical support category, which dipped to 3.8, with customer comments citing longer than usual wait times as the primary concern. In response, management has approved additional staffing for the support team during peak hours, along with a review of the current call routing system to reduce wait times going forward."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L166_Q3",
+            "instruction": "WRITE A CONCISE PERFORMANCE REPORT",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "An employee engagement survey shows generally positive results but a notable concern around work-life balance in one department. Write a concise, professional report describing the overall results, the specific concern, and the planned response.",
+            "emojis": [
+                "✅",
+                "👥",
+                "📊",
+                "😟"
+            ],
+            "keywords": {
+                "0": [
+                    "RESPONSE",
+                    "REVIEW",
+                    "ADJUST"
+                ],
+                "1": [
+                    "DEPARTMENT",
+                    "CONCERN",
+                    "WORKLIFE"
+                ],
+                "2": [
+                    "SURVEY",
+                    "OVERALL",
+                    "POSITIVE"
+                ],
+                "3": [
+                    "ANALYZE",
+                    "COMMENT",
+                    "IDENTIFY"
+                ]
+            },
+            "minWords": 62,
+            "hint": "Report the generally positive engagement results first, then isolate the specific department's concern, and close with the planned response.",
+            "explanation": "Internal reports about employee wellbeing require the same careful, specific structure as any other performance report, since vague reassurance without a genuine plan for improvement undermines trust in the reporting process itself.",
+            "modelAnswer": "Overall employee engagement scores held steady this year at 82 percent favorable, consistent with historical trends across most departments. The one area of specific concern is the customer service department, where work-life balance scores dropped notably, with written comments frequently citing mandatory overtime during peak seasons. In response, leadership has commissioned a review of current scheduling practices in that department, with recommendations expected within the next month to address the concern directly."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L167_Q1",
+            "instruction": "WRITE A CONCISE PROJECT HANDOFF SUMMARY",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "You are handing off an ongoing marketing campaign project to a colleague while you go on leave for two weeks. Write a concise, professional summary covering current status, pending tasks, and important context.",
+            "emojis": [
+                "✅",
+                "📋",
+                "🤝",
                 "📅"
             ],
             "keywords": {
                 "0": [
-                    "SIBLING",
-                    "DIVORCE",
-                    "EMOTIONALSUPPORT"
+                    "CONTACT",
+                    "AVAILABLE",
+                    "QUESTIONS"
                 ],
                 "1": [
-                    "USUAL",
-                    "FIGUREOUT",
-                    "PRESENT"
+                    "STATUS",
+                    "CURRENT",
+                    "STAGE"
                 ],
                 "2": [
-                    "NEGLECT",
-                    "OWNFAMILY",
-                    "BALANCE"
+                    "PENDING",
+                    "TASK",
+                    "OUTSTANDING"
                 ],
                 "3": [
-                    "SUPPORT",
-                    "SCHEDULE",
-                    "SUSTAIN"
+                    "CONTEXT",
+                    "IMPORTANT",
+                    "AWARE"
                 ]
             },
-            "minWords": 61,
-            "hint": "Describe specific ways you made time for both without burning out.",
-            "explanation": "Sustainable support answers describe specific boundaries and routines that made ongoing help possible.",
-            "modelAnswer": "Sustainable support answers describe specific boundaries and routines that made ongoing help possible. Describe specific ways you made time for both without burning out. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L166_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "A travel companion needed a much slower pace than you had planned, forcing you to rebuild the itinerary around needs very different from your own. Describe the compromise.",
-            "emojis": [
-                "🗺️",
-                "🐢",
-                "😕",
-                "🤝"
-            ],
-            "keywords": {
-                "0": [
-                    "COMPANION",
-                    "NEED",
-                    "SLOWERPACE"
-                ],
-                "1": [
-                    "PLAN",
-                    "FORCE",
-                    "REBUILD"
-                ],
-                "2": [
-                    "ITINERARY",
-                    "DIFFERENT",
-                    "OWNNEED"
-                ],
-                "3": [
-                    "COMPROMISE",
-                    "ADAPT",
-                    "ENJOY"
-                ]
-            },
-            "minWords": 61,
-            "hint": "Describe the specific changes made to the plan and how the trip turned out.",
-            "explanation": "Flexible travel answers describe specific itinerary changes and a genuinely positive outcome for both people.",
-            "modelAnswer": "Flexible travel answers describe specific itinerary changes and a genuinely positive outcome for both people. Describe the specific changes made to the plan and how the trip turned out. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L166_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Planning a surprise event nearly fell apart when a key detail almost leaked to the guest of honor two days before. Describe how you saved the surprise.",
-            "emojis": [
-                "🎉",
-                "🤫",
-                "😰",
-                "✅"
-            ],
-            "keywords": {
-                "0": [
-                    "SURPRISEEVENT",
-                    "NEARLY",
-                    "FALLAPART"
-                ],
-                "1": [
-                    "KEYDETAIL",
-                    "ALMOSTLEAK",
-                    "GUEST"
-                ],
-                "2": [
-                    "TWODAYS",
-                    "BEFORE",
-                    "SCRAMBLE"
-                ],
-                "3": [
-                    "SAVE",
-                    "SURPRISE",
-                    "SUCCEED"
-                ]
-            },
-            "minWords": 61,
-            "hint": "Describe the quick thinking that kept the secret safe.",
-            "explanation": "Fun answers describe a specific close call and the clever fix that saved the surprise.",
-            "modelAnswer": "Fun answers describe a specific close call and the clever fix that saved the surprise. Describe the quick thinking that kept the secret safe. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L167_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Choosing between two demanding treatment options for a chronic condition meant weighing quality of life against long-term outcomes, with no clearly right answer. Describe how you decided.",
-            "emojis": [
-                "🩺",
-                "⚖️",
-                "😟",
-                "✅"
-            ],
-            "keywords": {
-                "0": [
-                    "CHOOSE",
-                    "DEMANDING",
-                    "TREATMENT"
-                ],
-                "1": [
-                    "QUALITYOFLIFE",
-                    "LONGTERM",
-                    "OUTCOME"
-                ],
-                "2": [
-                    "NOCLEARLY",
-                    "RIGHT",
-                    "WEIGH"
-                ],
-                "3": [
-                    "DECIDE",
-                    "CONSULT",
-                    "ACCEPT"
-                ]
-            },
-            "minWords": 61,
-            "hint": "Describe the specific factors that tipped your final decision.",
-            "explanation": "Thoughtful medical answers describe genuine trade-offs and the specific reasoning behind the final choice.",
-            "modelAnswer": "Thoughtful medical answers describe genuine trade-offs and the specific reasoning behind the final choice. Describe the specific factors that tipped your final decision. This serves as a model answer for the situation."
+            "minWords": 62,
+            "hint": "Cover the current status, the specific pending tasks with any deadlines, and any important context your colleague needs to know, in that order.",
+            "explanation": "Handoff summaries are most useful when organized in a predictable order, status, pending work, context, since this consistent structure helps the receiving colleague quickly find whatever information they need without searching through a wall of text.",
+            "modelAnswer": "The campaign currently sits in the final review stage, with all creative assets approved and the media buying schedule confirmed through the client's marketing director. Two items remain outstanding: the final invoice needs to be sent to the client by the 12th, and a follow-up call regarding next quarter's budget is tentatively scheduled but not yet confirmed. One important piece of context is that the client's primary contact will also be on leave during part of this period, so any urgent matters should go through her assistant, whose details are attached separately."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L167_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "WRITE A CONCISE PROJECT HANDOFF SUMMARY",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You noticed a pattern of being talked over in meetings by the same colleague, and decided it was time to address it directly. Describe how you handled the next meeting.",
+            "situation": "You are handing off a partially completed software feature to another developer before switching teams. Write a concise, professional summary covering current status, pending tasks, and important context.",
             "emojis": [
-                "💼",
-                "🗣️",
-                "😐",
-                "✅"
+                "🤝",
+                "📅",
+                "✅",
+                "💻"
             ],
             "keywords": {
                 "0": [
-                    "NOTICE",
-                    "PATTERN",
-                    "TALKOVER"
+                    "PENDING",
+                    "TASK",
+                    "EDGECASE"
                 ],
                 "1": [
-                    "SAMECOLLEAGUE",
-                    "DECIDE",
-                    "ADDRESS"
+                    "CONTEXT",
+                    "IMPORTANT",
+                    "DECISION"
                 ],
                 "2": [
-                    "DIRECTLY",
-                    "PREPARE",
-                    "NEXTMEETING"
+                    "REACHABLE",
+                    "EMAIL",
+                    "FOLLOWUP"
                 ],
                 "3": [
-                    "HANDLE",
-                    "ASSERT",
-                    "RESPECT"
+                    "STATUS",
+                    "CURRENT",
+                    "FUNCTIONAL"
                 ]
             },
-            "minWords": 61,
-            "hint": "Describe the specific approach you used in the moment.",
-            "explanation": "Assertive answers describe a specific, calm technique used to reclaim space in the conversation.",
-            "modelAnswer": "Assertive answers describe a specific, calm technique used to reclaim space in the conversation. Describe the specific approach you used in the moment. This serves as a model answer for the situation."
+            "minWords": 62,
+            "hint": "Cover the current functional status of the feature, the specific pending edge cases, and any important design decisions your colleague should know about.",
+            "explanation": "Technical handoffs benefit from explicitly naming design decisions already made, since a receiving developer who does not understand why a certain choice was made might otherwise undo useful work without realizing its purpose.",
+            "modelAnswer": "The core feature is functionally complete and passing all standard tests, currently deployed to the staging environment for further review. One pending task remains: handling an edge case where a user submits the form with an unusually large file attachment, which currently causes a minor delay rather than a clean error message. An important piece of context is that we deliberately chose to store user preferences locally rather than server-side for this version, a decision made to reduce initial load time, and I am reachable by email for any follow-up questions over the next week."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L167_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "WRITE A CONCISE PROJECT HANDOFF SUMMARY",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "A store's pricing error left you paying far less than an item was worth, and you had to decide whether to point out the mistake. Describe what you did.",
+            "situation": "You are handing off an event planning project to a new coordinator after accepting a different role within the company. Write a concise, professional summary covering current status, pending tasks, and important context.",
             "emojis": [
-                "🛍️",
-                "💰",
-                "🤔",
-                "⚖️"
+                "🎉",
+                "✅",
+                "🤝",
+                "📅"
             ],
             "keywords": {
                 "0": [
-                    "STORE",
-                    "PRICINGERROR",
-                    "PAYLESS"
+                    "STATUS",
+                    "CURRENT",
+                    "VENUE"
                 ],
                 "1": [
-                    "WORTH",
-                    "DECIDE",
-                    "POINTOUT"
+                    "CONTACT",
+                    "AVAILABLE",
+                    "TRANSITION"
                 ],
                 "2": [
-                    "MISTAKE",
-                    "HONEST",
-                    "TEMPT"
+                    "PENDING",
+                    "TASK",
+                    "CATERING"
                 ],
                 "3": [
-                    "ACT",
-                    "INTEGRITY",
-                    "DECIDE"
+                    "CONTEXT",
+                    "IMPORTANT",
+                    "BUDGET"
                 ]
             },
-            "minWords": 61,
-            "hint": "Explain the reasoning behind whichever choice you made.",
-            "explanation": "Honest answers explore the temptation genuinely before explaining the final, principled decision.",
-            "modelAnswer": "Honest answers explore the temptation genuinely before explaining the final, principled decision. Explain the reasoning behind whichever choice you made. This serves as a model answer for the situation."
+            "minWords": 62,
+            "hint": "Cover the current venue and booking status, the specific pending tasks like catering, and any important budget context the new coordinator needs.",
+            "explanation": "Event handoffs benefit from budget context specifically, since a new coordinator unfamiliar with the original budget negotiations might otherwise make commitments the client has not actually approved.",
+            "modelAnswer": "The venue is fully booked and confirmed for the agreed date, with the layout and seating chart already finalized based on the client's earlier feedback. One task remains pending: finalizing the catering menu, currently narrowed down to two options awaiting the client's final decision by next Friday. An important piece of budget context is that the client has already exceeded their initial estimate by roughly ten percent, so any additional requests should be flagged for approval before confirming, and I remain available during the transition period for any clarifying questions."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L168_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "WRITE A CONCISE RESPONSE TO A STAKEHOLDER'S STATUS QUESTION",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Blending two families' very different holiday traditions required compromises that didn't come naturally to anyone at first. Describe how the first shared holiday went.",
+            "situation": "A client emails asking for an update on the current status of their custom software order after not hearing from the team in over a week. Write a concise, professional response addressing the delay, current status, and next steps.",
             "emojis": [
-                "👨‍👩‍👧‍👦",
-                "🎄",
-                "😐",
-                "🤝"
+                "😕",
+                "💻",
+                "✅",
+                "📧"
             ],
             "keywords": {
                 "0": [
-                    "BLEND",
-                    "FAMILY",
-                    "DIFFERENT"
+                    "PROGRESS",
+                    "CURRENT",
+                    "EIGHTY"
                 ],
                 "1": [
-                    "HOLIDAYTRADITION",
-                    "REQUIRE",
-                    "COMPROMISE"
+                    "DELAY",
+                    "ACKNOWLEDGE",
+                    "APOLOGIZE"
                 ],
                 "2": [
-                    "NOTNATURAL",
-                    "ANYONE",
-                    "FIRST"
+                    "NEXTSTEPS",
+                    "TIMELINE",
+                    "COMMIT"
                 ],
                 "3": [
-                    "SHAREDHOLIDAY",
-                    "ADAPT",
-                    "SUCCEED"
+                    "INQUIRY",
+                    "ASK",
+                    "STATUS"
                 ]
             },
-            "minWords": 61,
-            "hint": "Describe a specific tradition from each side that was kept or changed.",
-            "explanation": "Warm blended-family answers name specific traditions kept, dropped, or combined.",
-            "modelAnswer": "Warm blended-family answers name specific traditions kept, dropped, or combined. Describe a specific tradition from each side that was kept or changed. This serves as a model answer for the situation."
+            "minWords": 62,
+            "hint": "Acknowledge the delay in communication directly, then provide a specific current status update, and close with a clear commitment to next steps.",
+            "explanation": "Responding to a stakeholder's frustration requires directly acknowledging the concern, such as a delay in communication, before moving to the factual update, since skipping past the concern entirely can come across as dismissive.",
+            "modelAnswer": "Thank you for reaching out, and I apologize for the gap in communication over the past week, which was not intentional on our part. As of today, development is approximately eighty percent complete, with the remaining work focused on integrating your requested reporting dashboard. We expect to deliver a working version for your review by the end of next week, and going forward, I will send you a brief status update every Friday to keep you informed without needing to ask."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L168_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "WRITE A CONCISE RESPONSE TO A STAKEHOLDER'S STATUS QUESTION",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "A smart home device promised real convenience but also collected far more data than you were comfortable with, forcing a genuine trade-off. Describe your final choice.",
+            "situation": "A board member asks for an update on a nonprofit's fundraising progress ahead of an upcoming board meeting. Write a concise, professional response addressing current results, challenges, and next steps.",
             "emojis": [
-                "🏠",
-                "🔒",
-                "🤔",
-                "✅"
+                "💰",
+                "📧",
+                "✅",
+                "📊"
             ],
             "keywords": {
                 "0": [
-                    "SMARTHOME",
-                    "PROMISE",
-                    "CONVENIENCE"
+                    "RESULTS",
+                    "CURRENT",
+                    "SIXTYPERCENT"
                 ],
                 "1": [
-                    "COLLECT",
-                    "MOREDATA",
-                    "COMFORTABLE"
+                    "INQUIRY",
+                    "ASK",
+                    "PROGRESS"
                 ],
                 "2": [
-                    "FORCE",
-                    "GENUINE",
-                    "TRADEOFF"
+                    "NEXTSTEPS",
+                    "PLAN",
+                    "OUTREACH"
                 ],
                 "3": [
-                    "CHOICE",
-                    "LIMIT",
-                    "DECIDE"
+                    "CHALLENGE",
+                    "ACKNOWLEDGE",
+                    "SLOWER"
                 ]
             },
-            "minWords": 61,
-            "hint": "Explain what convenience you kept and what privacy limit you set.",
-            "explanation": "Balanced tech answers describe a specific trade-off rather than choosing one extreme.",
-            "modelAnswer": "Balanced tech answers describe a specific trade-off rather than choosing one extreme. Explain what convenience you kept and what privacy limit you set. This serves as a model answer for the situation."
+            "minWords": 62,
+            "hint": "Give a specific current fundraising figure, honestly acknowledge any challenges affecting progress, and describe the specific next steps planned.",
+            "explanation": "Nonprofit stakeholder updates, like corporate ones, benefit from honesty about challenges rather than only positive framing, since board members generally need an accurate picture to make informed decisions about support or strategy.",
+            "modelAnswer": "As of this week, we have raised approximately sixty percent of our annual fundraising goal, which is somewhat behind our typical pace at this point in the year, largely due to a slower response to our spring mailing campaign than in previous years. To address this, the development team is launching a targeted outreach effort to major donors over the next month, alongside a planned matching-gift campaign we believe will help accelerate progress. We remain confident in reaching the goal by year end, though closer monitoring will continue in the coming weeks."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L168_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "WRITE A CONCISE RESPONSE TO A STAKEHOLDER'S STATUS QUESTION",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "A teacher's grading of your project felt clearly unfair compared to similar work from classmates, and you had to decide how to raise it respectfully. Describe what you did.",
+            "situation": "A homeowner asks a contractor for an update on their kitchen renovation after noticing the project seems to be running behind schedule. Write a concise, professional response addressing the delay, current status, and next steps.",
             "emojis": [
-                "🎒",
-                "📝",
-                "😕",
-                "💬"
+                "✅",
+                "🏠",
+                "📧",
+                "🔨"
             ],
             "keywords": {
                 "0": [
-                    "TEACHER",
-                    "GRADING",
-                    "CLEARLYUNFAIR"
+                    "NEXTSTEPS",
+                    "TIMELINE",
+                    "REVISE"
                 ],
                 "1": [
-                    "COMPARE",
-                    "SIMILARWORK",
-                    "CLASSMATE"
+                    "DELAY",
+                    "ACKNOWLEDGE",
+                    "SUPPLIER"
                 ],
                 "2": [
-                    "DECIDE",
-                    "RAISE",
-                    "RESPECTFULLY"
+                    "INQUIRY",
+                    "ASK",
+                    "DELAY"
                 ],
                 "3": [
-                    "ACT",
-                    "EVIDENCE",
-                    "CALM"
+                    "PROGRESS",
+                    "CURRENT",
+                    "CABINETS"
                 ]
             },
-            "minWords": 61,
-            "hint": "Describe the specific evidence you gathered before speaking with the teacher.",
-            "explanation": "Respectful answers gather specific evidence before raising a grading concern calmly.",
-            "modelAnswer": "Respectful answers gather specific evidence before raising a grading concern calmly. Describe the specific evidence you gathered before speaking with the teacher. This serves as a model answer for the situation."
+            "minWords": 62,
+            "hint": "Acknowledge the schedule concern directly, explain the specific cause of the delay, and provide a clear, revised timeline for the remaining work.",
+            "explanation": "Contractor-to-client updates benefit from the same honest, structured approach as corporate ones, since homeowners generally prefer a clear, specific explanation over vague reassurance that everything is fine.",
+            "modelAnswer": "You're right to notice the timeline has slipped slightly, and I apologize for not reaching out sooner to explain. The delay stems from a supplier issue affecting the custom cabinet order, which is now expected to arrive early next week rather than this past Monday as originally planned. Once the cabinets arrive, installation should take three to four days, putting the revised completion date at roughly one week later than our original estimate, and I will call you directly the moment the cabinets are confirmed to have shipped."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L169_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "WRITE A CONCISE OPERATIONAL PROCEDURE NOTE",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You were asked to take over a struggling project from a well-liked but clearly ineffective colleague, and had to manage the transition without damaging morale. Describe how you approached it.",
+            "situation": "A recurring server maintenance task needs to be documented clearly for other team members who might need to perform it in your absence. Write a concise, professional procedure note describing the steps and any important warnings.",
             "emojis": [
-                "💼",
-                "😬",
-                "🔄",
-                "🤝"
+                "✅",
+                "🖥️",
+                "📋",
+                "⚠️"
             ],
             "keywords": {
                 "0": [
-                    "TAKEOVER",
-                    "STRUGGLE",
-                    "PROJECT"
+                    "VERIFY",
+                    "CONFIRM",
+                    "COMPLETE"
                 ],
                 "1": [
-                    "WELLLIKE",
-                    "INEFFECTIVE",
-                    "COLLEAGUE"
+                    "PROCEDURE",
+                    "MAINTENANCE",
+                    "SCHEDULE"
                 ],
                 "2": [
-                    "MANAGE",
-                    "TRANSITION",
-                    "MORALE"
+                    "STEPS",
+                    "SEQUENCE",
+                    "ORDER"
                 ],
                 "3": [
-                    "APPROACH",
-                    "RESPECT",
-                    "IMPROVE"
+                    "WARNING",
+                    "CAUTION",
+                    "AVOID"
                 ]
             },
-            "minWords": 61,
-            "hint": "Describe how you handled the handoff with respect for the previous colleague.",
-            "explanation": "Diplomatic answers describe specific, respectful steps taken to improve the project without blaming anyone publicly.",
-            "modelAnswer": "Diplomatic answers describe specific, respectful steps taken to improve the project without blaming anyone publicly. Describe how you handled the handoff with respect for the previous colleague. This serves as a model answer for the situation."
+            "minWords": 62,
+            "hint": "Present the steps in the exact order they must be performed, and include at least one clear warning about a mistake to avoid.",
+            "explanation": "Procedural documentation prioritizes clarity and order above all else, since a colleague following the steps under pressure needs an unambiguous sequence rather than a narrative description of the process.",
+            "modelAnswer": "This maintenance task should be performed only during the scheduled low-traffic window between 2 and 4 AM. First, notify the on-call channel before beginning, then put the server into maintenance mode using the standard command before applying any updates. Caution: never restart the server before confirming the maintenance mode flag has taken effect, as doing so can cause data corruption. Once updates are applied, verify system status through the monitoring dashboard before removing the maintenance flag and confirming normal traffic has resumed."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L169_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "WRITE A CONCISE OPERATIONAL PROCEDURE NOTE",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "A dispute between two neighbors had nothing directly to do with you, but their arguing was affecting the whole building, and you had to decide whether to get involved. Describe your choice.",
+            "situation": "A restaurant's opening checklist needs to be documented clearly for a new shift manager covering for the first time. Write a concise, professional procedure note describing the steps and any important warnings.",
             "emojis": [
-                "🏢",
-                "😕",
-                "🤔",
-                "🗣️"
+                "📋",
+                "⚠️",
+                "✅",
+                "🍽️"
             ],
             "keywords": {
                 "0": [
-                    "DISPUTE",
-                    "NEIGHBOR",
-                    "NOTHINGDIRECT"
+                    "ORDER",
+                    "STEPWISE",
+                    "SEQUENTIAL"
                 ],
                 "1": [
-                    "ARGUE",
-                    "AFFECT",
-                    "WHOLEBUILDING"
+                    "WARNING",
+                    "CAUTION",
+                    "TEMPERATURE"
                 ],
                 "2": [
-                    "DECIDE",
-                    "GETINVOLVED",
-                    "WEIGH"
+                    "VERIFY",
+                    "CONFIRM",
+                    "READY"
                 ],
                 "3": [
-                    "CHOICE",
-                    "NEUTRAL",
-                    "OUTCOME"
+                    "PROCEDURE",
+                    "OPENING",
+                    "CHECKLIST"
                 ]
             },
-            "minWords": 61,
-            "hint": "Explain what you decided and how it affected the situation.",
-            "explanation": "Thoughtful answers weigh the cost of involvement honestly before explaining a specific outcome.",
-            "modelAnswer": "Thoughtful answers weigh the cost of involvement honestly before explaining a specific outcome. Explain what you decided and how it affected the situation. This serves as a model answer for the situation."
+            "minWords": 62,
+            "hint": "Present the opening steps in their required order, and include a specific warning about a food-safety detail that must not be skipped.",
+            "explanation": "Restaurant procedures often include a food-safety warning, and including this specific detail, rather than a general reminder to be careful, gives the new manager exactly the information needed to avoid a genuine health risk.",
+            "modelAnswer": "Upon arrival, first unlock the walk-in refrigerator and check that all overnight temperature logs remain within the safe range before proceeding with any other tasks. Next, turn on the kitchen equipment in sequence, starting with the ovens, since they require the longest warm-up time. Caution: never begin food preparation before confirming refrigeration temperatures, as this is a critical food-safety checkpoint that cannot be skipped under any circumstances. Once all stations are confirmed ready, unlock the front doors at the scheduled opening time."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L169_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "WRITE A CONCISE OPERATIONAL PROCEDURE NOTE",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You need to write a message apologizing for a scheduling mistake that ended up affecting several coworkers' plans. Describe what you write.",
+            "situation": "A company's data backup procedure needs to be documented clearly for a new IT team member. Write a concise, professional procedure note describing the steps and any important warnings.",
             "emojis": [
-                "📅",
-                "😳",
-                "✉️",
-                "🙏"
+                "💾",
+                "✅",
+                "📋",
+                "⚠️"
             ],
             "keywords": {
                 "0": [
-                    "APOLOGIZE",
-                    "SCHEDULE",
-                    "MISTAKE"
+                    "PROCEDURE",
+                    "BACKUP",
+                    "WEEKLY"
                 ],
                 "1": [
-                    "AFFECT",
-                    "SEVERAL",
-                    "COWORKER"
+                    "CONFIRM",
+                    "COMPLETE",
+                    "LOG"
                 ],
                 "2": [
-                    "PLAN",
-                    "OWNRESPONSIBILITY",
-                    "SINCERE"
+                    "ORDERED",
+                    "PROCESS",
+                    "STAGES"
                 ],
                 "3": [
-                    "WRITE",
-                    "FIX",
-                    "RESPECTFUL"
+                    "WARNING",
+                    "CAUTION",
+                    "VERIFY"
                 ]
             },
-            "minWords": 61,
-            "hint": "Mention the specific mistake and how you plan to fix it.",
-            "explanation": "Good apology messages name the specific mistake, take responsibility, and offer a concrete fix.",
-            "modelAnswer": "Good apology messages name the specific mistake, take responsibility, and offer a concrete fix. Mention the specific mistake and how you plan to fix it. This serves as a model answer for the situation."
+            "minWords": 62,
+            "hint": "Present the backup steps in their required order, and include a specific warning about verifying the backup before deleting any old files.",
+            "explanation": "Data-related procedures especially require a clear warning about verification before deletion, since skipping this step, even once, could result in permanent, irreversible data loss for the company.",
+            "modelAnswer": "Weekly backups should begin by confirming that the target storage drive has sufficient available space before initiating the transfer process. Run the backup script during off-peak hours to avoid affecting active users, and monitor the process until it reports successful completion in the system log. Caution: never delete the previous week's backup files until this week's backup has been fully verified through a test restore, since skipping this check risks permanent data loss if the new backup turns out to be corrupted. Once verified, archive the confirmation log for compliance records."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L170_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "WRITE A CONCISE PROFESSIONAL REPORT COMBINING AN INCIDENT SUMMARY, STAKEHOLDER RESPONSE, AND REVISED PLAN",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Deciding how much of a painful family secret to share with your own children meant weighing their right to know against protecting them from unnecessary hurt. Describe your decision.",
+            "situation": "A significant service outage affected customer access to an online platform for several hours last week. Write a single concise, professional report that includes an incident summary, addresses stakeholder concerns, and outlines the revised plan to prevent recurrence.",
             "emojis": [
-                "👨‍👩‍👧‍👦",
-                "🤫",
-                "😟",
-                "💬"
+                "📋",
+                "😰",
+                "✅",
+                "🖥️"
             ],
             "keywords": {
                 "0": [
-                    "DECIDE",
-                    "PAINFUL",
-                    "FAMILYSECRET"
+                    "STAKEHOLDER",
+                    "REASSURE",
+                    "TRANSPARENT"
                 ],
                 "1": [
-                    "SHARE",
-                    "OWNCHILDREN",
-                    "WEIGH"
+                    "CAUSE",
+                    "DATABASE",
+                    "OVERLOAD"
                 ],
                 "2": [
-                    "RIGHTTOKNOW",
-                    "PROTECT",
-                    "UNNECESSARYHURT"
+                    "PLAN",
+                    "PREVENT",
+                    "MONITOR"
                 ],
                 "3": [
-                    "DECISION",
-                    "TIMING",
-                    "HONEST"
+                    "OUTAGE",
+                    "AFFECT",
+                    "HOURS"
                 ]
             },
-            "minWords": 62,
-            "hint": "Describe what you chose to share, and when.",
-            "explanation": "Careful answers describe a specific decision about timing and detail, not an all-or-nothing choice.",
-            "modelAnswer": "Careful answers describe a specific decision about timing and detail, not an all-or-nothing choice. Describe what you chose to share, and when. This serves as a model answer for the situation."
+            "minWords": 66,
+            "hint": "Structure the report in three clear sections, what happened, addressing concerns, and the prevention plan, maintaining consistent professional tone throughout.",
+            "explanation": "The most advanced professional writing combines several report types into a single coherent document, and doing this successfully requires clear section transitions so that a busy reader can still navigate quickly to the part most relevant to them.",
+            "modelAnswer": "Last Tuesday, a database overload caused by an unanticipated traffic spike resulted in a full platform outage lasting approximately four hours, affecting all customer-facing services during that window. We recognize the significant disruption this caused to your operations and take full responsibility for the impact, and we want to be transparent that this outage stemmed from a capacity limitation we had not previously identified as a risk at this scale. Going forward, we have already implemented additional server capacity and automated load monitoring designed to detect similar traffic patterns before they cause disruption, and we are conducting a full infrastructure review over the coming month with a public summary to follow. We appreciate your patience and remain committed to preventing a recurrence of this issue."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L170_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "WRITE A CONCISE PROFESSIONAL REPORT COMBINING AN INCIDENT SUMMARY, STAKEHOLDER RESPONSE, AND REVISED PLAN",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "A long-awaited event you had planned around for months turned out to be a genuine disappointment once you finally attended. Describe how you handled the letdown.",
+            "situation": "A product recall was necessary after a small percentage of a recent product batch failed quality testing. Write a single concise, professional report that includes an incident summary, addresses stakeholder concerns, and outlines the revised quality control plan.",
             "emojis": [
-                "🎭",
-                "😞",
-                "💭",
-                "🤷"
+                "⚠️",
+                "📦",
+                "✅",
+                "📋"
             ],
             "keywords": {
                 "0": [
-                    "LONGAWAITED",
-                    "EVENT",
-                    "PLANMONTHS"
+                    "CAUSE",
+                    "DEFECT",
+                    "MANUFACTURING"
                 ],
                 "1": [
-                    "GENUINE",
-                    "DISAPPOINT",
-                    "FINALLYATTEND"
+                    "RECALL",
+                    "INITIATE",
+                    "BATCH"
                 ],
                 "2": [
-                    "HANDLE",
-                    "LETDOWN",
-                    "PROCESS"
+                    "PLAN",
+                    "REVISE",
+                    "TESTING"
                 ],
                 "3": [
-                    "REFLECT",
-                    "ADJUST",
-                    "MOVEFORWARD"
+                    "STAKEHOLDER",
+                    "REASSURE",
+                    "SAFETY"
                 ]
             },
-            "minWords": 62,
-            "hint": "Describe specifically what fell short and how you reacted.",
-            "explanation": "Honest answers name the specific disappointment and describe a realistic, mature reaction.",
-            "modelAnswer": "Honest answers name the specific disappointment and describe a realistic, mature reaction. Describe specifically what fell short and how you reacted. This serves as a model answer for the situation."
+            "minWords": 66,
+            "hint": "Structure the report in three clear sections, the incident itself, reassurance regarding safety, and the revised quality control plan, maintaining a calm, factual tone throughout.",
+            "explanation": "Product recall communications require particular care in tone, balancing honest acknowledgment of the problem with clear reassurance about safety, since customers reading this kind of report need both accurate information and genuine confidence in the company's response.",
+            "modelAnswer": "Following routine quality testing, we identified a manufacturing defect affecting approximately two percent of units from batch number 4471, produced during the second week of last month, and have initiated a voluntary recall of the affected units out of an abundance of caution. We want to reassure customers that no safety incidents have been reported to date, and the defect was caught through our standard internal testing process before reaching widespread distribution. Moving forward, we are enhancing our quality control procedures to include an additional testing checkpoint specifically targeting the component involved, with full implementation expected within thirty days. We sincerely appreciate our customers' understanding and remain fully committed to the highest standards of product safety."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L170_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "WRITE A CONCISE PROFESSIONAL REPORT COMBINING AN INCIDENT SUMMARY, STAKEHOLDER RESPONSE, AND REVISED PLAN",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "A confusing hospital stay left you uncertain whether your relative was receiving the right care, and you had to advocate firmly for clearer answers. Describe how you did that.",
+            "situation": "A data privacy vulnerability was discovered and patched in a company's mobile application before any customer data was compromised. Write a single concise, professional report that includes an incident summary, addresses stakeholder concerns, and outlines the revised security plan.",
             "emojis": [
-                "🏥",
-                "😟",
-                "🗣️",
-                "✅"
+                "✅",
+                "📱",
+                "🔒",
+                "📋"
             ],
             "keywords": {
                 "0": [
-                    "CONFUSE",
-                    "HOSPITALSTAY",
-                    "UNCERTAIN"
+                    "PLAN",
+                    "REVISE",
+                    "AUDIT"
                 ],
                 "1": [
-                    "RELATIVE",
-                    "RIGHTCARE",
-                    "RECEIVE"
+                    "PATCH",
+                    "RESOLVE",
+                    "QUICKLY"
                 ],
                 "2": [
-                    "ADVOCATE",
-                    "FIRMLY",
-                    "CLEARER"
+                    "VULNERABILITY",
+                    "DISCOVER",
+                    "INTERNAL"
                 ],
                 "3": [
-                    "ANSWER",
-                    "PERSIST",
-                    "RESOLVE"
+                    "STAKEHOLDER",
+                    "REASSURE",
+                    "NODATA"
                 ]
             },
-            "minWords": 62,
-            "hint": "Describe the specific questions you insisted on getting answered.",
-            "explanation": "Strong advocacy answers describe specific questions asked and persistence in getting clear answers.",
-            "modelAnswer": "Strong advocacy answers describe specific questions asked and persistence in getting clear answers. Describe the specific questions you insisted on getting answered. This serves as a model answer for the situation."
+            "minWords": 66,
+            "hint": "Structure the report to clearly emphasize that no data was compromised while still being transparent about the vulnerability, closing with the revised security plan.",
+            "explanation": "Security-related reports carry particular weight, and clearly stating upfront that no data was actually compromised, if true, helps prevent unnecessary alarm while the report still transparently addresses what did happen and what is changing as a result.",
+            "modelAnswer": "During a routine internal security audit last week, our engineering team discovered a vulnerability in the mobile application that could theoretically have allowed unauthorized access under a very specific set of conditions, though our investigation confirms no customer data was accessed or compromised as a result. We patched the vulnerability within six hours of discovery and have since conducted extensive additional testing to confirm the fix is fully effective. To prevent similar issues going forward, we are implementing quarterly third-party security audits alongside our existing internal reviews, and we remain committed to promptly disclosing any future findings with the same transparency reflected in this report."
         }
     ]
 }

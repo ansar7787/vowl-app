@@ -1,607 +1,577 @@
 {
-    "gameType": "opinionWriting",
-    "batchIndex": 19,
-    "levels": "181-190",
-    "quests": [
-        {
-            "id": "WRT_OPINIONWRITING_L181_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Genetic engineering of human embryos to prevent inherited disease should be permitted.",
-            "options": [
-                "Germline editing creates heritable genetic changes in all future descendants who did not consent to modification.",
-                "Eliminating severe hereditary diseases like Huntington's and cystic fibrosis reduces profound suffering.",
-                "Germline therapy could eradicate genetic conditions from families permanently, ending intergenerational harm.",
-                "Even therapeutic applications create a regulatory pathway towards enhancement that crosses critical ethical lines."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about the suffering reduction and therapeutic case for germline editing (Pros) and the consent and slippery slope concerns (Cons).",
-            "explanation": "Eliminating severe genetic diseases prevents profound suffering and ends intergenerational transmission (Pros), but germline changes are heritable by future non-consenting generations, and therapeutic applications create a pathway towards enhancement that may be impossible to regulate (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L181_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The distinction between treating disease and enhancing traits cannot be clearly maintained in genetic engineering.",
-            "options": [
-                "The biological mechanisms for disease prevention and trait enhancement are the same, making legal separation impossible.",
-                "A clear regulatory distinction would license disease elimination while preventing commercial enhancement.",
-                "What counts as a disease versus a variation is culturally contested and scientifically dynamic over time.",
-                "The deaf community and others demonstrate that conditions classified as disabilities are not universally experienced as suffering."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Consider whether the treatment-enhancement distinction can be maintained in genetic regulation (Pros) and the cultural and community concerns (Cons).",
-            "explanation": "Regulatory frameworks can attempt to separate disease treatment from enhancement despite shared biological mechanisms (Pros), but the disease-variation boundary is culturally contested, and affected communities show that many classified 'diseases' are not universally experienced as suffering requiring elimination (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L181_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Somatic genetic therapy for individuals is ethically distinct from germline modification.",
-            "options": [
-                "Somatic therapy is less efficient than germline editing at eliminating genetic conditions from populations.",
-                "Somatic gene therapy modifies only the treated individual with their consent, leaving germline inheritance unchanged.",
-                "The distinction between somatic and germline may become less clear as gene drive technologies develop.",
-                "Individual-level somatic therapy provides therapeutic benefit without creating contested heritable modifications."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about somatic therapy as ethically preferable to germline editing (Pros) and the efficiency and distinction clarity concerns (Cons).",
-            "explanation": "Somatic therapy treats consenting individuals without heritable consequences (Pros), but it cannot eliminate conditions from populations as efficiently as germline editing, and technological development may blur the somatic-germline boundary (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L182_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Cognitive enhancement drugs should be available to students during periods of intensive study.",
-            "options": [
-                "Cognitive enhancers are already widely used informally; regulation would ensure safe access and quality control.",
-                "Cognitive enhancers have serious side effects including dependency, anxiety, and cardiovascular risk.",
-                "Normalising pharmacological enhancement redefines academic achievement in terms of medication access rather than effort.",
-                "Students who cannot access enhancement drugs are placed at unfair competitive disadvantage against those who can."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about the safety and fairness case for legal cognitive enhancement (Pros) and the health risk and achievement meaning concerns (Cons).",
-            "explanation": "Regulation ensures safe access and eliminates the competitive disadvantage of informal unequal access (Pros), but cognitive enhancers carry serious health risks and normalisation redefines academic merit in terms of pharmacological access rather than genuine ability (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L182_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Permitting cognitive enhancement would fundamentally undermine educational integrity and equality.",
-            "options": [
-                "Education systems already tolerate caffeine and other cognitive aids without undermining academic integrity.",
-                "Assessment systems measure cognitive enhancement as much as learning if enhancement is normalised.",
-                "Prohibition drives enhancement underground where unregulated, potentially dangerous products are used instead.",
-                "Students without financial access to enhancement drugs face compounded inequality in already unequal systems."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Consider the educational integrity and equality case against cognitive enhancement (Pros) and the existing toleration and prohibition drive concerns (Cons).",
-            "explanation": "Normalising enhancement makes assessments measure pharmacological access rather than learning, compounding inequality (Pros), but caffeine is already tolerated, and prohibition drives use underground to unregulated dangerous substances (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L182_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The ethics of cognitive enhancement depends on the social context in which it is used.",
-            "options": [
-                "Context-dependency creates regulatory instability and provides no clear principle for distinguishing acceptable from unacceptable.",
-                "Enhancement in a fair, well-resourced educational system differs ethically from enhancement in an inequitable one.",
-                "Individuals within the same educational system experience very different contexts that context-level policy cannot address.",
-                "Context-dependent ethical evaluation produces more nuanced and practical policy than blanket prohibition or permission."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about context-dependent ethics of cognitive enhancement (Pros) and the regulatory instability and individual variation concerns (Cons).",
-            "explanation": "Enhancement ethics genuinely differs across fair and inequitable educational contexts, producing more nuanced policy (Pros), but context-dependence creates regulatory instability and cannot address individual variation within the same nominal system context (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L183_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Selecting embryos for desired genetic traits crosses an unacceptable ethical boundary.",
-            "options": [
-                "Selecting embryos based on desired traits reduces human reproduction to a consumerist design exercise.",
-                "Pre-implantation genetic diagnosis already involves selection of embryos for medical reasons.",
-                "Trait selection establishes social hierarchies based on genetic characteristics, reinforcing existing inequalities.",
-                "The social construction of desirability means trait selection reflects and amplifies cultural prejudices."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about the commodification and inequality case against trait-based embryo selection (Pros) and the existing practice and cultural bias concerns (Cons).",
-            "explanation": "Trait-based selection reduces reproduction to consumerist design and creates genetic hierarchy (Pros), but PGD already involves selection for medical conditions, and trait selection reflects and amplifies cultural prejudices about desirable characteristics (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L183_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Permitting limited embryo selection for non-disease traits would be practically uncontrollable.",
-            "options": [
-                "Regulatory bodies in many countries have successfully limited PGD to genuine medical applications.",
-                "Transparency and public oversight of fertility technology can prevent commercial exploitation of selection.",
-                "Commercial pressure from fertility industries would push selection beyond any regulatory line drawn.",
-                "The most economically powerful families would access the best selection, compounding existing privilege."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Consider whether non-disease trait selection can be practically regulated (Pros against the slippery slope) and the regulatory success and oversight counters (Cons).",
-            "explanation": "Commercial fertility industry pressure would push selection beyond regulatory limits and compound privilege (Pros), but regulatory bodies have successfully limited PGD to medical uses, and transparency and public oversight can constrain commercial exploitation (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L183_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The disability rights perspective reveals important blind spots in anti-selection arguments.",
-            "options": [
-                "Selection against severe suffering-causing conditions differs meaningfully from selection against disability per se.",
-                "Many disabled people support preventing severe disease while opposing the equation of disability with reduced value.",
-                "Treating certain genetic traits as inherently undesirable to select against reflects and reinforces disablist assumptions.",
-                "The diversity of human genetics includes variation that has social and evolutionary value beyond individual preference."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about the disability rights dimension of genetic selection debates (Pros for this perspective) and the suffering distinction and community nuance concerns (Cons).",
-            "explanation": "Anti-selection arguments that ignore disability rights perspectives reinforce disablist assumptions about which lives have value (Pros), but severe suffering-causing conditions differ meaningfully from disability per se, and many disabled people draw the same distinction themselves (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L184_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Cloning human organs for transplant purposes should be permitted under strict medical supervision.",
-            "options": [
-                "Organ shortages cause preventable deaths - cloned organs could eliminate transplant waiting lists.",
-                "Creating and destroying human embryos for organ harvesting purposes raises fundamental ethical objections.",
-                "Personalised cloned organs from a patient's own cells would eliminate rejection without lifelong immunosuppression.",
-                "The technical complexity and safety risks of cloning viable human organs remain inadequately resolved."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about the life-saving and personalisation case for therapeutic organ cloning (Pros) and the embryo ethics and safety concerns (Cons).",
-            "explanation": "Cloned organs could eliminate organ shortages and rejection without immunosuppression (Pros), but creating and destroying embryos for harvesting raises fundamental ethical objections, and technical safety risks remain inadequately resolved (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L184_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Induced pluripotent stem cell technology makes embryonic organ cloning ethically unnecessary.",
-            "options": [
-                "iPSC technology can generate patient-specific cells and potentially organs without creating or destroying embryos.",
-                "iPSC-derived organs still face significant technical hurdles including vascularisation and immune compatibility.",
-                "Continuous iPSC innovation is likely to resolve the technical challenges before cloning produces viable organs.",
-                "Restricting research to iPSC pathways may be premature when embryonic research could advance faster."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Consider iPSC technology as an ethical alternative to organ cloning (Pros) and the remaining hurdles and research restriction concerns (Cons).",
-            "explanation": "iPSC technology generates patient-specific organs without creating embryos, resolving the primary ethical concern (Pros), but iPSC organs face technical challenges including vascularisation, and restricting embryonic research pathways may unnecessarily delay life-saving advances (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L184_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Xenotransplantation of genetically modified animal organs offers an alternative to human organ cloning.",
-            "options": [
-                "Genetically humanised pig organs are now being transplanted into humans with growing clinical success.",
-                "Xenotransplantation carries zoonotic infection risks that organ cloning from human cells would not.",
-                "Xenotransplantation avoids embryo creation entirely and could provide unlimited organ supply.",
-                "Animal welfare concerns about farming pigs for organ harvesting are not resolved by genetic humanisation."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about xenotransplantation as an alternative to human organ cloning (Pros) and the zoonotic and animal welfare concerns (Cons).",
-            "explanation": "Humanised pig organs are showing growing clinical success and provide unlimited supply without embryo creation (Pros), but xenotransplantation carries zoonotic disease risks that human cell-derived organs would not, and intensive animal farming for organ harvesting raises serious animal welfare questions (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L185_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Artificial intelligence can never truly replicate or reproduce human consciousness.",
-            "options": [
-                "The hard problem of consciousness is unsolved in neuroscience itself, making confident claims in either direction premature.",
-                "Consciousness involves subjective experience - qualia - that no computational process has demonstrated.",
-                "Human consciousness emerges from biological complexity that cannot be fully captured in silicon architectures.",
-                "Intelligence and consciousness are distinct - machines may develop human-like intelligence without consciousness."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about the subjective experience and biological basis case against AI consciousness (Pros) and the hard problem and intelligence-consciousness distinction concerns (Cons).",
-            "explanation": "Consciousness involves qualia that computation has not demonstrated and emerges from biological complexity not replicable in silicon (Pros), but the hard problem remains unsolved in neuroscience, making confident denial premature, and intelligence and consciousness may be distinct phenomena (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L185_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Functional consciousness equivalent to human experience may emerge in sufficiently complex AI systems.",
-            "options": [
-                "Complexity alone has not produced consciousness in non-biological systems of any demonstrated degree.",
-                "If consciousness is a property of information processing complexity, sufficiently complex systems may possess it.",
-                "Attributing consciousness to AI systems risks misallocating the moral consideration that genuine consciousness demands.",
-                "Dismissing AI consciousness without a solved theory of consciousness is scientifically premature."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Consider whether functional AI consciousness is possible given information processing complexity (Pros) and the empirical and moral allocation concerns (Cons).",
-            "explanation": "If consciousness is a function of information processing complexity, sufficiently complex AI may possess it, and confident denial without a solved consciousness theory is scientifically premature (Pros), but complexity alone has not produced demonstrated non-biological consciousness, and premature attribution misallocates moral consideration (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L185_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The question of AI consciousness has profound ethical implications regardless of its resolution.",
-            "options": [
-                "If AI systems could be conscious, the ethical obligations this creates require serious anticipatory moral preparation.",
-                "Developing ethics for hypothetical AI consciousness diverts moral attention from concrete harms AI causes now.",
-                "Developing ethical frameworks for potentially conscious AI before the question is resolved is more prudent than waiting.",
-                "Anticipatory ethics based on uncertain consciousness claims may produce obligations that are impossible to fulfil."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about the ethical implications of AI consciousness questions (Pros for anticipatory ethics) and the attention diversion and uncertainty concerns (Cons).",
-            "explanation": "Potential AI consciousness demands anticipatory ethical frameworks before the question is resolved (Pros), but speculative ethics diverts attention from concrete present AI harms, and obligations based on uncertain consciousness claims may be impossible to fulfil in practice (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L186_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The social contract theory remains the most compelling basis for legitimate modern government.",
-            "options": [
-                "Social contract theory uniquely grounds political obligation in the rational consent of governed citizens.",
-                "Contractarian frameworks provide the most defensible account of political legitimacy in diverse pluralistic societies.",
-                "Actual historical social contracts were never genuinely consented to by those who now live under their terms.",
-                "Social contract theory struggles to account for obligations to non-citizens, future generations, and non-human life."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about the consent-based legitimacy case for social contract theory (Pros) and the historical consent and scope concerns (Cons).",
-            "explanation": "Social contract theory grounds political authority in rational citizen consent - the most defensible legitimacy basis for pluralistic societies (Pros), but historical contracts were never genuinely consented to, and the theory struggles with obligations to non-citizens, future generations, and non-human beings (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L186_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Social contract theory has failed to account for the structural exclusions built into its foundations.",
-            "options": [
-                "Classical social contracts explicitly or implicitly excluded women, enslaved people, and non-property owners.",
-                "Social contract theory is a progressive framework precisely because it provides tools to critique its own exclusions.",
-                "The theory's internal logic demands the inclusion it historically failed to deliver, making it self-correcting.",
-                "Rawlsian revisions have improved but not resolved the problem of who counts as a contracting party."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Consider the structural exclusion critique of social contract theory (Pros) and the self-correcting and progressive capacity counter (Cons).",
-            "explanation": "Classical contracts explicitly excluded women and enslaved people, and Rawlsian revisions have not fully resolved the inclusion problem (Pros), but social contract theory's internal logic demands inclusion and provides the progressive tools to critique and remedy its own historical exclusions (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L186_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Deliberative democracy theory offers a more dynamic alternative to social contract theory.",
-            "options": [
-                "Deliberative democracy assumes conditions of reasonableness and access that do not exist in actual democracies.",
-                "Deliberative democracy grounds legitimacy in ongoing rational public discourse rather than a founding contract.",
-                "The founding contract provides stability that ongoing deliberation cannot guarantee in politically contested societies.",
-                "Deliberation allows continuous renegotiation of political authority in light of new circumstances and challenges."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about deliberative democracy as superior to social contract theory (Pros) and the ideal conditions and stability concerns (Cons).",
-            "explanation": "Deliberative democracy grounds legitimacy in ongoing discourse and enables continuous renegotiation as circumstances change (Pros), but it requires conditions of reasonableness and equal access that actual democracies do not provide, and the stability of a founding contract is lost in perpetual deliberation (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L187_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Democracy remains the least harmful form of government despite its profound limitations.",
-            "options": [
-                "Democratic systems produce gridlock, short-termism, and the tyranny of majorities over minorities.",
-                "Democratic accountability provides peaceful mechanisms to remove incompetent or corrupt leaders.",
-                "Democracy generates more legitimacy and civic cooperation than alternative forms of government.",
-                "Democracy's dependence on an informed citizenry makes it vulnerable to misinformation and demagogy."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about the peaceful accountability and legitimacy case for democracy (Pros) and the gridlock and vulnerability concerns (Cons).",
-            "explanation": "Democratic accountability removes corrupt leaders peacefully and generates superior legitimacy and cooperation (Pros), but democracy produces gridlock, short-termism, majority tyranny, and is profoundly vulnerable to misinformation and demagogic manipulation (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L187_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Epistocracy - governance weighted by knowledge and competence - addresses democracy's worst failures.",
-            "options": [
-                "Weighting votes by relevant competence could produce more rational policy outcomes in complex technical areas.",
-                "Epistocratic elements already exist in delegating decisions to independent central banks and courts.",
-                "Defining who counts as sufficiently competent to receive greater vote weight is inherently politically contested.",
-                "Historical attempts to restrict political power to the educated have been used to maintain class and racial privilege."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Consider epistocracy as an improvement on pure democracy (Pros) and the definition and historical misuse concerns (Cons).",
-            "explanation": "Competence-weighted decisions could improve technical policy quality and epistocratic elements already exist in central banks and courts (Pros), but defining sufficient competence is politically contested, and knowledge-restricted governance historically maintained class and racial privilege (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L187_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Democratic institutions must be actively protected and reformed to survive authoritarian erosion.",
-            "options": [
-                "Democratic backsliding in Hungary, Turkey, and elsewhere shows that democracy requires active institutional defence.",
-                "Reforming democratic institutions through democratic processes is extremely slow when institutions are already compromised.",
-                "Constitutional reforms that entrench judicial independence and electoral fairness protect democracy from within.",
-                "External protection of democratic institutions risks being perceived as foreign interference, delegitimising reform."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about active institutional protection and reform as necessary for democracy's survival (Pros) and the process speed and legitimacy concerns (Cons).",
-            "explanation": "Democratic backsliding demonstrates that democracy requires active institutional defence and constitutional reforms protecting judicial independence (Pros), but reforming compromised institutions democratically is dangerously slow, and external protection risks delegitimisation as foreign interference (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L188_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Infinite economic growth is fundamentally incompatible with long-term environmental sustainability.",
-            "options": [
-                "Green technology and efficiency improvements can decouple economic growth from resource consumption.",
-                "Material throughput cannot increase infinitely on a finite planet with limited resources and carrying capacity.",
-                "GDP growth measured without accounting for natural capital depletion systematically overstates real economic progress.",
-                "Developed nations have demonstrated some decoupling of GDP growth from emissions and material use."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about the finite planet case for growth-sustainability incompatibility (Pros) and the decoupling and efficiency counters (Cons).",
-            "explanation": "Infinite material throughput is impossible on a finite planet and GDP growth ignores natural capital depletion (Pros), but green technology enables decoupling of growth from resource use, and some developed nations demonstrate measurable GDP-emissions decoupling (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L188_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Degrowth in wealthy economies is necessary for global environmental justice.",
-            "options": [
-                "Wealthy nations' material consumption levels cannot be universalised to developing populations within planetary limits.",
-                "Degrowth in wealthy economies would cause unemployment, reduced public services, and significant social harm.",
-                "Green growth in wealthy nations can fund the clean technology transfer that enables sustainable development globally.",
-                "Reducing material throughput in wealthy economies creates ecological space for development in poorer ones."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Consider the environmental justice case for degrowth in wealthy nations (Pros) and the social harm and green growth alternative (Cons).",
-            "explanation": "Wealthy nation consumption cannot be universalised within planetary limits, and degrowth creates ecological space for poorer nations (Pros), but degrowth causes unemployment and public service cuts, and green growth could fund clean technology transfer for sustainable global development (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L188_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Measuring prosperity beyond GDP can make growth compatible with sustainability.",
-            "options": [
-                "Political and business cycles are organised around GDP targets that are deeply resistant to metric substitution.",
-                "Metrics like genuine progress indicators and wellbeing indices measure what economic activity actually delivers.",
-                "Alternative metrics do not resolve the underlying physical constraints on material throughput that growth demands.",
-                "Redefining prosperity to include ecosystem health and social wellbeing changes what economic policy optimises for."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about alternative prosperity metrics as making growth sustainable (Pros) and the political resistance and physical constraint concerns (Cons).",
-            "explanation": "Wellbeing and genuine progress indicators measure actual prosperity and redefine what economic policy optimises for (Pros), but GDP targets are deeply embedded in political and business cycles, and alternative metrics do not resolve the underlying physical constraints on material throughput (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L189_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The concept of fixed national identity is more harmful than beneficial in the modern world.",
-            "options": [
-                "Rigid national identity fuels exclusionary nationalism, xenophobia, and conflict between communities.",
-                "National identity provides communities with cultural continuity, shared narrative, and a sense of collective belonging.",
-                "Fixed national identity creates artificial us-versus-them divisions that prevent cooperation on global challenges.",
-                "Multiple, fluid, and overlapping identities including national ones can coexist without requiring exclusion."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about the exclusion and division case against fixed national identity (Pros) and the cultural continuity and multiplicity concerns (Cons).",
-            "explanation": "Fixed national identity fuels exclusionary nationalism and prevents cooperation on global challenges (Pros), but national identity provides cultural continuity and belonging, and multiple overlapping identities including national ones can coexist without requiring exclusion (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L189_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "National identity is a politically constructed myth that perpetuates historical power structures.",
-            "options": [
-                "Even constructed communities generate real belonging, meaning, and solidarity that cannot be dismissed as mere myth.",
-                "Nations are modern constructions - 'imagined communities' - that naturalise contingent historical arrangements.",
-                "The constructedness of national identity is an argument for its conscious transformation, not its abolition.",
-                "National identity narratives are typically written by dominant groups to exclude minorities and justify hierarchy."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Consider national identity as political construction and power perpetuation (Pros) and the real community and transformation counters (Cons).",
-            "explanation": "Nations are imagined communities whose identity narratives typically serve dominant groups and naturalise contingent power (Pros), but constructed communities generate genuine belonging and solidarity, and constructedness is an argument for transformation rather than dismissal (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L189_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Cosmopolitan identity offers a more just and globally appropriate alternative to national identity.",
-            "options": [
-                "Cosmopolitan identity is an elite abstraction accessible mainly to mobile and privileged global citizens.",
-                "Strong cosmopolitan commitments are vulnerable to populist backlash that discredits the progressive causes they accompany.",
-                "A shared cosmopolitan identity grounds moral obligations to all human beings regardless of national origin.",
-                "Cosmopolitan frameworks provide ethical principles that transcend the partiality of national interest."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about cosmopolitan identity as a superior alternative to national identity (Pros) and the elite access and backlash concerns (Cons).",
-            "explanation": "Cosmopolitan identity grounds universal moral obligations and transcends the partiality of national interest (Pros), but cosmopolitan identity is primarily accessible to privileged mobile elites, and strong cosmopolitan commitments attract populist backlash that damages the progressive causes associated with them (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L190_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Moral relativism is more intellectually honest than any form of moral absolutism.",
-            "options": [
-                "Different cultures have developed genuinely different but internally coherent moral frameworks over centuries.",
-                "Claiming universal moral truths typically reflects cultural imperialism - imposing one culture's values on others.",
-                "Moral relativism prevents coherent condemnation of atrocities like genocide when they reflect a culture's own values.",
-                "Relative moral frameworks cannot explain why practices like slavery were wrong even when culturally accepted."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about the cultural diversity and anti-imperialism case for moral relativism (Pros) and the genocide and slavery concerns (Cons).",
-            "explanation": "Genuine cultural moral diversity exists and universal truth claims typically reflect cultural imperialism (Pros), but relativism prevents coherent condemnation of genocide and cannot explain why slavery was wrong even when culturally normalised (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L190_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Universal human rights provide a non-relativist moral framework that transcends cultural particularity.",
-            "options": [
-                "Existing human rights frameworks reflect the power structures of their post-war Western drafting context.",
-                "Human rights frameworks represent cross-cultural consensus on basic protections built through genuine dialogue.",
-                "Rights-based minimalism avoids imposing thick cultural values while establishing inviolable universal protections.",
-                "Universal human rights are frequently deployed selectively as geopolitical tools rather than applied impartially."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Consider universal human rights as a viable non-relativist framework (Pros) and the drafting context and selective deployment concerns (Cons).",
-            "explanation": "Human rights represent cross-cultural consensus and rights minimalism avoids imposing thick cultural values (Pros), but existing frameworks reflect their Western post-war drafting context, and rights are frequently deployed selectively as geopolitical instruments rather than impartially applied (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L190_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Reflective equilibrium provides a third path between moral absolutism and pure relativism.",
-            "options": [
-                "Reflective equilibrium produces local moral coherence without establishing grounds for cross-cultural moral judgment.",
-                "Reflective equilibrium tests principles against intuitions iteratively, producing contextually grounded moral knowledge.",
-                "The method allows for cross-cultural moral learning without claiming universal foundations in advance.",
-                "Without some universally accessible rational basis, reflective equilibrium cannot adjudicate between radically different systems."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about reflective equilibrium as a middle path between absolutism and relativism (Pros) and the cross-cultural adjudication concerns (Cons).",
-            "explanation": "Reflective equilibrium generates contextually grounded moral knowledge through iterative testing and enables cross-cultural learning without prior universal claims (Pros), but it produces only local coherence and lacks a universal rational basis for adjudicating between radically different moral systems (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        }
-    ]
+  "gameType": "opinionWriting",
+  "batchIndex": 19,
+  "levels": "181-190",
+  "quests": [
+    {
+      "id": "WRT_OPINIONWRITING_L181_Q1",
+      "instruction": "Choose the strongest opening for the proposal email.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "You lead a team and want to replace a 45-minute weekly status meeting with a written update. Your manager values team communication.",
+      "options": [
+        "Many companies have replaced status meetings with written updates, so I think we should do the same as they have.",
+        "I have some thoughts about meetings that I would like to share with you at some point this month, if you have time.",
+        "I would like to propose trialling written weekly updates in place of our 45-minute status meeting, so that meeting time can go to solving problems.",
+        "The status meeting is a waste of everyone's time and should be scrapped immediately, before we lose any more hours."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "The opening should state the proposal and connect it to a goal the manager shares.",
+      "explanation": "This opening states the change and links it to better use of time. The other choices insult the meeting, avoid a proposal or rely on what other firms do.",
+      "structureGuide": "Claim → Purpose → Audience"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L181_Q2",
+      "instruction": "Your manager worries that people will stop talking to each other. Choose the strongest reply.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "You are answering this concern in your proposal email.",
+      "options": [
+        "If people stop talking, that will be their choice rather than a fault of the plan, and we cannot control that.",
+        "People talk plenty already, so this will not be an issue for the team, and the change will be easy to manage.",
+        "Written updates are the modern way to work, so people will adapt quickly, and I do not expect any difficulties.",
+        "That risk is real, so the trial would keep a fifteen-minute call for blockers; the time saved would go to the discussions that need it."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "A strong reply admits what is fair and adds a specific safeguard.",
+      "explanation": "This reply concedes the risk and offers a concrete solution. The remaining options dismiss the concern or shift responsibility.",
+      "structureGuide": "Concession → Rebuttal"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L181_Q3",
+      "instruction": "Choose the most effective closing for the email.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "The email should end by inviting a decision.",
+      "options": [
+        "A four-week trial would show whether written updates save time without hurting communication, and I can share the results with you at the end.",
+        "Please approve this proposal, because the current meetings are clearly not working for anyone on the team at all.",
+        "Written updates could be an option for the team, so please let me know whether you like the idea when you can.",
+        "I hope you will consider my proposal carefully and give me an answer as soon as you are able to do so."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "A good closing proposes a small, measurable next step.",
+      "explanation": "The best closing suggests a limited trial and a way to judge it. The remaining options are vague or demanding.",
+      "structureGuide": "Conclusion → Call to Action"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L182_Q1",
+      "instruction": "Choose the best thesis for the student council's proposal.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "The council wants to propose to the principal that students with free periods tutor younger pupils.",
+      "options": [
+        "Students with free periods should be able to tutor younger pupils, because it deepens their own understanding and gives younger students extra help at no cost.",
+        "Peer tutoring is popular in many schools around the country and it should be introduced here, so that we do not fall behind.",
+        "Students are bored in free periods and deserve something better to do with the time that they are given each week.",
+        "Free periods are a waste of time for most students, and peer tutoring is the only sensible way to fix the problem."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "The principal will care about learning benefits and cost.",
+      "explanation": "The best thesis gives two benefits that matter to a school. The alternatives rely on boredom, popularity or exaggeration.",
+      "structureGuide": "Thesis → Audience"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L182_Q2",
+      "instruction": "Choose the most convincing evidence for the proposal.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "The council needs evidence the principal will trust.",
+      "options": [
+        "Many students said in a lunchtime survey that they would like to try tutoring, and several offered to help younger pupils.",
+        "Younger pupils enjoy working with older students and often ask for more help, according to a number of their teachers.",
+        "Tutoring is used by schools in several other countries around the world, and it has been growing in popularity for years.",
+        "In a term-long pilot in Year 9 maths, tutored pupils raised their average test score by six marks, and tutors said they felt more confident with the topics."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Strong evidence measures results.",
+      "explanation": "The pilot shows test-score gains and benefits to tutors. The other options show interest, popularity or preference.",
+      "structureGuide": "Claim → Evidence"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L182_Q3",
+      "instruction": "The principal worries that tutors might give incorrect explanations. Choose the best reply.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "The principal worries that tutors might explain topics incorrectly. Answer the concern without dismissing it.",
+      "options": [
+        "Tutors could receive short training, and a teacher could check the sessions, keeping the benefits while reducing the risk.",
+        "Tutoring has worked elsewhere in the country, so mistakes are not a real concern for the school to worry about.",
+        "Students rarely make mistakes when they explain things to others, because explaining forces them to be careful.",
+        "Teachers make mistakes too, so this is not a special risk, and it should not be used as a reason to refuse."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "The best reply offers a way to manage the risk.",
+      "explanation": "Training and checking address the concern directly. The others dismiss it or deflect.",
+      "structureGuide": "Objection → Rebuttal"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L183_Q1",
+      "instruction": "Choose the clearest position statement for a company memo.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Managers want to allow staff to use an AI writing assistant for internal reports, but they are worried about errors.",
+      "options": [
+        "AI tools are revolutionising the way that people work, and everyone in the company should embrace them as soon as possible.",
+        "The AI assistant will be used for internal reports from next month, and training sessions will be arranged for staff.",
+        "Staff may use the AI writing assistant to draft internal reports, provided a colleague checks every figure and claim before the report is shared.",
+        "Staff should be careful with the AI tool and use their own judgement whenever they decide to include what it writes."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "A policy statement says what is allowed and under what condition.",
+      "explanation": "This statement sets a rule and a condition. The rest are slogans, vague advice or a plain announcement.",
+      "structureGuide": "Claim → Condition"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L183_Q2",
+      "instruction": "What is the main weakness in this argument?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Other firms use the AI tool and have not had problems, so ours will be fine.'",
+      "options": [
+        "It attacks the people who oppose the tool, rather than answering their concerns about accuracy.",
+        "It relies on emotion instead of facts, and it tries to make the reader afraid of the tool.",
+        "It presents only two options and ignores the possibility that a middle course might be better.",
+        "It assumes other firms' experience predicts ours without evidence."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Ask what must be true for the conclusion to follow.",
+      "explanation": "The argument assumes that other firms' results transfer to ours. There is no personal attack, false choice or emotional appeal.",
+      "structureGuide": "Reasoning → Assumption"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L183_Q3",
+      "instruction": "Choose the best revision.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'The AI tool is always accurate, so checking is a waste of time.'",
+      "options": [
+        "The AI tool is accurate enough that only major reports need checking, because small reports carry little risk.",
+        "The AI tool is nearly always accurate, so checking is rarely necessary and would only slow down the team.",
+        "The AI tool is often accurate, but it can make confident mistakes, so a quick check is still worth the time.",
+        "The AI tool is usually right, but checking is optional for busy staff who have to meet several deadlines."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Replace the overgeneralisation with a fair claim and a reason.",
+      "explanation": "The right revision limits the claim and explains why checking is worthwhile. The others still weaken the case for checking.",
+      "structureGuide": "Revision → Qualification"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L184_Q1",
+      "instruction": "Choose the best public reply.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A customer's review reads: 'Waited 40 minutes for my order and nobody apologised.' You manage the café.",
+      "options": [
+        "We serve hundreds of happy customers every week, so this review is not typical of the service that we normally provide.",
+        "We are sorry about the wait and that no one apologised; that is not the service we want to give. Please contact us so we can put it right.",
+        "We are sorry to hear about the wait, but our records show a very busy Saturday, so some delays were unavoidable that day.",
+        "We are sorry you feel that way about your visit, and we hope that you will give us another try in the near future."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "A good reply acknowledges the complaint, does not make excuses and offers a next step.",
+      "explanation": "This reply accepts responsibility and offers to fix the problem. The others make excuses, offer a non-apology or dismiss the review.",
+      "structureGuide": "Purpose → Tone"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L184_Q2",
+      "instruction": "Choose the strongest reason for replying to every negative review.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "The business owner is deciding on a policy.",
+      "options": [
+        "Negative reviews upset staff, so a reply from the manager can make the team feel supported and less discouraged.",
+        "Replying shows the business is in charge of its reputation, and it lets the owner correct anything that is inaccurate.",
+        "Future customers read the replies as well as the reviews, so a helpful response shows how the business treats problems.",
+        "Other businesses in the area reply to every review they receive, so a business that stays silent may look out of step."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Focus on the reader of the replies.",
+      "explanation": "The best reason identifies who benefits and how. The other choices focus on staff feelings, imitation or image.",
+      "structureGuide": "Claim → Reason"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L184_Q3",
+      "instruction": "A colleague says replying publicly draws more attention to complaints. Choose the response that concedes fairly and answers.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Respond in a meeting.",
+      "options": [
+        "Complaints get attention anyway, so we should reply to every one of them in full detail and explain exactly what went wrong.",
+        "That is not true, because customers rarely notice complaints unless the business draws attention to them by replying at length.",
+        "Attention is inevitable whatever we do, so replying is pointless and the team should spend its time on service instead.",
+        "That can happen, so replies should be short and calm and move detailed talks to private messages; the goal is to show good handling, not to argue."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "The best response accepts part of the concern and adapts the plan.",
+      "explanation": "The best response concedes the risk and sets guidelines. The others deny, give up or overreact.",
+      "structureGuide": "Concession → Rebuttal"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L185_Q1",
+      "instruction": "Choose the strongest thesis for a letter to the rail company.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "You want a quiet carriage on morning commuter trains.",
+      "options": [
+        "Quiet carriages are already used by other rail companies with success, so this one should offer them on its own trains.",
+        "Commuter trains should keep one carriage quiet during morning peak hours, so that passengers who need calm can work or rest without others' calls and music.",
+        "Some passengers find trains noisy at busy times, which is a problem that the rail company should take seriously and study.",
+        "Commuters deserve peace and quiet on the way to work, and the rail company should listen to what its passengers want."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "The thesis should be specific about what, when and why.",
+      "explanation": "The best thesis names the change, the time and the benefit. The rest are general, rely on imitation or only describe.",
+      "structureGuide": "Thesis"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L185_Q2",
+      "instruction": "Which objection is most serious and should be answered in the letter?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Think about the effect on other passengers.",
+      "options": [
+        "Some passengers might prefer to talk on the phone during their journey, especially when they are travelling for work.",
+        "Trains have carriages of different lengths and layouts, so the quiet area might not be the same size on every train.",
+        "Peak trains are crowded, so reserving a carriage could push more passengers into the others.",
+        "Quiet carriages have not been tested on every line, so the results from one route may not apply to another."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "A serious objection points to a real cost for many people.",
+      "explanation": "Crowding affects all passengers and threatens the plan's fairness. The other objections are minor or about preference.",
+      "structureGuide": "Objection"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L185_Q3",
+      "instruction": "Choose the strongest reply to the crowding objection.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Answer the concern that a quiet carriage will make peak trains more crowded.",
+      "options": [
+        "Crowding already exists at peak times, so a quiet carriage will make no real difference to how full the trains are.",
+        "Passengers who want quiet should travel at other times, when the trains are emptier and the noise is much lower.",
+        "The quiet carriage could be an ordinary carriage open to everyone who follows the rule, so total capacity is not reduced.",
+        "Crowding will be a problem whatever the railway does, so there is little point in changing one carriage on a train."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Show that the concern can be solved.",
+      "explanation": "The best reply explains that seats stay available to all. The remaining options dismiss or shift the problem.",
+      "structureGuide": "Rebuttal"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L186_Q1",
+      "instruction": "Choose the strongest evidence for installing motion-sensor lights.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A facilities manager wants proof before spending money.",
+      "options": [
+        "Motion-sensor lights are becoming more common in modern offices, and many new buildings are now fitted with them.",
+        "In the pilot on floor 3, lights were on for 40% fewer hours over two months, cutting that floor's electricity bill by £210.",
+        "Several staff said they like the idea of automatic lights, and a few said they would be glad not to touch the switches.",
+        "Lights use electricity, which costs money for the company, and the bill rises each year as prices go up."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Look for measured results in a real setting.",
+      "explanation": "The pilot shows a measured reduction and a cost. The rest are general trends or opinions.",
+      "structureGuide": "Claim → Evidence"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L186_Q2",
+      "instruction": "Choose the sentence that best explains why the evidence supports the claim.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Evidence: lights on for 40% fewer hours after sensors were fitted.",
+      "options": [
+        "Sensors can be bought from many different suppliers, and the price of a basic unit has fallen in recent years.",
+        "Forty percent is a large number of hours over two months, and it shows that the lights were on far too often.",
+        "Lights that are switched off use no electricity at all, so any system that switches them off will save some money.",
+        "Because much of the floor's lighting had been on in empty rooms, sensors remove waste without changing how staff work."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Explain why the change in hours matters.",
+      "explanation": "The right sentence links fewer hours to reduced waste. The alternatives repeat, describe or state the obvious.",
+      "structureGuide": "Evidence → Explanation"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L186_Q3",
+      "instruction": "Choose the best final recommendation.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "You are writing to the facilities manager.",
+      "options": [
+        "Sensors seem good, and maybe the company could think about extending them to other floors when there is time to do so.",
+        "It would be sensible to consider the sensors, among other options, at some point in the coming year or so.",
+        "I recommend extending the sensors to the remaining floors in stages, starting with the two that are empty most evenings, and reviewing the savings after three months.",
+        "The sensors have worked on one floor, so they should be installed everywhere in the building immediately, without delay."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "A good recommendation is specific and measured.",
+      "explanation": "The correct recommendation gives a plan and a review. The remaining options rush, hesitate or stay vague.",
+      "structureGuide": "Conclusion → Recommendation"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L187_Q1",
+      "instruction": "Choose the most balanced and clear position.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "The council is consulting residents about turning the Baker Street car park into a market square.",
+      "options": [
+        "The council should convert the car park because markets are better than parked cars, and the town needs more places to meet.",
+        "The council should convert the Baker Street car park into a market square, provided that disabled parking bays and a nearby alternative car park are kept.",
+        "There are strong arguments for and against turning the car park into a market square, and the council should weigh them all.",
+        "The car park should be kept as it is, because drivers need somewhere to park and shoppers would be put off by any change."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "A balanced position takes a stand and names a condition.",
+      "explanation": "The best position supports the plan and protects a key need. The other choices are one-sided or avoid a position.",
+      "structureGuide": "Claim → Condition"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L187_Q2",
+      "instruction": "Which evidence best supports the claim that the car park is underused?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "The council needs to know whether the car park is really underused. Which evidence answers that most directly?",
+      "options": [
+        "Parking is expensive in the town centre, and many drivers complain about the price of a two-hour stay.",
+        "On the last four Saturdays, fewer than half of its 120 spaces were taken by 2 p.m.",
+        "The car park is in the middle of the town centre, next to the bus station and two of the main shops.",
+        "The market on Elm Street draws large crowds each week, and its stallholders say trade has grown steadily."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Evidence about use must show how many spaces are filled.",
+      "explanation": "Counts of spaces taken are direct evidence. The others describe location, another market or cost.",
+      "structureGuide": "Claim → Evidence"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L187_Q3",
+      "instruction": "Choose the best sentence for a consultation leaflet aimed at local shopkeepers.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Shopkeepers worry about losing customers who drive.",
+      "options": [
+        "The plan will go ahead whatever shopkeepers say, so it is better for them to adapt early and make the most of the new market.",
+        "Shopkeepers who object simply fear change, but once the market opens they will be glad that the council went ahead with the plan.",
+        "We understand that customers who drive matter to your business, so the plan keeps a short walk to the nearest car park and adds a weekly market that may bring extra visitors.",
+        "A market square is a modern idea that everyone will love, and shopkeepers will soon see that the change is good for them, whatever they may fear."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Acknowledge the reader's concern and offer a reason to support the plan.",
+      "explanation": "This sentence respects the concern and provides a benefit. The alternatives dismiss, threaten or overpromise.",
+      "structureGuide": "Audience → Concession → Reason"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L188_Q1",
+      "instruction": "Choose the strongest claim with a reason.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A university is considering anonymous marking for coursework.",
+      "options": [
+        "Universities should mark anonymously because most universities now do, and it would look odd for ours to be different.",
+        "Coursework marking is important, and anonymity may help in some cases, though it may not be needed in every course.",
+        "Coursework should be marked anonymously, because it reduces the chance that a marker's impressions of a student affect the grade.",
+        "Anonymous marking is fairer than named marking, which is not fair to students who are marked down by their reputation."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "The reason should explain how anonymity leads to fairness.",
+      "explanation": "The best answer explains how the change reduces bias. The other choices repeat, rely on popularity or hedge.",
+      "structureGuide": "Claim → Reason"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L188_Q2",
+      "instruction": "What assumption does this argument make?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Anonymous marking removes bias, so all grades will be fair.'",
+      "options": [
+        "It assumes students prefer named marking, because they can then ask the marker for personal advice.",
+        "It assumes fair grades do not matter as much as the speed at which coursework is returned to students.",
+        "It assumes anonymous marking is expensive to run, so universities must be saving money by using it.",
+        "It assumes bias about a student's identity is the only cause of unfairness."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "What must be true for 'all grades will be fair' to follow?",
+      "explanation": "The argument treats identity bias as the only source of unfairness. Marking can also be unfair for other reasons, such as unclear criteria.",
+      "structureGuide": "Reasoning → Assumption"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L188_Q3",
+      "instruction": "Choose the best revision.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'Anonymous marking is perfect. Nobody could disagree with it.'",
+      "options": [
+        "Anonymous marking is not a complete solution, but it removes one source of bias that students cannot control; clear mark schemes would address others.",
+        "Anonymous marking should be used in every course, though a few other opinions exist and should be listened to politely.",
+        "Anonymous marking is nearly perfect, and only a few people who do not understand it could disagree with the idea.",
+        "Anonymous marking removes bias from grading and fixes unfairness, so students can be confident that every grade is right."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Replace overstatement with a fair claim and a complementary step.",
+      "explanation": "This revision accepts limits and adds a reasonable next step. The remaining options still overstate or avoid detail.",
+      "structureGuide": "Revision → Qualification"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L189_Q1",
+      "instruction": "Choose the strongest evidence for repairing rather than replacing a phone.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "You are writing a consumer advice column.",
+      "options": [
+        "A £90 battery replacement gave my three-year-old phone another two years of use, compared with £650 for a new model.",
+        "New phones are expensive, and many people struggle to afford them, so repairs have to be the more sensible choice.",
+        "Everybody I know keeps their phone for several years, and most of them say they would repair it rather than replace it.",
+        "Repairing phones is generally more environmentally friendly than replacing them, and it keeps materials in use for longer."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Strong evidence gives actual costs and results.",
+      "explanation": "This answer gives specific costs and outcome. The other choices state opinions or general claims.",
+      "structureGuide": "Claim → Evidence"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L189_Q2",
+      "instruction": "Which comparison is fair?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Repairing a phone is cheaper than replacing it.",
+      "options": [
+        "The cost of a repair compared with a friend's discount on a new phone, taken from a single offer in the shops.",
+        "The cost of one screen repair compared with the cost of a phone accessory, such as a case or a charger, over a year.",
+        "The price of a repair compared with the launch price of the newest premium model, on the day that it goes on sale.",
+        "The total cost of repairing a phone over two years compared with the total cost of buying a new one for the same period."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "A fair comparison uses the same time period and equivalent options.",
+      "explanation": "The right comparison matches costs over the same period. The remaining options compare unequal items.",
+      "structureGuide": "Evidence → Comparison"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L189_Q3",
+      "instruction": "A friend says repairs can fail and new phones come with warranties. Choose the best reply.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Concede fairly and answer.",
+      "options": [
+        "Many people repair phones every year, so failures must be rare, and it is not worth worrying about a warranty.",
+        "Warranties matter a great deal, so it is better to buy a new phone every time and avoid repairs altogether.",
+        "That is fair, so choose a repairer that guarantees its work; a repair with a warranty still costs far less than a new phone.",
+        "Repairs never fail, so warranties are irrelevant, and it is much smarter to spend a little money on a good repair."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Accept the valid part, then answer it with a specific solution.",
+      "explanation": "This reply concedes the risk and suggests a guarantee. The other choices deny, give up or use popularity.",
+      "structureGuide": "Concession → Rebuttal"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L190_Q1",
+      "instruction": "Choose the strongest claim.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A company offers a workplace wellness scheme that shares individual fitness tracker data with employers.",
+      "options": [
+        "Fitness tracker data is private, and no company should ever be allowed to look at it, whatever the reason for asking.",
+        "Fitness trackers are popular with many staff, and companies want to use the data to help people stay healthy and active.",
+        "Employers who collect fitness data clearly want to control their staff, and any scheme of this kind should be stopped.",
+        "Employers should not receive individual fitness tracker data, because staff cannot freely choose to share information that might influence how they are seen at work."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "A strong claim explains why the practice is a problem.",
+      "explanation": "This claim gives a specific reason based on freedom of choice. The others exaggerate, accuse or describe.",
+      "structureGuide": "Claim → Reason"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L190_Q2",
+      "instruction": "A manager says the scheme is voluntary, so it is fair. What is missing from the argument?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Identify the gap.",
+      "options": [
+        "Evidence that staff can decline without any pressure or disadvantage.",
+        "Evidence that regular exercise is healthy for most people.",
+        "A list of the tracker brands staff can choose from.",
+        "Evidence that fitness trackers are popular among employees."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Ask what 'voluntary' depends on.",
+      "explanation": "'Voluntary' only makes the scheme fair if declining carries no penalty. The other pieces do not address that.",
+      "structureGuide": "Reasoning → Gap"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L190_Q3",
+      "instruction": "Choose the best compromise proposal.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "The company wants to encourage healthy habits while respecting privacy.",
+      "options": [
+        "Offer a scheme where individual data is shared only with senior managers, who are trained to keep it strictly confidential.",
+        "Offer a wellness scheme that uses anonymous, group-level results, so the company can see overall participation without seeing any individual's data.",
+        "Keep the scheme as it is and tell staff that privacy concerns are not a problem, because the data is stored securely.",
+        "Offer the scheme to everyone and record who declines, so that managers can follow up with those who did not take part."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "A good compromise meets both goals.",
+      "explanation": "This proposal protects privacy while achieving the company's aim. The others keep the privacy risk.",
+      "structureGuide": "Solution → Compromise"
+    }
+  ]
 }

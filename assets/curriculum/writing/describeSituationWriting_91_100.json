@@ -5,1173 +5,1173 @@
     "quests": [
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L91_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE SCENE AND THE CHANGE THAT HAPPENS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "A viral social media post falsely claimed your family restaurant had served spoiled food, threatening years of hard-earned reputation. Describe how the family responded.",
+            "situation": "Every afternoon, several parents wait outside a school gate to pick up their children, each doing something different while they wait. Describe the scene, then describe what changes when it suddenly starts to rain.",
             "emojis": [
-                "🍽️",
+                "👨‍👩‍👧",
                 "📱",
-                "😠",
-                "📢"
+                "🌧️",
+                "🏫"
             ],
             "keywords": {
                 "0": [
-                    "VIRALPOST",
-                    "FALSELY",
-                    "CLAIM"
+                    "PARENTS",
+                    "GATHER",
+                    "GATE"
                 ],
                 "1": [
-                    "SPOILED",
-                    "REPUTATION",
-                    "THREATEN"
+                    "PHONE",
+                    "SCROLL",
+                    "CHAT"
                 ],
                 "2": [
-                    "RESPOND",
-                    "EVIDENCE",
-                    "CALM"
+                    "DOWNPOUR",
+                    "SUDDEN",
+                    "SCATTER"
                 ],
                 "3": [
-                    "CLARIFY",
-                    "TRUST",
-                    "RECOVER"
+                    "UMBRELLA",
+                    "SHELTER",
+                    "DASH"
                 ]
             },
-            "minWords": 40,
-            "hint": "Describe how the family responded publicly without escalating the conflict.",
-            "explanation": "Good reputation-management answers stay calm and factual, for example: 'Instead of arguing online, the family posted health inspection records and invited the customer to discuss the issue directly.'",
-            "modelAnswer": "Good reputation-management answers stay calm and factual, for example: 'Instead of arguing online, the family posted health inspection records and invited the customer to discuss the issue directly.' Describe how the family responded publicly without escalating the conflict. This serves as a model answer for the situation."
+            "minWords": 38,
+            "hint": "Describe at least three different parents doing different things before showing how the sudden rain changes the whole scene.",
+            "explanation": "A multi-element scene works well when several separate actions are shown first, since the sudden change afterward feels more dramatic against a clearly established, calm starting point.",
+            "modelAnswer": "Outside the school gate, one father scrolls through his phone while two mothers chat quietly near the fence, and an older woman reads a paperback on a bench. Without warning, a sudden downpour sends everyone scattering, umbrellas snapping open in seconds as parents rush toward the gate to gather their children more quickly than usual."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L91_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE SCENE AND THE CHANGE THAT HAPPENS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your university's exam software crashed for hundreds of students simultaneously during a final exam. Describe how the university resolved the chaos.",
+            "situation": "A farmers' market is full of activity on Saturday morning, with several stallholders and customers doing different things. Describe the scene, then describe what changes when the weather suddenly turns.",
             "emojis": [
-                "💻",
-                "❌",
-                "😱",
-                "📋"
+                "🧑‍🌾",
+                "🍅",
+                "☁️",
+                "🏃"
             ],
             "keywords": {
                 "0": [
-                    "EXAMSOFTWARE",
-                    "CRASH",
-                    "SIMULTANEOUS"
+                    "STALLHOLDERS",
+                    "ARRANGE",
+                    "DISPLAY"
                 ],
                 "1": [
-                    "HUNDREDS",
-                    "STUDENTS",
-                    "FINALEXAM"
+                    "CUSTOMERS",
+                    "BROWSE",
+                    "HAGGLE"
                 ],
                 "2": [
-                    "CHAOS",
-                    "COMPLAIN",
-                    "REPORT"
+                    "CLOUDS",
+                    "DARKEN",
+                    "SUDDENLY"
                 ],
                 "3": [
-                    "RESOLVE",
-                    "RESCHEDULE",
-                    "FAIR"
+                    "COVER",
+                    "TARP",
+                    "HURRY"
                 ]
             },
-            "minWords": 40,
-            "hint": "Describe how the university communicated with students and resolved the disruption fairly.",
-            "explanation": "Good institutional-crisis answers show fair resolution, for example: 'The university acknowledged the technical failure and rescheduled the exam for everyone affected.'",
-            "modelAnswer": "Good institutional-crisis answers show fair resolution, for example: 'The university acknowledged the technical failure and rescheduled the exam for everyone affected.' Describe how the university communicated with students and resolved the disruption fairly. This serves as a model answer for the situation."
+            "minWords": 38,
+            "hint": "Show at least two stallholders and one customer engaged in different activities before the weather shifts.",
+            "explanation": "Combining several distinct actions with a single environmental change tests whether the writer can hold multiple details in mind while still keeping the description organized around one clear shift.",
+            "modelAnswer": "One farmer carefully arranges bright red apples into a pyramid while a nearby vendor haggles cheerfully with a regular customer over the price of cheese, and children weave between the stalls chasing each other. When the sky darkens unexpectedly and thunder rumbles overhead, every stallholder hurries to throw tarps over their produce before the first drops fall."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L91_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE SCENE AND THE CHANGE THAT HAPPENS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your workplace experienced a wave of employees calling in sick during flu season, leaving the remaining staff overworked. Describe how the team managed.",
+            "situation": "An open-plan office is full of quiet activity on a normal Tuesday morning, with several employees working on different tasks. Describe the scene, then describe what changes when the fire alarm suddenly sounds.",
             "emojis": [
-                "🤒",
-                "🏢",
-                "😓",
-                "🤝"
+                "🧑‍💻",
+                "📞",
+                "🚨",
+                "🚪"
             ],
             "keywords": {
                 "0": [
-                    "FLUSEASON",
-                    "CALLINSICK",
-                    "WAVE"
+                    "TYPING",
+                    "SCREEN",
+                    "FOCUS"
                 ],
                 "1": [
-                    "REMAININGSTAFF",
-                    "OVERWORK",
-                    "LEAVE"
+                    "CALL",
+                    "PHONE",
+                    "SPEAK"
                 ],
                 "2": [
-                    "MANAGE",
-                    "SUPPORT",
-                    "COVER"
+                    "ALARM",
+                    "BLARE",
+                    "INTERRUPT"
                 ],
                 "3": [
-                    "RECOVER",
-                    "BALANCE",
-                    "ADAPT"
+                    "EXIT",
+                    "FILE",
+                    "CALM"
                 ]
             },
-            "minWords": 40,
-            "hint": "Describe how the remaining staff supported each other during the shortage.",
-            "explanation": "Good teamwork-under-strain answers show mutual support, for example: 'Those of us who were healthy split the extra tasks evenly so no one person became overwhelmed.'",
-            "modelAnswer": "Good teamwork-under-strain answers show mutual support, for example: 'Those of us who were healthy split the extra tasks evenly so no one person became overwhelmed.' Describe how the remaining staff supported each other during the shortage. This serves as a model answer for the situation."
+            "minWords": 38,
+            "hint": "Establish at least two employees doing different tasks first, then describe how everyone reacts once the alarm interrupts them.",
+            "explanation": "A calm opening scene followed by a sudden interruption is a strong structure for multi-element writing, since it forces the description to shift from individual detail to a single, shared reaction.",
+            "modelAnswer": "Near the window, one employee types quickly at her computer while another leans back in his chair, speaking softly into the phone about a client's order. The moment the fire alarm suddenly blares through the office, both of them freeze for a second before calmly gathering their bags and filing toward the exit along with everyone else."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L92_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW ONE EVENT AFFECTED THE WHOLE FAMILY'S MORNING",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "An online creator you followed for years was accused of plagiarizing another artist's work, dividing the fan community. Describe the discussion that followed.",
+            "situation": "When your family's alarm clock fails to go off, the entire morning routine falls apart in different ways for each person. Describe what happened and how it affected everyone differently.",
             "emojis": [
-                "🎨",
-                "😠",
-                "💬",
-                "⚖️"
+                "⏰",
+                "👨‍👩‍👧‍👦",
+                "🍞",
+                "🚗"
             ],
             "keywords": {
                 "0": [
-                    "CREATOR",
-                    "ACCUSE",
-                    "PLAGIARIZE"
+                    "ALARM",
+                    "FAIL",
+                    "OVERSLEEP"
                 ],
                 "1": [
-                    "ARTIST",
-                    "WORK",
-                    "DIVIDE"
+                    "FATHER",
+                    "RUSH",
+                    "TIE"
                 ],
                 "2": [
-                    "FANCOMMUNITY",
-                    "DEBATE",
-                    "EVIDENCE"
+                    "SISTER",
+                    "SKIP",
+                    "BREAKFAST"
                 ],
                 "3": [
-                    "RESOLVE",
-                    "OPINION",
-                    "DECIDE"
+                    "MOTHER",
+                    "DRIVE",
+                    "SPEED"
                 ]
             },
-            "minWords": 40,
-            "hint": "Describe the different opinions within the community and how people evaluated the evidence.",
-            "explanation": "Good balanced-controversy answers present multiple perspectives, for example: 'Some fans defended the creator immediately, while others waited to see the evidence before forming an opinion.'",
-            "modelAnswer": "Good balanced-controversy answers present multiple perspectives, for example: 'Some fans defended the creator immediately, while others waited to see the evidence before forming an opinion.' Describe the different opinions within the community and how people evaluated the evidence. This serves as a model answer for the situation."
+            "minWords": 38,
+            "hint": "Show one clear cause, then trace a different, specific effect for at least three different family members.",
+            "explanation": "A single cause spreading into several different effects across different people demonstrates more advanced cause-and-effect writing than a chain affecting only one person.",
+            "modelAnswer": "When the alarm clock mysteriously fails to go off, the whole household wakes up nearly forty minutes late. My father rushes through getting dressed without even tying his shoelaces properly, my sister skips breakfast entirely and grabs a piece of bread on her way out, and my mother ends up driving faster than usual just to get us all to school and work roughly on time."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L92_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW ONE INTERRUPTION AFFECTED THE WHOLE TEAM'S SCHEDULE",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You need to write a message to a former employer asking them to correct an error on a reference they provided for you. Describe what you write.",
+            "situation": "An urgent phone call interrupts a team meeting, and the rest of the day's schedule shifts differently for each team member as a result. Describe what happened and the different effects on the team.",
             "emojis": [
-                "💼",
-                "📄",
-                "❌",
-                "✉️"
+                "📞",
+                "👥",
+                "📅",
+                "😓"
             ],
             "keywords": {
                 "0": [
-                    "FORMEREMPLOYER",
-                    "REFERENCE",
-                    "ERROR"
+                    "CALL",
+                    "INTERRUPT",
+                    "URGENT"
                 ],
                 "1": [
-                    "CORRECT",
-                    "REQUEST",
-                    "POLITE"
+                    "MEETING",
+                    "PAUSE",
+                    "RESCHEDULE"
                 ],
                 "2": [
-                    "EXPLAIN",
-                    "SPECIFIC",
-                    "DETAIL"
+                    "DESIGNER",
+                    "DELAY",
+                    "AFTERNOON"
                 ],
                 "3": [
-                    "RESOLVE",
-                    "GRATEFUL",
-                    "RESPECT"
+                    "MANAGER",
+                    "SHIFT",
+                    "LATER"
                 ]
             },
-            "minWords": 40,
-            "hint": "Point out the specific error clearly and politely request a correction.",
-            "explanation": "A clear correction request names the exact mistake, for example: 'I noticed the reference listed my end date incorrectly as March instead of June. Would you be able to update it?'",
-            "modelAnswer": "A clear correction request names the exact mistake, for example: 'I noticed the reference listed my end date incorrectly as March instead of June. Would you be able to update it?' Point out the specific error clearly and politely request a correction. This serves as a model answer for the situation."
+            "minWords": 39,
+            "hint": "Show the interruption clearly, then describe a different specific consequence for at least two team members.",
+            "explanation": "Workplace disruptions ripple outward differently for different roles, and showing this variety, rather than treating the whole team as identical, produces a more realistic multi-element description.",
+            "modelAnswer": "An urgent call from a major client interrupts the team meeting halfway through, forcing everyone to pause and reschedule the rest of the discussion. As a result, the designer has to push her afternoon review to the next day, while the manager ends up staying an extra hour after work just to catch up on everything the interruption delayed."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L92_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW A DELAY AFFECTED THE WHOLE GROUP'S FIELD TRIP",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your city experienced an unusual heatwave, and your apartment had no air conditioning, making sleep nearly impossible. Describe how you coped.",
+            "situation": "A school bus breaks down on the way to a museum, causing a significant delay that affects the field trip in different ways for different groups of students. Describe what happened and the different effects.",
             "emojis": [
-                "🌡️",
-                "🥵",
-                "😴",
-                "🪭"
+                "🚌",
+                "🏛️",
+                "😩",
+                "🕐"
             ],
             "keywords": {
                 "0": [
-                    "HEATWAVE",
-                    "UNUSUAL",
-                    "APARTMENT"
+                    "BUS",
+                    "BREAKDOWN",
+                    "STRANDED"
                 ],
                 "1": [
-                    "NOAIRCONDITIONING",
-                    "SLEEP",
-                    "IMPOSSIBLE"
+                    "DELAY",
+                    "HOUR",
+                    "WAIT"
                 ],
                 "2": [
-                    "COPE",
-                    "FAN",
-                    "COLDSHOWER"
+                    "TOURGROUP",
+                    "SHORTEN",
+                    "RUSH"
                 ],
                 "3": [
-                    "ADAPT",
-                    "ENDURE",
-                    "RELIEF"
+                    "TEACHERS",
+                    "REARRANGE",
+                    "SCHEDULE"
                 ]
             },
-            "minWords": 40,
-            "hint": "Describe the specific things you tried to stay cool and whether they worked.",
-            "explanation": "Good discomfort-coping answers show resourcefulness, for example: 'I soaked a towel in cold water and slept with a fan pointed directly at me, which finally let me get some rest.'",
-            "modelAnswer": "Good discomfort-coping answers show resourcefulness, for example: 'I soaked a towel in cold water and slept with a fan pointed directly at me, which finally let me get some rest.' Describe the specific things you tried to stay cool and whether they worked. This serves as a model answer for the situation."
+            "minWords": 39,
+            "hint": "Show the original plan first, then describe a different specific effect for the students, the teachers, and the museum staff.",
+            "explanation": "Multi-element writing at this level should show how one delay ripples through several different groups of people, each affected in its own particular way, rather than describing the delay in isolation.",
+            "modelAnswer": "The school bus breaks down halfway to the museum, leaving the whole class stranded on the side of the road for nearly an hour. By the time a replacement bus finally arrives, the students only have time for a rushed, shortened tour, the museum staff have to quickly rearrange the group's guided session, and the teachers end up calling the school to explain why everyone will return much later than planned."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L93_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE INCIDENT, FOCUSING ONLY ON WHAT MATTERS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your school's robotics team qualified for a national competition, but the cost of travel and equipment exceeded the available budget. Describe how the team raised funds.",
+            "situation": "A minor workplace incident happens today, surrounded by many ordinary details that do not really matter to the story. Describe only the details that actually matter to understanding what happened and why.",
             "emojis": [
-                "🤖",
-                "🏆",
-                "💰",
-                "📢"
+                "📦",
+                "😳",
+                "🧑‍💼",
+                "✅"
             ],
             "keywords": {
                 "0": [
-                    "ROBOTICSTEAM",
-                    "QUALIFY",
-                    "NATIONAL"
+                    "SHELF",
+                    "COLLAPSE",
+                    "BOXES"
                 ],
                 "1": [
-                    "COSTEXCEED",
-                    "BUDGET",
-                    "TRAVEL"
+                    "NEARBY",
+                    "EMPLOYEE",
+                    "STARTLE"
                 ],
                 "2": [
-                    "FUNDRAISE",
-                    "ORGANIZE",
-                    "APPEAL"
+                    "CAUSE",
+                    "OVERLOAD",
+                    "WEIGHT"
                 ],
                 "3": [
-                    "SUCCEED",
-                    "COMPETE",
-                    "GRATEFUL"
+                    "RESOLVE",
+                    "CLEANUP",
+                    "REPORT"
                 ]
             },
-            "minWords": 40,
-            "hint": "Describe the specific fundraising methods the team used to cover the costs.",
-            "explanation": "Good resourceful-team answers show initiative, for example: 'We organized a car wash and reached out to local businesses for sponsorships, which covered most of the travel costs.'",
-            "modelAnswer": "Good resourceful-team answers show initiative, for example: 'We organized a car wash and reached out to local businesses for sponsorships, which covered most of the travel costs.' Describe the specific fundraising methods the team used to cover the costs. This serves as a model answer for the situation."
+            "minWords": 38,
+            "hint": "Before writing, decide which details explain what happened and why, and leave out anything that does not directly support that.",
+            "explanation": "Choosing which details matter is as important a skill as noticing detail at all, since including only relevant information keeps a description focused instead of cluttered with unnecessary description.",
+            "modelAnswer": "A storage shelf in the supply room suddenly collapses under too much weight, sending boxes crashing to the floor and startling a nearby employee. An investigation shows the shelf had simply been overloaded for weeks, so the team clears the mess, reorganizes the storage room properly, and files a short incident report before the day continues as normal."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L93_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE FAMILY DECISION, FOCUSING ONLY ON WHAT MATTERS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your remote team struggled with time zone differences that made real-time collaboration nearly impossible. Describe how you redesigned your workflow.",
+            "situation": "Your family recently made an important decision to move to a new city, and the story involves many small, unrelated details from that week. Describe only the details that actually matter to understanding the decision and its outcome.",
             "emojis": [
-                "🌍",
-                "⏰",
-                "💻",
-                "🤝"
+                "🏠",
+                "👨‍👩‍👧",
+                "📦",
+                "✅"
             ],
             "keywords": {
                 "0": [
-                    "REMOTETEAM",
-                    "TIMEZONE",
-                    "DIFFERENCE"
+                    "JOBOFFER",
+                    "RECEIVE",
+                    "OPPORTUNITY"
                 ],
                 "1": [
-                    "COLLABORATION",
-                    "REALTIME",
-                    "IMPOSSIBLE"
+                    "DISCUSS",
+                    "TOGETHER",
+                    "WEIGH"
                 ],
                 "2": [
-                    "REDESIGN",
-                    "WORKFLOW",
-                    "ASYNC"
+                    "DECIDE",
+                    "AGREE",
+                    "MOVE"
                 ],
                 "3": [
-                    "IMPROVE",
-                    "EFFICIENT",
-                    "SUCCEED"
+                    "PLAN",
+                    "ARRANGE",
+                    "TRANSITION"
                 ]
             },
-            "minWords": 40,
-            "hint": "Describe the specific changes the team made to work effectively across time zones.",
-            "explanation": "Good remote-work answers show structural adaptation, for example: 'We switched to detailed written updates instead of live meetings, which let everyone contribute on their own schedule.'",
-            "modelAnswer": "Good remote-work answers show structural adaptation, for example: 'We switched to detailed written updates instead of live meetings, which let everyone contribute on their own schedule.' Describe the specific changes the team made to work effectively across time zones. This serves as a model answer for the situation."
+            "minWords": 39,
+            "hint": "Focus only on the reason for the decision, the discussion, and the final outcome, leaving out unrelated daily details.",
+            "explanation": "Important life decisions are described more powerfully when unrelated daily details are left out entirely, since the reader's attention should stay on the reasoning and outcome, not on incidental events from the same week.",
+            "modelAnswer": "After my father receives a strong job offer in another city, my parents spend an entire weekend discussing whether the opportunity is worth uprooting the whole family. Weighing the better salary against the difficulty of leaving our current home, they finally decide together that the move makes sense, and within a month we begin planning the transition to our new city."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L93_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE MATCH MOMENT, FOCUSING ONLY ON WHAT MATTERS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your group tour included a member whose mobility needs required significant changes to the original itinerary. Describe how the group adapted.",
+            "situation": "During an important sports match, one specific moment decides the outcome of the game, surrounded by many other less important events. Describe only the details that actually matter to understanding that decisive moment.",
             "emojis": [
-                "🦽",
-                "🗺️",
-                "🤝",
+                "⚽",
+                "🥅",
+                "😱",
+                "🏆"
+            ],
+            "keywords": {
+                "0": [
+                    "SCORE",
+                    "TIED",
+                    "MINUTE"
+                ],
+                "1": [
+                    "STRIKER",
+                    "BREAK",
+                    "THROUGH"
+                ],
+                "2": [
+                    "GOALKEEPER",
+                    "DIVE",
+                    "MISS"
+                ],
+                "3": [
+                    "WIN",
+                    "CELEBRATE",
+                    "FINAL"
+                ]
+            },
+            "minWords": 39,
+            "hint": "Focus only on the moment that changed the result of the match, leaving out earlier unrelated plays.",
+            "explanation": "In event description, a decisive moment is strongest when surrounding, unrelated action is deliberately left out, since too much unnecessary detail can bury the exact moment that actually matters.",
+            "modelAnswer": "With the score tied and only two minutes remaining, the team's striker suddenly breaks through the defense and takes a sharp shot toward the top corner of the goal. The goalkeeper dives desperately but just misses it, and the ball crosses the line to secure the winning goal moments before the final whistle."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L94_Q1",
+            "instruction": "DESCRIBE HOW THE SUDDEN RAIN CHANGED THE OUTDOOR EVENT",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "An outdoor garden party is well underway when heavy rain suddenly begins to fall, affecting the guests in different ways. Describe the event and how different people reacted to the sudden change.",
+            "emojis": [
+                "☔",
+                "🎉",
+                "😳",
+                "🏠"
+            ],
+            "keywords": {
+                "0": [
+                    "PARTY",
+                    "GARDEN",
+                    "UNDERWAY"
+                ],
+                "1": [
+                    "DOWNPOUR",
+                    "SUDDEN",
+                    "SOAK"
+                ],
+                "2": [
+                    "GUESTS",
+                    "SCRAMBLE",
+                    "REACT"
+                ],
+                "3": [
+                    "INDOORS",
+                    "MOVE",
+                    "CONTINUE"
+                ]
+            },
+            "minWords": 39,
+            "hint": "Describe the party running smoothly first, then give at least two different guests a different reaction to the sudden rain.",
+            "explanation": "Changing circumstances are more convincing when different people react in different, specific ways, rather than the whole crowd described as reacting identically to the same event.",
+            "modelAnswer": "The garden party is in full swing, with guests chatting happily among the flowerbeds, when a sudden heavy downpour catches everyone off guard. Some guests grab whatever cover they can find under a nearby tree, while others simply laugh and dash for the house, and within minutes the whole party has relocated indoors, continuing just as cheerfully as before."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L94_Q2",
+            "instruction": "DESCRIBE HOW THE WEATHER CHANGE AFFECTED THE TOURNAMENT",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "An outdoor sports tournament is interrupted midway through by a sudden storm, affecting the players, organizers, and spectators differently. Describe the event and how each group responded to the change.",
+            "emojis": [
+                "🏆",
+                "⛈️",
+                "🧑‍⚖️",
+                "👥"
+            ],
+            "keywords": {
+                "0": [
+                    "TOURNAMENT",
+                    "MATCH",
+                    "UNDERWAY"
+                ],
+                "1": [
+                    "STORM",
+                    "INTERRUPT",
+                    "LIGHTNING"
+                ],
+                "2": [
+                    "ORGANIZERS",
+                    "DECIDE",
+                    "POSTPONE"
+                ],
+                "3": [
+                    "SPECTATORS",
+                    "DISAPPOINTED",
+                    "SHELTER"
+                ]
+            },
+            "minWords": 39,
+            "hint": "Give the organizers, the players, and the spectators each a distinct, specific reaction to the sudden interruption.",
+            "explanation": "A single disruptive event, like a storm, becomes a richer multi-element description when the response of each distinct group, organizers, players, spectators, is described separately rather than combined into one general reaction.",
+            "modelAnswer": "The tournament is well underway when dark clouds roll in quickly and lightning forces the organizers to suspend play for safety. While the players retreat to a covered area to wait out the storm, disappointed spectators crowd under whatever shelter they can find, and after nearly an hour, the organizers finally decide to postpone the remaining matches until the following day."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L94_Q3",
+            "instruction": "DESCRIBE HOW THE STORM CHANGED THE COMPANY PICNIC",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A company's annual outdoor picnic must be moved indoors when a sudden storm rolls in, affecting different employees and their planned activities. Describe the event and how the change was managed.",
+            "emojis": [
+                "🧺",
+                "⛈️",
+                "🏢",
                 "😊"
             ],
             "keywords": {
                 "0": [
-                    "GROUPTOUR",
-                    "MOBILITY",
-                    "NEED"
+                    "PICNIC",
+                    "OUTDOOR",
+                    "PLANNED"
                 ],
                 "1": [
-                    "ITINERARY",
-                    "CHANGE",
-                    "SIGNIFICANT"
+                    "STORM",
+                    "ROLL",
+                    "APPROACH"
                 ],
                 "2": [
-                    "ADAPT",
-                    "INCLUDE",
-                    "ACCOMMODATE"
+                    "EMPLOYEES",
+                    "GATHER",
+                    "BELONGINGS"
                 ],
                 "3": [
-                    "ENJOY",
-                    "TOGETHER",
-                    "SUCCESSFUL"
+                    "INDOORS",
+                    "RELOCATE",
+                    "ADAPT"
                 ]
             },
-            "minWords": 40,
-            "hint": "Describe the specific accommodations the group made to include everyone fully.",
-            "explanation": "Good inclusive-travel answers show thoughtful accommodation, for example: 'We chose accessible routes and a few extra rest stops, which let everyone enjoy the trip together.'",
-            "modelAnswer": "Good inclusive-travel answers show thoughtful accommodation, for example: 'We chose accessible routes and a few extra rest stops, which let everyone enjoy the trip together.' Describe the specific accommodations the group made to include everyone fully. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L94_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your family's annual holiday gathering grew too large for the usual house, forcing a difficult decision about who would host. Describe how the family resolved it.",
-            "emojis": [
-                "🎄",
-                "🏠",
-                "😅",
-                "🤝"
-            ],
-            "keywords": {
-                "0": [
-                    "HOLIDAYGATHERING",
-                    "GROW",
-                    "LARGE"
-                ],
-                "1": [
-                    "HOUSE",
-                    "FORCE",
-                    "DECISION"
-                ],
-                "2": [
-                    "DISCUSS",
-                    "HOST",
-                    "RESOLVE"
-                ],
-                "3": [
-                    "CELEBRATE",
-                    "TOGETHER",
-                    "SUCCESSFUL"
-                ]
-            },
-            "minWords": 41,
-            "hint": "Describe how the family decided on a new arrangement for the gathering.",
-            "explanation": "Good family-logistics answers show practical compromise, for example: 'We decided to rent a small hall this year instead of squeezing forty people into one house.'",
-            "modelAnswer": "Good family-logistics answers show practical compromise, for example: 'We decided to rent a small hall this year instead of squeezing forty people into one house.' Describe how the family decided on a new arrangement for the gathering. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L94_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You discovered a manufacturing defect in dozens of items you had already sold through your small online shop. Describe how you handled the situation with your customers.",
-            "emojis": [
-                "📦",
-                "⚠️",
-                "😟",
-                "✉️"
-            ],
-            "keywords": {
-                "0": [
-                    "MANUFACTURINGDEFECT",
-                    "DOZENS",
-                    "DISCOVER"
-                ],
-                "1": [
-                    "ALREADYSOLD",
-                    "ONLINESHOP",
-                    "SMALL"
-                ],
-                "2": [
-                    "NOTIFY",
-                    "CUSTOMER",
-                    "HONEST"
-                ],
-                "3": [
-                    "REPLACE",
-                    "REFUND",
-                    "TRUST"
-                ]
-            },
-            "minWords": 41,
-            "hint": "Describe how you communicated the problem honestly to affected customers.",
-            "explanation": "Good small-business-integrity answers show proactive honesty, for example: 'I emailed every affected customer immediately, offering a full refund or free replacement, which most appreciated.'",
-            "modelAnswer": "Good small-business-integrity answers show proactive honesty, for example: 'I emailed every affected customer immediately, offering a full refund or free replacement, which most appreciated.' Describe how you communicated the problem honestly to affected customers. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L94_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your food truck business was banned from a popular event location after a misunderstanding with organizers about permit requirements. Describe how you resolved it.",
-            "emojis": [
-                "🚚",
-                "🍔",
-                "❌",
-                "📋"
-            ],
-            "keywords": {
-                "0": [
-                    "FOODTRUCK",
-                    "BAN",
-                    "EVENTLOCATION"
-                ],
-                "1": [
-                    "MISUNDERSTANDING",
-                    "PERMIT",
-                    "ORGANIZER"
-                ],
-                "2": [
-                    "CLARIFY",
-                    "DOCUMENT",
-                    "RESOLVE"
-                ],
-                "3": [
-                    "REINSTATE",
-                    "RELIEF",
-                    "RETURN"
-                ]
-            },
-            "minWords": 41,
-            "hint": "Describe how you clarified the misunderstanding and what evidence helped resolve it.",
-            "explanation": "Good business-dispute answers show calm clarification, for example: 'I provided copies of my valid permit, and the organizers apologized and reinstated my spot for the next event.'",
-            "modelAnswer": "Good business-dispute answers show calm clarification, for example: 'I provided copies of my valid permit, and the organizers apologized and reinstated my spot for the next event.' Describe how you clarified the misunderstanding and what evidence helped resolve it. This serves as a model answer for the situation."
+            "minWords": 39,
+            "hint": "Show at least two different planned outdoor activities being interrupted, then describe how the event adapted indoors.",
+            "explanation": "Sudden plan changes are described convincingly when specific interrupted activities, such as a game or a barbecue, are named, since this shows the reader exactly what was lost and how it was replaced.",
+            "modelAnswer": "Just as the sack race is getting underway and the grill is heating up nicely, dark clouds roll in fast, forcing everyone to hurriedly gather blankets and food before the rain arrives. The event quickly relocates to the company cafeteria, where the barbecue becomes an impromptu buffet, and the planned outdoor games are cheerfully replaced with an indoor trivia contest instead."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L95_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "WRITE A COHERENT DESCRIPTION OF THE EVENT",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your nonprofit organization's donor database was accidentally exposed due to a configuration error, raising serious privacy concerns. Describe how the organization responded.",
+            "situation": "Your neighborhood holds a block party on a warm Saturday afternoon, with music, food, and neighbors of all ages. Write one coherent paragraph describing the event from beginning to end.",
             "emojis": [
-                "💻",
-                "⚠️",
-                "😟",
-                "🔒"
+                "🎶",
+                "🍔",
+                "👨‍👩‍👧‍👦",
+                "🎈"
             ],
             "keywords": {
                 "0": [
-                    "NONPROFIT",
-                    "DONORDATABASE",
-                    "EXPOSE"
+                    "STREET",
+                    "CLOSE",
+                    "DECORATE"
                 ],
                 "1": [
-                    "CONFIGURATIONERROR",
-                    "ACCIDENT",
-                    "PRIVACY"
+                    "GRILL",
+                    "SMOKE",
+                    "FOOD"
                 ],
                 "2": [
-                    "RESPOND",
-                    "SECURE",
-                    "NOTIFY"
+                    "CHILDREN",
+                    "GAMES",
+                    "LAUGH"
                 ],
                 "3": [
-                    "REBUILD",
-                    "TRUST",
-                    "TRANSPARENT"
+                    "EVENING",
+                    "WINDDOWN",
+                    "THANK"
                 ]
             },
-            "minWords": 41,
-            "hint": "Describe the immediate steps taken to secure the data and inform affected donors.",
-            "explanation": "Good privacy-crisis answers show transparency and urgency, for example: 'The organization secured the database within hours and sent a clear explanation to every affected donor the same day.'",
-            "modelAnswer": "Good privacy-crisis answers show transparency and urgency, for example: 'The organization secured the database within hours and sent a clear explanation to every affected donor the same day.' Describe the immediate steps taken to secure the data and inform affected donors. This serves as a model answer for the situation."
+            "minWords": 39,
+            "hint": "Write the event as one connected paragraph with a clear beginning, middle, and end, rather than a list of separate observations.",
+            "explanation": "A coherent paragraph moves the reader smoothly from one moment to the next using transitions, rather than presenting a series of unconnected sentences about the same event.",
+            "modelAnswer": "By early afternoon, our street is closed to traffic and decorated with colorful streamers, and the smell of grilled food quickly fills the air as neighbors set up folding tables along the sidewalk. Children run between games of tag while their parents catch up over paper plates of food, and as the sun begins to set, everyone gradually gathers to thank the organizers before slowly heading home."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L95_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "WRITE A COHERENT DESCRIPTION OF THE EVENT",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your community health clinic faced a shortage of staff just as demand for appointments increased sharply. Describe how the clinic adapted to serve patients.",
+            "situation": "Your school holds a fundraiser event on a Friday evening, including a bake sale, games, and a short performance. Write one coherent paragraph describing the event from beginning to end.",
             "emojis": [
-                "🏥",
-                "😓",
-                "📅",
-                "🤝"
+                "🍰",
+                "🎮",
+                "🎭",
+                "👏"
             ],
             "keywords": {
                 "0": [
-                    "CLINIC",
-                    "STAFFSHORTAGE",
-                    "DEMAND"
+                    "TABLES",
+                    "BAKESALE",
+                    "SET"
                 ],
                 "1": [
-                    "INCREASE",
-                    "SHARPLY",
-                    "APPOINTMENT"
+                    "GAMES",
+                    "STATION",
+                    "CROWD"
                 ],
                 "2": [
-                    "ADAPT",
-                    "PRIORITIZE",
-                    "SCHEDULE"
+                    "PERFORMANCE",
+                    "STAGE",
+                    "CURTAIN"
                 ],
                 "3": [
-                    "SERVE",
-                    "MANAGE",
-                    "RESOLVE"
+                    "APPLAUSE",
+                    "CONCLUDE",
+                    "SUCCESS"
                 ]
             },
-            "minWords": 41,
-            "hint": "Describe how the clinic reorganized its schedule to manage the shortage.",
-            "explanation": "Good healthcare-management answers show fair prioritization, for example: 'The clinic extended hours and prioritized urgent cases first, which helped manage the unusually high demand.'",
-            "modelAnswer": "Good healthcare-management answers show fair prioritization, for example: 'The clinic extended hours and prioritized urgent cases first, which helped manage the unusually high demand.' Describe how the clinic reorganized its schedule to manage the shortage. This serves as a model answer for the situation."
+            "minWords": 40,
+            "hint": "Move through the fundraiser's different sections in the order they naturally happen, connecting them smoothly rather than listing them.",
+            "explanation": "When an event has several distinct parts, a coherent paragraph links them with time-based transitions, such as afterward or by the end, which shows the reader how the parts flow into one whole event.",
+            "modelAnswer": "The gymnasium fills quickly as families arrive to browse the bake sale tables lined with homemade cakes and cookies, and by early evening a small crowd has gathered around the game stations set up along one wall. Around seven, the lights dim for a short student performance, and the evening ends with warm applause as the principal announces that the fundraiser has raised more money than expected."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L95_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "WRITE A COHERENT DESCRIPTION OF THE EVENT",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "A beloved actor in a long-running play unexpectedly left the production days before opening night. Describe how the theater company managed the crisis.",
+            "situation": "A local farmers' cooperative holds its monthly meeting to discuss upcoming harvest plans and a few unresolved disagreements. Write one coherent paragraph describing the meeting from beginning to end.",
             "emojis": [
-                "🎭",
-                "😱",
-                "⏰",
+                "🧑‍🌾",
+                "🗒️",
+                "💬",
                 "🤝"
             ],
             "keywords": {
                 "0": [
-                    "ACTOR",
-                    "LONGRUNNING",
-                    "LEAVE"
+                    "FARMERS",
+                    "ARRIVE",
+                    "GATHER"
                 ],
                 "1": [
-                    "UNEXPECTED",
-                    "DAYSBEFORE",
-                    "OPENINGNIGHT"
+                    "AGENDA",
+                    "DISCUSS",
+                    "HARVEST"
                 ],
                 "2": [
-                    "CRISIS",
-                    "REPLACE",
-                    "REHEARSE"
+                    "DISAGREE",
+                    "OPINION",
+                    "DEBATE"
                 ],
                 "3": [
-                    "MANAGE",
-                    "SUCCESSFUL",
-                    "PREMIERE"
+                    "CONCLUDE",
+                    "AGREE",
+                    "ADJOURN"
                 ]
             },
-            "minWords": 41,
-            "hint": "Describe the urgent steps the company took to prepare a replacement in time.",
-            "explanation": "Good theater-crisis answers show urgent teamwork, for example: 'The understudy rehearsed around the clock for three days, and the opening night went on as planned.'",
-            "modelAnswer": "Good theater-crisis answers show urgent teamwork, for example: 'The understudy rehearsed around the clock for three days, and the opening night went on as planned.' Describe the urgent steps the company took to prepare a replacement in time. This serves as a model answer for the situation."
+            "minWords": 40,
+            "hint": "Write the meeting as one flowing paragraph, showing how the discussion moves from the agenda to the disagreement and finally to a resolution.",
+            "explanation": "Coherence at this level means the paragraph should read as a single connected event rather than separate notes, with each part clearly leading into the next through natural transitions.",
+            "modelAnswer": "Farmers from across the region gather in the cooperative's small meeting hall, settling into folding chairs as the chairman opens with a brief overview of this year's expected harvest. The conversation grows more heated once the topic shifts to how profits should be divided among the smaller farms, but after nearly an hour of back and forth, the group finally reaches a compromise everyone can accept, and the meeting adjourns just before sunset."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L96_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE INCIDENT AND HOW EACH ROLE RESPONDED",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You need to write a message to a wedding venue requesting a refund of your deposit after the event had to be cancelled due to a family emergency. Describe what you write.",
+            "situation": "A worker at a construction site slips and injures his ankle, and several people respond in different ways based on their roles. Describe the incident and the different responses.",
             "emojis": [
-                "💍",
-                "🏛️",
-                "💰",
-                "✉️"
+                "🏗️",
+                "🤕",
+                "👷",
+                "🚑"
             ],
             "keywords": {
                 "0": [
-                    "WEDDINGVENUE",
-                    "DEPOSIT",
-                    "REFUND"
+                    "SLIP",
+                    "STUMBLE",
+                    "FALL"
                 ],
                 "1": [
-                    "CANCEL",
-                    "FAMILYEMERGENCY",
-                    "EVENT"
+                    "FOREMAN",
+                    "RUSH",
+                    "ASSESS"
                 ],
                 "2": [
-                    "EXPLAIN",
-                    "REQUEST",
-                    "SYMPATHY"
+                    "COWORKER",
+                    "SUPPORT",
+                    "STEADY"
                 ],
                 "3": [
-                    "RESOLVE",
-                    "RESPONSE",
-                    "HOPE"
+                    "MEDIC",
+                    "EXAMINE",
+                    "BANDAGE"
                 ]
             },
-            "minWords": 41,
-            "hint": "Explain the situation briefly and clearly state what you are requesting.",
-            "explanation": "A clear emergency-related request explains the situation respectfully, for example: 'Due to a sudden family emergency, we must cancel our reservation for August 10th. We would appreciate discussing a partial refund of our deposit.'",
-            "modelAnswer": "A clear emergency-related request explains the situation respectfully, for example: 'Due to a sudden family emergency, we must cancel our reservation for August 10th. We would appreciate discussing a partial refund of our deposit.' Explain the situation briefly and clearly state what you are requesting. This serves as a model answer for the situation."
+            "minWords": 40,
+            "hint": "Give the injured worker, the foreman, and at least one other person a distinct role in the response.",
+            "explanation": "Incidents involving several roles, such as a foreman and a medic, are described clearly when each person's specific responsibility is shown separately, mirroring how real emergency responses are actually organized.",
+            "modelAnswer": "A worker loses his footing on a loose beam and twists his ankle badly on the way down, letting out a sharp cry that draws immediate attention. The foreman rushes over first to assess the situation, a nearby coworker steadies him while he sits down carefully, and within minutes the site's first-aid trained medic arrives to examine the ankle and wrap it securely before arranging transport to a clinic."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L96_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE INCIDENT AND HOW DIFFERENT PASSENGERS RESPONDED",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your city's water supply was temporarily contaminated, requiring residents to boil water or buy bottled water for over a week. Describe how your household adapted.",
+            "situation": "A passenger suddenly feels faint on a crowded train, and several nearby passengers respond in different ways. Describe the incident and the different responses.",
             "emojis": [
-                "💧",
-                "⚠️",
-                "🍶",
-                "😤"
+                "🚆",
+                "😵",
+                "👥",
+                "🚨"
             ],
             "keywords": {
                 "0": [
-                    "WATERSUPPLY",
-                    "CONTAMINATE",
-                    "TEMPORARY"
+                    "FAINT",
+                    "SWAY",
+                    "GRIP"
                 ],
                 "1": [
-                    "RESIDENT",
-                    "BOILWATER",
-                    "BOTTLED"
+                    "PASSENGER",
+                    "OFFER",
+                    "SEAT"
                 ],
                 "2": [
-                    "ADAPT",
-                    "STOCKUP",
-                    "INCONVENIENT"
+                    "ANOTHER",
+                    "ALERT",
+                    "CONDUCTOR"
                 ],
                 "3": [
-                    "RESOLVE",
-                    "RELIEF",
+                    "WATER",
+                    "OFFER",
+                    "RECOVER"
+                ]
+            },
+            "minWords": 40,
+            "hint": "Give at least three different passengers a distinct, specific way of helping the person who feels unwell.",
+            "explanation": "A public emergency involving strangers reads clearly when several individual, specific reactions are shown, since this reflects how a group of unrelated people naturally divides an unexpected task among themselves.",
+            "modelAnswer": "A young man suddenly sways and grips a pole tightly, his face turning pale as the crowded train rattles along. A woman standing nearby immediately offers him her seat, another passenger presses the emergency button to alert the conductor, and a third digs through her bag for a bottle of water, and within a few minutes the color slowly returns to his face."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L96_Q3",
+            "instruction": "DESCRIBE THE ALARM AND HOW DIFFERENT PEOPLE RESPONDED",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A fire alarm suddenly goes off inside a busy department store, and staff and customers respond in different ways. Describe the incident and the different responses.",
+            "emojis": [
+                "🚨",
+                "🏬",
+                "🧑‍💼",
+                "🚶"
+            ],
+            "keywords": {
+                "0": [
+                    "ALARM",
+                    "SOUND",
+                    "BLARE"
+                ],
+                "1": [
+                    "STAFF",
+                    "DIRECT",
+                    "CALM"
+                ],
+                "2": [
+                    "CUSTOMERS",
+                    "GATHER",
+                    "BELONGINGS"
+                ],
+                "3": [
+                    "EXIT",
+                    "FILE",
+                    "OUTSIDE"
+                ]
+            },
+            "minWords": 40,
+            "hint": "Give the staff and the customers noticeably different behaviors, since their roles in the situation are not the same.",
+            "explanation": "Distinguishing between staff and customer behavior during an incident, rather than describing the crowd as one group, shows a more mature understanding of how people's roles shape their reactions.",
+            "modelAnswer": "The moment the fire alarm blares through the department store, trained staff members calmly begin directing shoppers toward the nearest exits, their voices steady despite the noise. Most customers quickly abandon their shopping carts and follow the instructions without panic, though one confused elderly shopper pauses near the escalators until a staff member gently guides her toward the door with the rest of the crowd."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L97_Q1",
+            "instruction": "SUMMARIZE THE WEEK LEADING UP TO THE FAMILY REUNION",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "Your extended family spends an entire week preparing for and hosting a large family reunion. Summarize the key stages of the week, from the early preparations to the final gathering.",
+            "emojis": [
+                "📋",
+                "🧹",
+                "👨‍👩‍👧‍👦",
+                "🎉"
+            ],
+            "keywords": {
+                "0": [
+                    "PLAN",
+                    "INVITE",
+                    "COORDINATE"
+                ],
+                "1": [
+                    "CLEAN",
+                    "PREPARE",
+                    "ARRANGE"
+                ],
+                "2": [
+                    "ARRIVE",
+                    "GREET",
+                    "GATHER"
+                ],
+                "3": [
+                    "CELEBRATE",
+                    "MEMORIES",
+                    "CONCLUDE"
+                ]
+            },
+            "minWords": 40,
+            "hint": "Summarize only the key stages of the week, one or two sentences per stage, rather than describing every single day in detail.",
+            "explanation": "Summarizing a longer period of time well means choosing a few key stages rather than describing every day, since a summary should compress events, not simply list them all.",
+            "modelAnswer": "In the days leading up to the reunion, my family spends most of its time coordinating travel plans and deep-cleaning the house where everyone will gather. By midweek, the focus shifts to cooking large batches of food and setting up extra tables in the backyard, and when relatives finally begin arriving on Friday, hugs and laughter fill the house until the reunion itself stretches happily into Saturday evening."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L97_Q2",
+            "instruction": "SUMMARIZE THE WEEKS SPENT LAUNCHING THE ONLINE SHOP",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A friend spends several weeks setting up and finally launching a small online shop selling handmade candles. Summarize the key stages of this process, from the early planning to the shop's launch.",
+            "emojis": [
+                "🕯️",
+                "💻",
+                "📦",
+                "🚀"
+            ],
+            "keywords": {
+                "0": [
+                    "PLAN",
+                    "RESEARCH",
+                    "SUPPLIER"
+                ],
+                "1": [
+                    "WEBSITE",
+                    "BUILD",
+                    "DESIGN"
+                ],
+                "2": [
+                    "PHOTOGRAPH",
+                    "PRODUCTS",
+                    "LIST"
+                ],
+                "3": [
+                    "LAUNCH",
+                    "ANNOUNCE",
+                    "FIRSTSALE"
+                ]
+            },
+            "minWords": 41,
+            "hint": "Compress the process into a few clear stages, mentioning only the most important step within each one.",
+            "explanation": "Multi-week processes are summarized effectively by naming one representative action per stage, such as building the website, rather than listing every small task that happened along the way.",
+            "modelAnswer": "In the first two weeks, my friend focuses on researching suppliers and testing different candle scents until she finds a small collection she is happy with. She then spends several days building a simple website and photographing her products carefully for the online listings, and after nearly a month of preparation, she finally announces the shop's launch on social media, celebrating her very first sale within hours."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L97_Q3",
+            "instruction": "SUMMARIZE THE TWO WEEKS RECOVERING FROM THE INJURY",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "After twisting an ankle badly during a hike, you spend the following two weeks slowly recovering. Summarize the key stages of your recovery, from the initial injury to returning to normal activity.",
+            "emojis": [
+                "🦶",
+                "🧊",
+                "🩹",
+                "🚶"
+            ],
+            "keywords": {
+                "0": [
+                    "INJURY",
+                    "TWIST",
+                    "SWELL"
+                ],
+                "1": [
+                    "REST",
+                    "ELEVATE",
+                    "ICE"
+                ],
+                "2": [
+                    "PHYSIOTHERAPY",
+                    "EXERCISE",
+                    "STRETCH"
+                ],
+                "3": [
+                    "RECOVER",
+                    "WALK",
                     "NORMAL"
                 ]
             },
             "minWords": 41,
-            "hint": "Describe the specific adjustments your household made during the contamination period.",
-            "explanation": "Good public-emergency answers show practical adaptation, for example: 'We boiled water for cooking and bought cases of bottled water for drinking until the city declared it safe again.'",
-            "modelAnswer": "Good public-emergency answers show practical adaptation, for example: 'We boiled water for cooking and bought cases of bottled water for drinking until the city declared it safe again.' Describe the specific adjustments your household made during the contamination period. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L96_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your school faced backlash after announcing it would remove a popular elective due to budget cuts. Describe how students and parents responded.",
-            "emojis": [
-                "🎓",
-                "✂️",
-                "😤",
-                "🗣️"
-            ],
-            "keywords": {
-                "0": [
-                    "SCHOOL",
-                    "BACKLASH",
-                    "ANNOUNCE"
-                ],
-                "1": [
-                    "REMOVE",
-                    "ELECTIVE",
-                    "BUDGETCUTS"
-                ],
-                "2": [
-                    "STUDENTS",
-                    "PARENTS",
-                    "RESPOND"
-                ],
-                "3": [
-                    "ADVOCATE",
-                    "RECONSIDER",
-                    "OUTCOME"
-                ]
-            },
-            "minWords": 41,
-            "hint": "Describe the specific actions taken by students and parents to advocate for the class.",
-            "explanation": "Good advocacy-outcome answers describe organized response, for example: 'Parents started a petition and attended the school board meeting, which led the school to reconsider the decision.'",
-            "modelAnswer": "Good advocacy-outcome answers describe organized response, for example: 'Parents started a petition and attended the school board meeting, which led the school to reconsider the decision.' Describe the specific actions taken by students and parents to advocate for the class. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L97_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your company's biggest investor pulled out unexpectedly, putting several jobs, including yours, at serious risk. Describe how the company responded to reassure employees.",
-            "emojis": [
-                "💼",
-                "😰",
-                "📉",
-                "🗣️"
-            ],
-            "keywords": {
-                "0": [
-                    "INVESTOR",
-                    "PULLOUT",
-                    "UNEXPECTED"
-                ],
-                "1": [
-                    "JOBS",
-                    "RISK",
-                    "SERIOUS"
-                ],
-                "2": [
-                    "REASSURE",
-                    "EMPLOYEE",
-                    "COMMUNICATE"
-                ],
-                "3": [
-                    "STABILIZE",
-                    "TRUST",
-                    "SURVIVE"
-                ]
-            },
-            "minWords": 42,
-            "hint": "Describe how leadership communicated with employees during the uncertain period.",
-            "explanation": "Good crisis-leadership answers show transparency, for example: 'Leadership held an honest town hall explaining the situation and the steps being taken to secure new funding.'",
-            "modelAnswer": "Good crisis-leadership answers show transparency, for example: 'Leadership held an honest town hall explaining the situation and the steps being taken to secure new funding.' Describe how leadership communicated with employees during the uncertain period. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L97_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your cruise ship had to change its route unexpectedly due to a tropical storm, disappointing passengers who had planned around specific stops. Describe how the crew handled passenger concerns.",
-            "emojis": [
-                "🚢",
-                "🌀",
-                "😞",
-                "🗣️"
-            ],
-            "keywords": {
-                "0": [
-                    "CRUISESHIP",
-                    "CHANGEROUTE",
-                    "STORM"
-                ],
-                "1": [
-                    "DISAPPOINT",
-                    "PASSENGER",
-                    "SPECIFICSTOPS"
-                ],
-                "2": [
-                    "CREW",
-                    "EXPLAIN",
-                    "REASSURE"
-                ],
-                "3": [
-                    "ADAPT",
-                    "COMPENSATE",
-                    "SATISFIED"
-                ]
-            },
-            "minWords": 42,
-            "hint": "Describe how the crew communicated the change and what they offered to ease disappointment.",
-            "explanation": "Good service-recovery answers show proactive communication, for example: 'The crew explained the safety reasons clearly and offered an extra day at an alternative port to make up for the change.'",
-            "modelAnswer": "Good service-recovery answers show proactive communication, for example: 'The crew explained the safety reasons clearly and offered an extra day at an alternative port to make up for the change.' Describe how the crew communicated the change and what they offered to ease disappointment. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L97_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your blended family struggled to agree on holiday traditions that respected both sides of the new family structure. Describe how you found a way forward.",
-            "emojis": [
-                "👨‍👩‍👧‍👦",
-                "🎄",
-                "😕",
-                "🤝"
-            ],
-            "keywords": {
-                "0": [
-                    "BLENDEDFAMILY",
-                    "HOLIDAYTRADITION",
-                    "STRUGGLE"
-                ],
-                "1": [
-                    "RESPECT",
-                    "BOTHSIDES",
-                    "STRUCTURE"
-                ],
-                "2": [
-                    "DISCUSS",
-                    "COMBINE",
-                    "COMPROMISE"
-                ],
-                "3": [
-                    "NEWTRADITION",
-                    "UNITE",
-                    "ENJOY"
-                ]
-            },
-            "minWords": 42,
-            "hint": "Describe how the family combined or alternated traditions to make everyone feel included.",
-            "explanation": "Good blended-family answers show creative compromise, for example: 'We decided to alternate which traditions we followed each year, which made both sides of the family feel respected.'",
-            "modelAnswer": "Good blended-family answers show creative compromise, for example: 'We decided to alternate which traditions we followed each year, which made both sides of the family feel respected.' Describe how the family combined or alternated traditions to make everyone feel included. This serves as a model answer for the situation."
+            "hint": "Divide the recovery into clear stages, such as the first days of rest and the later stage of gentle exercise.",
+            "explanation": "Recovery narratives, like other multi-stage processes, are summarized well by dividing time into a small number of meaningful phases rather than describing symptoms day by day.",
+            "modelAnswer": "For the first few days after the injury, I mostly rest with my foot elevated, applying ice regularly to reduce the stubborn swelling. By the end of the first week, I begin gentle stretching exercises recommended by a physiotherapist, and although progress feels slow at times, by the start of the second week I am finally able to walk normally again without any noticeable pain."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L98_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE CHANGING CIRCUMSTANCES DURING THE FESTIVAL DAY",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You noticed that a charity you regularly donated to was spending an unusually large portion of funds on administrative costs. Describe how you investigated before deciding what to do.",
+            "situation": "During a large outdoor music festival, several changing circumstances occur throughout the day, and the organizers must adapt to each one. Describe the day and how the situation kept changing.",
             "emojis": [
-                "💝",
-                "📊",
-                "🔍",
-                "🤔"
+                "🎪",
+                "🌧️",
+                "🎤",
+                "👥"
             ],
             "keywords": {
                 "0": [
-                    "CHARITY",
-                    "DONATE",
-                    "REGULARLY"
+                    "WEATHER",
+                    "SHIFT",
+                    "UNPREDICTABLE"
                 ],
                 "1": [
-                    "ADMINISTRATIVECOSTS",
-                    "UNUSUAL",
-                    "LARGE"
+                    "HEADLINER",
+                    "DELAY",
+                    "TRAFFIC"
                 ],
                 "2": [
-                    "INVESTIGATE",
-                    "RESEARCH",
-                    "VERIFY"
+                    "CROWD",
+                    "GROW",
+                    "MANAGE"
                 ],
                 "3": [
-                    "DECIDE",
-                    "CONTINUE",
-                    "REDIRECT"
+                    "ORGANIZERS",
+                    "ADJUST",
+                    "SCHEDULE"
                 ]
             },
-            "minWords": 42,
-            "hint": "Describe what you found during your research and how it influenced your decision.",
-            "explanation": "Good informed-giving answers show careful verification, for example: 'After reviewing their annual report, I found the costs were within a reasonable range, so I decided to continue supporting them.'",
-            "modelAnswer": "Good informed-giving answers show careful verification, for example: 'After reviewing their annual report, I found the costs were within a reasonable range, so I decided to continue supporting them.' Describe what you found during your research and how it influenced your decision. This serves as a model answer for the situation."
+            "minWords": 41,
+            "hint": "Show at least two separate changing circumstances happening at different points in the day, and how the organizers responded to each.",
+            "explanation": "Stacking several changing circumstances within one description tests whether the writer can track more than one shifting element at once while still keeping the sequence of events clear.",
+            "modelAnswer": "Early in the afternoon, sudden rain forces the organizers to briefly pause the smaller stages, and just as the sun returns, traffic delays cause the evening's headliner to arrive nearly an hour late. As the crowd grows increasingly restless waiting near the main stage, the organizers quickly rearrange the schedule, moving up a local band's set to fill the gap, and the festival ultimately continues smoothly into the night."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L98_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE CHANGING CIRCUMSTANCES DURING THE BUSY HOSPITAL NIGHT",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your cooking class instructor suddenly changed the curriculum to focus on a cuisine most students had no experience with. Describe how the class adapted.",
+            "situation": "A busy hospital emergency room experiences several changing circumstances over the course of one night, forcing staff to constantly adjust their priorities. Describe the night and how the situation kept changing.",
             "emojis": [
-                "👨‍🍳",
-                "📚",
-                "😅",
-                "🍲"
+                "🏥",
+                "🚑",
+                "🧑‍⚕️",
+                "⏰"
             ],
             "keywords": {
                 "0": [
-                    "COOKINGCLASS",
-                    "INSTRUCTOR",
-                    "CHANGE"
+                    "ARRIVAL",
+                    "STEADY",
+                    "PATIENTS"
                 ],
                 "1": [
-                    "CURRICULUM",
-                    "UNFAMILIAR",
-                    "CUISINE"
+                    "SEVERE",
+                    "CASE",
+                    "PRIORITIZE"
                 ],
                 "2": [
-                    "ADAPT",
-                    "LEARN",
-                    "PRACTICE"
+                    "SHORTSTAFF",
+                    "COLLEAGUE",
+                    "CALLIN"
                 ],
                 "3": [
-                    "ENJOY",
-                    "SKILL",
-                    "EXPAND"
+                    "MANAGE",
+                    "ADAPT",
+                    "MORNING"
                 ]
             },
-            "minWords": 42,
-            "hint": "Describe how the class responded to the unfamiliar cuisine and what they learned.",
-            "explanation": "Good adaptive-learning answers show openness to new challenges, for example: 'Although we had never cooked Ethiopian food before, the new techniques ended up expanding everyone's cooking skills significantly.'",
-            "modelAnswer": "Good adaptive-learning answers show openness to new challenges, for example: 'Although we had never cooked Ethiopian food before, the new techniques ended up expanding everyone's cooking skills significantly.' Describe how the class responded to the unfamiliar cuisine and what they learned. This serves as a model answer for the situation."
+            "minWords": 41,
+            "hint": "Show at least two separate developments during the night, each requiring the staff to adjust their approach differently.",
+            "explanation": "Environments defined by constant change, like an emergency room, are described convincingly through a series of distinct adjustments rather than a single static description of a busy night.",
+            "modelAnswer": "As the night begins, a steady stream of minor injuries keeps the emergency room busy but manageable, until a severe car accident case suddenly arrives, forcing the doctors to reprioritize everyone waiting. To make things more difficult, one nurse calls in sick partway through the shift, leaving the remaining staff to stretch themselves even further, and it is not until close to dawn that the pace of arrivals finally begins to slow."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L98_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE CHANGING CIRCUMSTANCES DURING ELECTION DAY AT THE POLLING STATION",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your team's open-source project gained unexpected popularity, attracting more contributors than the small team could manage effectively. Describe how the team adjusted.",
+            "situation": "A local polling station experiences several changing circumstances throughout election day, and the staff must adapt to keep things running smoothly. Describe the day and how the situation kept changing.",
             "emojis": [
-                "💻",
-                "📈",
-                "😅",
-                "🤝"
+                "🗳️",
+                "⏳",
+                "🖥️",
+                "👥"
             ],
             "keywords": {
                 "0": [
-                    "OPENSOURCE",
-                    "POPULARITY",
-                    "UNEXPECTED"
+                    "QUEUE",
+                    "LENGTHEN",
+                    "MORNING"
                 ],
                 "1": [
-                    "CONTRIBUTOR",
-                    "MANAGE",
-                    "SMALLTEAM"
+                    "SYSTEM",
+                    "GLITCH",
+                    "TECHNICAL"
                 ],
                 "2": [
-                    "ADJUST",
-                    "ORGANIZE",
-                    "DELEGATE"
+                    "VOLUNTEERS",
+                    "REORGANIZE",
+                    "LINE"
                 ],
                 "3": [
-                    "GROW",
-                    "SUCCESSFUL",
-                    "SUSTAINABLE"
+                    "RESOLVE",
+                    "STEADY",
+                    "EVENING"
                 ]
             },
-            "minWords": 42,
-            "hint": "Describe how the team organized itself to manage the sudden growth.",
-            "explanation": "Good open-source-management answers show structural adaptation, for example: 'We created clear contribution guidelines and appointed volunteer moderators, which made the growing community much easier to manage.'",
-            "modelAnswer": "Good open-source-management answers show structural adaptation, for example: 'We created clear contribution guidelines and appointed volunteer moderators, which made the growing community much easier to manage.' Describe how the team organized itself to manage the sudden growth. This serves as a model answer for the situation."
+            "minWords": 41,
+            "hint": "Describe an early challenge, such as a long queue, followed by a separate later challenge, such as a technical problem.",
+            "explanation": "Civic and public-service settings often involve several unrelated challenges appearing at different times, and separating them clearly in the description shows the reader the full shape of a demanding day.",
+            "modelAnswer": "By mid-morning, the queue outside the polling station stretches around the block as voters arrive in far greater numbers than expected, and volunteers scramble to open an extra check-in table to speed things along. Later in the afternoon, a technical glitch briefly halts one of the voting machines, but staff quickly switch voters to a backup system, and by evening the station is running smoothly again despite the earlier disruptions."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L99_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE DINNER WITH A CLEAR FOCUS ON ONE STORYLINE",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your local hospital introduced a new triage system during flu season that initially confused both patients and staff. Describe how the transition was managed.",
+            "situation": "A large family holiday dinner has many things happening at once, but choose one specific storyline to focus your description on, rather than trying to describe everything happening in the room.",
             "emojis": [
-                "🏥",
-                "📋",
-                "😕",
-                "🤝"
+                "🍽️",
+                "👨‍👩‍👧‍👦",
+                "🎄",
+                "😊"
             ],
             "keywords": {
                 "0": [
-                    "HOSPITAL",
-                    "TRIAGESYSTEM",
-                    "INTRODUCE"
+                    "TABLE",
+                    "CROWDED",
+                    "GENERATIONS"
                 ],
                 "1": [
-                    "CONFUSE",
-                    "PATIENTS",
-                    "STAFF"
+                    "GRANDMOTHER",
+                    "STORY",
+                    "SHARE"
                 ],
                 "2": [
-                    "TRANSITION",
-                    "EXPLAIN",
-                    "ADJUST"
+                    "GRANDCHILDREN",
+                    "LISTEN",
+                    "GATHER"
                 ],
                 "3": [
-                    "MANAGE",
-                    "IMPROVE",
-                    "SUCCESSFUL"
+                    "LAUGHTER",
+                    "WARM",
+                    "MOMENT"
                 ]
             },
             "minWords": 42,
-            "hint": "Describe the early confusion and how the hospital clarified the new process.",
-            "explanation": "Good healthcare-transition answers show clear communication, for example: 'The hospital added clear signage and extra staff to explain the new system, which reduced confusion within a few days.'",
-            "modelAnswer": "Good healthcare-transition answers show clear communication, for example: 'The hospital added clear signage and extra staff to explain the new system, which reduced confusion within a few days.' Describe the early confusion and how the hospital clarified the new process. This serves as a model answer for the situation."
+            "hint": "Choose one small storyline happening within the larger event, and describe only that thread clearly from beginning to end.",
+            "explanation": "When many things happen at once, choosing a single focused storyline, rather than trying to capture everything, produces a stronger, clearer description than an attempt to mention every detail in the room.",
+            "modelAnswer": "While the rest of the table buzzes with several overlapping conversations, my grandmother quietly gathers three of her grandchildren around her chair near the fireplace, beginning to tell the same story about her childhood that she tells every year. Despite everything else happening around the room, the children listen with genuine fascination, and by the end of her story, even a couple of the adults have wandered over to listen too."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L99_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE MARATHON DAY WITH A CLEAR FOCUS ON ONE STORYLINE",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "An amateur orchestra you played in was invited to perform at a prestigious venue, far beyond what the group had ever attempted. Describe how the group prepared.",
+            "situation": "A city marathon involves thousands of runners, volunteers, and spectators, but choose one specific storyline to focus your description on, rather than trying to describe the entire event.",
             "emojis": [
-                "🎻",
-                "🏛️",
-                "😰",
-                "🎶"
+                "🏃",
+                "🏅",
+                "👏",
+                "💧"
             ],
             "keywords": {
                 "0": [
-                    "AMATEURORCHESTRA",
-                    "INVITE",
-                    "PRESTIGIOUS"
+                    "RUNNER",
+                    "FIRST",
+                    "MARATHON"
                 ],
                 "1": [
-                    "BEYOND",
-                    "ATTEMPT",
-                    "GROUP"
+                    "FAMILY",
+                    "CHEER",
+                    "SIGN"
                 ],
                 "2": [
-                    "PREPARE",
-                    "REHEARSE",
-                    "INTENSIVE"
+                    "EXHAUST",
+                    "PUSH",
+                    "FINAL"
                 ],
                 "3": [
-                    "PERFORM",
-                    "PROUD",
-                    "SUCCESSFUL"
+                    "FINISH",
+                    "CROSS",
+                    "EMBRACE"
                 ]
             },
             "minWords": 42,
-            "hint": "Describe how the group prepared for a performance beyond their usual experience.",
-            "explanation": "Good ambitious-preparation answers show dedication, for example: 'We added extra rehearsals every weekend for two months, and the performance turned out better than anyone expected.'",
-            "modelAnswer": "Good ambitious-preparation answers show dedication, for example: 'We added extra rehearsals every weekend for two months, and the performance turned out better than anyone expected.' Describe how the group prepared for a performance beyond their usual experience. This serves as a model answer for the situation."
+            "hint": "Follow one specific runner's experience through the crowd and noise, rather than describing the marathon as a whole event.",
+            "explanation": "In a large, chaotic event, focusing on one individual's specific journey through it, rather than the whole crowd, gives the reader a clear, personal thread to follow amid everything else happening around them.",
+            "modelAnswer": "Among the thousands of runners weaving through the busy course, one first-time marathoner struggles noticeably during the final few miles, her pace slowing as exhaustion clearly sets in. Spotting her tired face, her family, who have been tracking her progress with a handmade sign for hours, begins cheering loudly from the sidelines, and the sudden encouragement seems to push her through the last stretch until she finally crosses the finish line, collapsing into their arms."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L99_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE SCHOOL PLAY NIGHT WITH A CLEAR FOCUS ON ONE STORYLINE",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You need to write a message to a journalist correcting a factual error in an article about your organization. Describe what you write.",
+            "situation": "A school play performance night involves both onstage drama and backstage chaos happening at the same time, but choose one specific storyline to focus your description on.",
             "emojis": [
-                "📰",
-                "❌",
-                "✉️",
-                "📋"
+                "🎭",
+                "🎬",
+                "😰",
+                "👏"
             ],
             "keywords": {
                 "0": [
-                    "JOURNALIST",
-                    "FACTUALERROR",
-                    "ARTICLE"
+                    "BACKSTAGE",
+                    "COSTUME",
+                    "MISSING"
                 ],
                 "1": [
-                    "ORGANIZATION",
-                    "CORRECT",
-                    "ABOUT"
+                    "STUDENT",
+                    "PANIC",
+                    "SEARCH"
                 ],
                 "2": [
-                    "POLITE",
-                    "EVIDENCE",
-                    "SPECIFIC"
+                    "STAGEMANAGER",
+                    "IMPROVISE",
+                    "SOLUTION"
                 ],
                 "3": [
-                    "REQUEST",
-                    "CORRECTION",
-                    "RESPECT"
+                    "CURTAIN",
+                    "RAISE",
+                    "RELIEF"
                 ]
             },
             "minWords": 42,
-            "hint": "Point out the specific error and provide evidence to support the correction.",
-            "explanation": "A clear correction request is specific and respectful, for example: 'Your article stated our organization was founded in 2015, but our official records show 2012. Could this be corrected?'",
-            "modelAnswer": "A clear correction request is specific and respectful, for example: 'Your article stated our organization was founded in 2015, but our official records show 2012. Could this be corrected?' Point out the specific error and provide evidence to support the correction. This serves as a model answer for the situation."
+            "hint": "Focus specifically on the backstage problem and how it was solved, rather than describing the whole performance from the audience's view.",
+            "explanation": "Choosing the backstage storyline over the onstage performance, even though both are happening simultaneously, shows deliberate focus, since the writer selects the thread that offers the richest, most specific detail to follow.",
+            "modelAnswer": "While the audience settles happily into their seats, backstage a young actor discovers with panic that her costume for the second scene has completely disappeared from the rack where she left it. The stage manager, hearing her whispered panic just minutes before the curtain rises, quickly improvises by pinning together an old costume from a previous year's play, and the actor walks on stage right on cue, visibly relieved that no one in the audience notices the difference."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L100_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE FULL FAMILY REUNION DAY WITH ALL ITS MOVING PARTS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your neighborhood association proposed a new rule banning street parking that would significantly inconvenience several residents, including you. Describe how residents responded.",
+            "situation": "A large, multi-generational family reunion takes place over one full day, involving several activities, a sudden change in weather, and multiple smaller storylines happening at once. Describe the day as a coherent whole, capturing the important details while leaving out anything unnecessary.",
             "emojis": [
-                "🅿️",
-                "🏘️",
-                "😤",
-                "🗣️"
+                "👨‍👩‍👧‍👦",
+                "🌦️",
+                "🎉",
+                "🍽️"
             ],
             "keywords": {
                 "0": [
-                    "NEIGHBORHOOD",
-                    "PROPOSERULE",
-                    "BAN"
+                    "GENERATIONS",
+                    "GATHER",
+                    "BACKYARD"
                 ],
                 "1": [
-                    "INCONVENIENCE",
-                    "SEVERAL",
-                    "RESIDENT"
+                    "WEATHER",
+                    "SHIFT",
+                    "INDOORS"
                 ],
                 "2": [
-                    "RESPOND",
-                    "MEETING",
-                    "VOICE"
+                    "CHILDREN",
+                    "GAMES",
+                    "LAUGHTER"
                 ],
                 "3": [
-                    "MODIFY",
-                    "OUTCOME",
-                    "SETTLE"
+                    "ELDERS",
+                    "STORIES",
+                    "EVENING"
                 ]
             },
-            "minWords": 42,
-            "hint": "Describe how residents voiced their concerns and what compromise was reached.",
-            "explanation": "Good civic-participation answers show organized response, for example: 'Residents attended the meeting and proposed limited permit parking instead, which the association eventually approved.'",
-            "modelAnswer": "Good civic-participation answers show organized response, for example: 'Residents attended the meeting and proposed limited permit parking instead, which the association eventually approved.' Describe how residents voiced their concerns and what compromise was reached. This serves as a model answer for the situation."
+            "minWords": 43,
+            "hint": "Choose a beginning, a clear turning point such as the weather change, and an ending, weaving in only the details that support this overall shape.",
+            "explanation": "At this level, mastery means holding several elements together, multiple people, a changing circumstance, and selective detail, within a single coherent description that never loses its overall shape despite covering a great deal of ground.",
+            "modelAnswer": "By late morning, four generations of family gather in my grandparents' backyard, with children immediately organizing games near the old oak tree while the adults set up long tables for lunch. A sudden afternoon shower forces everyone indoors for an hour, turning the cramped living room into an unexpectedly cozy gathering where my uncle tells the same fishing story he tells every year, and once the sun returns, the party spills back outside, finally winding down at dusk with everyone gathered comfortably around a small fire."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L100_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE FULL PRODUCT LAUNCH DAY WITH ALL ITS MOVING PARTS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your school's exchange partnership with an international institution was suddenly suspended due to political tensions between the two countries. Describe how the affected students reacted.",
+            "situation": "A small company holds a product launch event involving press attendees, an unexpected technical issue, and a nervous but ultimately successful presentation. Describe the day as a coherent whole, capturing the important details while leaving out anything unnecessary.",
             "emojis": [
-                "🌍",
-                "🎓",
-                "❌",
-                "😔"
+                "🚀",
+                "🎤",
+                "💻",
+                "📸"
             ],
             "keywords": {
                 "0": [
-                    "EXCHANGEPARTNERSHIP",
-                    "SUSPEND",
-                    "SUDDEN"
+                    "PRESS",
+                    "ARRIVE",
+                    "GATHER"
                 ],
                 "1": [
-                    "POLITICALTENSION",
-                    "COUNTRIES",
-                    "BETWEEN"
+                    "MICROPHONE",
+                    "FAIL",
+                    "MOMENT"
                 ],
                 "2": [
-                    "STUDENTS",
-                    "REACT",
-                    "DISAPPOINT"
+                    "TEAM",
+                    "SCRAMBLE",
+                    "BACKUP"
                 ],
                 "3": [
-                    "ADAPT",
-                    "ALTERNATIVE",
-                    "UNDERSTAND"
+                    "APPLAUSE",
+                    "SUCCESS",
+                    "RELIEVED"
                 ]
             },
-            "minWords": 42,
-            "hint": "Describe how the affected students processed the disappointment and adapted their plans.",
-            "explanation": "Good geopolitical-impact answers show personal perspective on larger events, for example: 'Although devastated to lose the opportunity, several students found alternative programs through a different partner university.'",
-            "modelAnswer": "Good geopolitical-impact answers show personal perspective on larger events, for example: 'Although devastated to lose the opportunity, several students found alternative programs through a different partner university.' Describe how the affected students processed the disappointment and adapted their plans. This serves as a model answer for the situation."
+            "minWords": 43,
+            "hint": "Structure the day around a clear turning point, the technical issue, and show how the team's response leads to the eventual success.",
+            "explanation": "A high-stakes event description reaches mastery when the writer manages several elements, an audience, a setback, and a recovery, without losing the clear line running from the day's beginning to its successful end.",
+            "modelAnswer": "Journalists and industry guests begin filling the small auditorium an hour before the presentation, chatting quietly while the marketing team makes final checks on the product display. Just as the founder steps up to speak, the microphone suddenly cuts out, sending a ripple of nervous laughter through the audience until a technician quickly swaps in a backup unit within seconds, and the founder, recovering her composure impressively, delivers a confident presentation that ends in enthusiastic applause and a flurry of photographs."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L100_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE FULL MOVING DAY WITH ALL ITS MOVING PARTS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your company's annual bonus structure changed unexpectedly, significantly reducing what many employees had budgeted for. Describe how employees reacted and how leadership addressed concerns.",
+            "situation": "A family's moving day involves professional movers, two young children, a nervous family pet, and an unexpected change of plan partway through. Describe the day as a coherent whole, capturing the important details while leaving out anything unnecessary.",
             "emojis": [
-                "💼",
-                "💰",
-                "😠",
-                "🗣️"
+                "📦",
+                "🐕",
+                "👶",
+                "🚚"
             ],
             "keywords": {
                 "0": [
-                    "BONUSSTRUCTURE",
-                    "CHANGE",
-                    "UNEXPECTED"
+                    "MOVERS",
+                    "ARRIVE",
+                    "EARLY"
                 ],
                 "1": [
-                    "REDUCE",
-                    "BUDGET",
-                    "SIGNIFICANTLY"
+                    "DOG",
+                    "ANXIOUS",
+                    "HIDE"
                 ],
                 "2": [
-                    "EMPLOYEES",
-                    "REACT",
-                    "CONCERN"
+                    "CHILDREN",
+                    "EXCITED",
+                    "UNDERFOOT"
                 ],
                 "3": [
-                    "LEADERSHIP",
-                    "ADDRESS",
-                    "EXPLAIN"
+                    "DELAY",
+                    "ADJUST",
+                    "EVENING"
                 ]
             },
-            "minWords": 42,
-            "hint": "Describe the employees' concerns and how leadership explained the decision.",
-            "explanation": "Good compensation-communication answers show transparency, for example: 'Leadership held a meeting explaining the company's financial constraints and committed to revisiting the structure the following year.'",
-            "modelAnswer": "Good compensation-communication answers show transparency, for example: 'Leadership held a meeting explaining the company's financial constraints and committed to revisiting the structure the following year.' Describe the employees' concerns and how leadership explained the decision. This serves as a model answer for the situation."
+            "minWords": 43,
+            "hint": "Give each participant, the movers, the children, and the dog, one clear moment, then show how the unexpected delay affects the overall plan.",
+            "explanation": "Full mastery of multi-element description means giving several distinct participants their own brief, specific moment while the description still moves forward through one clear, connected sequence of events, rather than fragmenting into separate unrelated scenes.",
+            "modelAnswer": "The moving truck arrives just after seven in the morning, and while two burly movers begin carrying boxes down the stairs, the family's anxious dog immediately retreats under a bed, refusing to come out despite the children's excited attempts to coax her with treats. Around midday, the movers discover the new apartment's elevator is temporarily out of service, adding nearly two extra hours to the job, but by evening, exhausted and surrounded by half-unpacked boxes, the family finally settles in together, the dog cautiously emerging to explore her new home."
         }
     ]
 }

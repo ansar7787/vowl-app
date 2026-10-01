@@ -1,607 +1,583 @@
 {
-    "gameType": "opinionWriting",
-    "batchIndex": 9,
-    "levels": "81-90",
-    "quests": [
-        {
-            "id": "WRT_OPINIONWRITING_L81_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Social media platforms must be legally required to verify users' ages before granting access.",
-            "options": [
-                "Effective age verification requires collecting and storing sensitive personal identity data at security risk.",
-                "Age verification prevents underage users from accessing social platforms designed for adults.",
-                "Determined young users will bypass verification systems through proxy accounts or family credentials.",
-                "Protecting children from harmful online content justifies the privacy trade-off that verification requires."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about the child safety case for age verification (Pros) and the privacy and circumvention concerns (Cons).",
-            "explanation": "Age verification protects children from adult content (Pros), but it requires sensitive data collection at risk of breach, and motivated young users readily bypass verification systems (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L81_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Mandatory age verification would reduce harmful content exposure for children on social media.",
-            "options": [
-                "Restricting access by age shields young people from extremist content, harassment, and harmful comparisons.",
-                "Combined with content moderation, age gating creates a meaningfully safer online environment for under-18s.",
-                "Content moderation alone is more effective than age gating at reducing harmful material from all users.",
-                "Harmful content simply migrates to less regulated platforms when major platforms implement age restrictions."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Consider whether age verification effectively reduces harmful exposure (Pros) and the content migration risk (Cons).",
-            "explanation": "Age verification combined with moderation limits children's harmful content exposure (Pros), but moderation alone may be more effective, and restricted content migrates to less regulated alternatives (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L81_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Age verification on social media establishes important precedents for platform accountability.",
-            "options": [
-                "Requiring verification establishes that platforms must actively take responsibility for user safety.",
-                "Age-based accountability can be extended to other platform safety standards and obligations.",
-                "Government-mandated verification extends state control over private online spaces in concerning ways.",
-                "Smaller platforms lack the technical and financial resources to implement robust verification systems."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about age verification as an accountability precedent (Pros) and the state control and resource concerns (Cons).",
-            "explanation": "Mandatory verification establishes platform accountability as a legal obligation (Pros), but it raises state control concerns and places disproportionate implementation burdens on smaller platforms (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L82_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Violent video games should carry mandatory health warning labels.",
-            "options": [
-                "Health warnings ensure parents are fully informed about the potential impact of games before purchase.",
-                "Existing age rating systems already provide comprehensive content guidance to consumers.",
-                "The scientific consensus on whether violent games cause real-world behavioural harm is strongly contested.",
-                "Visible warnings preserve adult consumer choice while providing protective information."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about the consumer information case for health warnings on games (Pros) and the existing systems and evidence concerns (Cons).",
-            "explanation": "Health warnings inform parents while preserving adult choice (Pros), but existing age ratings already perform this function, and contested science makes explicit 'health warnings' potentially misleading to consumers (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L82_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Research evidence provides sufficient justification for health warnings on violent games.",
-            "options": [
-                "Major systematic reviews find no consistent evidence that violent games cause real-world harmful behaviour.",
-                "Some studies link prolonged violent game exposure with desensitisation and increased measured aggression.",
-                "Applying 'health warnings' to contested science trivialises the concept and may mislead consumers.",
-                "Even contested risks to children's development justify precautionary labelling and clear parental information."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Consider whether evidence justifies health warnings (Pros) and the risk of misleading consumers (Cons).",
-            "explanation": "Uncertain risks to children justify precautionary labelling (Pros), but major reviews show no consistent evidence of real-world harm, and health warnings on contested evidence risk alarming consumers without scientific basis (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L82_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Content warnings on games support more thoughtful media consumption among young people.",
-            "options": [
-                "Games already include comprehensive content descriptions that effectively serve the same purpose.",
-                "Teenagers routinely ignore or actively circumvent mandatory content warnings across all media formats.",
-                "Prominent content labels prompt young people and parents to pause and consider their media choices.",
-                "Warning systems that include recommended age ranges and play duration alerts address broader wellbeing."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about content warnings as responsible consumption tools (Pros) and their actual effectiveness (Cons).",
-            "explanation": "Content warnings prompt consumption reflection and address time and age appropriateness (Pros), but comprehensive in-app content descriptions already exist, and teenagers typically disregard mandatory warnings across all media (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L83_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Online news outlets should be permitted to charge readers subscription fees.",
-            "options": [
-                "Subscriptions create a sustainable funding model that reduces dependence on advertising revenue.",
-                "Subscription paywalls restrict quality journalism to those who can afford to pay for it.",
-                "Free news sources of variable quality proliferate when quality journalism retreats behind paywalls.",
-                "Readers who pay for journalism demonstrate greater engagement and trust in the content they access."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about the sustainability case for news subscriptions (Pros) and the access and quality concerns (Cons).",
-            "explanation": "Subscriptions create sustainable journalism funding and build reader engagement (Pros), but paywalls exclude lower-income readers and create space for low-quality misinformation to fill the gap (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L83_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Subscription-funded journalism produces higher-quality and more independent reporting.",
-            "options": [
-                "Revenue independent of advertisers allows journalists to report without commercial or political pressure.",
-                "Subscription outlets have strong incentives to maintain the quality that retains paying readers.",
-                "Even well-funded subscription outlets publish partisan, misleading, or agenda-driven content regularly.",
-                "Subscription models entrench established media organisations at the expense of challenger and diverse voices."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Consider whether subscription funding genuinely improves journalism quality (Pros) and its limitations (Cons).",
-            "explanation": "Subscription funding reduces advertiser influence and incentivises quality to retain readers (Pros), but partisan content persists across all funding models, and subscriptions reinforce existing media power rather than enabling diversity (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L83_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "A platform news levy could fund universally accessible high-quality journalism.",
-            "options": [
-                "Platform levies are fiercely resisted by technology companies and difficult to implement across borders.",
-                "Requiring platforms that profit from shared news to fund journalism creates a fair commercial relationship.",
-                "Platform levies could finance a public journalism fund making quality reporting freely accessible to all.",
-                "Government-mediated journalism funding creates potential conflicts of interest and threatens editorial independence."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about a platform journalism levy (Pros) and the implementation and independence concerns (Cons).",
-            "explanation": "Platform levies create fair commercial arrangements and could fund universally accessible journalism (Pros), but tech giants resist strongly, and government administration of journalism funds risks editorial independence (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L84_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Online shopping is more beneficial and convenient than shopping in physical stores.",
-            "options": [
-                "Online retail provides access to a far greater product range at consistently competitive prices.",
-                "Physical stores allow customers to inspect, try, and evaluate products before committing to purchase.",
-                "Online shopping concentrates retail spending in large digital platforms, harming local independent businesses.",
-                "Buying online saves consumers significant time, travel costs, and physical effort."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about the convenience benefits of online shopping (Pros) and what it costs consumers and communities (Cons).",
-            "explanation": "Online shopping offers unmatched range, price, and time saving (Pros), but it prevents tactile pre-purchase evaluation and concentrates spending in large platforms at the expense of local economies (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L84_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The growth of online shopping is causing serious harm to local high streets and communities.",
-            "options": [
-                "Physical retailers failing to adapt to online competition face a commercial, not a policy, challenge.",
-                "Local shops provide employment, community gathering spaces, and the social fabric of town centres.",
-                "Local businesses that integrate online and physical retail can successfully thrive alongside e-commerce.",
-                "Distinctive local businesses create unique community identities that online platforms cannot replicate."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Consider the local economy case against online shopping dominance (Pros) and the adaptation argument (Cons).",
-            "explanation": "Local retail supports employment, community identity, and social space (Pros), but struggling physical retailers face an adaptation challenge, and those integrating online channels can succeed alongside e-commerce (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L84_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Online shopping can have a larger environmental footprint than buying locally.",
-            "options": [
-                "Individual parcel deliveries generate significantly more packaging waste than aggregated in-store purchasing.",
-                "Driving to out-of-town retail parks typically generates more emissions per purchase than home delivery.",
-                "High return rates in online fashion create enormous volumes of unnecessary transport and material waste.",
-                "Online retail eliminates the energy cost of maintaining large physical store buildings and car parks."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about the environmental costs of online shopping (Pros) and where in-store shopping can be worse (Cons).",
-            "explanation": "Parcel packaging and high return rates generate significant environmental waste (Pros for local shopping), but home delivery can be more efficient per purchase than car-based retail trips, and avoiding large stores reduces energy use (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L85_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Streaming services are making traditional cinemas commercially unviable.",
-            "options": [
-                "The cinema experience of communal large-screen viewing cannot be replicated in domestic settings.",
-                "Cinema chains are adapting successfully through luxury formats, event screenings, and premium experiences.",
-                "Cinema attendance has declined dramatically since the widespread adoption of major streaming platforms.",
-                "Streaming platforms release high-budget films at home simultaneously with or before theatrical releases."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about the threat streaming poses to cinemas (Pros) and cinema's unique and evolving offering (Cons).",
-            "explanation": "Streaming has cut cinema attendance and directly competes with theatrical releases (Pros for the threat), but the communal large-screen experience is irreplaceable, and cinemas are successfully adapting to premium formats (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L85_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Streaming platforms are democratising global access to film and television culture.",
-            "options": [
-                "Streaming algorithms create preference bubbles that significantly limit discovery of diverse content.",
-                "Streaming libraries give audiences everywhere access to international cinema unavailable locally.",
-                "Subscription models make a wide range of content affordable for most households.",
-                "Independent and international films struggle for visibility on platforms dominated by commercial recommendations."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Consider streaming's democratising effect (Pros) and its algorithmic discovery limitations (Cons).",
-            "explanation": "Streaming provides affordable global access to film and television culture (Pros), but algorithms create preference bubbles, and independent film struggles for visibility against commercially prioritised content (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L85_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The growth of streaming has weakened film-going as a shared cultural experience.",
-            "options": [
-                "Communal cinema creates shared cultural references that individual home streaming cannot replicate.",
-                "Cinemas provide an immersive, distraction-free viewing experience that home environments rarely match.",
-                "Streaming enables immediate access to cultural conversations without coordinating schedules and travel.",
-                "Social viewing via video call or shared streaming platforms creates new forms of communal experience."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about streaming's impact on shared film culture (Pros for cinema) and the new communal formats it enables (Cons).",
-            "explanation": "Cinema creates genuine shared cultural moments and focused immersive viewing (Pros), but streaming enables immediate cultural participation, and new shared online viewing formats are emerging to replace traditional communal watching (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L86_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The widespread use of smartphones is making people significantly less sociable.",
-            "options": [
-                "Smartphones enable people to maintain meaningful social relationships across otherwise impossible distances.",
-                "Digital communication is a valid and increasingly important form of social interaction.",
-                "Constant phone use displaces face-to-face conversation even when people are physically together.",
-                "Growing up with smartphones reduces young people's practice of reading non-verbal social signals."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about smartphones' impact on face-to-face sociability (Pros for concern) and their social benefits (Cons).",
-            "explanation": "Phone use displaces in-person conversation and reduces non-verbal social skill development (Pros for concern), but smartphones maintain important relationships and digital communication is a legitimate and valued social form (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L86_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Smartphones facilitate valuable social connection across cultural and geographic boundaries.",
-            "options": [
-                "Online social connections are typically less emotionally deep than those formed through physical proximity.",
-                "Messaging and video calling enable genuinely meaningful relationships despite physical distance.",
-                "Excessive digital sociability can replace, rather than supplement, meaningful real-world social engagement.",
-                "Social media connects people with shared communities and interests that do not exist locally."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Consider the social benefits of smartphones (Pros) and the depth and quality of digital relationships (Cons).",
-            "explanation": "Smartphones enable meaningful long-distance relationships and connect people with like-minded communities (Pros), but digital connections tend to be shallower, and heavy digital sociability can crowd out deeper in-person engagement (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L86_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Social media platforms are designed to maximise engagement rather than genuine human connection.",
-            "options": [
-                "Social media can be used intentionally and thoughtfully as a genuine tool for meaningful connection.",
-                "Social media is engineered to deliver dopamine-triggering shallow interactions rather than meaningful conversation.",
-                "Time spent passively scrolling displaces the reciprocal, effortful interaction that builds real relationships.",
-                "Platform design is evolving, with increasing emphasis on meaningful rather than passive engagement."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about social media's design intent and its impact on real connection (Pros for concern) and intentional use (Cons).",
-            "explanation": "Engagement-maximising design promotes shallow dopamine interactions over meaningful conversation (Pros for concern), but critical and intentional users can use platforms for genuine connection, and platform design is gradually improving (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L87_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Modern technology is making people physically lazier and more sedentary in daily life.",
-            "options": [
-                "Remote controls, online shopping, and delivery services eliminate many routine physical tasks.",
-                "Sedentary technology use is a significant contributor to rising rates of obesity and metabolic disease.",
-                "Fitness and health technology actively motivates millions of people to exercise more than they otherwise would.",
-                "Automation of tedious physical tasks frees time for more meaningful and chosen physical activity."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about technology's contribution to physical inactivity (Pros for concern) and where it promotes activity (Cons).",
-            "explanation": "Labour-saving technology reduces daily physical activity and contributes to sedentary lifestyle disease (Pros for concern), but fitness technology motivates exercise and automation creates time for chosen physical activity (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L87_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Technology is progressively replacing skilled manual work and reducing practical physical competence.",
-            "options": [
-                "GPS navigation has demonstrably reduced spatial awareness and map-reading ability across the population.",
-                "Offloading routine tasks to technology frees human cognitive capacity for higher-value creative work.",
-                "Domestic appliances and cleaning robots reduce the everyday practical and physical competence of users.",
-                "The skills technology replaces are often tedious, and the time saved is more productively deployed."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Consider whether technology erodes valuable practical skills (Pros for concern) and the productivity argument (Cons).",
-            "explanation": "Technology dependence reduces traditional navigation and practical household skills (Pros for concern), but offloading routine tasks frees time and cognitive capacity for higher-value and more fulfilling activities (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L87_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Technology can and should be designed to incorporate physical activity into daily use.",
-            "options": [
-                "Technology cannot substitute for structured exercise and continues to reduce overall daily movement.",
-                "Activity-integrated technology like walking desks and exergames merges productivity with physical movement.",
-                "Commercial pressures drive technology companies to maximise engagement time rather than physical activity.",
-                "Wearable health technology creates strong habits of physical self-monitoring and goal-setting."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about activity-promoting technology design as a solution (Pros) and its limitations (Cons).",
-            "explanation": "Activity-integrated and wearable technology builds physical habits and merges movement with productivity (Pros), but screen technology still reduces net daily movement, and commercial incentives prioritise engagement over health (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L88_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Artificial intelligence will ultimately create more jobs than it displaces.",
-            "options": [
-                "Every major technological transition in history has ultimately created more jobs than it destroyed.",
-                "Unlike previous automation, AI targets cognitive and white-collar work, displacing many educated workers.",
-                "AI generates entirely new industries and job categories that cannot yet be anticipated or measured.",
-                "The pace of AI-driven job displacement is so rapid that worker retraining cannot keep pace."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about the historical and optimistic case for AI job creation (Pros) and the unprecedented scale concern (Cons).",
-            "explanation": "Historical technology transitions have consistently created net new employment (Pros), but AI targets cognitive work at unprecedented speed, leaving retraining unable to keep pace with the scale of displacement (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L88_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "AI productivity gains can fund the social protection and retraining that displaced workers need.",
-            "options": [
-                "Productivity gains from AI will disproportionately benefit capital owners rather than workers or governments.",
-                "Retraining success depends heavily on displaced workers' age, education level, and access to learning.",
-                "The economic surplus generated by AI automation creates the fiscal capacity to support transitions.",
-                "Well-designed retraining programmes funded by AI productivity gains can successfully reskill workers."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Consider whether AI productivity gains can fund worker transition (Pros) and the distribution concerns (Cons).",
-            "explanation": "AI productivity creates fiscal capacity for retraining and social protection (Pros), but gains accrue disproportionately to capital, and retraining effectiveness depends heavily on individual characteristics and access conditions (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L88_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The impact of AI on employment depends primarily on the policy choices governments make today.",
-            "options": [
-                "The pace of AI development makes timely and effective policy responses extremely difficult to achieve.",
-                "Proactive taxation of AI profits and investment in education can shape a positive employment future.",
-                "Countries that actively manage AI transition through policy will experience better labour market outcomes.",
-                "Governments have historically failed to regulate transformative technologies before significant harm occurs."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about policy determinism in the AI employment debate (Pros) and governance capacity concerns (Cons).",
-            "explanation": "Proactive policy and AI profit taxation can shape a positive employment transition (Pros), but AI develops faster than policy can respond, and the historical record of governing transformative technologies quickly is poor (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L89_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Online education can be just as effective as traditional classroom teaching.",
-            "options": [
-                "Classroom environments offer social interaction, spontaneous discussion, and peer learning difficult to replicate.",
-                "Many students lack the self-discipline needed to succeed in unsupported online learning environments.",
-                "High-quality online courses delivered by expert educators can match classroom content and depth.",
-                "Online platforms provide essential flexible access to education for those who cannot attend in person."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about the effectiveness and access case for online education (Pros) and the social and motivational concerns (Cons).",
-            "explanation": "Online education matches classroom content and provides crucial access for non-traditional students (Pros), but social learning and collaborative interaction are very difficult to replicate, and many students lack self-motivation for unsupported online study (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L89_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Online learning significantly increases access to education for students facing traditional barriers.",
-            "options": [
-                "Students with disabilities, caring responsibilities, or geographic isolation benefit enormously from remote learning.",
-                "Online platforms enable part-time study without the high financial cost of full-time campus attendance.",
-                "The quality of online learning depends critically on reliable internet access that many students lack.",
-                "Employers often value campus-based qualifications more highly than equivalent online credentials."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Consider online learning's role in removing educational barriers (Pros) and the access and credentialing concerns (Cons).",
-            "explanation": "Remote learning removes physical, geographic, and financial barriers to education (Pros), but internet inequality perpetuates digital exclusion, and persistent employer scepticism about online qualifications undermines their labour market value (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L89_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Blended learning combining online and classroom teaching produces the strongest educational outcomes.",
-            "options": [
-                "Hybrid models use each format optimally: online for content delivery, in-person for discussion and practice.",
-                "Blended approaches have strong research evidence and outperform purely online or purely traditional methods.",
-                "Blended models are logistically complex and require significant infrastructure investment from institutions.",
-                "Students must navigate two different learning environments simultaneously, increasing cognitive load."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about blended learning as the optimal educational model (Pros) and the implementation challenges (Cons).",
-            "explanation": "Blended learning leverages the best of both formats with strong evidence to support it (Pros), but implementation is costly, logistically demanding, and navigating dual environments increases student cognitive load (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L90_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Industrial robots will replace most human manufacturing workers within a generation.",
-            "options": [
-                "Robotics has already displaced millions of manufacturing jobs and is advancing rapidly in capability.",
-                "Tasks requiring nuanced human judgment, creativity, and complex physical dexterity remain beyond robots.",
-                "Manufacturing companies still need skilled human workers for quality control, maintenance, and problem-solving.",
-                "Increasing robot precision, adaptability, and falling costs make widespread automation economically inevitable."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about the automation trajectory in manufacturing (Pros for displacement concern) and its limits (Cons).",
-            "explanation": "Robots have displaced millions and economic trends point to further widespread displacement (Pros), but nuanced judgment and complex physical tasks remain beyond robotic capability, and human oversight roles persist (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L90_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Manufacturing automation creates new, higher-quality jobs for human workers.",
-            "options": [
-                "Robotics creates sustained demand for engineers, programmers, and technicians to build and maintain machines.",
-                "New jobs created by automation require very different skills than those displaced, leaving many workers behind.",
-                "Automation raises productivity, enabling market expansion and creating substantial indirect employment.",
-                "Productivity gains from automation flow primarily to shareholders rather than creating broadly distributed jobs."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Consider the job creation argument for automation (Pros) and the skills mismatch and distribution concerns (Cons).",
-            "explanation": "Automation creates new technical roles and enables market expansion (Pros), but the skills gap between displaced and new jobs is vast, and productivity gains may not translate into broadly distributed employment benefit (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L90_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Society must fundamentally rethink the relationship between work and income to respond to automation.",
-            "options": [
-                "Automation has not yet delivered the mass unemployment that these structural responses are designed to address.",
-                "If automation displaces most routine work, working hours must reduce and income must be decoupled from employment.",
-                "Universal basic income or reduced working weeks are necessary structural responses to technological unemployment.",
-                "Prematurely restructuring work before automation's full effects materialise carries significant economic risks."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about the structural rethinking of work in response to automation (Pros) and the premature action concern (Cons).",
-            "explanation": "If automation causes structural unemployment, decoupling income from work through UBI or shorter weeks is necessary (Pros), but restructuring before mass unemployment materialises may be premature and economically risky (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        }
-    ]
+  "gameType": "opinionWriting",
+  "batchIndex": 9,
+  "levels": "81-90",
+  "quests": [
+    {
+      "id": "WRT_OPINIONWRITING_L81_Q1",
+      "instruction": "Choose the statement that is a counterargument (it argues against the claim).",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Open-book exams test understanding better than closed-book exams.",
+      "options": [
+        "Open-book exams let students check small details in their notes.",
+        "Students may copy answers straight from their notes without understanding them.",
+        "Teachers can write questions that require students to explain ideas.",
+        "Understanding matters far more than memory in most modern jobs."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Three statements help the claim. One points to a weakness.",
+      "explanation": "Copying without understanding is a problem for the claim, so it is a counterargument. The others support open-book exams.",
+      "structureGuide": "Claim → Counterargument"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L81_Q2",
+      "instruction": "Which statement is a counterargument?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Recorded lectures should be available to every student.",
+      "options": [
+        "Some students may stop attending class if they can always watch later.",
+        "Students can review the recordings again before the final exams.",
+        "Recordings help students who miss a class through illness or family duties.",
+        "Students can pause and replay a difficult explanation as many times as needed."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Look for a statement that describes a possible harm of the idea.",
+      "explanation": "Falling attendance is a possible harm of recorded lectures. The other statements are benefits.",
+      "structureGuide": "Claim → Counterargument"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L81_Q3",
+      "instruction": "Select the TWO statements that oppose the claim.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Companies should monitor employees' computer activity to raise productivity.",
+      "options": [
+        "Managers can identify which teams need extra training or support.",
+        "Constant monitoring can make employees anxious and less willing to take initiative.",
+        "Monitoring can show which tasks take up the most working time.",
+        "Trust between staff and managers may suffer if people feel they are being watched."
+      ],
+      "correctOrder": [
+        1,
+        3
+      ],
+      "hint": "Ask which statements describe possible costs of the policy.",
+      "explanation": "Anxiety and lost trust are drawbacks. Seeing where time goes and spotting training needs are benefits.",
+      "structureGuide": "Claim → Counterargument"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L82_Q1",
+      "instruction": "Choose the fairest and most serious counterargument.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Cafés should ban laptops during busy hours.",
+      "options": [
+        "Cafés have had customers with laptops for a great many years now.",
+        "A few customers might feel briefly disappointed by such a rule.",
+        "Some customers work in cafés and would lose their only affordable workspace.",
+        "Some cafés already sell laptop sleeves and phone chargers at the counter."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "A serious objection points to a real harm to real people.",
+      "explanation": "Losing an affordable workspace is a real cost. The alternatives are facts or trivial reactions rather than objections with weight.",
+      "structureGuide": "Counterargument → Quality"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L82_Q2",
+      "instruction": "Which counterargument is the WEAKEST?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: The town should ban cars from the high street on Saturdays.",
+      "options": [
+        "Shops might lose customers who travel in from other towns by car.",
+        "Disabled visitors could find it harder to reach the shops and services.",
+        "Some people enjoy driving.",
+        "Deliveries to shops would need a different time or a different route."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "A weak objection is vague and does not point to a specific harm.",
+      "explanation": "'Some people enjoy driving' does not say what would go wrong on the high street. The other choices describe concrete problems.",
+      "structureGuide": "Counterargument → Quality"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L82_Q3",
+      "instruction": "Which counterargument would a thoughtful reader take most seriously?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Schools should replace printed textbooks with tablets.",
+      "options": [
+        "Some students like the smell and feel of new printed books.",
+        "Printed textbooks have been used by teachers for many generations.",
+        "Tablets have shiny screens that can easily be scratched.",
+        "Not every family has reliable internet, so some students could fall behind at home."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "The strongest objection concerns fairness or real practical problems.",
+      "explanation": "Unequal internet access affects learning and fairness. The remaining options describe preferences, appearance or history.",
+      "structureGuide": "Counterargument → Quality"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L83_Q1",
+      "instruction": "Choose the sentence that is a counterargument, not a supporting reason.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Students should choose their own seats in class.",
+      "options": [
+        "Students can sit where they see the board most clearly.",
+        "Friends sitting together may talk more and distract each other.",
+        "Choosing a seat gives students a small sense of control.",
+        "Feeling comfortable may help some students concentrate better."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Which sentence shows a risk of the idea?",
+      "explanation": "The chatting risk argues against free seating. The other three support the claim.",
+      "structureGuide": "Claim → Counterargument"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L83_Q2",
+      "instruction": "Select the TWO sentences that argue against the claim.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Employees should be free to wear casual clothes at work.",
+      "options": [
+        "Casual clothes are usually more comfortable during a long day.",
+        "Staff often save money because they do not need formal outfits.",
+        "Without guidelines, some outfits might be unsuitable for meetings.",
+        "Clients may see the company as less professional."
+      ],
+      "correctOrder": [
+        2,
+        3
+      ],
+      "hint": "Ask which sentences point to a downside.",
+      "explanation": "Client impressions and unsuitable outfits are possible problems. Comfort and savings are benefits.",
+      "structureGuide": "Claim → Counterargument"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L83_Q3",
+      "instruction": "Which sentence supports the writer's claim?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Community centres should charge groups a small fee for room hire.",
+      "options": [
+        "Charities could give up using the building and move elsewhere.",
+        "The income can pay for cleaning, heating and repairs.",
+        "Free rooms encourage more neighbours to organise local events.",
+        "Small clubs with no funds might be forced to stop meeting altogether."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Three sentences oppose the fee. One gives a reason for it.",
+      "explanation": "Paying for upkeep is a reason to charge. The other statements describe possible harm from charging or a benefit of free rooms.",
+      "structureGuide": "Claim → Support vs Opposition"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L84_Q1",
+      "instruction": "Which sentence contains a concession?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A concession admits a fair point from the other side before the writer continues.",
+      "options": [
+        "Many visitors already spend a lot on hotels, meals and souvenirs, so a small extra charge would hardly be noticed.",
+        "Tourist taxes should be introduced immediately in every single town that receives a large number of visitors.",
+        "A tourist tax is a payment collected from visitors who stay overnight, and it is usually added to the hotel bill.",
+        "Admittedly, a small tourist tax might discourage a few visitors, but the money would improve facilities they use."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Look for a sentence that admits a drawback and then moves on.",
+      "explanation": "This sentence accepts a possible drawback and then argues on. The alternatives define, demand or add a fact.",
+      "structureGuide": "Concession → Claim"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L84_Q2",
+      "instruction": "Which phrase would NOT normally introduce a concession?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Choose the phrase that does not admit a fair point.",
+      "options": [
+        "As a result,",
+        "Admittedly,",
+        "Of course,",
+        "It is true that"
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Concession phrases admit something; another kind of phrase shows consequence.",
+      "explanation": "'As a result' shows a consequence. 'Admittedly', 'Of course' and 'It is true that' all acknowledge a point before the writer continues.",
+      "structureGuide": "Concession → Language"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L84_Q3",
+      "instruction": "Which sentence in the passage is the concession?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'The new parking fee is annoying. It is true that the car park needs repairs. However, the fee should be lower for staff on part-time wages. The car park has about 200 spaces.'",
+      "options": [
+        "The car park has about 200 spaces.",
+        "However, the fee should be lower for staff on part-time wages.",
+        "It is true that the car park needs repairs.",
+        "The new parking fee is annoying."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Find the sentence where the writer admits a point in the other side's favour.",
+      "explanation": "The writer accepts that repairs are needed and then argues for a lower fee. The other sentences state the claim, the argument or a fact.",
+      "structureGuide": "Claim → Concession → Reply"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L85_Q1",
+      "instruction": "Choose the best concession.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Schools should shorten the summer holiday.",
+      "options": [
+        "Nobody could possibly disagree with shorter holidays.",
+        "Some students have their holidays in the summer months.",
+        "It is true that long holidays give students time to rest and travel.",
+        "Long holidays are the worst idea anyone has ever had."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "A good concession is fair and respectful to the other view.",
+      "explanation": "This sentence admits a real benefit. The alternatives attack the other side, state an unrelated fact or ignore opposition.",
+      "structureGuide": "Claim → Concession"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L85_Q2",
+      "instruction": "Choose the best concession.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Employers should offer shorter working weeks.",
+      "options": [
+        "Every job could adapt to a shorter working week without any difficulty, so no exceptions are needed.",
+        "It is fair to say that some jobs need staff every day; even so, many office roles could adapt.",
+        "Office roles are only one of many kinds of job that people do, so the idea should be treated with care.",
+        "Many jobs need staff every day, so the idea of a shorter week is simply unworkable in practice."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Concede a real limit without abandoning the main claim.",
+      "explanation": "This sentence admits a limit and then narrows the claim. The alternatives give up, ignore the limit, or state a neutral fact.",
+      "structureGuide": "Claim → Concession"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L85_Q3",
+      "instruction": "Choose the best sentence for a complaint email.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "You want a refund for a meal that arrived after an hour.",
+      "options": [
+        "I understand the kitchen was busy that evening, but the wait was over an hour.",
+        "Your staff obviously do not care about customers in any way.",
+        "The kitchen was busy, so perhaps I was wrong to complain at all.",
+        "The restaurant is usually busy on Friday evenings during the year."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "A polite concession keeps the reader open to your request.",
+      "explanation": "The best sentence acknowledges the busy kitchen and states the complaint. The other choices give up, insult or state an unrelated fact.",
+      "structureGuide": "Claim → Concession → Request"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L86_Q1",
+      "instruction": "Choose the best ending for the sentence.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Although electric scooters are convenient, ____'",
+      "options": [
+        "electric scooters are convenient for a great many people.",
+        "many people ride them to work and to school every day.",
+        "they are also very convenient in many of the places used.",
+        "they should not be ridden on pavements where pedestrians walk."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "After 'although', the sentence should turn to the other side of the issue.",
+      "explanation": "The correct ending contrasts convenience with a safety concern. The rest repeat convenience or add more support.",
+      "structureGuide": "Concession → Claim"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L86_Q2",
+      "instruction": "Choose the best ending.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Although recorded lectures may reduce attendance, ____'",
+      "options": [
+        "they help students who are ill or caring for relatives to keep up.",
+        "lectures are recorded and placed online for students to watch.",
+        "attendance may go down when lectures are recorded like this.",
+        "students attend many lectures over the course of a year."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "The second half must answer the drawback, not repeat it.",
+      "explanation": "The correct ending offers a benefit that outweighs or balances the drawback. The alternatives repeat or describe.",
+      "structureGuide": "Concession → Claim"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L86_Q3",
+      "instruction": "Which sentence concedes a point and then argues back?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: The garden should charge a small entry fee.",
+      "options": [
+        "While the fee may upset some regular visitors, it would keep the garden open.",
+        "The fee will upset regular visitors, so the garden will not stay open.",
+        "Regular visitors like the garden, and a fee is a payment of money.",
+        "The fee may upset some regular visitors, and the garden may close."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Check that the sentence admits a cost and then gives a stronger reason.",
+      "explanation": "This sentence admits the upset and then gives a stronger reason. The rest add more problems or state definitions.",
+      "structureGuide": "Concession → Claim"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L87_Q1",
+      "instruction": "Which objection would a sceptical reader most likely raise?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: The company should replace paper forms with a mobile app.",
+      "options": [
+        "Paper forms were widely used long before computers arrived.",
+        "Many industries already use apps for other types of work.",
+        "Some employees, especially those without smartphones, may struggle to use it.",
+        "Some managers like traditional stationery and neat filing cabinets."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Think about who might be left out or harmed by the change.",
+      "explanation": "Employees without smartphones face a real barrier. The other statements mention history, preference or examples without objecting to the plan.",
+      "structureGuide": "Claim → Anticipated Objection"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L87_Q2",
+      "instruction": "Which is the most likely objection to the claim?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Our club should raise its membership fee by £5.",
+      "options": [
+        "Five pounds is a small amount of money in some cities.",
+        "Membership fees are collected at the start of every year.",
+        "The club was founded by a small group of friends.",
+        "Members on low incomes might not be able to afford it and could leave."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Which sentence points to a consequence the writer should address?",
+      "explanation": "Losing members is a real risk of the fee rise. The alternatives give facts, and the last one is a possible rebuttal, not an objection.",
+      "structureGuide": "Claim → Anticipated Objection"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L87_Q3",
+      "instruction": "Which question shows the objection the writer should answer?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Cyclists should be allowed to use pavements in quiet areas.",
+      "options": [
+        "Are bike lanes cheaper to build than new roads?",
+        "Who invented the first bicycle, and when did that happen?",
+        "What about pedestrians who might be startled or hurt?",
+        "How many bicycles are sold each year in this country?"
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "A useful objection concerns the effect on other people.",
+      "explanation": "The question about pedestrians raises a safety issue directly related to the claim. The others are about sales, cost and history.",
+      "structureGuide": "Claim → Anticipated Objection"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L88_Q1",
+      "instruction": "Which sentence concedes a point but still defends the claim?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Students should wear school uniforms.",
+      "options": [
+        "Uniforms are worn by students at schools in many countries.",
+        "Uniforms are expensive, so students should not have to wear them.",
+        "Uniforms can be expensive, but school swap shops can keep the cost low.",
+        "Uniforms are expensive, and that is not a problem for anyone at all."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "A good concession admits the problem and then offers a response.",
+      "explanation": "This sentence admits the cost and offers a solution. One gives up, one is a fact, and one denies the problem.",
+      "structureGuide": "Concession → Reply"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L88_Q2",
+      "instruction": "Which sentence concedes so much that the claim collapses?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: The city should ban plastic straws.",
+      "options": [
+        "The ban could affect some disabled people, so exceptions and alternatives should be provided.",
+        "Straws are a small part of the plastic problem, yet a ban is a simple first step.",
+        "Straws are small, but the waste from them adds up across a whole city.",
+        "The ban would harm people who need straws, so the ban should probably not go ahead."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Look for the sentence that ends by abandoning the claim.",
+      "explanation": "The first sentence concludes that the ban should not go ahead, which contradicts the claim. The other choices admit a limit but keep defending the ban.",
+      "structureGuide": "Concession → Reply"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L88_Q3",
+      "instruction": "Choose the concession that keeps the claim intact.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Employees should be allowed to work flexible hours.",
+      "options": [
+        "Flexible hours are one way of organising a working week for staff.",
+        "Flexible hours may make meetings harder to arrange, but agreed core hours can solve that.",
+        "Flexible hours make meetings impossible to arrange, so fixed hours are better.",
+        "Meetings are always held in the mornings, so nobody could be flexible."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "The best concession accepts a problem and offers a fix.",
+      "explanation": "This sentence offers 'core hours' as a fix. The others give up, define, or overstate.",
+      "structureGuide": "Concession → Reply"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L89_Q1",
+      "instruction": "Choose the strongest counterargument.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: The council should close the high street to traffic on Sundays.",
+      "options": [
+        "Some drivers might have to choose a different route for the day, which could add a few minutes to trips.",
+        "Older and disabled visitors who depend on car access may be unable to reach shops and services.",
+        "The high street has more than fifty shops and cafés along its length, and most of them open on Sundays.",
+        "A quiet road may seem less lively than a busy road to some people who enjoy the buzz of traffic."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "The strongest objection points to serious harm for a specific group.",
+      "explanation": "Reduced access for people who depend on cars is a serious problem. The other choices describe inconvenience, facts or feelings.",
+      "structureGuide": "Counterargument → Strength"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L89_Q2",
+      "instruction": "Choose the strongest counterargument.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Schools should allow phones at lunchtime.",
+      "options": [
+        "Some phones could be lost or damaged at school during the day, and the school would have to deal with claims.",
+        "Phones can be turned to silent mode when they are not needed, so noise is not likely to be a problem.",
+        "Lunchtime phone use could leave some students isolated and reduce face-to-face friendships.",
+        "Older students may use phones more than younger students do, so rules might need to differ by age."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Which sentence points to a real effect on students' experience?",
+      "explanation": "The isolation problem affects students' social life, which is central to lunchtime. Lost phones are minor and the others do not object.",
+      "structureGuide": "Counterargument → Strength"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L89_Q3",
+      "instruction": "Select the TWO fair counterarguments.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Restaurants should add a service charge to every bill.",
+      "options": [
+        "Some restaurants add extra charges for large groups of diners.",
+        "Staff might feel less motivated to give excellent service if the charge is automatic.",
+        "Customers may feel forced to pay even when the service was poor.",
+        "Bills are normally presented at the end of the meal for payment."
+      ],
+      "correctOrder": [
+        1,
+        2
+      ],
+      "hint": "Look for statements that describe a downside of the policy.",
+      "explanation": "Forced payment and reduced motivation are possible drawbacks. The other two are facts about restaurants.",
+      "structureGuide": "Counterargument → Strength"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L90_Q1",
+      "instruction": "Put the sentences in the best order: claim, opposing view, concession, reply.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Arrange the sentences about AI writing tools.",
+      "options": [
+        "Schools should teach students how to use AI writing tools.",
+        "That concern is fair, and clear rules about when tools may be used would be needed.",
+        "Even so, students will meet these tools at work, so learning to use them wisely matters.",
+        "Some teachers worry that students will stop thinking for themselves."
+      ],
+      "correctOrder": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "hint": "The opposing view is mentioned before it is conceded.",
+      "explanation": "The claim opens, the worry is stated, the writer accepts part of it, and then replies with a stronger reason.",
+      "structureGuide": "Claim → Opposing View → Concession → Reply"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L90_Q2",
+      "instruction": "Choose the sentence that best combines a concession with the writer's claim.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: We should hold the annual meeting off-site.",
+      "options": [
+        "Travel to the venue takes time, so we should hold the meeting in the office.",
+        "Travel takes time, and a fresh setting is a place that is not the office.",
+        "Admittedly, travel to the venue takes time, but a fresh setting helps people think more openly.",
+        "A fresh setting helps people think more openly, without any drawbacks at all."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Check that the sentence admits a cost and still keeps the claim.",
+      "explanation": "The right sentence admits the travel cost and defends the off-site plan. The alternatives give up, deny the problem or state neutral facts.",
+      "structureGuide": "Concession → Claim"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L90_Q3",
+      "instruction": "Choose the counterargument that is fairest AND most relevant.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: All students should learn a second language.",
+      "options": [
+        "Time spent on a language could reduce time for subjects a student needs more help with.",
+        "Some teachers already speak more than one language, and a few of them teach it at the weekend.",
+        "Languages are spoken by millions of people in various parts of the world, and many are widely used.",
+        "Some languages are much harder to spell than others are, which can make lessons more difficult."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "A strong counterargument concerns the effects of the policy on students.",
+      "explanation": "The trade-off with other subjects is a real cost of the policy. The others are facts or minor points.",
+      "structureGuide": "Counterargument → Quality"
+    }
+  ]
 }

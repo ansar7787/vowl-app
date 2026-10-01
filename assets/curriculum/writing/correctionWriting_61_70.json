@@ -8,16 +8,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "I [have never buy] anything from that online store before.",
+            "passage": "I [have never buy] anything from that online shop before now.",
             "options": [
-                "never have bought",
                 "have never bought",
                 "have never buy",
-                "has never bought"
+                "have never buying",
+                "never bought"
             ],
             "correctAnswer": "have never bought",
-            "hint": "The present perfect needs 'have' plus the past participle, not the base verb.",
-            "explanation": "The present perfect requires the past participle after 'have': 'have never bought,' not 'have never buy.'",
+            "hint": "'Buy' has an irregular past participle used with 'have' in the present perfect.",
+            "explanation": "The present perfect needs the past participle, and 'buy' irregularly becomes 'bought': 'have never bought.'",
             "errorCount": 3
         },
         {
@@ -25,16 +25,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "[Have you ever return] an item to this shop before?",
+            "passage": "[Have you ever return] a gift that you knew someone would notice?",
             "options": [
+                "Have you ever returning",
                 "Have you ever return",
-                "Did you ever returned",
                 "Have you ever returned",
-                "Has you ever returned"
+                "Did you ever returned"
             ],
             "correctAnswer": "Have you ever returned",
-            "hint": "The present perfect question needs the past participle, and the subject 'you' needs 'have.'",
-            "explanation": "Present perfect questions need 'Have' + subject + past participle: 'Have you ever returned,' not the base verb.",
+            "hint": "Present perfect questions with 'ever' still need the past participle form of the verb.",
+            "explanation": "'Return' is a regular verb, so its past participle is 'returned': 'Have you ever returned.' The base form alone doesn't fit the present perfect structure.",
             "errorCount": 3
         },
         {
@@ -42,16 +42,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "She [has already try on] three different dresses today at the boutique.",
+            "passage": "She [has already try on] three different dresses at the boutique today.",
             "options": [
-                "have already tried on",
+                "already tried on",
                 "has already try on",
                 "has already trying on",
                 "has already tried on"
             ],
             "correctAnswer": "has already tried on",
-            "hint": "The present perfect needs the past participle, not the base verb, after 'has.'",
-            "explanation": "'Has' must be followed by the past participle: 'has already tried on,' not the base form 'try on.'",
+            "hint": "The main verb needs its past participle form to complete the present perfect structure.",
+            "explanation": "'Try' becomes 'tried' as its past participle, so the correct present perfect form is 'has already tried on.'",
             "errorCount": 3
         },
         {
@@ -59,16 +59,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "I [have never tasting] such spicy food in my entire life!",
+            "passage": "I [have never tasting] food this spicy in my entire life!",
             "options": [
+                "have never taste",
                 "have never tasted",
-                "never have tasted",
                 "have never tasting",
-                "has never tasted"
+                "never tasted"
             ],
             "correctAnswer": "have never tasted",
-            "hint": "The present perfect needs 'have' plus the past participle, not the -ing form.",
-            "explanation": "The present perfect requires the past participle: 'have never tasted,' not the -ing form 'tasting.'",
+            "hint": "The verb form after 'have' in the present perfect must be the past participle, not '-ing.'",
+            "explanation": "Present perfect requires 'have/has + past participle.' The correct form is 'have never tasted,' not the '-ing' form.",
             "errorCount": 3
         },
         {
@@ -76,16 +76,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "[Has your brother ever cook] a full meal by himself before?",
+            "passage": "[Has your brother ever cook] a full meal completely on his own?",
             "options": [
-                "Have your brother ever cooked",
-                "Did your brother ever cooked",
                 "Has your brother ever cooked",
-                "Has your brother ever cook"
+                "Did your brother ever cooked",
+                "Has your brother ever cook",
+                "Has your brother ever cooking"
             ],
             "correctAnswer": "Has your brother ever cooked",
-            "hint": "The present perfect question needs the past participle, with 'Has' matching a singular subject.",
-            "explanation": "Present perfect questions with a singular subject use 'Has' + past participle: 'Has...ever cooked.'",
+            "hint": "Present perfect questions place 'has' before the subject, followed by the past participle.",
+            "explanation": "The structure needs the past participle after 'has': 'Has your brother ever cooked.' The base form 'cook' alone is incomplete here.",
             "errorCount": 3
         },
         {
@@ -93,16 +93,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "We [have already eat], so we don't need a table right now, thank you.",
+            "passage": "We [have already eat], so we don't need a table right now.",
             "options": [
+                "have already eating",
                 "have already eat",
-                "have already ate",
-                "have already eaten",
-                "has already eaten"
+                "already ate",
+                "have already eaten"
             ],
             "correctAnswer": "have already eaten",
-            "hint": "The present perfect needs the past participle form after 'have,' not the base verb or simple past form.",
-            "explanation": "'Have' must be followed by the past participle 'eaten,' not the base form 'eat' or the simple past 'ate.'",
+            "hint": "'Eat' has an irregular past participle, different from its simple past form.",
+            "explanation": "'Eat' becomes 'eaten' as its past participle (not 'ate,' which is the simple past), so 'have already eaten' is correct.",
             "errorCount": 3
         },
         {
@@ -110,16 +110,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "I [have lost] my phone yesterday, so now I need a brand new one.",
+            "passage": "I [have lost] my phone yesterday, so I need to buy a new one.",
             "options": [
-                "lose",
-                "losing",
+                "have lost",
+                "was lost",
                 "lost",
-                "have lost"
+                "have losing"
             ],
             "correctAnswer": "lost",
-            "hint": "The time word 'yesterday' shows exactly when the action happened, pointing to a finished past action.",
-            "explanation": "A specific past time word like 'yesterday' requires the simple past 'lost,' not the present perfect.",
+            "hint": "The word 'yesterday' is a specific past time marker — which tense pairs with specific times?",
+            "explanation": "Specific past time expressions like 'yesterday' require the simple past, not the present perfect. The correct form is simply 'lost.'",
             "errorCount": 3
         },
         {
@@ -127,16 +127,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "I [lost] my phone, so I can't call anyone right now until I find it.",
+            "passage": "I [lost] my keys somewhere, so I can't get into the apartment right now.",
             "options": [
                 "lost",
                 "have lost",
-                "losing",
-                "lose"
+                "am lost",
+                "have losing"
             ],
             "correctAnswer": "have lost",
-            "hint": "There's no specific past time mentioned, just a present result of a past action.",
-            "explanation": "Without a specific past time, the present perfect 'have lost' connects the past action to its present result.",
+            "hint": "No specific time is mentioned, and the result still matters right now — which tense fits that?",
+            "explanation": "Without a specific past time, and with a present result (being locked out now), the present perfect 'have lost' is the better fit.",
             "errorCount": 3
         },
         {
@@ -146,14 +146,14 @@
             "interactionType": "typing",
             "passage": "She [repaired] her laptop three times since she bought it last year.",
             "options": [
-                "has repaired",
-                "is repairing",
+                "has repair",
                 "repaired",
-                "repair"
+                "has repaired",
+                "was repaired"
             ],
             "correctAnswer": "has repaired",
-            "hint": "The phrase 'since she bought it' shows a connection between the past and now, with repeated actions.",
-            "explanation": "'Since' often signals the present perfect for repeated actions up to now: 'has repaired,' not the simple past.",
+            "hint": "The phrase 'since... last year' points to an ongoing period leading up to now.",
+            "explanation": "'Since' signals an unfinished time period continuing to the present, which requires the present perfect: 'has repaired.'",
             "errorCount": 3
         },
         {
@@ -161,16 +161,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "I [have seen] the doctor last Tuesday for a regular check-up.",
+            "passage": "I [have seen] the doctor last Tuesday for a routine check-up.",
             "options": [
-                "seeing",
-                "saw",
                 "have seen",
-                "see"
+                "have see",
+                "was seeing",
+                "saw"
             ],
             "correctAnswer": "saw",
-            "hint": "The specific time phrase 'last Tuesday' points to a finished action at a known time.",
-            "explanation": "A specific past time expression like 'last Tuesday' requires the simple past 'saw,' not the present perfect.",
+            "hint": "'Last Tuesday' is a specific, finished point in the past.",
+            "explanation": "Because 'last Tuesday' is a specific completed time, the simple past 'saw' is correct rather than the present perfect.",
             "errorCount": 3
         },
         {
@@ -178,16 +178,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "I [never took] this medicine before, so I'm not sure how it will affect me.",
+            "passage": "I [never took] this particular medicine before, so I'm a little cautious.",
             "options": [
-                "never took",
+                "was never taking",
                 "have never taken",
-                "am never taking",
-                "never take"
+                "never took",
+                "have never take"
             ],
             "correctAnswer": "have never taken",
-            "hint": "There's no specific past time mentioned, just experience up to now.",
-            "explanation": "Without a specific time, the present perfect 'have never taken' describes experience up to the present moment.",
+            "hint": "No specific past time is mentioned, and the relevance continues into the present.",
+            "explanation": "Without a specific time reference, and with present relevance, 'have never taken' (present perfect) fits better than the simple past.",
             "errorCount": 3
         },
         {
@@ -198,13 +198,13 @@
             "passage": "He [went] to the gym three times this week already, which is impressive.",
             "options": [
                 "has gone",
-                "is going",
                 "went",
-                "go"
+                "was going",
+                "has go"
             ],
             "correctAnswer": "has gone",
-            "hint": "The phrase 'this week' is an unfinished period that includes now.",
-            "explanation": "Unfinished time periods like 'this week' often pair with the present perfect: 'has gone,' not the simple past.",
+            "hint": "'This week' is an unfinished time period that includes the present moment.",
+            "explanation": "Because 'this week' is a time period still in progress, the present perfect 'has gone' is correct rather than the simple past.",
             "errorCount": 3
         },
         {
@@ -216,12 +216,12 @@
             "options": [
                 "don't have to",
                 "have to",
-                "has to",
-                "doesn't have to"
+                "mustn't",
+                "shouldn't"
             ],
             "correctAnswer": "don't have to",
-            "hint": "Think about something that is not necessary, since there's an alternative option mentioned.",
-            "explanation": "'Don't have to' shows something isn't necessary, fitting a situation with another option, not 'have to.'",
+            "hint": "The second half of the sentence describes an easy alternative — does that suggest a requirement or its absence?",
+            "explanation": "Since paying at the door is presented as an easy alternative, there's no requirement to book in advance, so 'don't have to' is correct.",
             "errorCount": 3
         },
         {
@@ -229,16 +229,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "We [don't have to] arrive early if we want good seats at the concert.",
+            "passage": "We [don't have to] arrive early if we want the best seats at the concert.",
             "options": [
-                "doesn't have to",
                 "don't have to",
-                "has to",
+                "shouldn't",
+                "mustn't",
                 "have to"
             ],
             "correctAnswer": "have to",
-            "hint": "Think about something necessary in order to get a good result.",
-            "explanation": "'Have to' expresses necessity for a good result, not 'don't have to,' which means it's optional.",
+            "hint": "Getting good seats usually depends on arriving before others, which implies a requirement.",
+            "explanation": "Because arriving early is necessary for good seats, the sentence needs 'have to,' expressing obligation, not its absence.",
             "errorCount": 3
         },
         {
@@ -248,14 +248,14 @@
             "interactionType": "typing",
             "passage": "She [have to] finish her project before she can watch the new series.",
             "options": [
-                "doesn't have to",
+                "have to",
+                "haves to",
                 "has to",
-                "don't have to",
-                "have to"
+                "is have to"
             ],
             "correctAnswer": "has to",
-            "hint": "The subject 'she' is singular; think about the matching form expressing necessity.",
-            "explanation": "With a singular subject, 'has to' expresses necessity, not 'have to,' which pairs with plural subjects.",
+            "hint": "Focus on subject-verb agreement — 'she' requires the third-person singular form.",
+            "explanation": "'She' is a singular subject, so 'have to' must become 'has to' to agree correctly.",
             "errorCount": 3
         },
         {
@@ -263,16 +263,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "You [have to] shout; I can hear you perfectly well from here.",
+            "passage": "You [have to] shout — I can hear you perfectly well from here.",
             "options": [
-                "doesn't have to",
                 "have to",
                 "don't have to",
-                "has to"
+                "shouldn't",
+                "mustn't"
             ],
             "correctAnswer": "don't have to",
-            "hint": "Think about something unnecessary because the situation is already fine.",
-            "explanation": "'Don't have to' shows something is unnecessary, fitting a calm situation, not 'have to.'",
+            "hint": "The statement that the listener can already hear fine suggests no requirement to shout.",
+            "explanation": "Since the speaker can already hear clearly, there's no need to shout, so 'don't have to' correctly expresses the absence of obligation.",
             "errorCount": 3
         },
         {
@@ -280,16 +280,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "We [don't have to] reply to this email by Friday, according to the request.",
+            "passage": "We [don't have to] reply to this email by Friday, as the request states.",
             "options": [
-                "doesn't have to",
-                "has to",
+                "shouldn't",
                 "have to",
+                "mustn't",
                 "don't have to"
             ],
             "correctAnswer": "have to",
-            "hint": "Think about a deadline that creates necessity.",
-            "explanation": "'Have to' expresses necessity created by a deadline, not 'don't have to,' which means it's optional.",
+            "hint": "A stated deadline in the sentence usually implies an actual requirement.",
+            "explanation": "Because the sentence describes a stated request with a deadline, 'have to' correctly expresses the obligation to reply.",
             "errorCount": 3
         },
         {
@@ -299,14 +299,14 @@
             "interactionType": "typing",
             "passage": "He [have to] explain everything again because no one understood the first time.",
             "options": [
-                "doesn't have to",
-                "don't have to",
+                "haves to",
+                "have to",
                 "has to",
-                "have to"
+                "is have to"
             ],
             "correctAnswer": "has to",
-            "hint": "The subject 'he' is singular; think about something necessary for him to do.",
-            "explanation": "Singular subjects pair with 'has to' to express necessity, not the plural form 'have to.'",
+            "hint": "Check subject-verb agreement for the singular subject 'he.'",
+            "explanation": "Since 'he' is singular, the verb must be 'has to,' not the base form 'have to,' to maintain correct agreement.",
             "errorCount": 3
         },
         {
@@ -314,16 +314,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "The neighbor [which] lives next door always waters our plants when we travel.",
+            "passage": "The neighbor [which] waters our plants always leaves a friendly note.",
             "options": [
-                "where",
-                "which",
                 "who",
+                "which",
+                "whom",
                 "whose"
             ],
             "correctAnswer": "who",
-            "hint": "We need a relative pronoun for a person, used as the subject of the clause.",
-            "explanation": "'Who' is used for people as the subject of a relative clause, not 'which,' which refers to things.",
+            "hint": "The relative pronoun refers to a person, not a thing.",
+            "explanation": "'Who' is used for people, while 'which' refers to things or animals. Since 'neighbor' is a person, 'who' is correct.",
             "errorCount": 3
         },
         {
@@ -333,14 +333,14 @@
             "interactionType": "typing",
             "passage": "The app [who] I use every morning tracks my sleep and daily steps.",
             "options": [
-                "where",
                 "whose",
-                "which",
-                "who"
+                "who",
+                "whom",
+                "which"
             ],
             "correctAnswer": "which",
-            "hint": "We need a relative pronoun for a thing, here an app, not a person.",
-            "explanation": "'Which' is used for things or objects, such as an app, not 'who,' which is reserved for people.",
+            "hint": "The relative pronoun here refers to a thing, not a person.",
+            "explanation": "'Which' refers to things, such as an app, while 'who' is reserved for people. The correct pronoun here is 'which.'",
             "errorCount": 3
         },
         {
@@ -348,16 +348,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "That's the family [who's] dog always barks at night in our neighborhood.",
+            "passage": "That's the family [who's] dog barks every night in our neighborhood.",
             "options": [
-                "where",
                 "whose",
                 "who's",
-                "which"
+                "who",
+                "which's"
             ],
             "correctAnswer": "whose",
-            "hint": "We need a possessive relative pronoun showing the dog belongs to the family, not the contraction of 'who is.'",
-            "explanation": "'Whose' shows possession, while 'who's' is a contraction of 'who is' and doesn't fit here.",
+            "hint": "This sentence expresses possession — the dog belongs to the family.",
+            "explanation": "'Whose' shows possession ('the family's dog'), while 'who's' is simply a contraction of 'who is.' The context calls for the possessive form.",
             "errorCount": 3
         },
         {
@@ -367,14 +367,14 @@
             "interactionType": "typing",
             "passage": "The teacher [which] taught me chemistry last year just retired from the school.",
             "options": [
-                "where",
                 "whose",
+                "whom",
                 "who",
                 "which"
             ],
             "correctAnswer": "who",
-            "hint": "We need a relative pronoun for a person, used as the subject.",
-            "explanation": "'Who' refers to people, here the teacher, not 'which,' which refers to things.",
+            "hint": "The relative pronoun refers to a person — the teacher.",
+            "explanation": "Since 'teacher' refers to a person, the correct relative pronoun is 'who,' not 'which,' which is used for things.",
             "errorCount": 3
         },
         {
@@ -382,16 +382,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "The textbook [who] we use in class is quite old and a little outdated.",
+            "passage": "The textbook [who] we use in class is quite outdated by now.",
             "options": [
-                "which",
                 "who",
-                "where",
+                "which",
+                "whom",
                 "whose"
             ],
             "correctAnswer": "which",
-            "hint": "We need a relative pronoun for a thing, here a textbook, not a person.",
-            "explanation": "'Which' refers to objects or things, such as a textbook, not 'who,' which is for people.",
+            "hint": "The relative pronoun refers to a thing — a textbook.",
+            "explanation": "'Which' is the correct relative pronoun for things like a textbook; 'who' is reserved for people.",
             "errorCount": 3
         },
         {
@@ -401,14 +401,14 @@
             "interactionType": "typing",
             "passage": "That's the student [who's] backpack was left in the classroom yesterday.",
             "options": [
-                "whose",
-                "where",
-                "which",
-                "who's"
+                "who",
+                "which's",
+                "who's",
+                "whose"
             ],
             "correctAnswer": "whose",
-            "hint": "We need a possessive relative pronoun showing the backpack belongs to the student.",
-            "explanation": "'Whose' shows possession, while 'who's' is a contraction of 'who is' and doesn't fit this meaning.",
+            "hint": "This sentence expresses possession — the backpack belongs to the student.",
+            "explanation": "'Whose' correctly shows ownership of the backpack, while 'who's' is only a contraction for 'who is,' which doesn't fit here.",
             "errorCount": 3
         },
         {
@@ -416,16 +416,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "If I [will finish] the report on time, my manager will be very happy.",
+            "passage": "If I [will finish] the report on time, my manager will be very pleased.",
             "options": [
-                "finishing",
+                "will finish",
                 "finish",
-                "finished",
-                "will finish"
+                "would finish",
+                "am finishing"
             ],
             "correctAnswer": "finish",
-            "hint": "First conditional uses the simple present in the 'if' clause, not the future form.",
-            "explanation": "In first conditional sentences, the 'if' clause uses the simple present: 'If I finish,' not 'will finish.'",
+            "hint": "In the first conditional, the 'if' clause uses the present tense, not 'will.'",
+            "explanation": "First conditional sentences use present tense in the 'if' clause and 'will' only in the result clause. The correct form is simply 'finish.'",
             "errorCount": 3
         },
         {
@@ -435,14 +435,14 @@
             "interactionType": "typing",
             "passage": "If you send the email now, the client [receives] it before the meeting starts.",
             "options": [
-                "receiving",
                 "receives",
                 "received",
-                "will receive"
+                "will receive",
+                "would receive"
             ],
             "correctAnswer": "will receive",
-            "hint": "The main clause of a first conditional sentence uses 'will' plus the base verb.",
-            "explanation": "The result clause of a first conditional uses 'will' + base verb: 'will receive,' not just 'receives.'",
+            "hint": "The result clause of a first conditional uses 'will' plus the base verb.",
+            "explanation": "The result clause needs 'will + base verb': 'will receive.' Using the present tense here breaks the standard first-conditional pattern.",
             "errorCount": 3
         },
         {
@@ -450,16 +450,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "If we [will have] enough time, we'll review the budget again tomorrow.",
+            "passage": "If we [will have] enough time, we'll review the entire budget again tomorrow.",
             "options": [
-                "have",
-                "had",
                 "will have",
-                "having"
+                "would have",
+                "having",
+                "have"
             ],
             "correctAnswer": "have",
-            "hint": "First conditional uses the simple present in the 'if' clause, not 'will.'",
-            "explanation": "The 'if' clause of a first conditional always uses the simple present: 'have,' not 'will have.'",
+            "hint": "The 'if' clause of a first conditional stays in the present tense.",
+            "explanation": "'Will' does not belong in the 'if' clause of a first conditional; the correct form is the simple present, 'have.'",
             "errorCount": 3
         },
         {
@@ -469,14 +469,14 @@
             "interactionType": "typing",
             "passage": "If the weather [will be] nice tomorrow, we'll go hiking in the mountains.",
             "options": [
-                "being",
                 "is",
-                "was",
-                "will be"
+                "being",
+                "will be",
+                "would be"
             ],
             "correctAnswer": "is",
-            "hint": "Remember that first conditional 'if' clauses stay in the present tense.",
-            "explanation": "The 'if' clause of a first conditional sentence takes the simple present: 'is,' not 'will be.'",
+            "hint": "Keep the 'if' clause in the present tense, even though the sentence refers to the future.",
+            "explanation": "The 'if' clause of a first conditional always uses the present tense, so 'is' is correct rather than 'will be.'",
             "errorCount": 3
         },
         {
@@ -486,14 +486,14 @@
             "interactionType": "typing",
             "passage": "If we miss this flight, we [have] to wait six hours for the next one.",
             "options": [
-                "have",
                 "will have",
-                "having",
-                "had"
+                "had",
+                "would have",
+                "have"
             ],
             "correctAnswer": "will have",
-            "hint": "The result clause of a first conditional sentence uses 'will' plus the base verb.",
-            "explanation": "The main clause of a first conditional uses 'will' + base verb: 'will have to wait,' not just 'have.'",
+            "hint": "The main clause describing the future result needs 'will' plus the base verb.",
+            "explanation": "The result clause requires 'will + base verb': 'will have to wait.' The plain present tense doesn't fit the future result here.",
             "errorCount": 3
         },
         {
@@ -503,14 +503,14 @@
             "interactionType": "typing",
             "passage": "If you [will forget] your passport at home, you won't be able to board.",
             "options": [
-                "forget",
                 "forgetting",
                 "will forget",
-                "forgot"
+                "forget",
+                "would forget"
             ],
             "correctAnswer": "forget",
-            "hint": "The condition itself is expressed with a present-tense verb here.",
-            "explanation": "The 'if' clause of a first conditional sentence requires the simple present: 'forget,' not 'will forget.'",
+            "hint": "The condition clause should remain in the simple present tense.",
+            "explanation": "'Will' is not used in the 'if' clause of a first conditional; the simple present 'forget' is the correct form.",
             "errorCount": 3
         }
     ]

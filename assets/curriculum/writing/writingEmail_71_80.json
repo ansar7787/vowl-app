@@ -8,56 +8,12 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a senior manager requesting an emergency meeting.",
+            "prompt": "You need a lab technician to set up equipment early. Subject: Early set-up for Thursday's practical / Greeting: Dear Mr Achebe, / Arrange the body so the request sounds polite, not like an order.",
             "options": [
-                "Kind regards,\nCaroline West",
-                "Dear Director,",
-                "Subject: Urgent - request for emergency meeting today",
-                "I need to discuss an urgent matter that has arisen this morning which has significant implications for the company's contract with meridian group - please can we meet today?"
-            ],
-            "correctOrder": [
-                2,
-                1,
-                3,
-                0
-            ],
-            "hint": "Urgency is flagged in the subject; the director is addressed formally; the stakes and specific contract mentioned justify urgency; today's meeting is requested; formal closing maintains professional tone.",
-            "explanation": "Giving just enough information to justify the urgency ('Meridian Group contract implications') without over-explaining by email is correct - some matters are too sensitive to commit to email and should be discussed in person.",
-            "formalityLevel": "Formal"
-        },
-        {
-            "id": "WRT_WRITINGEMAIL_L71_Q2",
-            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
-            "subtype": "writingEmail",
-            "interactionType": "writing",
-            "prompt": "Write an email asking a decision-maker to clarify the basis of a business decision.",
-            "options": [
-                "I seek clarification on the decision to discontinue the product line announced in monday's meeting - specifically, I would like to understand the financial and strategic rationale.",
-                "Subject: Request for clarification - product line discontinuation decision",
-                "Yours sincerely,\nHelen Marsh, Product Director",
-                "Dear Mr Chen,"
-            ],
-            "correctOrder": [
-                1,
-                3,
-                0,
-                2
-            ],
-            "hint": "The decision and clarification purpose are in the subject; the decision-maker is addressed formally; the meeting reference and two types of rationale are requested in the body.",
-            "explanation": "Asking for both 'financial AND strategic rationale' is a professional way to request a fuller explanation - decisions are rarely made for one reason alone. Referencing 'Monday's meeting' provides an unambiguous anchor point.",
-            "formalityLevel": "Formal"
-        },
-        {
-            "id": "WRT_WRITINGEMAIL_L71_Q3",
-            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
-            "subtype": "writingEmail",
-            "interactionType": "writing",
-            "prompt": "Write an email formally appealing a management decision about a team restructure.",
-            "options": [
-                "Subject: Formal appeal against team restructure decision - ref: hr-2024-441",
-                "Best regards,\nMax Turner, Engineering Manager",
-                "I am formally appealing the decision to restructure my team under reference hr-2024-441, on the grounds that the process did not comply with the company's consultation policy.",
-                "Dear Hr Director,"
+                "I hope you are well.",
+                "Many thanks,\nDr Ruth Lang",
+                "Would it be possible for you to set them up by 8:45?",
+                "We have a class of thirty starting at 9 am on Thursday, and the microscopes need to be ready before then."
             ],
             "correctOrder": [
                 0,
@@ -65,8 +21,52 @@
                 2,
                 1
             ],
-            "hint": "Formal appeal and reference number are in the subject; the HR director is addressed; appeal basis and specific policy breach are clearly stated in the body; the manager signs with role.",
-            "explanation": "Citing a specific policy breach ('did not comply with consultation policy') is far stronger than simply saying you disagree with the decision. A procedural appeal based on non-compliance is more likely to succeed than one based solely on preference.",
+            "hint": "A polite request usually gives the reason first and asks last. What sounds least demanding?",
+            "explanation": "'Would it be possible' invites a yes or a no. Placing the reason before the request means the technician understands the need before he hears the ask.",
+            "formalityLevel": "Semi-formal"
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L71_Q2",
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+            "subtype": "writingEmail",
+            "interactionType": "writing",
+            "prompt": "You would like a neighbour to move their car from your driveway. Subject: Car in the driveway / Greeting: Dear Mr Sandhu, / Arrange the message.",
+            "options": [
+                "Thank you for understanding,\nJelena Kovac",
+                "I hope you don't mind me writing.",
+                "Would you mind parking it in front of your own house from now on?",
+                "Your car has been parked across our driveway twice this week, and it made it hard for us to leave for work."
+            ],
+            "correctOrder": [
+                1,
+                3,
+                2,
+                0
+            ],
+            "hint": "Handle a small conflict by softening first, giving the fact, and then asking politely.",
+            "explanation": "Starting with 'I hope you don't mind' shows you want to avoid conflict. The fact is stated without accusation, and the request is phrased as a question.",
+            "formalityLevel": "Semi-formal"
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L71_Q3",
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+            "subtype": "writingEmail",
+            "interactionType": "writing",
+            "prompt": "You are asking a professor for a deadline extension for the second time. Arrange the email.",
+            "options": [
+                "Dear Professor Yang,",
+                "I am very grateful for the extension you gave me last week. Unfortunately, my illness has continued, and I wonder whether I might have until Friday.",
+                "Yours sincerely,\nFelix Mbeki",
+                "Subject: Request for a further extension, Statistics assignment"
+            ],
+            "correctOrder": [
+                3,
+                0,
+                1,
+                2
+            ],
+            "hint": "Because you're asking again, gratitude and honesty should come before the new request.",
+            "explanation": "Recognising what the professor already did shows respect. 'I wonder whether I might' is the most tentative and polite way to ask, which suits a second request.",
             "formalityLevel": "Formal"
         },
         {
@@ -74,65 +74,65 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to an insurance company to initiate a home insurance claim.",
+            "prompt": "A colleague covered your meeting when you were ill. Subject: Thank you for covering / Greeting: Hi Yara, / Arrange the body.",
             "options": [
-                "Kind regards,\nMary Blake",
-                "Dear Claims Team,",
-                "I am writing to initiate a claim under my home insurance policy hi-77441 for damage caused by a burst pipe on 8 july, which affected the kitchen and dining room.",
-                "Subject: Home insurance claim - burst pipe damage - policy ref: hi-77441"
+                "Cheers,\nHector",
+                "I heard the client was happy with the presentation, and I really appreciate you taking care of it.",
+                "Thank you so much for stepping in on Tuesday.",
+                "Let me know if you ever need me to return the favour."
             ],
             "correctOrder": [
-                3,
-                1,
                 2,
+                1,
+                3,
                 0
             ],
-            "hint": "Claim type, cause, and policy reference are in the subject; claims team is addressed; policy number, incident date, type of damage, and rooms affected are all in the body.",
-            "explanation": "A claims email must include all key facts upfront: policy number, incident date, cause, and damage scope. The more specific the initial submission, the faster the claim is assessed and allocated to an adjuster.",
-            "formalityLevel": "Formal"
+            "hint": "Gratitude, result, offer: what order makes the thanks feel complete?",
+            "explanation": "Thanks feel stronger when they mention a result. Offering to return the favour shows that you recognise the effort involved.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L72_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to an insurer chasing settlement of an approved insurance claim.",
+            "prompt": "You want to thank a customer for a detailed review of your bakery. Put together the email.",
             "options": [
-                "Best regards,\nMary Blake",
-                "Dear Claims Settlement Team,",
-                "Subject: Settlement chase - claim ref: c-9912, approved 4 weeks ago",
-                "My claim c-9912 was approved on 12 june and payment was expected within ten working days - it is now four weeks later and I have not received the settlement."
+                "Subject: Thank you for your kind review",
+                "Warm wishes,\nThe Millers, Corner Loaf Bakery",
+                "Dear Ms Wu,",
+                "Thank you for taking the time to write such a detailed review of our sourdough. Comments like yours mean a great deal to a small bakery, and we hope to see you again soon."
             ],
             "correctOrder": [
+                0,
                 2,
-                1,
                 3,
-                0
+                1
             ],
-            "hint": "Overdue settlement and reference are in the subject; the settlement team is addressed; claim reference, approval date, expected timeline, and actual wait time are all in the body.",
-            "explanation": "The timeline comparison - 'expected within ten working days' versus 'four weeks later' - makes the delay undeniable without being accusatory. This factual approach is more effective than expressing frustration or making threats.",
-            "formalityLevel": "Formal"
+            "hint": "Thank the person, say what it means, then invite them back.",
+            "explanation": "Business thanks work best when they name what was appreciated and what it means. The closing invitation encourages the relationship without being pushy.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L72_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to an insurance ombudsman disputing a claim rejection.",
+            "prompt": "You wish to thank an interviewer who has taken the time to explain the role by email. Subject: Thank you for the information / Greeting: Dear Ms Ojo, / Arrange the body.",
             "options": [
-                "Subject: Dispute of claim rejection - policy ref: hi-77441, claim ref: c-9912",
-                "I am writing to dispute the rejection of claim c-9912 under policy hi-77441 - the rejection letter cited a pre-existing condition clause which I believe was not disclosed to me when I purchased the policy.",
-                "Dear Insurance Ombudsman,",
-                "Yours faithfully,\nMary Blake"
+                "Your explanation of the team structure was very helpful.",
+                "Yours sincerely,\nAdil Rahman",
+                "Thank you for your detailed reply to my questions about the role.",
+                "I appreciate the time you have given me."
             ],
             "correctOrder": [
-                0,
                 2,
-                1,
-                3
+                0,
+                3,
+                1
             ],
-            "hint": "Dispute purpose and both references are in the subject; the ombudsman is addressed formally (no named individual); rejection grounds and specific dispute basis are in the body; 'YOURS FAITHFULLY' closes the official dispute.",
-            "explanation": "Escalating to an ombudsman requires formal language and 'Yours faithfully'. Identifying the specific clause being disputed ('pre-existing condition, not disclosed at purchase') frames this as a mis-selling argument, which is a strong ground for ombudsman review.",
+            "hint": "This is a short thank-you, so don't over-elaborate. Which order moves from action to value to courtesy?",
+            "explanation": "A professional thank-you can be brief: name the action, say what was helpful, then acknowledge their time. It avoids flattery.",
             "formalityLevel": "Formal"
         },
         {
@@ -140,21 +140,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to an architect requesting initial plans for a home extension.",
+            "prompt": "You have double-booked a customer's table. Arrange the apology to her.",
             "options": [
-                "I would like to commission initial plans for a single-storey rear extension of approximately 20 square metres to create an open-plan kitchen-dining space.",
-                "Yours sincerely,\nCarol Hunt",
-                "Dear Mr Wells,",
-                "Subject: Initial design brief - single-storey rear extension, 3 bed property"
+                "Yours sincerely,\nRafael Duarte, Manager",
+                "Subject: Our apology for Saturday's booking",
+                "Dear Mrs Aziz,",
+                "I am sincerely sorry that we double-booked your table on Saturday, and that you had to wait for forty minutes. This was our mistake, and we would like to invite you back for a complimentary dessert."
             ],
             "correctOrder": [
-                3,
+                1,
                 2,
-                0,
-                1
+                3,
+                0
             ],
-            "hint": "Project type and scale are in the subject; the architect is addressed by name; size, style, and purpose of the extension are in the body; 'YOURS SINCERELY' closes the formal commission.",
-            "explanation": "Specifying both size ('20 sq metres') and purpose ('open-plan kitchen-dining') gives the architect enough information to create meaningful initial plans. A brief that is too vague leads to wasted iterations.",
+            "hint": "A responsible apology names the mistake and does not blame someone else.",
+            "explanation": "'This was our mistake' takes clear responsibility. Excuses like 'the system failed' would sound defensive. A remedy shows that you value the customer.",
             "formalityLevel": "Formal"
         },
         {
@@ -162,65 +162,65 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to an architect requesting revisions to a proposed design.",
+            "prompt": "You forgot a friend's birthday. Subject: I'm so sorry! / Greeting: Hi Paloma, / Arrange the body.",
             "options": [
-                "Subject: Revision request - phase 1 extension drawings, ref: arc-124",
-                "Yours sincerely,\nCarol Hunt",
-                "Having reviewed the phase 1 drawings for ref: arc-124, I would like to request that the south-facing window is enlarged and the utility room is repositioned to the east wall.",
-                "Dear Mr Wells,"
+                "I'm so sorry I forgot your birthday yesterday.",
+                "Can I take you out for dinner on Friday to make up for it?",
+                "There's no good excuse, and I feel awful about it.",
+                "With love,\nTheo"
             ],
             "correctOrder": [
                 0,
-                3,
                 2,
-                1
+                1,
+                3
             ],
-            "hint": "Revision purpose and drawing reference are in the subject; the architect is addressed by name; two specific revisions with directional precision are requested in the body.",
-            "explanation": "Architectural revisions must be precise - 'south-facing window enlarged' and 'east wall repositioning' are the kind of specific, locationally accurate requests that architects need to execute changes correctly. Vague feedback leads to more iterations.",
-            "formalityLevel": "Formal"
+            "hint": "In a personal apology, sincerity matters more than length.",
+            "explanation": "'There's no good excuse' avoids the trap of explaining. The invitation offers a real way to repair the friendship.",
+            "formalityLevel": "Informal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L73_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to an architect approving the final plans for a building project.",
+            "prompt": "A manager apologises to a team for a confusing message she sent earlier. Subject: Clarification and apology / Greeting: Dear team, / Arrange the body.",
             "options": [
-                "Dear Mr Wells,",
-                "I am pleased to give my formal approval to the revised final plans for the home extension, ref: arc-124 - please proceed with the planning permission submission.",
-                "Yours sincerely,\nCarol Hunt",
-                "Subject: Formal approval of final plans - home extension ref: arc-124"
+                "I should have checked before sending it, and I will be more careful.",
+                "The correct deadline for the report is Friday, 20 June, not Thursday.",
+                "I want to apologise for my message on Monday, which was unclear about the deadline.",
+                "Best regards,\nOlga"
             ],
             "correctOrder": [
-                3,
-                0,
+                2,
                 1,
-                2
+                0,
+                3
             ],
-            "hint": "Approval and reference are in the subject; the architect is addressed by name; formal approval and next step instruction are in the body; 'YOURS SINCERELY' closes the formal instruction.",
-            "explanation": "'Formal approval' is an important phrase in construction - it means the client has legally signed off on the plans. Including 'please proceed with the planning permission submission' gives clear authorisation for the next stage.",
-            "formalityLevel": "Formal"
+            "hint": "Apology first, then the correct information, then responsibility for the future.",
+            "explanation": "In a workplace error, correct information is as important as the apology. Putting it in the middle ensures the team does not miss it, while the last sentence shows accountability.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L74_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a software company requesting a product demonstration.",
+            "prompt": "You have to decline a supplier's invitation to a product demonstration. Structure the email.",
             "options": [
-                "Dear Sales Team,",
-                "Subject: Demonstration request - enterprise hr software platform",
-                "Kind regards,\nLiam Baker, Hr Director",
-                "We are evaluating hr software solutions for our 350-person organisation and would like to schedule a product demonstration focusing on payroll integration and employee self-service features."
+                "Thank you for inviting me to your demonstration on 5 June. Unfortunately I am unable to attend, but I would be glad to see the materials afterwards.",
+                "Dear Mr Novotny,",
+                "Kind regards,\nEvelyn Shaw",
+                "Subject: Re: Invitation to the product demonstration"
             ],
             "correctOrder": [
+                3,
                 1,
                 0,
-                3,
                 2
             ],
-            "hint": "Product type and purpose are in the subject; the sales team is addressed; company size and two specific features of interest are in the body; HR director signs with role.",
-            "explanation": "Specifying exactly which features interest you ('payroll integration AND self-service') means the product demo is tailored to your needs rather than a generic overview. Stating company size ('350 people') helps the sales team identify the correct pricing tier.",
+            "hint": "Decline in a way that keeps the relationship useful.",
+            "explanation": "A polite refusal of an invitation thanks the sender, gives a clear no, and offers something else. Offering to see the materials keeps the business relationship alive.",
             "formalityLevel": "Formal"
         },
         {
@@ -228,100 +228,100 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email following up after a product trial period has ended.",
+            "prompt": "A friend asks you to help them move flats, but you have a wedding. Subject: Re: Moving day / Greeting: Hi Gabriel, / Arrange the body.",
             "options": [
-                "Subject: Post-trial feedback and next steps - nexus crm platform",
-                "Best regards,\nChristine Ray, Operations Director",
-                "Dear Account Manager,",
-                "Our thirty-day trial of the nexus crm platform has concluded and I am pleased to report that the feedback from our team was broadly positive - I would like to discuss pricing for a full licence."
+                "I could come on the Sunday morning to help unpack, if that would be useful.",
+                "I'm really sorry, but I can't help on the 21st.",
+                "Take care,\nLola",
+                "I'm at my sister's wedding all day and won't be free."
             ],
             "correctOrder": [
-                0,
-                2,
+                1,
                 3,
-                1
+                0,
+                2
             ],
-            "hint": "Trial outcome and next steps are in the subject; the account manager is addressed; trial duration, team feedback summary, and purchasing intent are in the body; director signs with role.",
-            "explanation": "Signalling purchasing intent immediately ('I would like to discuss pricing') is the most efficient way to follow up after a trial - it tells the account manager you are a warm lead and prompts a faster commercial response.",
-            "formalityLevel": "Formal"
+            "hint": "Give the refusal early, then the reason, then a small alternative.",
+            "explanation": "Among friends, direct refusals are appreciated. The alternative of helping on Sunday shows you want to be supportive.",
+            "formalityLevel": "Informal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L74_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a technology vendor requesting technical specifications for a product.",
+            "prompt": "You're turning down a colleague's request to review a long document before a deadline. Subject: Re: Review of the policy draft / Greeting: Hi Martha, / Arrange the body.",
             "options": [
-                "Subject: Technical specification request - cloud storage solution",
-                "Our it team requires detailed technical specifications for your cloud storage solution, including data encryption standards, uptime sla, and disaster recovery protocol.",
-                "Dear Technical Sales Team,",
-                "Kind regards,\nOscares Ramos, It Infrastructure Manager"
+                "I'm afraid I don't have the capacity before Friday, because I'm finishing two other reports.",
+                "If the deadline could move to Tuesday, I would be happy to help.",
+                "Thank you for asking me to review the policy draft.",
+                "Best,\nSergio"
             ],
             "correctOrder": [
-                0,
                 2,
+                0,
                 1,
                 3
             ],
-            "hint": "Product type and request are in the subject; the technical team is addressed; three specific technical requirements are listed in the body; IT manager signs with role.",
-            "explanation": "Listing specific technical requirements - encryption standard, SLA, and disaster recovery - shows technical literacy and ensures the vendor's response addresses your actual evaluation criteria rather than generic marketing claims.",
-            "formalityLevel": "Formal"
+            "hint": "Decline because of capacity, not because of the person.",
+            "explanation": "Explaining that you lack capacity keeps the refusal impersonal. Offering a conditional yes gives the colleague a real option.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L75_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a union representative seeking advice on a potential unfair treatment issue.",
+            "prompt": "You are giving positive feedback to a team member. Subject: Great work on the client report / Greeting: Hi Tariq, / Arrange the body.",
             "options": [
-                "Dear Union Representative,",
-                "Subject: Request for union advice - possible unfair treatment at work",
-                "I believe I have been treated unfairly in relation to a recent promotion decision and would like your confidential advice on whether this constitutes a grievance under company policy.",
-                "Yours faithfully,\nDean Watson"
+                "Thank you for the extra effort you put in this week.",
+                "I wanted to say well done on the client report.",
+                "The summary at the start made the main findings clear at a glance, and the client mentioned it in their reply.",
+                "Best wishes,\nJoanna"
             ],
             "correctOrder": [
                 1,
-                0,
                 2,
+                0,
                 3
             ],
-            "hint": "Issue type and purpose are in the subject; the union rep is addressed formally; the specific concern and confidentiality requirement are in the body; formal closing maintains professionalism.",
-            "explanation": "Asking specifically whether the situation 'constitutes a grievance' shows legal awareness and focuses the union representative's advice on the key question. The word 'confidential' signals this is a sensitive personnel matter.",
-            "formalityLevel": "Formal"
+            "hint": "Specific praise names what was good and why.",
+            "explanation": "'Well done' by itself is forgettable. Naming the summary and the client's reaction helps the person repeat what worked.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L75_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to HR formally raising a workplace grievance.",
+            "prompt": "You'd like to compliment a chef and ask about a dish. Lay out the email.",
             "options": [
-                "Subject: Formal grievance - discriminatory promotion process",
-                "I am formally raising a grievance under the company's grievance policy regarding the promotion process for the senior analyst role, which I believe involved discriminatory selection criteria.",
-                "Best regards,\nDean Watson",
-                "Dear Hr Director,"
+                "We had dinner at your restaurant last Friday, and the slow-cooked lamb was the best dish I have eaten this year. Would you be willing to tell me which spices you use?",
+                "Kind regards,\nGreta Lindqvist",
+                "Subject: Compliments and a question about the lamb",
+                "Dear Chef Ismail,"
             ],
             "correctOrder": [
-                0,
+                2,
                 3,
-                1,
-                2
+                0,
+                1
             ],
-            "hint": "Formal grievance and discrimination ground are in the subject; the HR director is addressed; formal policy invocation, role, and discrimination allegation are in the body; formal closing is used.",
-            "explanation": "The phrase 'formally raising a grievance under the company's grievance policy' is legally significant - it triggers the employer's formal process obligations. Citing a specific protected characteristic ('discriminatory') strengthens the grounds considerably.",
-            "formalityLevel": "Formal"
+            "hint": "A compliment before a request feels natural if it is genuine and specific.",
+            "explanation": "The compliment explains why you're writing, and the question follows. If the request came first, the compliment would feel like flattery to win a favour.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L75_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to an employment lawyer requesting initial advice on a workplace dispute.",
+            "prompt": "A student writes to a lecturer to say how much she enjoyed the course. Subject: Thank you for the course / Greeting: Dear Professor Ndlovu, / Arrange the body.",
             "options": [
-                "Yours sincerely,\nDean Watson",
-                "Dear Ms Roper,",
-                "I am an employee who believes I have been discriminated against in a recent promotion process and would like initial advice on my legal options, including the potential for an employment tribunal claim.",
-                "Subject: Request for initial employment law advice"
+                "Best wishes,\nMariam Sesay",
+                "The session on the spice routes changed the way I think about globalisation.",
+                "I have decided to write my dissertation on the subject.",
+                "I wanted to thank you for your course on the history of trade."
             ],
             "correctOrder": [
                 3,
@@ -329,109 +329,109 @@
                 2,
                 0
             ],
-            "hint": "Purpose and legal area are in the subject; the lawyer is addressed by name; the situation, belief, and specific legal question (including tribunal) are in the body; formal closing used.",
-            "explanation": "Mentioning 'employment tribunal' signals you are aware this is a potential legal claim, not just an internal complaint. Seeking 'initial advice' is the correct first step before committing to legal action.",
-            "formalityLevel": "Formal"
+            "hint": "Praise that includes an outcome is the most rewarding for a teacher.",
+            "explanation": "The final sentence shows the effect on the student's choices. Lecturers rarely hear this, so it makes the message memorable.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L76_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a company's CSR team asking about their sustainability practices.",
+            "prompt": "A colleague has mentioned that he is short of time. Offer to help. Subject: Offer of help with the mailing / Greeting: Hi Ade, / Arrange the body.",
             "options": [
-                "Kind regards,\nFiona Chase, Procurement Manager",
-                "We are conducting a supplier due diligence review and would like information on your carbon reduction targets, renewable energy usage, and supply chain ethics policies.",
-                "Subject: Sustainability practices enquiry - potential supplier assessment",
-                "Dear Csr Team,"
+                "Cheers,\nMillie",
+                "I heard you're busy with the conference mailing this week.",
+                "No worries if you have it under control.",
+                "I have some time on Wednesday afternoon if you'd like me to take the second batch."
             ],
             "correctOrder": [
-                2,
-                3,
                 1,
+                3,
+                2,
                 0
             ],
-            "hint": "CSR purpose and context are in the subject; the CSR team is addressed; due diligence context and three specific sustainability areas are in the body; procurement manager signs with role.",
-            "explanation": "Framing the enquiry as 'supplier due diligence' rather than a casual query signals that the answers will inform a real commercial decision. Three specific areas prevent a vague response and ensure the information is comparable across suppliers.",
-            "formalityLevel": "Formal"
+            "hint": "An offer should be specific, but allow the person to decline.",
+            "explanation": "Suggesting a definite time makes the offer real. 'No worries if you have it under control' respects the colleague's independence.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L76_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email requesting a company's environmental impact report for a regulatory submission.",
+            "prompt": "A neighbour has broken her leg. Offer support. Subject: Anything I can do? / Greeting: Dear Mrs Pillai, / Arrange the body.",
             "options": [
-                "Subject: Request for environmental impact report - regulatory submission",
-                "We require a copy of your certified environmental impact report for the current reporting period as part of a regulatory submission required by the environment agency by 30 september.",
-                "Dear Environmental Compliance Team,",
-                "Yours faithfully,\nDean Cole, Environmental Manager"
+                "I go to the supermarket on Saturdays, so I could pick up your shopping.",
+                "Warm wishes,\nCallum",
+                "Please just text me a list, and I will leave it at your door.",
+                "I was very sorry to hear about your leg."
             ],
             "correctOrder": [
+                3,
                 0,
                 2,
-                1,
-                3
+                1
             ],
-            "hint": "Report type and regulatory purpose are in the subject; the compliance team is addressed; 'certified', reporting period, regulatory body, and submission deadline are all in the body.",
-            "explanation": "The word 'certified' is important - it specifies that you need an official, verified report, not a draft or summary. Mentioning the regulator ('Environment Agency') and deadline creates legitimate urgency.",
-            "formalityLevel": "Formal"
+            "hint": "Sympathy, a practical offer, and how to accept it.",
+            "explanation": "Vague offers such as 'let me know if I can help' are rarely accepted. A specific suggestion and an easy way to respond make a real difference.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L76_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a client confirming your company's environmental commitments.",
+            "prompt": "You'd like to offer a new colleague some guidance in their first month. Subject: Happy to help / Greeting: Hello Nicolas, / Arrange the body.",
             "options": [
-                "Subject: Confirmation of environmental commitments - nexus consulting",
-                "I am pleased to confirm that nexus consulting is committed to achieving net zero by 2040 and holds iso 14001 certification - full details are included in the attached sustainability report.",
-                "Yours sincerely,\nGeorge Walsh, Sustainability Director",
-                "Dear Ms Riley,"
+                "If you have any questions about systems or processes in your first weeks, please don't hesitate to ask me.",
+                "Welcome again to the team.",
+                "I usually have lunch at 12:30, so you are welcome to join me.",
+                "Kind regards,\nPhoebe"
             ],
             "correctOrder": [
-                0,
-                3,
                 1,
-                2
+                0,
+                2,
+                3
             ],
-            "hint": "Company and commitment topic are in the subject; the client is addressed by name; net zero target, certification, and attached evidence are in the body; the director signs with role.",
-            "explanation": "Combining a commitment statement ('net zero by 2040') with third-party verification ('ISO 14001') is more credible than a self-declared commitment alone. Attaching the full report gives the client documentary evidence.",
-            "formalityLevel": "Formal"
+            "hint": "The tone is welcoming, so put the offer before the social invitation.",
+            "explanation": "The professional offer comes first because it is the purpose of the email. The lunch invitation adds warmth without pressure.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L77_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a legal team asking about intellectual property protection for a new product.",
+            "prompt": "You disagree with a colleague's plan to launch in May. Subject: Thoughts on the launch date / Greeting: Hi Winston, / Arrange the body.",
             "options": [
-                "Subject: Ip protection enquiry - new product launch: project nova",
-                "We are preparing to launch a new product under project nova and seek advice on the most appropriate forms of intellectual property protection, including patent and trademark options.",
-                "Dear Ip Counsel,",
-                "Yours faithfully,\nBeatrice Walsh, Innovation Director"
+                "I agree that we need to move quickly, but I'm concerned that testing won't be complete by May.",
+                "Best,\nParisa",
+                "Thanks for sharing the launch plan.",
+                "Would it be worth moving the launch to June, or could we release a smaller version first?"
             ],
             "correctOrder": [
-                0,
                 2,
-                1,
-                3
+                0,
+                3,
+                1
             ],
-            "hint": "IP type and project name are in the subject; the IP counsel is addressed formally; product stage, two specific IP forms, and advice request are in the body; director signs with role.",
-            "explanation": "Asking about both patent AND trademark options shows awareness that different IP forms protect different aspects of a product - patents protect inventions, trademarks protect brands. Naming the project helps legal create a file.",
-            "formalityLevel": "Formal"
+            "hint": "Agree where you can, state the concern, then suggest alternatives.",
+            "explanation": "Acknowledging common ground prevents the disagreement from feeling personal. Presenting alternatives makes it a problem-solving conversation.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L77_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a creative agency requesting confirmation of copyright ownership for produced assets.",
+            "prompt": "A student disagrees with a marker's comment on an essay. Subject: Query about feedback on my essay / Greeting: Dear Dr Kaplan, / Arrange the body.",
             "options": [
-                "Subject: Copyright ownership clarification - campaign materials, ref: ca-881",
-                "Upon review of our agreement, we require written confirmation that all creative assets produced under contract ca-881 are wholly owned by nexus consulting upon payment.",
-                "Kind regards,\nRebecca Ford, Marketing Director",
-                "Dear Account Manager,"
+                "Thank you for the detailed comments on my essay.",
+                "I included three sources in the second section, and I wonder whether these might have been overlooked.",
+                "Yours sincerely,\nIsaac Moyo",
+                "I would like to ask about the comment that my argument lacked evidence."
             ],
             "correctOrder": [
                 0,
@@ -439,8 +439,8 @@
                 1,
                 2
             ],
-            "hint": "IP ownership and contract reference are in the subject; the account manager is addressed; contract reference, assets in question, and ownership condition are stated; director signs with role.",
-            "explanation": "Requesting 'written confirmation' of copyright transfer is legally significant - verbal or implied agreements are insufficient. Specifying 'upon payment' is the standard contractual trigger for copyright assignment.",
+            "hint": "A polite challenge is framed as a question, not as an accusation.",
+            "explanation": "Saying 'I wonder whether these might have been overlooked' offers a possible explanation without accusing the marker of a mistake.",
             "formalityLevel": "Formal"
         },
         {
@@ -448,56 +448,56 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a competitor formally notifying them of a trademark infringement.",
+            "prompt": "You wish to disagree with a friend about which restaurant to book. Subject: Re: Restaurant for Saturday / Greeting: Hi Renata, / Arrange the body.",
             "options": [
-                "Subject: Formal trademark infringement notice - uk trademark no. 3,012,447",
-                "Yours faithfully,\nGeorgia Hunt, Chief Legal Officer",
-                "Dear Legal Counsel,",
-                "It has come to our attention that your product branding infringes uk registered trademark no. 3,012,447 and we formally request that the infringing use ceases within 14 days."
+                "I'm a bit worried about the price, though, since Tom is on a tight budget.",
+                "How about that Thai place near the station? It's cheaper and has good vegetarian options.",
+                "Let me know!\nZoe",
+                "I know you love Bella Vita, and it was great last time."
             ],
             "correctOrder": [
-                0,
-                2,
                 3,
-                1
+                0,
+                1,
+                2
             ],
-            "hint": "Infringement type and trademark number are in the subject; the legal counsel is addressed formally; the trademark number, infringement, and 14-day demand are in the body; 'YOURS FAITHFULLY' closes the legal notice.",
-            "explanation": "A trademark infringement notice must include the specific trademark registration number, identify the infringement, and set a clear deadline ('14 days'). The deadline creates legal certainty about when litigation may follow.",
-            "formalityLevel": "Formal"
+            "hint": "In casual disagreement, give a reason and a suggestion.",
+            "explanation": "Acknowledging the friend's preference first makes the disagreement gentler. The suggestion shifts the conversation toward a solution.",
+            "formalityLevel": "Informal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L78_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a headteacher raising a concern about a bullying incident.",
+            "prompt": "A colleague you've worked with for years asks you for a favour. Reply in a natural workplace tone. Subject: Re: Can you cover Friday? / Greeting: Hi Jess, / Arrange the body.",
             "options": [
-                "Dear Mr Graham,",
-                "I am writing to bring to your urgent attention an incident of bullying involving my daughter sophie hayes in year 9 that occurred on the school premises last wednesday.",
-                "Subject: Urgent concern - bullying incident involving my child",
-                "Yours sincerely,\nMrs Linda Hayes"
+                "Thanks,\nPatrick",
+                "Just send me the notes when you have a moment.",
+                "Yes, no problem, I can cover Friday.",
+                "I'll be in from 9 anyway, so it won't be a bother."
             ],
             "correctOrder": [
                 2,
-                0,
+                3,
                 1,
-                3
+                0
             ],
-            "hint": "Urgency and issue type are in the subject; the headteacher is addressed by name; the specific incident, child's name, year group, and day are in the body; the parent signs formally with title.",
-            "explanation": "Providing the child's full name, year group, and day of the incident gives the headteacher all they need to investigate immediately. Writing to the headteacher directly for bullying signals the seriousness of the concern.",
-            "formalityLevel": "Formal"
+            "hint": "Notice how plain and warm this is. Very formal phrases would sound odd between long-time colleagues.",
+            "explanation": "Over-formality can create distance. When you know someone well, a direct reply is more natural, and it is still polite.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L78_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a teacher requesting an urgent meeting about a student's welfare.",
+            "prompt": "You are messaging your yoga instructor, whom you like and see weekly. Subject: Can't make tonight / Greeting: Hi Suki, / Arrange the body.",
             "options": [
-                "Subject: Urgent meeting request - welfare concern for sophie hayes, year 9",
-                "Yours sincerely,\nMrs Linda Hayes",
-                "I am concerned about recent changes in my daughter sophie's behaviour and emotional wellbeing and would like to arrange an urgent meeting with you and the pastoral team.",
-                "Dear Ms Cooper,"
+                "Sorry, I can't make class tonight.",
+                "See you then,\nAnna",
+                "I'll be back next Tuesday!",
+                "I've got a work deadline that's run late."
             ],
             "correctOrder": [
                 0,
@@ -505,52 +505,52 @@
                 2,
                 1
             ],
-            "hint": "Student name, year, and welfare concern are in the subject; the teacher is addressed by name; the concern, specific changes, and meeting with pastoral team are in the body.",
-            "explanation": "Asking for a meeting that includes 'the pastoral team' shows you are serious about a multi-professional response. Mentioning both 'behaviour AND emotional wellbeing' signals you are describing a pattern, not a single incident.",
-            "formalityLevel": "Formal"
+            "hint": "A friendly relationship doesn't need long apologies.",
+            "explanation": "Your message is short because the relationship is casual. Stating what happened, why, and when you'll return is enough.",
+            "formalityLevel": "Informal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L78_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email formally appealing a school's exclusion decision.",
+            "prompt": "An applicant writes to a start-up whose website is very informal. Subject: Interested in the design role / Greeting: Hi there, / Arrange the body.",
             "options": [
-                "Dear Exclusion Appeal Panel,",
-                "Yours faithfully,\nMrs Linda Hayes",
-                "I am formally appealing the decision to exclude my daughter sophie hayes (year 9) on the grounds that the disciplinary procedure was not followed correctly and mitigating circumstances were not considered.",
-                "Subject: Formal appeal against exclusion - sophie hayes, year 9"
+                "I'm a designer with three years' experience and would like to find out if you're hiring.",
+                "I love the way you use illustration in your app.",
+                "Best,\nJoel Eriksen",
+                "My portfolio is at the link below."
             ],
             "correctOrder": [
-                3,
+                1,
                 0,
-                2,
-                1
+                3,
+                2
             ],
-            "hint": "Formal appeal and student details are in the subject; the appeal panel is addressed as a body; procedural breach and mitigating circumstances are the two grounds stated; 'YOURS FAITHFULLY' closes the official appeal.",
-            "explanation": "A school exclusion appeal needs specific grounds - 'procedure not followed' and 'mitigating circumstances not considered' are two of the strongest legally recognised grounds. The panel address requires 'Yours faithfully' as no individual is named.",
-            "formalityLevel": "Formal"
+            "hint": "Adapt to the company culture, but stay professional.",
+            "explanation": "Start-ups often use a more relaxed tone, and matching it shows you understand the culture. Even so, the email remains structured and professional.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L79_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a local council applying for a community events grant.",
+            "prompt": "You are emailing a German professor whose title is 'Professor Dr Keller'. Build the email.",
             "options": [
-                "Dear Grants Coordinator,",
-                "We are applying for a community events grant to support the riverside summer festival, which will serve an estimated audience of 3,000 local residents across four free events.",
-                "Subject: Community events grant application - riverside summer festival",
-                "Kind regards,\nPatrick Reed, Festival Director"
+                "I am a Master's student in Chemistry at the University of Lagos and would like to ask whether you are currently accepting doctoral candidates. I have attached my CV for your information.",
+                "Yours sincerely,\nChinedu Okafor",
+                "Dear Professor Keller,",
+                "Subject: Enquiry about your doctoral programme"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                1,
-                3
+                1
             ],
-            "hint": "Grant type and event name are in the subject; the coordinator is addressed; key impact figures - audience size and event number - and free-entry commitment are in the body; director signs with role.",
-            "explanation": "Grants committees respond to measurable community impact. Two specific numbers - '3,000 residents' and 'four events' - plus the 'free' access point are the strongest case for public funding of a community event.",
+            "hint": "When titles matter in a culture, use the title of the highest rank you know.",
+            "explanation": "In many countries, academic titles are important. If in doubt, use 'Professor' rather than 'Mr' or 'Dr', because it is safer than a title that is too low.",
             "formalityLevel": "Formal"
         },
         {
@@ -558,43 +558,43 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to the council requesting a decision on a community centre funding application.",
+            "prompt": "You are writing to an older neighbour in your building, and you want to be respectful. Subject: Noise from the lift works / Greeting: Dear Mr Abdullah, / Arrange the body.",
             "options": [
-                "Best regards,\nPatrick Reed",
-                "Dear Grants Team,",
-                "Our funding application for the rosewood community centre was submitted on 1 april and we have not yet received an acknowledgement or decision - please could you confirm the status?",
-                "Subject: Follow-up on community centre funding application - submitted 1 april"
+                "With kind regards,\nHaruka Sato",
+                "The building manager has told me that the lift will be out of service on Monday and Tuesday.",
+                "I hope you are keeping well.",
+                "If you need help with shopping or other errands on those days, please do let me know."
             ],
             "correctOrder": [
-                3,
-                1,
                 2,
+                1,
+                3,
                 0
             ],
-            "hint": "Application topic and submission date are in the subject; the grants team is addressed; application name, submission date, missing acknowledgement, and specific status question are in the body.",
-            "explanation": "Noting that even an acknowledgement has not been received escalates the issue - most councils auto-acknowledge applications. Asking specifically for a 'status update' rather than 'a reply' is more professionally precise.",
-            "formalityLevel": "Formal"
+            "hint": "Respect can be shown by asking about wellbeing and offering help.",
+            "explanation": "Traditional courtesy, such as asking after someone's health, shows respect. The offer of help is particularly appreciated by elderly neighbours.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L79_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a council planning officer asking about obtaining listed building consent.",
+            "prompt": "You are writing to a hotel abroad and are unsure how to greet the manager. Arrange the email.",
             "options": [
-                "Yours faithfully,\nCharlotte Wise",
-                "Dear Planning Officer,",
-                "Subject: Listed building consent enquiry - coach house, mill lane, dorchester",
-                "I own a grade ii listed coach house and wish to undertake sympathetic internal alterations - please could you advise on the listed building consent process and documentation required?"
+                "Yours faithfully,\nMonique Laurent",
+                "Subject: Booking enquiry for July",
+                "We would like to book a double room from 12 to 19 July. Could you please confirm availability and send the rates?",
+                "Dear Sir or Madam,"
             ],
             "correctOrder": [
-                2,
                 1,
                 3,
+                2,
                 0
             ],
-            "hint": "Building grade and location are in the subject; the planning officer is addressed; building type, grade, intended work type, and process questions are in the body; formal closing is used.",
-            "explanation": "The word 'sympathetic' is important in listed building applications - it signals you understand that alterations must respect the building's historic character, which is what planners look for. Asking about documentation prevents wasted time.",
+            "hint": "When you don't know the person or the customs, choose the most neutral formal greeting.",
+            "explanation": "'Dear Sir or Madam' is safe when you do not know the recipient. Most hotels understand and reply politely, and you avoid assumptions about gender or titles.",
             "formalityLevel": "Formal"
         },
         {
@@ -602,21 +602,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to an international business contact proposing a strategic partnership.",
+            "prompt": "You are replying to a customer who has complained politely. Lay out the email; pay attention to tone.",
             "options": [
-                "I am the ceo of nexus consulting and believe there is a compelling opportunity for our two organisations to collaborate on digital transformation projects across the asia-pacific region.",
-                "Subject: Partnership proposal - nexus consulting and tokyo digital group",
-                "Yours sincerely,\nDr Helen Marsh, Ceo",
-                "Dear Mr Tanaka,"
+                "Subject: Re: Your comments about order 40817",
+                "Dear Mr Pereira,",
+                "Yours sincerely,\nChloe Barton",
+                "Thank you for letting us know about the scratch on your table. I am sorry it arrived damaged, and I have arranged for a replacement to be delivered on Thursday."
             ],
             "correctOrder": [
+                0,
                 1,
                 3,
-                0,
                 2
             ],
-            "hint": "Both company names and proposal type are in the subject; the international contact is addressed formally by name; sender's role, opportunity, and geographic scope are in the body; CEO signs with title.",
-            "explanation": "Naming both companies in the subject signals mutual benefit from the outset. Using 'Dr' in the sign-off establishes academic and professional credibility, which may be significant in Japanese business culture.",
+            "hint": "Thank, apologise, solve. Notice how the customer's politeness is matched.",
+            "explanation": "A courteous complaint deserves an equally courteous reply. Thanking the customer first shows that feedback is welcome, and the concrete solution completes the apology.",
             "formalityLevel": "Formal"
         },
         {
@@ -624,21 +624,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email setting up an international video conference with overseas partners.",
+            "prompt": "You are a student asking a busy professor for a short meeting. Piece together the email.",
             "options": [
-                "Subject: Meeting request - nexus and tokyo digital joint strategy session",
-                "Dear Mr Tanaka,",
-                "I would like to propose a video conference on thursday 14 november at 9am london time (5pm tokyo time) to discuss initial partnership terms and next steps.",
-                "Yours sincerely,\nDr Helen Marsh, Ceo"
+                "Dear Professor Grant,",
+                "Subject: Request for a short meeting about my dissertation",
+                "I am writing to ask whether you might have twenty minutes in the next two weeks to discuss my dissertation proposal. I am happy to work around your timetable.",
+                "Yours sincerely,\nHana Kobayashi"
             ],
             "correctOrder": [
-                0,
                 1,
+                0,
                 2,
                 3
             ],
-            "hint": "Meeting purpose and partners are in the subject; the contact is addressed by name; meeting format, date, and both time zones are given in the body; CEO signs formally.",
-            "explanation": "Including both time zones - London AND Tokyo - is essential for international meetings. It shows cultural consideration and prevents the classic confusion about who has misunderstood the time. Always specify the time zone reference ('London time').",
+            "hint": "Tentative phrasing and flexibility show respect for a busy person.",
+            "explanation": "'Whether you might have' and 'happy to work around your timetable' show that you value the professor's time, which makes a yes more likely.",
             "formalityLevel": "Formal"
         },
         {
@@ -646,12 +646,12 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to an overseas partner confirming receipt of an international purchase order.",
+            "prompt": "You're sending a friendly reminder to a friend who owes you a small amount of money. Set out the message.",
             "options": [
-                "I write to confirm receipt of purchase order tdg-2024-0812 for twelve months of digital consulting services - we will process your order and issue an invoice within three business days.",
-                "Dear Mr Tanaka,",
-                "Subject: Order confirmation - purchase order tdg-2024-0812 received",
-                "Yours sincerely,\nDr Helen Marsh, Ceo"
+                "Hope you're doing well! Just a quick reminder about the £15 for the concert tickets, whenever you get a chance.",
+                "Hi Ollie,",
+                "Subject: Quick reminder",
+                "Thanks!\nMina"
             ],
             "correctOrder": [
                 2,
@@ -659,9 +659,9 @@
                 0,
                 3
             ],
-            "hint": "Order reference and confirmation purpose are in the subject; the partner is addressed formally; order reference, service description, and timeline for invoice are in the body.",
-            "explanation": "Confirming the purchase order number, the service agreed, and the invoicing timeline gives the overseas partner a complete record for their accounts payable team. Three business days is the standard professional timeline for invoice generation.",
-            "formalityLevel": "Formal"
+            "hint": "Money reminders between friends should be light and low-pressure.",
+            "explanation": "A warm opening and 'whenever you get a chance' keep the tone friendly. The exact amount and reason prevent confusion without awkwardness.",
+            "formalityLevel": "Informal"
         }
     ]
 }

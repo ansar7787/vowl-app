@@ -5,572 +5,602 @@
     "quests": [
         {
             "id": "WRT_SHORTANSWERWRITING_L31_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Say what you decided and why in a single sentence. Make sure all three words fit the meaning.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about a person who applied for a job and how they performed at the interview.",
+            "prompt": "A colleague asks why you chose to live where you do.",
             "options": [
-                "apply",
-                "position",
-                "confident"
+                "because",
+                "close",
+                "chose"
             ],
-            "sampleAnswer": "She confidently chose to apply for the senior position because she had researched the company thoroughly.",
-            "hint": "Use past tense, name the role, and link her confidence to a specific reason with 'because'.",
-            "explanation": "Linking an emotion ('confident') to a cause ('because she had researched') creates psychological depth.",
+            "sampleAnswer": "I chose this neighborhood because it's close to my office and the rent is fair.",
+            "hint": "Use 'chose' for the past decision and put your strongest practical reason after 'because'.",
+            "explanation": "A choice sounds thoughtful when it comes with a concrete reason instead of 'I just liked it'. 'Chose' is the irregular past of 'choose'.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "because",
+                "chose",
+                "close"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L31_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Say what you think in one clear sentence, and support it. Use all three words naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why choosing healthier food options is a smart habit for students.",
+            "prompt": "A friend asks whether you prefer buying shoes online or in a shop.",
             "options": [
-                "healthier",
-                "option",
-                "choose"
+                "prefer",
+                "shop",
+                "try"
             ],
-            "sampleAnswer": "Students who choose a healthier option at every meal build habits that will serve them well beyond school.",
-            "hint": "Use a relative clause with 'who choose' to describe the students, then explain the lasting result.",
-            "explanation": "A relative clause ('who choose a healthier option') turns a general statement into something specific and concrete - a common technique in advice writing.",
+            "sampleAnswer": "I prefer buying shoes in a shop because I need to try them on before I decide.",
+            "hint": "Say which option you prefer, then give the practical reason that decides it for you.",
+            "explanation": "'Prefer' plus an -ing form states a preference cleanly, and a practical reason makes the preference believable to the listener.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "prefer",
+                "shop",
+                "try"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L31_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Explain in one clear sentence so the reason is easy to follow. Work in each of the three words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Describe what essential items a traveller should pack before a long trip.",
+            "prompt": "A friend asks why you did not buy a coat you liked in the shop.",
             "options": [
-                "pack",
-                "essentials",
-                "journey"
+                "liked",
+                "price",
+                "didn't"
             ],
-            "sampleAnswer": "Before any long journey, it is important to pack all the essentials to avoid unnecessary problems along the way.",
-            "hint": "Open with 'Before any long journey', then explain what to pack and the problem it prevents.",
-            "explanation": "The impersonal structure 'it is important to + verb' is standard in advice, recommendation, and instructional writing.",
+            "sampleAnswer": "I liked the coat, but I didn't buy it because the price was too high.",
+            "hint": "Show the wish first, then the obstacle, joined by 'but' and 'because'.",
+            "explanation": "Explaining a decision not to act needs both sides: what attracted you (liked) and what stopped you (the price).",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "didn't",
+                "liked",
+                "price"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L32_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a brief summary in a single sentence for someone who missed it. Each word should appear in your answer.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how people use social media to share news and grow their online presence.",
+            "prompt": "A poster says: 'Book sale, Town Hall, Saturday 10-4, every book two dollars.' Tell a friend the key facts.",
             "options": [
-                "post",
-                "update",
-                "followers"
+                "sale",
+                "Saturday",
+                "books"
             ],
-            "sampleAnswer": "Many people post regular updates on social media to keep friends informed and gradually grow their followers.",
-            "hint": "Name the platform activity, then give two purposes joined with matching 'to' phrases.",
-            "explanation": "Two parallel purpose infinitives ('to keep', 'to grow') create a balanced, efficient sentence structure.",
+            "sampleAnswer": "There's a book sale at the Town Hall on Saturday from ten to four, and all the books are two dollars.",
+            "hint": "Answer what, where, when, and how much in a single sentence, in your own words.",
+            "explanation": "Passing on information means keeping the essential details and rewording the rest, so it works even when you cannot show the poster.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "books",
+                "sale",
+                "Saturday"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L32_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a brief summary in a single sentence for someone who missed it. Work in each of the three words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about whether you prefer eating at home or going to a restaurant and explain why.",
+            "prompt": "A voicemail says: 'Your parcel arrives between 2 and 4 today, and someone must be home.' Tell your housemate.",
             "options": [
-                "prefer",
-                "homemade",
-                "restaurant"
+                "home",
+                "between",
+                "parcel"
             ],
-            "sampleAnswer": "I strongly prefer homemade meals over restaurant food because they are fresher, cheaper, and far more personal.",
-            "hint": "State your preference with 'over', then list three reasons as adjectives.",
-            "explanation": "Listing three distinct reasons with adjectives creates a persuasive, comprehensive comparison.",
+            "sampleAnswer": "A parcel is coming between two and four today, so someone needs to be home.",
+            "hint": "Turn 'your' and 'must' into words that suit your housemate, and use 'so' for the duty.",
+            "explanation": "Relaying a message often means changing pronouns and softening 'must' to 'needs to', while keeping the time window exact.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "between",
+                "home",
+                "parcel"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L32_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Summarize the key information in one clear sentence. Your answer should contain all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why keeping a personal journal or diary is a valuable writing habit.",
+            "prompt": "Your teacher said: 'Homework is on page 12 and it's due Monday.' Tell a classmate who was absent.",
             "options": [
-                "record",
-                "thoughts",
-                "daily"
+                "page",
+                "due",
+                "homework"
             ],
-            "sampleAnswer": "Recording your daily thoughts in a personal journal develops writing discipline and helps you process your emotions.",
-            "hint": "Use an -ing subject about journaling, then name one practical benefit and one emotional one.",
-            "explanation": "Two benefits from different domains ('skill' and 'emotion') show that the habit has multi-dimensional value.",
+            "sampleAnswer": "The homework is on page twelve, and it's due on Monday.",
+            "hint": "Give what, where, and when. You do not need to repeat the teacher's exact words.",
+            "explanation": "A good message for an absent classmate includes only the facts they will act on: the task, the location of the task, and the deadline.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "due",
+                "homework",
+                "page"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L33_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Share the experience in one sentence. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about a seasonal festival or cultural tradition your family observes each year.",
+            "prompt": "Tell about a moment when you felt proud, at work, at school, or at home.",
             "options": [
-                "celebrate",
-                "tradition",
-                "festival"
+                "finished",
+                "when",
+                "proud"
             ],
-            "sampleAnswer": "Each year, our family celebrates a beloved cultural festival that has been a cherished tradition for generations.",
-            "hint": "Open with 'Each year', then add a relative clause showing how long the tradition has continued.",
-            "explanation": "Present perfect in a relative clause ('that has been a tradition') emphasises duration and cultural continuity.",
+            "sampleAnswer": "I felt proud when I finished my first presentation without looking at my notes.",
+            "hint": "Name the feeling, then use 'when' to attach it to one specific moment.",
+            "explanation": "A feeling becomes clear when it is tied to an exact moment, because the reader can picture what caused it.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "finished",
+                "proud",
+                "when"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L33_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a brief account in one sentence. Your answer should contain all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about the differences in lifestyle between people who live in cities and the countryside.",
+            "prompt": "Tell about a time you got lost in a place you did not know.",
             "options": [
-                "prefer",
-                "peaceful",
-                "city"
+                "finally",
+                "lost",
+                "asked"
             ],
-            "sampleAnswer": "While some people prefer the energy of the city, others seek the slower and more peaceful pace of rural life.",
-            "hint": "Contrast two groups using 'While some people... others...'.",
-            "explanation": "'While' introduces a simultaneous contrast - it is one of the most natural contrast connectors in English.",
+            "sampleAnswer": "I got lost in a new town, so I asked a shopkeeper for help and finally found the station.",
+            "hint": "Use 'so' to show what you did, and 'finally' to show how it ended.",
+            "explanation": "A small story needs a problem, an action, and an ending. 'Finally' tells the reader the problem is solved.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "asked",
+                "finally",
+                "lost"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L33_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Share the experience in a single sentence. Include all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about practical strategies that help students focus and study more effectively.",
+            "prompt": "Tell about a time a bill or a price surprised you.",
             "options": [
-                "focus",
-                "distraction",
-                "eliminate"
+                "expected",
+                "surprised",
+                "bill"
             ],
-            "sampleAnswer": "To focus effectively during study sessions, students must eliminate all distractions, including phones and loud music.",
-            "hint": "Open with a purpose phrase about focus, then use a strong modal to recommend removing distractions.",
-            "explanation": "The modal 'must' expresses strong obligation. In advice writing, it is more direct and forceful than 'should'.",
+            "sampleAnswer": "I was surprised when my phone bill was double what I expected.",
+            "hint": "Compare what you expected with what actually happened.",
+            "explanation": "Surprise always compares expectation and reality, so the comparison is what makes the sentence meaningful.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "bill",
+                "expected",
+                "surprised"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L34_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Reply as you would in a real conversation in one clear sentence. Make sure all three words fit the meaning.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Describe the key structural elements that every well-written formal letter should include.",
+            "prompt": "A doctor asks how long you have had a headache.",
             "options": [
-                "address",
-                "paragraph",
-                "conclusion"
+                "since",
+                "morning",
+                "have"
             ],
-            "sampleAnswer": "Every well-written letter includes a precise address, clearly structured paragraphs, and a polite closing conclusion.",
-            "hint": "List the three parts of a letter, adding a describing word to each one.",
-            "explanation": "Combining nouns with adjectives ('clearly structured paragraphs') adds quality descriptors to structural components.",
+            "sampleAnswer": "I have had a headache since this morning, and it's getting worse.",
+            "hint": "Use 'have had' with 'since' and a clear starting point.",
+            "explanation": "'Since' marks the starting point of a situation that continues now, which is why doctors ask for it.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "have",
+                "morning",
+                "since"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L34_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Answer the question directly in one sentence. Include the three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about the most effective method for reaching fluency in a second language.",
+            "prompt": "Say how long you have been learning English.",
             "options": [
-                "practice",
-                "fluency",
-                "consistent"
+                "learning",
+                "years",
+                "for"
             ],
-            "sampleAnswer": "Achieving fluency in a second language demands consistent daily practice over a sustained and dedicated period.",
-            "hint": "Use an -ing subject about fluency, then state what it requires and over what kind of period.",
-            "explanation": "'Demands + noun' is a formal structure expressing strong necessity - more academic than 'needs' or 'requires'.",
+            "sampleAnswer": "I've been learning English for about three years, mostly online.",
+            "hint": "Use 'for' with a length of time, and add one detail about how.",
+            "explanation": "'For' gives the length of time, while 'since' gives the start. Both connect the past to now.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "for",
+                "learning",
+                "years"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L34_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Answer the question directly in a single sentence. Your answer should contain all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Describe the physical and mental health benefits of maintaining a regular exercise routine.",
+            "prompt": "Say something you have never done but would like to try.",
             "options": [
-                "benefit",
-                "regular",
-                "physical"
+                "never",
+                "want",
+                "tried"
             ],
-            "sampleAnswer": "Regular physical exercise benefits both the body and the mind, improving mood and reducing the risk of illness.",
-            "hint": "State the general benefit first, then add a phrase listing two specific improvements.",
-            "explanation": "Participial phrases ('improving mood and reducing risk') add information concisely without a new clause.",
+            "sampleAnswer": "I've never tried skiing, but I want to go next winter.",
+            "hint": "Use 'have never' plus a past participle, then link the wish with 'but'.",
+            "explanation": "'Never' with the present perfect describes experiences you have not had up to now, and 'but' turns the gap into a goal.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "never",
+                "tried",
+                "want"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L35_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Suggest what to do in one clear sentence and justify it. Each word should appear in your answer.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how creating and following a budget helps you manage money each month.",
+            "prompt": "A friend cannot sleep because of noise at night. Give one suggestion.",
             "options": [
-                "budget",
-                "save",
-                "expense"
+                "earplugs",
+                "neighbor",
+                "should"
             ],
-            "sampleAnswer": "A carefully planned budget helps you track every expense accurately and identify exactly where you can save.",
-            "hint": "Say what the budget helps you do, listing two purposes joined with 'and'.",
-            "explanation": "'Identify exactly where you can save' uses an embedded question as the object - a sophisticated grammatical pattern.",
+            "sampleAnswer": "You should try earplugs, or ask your neighbor to keep the noise down.",
+            "hint": "Give your first option with 'should', then offer a second with 'or'.",
+            "explanation": "Two options make advice sound like help instead of an order, and 'should' softens the recommendation.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "earplugs",
+                "neighbor",
+                "should"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L35_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Recommend an option in one clear sentence, with the reason. Include all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how reading regularly improves language skills and general comprehension.",
+            "prompt": "A tourist has only one day in your area. Say what to see and when to go.",
             "options": [
-                "develop",
-                "comprehension",
-                "vocabulary"
+                "should",
+                "before",
+                "visit"
             ],
-            "sampleAnswer": "Developing a regular reading habit gradually builds vocabulary and strengthens comprehension across all subject areas.",
-            "hint": "Use an -ing subject about reading, then name two skills it builds and how far the benefit reaches.",
-            "explanation": "'Across all subject areas' broadens the claim - showing that the benefit is not limited to one domain.",
+            "sampleAnswer": "You should visit the old market in the morning, before it gets crowded.",
+            "hint": "Say what to do, then use 'before' to add timing that improves the plan.",
+            "explanation": "Advice with timing and a reason is more useful than a place name alone.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "before",
+                "should",
+                "visit"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L35_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Suggest what to do in two short sentences and justify it. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how to cook a healthy and nutritious meal using simple, fresh ingredients.",
+            "prompt": "A friend is nervous about a job interview. Encourage her with practical advice.",
             "options": [
-                "nutritious",
                 "prepare",
-                "ingredient"
+                "worry",
+                "sleep"
             ],
-            "sampleAnswer": "It is straightforward to prepare a nutritious meal when you use fresh, seasonal ingredients and straightforward techniques.",
-            "hint": "Open with 'It is straightforward to prepare', then use 'when' to add the condition.",
-            "explanation": "'It is straightforward to + verb' is a helpful structure for arguing that a task is accessible and manageable.",
+            "sampleAnswer": "Don't worry too much. Prepare three examples and get a good night's sleep.",
+            "hint": "Use short commands and keep the tone kind. Give advice that she can actually do.",
+            "explanation": "Short imperatives are natural between friends, and practical steps are more encouraging than telling someone 'Be confident'.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "prepare",
+                "sleep",
+                "worry"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L36_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Make the meaning clear in one sentence. Make sure all three words fit the meaning.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how exploring career options early helps young people choose the right path.",
+            "prompt": "Explain to a child what a thermometer is used for.",
             "options": [
-                "explore",
-                "career",
-                "interest"
+                "used",
+                "temperature",
+                "measure"
             ],
-            "sampleAnswer": "Young people who explore career paths early can match their interests to long-term professional goals.",
-            "hint": "Use a relative clause ('who explore') to describe these young people, then explain the long-term connection.",
-            "explanation": "The modal 'can' combined with a relative clause ('who explore career paths early') links an early action to a future benefit - a useful pattern in advice writing.",
+            "sampleAnswer": "A thermometer is used to measure temperature, so you can tell if someone has a fever.",
+            "hint": "Use 'is used to' plus a verb, then add what people learn from it.",
+            "explanation": "'Is used to + verb' explains a function. Adding the result ('you can tell...') shows why the function matters.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "measure",
+                "temperature",
+                "used"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L36_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Explain it in a single sentence so the other person understands. Your answer should contain all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how to manage the anxiety of speaking in front of a large audience.",
+            "prompt": "Explain to a hotel guest what the red button by the bed is for.",
             "options": [
-                "nervous",
-                "audience",
-                "prepare"
+                "press",
+                "emergency",
+                "help"
             ],
-            "sampleAnswer": "Even when I feel nervous facing a large audience, preparing thoroughly in advance is the most effective way to build confidence.",
-            "hint": "Acknowledge the nervous feeling with 'Even when', then pivot to the solution.",
-            "explanation": "'Even when' concedes a difficulty before presenting the solution - a mature way to acknowledge a challenge without dwelling on it.",
+            "sampleAnswer": "Press it in an emergency, and someone from the front desk will come to help you.",
+            "hint": "Say when to use it, then what will happen next.",
+            "explanation": "Explaining a device needs a trigger (when to use it) and a result (what happens), or the guest will still be confused.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "emergency",
+                "help",
+                "press"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L36_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Say why in one sentence, with the reason stated clearly. Work in each of the three words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about the value of attending events organised by your local community.",
+            "prompt": "Say why you keep a list of notes on your phone.",
             "options": [
-                "attend",
-                "community",
-                "engage"
+                "notes",
+                "remember",
+                "so"
             ],
-            "sampleAnswer": "Attending local community events is an excellent way to engage with your neighbours and strengthen social bonds.",
-            "hint": "Use an -ing subject about attending events, then list two social benefits.",
-            "explanation": "'Strengthen social bonds' is a more formal and precise phrase than 'make friends' - an appropriate register upgrade.",
+            "sampleAnswer": "I keep notes on my phone so I remember what to buy and what to ask at appointments.",
+            "hint": "Use 'so' plus a subject and a verb to give the purpose of the habit.",
+            "explanation": "'So' followed by a full clause gives the purpose behind a habit and sounds more natural than repeating 'because'.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "notes",
+                "remember",
+                "so"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L37_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write what you would say in one sentence, politely. Use the three words meaningfully.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how students use technology to research topics and complete schoolwork.",
+            "prompt": "A colleague asks whether you can cover his shift on Friday. Say no politely.",
             "options": [
-                "use",
-                "tablet",
-                "research"
+                "appointment",
+                "sorry",
+                "can't"
             ],
-            "sampleAnswer": "Students use tablets and laptops to research academic topics online and complete assignments more efficiently.",
-            "hint": "State who, what tools, then two purposes using a comparative adverb.",
-            "explanation": "Comparative adverbs ('more efficiently') show improvement through technology - a useful argumentative point.",
+            "sampleAnswer": "Sorry, I can't cover it because I have a medical appointment on Friday.",
+            "hint": "Say sorry first, refuse clearly, then add one short, honest reason for the refusal.",
+            "explanation": "A brief, honest reason makes a refusal feel fair and stops the other person from feeling rejected.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "appointment",
+                "can't",
+                "sorry"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L37_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a natural reply in one or two sentences. Your answer should contain all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Describe the qualities that define a truly outstanding teacher.",
+            "prompt": "A friend asks whether you like her new haircut. You do.",
             "options": [
-                "patient",
-                "explain",
-                "inspire"
+                "suits",
+                "really",
+                "color"
             ],
-            "sampleAnswer": "An outstanding teacher explains complex ideas with clarity, remains patient with all students, and consistently inspires curiosity.",
-            "hint": "List three parallel verbs describing the teacher, adding an adverb or detail to each.",
-            "explanation": "Adding adverbs ('with clarity', 'consistently') to each verb gives depth and avoids a flat, list-like sentence.",
+            "sampleAnswer": "It really suits you! I love the color.",
+            "hint": "Give a sincere reaction and one specific detail about what you like.",
+            "explanation": "One specific detail makes a compliment sound genuine, while a generic 'nice' sounds automatic.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "color",
+                "really",
+                "suits"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L37_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Reply in one sentence as you would in real life. Use all three words naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why effective time management is a critical skill for students and professionals.",
+            "prompt": "A shop assistant asks if you need help. You would prefer to look around alone.",
             "options": [
-                "manage",
-                "time",
-                "deadline"
+                "just",
+                "looking",
+                "thanks"
             ],
-            "sampleAnswer": "To manage time effectively, ensure every task is scheduled so that no deadline is ever missed.",
-            "hint": "Open with 'To manage time effectively' as a purpose phrase, then give an instruction using two passive-voice verbs.",
-            "explanation": "Two passive-voice verbs ('is scheduled', 'is...missed') keep the focus on tasks and deadlines rather than on who does the scheduling - a formal style common in advice writing.",
+            "sampleAnswer": "No, thanks, I'm just looking, but I'll ask if I need anything.",
+            "hint": "Refuse the offer politely and leave the door open with 'but'.",
+            "explanation": "Adding 'I'll ask if I need anything' keeps the tone friendly, so a refusal does not sound cold.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "just",
+                "looking",
+                "thanks"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L38_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Give a recommendation in a single sentence and say why. Include all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how you choose and prepare a special dish when cooking for important guests.",
+            "prompt": "Tell a visitor the quietest place to study near where you live.",
             "options": [
-                "impress",
-                "dish",
-                "guest"
+                "library",
+                "study",
+                "quietest"
             ],
-            "sampleAnswer": "When cooking for important guests, I always choose a dish that is impressive yet straightforward to prepare.",
-            "hint": "Set the scene with 'When cooking for...guests', then describe the dish with two balanced qualities.",
-            "explanation": "'Yet' is a formal contrast word - 'impressive yet straightforward' shows two qualities that coexist without conflict.",
+            "sampleAnswer": "The quietest place to study near me is the library, especially in the morning.",
+            "hint": "Use 'the quietest' and add a time that makes the answer more useful.",
+            "explanation": "Superlatives compare one thing with a whole group and need 'the'. A time detail makes the recommendation practical.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "library",
+                "quietest",
+                "study"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L38_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Reply as you would in a real conversation in a single sentence. Work in each of the three words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how planning accommodation in advance helps you travel within a budget.",
+            "prompt": "Say when public transport is busiest where you live.",
             "options": [
-                "affordable",
-                "plan",
-                "accommodation"
+                "weekday",
+                "time",
+                "busiest"
             ],
-            "sampleAnswer": "Planning affordable accommodation well in advance is the most reliable strategy for keeping travel costs under control.",
-            "hint": "Use an -ing subject about planning accommodation, then name the strategy it represents.",
-            "explanation": "'Most reliable strategy' is more formal than 'best way' - it implies evidence-based decision-making.",
+            "sampleAnswer": "The busiest time on weekday mornings is between eight and nine o'clock.",
+            "hint": "Use 'the busiest' with a time range instead of one exact time.",
+            "explanation": "A time range is more useful than a single moment because crowds build up and clear slowly.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "busiest",
+                "time",
+                "weekday"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L38_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "State your opinion and give a reason in one sentence. Include all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how thoughtfully organising your home space helps your daily productivity.",
+            "prompt": "Say which app on your phone is the most useful for you and why.",
             "options": [
-                "comfortable",
-                "organize",
-                "space"
+                "most",
+                "useful",
+                "because"
             ],
-            "sampleAnswer": "Thoughtfully choosing how to organize your space creates a comfortable environment for work and study.",
-            "hint": "Use a gerund subject starting with 'Thoughtfully', then say what result it creates.",
-            "explanation": "A gerund subject ('Thoughtfully choosing...') packs an entire action into the subject position, letting the sentence move straight to its result.",
+            "sampleAnswer": "The most useful app for me is my calendar because it reminds me about everything.",
+            "hint": "Use 'the most useful' plus 'because' and one benefit.",
+            "explanation": "Long adjectives form the superlative with 'the most' instead of -est, and 'because' explains your judgment.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "because",
+                "most",
+                "useful"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L39_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Reply in a single sentence as you would in real life. Your answer should contain all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why personal writing is a valuable way to express your deeper feelings.",
+            "prompt": "Tell a shop assistant that an item you bought is broken.",
             "options": [
-                "express",
-                "emotion",
-                "writing"
+                "yesterday",
+                "broken",
+                "bought"
             ],
-            "sampleAnswer": "Writing is one of the most powerful tools for expressing complex emotions that are difficult to articulate in speech.",
-            "hint": "State your claim about writing's power, then add a relative clause comparing it to speech.",
-            "explanation": "'Difficult to articulate in speech' compares writing to speaking - showing writing's unique expressive advantage.",
+            "sampleAnswer": "I bought this kettle yesterday, but it's already broken.",
+            "hint": "Say what you bought, when you bought it, and what is wrong.",
+            "explanation": "A clear complaint includes the item, the purchase time, and the problem, so the assistant can act without asking more questions.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "bought",
+                "broken",
+                "yesterday"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L39_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Reply in one clear sentence as you would in real life. Include all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how comparing two very different cities reveals contrasts in lifestyle and culture.",
+            "prompt": "A colleague asks why nobody is using the printer.",
             "options": [
-                "contrast",
-                "feature",
-                "lifestyle"
+                "printer",
+                "paper",
+                "because"
             ],
-            "sampleAnswer": "The striking contrast in lifestyle and defining features between the two cities reveals how differently people can live.",
-            "hint": "Use 'The striking contrast in X and Y between Z reveals' as your sentence frame.",
-            "explanation": "'Reveals how differently people can live' is a sophisticated nominal clause object - it shows analytical depth.",
+            "sampleAnswer": "The printer isn't working because it has run out of paper.",
+            "hint": "State the fact, then the cause with 'because'.",
+            "explanation": "Giving the cause with the problem lets the other person fix it immediately.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "because",
+                "paper",
+                "printer"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L39_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a natural reply in one clear sentence. Use all three words naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why being flexible is essential when your original plans change unexpectedly.",
+            "prompt": "Leave a voicemail for a taxi company: you left something in a car.",
             "options": [
-                "suggest",
-                "alternative",
-                "flexible"
+                "left",
+                "phone",
+                "seat"
             ],
-            "sampleAnswer": "Being flexible means being willing to suggest a good alternative without frustration when original plans fall through.",
-            "hint": "Define flexibility with 'means being willing to', then add a manner phrase about how you do it.",
-            "explanation": "'Without frustration' is a manner phrase that describes the emotional quality of flexibility - important in writing.",
+            "sampleAnswer": "Hello, I think I left my phone on the back seat of one of your taxis this morning.",
+            "hint": "Say what you left and where, then when you traveled.",
+            "explanation": "Where and when are the two details that help someone find a lost item.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "left",
+                "phone",
+                "seat"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L40_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Tell what happened in one sentence, in the right order. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why attending regular health check-ups is a wiser approach than waiting until you feel ill.",
+            "prompt": "Tell about a short outing you took, such as a walk or a market visit, and one thing that surprised you.",
             "options": [
-                "regular",
-                "appointment",
-                "prevention"
+                "while",
+                "decided",
+                "surprised"
             ],
-            "sampleAnswer": "Regular medical appointments prioritise prevention and allow doctors to catch developing issues before they become serious.",
-            "hint": "State two things regular check-ups prioritise, then add a time clause about catching problems early.",
-            "explanation": "'Before they become serious' is a time clause that shows the value of early detection - key in health-related writing.",
+            "sampleAnswer": "While I was walking through the market, I was surprised to find a tiny bookshop, so I decided to go in.",
+            "hint": "Use 'while' for the background action and 'so' for what you decided.",
+            "explanation": "Linking a background action, a surprise, and a decision shows how one event led to another.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "decided",
+                "surprised",
+                "while"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L40_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Recommend an option in a single sentence, with the reason. Your answer should contain all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why being informed about current events makes you a more aware and engaged person.",
+            "prompt": "A friend wants to make the same trip. Give two tips.",
             "options": [
-                "stay",
-                "informed",
-                "current"
+                "bring",
+                "should",
+                "early"
             ],
-            "sampleAnswer": "Staying informed about current events helps you understand global issues and make more considered, thoughtful decisions.",
-            "hint": "Use an -ing subject about staying informed, then list two benefits.",
-            "explanation": "Upgrading 'better decisions' to 'more considered, thoughtful decisions' is an example of lexical precision.",
+            "sampleAnswer": "You should bring a bag and get there early, because it gets crowded.",
+            "hint": "Use 'should' for two tips and a short reason for one of them.",
+            "explanation": "Two tips joined by 'and', plus a short reason, give more value than a list of separate orders.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "bring",
+                "early",
+                "should"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L40_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a conditional answer in a single sentence. Each word should appear in your answer.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how a story's final scene or chapter resolves the main conflict for the reader.",
+            "prompt": "Say what you will do if the weather is bad next time.",
             "options": [
-                "resolve",
-                "conflict",
-                "character"
+                "instead",
+                "if",
+                "indoors"
             ],
-            "sampleAnswer": "In a satisfying narrative, the central character resolves the main conflict in a way that feels both honest and inevitable.",
-            "hint": "Open with 'In a satisfying narrative', then explain how and why the ending feels right.",
-            "explanation": "'Feels both honest and inevitable' evaluates the quality of the resolution - an analytical phrase for literary writing.",
+            "sampleAnswer": "If it rains next time, we'll stay indoors and visit a museum instead.",
+            "hint": "Use 'if' plus the present, then 'will' for your backup plan.",
+            "explanation": "A backup plan uses the first conditional: present tense in the 'if' part, 'will' in the result.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "if",
+                "indoors",
+                "instead"
             ]
         }
     ]

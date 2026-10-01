@@ -1,517 +1,517 @@
 {
-    "gameType": "completeSentence",
-    "batchIndex": 2,
-    "levels": "11-20",
-    "quests": [
-        {
-            "id": "WRT_COMPLETESENTENCE_L11_Q1",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "Could you give me ____ phone number so I can call you later?",
-            "options": [
-                "you're",
-                "yours",
-                "you",
-                "your"
-            ],
-            "correctAnswer": "your",
-            "hint": "We need a word that goes before a noun to show possession, not a pronoun that stands alone.",
-            "explanation": "'Your' is a possessive adjective placed before a noun ('your phone number'), unlike 'yours', which stands alone.",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L11_Q2",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "I left a message, but she hasn't returned ____ call yet.",
-            "options": [
-                "my",
-                "mine",
-                "me",
-                "I"
-            ],
-            "correctAnswer": "my",
-            "hint": "We need a possessive adjective directly before the noun 'call'.",
-            "explanation": "'My' is the possessive adjective that goes before a noun, so it fits directly before 'call'.",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L11_Q3",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "Please tell him to bring ____ ID card to the appointment.",
-            "options": [
-                "his",
-                "he",
-                "him",
-                "he's"
-            ],
-            "correctAnswer": "his",
-            "hint": "We need a possessive adjective that matches 'him' and goes before a noun.",
-            "explanation": "'His' is the possessive form that matches 'he/him' and is used directly before a noun like 'ID card'.",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L12_Q1",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "Every morning, I make ____ bed before breakfast.",
-            "options": [
-                "me",
-                "I",
-                "my",
-                "mine"
-            ],
-            "correctAnswer": "my",
-            "hint": "We need a word before the noun 'bed' that shows it belongs to the subject 'I'.",
-            "explanation": "'My' is the possessive adjective matching 'I' and is placed directly before a noun: 'my bed.'",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L12_Q2",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "My sister always forgets to charge ____ phone overnight.",
-            "options": [
-                "she's",
-                "her",
-                "hers",
-                "she"
-            ],
-            "correctAnswer": "her",
-            "hint": "We need the possessive adjective form, not the subject or the standalone possessive pronoun.",
-            "explanation": "'Her' is used before a noun ('her phone'), while 'hers' would stand alone without a noun after it.",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L12_Q3",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "We usually walk ____ dog in the park after dinner.",
-            "options": [
-                "ours",
-                "us",
-                "our",
-                "we"
-            ],
-            "correctAnswer": "our",
-            "hint": "We need a possessive adjective that matches the plural subject 'we'.",
-            "explanation": "'Our' is the possessive adjective matching 'we' and goes before a noun: 'our dog.'",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L13_Q1",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "____ book on my desk right now belongs to the school library.",
-            "options": [
-                "That",
-                "These",
-                "Those",
-                "This"
-            ],
-            "correctAnswer": "This",
-            "hint": "Think about something singular and close to the speaker.",
-            "explanation": "'This' is used for a singular thing that is near the speaker, such as a book on the desk.",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L13_Q2",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "Can you see ____ posters on the wall across the hallway?",
-            "options": [
-                "These",
-                "That",
-                "This",
-                "Those"
-            ],
-            "correctAnswer": "Those",
-            "hint": "Think about something plural and far from the speaker.",
-            "explanation": "'Those' is used for plural things that are far away, such as posters across the hallway.",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L13_Q3",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "____ notebook you are holding looks exactly like mine.",
-            "options": [
-                "That",
-                "These",
-                "Those",
-                "This"
-            ],
-            "correctAnswer": "That",
-            "hint": "Think about something singular but not close to the speaker - it's in someone else's hand.",
-            "explanation": "'That' refers to a singular thing that is not close to the speaker, such as a notebook someone else is holding.",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L14_Q1",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "____ documents on my desk need to be signed today.",
-            "options": [
-                "This",
-                "These",
-                "Those",
-                "That"
-            ],
-            "correctAnswer": "These",
-            "hint": "Think about something plural and close to the speaker.",
-            "explanation": "'These' is used for plural things that are near the speaker, like documents on the desk.",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L14_Q2",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "I think ____ printer in the corner is broken again.",
-            "options": [
-                "That",
-                "This",
-                "Those",
-                "These"
-            ],
-            "correctAnswer": "That",
-            "hint": "Think about something singular but located away from the speaker.",
-            "explanation": "'That' refers to a singular thing at a distance, such as a printer in the corner of the room.",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L14_Q3",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "____ report I'm writing right now is almost finished.",
-            "options": [
-                "Those",
-                "This",
-                "That",
-                "These"
-            ],
-            "correctAnswer": "This",
-            "hint": "Think about something singular and close, something the speaker is currently working on.",
-            "explanation": "'This' points to a singular thing close to the speaker, including something they are actively doing.",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L15_Q1",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "The flight to Tokyo was very ____, so we arrived really tired.",
-            "options": [
-                "short",
-                "long",
-                "quick",
-                "near"
-            ],
-            "correctAnswer": "long",
-            "hint": "Think about the opposite of a flight that finishes quickly.",
-            "explanation": "'Long' is the opposite of 'short' and describes a flight that takes a lot of time.",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L15_Q2",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "Our hotel room was surprisingly ____, with barely enough space for our bags.",
-            "options": [
-                "wide",
-                "large",
-                "tall",
-                "small"
-            ],
-            "correctAnswer": "small",
-            "hint": "Think about a room with very little space, the opposite of spacious.",
-            "explanation": "'Small' describes limited space, the opposite of 'large' or 'spacious.'",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L15_Q3",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "Train tickets are usually ____ than plane tickets for short trips.",
-            "options": [
-                "cheap",
-                "cheaper",
-                "cheapest",
-                "expensive"
-            ],
-            "correctAnswer": "cheaper",
-            "hint": "We are comparing two things directly, so we need the comparative form.",
-            "explanation": "When comparing two options, English uses the comparative form, here 'cheaper' (cheap + er).",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L16_Q1",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "My grandfather is quite ____ for his age and still goes for walks every day.",
-            "options": [
-                "weak",
-                "tired",
-                "strong",
-                "slow"
-            ],
-            "correctAnswer": "strong",
-            "hint": "Think about a positive quality that fits an active grandfather.",
-            "explanation": "'Strong' fits someone who stays active and healthy, the opposite of 'weak.'",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L16_Q2",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "My little cousin is very ____ and asks questions about everything she sees.",
-            "options": [
-                "curious",
-                "tired",
-                "quiet",
-                "bored"
-            ],
-            "correctAnswer": "curious",
-            "hint": "Think of a word that describes someone who wants to learn and ask questions.",
-            "explanation": "'Curious' describes someone eager to learn or ask about things, fitting a child full of questions.",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L16_Q3",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "Our family dinner was ____ because everyone was laughing and telling stories.",
-            "options": [
-                "cheerful",
-                "noisy",
-                "boring",
-                "silent"
-            ],
-            "correctAnswer": "cheerful",
-            "hint": "Think of a positive mood word that matches laughing and storytelling.",
-            "explanation": "'Cheerful' describes a happy, lively mood, matching a dinner full of laughter.",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L17_Q1",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "I ____ a bigger size because this shirt feels too tight.",
-            "options": [
-                "need",
-                "like",
-                "want",
-                "have"
-            ],
-            "correctAnswer": "need",
-            "hint": "Think about which verb shows something is necessary, not just preferred.",
-            "explanation": "'Need' expresses necessity, which fits a shirt that doesn't fit properly.",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L17_Q2",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "She really ____ that blue dress in the shop window.",
-            "options": [
-                "likes",
-                "need",
-                "have",
-                "wants"
-            ],
-            "correctAnswer": "likes",
-            "hint": "Think about a verb that shows enjoyment or attraction, without saying it's necessary.",
-            "explanation": "'Likes' shows preference or enjoyment, fitting someone admiring a dress.",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L17_Q3",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "We still ____ a few more items before we can leave the supermarket.",
-            "options": [
-                "has",
-                "wants",
-                "need",
-                "like"
-            ],
-            "correctAnswer": "need",
-            "hint": "The subject 'we' is plural, and the sentence shows something still required.",
-            "explanation": "'Need' fits with the plural subject 'we' and expresses something still required.",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L18_Q1",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "I ____ some fresh vegetables before I can cook dinner tonight.",
-            "options": [
-                "wants",
-                "need",
-                "have",
-                "like"
-            ],
-            "correctAnswer": "need",
-            "hint": "Think about a verb that shows something is required to finish a task.",
-            "explanation": "'Need' shows necessity, fitting a missing ingredient required for cooking.",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L18_Q2",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "My son ____ pizza more than any other food.",
-            "options": [
-                "want",
-                "likes",
-                "need",
-                "have"
-            ],
-            "correctAnswer": "likes",
-            "hint": "The subject 'my son' is singular, and the sentence shows a preference.",
-            "explanation": "With a singular subject, the simple present verb takes -s, so 'likes' is correct here.",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L18_Q3",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "We ____ a table for four people, please.",
-            "options": [
-                "have",
-                "need",
-                "want",
-                "like"
-            ],
-            "correctAnswer": "want",
-            "hint": "Think about politely asking for something at a restaurant.",
-            "explanation": "'Want' is commonly used to politely request something, such as a table at a restaurant.",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L19_Q1",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "My phone automatically updates its apps ____ midnight.",
-            "options": [
-                "in",
-                "during",
-                "at",
-                "on"
-            ],
-            "correctAnswer": "at",
-            "hint": "Think of the preposition we use with exact points in time, like clock times.",
-            "explanation": "'At' is used with exact times, including 'at midnight' and 'at 9 o'clock.'",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L19_Q2",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "I always charge my laptop ____ the evening before I go to bed.",
-            "options": [
-                "on",
-                "in",
-                "during",
-                "at"
-            ],
-            "correctAnswer": "in",
-            "hint": "Think of the preposition we use with parts of the day, like morning or evening.",
-            "explanation": "'In' is used with parts of the day, such as 'in the morning' or 'in the evening.'",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L19_Q3",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "The software update happens ____ Mondays, so be ready to restart your computer.",
-            "options": [
-                "on",
-                "at",
-                "in",
-                "during"
-            ],
-            "correctAnswer": "on",
-            "hint": "Think of the preposition we use with specific days of the week.",
-            "explanation": "'On' is used with specific days, such as 'on Mondays' or 'on Friday.'",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L20_Q1",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "I take this medicine three times ____ day, after each meal.",
-            "options": [
-                "a",
-                "the",
-                "an",
-                "-"
-            ],
-            "correctAnswer": "a",
-            "hint": "Think about the phrase used to show how often something happens.",
-            "explanation": "'A' is used in frequency phrases like 'three times a day' or 'twice a week.'",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L20_Q2",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "My yearly check-up is ____ April, just before my birthday.",
-            "options": [
-                "at",
-                "in",
-                "on",
-                "during"
-            ],
-            "correctAnswer": "in",
-            "hint": "Think of the preposition we use with months.",
-            "explanation": "'In' is used with months, such as 'in April' or 'in December.'",
-            "grammarFocus": "General Grammar"
-        },
-        {
-            "id": "WRT_COMPLETESENTENCE_L20_Q3",
-            "instruction": "Complete the sentence.",
-            "subtype": "completeSentence",
-            "interactionType": "typing",
-            "partialSentence": "The clinic opens ____ eight o'clock every weekday morning.",
-            "options": [
-                "in",
-                "at",
-                "on",
-                "during"
-            ],
-            "correctAnswer": "at",
-            "hint": "Think of the preposition we use with exact clock times.",
-            "explanation": "'At' is used with precise clock times, such as 'at eight o'clock.'",
-            "grammarFocus": "General Grammar"
-        }
-    ]
+  "gameType": "completeSentence",
+  "batchIndex": 2,
+  "levels": "11-20",
+  "quests": [
+    {
+      "id": "WRT_COMPLETESENTENCE_L11_Q1",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "The nurse said the ____ in the ward need more blankets.",
+      "options": [
+        "children",
+        "childs",
+        "childes",
+        "childrens"
+      ],
+      "correctAnswer": "children",
+      "hint": "Some very common nouns do not add -s at all.",
+      "explanation": "'Child' has an irregular plural, 'children', which already shows plural. Adding another -s ('childrens') is a frequent over-correction.",
+      "grammarFocus": "Irregular Plurals"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L11_Q2",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "Two ____ were waiting at the bus stop with heavy bags.",
+      "options": [
+        "woman",
+        "womans",
+        "womens",
+        "women"
+      ],
+      "correctAnswer": "women",
+      "hint": "The plural changes the vowel inside the word.",
+      "explanation": "'Woman' becomes 'women' with an internal vowel change. 'Two' tells you the noun must be plural.",
+      "grammarFocus": "Irregular Plurals"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L11_Q3",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "After the hike, my ____ were sore and covered in mud.",
+      "options": [
+        "feet",
+        "foots",
+        "foot",
+        "feets"
+      ],
+      "correctAnswer": "feet",
+      "hint": "Think of body-part plurals that change inside the word.",
+      "explanation": "'Foot' becomes 'feet'. The verb 'were' confirms a plural subject, and no extra -s is needed.",
+      "grammarFocus": "Irregular Plurals"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L12_Q1",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "What ____ interesting idea for the school project!",
+      "options": [
+        "some",
+        "a",
+        "the",
+        "an"
+      ],
+      "correctAnswer": "an",
+      "hint": "Say the next word aloud: does it begin with a vowel sound?",
+      "explanation": "'Interesting' begins with a vowel sound, so the singular noun takes 'an'. In this exclamation, 'what' + 'a/an' + noun is the fixed pattern.",
+      "grammarFocus": "Articles: A/An"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L12_Q2",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "There's ____ message from your landlord in the shared inbox.",
+      "options": [
+        "the",
+        "an",
+        "a",
+        "any"
+      ],
+      "correctAnswer": "a",
+      "hint": "Check the first sound of the word right after the blank.",
+      "explanation": "'Message' begins with a consonant sound, so we use 'a'. 'There's' introduces something new, which also suits the indefinite article.",
+      "grammarFocus": "Articles: A/An"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L12_Q3",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "My cousin wants to be ____ engineer, like her father.",
+      "options": [
+        "a",
+        "an",
+        "one",
+        "the"
+      ],
+      "correctAnswer": "an",
+      "hint": "Listen to the first sound, not just the first letter.",
+      "explanation": "'Engineer' starts with the vowel sound /e/, so it takes 'an'. When we name a job in general, we use a/an, not 'the'.",
+      "grammarFocus": "Articles: A/An"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L13_Q1",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "I saw a movie last night. ____ movie was really funny.",
+      "options": [
+        "A",
+        "The",
+        "An",
+        "Some"
+      ],
+      "correctAnswer": "The",
+      "hint": "The first sentence already told the reader which movie you mean.",
+      "explanation": "After 'a movie' is introduced, the next mention becomes 'the movie' because both speaker and listener know which one it is.",
+      "grammarFocus": "Articles: A vs The"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L13_Q2",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "Could you close ____ window? It's freezing in here.",
+      "options": [
+        "some",
+        "a",
+        "an",
+        "the"
+      ],
+      "correctAnswer": "the",
+      "hint": "Which window are both people looking at?",
+      "explanation": "'The' is used when the listener can identify the thing, here the open window in the room you share.",
+      "grammarFocus": "Articles: A vs The"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L13_Q3",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "We stayed at ____ hotel near the beach, and the owner cooked us breakfast.",
+      "options": [
+        "an",
+        "the",
+        "a",
+        "some"
+      ],
+      "correctAnswer": "a",
+      "hint": "Ask whether the listener knows this hotel yet.",
+      "explanation": "This is the first time the hotel appears in the sentence, so it takes 'a'. 'The owner' comes after because hotels have one obvious owner.",
+      "grammarFocus": "Articles: A vs The"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L14_Q1",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "Could you email me ____ address so I can send the invitation?",
+      "options": [
+        "your",
+        "yourself",
+        "yours",
+        "you"
+      ],
+      "correctAnswer": "your",
+      "hint": "A possessive word must come before a noun.",
+      "explanation": "Before the noun 'address' we need a possessive adjective. 'Yours' can stand alone, but it cannot sit directly before a noun.",
+      "grammarFocus": "Possessive Adjectives"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L14_Q2",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "Mina left ____ umbrella on the train again.",
+      "options": [
+        "her",
+        "she",
+        "hers",
+        "its"
+      ],
+      "correctAnswer": "her",
+      "hint": "Which possessive adjective goes with a female owner?",
+      "explanation": "'Her' shows Mina owns the umbrella and comes before the noun. 'Hers' would replace the noun instead of describing it.",
+      "grammarFocus": "Possessive Adjectives"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L14_Q3",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "My grandparents celebrate ____ anniversary in June.",
+      "options": [
+        "them",
+        "theirs",
+        "their",
+        "they"
+      ],
+      "correctAnswer": "their",
+      "hint": "The owner is more than one person.",
+      "explanation": "Two grandparents give us 'their'. Subject 'they' and object 'them' cannot be placed before a noun to show ownership.",
+      "grammarFocus": "Possessive Adjectives"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L15_Q1",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "My neighbour is very kind, so I often help ____ with her shopping.",
+      "options": [
+        "him",
+        "she",
+        "hers",
+        "her"
+      ],
+      "correctAnswer": "her",
+      "hint": "Is the pronoun doing the action, or receiving it?",
+      "explanation": "After a verb like 'help', use an object pronoun: 'help her'. 'She' is a subject form, and 'hers' shows ownership.",
+      "grammarFocus": "Subject and Object Pronouns"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L15_Q2",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "Kenji and I are cousins, so ____ often study together.",
+      "options": [
+        "them",
+        "we",
+        "our",
+        "us"
+      ],
+      "correctAnswer": "we",
+      "hint": "Who is doing the studying?",
+      "explanation": "The pronoun is the subject of 'study', and 'Kenji and I' together become 'we'. 'Us' is used after verbs or prepositions.",
+      "grammarFocus": "Subject and Object Pronouns"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L15_Q3",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "The teacher gave Ana and ____ extra homework.",
+      "options": [
+        "my",
+        "me",
+        "mine",
+        "I"
+      ],
+      "correctAnswer": "me",
+      "hint": "After a verb like 'gave', the receiver takes an object pronoun.",
+      "explanation": "'Ana and me' receive the homework, so an object pronoun is needed. Test it by removing 'Ana': 'gave me' works, 'gave I' does not.",
+      "grammarFocus": "Subject and Object Pronouns"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L16_Q1",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "Look at ____ mountains far away, behind the clouds!",
+      "options": [
+        "that",
+        "this",
+        "those",
+        "these"
+      ],
+      "correctAnswer": "those",
+      "hint": "Ask if the thing is near or far, and whether it is one or many.",
+      "explanation": "'Mountains' is plural and 'far away' signals distance, so 'those'. 'These' would be used for plural things close to you.",
+      "grammarFocus": "Demonstratives: This/That/These/Those"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L16_Q2",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "I love ____ soup I'm eating right now; who made it?",
+      "options": [
+        "this",
+        "these",
+        "those",
+        "that"
+      ],
+      "correctAnswer": "this",
+      "hint": "The soup is in front of the speaker.",
+      "explanation": "'This' points to a singular thing that is near. The phrase 'right now' and the fact the speaker is eating it make it close.",
+      "grammarFocus": "Demonstratives: This/That/These/Those"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L16_Q3",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "Hello? ____ is Priya speaking. Is Mr. Bose there?",
+      "options": [
+        "She",
+        "That",
+        "It",
+        "This"
+      ],
+      "correctAnswer": "This",
+      "hint": "On the phone, English has a fixed way to say who is speaking.",
+      "explanation": "We introduce ourselves on the phone with 'This is...' and ask 'Is that...?' for the other person. 'It is Priya' sounds like a description, not an introduction.",
+      "grammarFocus": "Demonstratives: This/That/These/Those"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L17_Q1",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "____ a pharmacy on the next street.",
+      "options": [
+        "It is",
+        "There are",
+        "There is",
+        "Here are"
+      ],
+      "correctAnswer": "There is",
+      "hint": "We use a special pattern to say that something exists.",
+      "explanation": "'There is' introduces one thing that exists in a place. 'A pharmacy' is singular, so 'is' is the match.",
+      "grammarFocus": "There Is / There Are"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L17_Q2",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "____ two spare blankets in the bottom drawer.",
+      "options": [
+        "Have",
+        "They are",
+        "There is",
+        "There are"
+      ],
+      "correctAnswer": "There are",
+      "hint": "Look at the noun that follows to decide singular or plural.",
+      "explanation": "'Two spare blankets' is plural, so 'There are'. 'They are' would need a place phrase to refer to blankets already mentioned.",
+      "grammarFocus": "There Is / There Are"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L17_Q3",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "____ any milk left in the fridge?",
+      "options": [
+        "Is there",
+        "Has there",
+        "Does there",
+        "Are there"
+      ],
+      "correctAnswer": "Is there",
+      "hint": "Is milk countable? That decides the verb.",
+      "explanation": "'Milk' is uncountable, so we treat it as singular: 'Is there any milk?' In questions, be moves in front of 'there'.",
+      "grammarFocus": "There Is / There Are"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L18_Q1",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "Your charger is ____ the drawer under the TV.",
+      "options": [
+        "on",
+        "in",
+        "at",
+        "by"
+      ],
+      "correctAnswer": "in",
+      "hint": "Is the charger inside something or on top of it?",
+      "explanation": "'In' shows something inside a container or enclosed space, like a drawer.",
+      "grammarFocus": "Prepositions of Place"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L18_Q2",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "There is a poster ____ the wall above my desk.",
+      "options": [
+        "in",
+        "at",
+        "to",
+        "on"
+      ],
+      "correctAnswer": "on",
+      "hint": "Think about a surface that supports the poster.",
+      "explanation": "Things attached to a vertical surface are 'on the wall'. 'In the wall' would suggest something built inside it.",
+      "grammarFocus": "Prepositions of Place"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L18_Q3",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "I'll meet you ____ the entrance of the mall at six.",
+      "options": [
+        "to",
+        "at",
+        "in",
+        "on"
+      ],
+      "correctAnswer": "at",
+      "hint": "Think of a specific meeting point.",
+      "explanation": "'At' is used for a precise point or location, like an entrance or a bus stop. 'Meet you to' is not idiomatic.",
+      "grammarFocus": "Prepositions of Place"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L19_Q1",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "The bank opens ____ nine o'clock.",
+      "options": [
+        "in",
+        "by",
+        "at",
+        "on"
+      ],
+      "correctAnswer": "at",
+      "hint": "Which preposition goes with an exact clock time?",
+      "explanation": "Exact times use 'at': at nine, at noon, at half past two. 'By' would mean 'no later than' and changes the meaning.",
+      "grammarFocus": "Prepositions of Time"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L19_Q2",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "My driving test is ____ Thursday morning.",
+      "options": [
+        "on",
+        "to",
+        "at",
+        "in"
+      ],
+      "correctAnswer": "on",
+      "hint": "Days of the week need a specific preposition, even with 'morning'.",
+      "explanation": "We use 'on' with days, and it stays when we add a part of the day: 'on Thursday morning'. 'In the morning' alone has no day.",
+      "grammarFocus": "Prepositions of Time"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L19_Q3",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "We usually go to the hills ____ June, when the rains start.",
+      "options": [
+        "in",
+        "from",
+        "on",
+        "at"
+      ],
+      "correctAnswer": "in",
+      "hint": "Months and seasons use a single preposition.",
+      "explanation": "Months, years and seasons take 'in': in June, in 2026, in winter. 'From June' needs an end point like 'to August'.",
+      "grammarFocus": "Prepositions of Time"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L20_Q1",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "I wanted to buy the blue jacket, ____ it was too expensive.",
+      "options": [
+        "and",
+        "but",
+        "so",
+        "or"
+      ],
+      "correctAnswer": "but",
+      "hint": "Does the second idea continue the first, or work against it?",
+      "explanation": "'But' shows contrast between what you wanted and what happened. 'So' would make the price the result of wanting it.",
+      "grammarFocus": "Basic Conjunctions"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L20_Q2",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "It was raining heavily, ____ we stayed at home and watched a film.",
+      "options": [
+        "but",
+        "because",
+        "or",
+        "so"
+      ],
+      "correctAnswer": "so",
+      "hint": "Which word shows a result?",
+      "explanation": "'So' introduces the result of the first clause. 'Because' would reverse the logic and needs the reason, not the result, after it.",
+      "grammarFocus": "Basic Conjunctions"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L20_Q3",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "Would you like tea ____ coffee with your breakfast?",
+      "options": [
+        "and",
+        "so",
+        "or",
+        "but"
+      ],
+      "correctAnswer": "or",
+      "hint": "This sentence offers a choice.",
+      "explanation": "'Or' links alternatives you choose between. 'And' would suggest you want both, and 'but' or 'so' do not fit an offer.",
+      "grammarFocus": "Basic Conjunctions"
+    }
+  ]
 }

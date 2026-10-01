@@ -5,1173 +5,1173 @@
     "quests": [
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L141_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "COMPARE THE TWO COFFEE SHOPS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "After years of hosting every holiday alone, you finally asked your siblings to share the responsibility, and one of them reacted with surprising defensiveness. Describe how you responded.",
+            "situation": "You regularly visit two different coffee shops near your home, each with its own character. Compare the two, describing their similarities and differences.",
             "emojis": [
-                "🎄",
-                "👨‍👩‍👧‍👦",
-                "😤",
-                "🗣️"
+                "☕",
+                "🏪",
+                "📖",
+                "🎶"
             ],
             "keywords": {
                 "0": [
-                    "HOLIDAY",
-                    "HOST",
-                    "YEARS"
+                    "FIRSTSHOP",
+                    "COZY",
+                    "QUIET"
                 ],
                 "1": [
-                    "SIBLING",
-                    "SHARE",
-                    "ASK"
+                    "SECONDSHOP",
+                    "BUSY",
+                    "LIVELY"
                 ],
                 "2": [
-                    "DEFENSIVE",
-                    "REACT",
-                    "SURPRISE"
+                    "BOTH",
+                    "GOODCOFFEE",
+                    "SIMILAR"
                 ],
                 "3": [
-                    "RESPOND",
-                    "CALM",
-                    "FAIR"
+                    "DIFFER",
+                    "ATMOSPHERE",
+                    "CONTRAST"
                 ]
             },
-            "minWords": 54,
-            "hint": "Explain what you asked for and how you reacted to the pushback without escalating things.",
-            "explanation": "A strong answer names the request, the reaction, and a calm, fair response, such as explaining your own limits without blaming anyone.",
-            "modelAnswer": "A strong answer names the request, the reaction, and a calm, fair response, such as explaining your own limits without blaming anyone. Explain what you asked for and how you reacted to the pushback without escalating things. This serves as a model answer for the situation."
+            "minWords": 50,
+            "hint": "Describe one clear similarity between the two shops, then at least one clear difference, using words like both and whereas.",
+            "explanation": "A basic comparison balances similarity and difference, since focusing only on one or the other gives an incomplete picture of how two things actually relate to each other.",
+            "modelAnswer": "Both coffee shops serve genuinely excellent espresso, and each one fills up predictably during the morning rush hour before quieting down by midday. Where they differ most is atmosphere: the shop near my apartment stays cozy and quiet, perfect for reading, whereas the one closer to the office buzzes with lively conversation and the constant clatter of laptops."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L141_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "COMPARE THE TWO COMMUTE ROUTES",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "During a team presentation, your manager credited your idea to someone else by mistake in front of senior leadership. Describe how you handled the moment.",
+            "situation": "You have two different routes you can take to work each morning, one by car and one by public transport. Compare the two, describing their similarities and differences.",
             "emojis": [
-                "💼",
-                "🎤",
-                "😳",
-                "🗣️"
+                "🚗",
+                "🚆",
+                "⏱️",
+                "🛣️"
             ],
             "keywords": {
                 "0": [
-                    "PRESENTATION",
-                    "MANAGER",
-                    "CREDIT"
+                    "CARROUTE",
+                    "TRAFFIC",
+                    "UNPREDICTABLE"
                 ],
                 "1": [
-                    "MISTAKE",
-                    "SENIOR",
-                    "LEADERSHIP"
+                    "TRAINROUTE",
+                    "RELIABLE",
+                    "SCHEDULE"
                 ],
                 "2": [
-                    "MOMENT",
-                    "AWKWARD",
-                    "NOTICE"
+                    "BOTH",
+                    "TIME",
+                    "SIMILAR"
                 ],
                 "3": [
-                    "HANDLE",
-                    "CLARIFY",
-                    "PROFESSIONAL"
+                    "DIFFER",
+                    "COMFORT",
+                    "CONTRAST"
                 ]
             },
-            "minWords": 54,
-            "hint": "Think about whether you spoke up immediately or waited, and why.",
-            "explanation": "Good answers describe the mistake clearly and show a professional way of correcting it, either in the moment or afterward.",
-            "modelAnswer": "Good answers describe the mistake clearly and show a professional way of correcting it, either in the moment or afterward. Think about whether you spoke up immediately or waited, and why. This serves as a model answer for the situation."
+            "minWords": 50,
+            "hint": "Point out one similarity, such as similar overall time, then focus on the key difference between the two routes.",
+            "explanation": "Comparisons involving practical choices, like a commute, are strengthened when the similarity acknowledged is genuinely meaningful, such as similar total time, rather than a trivial detail that adds little to the comparison.",
+            "modelAnswer": "Both routes take almost exactly forty minutes on an average day, so time alone rarely decides which one I choose. The car route depends heavily on unpredictable traffic and leaves me stressed some mornings, whereas the train, though occasionally crowded, runs on a reliable schedule that lets me relax and read for most of the journey."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L141_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "COMPARE THE TWO GYMS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "A new diagnosis meant giving up several foods you had eaten your whole life, and the adjustment was harder than you expected. Describe your first few weeks.",
+            "situation": "You tried two different gyms before deciding where to become a member. Compare the two, describing their similarities and differences.",
             "emojis": [
-                "🩺",
-                "🥗",
-                "😕",
-                "📅"
+                "🏋️",
+                "💪",
+                "🏢",
+                "💰"
             ],
             "keywords": {
                 "0": [
-                    "DIAGNOSIS",
-                    "GIVEUP",
-                    "FOOD"
+                    "FIRSTGYM",
+                    "EQUIPMENT",
+                    "MODERN"
                 ],
                 "1": [
-                    "WHOLELIFE",
-                    "ADJUST",
-                    "HARDER"
+                    "SECONDGYM",
+                    "AFFORDABLE",
+                    "BASIC"
                 ],
                 "2": [
-                    "EXPECT",
-                    "STRUGGLE",
-                    "CRAVE"
+                    "BOTH",
+                    "CLEAN",
+                    "STAFF"
                 ],
                 "3": [
-                    "WEEKS",
-                    "ADAPT",
-                    "MANAGE"
+                    "DIFFER",
+                    "PRICE",
+                    "CONTRAST"
                 ]
             },
-            "minWords": 54,
-            "hint": "Describe the specific changes and how you felt as you got used to them.",
-            "explanation": "Strong health answers name specific changes and show a realistic emotional adjustment, not just a simple description of the diet.",
-            "modelAnswer": "Strong health answers name specific changes and show a realistic emotional adjustment, not just a simple description of the diet. Describe the specific changes and how you felt as you got used to them. This serves as a model answer for the situation."
+            "minWords": 50,
+            "hint": "Identify a shared quality, such as cleanliness, before contrasting the two gyms on price or equipment.",
+            "explanation": "Even a simple comparison benefits from organizing the similarity and the difference into separate, clearly connected sentences, rather than blending every detail together without a clear structure.",
+            "modelAnswer": "Both gyms keep their facilities impressively clean and employ genuinely friendly staff, which made the decision harder than I expected. The first gym offers newer, more advanced machines but charges nearly double the monthly fee, whereas the second gym, though more basic in its equipment, remains affordable enough for me to attend without worrying about the cost every month."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L142_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "CONTRAST A QUIET WEEKDAY MORNING WITH A CHAOTIC WEEKEND MORNING",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You started using an AI tool to draft your work emails, but a colleague noticed the messages felt strangely impersonal. Describe how you adjusted your approach.",
+            "situation": "At home, weekday mornings feel calm and predictable, while weekend mornings often feel chaotic and unpredictable. Contrast the two kinds of mornings clearly.",
             "emojis": [
-                "🤖",
-                "✉️",
-                "😕",
-                "⚙️"
+                "☕",
+                "😌",
+                "😵",
+                "🧺"
             ],
             "keywords": {
                 "0": [
-                    "AITOOL",
-                    "DRAFT",
-                    "EMAIL"
+                    "WEEKDAY",
+                    "QUIET",
+                    "ROUTINE"
                 ],
                 "1": [
-                    "COLLEAGUE",
-                    "NOTICE",
-                    "IMPERSONAL"
+                    "WEEKEND",
+                    "CHAOS",
+                    "UNPREDICTABLE"
                 ],
                 "2": [
-                    "FEEL",
-                    "STRANGE",
-                    "MESSAGE"
+                    "CONTRAST",
+                    "OPPOSITE",
+                    "STRIKING"
                 ],
                 "3": [
-                    "ADJUST",
-                    "PERSONAL",
-                    "BALANCE"
+                    "EXPLAIN",
+                    "REASON",
+                    "DIFFERENCE"
                 ]
             },
-            "minWords": 54,
-            "hint": "Think about what felt off about the messages and what you changed.",
-            "explanation": "Clear answers name the specific problem, such as tone, and describe one concrete change that fixed it.",
-            "modelAnswer": "Clear answers name the specific problem, such as tone, and describe one concrete change that fixed it. Think about what felt off about the messages and what you changed. This serves as a model answer for the situation."
+            "minWords": 50,
+            "hint": "Describe the weekday morning first, then use in contrast or on the other hand to introduce the very different weekend morning.",
+            "explanation": "Contrast writing works best when the two situations are described with roughly equal detail, since giving one side far more attention than the other unbalances the comparison.",
+            "modelAnswer": "On a typical weekday, my morning follows the same quiet rhythm, coffee, a short walk, and a calm commute, with barely a sound in the apartment before seven. On the other hand, Saturday mornings erupt into chaos almost immediately, with children running between rooms, laundry piling up, and three separate conversations happening at once before anyone has even had breakfast."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L142_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "CONTRAST YOUR FIRST DAY AT A JOB WITH A RECENT ORDINARY DAY",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your connecting flight was cancelled late at night, leaving you alone in an unfamiliar airport with no one to call for help. Describe what you did next.",
+            "situation": "Your first day at your current job felt completely different from how an ordinary day feels now, months later. Contrast the two experiences clearly.",
             "emojis": [
-                "✈️",
-                "🌙",
-                "😟",
-                "📱"
+                "🆕",
+                "😬",
+                "😊",
+                "📋"
             ],
             "keywords": {
                 "0": [
-                    "CONNECTING",
-                    "CANCEL",
-                    "LATENIGHT"
+                    "FIRSTDAY",
+                    "NERVOUS",
+                    "UNFAMILIAR"
                 ],
                 "1": [
-                    "ALONE",
-                    "UNFAMILIAR",
-                    "AIRPORT"
+                    "RECENT",
+                    "COMFORTABLE",
+                    "ROUTINE"
                 ],
                 "2": [
-                    "NOONE",
-                    "CALL",
-                    "HELP"
+                    "CONTRAST",
+                    "SHIFT",
+                    "TRANSFORM"
                 ],
                 "3": [
-                    "NEXT",
-                    "SOLVE",
-                    "CALM"
+                    "EXPLAIN",
+                    "GROWTH",
+                    "ADJUST"
                 ]
             },
-            "minWords": 54,
-            "hint": "Describe the steps you took to find a solution on your own.",
-            "explanation": "Good travel answers show clear problem-solving under pressure, such as finding staff, rebooking, or arranging a place to stay.",
-            "modelAnswer": "Good travel answers show clear problem-solving under pressure, such as finding staff, rebooking, or arranging a place to stay. Describe the steps you took to find a solution on your own. This serves as a model answer for the situation."
+            "minWords": 50,
+            "hint": "Describe your first day's nervous unfamiliarity, then contrast it clearly with how comfortable and routine the job feels now.",
+            "explanation": "Contrasting an earlier experience with a current one over time shows genuine change, and this kind of before-and-after contrast reads more convincingly when specific feelings, nervous versus comfortable, are named directly.",
+            "modelAnswer": "On my first day, every hallway felt unfamiliar, and I spent most of the morning nervously double-checking simple instructions I was too embarrassed to ask about twice. Now, months later, I move through the same building without a second thought, chatting easily with colleagues whose names I once struggled desperately to remember, the whole job having become almost second nature."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L142_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "CONTRAST A CALM FLIGHT WITH A TURBULENT FLIGHT",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "A relative gave you a gift that clearly didn't suit your taste, and you needed to return it without hurting their feelings. Describe how you handled the exchange.",
+            "situation": "You have experienced both a perfectly calm flight and a genuinely turbulent one. Contrast the two experiences clearly.",
             "emojis": [
-                "🎁",
-                "🙂",
-                "🔄",
-                "💬"
+                "✈️",
+                "😌",
+                "😨",
+                "🌪️"
             ],
             "keywords": {
                 "0": [
-                    "RELATIVE",
-                    "GIFT",
-                    "SUIT"
+                    "CALM",
+                    "SMOOTH",
+                    "RELAX"
                 ],
                 "1": [
-                    "TASTE",
-                    "RETURN",
-                    "WITHOUT"
+                    "TURBULENT",
+                    "SHAKE",
+                    "ANXIOUS"
                 ],
                 "2": [
-                    "HURT",
-                    "FEELING",
-                    "CAREFUL"
+                    "CONTRAST",
+                    "OPPOSITE",
+                    "EXTREME"
                 ],
                 "3": [
-                    "EXCHANGE",
-                    "HANDLE",
-                    "GRATEFUL"
+                    "EXPLAIN",
+                    "FEELING",
+                    "DIFFERENCE"
                 ]
             },
-            "minWords": 54,
-            "hint": "Think about what you said to the relative and how you kept things kind.",
-            "explanation": "Tactful answers combine honesty with gratitude, showing how to be truthful without seeming ungrateful.",
-            "modelAnswer": "Tactful answers combine honesty with gratitude, showing how to be truthful without seeming ungrateful. Think about what you said to the relative and how you kept things kind. This serves as a model answer for the situation."
+            "minWords": 51,
+            "hint": "Describe the calm flight's relaxed atmosphere, then contrast it sharply with the tense, physical experience of the turbulent one.",
+            "explanation": "Physical, sensory contrast, a relaxed body versus a gripped armrest, makes an emotional difference concrete and believable, rather than simply stating that one flight felt calm and the other felt scary.",
+            "modelAnswer": "During my calmest flight, I barely noticed we were airborne at all, comfortably reading a book while the plane glided smoothly through clear skies without a single bump. In stark contrast, a flight through a storm last year left me gripping the armrest tightly through nearly twenty minutes of violent shaking, my stomach lurching with every sudden drop the plane made."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L143_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE SIMILARITIES BETWEEN STUDYING FOR EXAMS AND PREPARING A PRESENTATION",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You agreed to mentor a struggling younger student, but your own workload made it difficult to find enough time to help properly. Describe how you managed both responsibilities.",
+            "situation": "Studying for exams and preparing an important work presentation might seem like very different tasks, but they actually share several similarities. Describe those similarities.",
             "emojis": [
-                "🎓",
                 "📚",
-                "😓",
-                "⏰"
+                "📊",
+                "⏰",
+                "😰"
             ],
             "keywords": {
                 "0": [
-                    "MENTOR",
-                    "STRUGGLE",
-                    "STUDENT"
+                    "STUDY",
+                    "REVIEW",
+                    "MATERIAL"
                 ],
                 "1": [
-                    "WORKLOAD",
-                    "DIFFICULT",
-                    "TIME"
+                    "PRESENTATION",
+                    "PREPARE",
+                    "SLIDES"
                 ],
                 "2": [
-                    "HELP",
-                    "PROPERLY",
-                    "BALANCE"
+                    "BOTH",
+                    "PRESSURE",
+                    "DEADLINE"
                 ],
                 "3": [
-                    "MANAGE",
-                    "SCHEDULE",
-                    "COMMIT"
+                    "SIMILAR",
+                    "STRATEGY",
+                    "OVERLAP"
                 ]
             },
-            "minWords": 54,
-            "hint": "Describe how you divided your time between the student and your own work.",
-            "explanation": "Strong answers show a realistic plan for balancing two responsibilities, not just good intentions.",
-            "modelAnswer": "Strong answers show a realistic plan for balancing two responsibilities, not just good intentions. Describe how you divided your time between the student and your own work. This serves as a model answer for the situation."
+            "minWords": 51,
+            "hint": "Identify at least two genuine similarities between the two tasks, using both and similarly to connect them clearly.",
+            "explanation": "Finding real similarities between seemingly unrelated situations requires looking past the surface difference, such as school versus work, to the underlying structure both tasks actually share.",
+            "modelAnswer": "Both tasks demand breaking a large amount of information into smaller, manageable pieces well before any deadline, since leaving either one until the last moment almost guarantees a poor result. Similarly, both benefit enormously from a practice run, whether that means quizzing yourself on flashcards or rehearsing slides out loud, since actively producing the material beats passively reviewing it either time."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L143_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE SIMILARITIES BETWEEN RAISING A PUPPY AND TRAINING A NEW EMPLOYEE",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your friend group split sharply over whether a popular show's final season had ruined the story, and the disagreement got surprisingly heated. Describe how the conversation unfolded.",
+            "situation": "Raising a puppy and training a brand-new employee might seem completely unrelated, but they actually share several surprising similarities. Describe those similarities.",
             "emojis": [
-                "📺",
-                "😤",
-                "💬",
-                "🍿"
+                "🐶",
+                "🧑‍💼",
+                "📋",
+                "🎯"
             ],
             "keywords": {
                 "0": [
-                    "FRIENDGROUP",
-                    "SPLIT",
-                    "SHOW"
+                    "PUPPY",
+                    "CONSISTENT",
+                    "REPEAT"
                 ],
                 "1": [
-                    "FINALSEASON",
-                    "RUIN",
-                    "STORY"
+                    "EMPLOYEE",
+                    "GUIDE",
+                    "PATIENT"
                 ],
                 "2": [
-                    "DISAGREE",
-                    "HEATED",
-                    "SURPRISE"
+                    "BOTH",
+                    "PATIENCE",
+                    "REQUIRE"
                 ],
                 "3": [
-                    "CONVERSATION",
-                    "OPINION",
-                    "RESPECT"
+                    "SIMILAR",
+                    "REPETITION",
+                    "EFFECTIVE"
                 ]
             },
-            "minWords": 54,
-            "hint": "Describe both sides of the disagreement and how the group handled it.",
-            "explanation": "Good entertainment answers give specific opinions from different people and show how the discussion was resolved or left open.",
-            "modelAnswer": "Good entertainment answers give specific opinions from different people and show how the discussion was resolved or left open. Describe both sides of the disagreement and how the group handled it. This serves as a model answer for the situation."
+            "minWords": 51,
+            "hint": "Focus on the shared need for patience and consistent repetition, using both to connect the two seemingly different situations.",
+            "explanation": "Comparisons across very different domains, like animals and workplaces, are convincing when the shared underlying principle, such as consistent repetition, is stated clearly rather than left for the reader to guess.",
+            "modelAnswer": "Both a young puppy and a brand-new employee need the same instructions repeated patiently, often many times, before the behavior or process truly sinks in without constant reminders. Consistency matters equally in both cases too, since correcting a puppy one way today and a different way tomorrow confuses it just as much as vague, inconsistent feedback confuses a new hire trying to learn the job properly."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L143_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE SIMILARITIES BETWEEN COOKING A BIG MEAL AND ORGANIZING A BIG EVENT",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You need to write a message to your manager requesting a raise after taking on several new responsibilities over the past year. Describe what you write.",
+            "situation": "Cooking an elaborate meal for guests and organizing a large event might seem like very different challenges, but they actually share several important similarities. Describe those similarities.",
             "emojis": [
-                "💼",
-                "📈",
-                "✉️",
-                "💪"
+                "🍽️",
+                "🎉",
+                "⏰",
+                "📋"
             ],
             "keywords": {
                 "0": [
-                    "MANAGER",
-                    "REQUEST",
-                    "RAISE"
+                    "COOK",
+                    "TIMING",
+                    "COORDINATE"
                 ],
                 "1": [
-                    "RESPONSIBILITY",
-                    "TAKEON",
-                    "YEAR"
+                    "EVENT",
+                    "PLAN",
+                    "LOGISTICS"
                 ],
                 "2": [
-                    "EVIDENCE",
-                    "ACHIEVEMENT",
-                    "CONFIDENT"
+                    "BOTH",
+                    "TIMING",
+                    "CRITICAL"
                 ],
                 "3": [
-                    "WRITE",
-                    "PROFESSIONAL",
-                    "POLITE"
+                    "SIMILAR",
+                    "MULTITASK",
+                    "OVERLAP"
                 ]
             },
-            "minWords": 54,
-            "hint": "List the new responsibilities you took on as evidence for your request.",
-            "explanation": "A strong message states the request clearly and backs it up with specific examples of added responsibility.",
-            "modelAnswer": "A strong message states the request clearly and backs it up with specific examples of added responsibility. List the new responsibilities you took on as evidence for your request. This serves as a model answer for the situation."
+            "minWords": 51,
+            "hint": "Focus on the shared challenge of timing and multitasking, giving a specific example from each situation.",
+            "explanation": "The strongest similarity comparisons include a specific example from each side, since abstract statements about shared challenges become far more convincing once grounded in something concrete from both situations.",
+            "modelAnswer": "Both require juggling several moving parts at once, timing a roast to finish exactly when the side dishes are ready is remarkably similar to coordinating caterers, music, and guest arrivals to align at the right moment. In both situations, a single delayed element, an overcooked dish or a late delivery, can throw the entire carefully planned sequence into visible disarray within minutes."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L144_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "EXPLAIN HOW THE VACATION DIFFERED FROM YOUR EXPECTATIONS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "After months of doing more than your fair share of chores, you finally asked your roommates to renegotiate who does what. Describe how the conversation went.",
+            "situation": "Before visiting a highly recommended vacation destination, you had certain expectations, but the reality turned out somewhat different. Explain how the actual experience differed from what you expected.",
             "emojis": [
-                "🏠",
-                "🧹",
-                "😤",
-                "📋"
+                "🏖️",
+                "😍",
+                "😐",
+                "🤔"
             ],
             "keywords": {
                 "0": [
-                    "CHORES",
-                    "FAIRSHARE",
-                    "MONTHS"
+                    "EXPECT",
+                    "PARADISE",
+                    "IMAGINE"
                 ],
                 "1": [
-                    "ROOMMATE",
-                    "RENEGOTIATE",
-                    "ASK"
+                    "REALITY",
+                    "CROWDED",
+                    "DIFFERENT"
                 ],
                 "2": [
-                    "CONVERSATION",
-                    "UNCOMFORTABLE",
-                    "HONEST"
+                    "DIFFER",
+                    "CONTRAST",
+                    "SURPRISE"
                 ],
                 "3": [
-                    "AGREE",
-                    "NEWPLAN",
-                    "FAIR"
+                    "EXPLAIN",
+                    "REASON",
+                    "UNDERSTAND"
                 ]
             },
-            "minWords": 55,
-            "hint": "Describe what you asked for and how your roommates reacted.",
-            "explanation": "Clear answers state the specific imbalance and show how a fairer arrangement was reached.",
-            "modelAnswer": "Clear answers state the specific imbalance and show how a fairer arrangement was reached. Describe what you asked for and how your roommates reacted. This serves as a model answer for the situation."
+            "minWords": 51,
+            "hint": "Describe your original expectation clearly first, then explain specifically how the actual experience differed and why.",
+            "explanation": "Expectation-versus-reality writing works best when the original expectation is stated as clearly as the actual outcome, since the contrast only makes sense if both sides are described with equal specificity.",
+            "modelAnswer": "Based on the glowing photos I had seen online, I expected the beach to be a nearly empty stretch of pristine white sand, perfect for quiet, peaceful mornings. In reality, the beach turned out to be considerably more crowded than expected, packed with vendors and loud music by mid-morning, likely because the photos I had seen were taken during a much quieter off-season month than the one I chose to visit."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L144_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "EXPLAIN HOW YOUR FIRST YEAR AT UNIVERSITY DIFFERED FROM YOUR EXPECTATIONS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "A colleague kept interrupting you during meetings, and you decided it was time to address the pattern directly but professionally. Describe the conversation.",
+            "situation": "Before starting university, you had certain expectations about what the experience would be like, but your actual first year turned out somewhat different. Explain how it differed and why.",
             "emojis": [
-                "💼",
-                "🗣️",
-                "😐",
-                "📅"
+                "🎓",
+                "😍",
+                "😌",
+                "🤔"
             ],
             "keywords": {
                 "0": [
-                    "COLLEAGUE",
-                    "INTERRUPT",
-                    "MEETING"
+                    "EXPECT",
+                    "EXCITING",
+                    "SOCIAL"
                 ],
                 "1": [
-                    "PATTERN",
-                    "DIRECT",
-                    "PROFESSIONAL"
+                    "REALITY",
+                    "WORKLOAD",
+                    "OVERWHELM"
                 ],
                 "2": [
-                    "ADDRESS",
-                    "DECIDE",
-                    "PREPARE"
+                    "MISCALCULATE",
+                    "ASSUME",
+                    "OVERESTIMATE"
                 ],
                 "3": [
-                    "CONVERSATION",
-                    "RESPECT",
-                    "OUTCOME"
+                    "EXPLAIN",
+                    "REASON",
+                    "ADAPT"
                 ]
             },
-            "minWords": 55,
-            "hint": "Think about how you brought up the issue calmly and what the colleague said.",
-            "explanation": "Strong workplace answers describe a specific, calm approach and a realistic outcome, rather than avoiding the conflict.",
-            "modelAnswer": "Strong workplace answers describe a specific, calm approach and a realistic outcome, rather than avoiding the conflict. Think about how you brought up the issue calmly and what the colleague said. This serves as a model answer for the situation."
+            "minWords": 52,
+            "hint": "State your original expectation about university life first, then explain specifically how the reality differed and why you had misjudged it.",
+            "explanation": "Explaining why a difference occurred, rather than just noting that it exists, adds real depth, since identifying the cause of a mistaken expectation, such as underestimating workload, teaches a genuinely useful lesson.",
+            "modelAnswer": "I expected university to feel mostly like an extension of high school socially, with plenty of free time for making friends and exploring the city between classes. Instead, the sheer volume of independent reading and assignments left far less free time than I had anticipated, largely because I had underestimated how much responsibility for managing my own schedule the transition would actually demand."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L144_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "EXPLAIN HOW WORKING FROM HOME DIFFERED FROM YOUR EXPECTATIONS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your mother kept offering unsolicited parenting advice during every visit, and you finally decided how to set a polite but firm boundary. Describe what you said.",
+            "situation": "Before switching to working from home, you had certain expectations about what it would be like compared to working in an office, but the reality turned out somewhat different. Explain how it differed and why.",
             "emojis": [
-                "👵",
-                "👶",
-                "😬",
-                "💬"
+                "🏠",
+                "😍",
+                "😓",
+                "🤔"
             ],
             "keywords": {
                 "0": [
-                    "MOTHER",
-                    "UNSOLICITED",
-                    "ADVICE"
+                    "EXPECT",
+                    "FLEXIBLE",
+                    "RELAX"
                 ],
                 "1": [
-                    "EVERYVISIT",
-                    "DECIDE",
-                    "BOUNDARY"
+                    "REALITY",
+                    "ISOLATE",
+                    "DISCIPLINE"
                 ],
                 "2": [
-                    "POLITE",
-                    "FIRM",
-                    "PREPARE"
+                    "DIFFER",
+                    "CONTRAST",
+                    "UNDERESTIMATE"
                 ],
                 "3": [
-                    "SAY",
-                    "RESPECT",
-                    "RELATIONSHIP"
+                    "EXPLAIN",
+                    "REASON",
+                    "STRUCTURE"
                 ]
             },
-            "minWords": 55,
-            "hint": "Describe exactly what boundary you set and how you kept the relationship warm.",
-            "explanation": "Good boundary-setting answers are specific and kind, showing respect for the relationship while still being clear.",
-            "modelAnswer": "Good boundary-setting answers are specific and kind, showing respect for the relationship while still being clear. Describe exactly what boundary you set and how you kept the relationship warm. This serves as a model answer for the situation."
+            "minWords": 52,
+            "hint": "Explain your original expectation about flexibility, then the specific reason the reality of isolation or discipline turned out differently.",
+            "explanation": "Modern work-related expectation-versus-reality comparisons benefit from naming a specific, underlying cause, such as underestimating the need for self-discipline, since this gives the contrast genuine explanatory power rather than simple description.",
+            "modelAnswer": "I imagined working from home would feel wonderfully relaxed, with the flexibility to structure my day however I pleased and far less stress than the office ever caused. In practice, I found myself surprisingly isolated and struggling with self-discipline without the natural structure colleagues once provided, largely because I had underestimated how much of my old routine actually depended on other people simply being around me."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L145_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW YOU WEIGHED THE FACTORS BETWEEN TWO APARTMENTS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "A close friend was diagnosed with a serious illness, and you wanted to support them without being overbearing or intrusive. Describe how you offered your help.",
+            "situation": "Before choosing where to live, you compared two available apartments based on several different factors. Describe the factors you weighed and how they compared.",
             "emojis": [
-                "🩺",
-                "🤗",
-                "😟",
-                "💬"
+                "🏢",
+                "💰",
+                "📍",
+                "🔍"
             ],
             "keywords": {
                 "0": [
-                    "FRIEND",
-                    "DIAGNOSE",
-                    "SERIOUS"
+                    "FIRSTAPT",
+                    "CHEAP",
+                    "FARTHER"
                 ],
                 "1": [
-                    "SUPPORT",
-                    "OVERBEARING",
-                    "INTRUSIVE"
+                    "SECONDAPT",
+                    "EXPENSIVE",
+                    "CLOSER"
                 ],
                 "2": [
-                    "OFFER",
-                    "HELP",
-                    "LISTEN"
+                    "CONSIDER",
+                    "EVALUATE",
+                    "BALANCE"
                 ],
                 "3": [
-                    "BALANCE",
-                    "PRESENT",
-                    "RESPECT"
+                    "FACTOR",
+                    "LOCATION",
+                    "PRICE"
                 ]
             },
-            "minWords": 55,
-            "hint": "Think about what you offered and how you respected their need for space.",
-            "explanation": "Sensitive answers offer specific, practical help while respecting the person's independence and privacy.",
-            "modelAnswer": "Sensitive answers offer specific, practical help while respecting the person's independence and privacy. Think about what you offered and how you respected their need for space. This serves as a model answer for the situation."
+            "minWords": 51,
+            "hint": "Name at least two specific factors, such as price and location, and show how each apartment scored differently on them.",
+            "explanation": "Weighing observable factors means comparing specific, measurable qualities side by side, such as price and commute time, rather than a vague overall impression of which option feels better.",
+            "modelAnswer": "The first apartment costs nearly two hundred dollars less per month, but it sits a full forty-minute commute from my office, while the second, considerably more expensive, is close enough to walk to work in under ten minutes. Weighing the extra monthly cost against the hours saved commuting, and the money saved on transportation, ultimately became the deciding factor in comparing the two."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L145_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW YOU WEIGHED THE FACTORS BETWEEN TWO JOB OFFERS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "A sudden storm disrupted transportation across the region you were visiting, forcing you to rethink the rest of your trip on short notice. Describe your revised plan.",
-            "emojis": [
-                "🌩️",
-                "🗺️",
-                "😟",
-                "📱"
-            ],
-            "keywords": {
-                "0": [
-                    "STORM",
-                    "DISRUPT",
-                    "REGION"
-                ],
-                "1": [
-                    "TRANSPORTATION",
-                    "VISIT",
-                    "FORCE"
-                ],
-                "2": [
-                    "RETHINK",
-                    "SHORTNOTICE",
-                    "PLAN"
-                ],
-                "3": [
-                    "REVISE",
-                    "ADAPT",
-                    "SAFE"
-                ]
-            },
-            "minWords": 55,
-            "hint": "Describe the specific changes you made to stay safe and keep enjoying the trip.",
-            "explanation": "Good travel answers show flexible thinking, naming specific alternatives when the original plan became impossible.",
-            "modelAnswer": "Good travel answers show flexible thinking, naming specific alternatives when the original plan became impossible. Describe the specific changes you made to stay safe and keep enjoying the trip. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L145_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You noticed you were checking your phone constantly during family dinners, so you decided to set a clear rule for yourself. Describe the change you made.",
-            "emojis": [
-                "📱",
-                "👨‍👩‍👧‍👦",
-                "😳",
-                "✅"
-            ],
-            "keywords": {
-                "0": [
-                    "CHECKPHONE",
-                    "CONSTANTLY",
-                    "DINNER"
-                ],
-                "1": [
-                    "NOTICE",
-                    "FAMILY",
-                    "HABIT"
-                ],
-                "2": [
-                    "DECIDE",
-                    "CLEARRULE",
-                    "YOURSELF"
-                ],
-                "3": [
-                    "CHANGE",
-                    "COMMIT",
-                    "PRESENT"
-                ]
-            },
-            "minWords": 55,
-            "hint": "Describe the specific rule you set and how hard it was to follow at first.",
-            "explanation": "Honest answers name a specific rule and show realistic difficulty, which makes the change believable.",
-            "modelAnswer": "Honest answers name a specific rule and show realistic difficulty, which makes the change believable. Describe the specific rule you set and how hard it was to follow at first. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L146_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your manager set a deadline that seemed nearly impossible given your current workload, and you needed to push back without seeming uncooperative. Describe the conversation.",
+            "situation": "Before accepting a new position, you compared two job offers based on several different factors. Describe the factors you weighed and how they compared.",
             "emojis": [
                 "💼",
+                "💰",
                 "⏰",
-                "😤",
-                "🗣️"
-            ],
-            "keywords": {
-                "0": [
-                    "MANAGER",
-                    "DEADLINE",
-                    "IMPOSSIBLE"
-                ],
-                "1": [
-                    "WORKLOAD",
-                    "PUSHBACK",
-                    "UNCOOPERATIVE"
-                ],
-                "2": [
-                    "CONVERSATION",
-                    "PREPARE",
-                    "REASON"
-                ],
-                "3": [
-                    "NEGOTIATE",
-                    "COMPROMISE",
-                    "OUTCOME"
-                ]
-            },
-            "minWords": 55,
-            "hint": "Describe how you explained the workload and what compromise you proposed.",
-            "explanation": "Strong answers combine a clear reason with a proposed solution, showing professionalism rather than simple refusal.",
-            "modelAnswer": "Strong answers combine a clear reason with a proposed solution, showing professionalism rather than simple refusal. Describe how you explained the workload and what compromise you proposed. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L146_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "A store refused to accept a return because you were a single day past its policy, even though the item was clearly unused. Describe how you responded.",
-            "emojis": [
-                "🛍️",
-                "📅",
-                "😠",
-                "💬"
-            ],
-            "keywords": {
-                "0": [
-                    "STORE",
-                    "REFUSE",
-                    "RETURN"
-                ],
-                "1": [
-                    "SINGLEDAY",
-                    "POLICY",
-                    "UNUSED"
-                ],
-                "2": [
-                    "RESPOND",
-                    "CALM",
-                    "EXPLAIN"
-                ],
-                "3": [
-                    "OUTCOME",
-                    "ESCALATE",
-                    "ACCEPT"
-                ]
-            },
-            "minWords": 55,
-            "hint": "Describe what you said to the staff and whether you escalated the issue.",
-            "explanation": "Good answers show a calm, reasonable response and a clear outcome, whether the store relented or not.",
-            "modelAnswer": "Good answers show a calm, reasonable response and a clear outcome, whether the store relented or not. Describe what you said to the staff and whether you escalated the issue. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L146_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "A friend who hadn't finished a series begged you not to reveal anything, but another friend kept dropping obvious hints anyway. Describe how you handled the situation.",
-            "emojis": [
-                "📺",
-                "🤫",
-                "😬",
-                "💬"
-            ],
-            "keywords": {
-                "0": [
-                    "FRIEND",
-                    "UNFINISHED",
-                    "SERIES"
-                ],
-                "1": [
-                    "BEG",
-                    "REVEAL",
-                    "ANYTHING"
-                ],
-                "2": [
-                    "OTHERFRIEND",
-                    "HINT",
-                    "DROP"
-                ],
-                "3": [
-                    "HANDLE",
-                    "PROTECT",
-                    "SITUATION"
-                ]
-            },
-            "minWords": 55,
-            "hint": "Describe how you stopped the hints without making the moment awkward.",
-            "explanation": "Good answers show quick thinking and consideration for the friend who wanted to stay unspoiled.",
-            "modelAnswer": "Good answers show quick thinking and consideration for the friend who wanted to stay unspoiled. Describe how you stopped the hints without making the moment awkward. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L147_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Two of your siblings stopped speaking after a heated argument at a family event, and you felt caught in the middle. Describe how you tried to help them reconcile.",
-            "emojis": [
-                "👫",
-                "😤",
-                "🤝",
-                "💬"
-            ],
-            "keywords": {
-                "0": [
-                    "SIBLING",
-                    "STOP",
-                    "SPEAK"
-                ],
-                "1": [
-                    "ARGUMENT",
-                    "EVENT",
-                    "CAUGHT"
-                ],
-                "2": [
-                    "MIDDLE",
-                    "TRY",
-                    "HELP"
-                ],
-                "3": [
-                    "RECONCILE",
-                    "MEDIATE",
-                    "PATIENT"
-                ]
-            },
-            "minWords": 55,
-            "hint": "Describe the steps you took without taking either side.",
-            "explanation": "Strong mediation answers stay neutral and describe concrete steps taken to bring both people back together.",
-            "modelAnswer": "Strong mediation answers stay neutral and describe concrete steps taken to bring both people back together. Describe the steps you took without taking either side. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L147_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You noticed a classmate had copied large sections of an assignment, and you weren't sure whether reporting it was the right thing to do. Describe your decision.",
-            "emojis": [
-                "🎓",
-                "📝",
-                "😕",
-                "⚖️"
-            ],
-            "keywords": {
-                "0": [
-                    "CLASSMATE",
-                    "COPY",
-                    "ASSIGNMENT"
-                ],
-                "1": [
-                    "NOTICE",
-                    "LARGESECTION",
-                    "UNSURE"
-                ],
-                "2": [
-                    "REPORT",
-                    "RIGHT",
-                    "THING"
-                ],
-                "3": [
-                    "DECISION",
-                    "CONSIDER",
-                    "ACT"
-                ]
-            },
-            "minWords": 55,
-            "hint": "Describe what made the decision difficult and what you finally chose to do.",
-            "explanation": "Thoughtful answers weigh fairness to others against loyalty to a classmate before explaining the final choice.",
-            "modelAnswer": "Thoughtful answers weigh fairness to others against loyalty to a classmate before explaining the final choice. Describe what made the decision difficult and what you finally chose to do. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L147_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You need to write a short thank-you note to a mentor who is retiring after years of guiding your career. Describe what you write.",
-            "emojis": [
-                "🎓",
-                "✉️",
-                "🙏",
-                "💐"
-            ],
-            "keywords": {
-                "0": [
-                    "MENTOR",
-                    "RETIRE",
-                    "YEARS"
-                ],
-                "1": [
-                    "GUIDE",
-                    "CAREER",
-                    "GRATEFUL"
-                ],
-                "2": [
-                    "SPECIFIC",
-                    "MEMORY",
-                    "IMPACT"
-                ],
-                "3": [
-                    "WRITE",
-                    "SINCERE",
-                    "WARM"
-                ]
-            },
-            "minWords": 55,
-            "hint": "Mention one specific piece of advice or memory that mattered to you.",
-            "explanation": "Meaningful thank-you notes include a specific memory or lesson, not just general appreciation.",
-            "modelAnswer": "Meaningful thank-you notes include a specific memory or lesson, not just general appreciation. Mention one specific piece of advice or memory that mattered to you. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L148_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "A neighbor's late-night noise had disturbed your sleep for weeks, and you had to decide whether to knock on their door or contact the landlord instead. Describe your choice.",
-            "emojis": [
-                "🏢",
-                "🔊",
-                "😴",
-                "📋"
-            ],
-            "keywords": {
-                "0": [
-                    "NEIGHBOR",
-                    "LATENIGHT",
-                    "NOISE"
-                ],
-                "1": [
-                    "DISTURB",
-                    "SLEEP",
-                    "WEEKS"
-                ],
-                "2": [
-                    "KNOCK",
-                    "DOOR",
-                    "LANDLORD"
-                ],
-                "3": [
-                    "CHOICE",
-                    "DECIDE",
-                    "RESOLVE"
-                ]
-            },
-            "minWords": 56,
-            "hint": "Explain why you chose that approach and what happened afterward.",
-            "explanation": "Good answers give a clear reason for the chosen approach and describe a realistic result.",
-            "modelAnswer": "Good answers give a clear reason for the chosen approach and describe a realistic result. Explain why you chose that approach and what happened afterward. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L148_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "A recent health scare convinced you to finally commit to regular exercise, though sticking with it proved harder than you expected. Describe your first month.",
-            "emojis": [
-                "🏃",
-                "😅",
-                "📅",
-                "💪"
-            ],
-            "keywords": {
-                "0": [
-                    "HEALTHSCARE",
-                    "CONVINCE",
-                    "COMMIT"
-                ],
-                "1": [
-                    "REGULAR",
-                    "EXERCISE",
-                    "STICK"
-                ],
-                "2": [
-                    "HARDER",
-                    "EXPECT",
-                    "STRUGGLE"
-                ],
-                "3": [
-                    "MONTH",
-                    "PROGRESS",
-                    "ROUTINE"
-                ]
-            },
-            "minWords": 56,
-            "hint": "Describe specific obstacles you faced and how you kept going.",
-            "explanation": "Believable answers include realistic setbacks along with the progress, not just steady success.",
-            "modelAnswer": "Believable answers include realistic setbacks along with the progress, not just steady success. Describe specific obstacles you faced and how you kept going. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L148_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You were passed over for a promotion you had worked hard for, and a less experienced colleague got the role instead. Describe how you responded professionally.",
-            "emojis": [
-                "💼",
-                "😞",
-                "🤝",
                 "📈"
             ],
             "keywords": {
                 "0": [
-                    "PASSOVER",
-                    "PROMOTION",
-                    "WORKHARD"
+                    "FIRSTJOB",
+                    "HIGHERSALARY",
+                    "LONGHOURS"
                 ],
                 "1": [
-                    "LESSEXPERIENCE",
-                    "COLLEAGUE",
-                    "ROLE"
+                    "SECONDJOB",
+                    "LOWERSALARY",
+                    "BALANCE"
                 ],
                 "2": [
-                    "RESPOND",
-                    "PROFESSIONAL",
-                    "DISAPPOINT"
+                    "ASSESS",
+                    "TRADEOFF",
+                    "BALANCE"
                 ],
                 "3": [
-                    "MOVEFORWARD",
-                    "ASKFEEDBACK",
-                    "GRACIOUS"
+                    "FACTOR",
+                    "GROWTH",
+                    "SATISFACTION"
                 ]
             },
-            "minWords": 56,
-            "hint": "Describe how you handled your disappointment while staying professional.",
-            "explanation": "Mature answers acknowledge disappointment honestly while showing a constructive next step, like asking for feedback.",
-            "modelAnswer": "Mature answers acknowledge disappointment honestly while showing a constructive next step, like asking for feedback. Describe how you handled your disappointment while staying professional. This serves as a model answer for the situation."
+            "minWords": 52,
+            "hint": "Compare the two offers on at least two clear factors, such as salary and work-life balance, showing genuine trade-offs.",
+            "explanation": "Career decisions described through weighed factors show genuine trade-offs, since a strong comparison acknowledges that neither option is simply better in every way, which is closer to how real decisions actually work.",
+            "modelAnswer": "The first offer comes with a notably higher salary, but the role expects consistently long hours and frequent weekend work, whereas the second offer pays less yet promises a far more predictable schedule and better long-term growth opportunities within the company. After weighing the immediate financial benefit against the value of a healthier work-life balance, I ultimately leaned toward the second, less lucrative option."
         },
         {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L149_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "id": "WRT_DESCRIBESITUATIONWRITING_L145_Q3",
+            "instruction": "DESCRIBE HOW A FAMILY WEIGHED THE FACTORS BETWEEN TWO SCHOOLS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You needed emergency help in a country where you barely spoke the language, and finding someone who understood you took longer than expected. Describe how you managed.",
+            "situation": "Before enrolling their child, a family compared two schools based on several different factors. Describe the factors they weighed and how the schools compared.",
             "emojis": [
-                "🌍",
-                "🗣️",
-                "😰",
-                "📱"
+                "🏫",
+                "📚",
+                "🚌",
+                "💰"
             ],
             "keywords": {
                 "0": [
-                    "EMERGENCY",
-                    "COUNTRY",
-                    "BARELY"
+                    "FIRSTSCHOOL",
+                    "ACADEMIC",
+                    "STRONG"
                 ],
                 "1": [
-                    "LANGUAGE",
-                    "FIND",
-                    "UNDERSTAND"
+                    "SECONDSCHOOL",
+                    "CLOSER",
+                    "AFFORDABLE"
                 ],
                 "2": [
-                    "TAKELONGER",
-                    "EXPECT",
-                    "WORRY"
+                    "PONDER",
+                    "EVALUATE",
+                    "WEIGH"
                 ],
                 "3": [
-                    "MANAGE",
-                    "GESTURE",
-                    "RESOLVE"
+                    "FACTOR",
+                    "DISTANCE",
+                    "REPUTATION"
                 ]
             },
-            "minWords": 56,
-            "hint": "Describe the specific methods you used to communicate despite the barrier.",
-            "explanation": "Strong answers describe concrete strategies, such as gestures or translation apps, used to solve the problem.",
-            "modelAnswer": "Strong answers describe concrete strategies, such as gestures or translation apps, used to solve the problem. Describe the specific methods you used to communicate despite the barrier. This serves as a model answer for the situation."
+            "minWords": 52,
+            "hint": "Compare the two schools on at least two factors, such as academic reputation and distance, showing the family's genuine trade-off.",
+            "explanation": "Family decisions weighed through comparison are described convincingly when the factors chosen, such as commute distance versus academic reputation, reflect the kind of practical concerns a real family would actually consider.",
+            "modelAnswer": "The first school has a stronger academic reputation and excellent extracurricular programs, but it sits nearly an hour away by bus, requiring an exhausting daily commute for a young child. The second school, closer to home and considerably more affordable, lacks quite the same academic prestige, and after weighing the daily strain of the commute against the difference in reputation, the family ultimately chose the closer school."
         },
         {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L149_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "id": "WRT_DESCRIBESITUATIONWRITING_L146_Q1",
+            "instruction": "DESCRIBE HOW YOU CHOSE YOUR LAPTOP AFTER COMPARING TWO MODELS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "A helpful new app asked for access to more of your personal data than felt necessary, and you had to decide how much to allow. Describe your decision.",
+            "situation": "Before buying a new laptop, you compared two specific models based on their features. Describe the comparison and explain the evidence-based decision you finally made.",
             "emojis": [
-                "📱",
-                "🔒",
-                "🤔",
+                "💻",
+                "🔋",
+                "💰",
                 "✅"
             ],
             "keywords": {
                 "0": [
-                    "HELPFULAPP",
-                    "ASK",
-                    "ACCESS"
+                    "FIRSTLAPTOP",
+                    "LIGHTWEIGHT",
+                    "BATTERY"
                 ],
                 "1": [
-                    "PERSONALDATA",
-                    "FEEL",
-                    "NECESSARY"
+                    "SECONDLAPTOP",
+                    "POWERFUL",
+                    "HEAVY"
                 ],
                 "2": [
+                    "COMPARE",
+                    "REVIEW",
+                    "SPEC"
+                ],
+                "3": [
+                    "SETTLE",
+                    "OPT",
+                    "FINAL"
+                ]
+            },
+            "minWords": 52,
+            "hint": "Compare the specific features of both laptops, then explain exactly which pieces of evidence led to your final decision.",
+            "explanation": "Decisions grounded in evidence are described convincingly when the specific deciding factor, such as battery life for someone who travels often, is named clearly rather than the decision appearing arbitrary.",
+            "modelAnswer": "The first laptop weighs noticeably less and boasts an impressive twelve-hour battery life, while the second offers considerably more processing power but weighs almost twice as much and barely lasts five hours away from a charger. Since I travel frequently for work and rarely need heavy processing power outside the office, the battery life and portability of the first laptop ultimately made it the clear, evidence-based choice."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L146_Q2",
+            "instruction": "DESCRIBE HOW YOU CHOSE YOUR NEIGHBORHOOD AFTER COMPARING TWO OPTIONS",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "Before moving, you compared two different neighborhoods based on several factors. Describe the comparison and explain the evidence-based decision you finally made.",
+            "emojis": [
+                "🏘️",
+                "🌳",
+                "🚇",
+                "✅"
+            ],
+            "keywords": {
+                "0": [
+                    "FIRSTAREA",
+                    "QUIET",
+                    "RESIDENTIAL"
+                ],
+                "1": [
+                    "SECONDAREA",
+                    "LIVELY",
+                    "CENTRAL"
+                ],
+                "2": [
+                    "COMPARE",
+                    "VISIT",
+                    "EXPLORE"
+                ],
+                "3": [
+                    "CONCLUDE",
+                    "SELECT",
+                    "FINAL"
+                ]
+            },
+            "minWords": 52,
+            "hint": "Compare the two neighborhoods on specific qualities you actually observed while visiting, then explain the reasoning behind your final choice.",
+            "explanation": "Grounding a neighborhood decision in things actually observed during a visit, rather than assumptions, makes the final choice feel earned through genuine research rather than a guess.",
+            "modelAnswer": "Walking through the first neighborhood on a Saturday afternoon, I noticed tree-lined streets and a peaceful quiet that made it feel ideal for relaxing after work, while the second neighborhood buzzed with restaurants and a subway station just steps from every corner. Since my job keeps me out late most evenings and I value convenience over quiet, the easy access to transportation in the second neighborhood ultimately became the deciding piece of evidence."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L146_Q3",
+            "instruction": "DESCRIBE HOW YOU CHOSE YOUR COLLEGE MAJOR AFTER COMPARING TWO PATHS",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "Before declaring your college major, you compared two different academic paths based on several factors. Describe the comparison and explain the evidence-based decision you finally made.",
+            "emojis": [
+                "🎓",
+                "📊",
+                "🎨",
+                "✅"
+            ],
+            "keywords": {
+                "0": [
+                    "FIRSTMAJOR",
+                    "STABLE",
+                    "PRACTICAL"
+                ],
+                "1": [
+                    "SECONDMAJOR",
+                    "CREATIVE",
+                    "UNCERTAIN"
+                ],
+                "2": [
+                    "COMPARE",
+                    "RESEARCH",
+                    "EXPLORE"
+                ],
+                "3": [
                     "DECIDE",
-                    "ALLOW",
-                    "LIMIT"
-                ],
-                "3": [
-                    "DECISION",
-                    "BALANCE",
-                    "COMFORTABLE"
+                    "CHOOSE",
+                    "FINAL"
                 ]
             },
-            "minWords": 56,
-            "hint": "Explain what you allowed, what you restricted, and why.",
-            "explanation": "Thoughtful answers explain the specific trade-off between convenience and privacy.",
-            "modelAnswer": "Thoughtful answers explain the specific trade-off between convenience and privacy. Explain what you allowed, what you restricted, and why. This serves as a model answer for the situation."
+            "minWords": 52,
+            "hint": "Compare the two majors on specific evidence, such as job prospects or personal enjoyment, then clearly explain which factor ultimately decided your choice.",
+            "explanation": "Academic decisions described through evidence, rather than a vague statement like it felt right, allow the reader to genuinely understand the specific reasoning process behind a major life choice.",
+            "modelAnswer": "Researching both paths carefully, I found that the more practical major offered clearer, more stable job prospects immediately after graduation, while the creative major, though far more personally engaging, came with genuinely uncertain career outcomes according to most alumni surveys I read. Since financial stability mattered more to me at this stage of my life than pure enjoyment, the stronger job prospects of the practical major ultimately guided my final decision."
         },
         {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L149_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "id": "WRT_DESCRIBESITUATIONWRITING_L147_Q1",
+            "instruction": "COMPARE THE TWO COWORKERS' APPROACHES TO A DEADLINE",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You hosted a dinner combining your partner's family recipes with your own, and blending the very different cooking styles took some careful planning. Describe the meal.",
+            "situation": "Two coworkers facing the same tight deadline take noticeably different approaches to managing it. Compare their two approaches.",
             "emojis": [
-                "🍽️",
-                "👨‍👩‍👧‍👦",
-                "😊",
-                "📝"
-            ],
-            "keywords": {
-                "0": [
-                    "HOST",
-                    "DINNER",
-                    "COMBINE"
-                ],
-                "1": [
-                    "FAMILYRECIPE",
-                    "DIFFERENT",
-                    "STYLE"
-                ],
-                "2": [
-                    "BLEND",
-                    "CAREFUL",
-                    "PLAN"
-                ],
-                "3": [
-                    "MEAL",
-                    "SUCCESSFUL",
-                    "SHARE"
-                ]
-            },
-            "minWords": 56,
-            "hint": "Describe specific dishes from each side and how guests reacted.",
-            "explanation": "Vivid food answers name specific dishes and describe how the blend of styles was received.",
-            "modelAnswer": "Vivid food answers name specific dishes and describe how the blend of styles was received. Describe specific dishes from each side and how guests reacted. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L150_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Explaining a difficult family change to your children required finding words that were honest but still age-appropriate. Describe the conversation.",
-            "emojis": [
-                "👨‍👩‍👧‍👦",
-                "💬",
-                "😟",
-                "🤗"
-            ],
-            "keywords": {
-                "0": [
-                    "EXPLAIN",
-                    "DIFFICULT",
-                    "CHANGE"
-                ],
-                "1": [
-                    "CHILDREN",
-                    "HONEST",
-                    "AGEAPPROPRIATE"
-                ],
-                "2": [
-                    "FIND",
-                    "WORDS",
-                    "PREPARE"
-                ],
-                "3": [
-                    "CONVERSATION",
-                    "COMFORT",
-                    "REASSURE"
-                ]
-            },
-            "minWords": 56,
-            "hint": "Describe how you simplified the explanation while still being truthful.",
-            "explanation": "Sensitive answers balance honesty with reassurance appropriate to a child's understanding.",
-            "modelAnswer": "Sensitive answers balance honesty with reassurance appropriate to a child's understanding. Describe how you simplified the explanation while still being truthful. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L150_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You had to give a friend who reports to you some critical feedback about their performance, and keeping the friendship and the professional relationship separate was difficult. Describe the conversation.",
-            "emojis": [
-                "💼",
-                "🗣️",
-                "😬",
+                "🧑‍💼",
+                "👩‍💼",
+                "⏰",
                 "📋"
             ],
             "keywords": {
                 "0": [
-                    "FRIEND",
-                    "REPORT",
-                    "CRITICAL"
+                    "FIRSTCOWORKER",
+                    "EARLY",
+                    "STEADY"
                 ],
                 "1": [
-                    "FEEDBACK",
-                    "PERFORMANCE",
-                    "SEPARATE"
+                    "SECONDCOWORKER",
+                    "LASTMINUTE",
+                    "INTENSE"
                 ],
                 "2": [
-                    "FRIENDSHIP",
-                    "PROFESSIONAL",
-                    "DIFFICULT"
+                    "STRATEGY",
+                    "METHOD",
+                    "MANNER"
                 ],
                 "3": [
-                    "CONVERSATION",
-                    "HONEST",
-                    "SUPPORTIVE"
+                    "RESULT",
+                    "BOTH",
+                    "EVENTUALLY"
                 ]
             },
-            "minWords": 56,
-            "hint": "Describe how you kept the feedback specific and supportive at the same time.",
-            "explanation": "Good management answers give specific, constructive feedback while preserving the personal relationship.",
-            "modelAnswer": "Good management answers give specific, constructive feedback while preserving the personal relationship. Describe how you kept the feedback specific and supportive at the same time. This serves as a model answer for the situation."
+            "minWords": 52,
+            "hint": "Describe each coworker's specific working style clearly, then briefly note the outcome each approach led to.",
+            "explanation": "Comparing two people's different approaches to the same task highlights that there is often more than one valid way to reach a similar result, which is a nuanced, useful observation for the reader.",
+            "modelAnswer": "One coworker begins immediately, breaking the project into small daily tasks and steadily chipping away at it well before the deadline arrives. The other prefers to wait until the pressure builds, working in a single intense, focused burst during the final two days, and while their methods could not be more different, both somehow manage to submit equally polished work by the final deadline."
         },
         {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L150_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "id": "WRT_DESCRIBESITUATIONWRITING_L147_Q2",
+            "instruction": "COMPARE THE TWO TEACHERS' APPROACHES TO CLASSROOM DISCIPLINE",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You organized a community festival with a much smaller budget than previous years, forcing creative decisions about what to include. Describe how the event turned out.",
+            "situation": "Two teachers at the same school take noticeably different approaches to managing classroom discipline. Compare their two approaches.",
             "emojis": [
-                "🎪",
-                "💰",
-                "🤔",
-                "🎉"
+                "👩‍🏫",
+                "🧑‍🏫",
+                "📏",
+                "🤝"
             ],
             "keywords": {
                 "0": [
-                    "ORGANIZE",
-                    "FESTIVAL",
-                    "SMALLER"
+                    "FIRSTTEACHER",
+                    "STRICT",
+                    "STRUCTURE"
                 ],
                 "1": [
-                    "BUDGET",
-                    "PREVIOUS",
-                    "FORCE"
+                    "SECONDTEACHER",
+                    "RELAXED",
+                    "RAPPORT"
                 ],
                 "2": [
-                    "CREATIVE",
-                    "DECISION",
-                    "INCLUDE"
+                    "TECHNIQUE",
+                    "METHOD",
+                    "STYLE"
                 ],
                 "3": [
-                    "EVENT",
-                    "TURNOUT",
-                    "SUCCESSFUL"
+                    "RESULT",
+                    "EFFECTIVE",
+                    "DIFFERENT"
                 ]
             },
-            "minWords": 56,
-            "hint": "Describe the specific trade-offs you made and how the event was received.",
-            "explanation": "Practical answers name specific choices made under budget constraints and show a positive outcome despite limits.",
-            "modelAnswer": "Practical answers name specific choices made under budget constraints and show a positive outcome despite limits. Describe the specific trade-offs you made and how the event was received. This serves as a model answer for the situation."
+            "minWords": 52,
+            "hint": "Describe each teacher's specific style, then note that both approaches manage to achieve a well-behaved classroom despite being very different.",
+            "explanation": "Comparing contrasting teaching styles teaches the reader that effectiveness can come from very different methods, avoiding the trap of presenting one obviously correct approach and one obviously wrong one.",
+            "modelAnswer": "The first teacher maintains discipline through clear, firmly enforced rules, rarely raising her voice but expecting immediate compliance with the class's established structure. The second builds a much more relaxed rapport with students, relying on genuine personal connection rather than strict rules, and though their classrooms feel entirely different in tone, both teachers manage to keep their students focused and respectful in their own particular way."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L147_Q3",
+            "instruction": "COMPARE THE TWO COACHES' APPROACHES TO MOTIVATING A TEAM",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "Two sports coaches use noticeably different approaches to motivating their teams before an important match. Compare their two approaches.",
+            "emojis": [
+                "🏆",
+                "📢",
+                "🤝",
+                "💪"
+            ],
+            "keywords": {
+                "0": [
+                    "FIRSTCOACH",
+                    "INTENSE",
+                    "SHOUT"
+                ],
+                "1": [
+                    "SECONDCOACH",
+                    "CALM",
+                    "ENCOURAGE"
+                ],
+                "2": [
+                    "APPROACH",
+                    "METHOD",
+                    "STYLE"
+                ],
+                "3": [
+                    "RESULT",
+                    "MOTIVATE",
+                    "EFFECTIVE"
+                ]
+            },
+            "minWords": 53,
+            "hint": "Describe each coach's motivational style with specific behavior, then note that both styles genuinely motivate their players despite being opposites.",
+            "explanation": "This comparison practices describing two opposite emotional registers, intensity versus calm, and showing that both can genuinely succeed avoids the simplistic assumption that only one motivational style actually works.",
+            "modelAnswer": "The first coach delivers passionate, loud pre-match speeches, pacing energetically and pounding his fist for emphasis, clearly hoping to fire up his players through sheer intensity. The second coach speaks quietly and calmly, offering steady encouragement and specific individual praise rather than dramatic gestures, and remarkably, both teams consistently perform well under pressure, suggesting that motivation genuinely works differently for different groups of players."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L148_Q1",
+            "instruction": "COMPARE YOUR CHILDHOOD NEIGHBORHOOD THEN AND NOW",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "Your childhood neighborhood has changed considerably since you were young. Compare how it looked and felt then with how it looks and feels now.",
+            "emojis": [
+                "🏘️",
+                "🌳",
+                "🏗️",
+                "🕰️"
+            ],
+            "keywords": {
+                "0": [
+                    "THEN",
+                    "QUIET",
+                    "FAMILIAR"
+                ],
+                "1": [
+                    "NOW",
+                    "DEVELOP",
+                    "UNFAMILIAR"
+                ],
+                "2": [
+                    "COMPARE",
+                    "CHANGE",
+                    "NOTICE"
+                ],
+                "3": [
+                    "FEEL",
+                    "NOSTALGIC",
+                    "DIFFERENT"
+                ]
+            },
+            "minWords": 53,
+            "hint": "Describe the neighborhood as you remember it clearly, then compare it point by point with how it looks today.",
+            "explanation": "Comparisons across time benefit from specific, matched details, comparing the same landmark then and now, rather than two entirely separate descriptions that never directly connect to each other.",
+            "modelAnswer": "As a child, I remember the neighborhood as a quiet stretch of modest houses with wide, tree-lined sidewalks where every neighbor seemed to know each other by name. Returning now, the same streets feel almost unrecognizable, lined instead with tall new apartment buildings and unfamiliar faces, and though the change has clearly brought more convenience and activity to the area, I cannot help feeling a small pang of nostalgia for how much quieter it used to be."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L148_Q2",
+            "instruction": "COMPARE YOUR HOMETOWN'S DOWNTOWN THEN AND NOW",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "Your hometown's downtown area has changed considerably over the past two decades. Compare how it looked then with how it looks now.",
+            "emojis": [
+                "🏙️",
+                "🏪",
+                "📉",
+                "📈"
+            ],
+            "keywords": {
+                "0": [
+                    "THEN",
+                    "THRIVING",
+                    "BUSY"
+                ],
+                "1": [
+                    "NOW",
+                    "STRUGGLE",
+                    "EMPTY"
+                ],
+                "2": [
+                    "COMPARE",
+                    "DECLINE",
+                    "NOTICE"
+                ],
+                "3": [
+                    "FEEL",
+                    "CONCERN",
+                    "ECONOMIC"
+                ]
+            },
+            "minWords": 53,
+            "hint": "Describe the downtown's earlier condition specifically, then compare it directly with its current state, addressing possible reasons for the change.",
+            "explanation": "Economic or civic comparisons over time gain credibility when a possible reason for the change, such as a new shopping mall opening nearby, is briefly mentioned alongside the observed difference itself.",
+            "modelAnswer": "Twenty years ago, the downtown area buzzed with independently owned shops and restaurants, the sidewalks crowded well into the evening on weekends. Today, several storefronts sit empty with faded for-lease signs in the windows, likely a result of the large shopping mall that opened just outside town a decade ago, and while a few newer businesses have tried to fill the gap, the downtown never quite recovered its former liveliness."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L148_Q3",
+            "instruction": "COMPARE YOUR COOKING SKILLS AS A BEGINNER VERSUS NOW",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "When you first started cooking, your skills were quite different from how they are today. Compare your abilities as a beginner with your abilities now.",
+            "emojis": [
+                "🍳",
+                "😅",
+                "👨‍🍳",
+                "📈"
+            ],
+            "keywords": {
+                "0": [
+                    "BEGINNER",
+                    "BURN",
+                    "SIMPLE"
+                ],
+                "1": [
+                    "NOW",
+                    "CONFIDENT",
+                    "COMPLEX"
+                ],
+                "2": [
+                    "COMPARE",
+                    "IMPROVE",
+                    "NOTICE"
+                ],
+                "3": [
+                    "FEEL",
+                    "PROUD",
+                    "GROWTH"
+                ]
+            },
+            "minWords": 53,
+            "hint": "Describe a specific early failure clearly, then compare it directly with a specific recent success to show your genuine growth.",
+            "explanation": "Personal skill-growth comparisons are more convincing when a specific early failure and a specific recent success are placed side by side, rather than a general statement that skills improved over time.",
+            "modelAnswer": "As a beginner, I once managed to burn a simple pot of rice while distractedly checking my phone, unable to even follow a basic recipe without constant supervision of every single step. Now, several years later, I can confidently prepare a full three-course meal for guests without a single recipe in front of me, timing every dish to finish together, a level of ease I never imagined possible back when even boiling pasta felt like a genuine challenge."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L149_Q1",
+            "instruction": "COMPARE STAYING IN YOUR CURRENT JOB VERSUS TAKING A NEW OFFER",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "You are considering whether to stay in your current job or accept a new offer elsewhere. Compare the two possible futures, weighing the relevant factors.",
+            "emojis": [
+                "💼",
+                "🤔",
+                "📈",
+                "⚖️"
+            ],
+            "keywords": {
+                "0": [
+                    "STAY",
+                    "FAMILIAR",
+                    "STABLE"
+                ],
+                "1": [
+                    "LEAVE",
+                    "OPPORTUNITY",
+                    "UNCERTAIN"
+                ],
+                "2": [
+                    "ASSESS",
+                    "COMPARE",
+                    "TRADEOFF"
+                ],
+                "3": [
+                    "FACTOR",
+                    "RISK",
+                    "GROWTH"
+                ]
+            },
+            "minWords": 53,
+            "hint": "Compare the stability of staying against the potential growth of leaving, weighing at least two specific factors for each option.",
+            "explanation": "Comparing two possible futures, rather than a past or present situation, requires the writer to reason carefully about likely outcomes, which is a more speculative but equally structured form of comparison.",
+            "modelAnswer": "Staying in my current role offers genuine stability and the comfort of a team I already know well, though the limited room for advancement here has become increasingly clear over the past year. The new offer promises significantly more responsibility and a meaningful salary increase, but it also means adapting to an unfamiliar company culture with no guarantee the new role will suit me as well as it sounds on paper."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L149_Q2",
+            "instruction": "COMPARE STAYING IN YOUR CURRENT CITY VERSUS MOVING ABROAD",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "You are considering whether to stay in your current city or move abroad for a fresh start. Compare the two possible futures, weighing the relevant factors.",
+            "emojis": [
+                "🏙️",
+                "✈️",
+                "👨‍👩‍👧",
+                "⚖️"
+            ],
+            "keywords": {
+                "0": [
+                    "STAY",
+                    "FAMILY",
+                    "SUPPORT"
+                ],
+                "1": [
+                    "MOVE",
+                    "ADVENTURE",
+                    "UNKNOWN"
+                ],
+                "2": [
+                    "WEIGH",
+                    "COMPARE",
+                    "BALANCE"
+                ],
+                "3": [
+                    "FACTOR",
+                    "EMOTIONAL",
+                    "PRACTICAL"
+                ]
+            },
+            "minWords": 53,
+            "hint": "Weigh emotional factors, such as being near family, against practical or adventurous factors, such as new opportunities abroad.",
+            "explanation": "Major life comparisons benefit from weighing both emotional and practical factors together, since a decision like moving abroad rarely comes down to logic alone, and acknowledging that honestly makes the comparison feel real.",
+            "modelAnswer": "Remaining in my current city keeps me close to family and a familiar support network I have relied on my entire life, a comfort that becomes clearer every time I imagine facing a hard week completely alone abroad. Moving overseas, however, offers genuine adventure and professional opportunities I likely will not encounter here, and weighing the emotional cost of distance against the excitement of an entirely new chapter remains a genuinely difficult balance to strike."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L149_Q3",
+            "instruction": "COMPARE RENTING VERSUS BUYING A HOME",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "You are considering whether to continue renting or finally buy a home. Compare the two possible paths, weighing the relevant financial and lifestyle factors.",
+            "emojis": [
+                "🏠",
+                "💰",
+                "🔑",
+                "⚖️"
+            ],
+            "keywords": {
+                "0": [
+                    "RENT",
+                    "FLEXIBLE",
+                    "LOWERCOST"
+                ],
+                "1": [
+                    "BUY",
+                    "INVEST",
+                    "COMMITMENT"
+                ],
+                "2": [
+                    "JUDGE",
+                    "TRADEOFF",
+                    "MEASURE"
+                ],
+                "3": [
+                    "FACTOR",
+                    "FINANCIAL",
+                    "LIFESTYLE"
+                ]
+            },
+            "minWords": 54,
+            "hint": "Weigh at least two financial factors and one lifestyle factor, showing genuine trade-offs between flexibility and long-term investment.",
+            "explanation": "Financial comparisons about the future, like renting versus buying, are strengthened by naming both a financial factor and a lifestyle factor, since the decision genuinely involves more than money alone.",
+            "modelAnswer": "Continuing to rent keeps my monthly costs lower and my situation flexible, letting me move easily if my job or personal circumstances change, which has happened more than once over the past few years. Buying a home would mean building long-term equity instead of paying rent that disappears each month, but it also involves a significant financial commitment and far less flexibility, a trade-off I am still weighing carefully given how uncertain my career path currently feels."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L150_Q1",
+            "instruction": "DESCRIBE THE FAMILY'S DECISION BETWEEN TWO VACATION DESTINATIONS",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A family weighs several factors while deciding between two very different vacation destinations. Describe the comparison and the reasoning behind their final decision.",
+            "emojis": [
+                "🏖️",
+                "⛰️",
+                "👨‍👩‍👧‍👦",
+                "✅"
+            ],
+            "keywords": {
+                "0": [
+                    "BEACHDEST",
+                    "RELAX",
+                    "CROWDED"
+                ],
+                "1": [
+                    "MOUNTAINDEST",
+                    "ADVENTURE",
+                    "QUIET"
+                ],
+                "2": [
+                    "FACTOR",
+                    "BUDGET",
+                    "AGE"
+                ],
+                "3": [
+                    "DECIDE",
+                    "COMPROMISE",
+                    "FINAL"
+                ]
+            },
+            "minWords": 53,
+            "hint": "Weigh at least three factors, such as budget, the children's ages, and each destination's activities, before explaining the final decision.",
+            "explanation": "A capstone comparison holds several factors together at once, budget, preferences, practical needs, and reaches a clearly reasoned final decision rather than simply listing the options without resolving anything.",
+            "modelAnswer": "The beach destination offers relaxed, easy days perfect for their younger children but comes with noticeably higher prices and crowded resorts during peak season, while the quieter mountain destination provides more affordable lodging and genuine adventure activities, though the hiking trails may prove too demanding for their youngest child. After weighing the budget savings and outdoor opportunities against the practical concern of their child's stamina, the family ultimately chooses a compromise, booking a mountain lodge near an easier, family-friendly trail."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L150_Q2",
+            "instruction": "DESCRIBE THE COMPANY'S DECISION BETWEEN TWO VENDOR PROPOSALS",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A company weighs several factors while deciding between two competing vendor proposals for an important project. Describe the comparison and the reasoning behind their final decision.",
+            "emojis": [
+                "📊",
+                "💰",
+                "🤝",
+                "✅"
+            ],
+            "keywords": {
+                "0": [
+                    "VENDORA",
+                    "CHEAPER",
+                    "LESSEXPERIENCE"
+                ],
+                "1": [
+                    "VENDORB",
+                    "EXPENSIVE",
+                    "PROVENTRACK"
+                ],
+                "2": [
+                    "FACTOR",
+                    "BUDGET",
+                    "RELIABILITY"
+                ],
+                "3": [
+                    "DECIDE",
+                    "BALANCE",
+                    "FINAL"
+                ]
+            },
+            "minWords": 54,
+            "hint": "Weigh cost against reliability and track record, considering at least three specific factors before explaining the final decision.",
+            "explanation": "Business decisions compared through multiple weighted factors, cost, reliability, past performance, model realistic corporate reasoning better than a simple statement that one vendor was simply chosen because it was cheaper or better.",
+            "modelAnswer": "The first vendor's proposal comes in nearly thirty percent cheaper, but the company is relatively new with limited experience handling projects of this particular scale, raising some concern about missed deadlines. The second vendor, though considerably more expensive, has a proven fifteen-year track record with several comparable clients, and after weighing the immediate budget savings against the significant risk of delays on such an important project, the company ultimately decides the second vendor's reliability justifies the higher cost."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L150_Q3",
+            "instruction": "DESCRIBE A PERSON'S DECISION BETWEEN TWO COMPETING JOB OFFERS",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A person weighs several factors while deciding between two competing job offers that differ significantly. Describe the comparison and the reasoning behind their final decision.",
+            "emojis": [
+                "💼",
+                "💰",
+                "🌍",
+                "✅"
+            ],
+            "keywords": {
+                "0": [
+                    "OFFERA",
+                    "HIGHSALARY",
+                    "RELOCATE"
+                ],
+                "1": [
+                    "OFFERB",
+                    "LOWERSALARY",
+                    "REMOTEFLEXIBLE"
+                ],
+                "2": [
+                    "FACTOR",
+                    "LIFESTYLE",
+                    "FAMILY"
+                ],
+                "3": [
+                    "DECIDE",
+                    "PRIORITIZE",
+                    "FINAL"
+                ]
+            },
+            "minWords": 55,
+            "hint": "Weigh salary against lifestyle and family considerations, treating at least three factors as genuinely important before explaining the final choice.",
+            "explanation": "At the highest level, a comparative decision weighs financial, lifestyle, and personal factors together without any single one automatically winning, and clearly naming which factor ultimately tipped the balance gives the reasoning genuine weight.",
+            "modelAnswer": "The first offer comes with a considerably higher salary, but it requires relocating to a new city far from aging parents who increasingly rely on nearby support, a fact that weighs heavily despite the financial appeal. The second offer, though paying noticeably less, allows fully remote work with genuine flexibility to stay close to family, and after carefully weighing the financial advantage against the value of remaining nearby during this particular stage of life, the person ultimately accepts the second, lower-paying offer without much hesitation."
         }
     ]
 }

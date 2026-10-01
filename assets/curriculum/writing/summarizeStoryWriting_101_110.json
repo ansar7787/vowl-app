@@ -1,817 +1,637 @@
 {
-    "gameType": "summarizeStoryWriting",
-    "batchIndex": 11,
-    "levels": "101-110",
-    "quests": [
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L101_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "Although the research team had spent two years gathering data, their initial model failed to predict outcomes with any real accuracy. A visiting statistician suggested weighting recent data more heavily than older records. The revised model's predictions matched real-world outcomes within a narrow, reliable margin.",
-            "options": [
-                "The research team abandoned the model entirely after its initial failure.",
-                "Despite two years of data gathering, the research team's initial model failed to predict outcomes accurately.",
-                "A visiting statistician suggested weighting recent data more heavily than older records.",
-                "The revised model's predictions matched real-world outcomes within a narrow, reliable margin."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Notice what actually happens to the model after the statistician's suggestion is applied.",
-            "explanation": "Because the revised model ends up matching real-world outcomes reliably, an option showing the team abandoning it after the first failure contradicts that eventual success.",
-            "storyKeyEvents": [
-                "Despite two years of data gathering, the research team's initial model failed to predict outcomes accurately.",
-                "A visiting statistician suggested weighting recent data more heavily than older records.",
-                "The revised model's predictions matched real-world outcomes within a narrow, reliable margin.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L101_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A mid-sized architecture firm had lost three consecutive bids to a competitor known for faster turnaround times. Partners restructured their review process so that only one senior architect needed to approve early drafts. The firm won its next bid specifically because of its improved turnaround speed.",
-            "options": [
-                "A mid-sized architecture firm had lost three consecutive bids to a competitor known for faster turnaround times.",
-                "The firm lost its fourth bid for the same reason as before.",
-                "Partners restructured their review process so that only one senior architect needed to approve early drafts.",
-                "The firm won its next bid specifically because of its improved turnaround speed."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Check whether each option matches the actual reason the firm wins its next bid.",
-            "explanation": "Because the firm wins its next bid due to improved speed, an option claiming it lost again for the same reason contradicts that specific outcome.",
-            "storyKeyEvents": [
-                "A mid-sized architecture firm had lost three consecutive bids to a competitor known for faster turnaround times.",
-                "Partners restructured their review process so that only one senior architect needed to approve early drafts.",
-                "The firm won its next bid specifically because of its improved turnaround speed.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L101_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional theater critic had grown so predictable in her reviews that readers stopped trusting her opinions. She began publishing a companion piece explaining her reasoning alongside each star rating. Reader engagement with her reviews rose to levels not seen in years.",
-            "options": [
-                "A regional theater critic had grown so predictable in her reviews that readers stopped trusting her opinions.",
-                "She began publishing a companion piece explaining her reasoning alongside each star rating.",
-                "Reader engagement with her reviews continued falling despite the change.",
-                "Reader engagement with her reviews rose to levels not seen in years."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you what actually happens to reader engagement.",
-            "explanation": "Because engagement rises to levels not seen in years, an option claiming it continued falling contradicts that measured recovery.",
-            "storyKeyEvents": [
-                "A regional theater critic had grown so predictable in her reviews that readers stopped trusting her opinions.",
-                "She began publishing a companion piece explaining her reasoning alongside each star rating.",
-                "Reader engagement with her reviews rose to levels not seen in years.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L102_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional bank's fraud detection system had flagged so many legitimate transactions that customers grew frustrated with constant account freezes. Engineers retrained the system using a broader, more representative set of transaction data. False fraud alerts dropped by more than seventy percent within a quarter.",
-            "options": [
-                "A regional bank's fraud detection system had flagged so many legitimate transactions that customers grew frustrated with constant account freezes.",
-                "Engineers retrained the system using a broader, more representative set of transaction data.",
-                "False fraud alerts dropped by more than seventy percent within a quarter.",
-                "False fraud alerts increased by more than seventy percent within a quarter."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Track cause and effect: retraining leads to false alerts dropping by more than seventy percent. One option reverses that.",
-            "explanation": "Because false alerts drop by more than seventy percent, an option claiming they increased by that same margin reverses the bank's own measured result.",
-            "storyKeyEvents": [
-                "A regional bank's fraud detection system had flagged so many legitimate transactions that customers grew frustrated with constant account freezes.",
-                "Engineers retrained the system using a broader, more representative set of transaction data.",
-                "False fraud alerts dropped by more than seventy percent within a quarter.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L102_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A struggling regional airline had one route so unprofitable that executives debated cutting it every single quarter. A junior analyst discovered the route was mostly used by a single large corporate client on a long-term contract. Renegotiating that contract turned the route into one of the airline's most profitable.",
-            "options": [
-                "The airline cut the route immediately after discovering the corporate client.",
-                "A struggling regional airline had one route so unprofitable that executives debated cutting it every single quarter.",
-                "A junior analyst discovered the route was mostly used by a single large corporate client on a long-term contract.",
-                "Renegotiating that contract turned the route into one of the airline's most profitable."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Notice what the airline actually does once it learns about the corporate contract.",
-            "explanation": "Because renegotiating the contract turns the route profitable, an option showing the airline cutting it immediately contradicts that outcome.",
-            "storyKeyEvents": [
-                "A struggling regional airline had one route so unprofitable that executives debated cutting it every single quarter.",
-                "A junior analyst discovered the route was mostly used by a single large corporate client on a long-term contract.",
-                "Renegotiating that contract turned the route into one of the airline's most profitable.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L102_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A community health clinic had one of the highest no-show rates for scheduled appointments in its county. Staff began sending a personalized text reminder exactly twenty-four hours before each appointment. No-show rates fell to among the lowest in the county within six months.",
-            "options": [
-                "A community health clinic had one of the highest no-show rates for scheduled appointments in its county.",
-                "No-show rates remained among the highest in the county.",
-                "Staff began sending a personalized text reminder exactly twenty-four hours before each appointment.",
-                "No-show rates fell to among the lowest in the county within six months."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Ask which option matches what actually happened to no-show rates after the reminders began.",
-            "explanation": "Because no-show rates fall to among the lowest in the county, an option claiming they remained among the highest contradicts that measured shift.",
-            "storyKeyEvents": [
-                "A community health clinic had one of the highest no-show rates for scheduled appointments in its county.",
-                "Staff began sending a personalized text reminder exactly twenty-four hours before each appointment.",
-                "No-show rates fell to among the lowest in the county within six months.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L103_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A software company's flagship product had a security flaw that went unnoticed for over a year despite regular audits. An independent researcher discovered the flaw and reported it privately before disclosing it publicly. The company patched the vulnerability within forty-eight hours of the private report.",
-            "options": [
-                "A software company's flagship product had a security flaw that went unnoticed for over a year despite regular audits.",
-                "An independent researcher discovered the flaw and reported it privately before disclosing it publicly.",
-                "The company ignored the researcher's private report entirely.",
-                "The company patched the vulnerability within forty-eight hours of the private report."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "One of these four sentences quietly contradicts how quickly the company actually responds to the report.",
-            "explanation": "Because the company patches the flaw within forty-eight hours, an option claiming it ignored the report entirely contradicts that quick response.",
-            "storyKeyEvents": [
-                "A software company's flagship product had a security flaw that went unnoticed for over a year despite regular audits.",
-                "An independent researcher discovered the flaw and reported it privately before disclosing it publicly.",
-                "The company patched the vulnerability within forty-eight hours of the private report.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L103_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional grocery cooperative had watched its market share shrink steadily since a national chain opened two locations nearby. Members voted to source at least half of all produce from farms within a hundred miles. Market share stabilized and then grew for the first time in three years.",
-            "options": [
-                "A regional grocery cooperative had watched its market share shrink steadily since a national chain opened two locations nearby.",
-                "Members voted to source at least half of all produce from farms within a hundred miles.",
-                "Market share stabilized and then grew for the first time in three years.",
-                "Market share continued shrinking after the vote passed."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "This story moves in a clear line from shrinking share to a sourcing change to renewed growth. Find the sentence outside it.",
-            "explanation": "Because market share grows for the first time in three years, an option claiming it continued shrinking after the vote contradicts that turnaround.",
-            "storyKeyEvents": [
-                "A regional grocery cooperative had watched its market share shrink steadily since a national chain opened two locations nearby.",
-                "Members voted to source at least half of all produce from farms within a hundred miles.",
-                "Market share stabilized and then grew for the first time in three years.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L103_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional news outlet had published three separate corrections in a single month, badly damaging its credibility. Editors introduced a mandatory second fact-check for any story involving a specific claim or statistic. The outlet went six months without a single correction for the first time in its history.",
-            "options": [
-                "The outlet published even more corrections over the following six months.",
-                "A regional news outlet had published three separate corrections in a single month, badly damaging its credibility.",
-                "Editors introduced a mandatory second fact-check for any story involving a specific claim or statistic.",
-                "The outlet went six months without a single correction for the first time in its history."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Check whether each option matches the outlet's actual correction record afterward.",
-            "explanation": "Because the outlet goes six months without a correction, an option claiming it published even more contradicts that specific record.",
-            "storyKeyEvents": [
-                "A regional news outlet had published three separate corrections in a single month, badly damaging its credibility.",
-                "Editors introduced a mandatory second fact-check for any story involving a specific claim or statistic.",
-                "The outlet went six months without a single correction for the first time in its history.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L104_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A small city's public defender's office had one of the highest caseloads per attorney in the entire state. The state legislature approved emergency funding to hire six additional attorneys. Caseloads per attorney fell to match the state's recommended standard within a year.",
-            "options": [
-                "A small city's public defender's office had one of the highest caseloads per attorney in the entire state.",
-                "Caseloads per attorney remained the highest in the state despite the funding.",
-                "The state legislature approved emergency funding to hire six additional attorneys.",
-                "Caseloads per attorney fell to match the state's recommended standard within a year."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Notice what actually happens to caseloads once the additional attorneys are hired.",
-            "explanation": "Because caseloads fall to match the state standard within a year, an option claiming they remained the highest despite funding contradicts that outcome.",
-            "storyKeyEvents": [
-                "A small city's public defender's office had one of the highest caseloads per attorney in the entire state.",
-                "The state legislature approved emergency funding to hire six additional attorneys.",
-                "Caseloads per attorney fell to match the state's recommended standard within a year.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L104_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A midsize hospital's emergency department had a nurse turnover rate nearly double the national average. Administrators redesigned shift schedules to guarantee every nurse two full weekends off each month. Turnover fell below the national average within eighteen months.",
-            "options": [
-                "A midsize hospital's emergency department had a nurse turnover rate nearly double the national average.",
-                "Administrators redesigned shift schedules to guarantee every nurse two full weekends off each month.",
-                "Turnover climbed even higher than double the national average.",
-                "Turnover fell below the national average within eighteen months."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Track cause and effect: guaranteed weekends off lead to turnover falling below average. One option reverses that.",
-            "explanation": "Because turnover falls below the national average, an option claiming it climbed even higher reverses the department's own measured outcome.",
-            "storyKeyEvents": [
-                "A midsize hospital's emergency department had a nurse turnover rate nearly double the national average.",
-                "Administrators redesigned shift schedules to guarantee every nurse two full weekends off each month.",
-                "Turnover fell below the national average within eighteen months.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L104_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional utility company's customer service line had an average hold time exceeding forty minutes during peak hours. It introduced a callback feature so customers wouldn't have to remain on hold at all. Customer satisfaction with the service line rose to its highest level on record.",
-            "options": [
-                "A regional utility company's customer service line had an average hold time exceeding forty minutes during peak hours.",
-                "The company introduced a callback feature so customers wouldn't have to remain on hold at all.",
-                "Customer satisfaction with the service line rose to its highest level on record.",
-                "Customer satisfaction with the service line fell to its lowest level on record."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Read the ending closely: it tells you what actually happens to satisfaction after the callback feature launches.",
-            "explanation": "Because satisfaction rises to its highest level on record, an option claiming it fell to its lowest reverses that measured outcome.",
-            "storyKeyEvents": [
-                "A regional utility company's customer service line had an average hold time exceeding forty minutes during peak hours.",
-                "The company introduced a callback feature so customers wouldn't have to remain on hold at all.",
-                "Customer satisfaction with the service line rose to its highest level on record.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L105_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional airline's frequent-flyer program had become so complicated that fewer than one in ten eligible members ever redeemed points. The airline simplified the program down to a single, transparent points-per-dollar rate. Redemption rates rose to nearly half of all eligible members within a year.",
-            "options": [
-                "Redemption rates remained below one in ten members.",
-                "A regional airline's frequent-flyer program had become so complicated that fewer than one in ten eligible members ever redeemed points.",
-                "The airline simplified the program down to a single, transparent points-per-dollar rate.",
-                "Redemption rates rose to nearly half of all eligible members within a year."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Ask which option matches what actually happened to redemption rates after the simplification.",
-            "explanation": "Because redemption rates rise to nearly half of eligible members, an option claiming they remained below one in ten contradicts that measured increase.",
-            "storyKeyEvents": [
-                "A regional airline's frequent-flyer program had become so complicated that fewer than one in ten eligible members ever redeemed points.",
-                "The airline simplified the program down to a single, transparent points-per-dollar rate.",
-                "Redemption rates rose to nearly half of all eligible members within a year.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L105_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A community college's online courses had a completion rate less than half that of its in-person classes. Instructors began requiring a short weekly video check-in instead of only written assignments. Online completion rates rose to match in-person rates within two semesters.",
-            "options": [
-                "A community college's online courses had a completion rate less than half that of its in-person classes.",
-                "Online completion rates fell even further below in-person rates.",
-                "Instructors began requiring a short weekly video check-in instead of only written assignments.",
-                "Online completion rates rose to match in-person rates within two semesters."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "One of these four sentences quietly contradicts what actually happens to online completion rates.",
-            "explanation": "Because online rates rise to match in-person rates within two semesters, an option claiming they fell further contradicts that measured convergence.",
-            "storyKeyEvents": [
-                "A community college's online courses had a completion rate less than half that of its in-person classes.",
-                "Instructors began requiring a short weekly video check-in instead of only written assignments.",
-                "Online completion rates rose to match in-person rates within two semesters.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L105_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional manufacturer had a product recall so costly that it nearly forced the company into bankruptcy. New leadership rebuilt the company's quality control process from the ground up. The company went five years without a single reported defect afterward.",
-            "options": [
-                "A regional manufacturer had a product recall so costly that it nearly forced the company into bankruptcy.",
-                "New leadership rebuilt the company's quality control process from the ground up.",
-                "The company filed for bankruptcy shortly after the recall.",
-                "The company went five years without a single reported defect afterward."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "This story moves in a clear line from a costly recall to rebuilt quality control to five defect-free years. Find the sentence outside it.",
-            "explanation": "Because the company goes five years without a defect, an option showing it filing for bankruptcy after the recall contradicts that later recovery.",
-            "storyKeyEvents": [
-                "A regional manufacturer had a product recall so costly that it nearly forced the company into bankruptcy.",
-                "New leadership rebuilt the company's quality control process from the ground up.",
-                "The company went five years without a single reported defect afterward.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L106_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional insurance provider's mobile app had an average rating so low that customers frequently called instead of using it. Developers rebuilt the app from scratch based directly on transcripts of customer service calls. Call volume dropped by nearly half as more customers used the redesigned app instead.",
-            "options": [
-                "A regional insurance provider's mobile app had an average rating so low that customers frequently called instead of using it.",
-                "Developers rebuilt the app from scratch based directly on transcripts of customer service calls.",
-                "Call volume dropped by nearly half as more customers used the redesigned app instead.",
-                "Call volume increased even further after the app redesign."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Notice what actually happens to call volume once the redesigned app launches.",
-            "explanation": "Because call volume drops by nearly half, an option claiming it increased further reverses the provider's own measured result.",
-            "storyKeyEvents": [
-                "A regional insurance provider's mobile app had an average rating so low that customers frequently called instead of using it.",
-                "Developers rebuilt the app from scratch based directly on transcripts of customer service calls.",
-                "Call volume dropped by nearly half as more customers used the redesigned app instead.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L106_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional court system had a backlog of cases so severe that some civil trials waited over two years to be heard. Judges began requiring mandatory mediation before any case could proceed to trial. The average wait for a civil trial fell to under six months within two years.",
-            "options": [
-                "The average wait for a civil trial grew even longer than two years.",
-                "A regional court system had a backlog of cases so severe that some civil trials waited over two years to be heard.",
-                "Judges began requiring mandatory mediation before any case could proceed to trial.",
-                "The average wait for a civil trial fell to under six months within two years."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Check whether each option matches what actually happened to average wait times.",
-            "explanation": "Because average wait falls to under six months, an option claiming it grew even longer than two years reverses that measured outcome.",
-            "storyKeyEvents": [
-                "A regional court system had a backlog of cases so severe that some civil trials waited over two years to be heard.",
-                "Judges began requiring mandatory mediation before any case could proceed to trial.",
-                "The average wait for a civil trial fell to under six months within two years.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L106_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional theater company's subscription base had shrunk so much that its usual four-play season was no longer financially viable. It restructured to a three-play season with a flexible add-on ticket option. Total revenue that season exceeded the previous four-play season's total.",
-            "options": [
-                "A regional theater company's subscription base had shrunk so much that its usual four-play season was no longer financially viable.",
-                "Total revenue that season fell well short of the previous season's total.",
-                "The company restructured to a three-play season with a flexible add-on ticket option.",
-                "Total revenue that season exceeded the previous four-play season's total."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you how the new season's revenue actually compares.",
-            "explanation": "Because total revenue exceeds the previous season's total, an option claiming it fell short contradicts that specific comparison.",
-            "storyKeyEvents": [
-                "A regional theater company's subscription base had shrunk so much that its usual four-play season was no longer financially viable.",
-                "The company restructured to a three-play season with a flexible add-on ticket option.",
-                "Total revenue that season exceeded the previous four-play season's total.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L107_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional airport's security checkpoint had wait times so unpredictable that some travelers missed flights despite arriving early. Officials added a second staffed lane during the airport's three busiest hours. Missed flights due to security delays dropped to nearly zero.",
-            "options": [
-                "A regional airport's security checkpoint had wait times so unpredictable that some travelers missed flights despite arriving early.",
-                "Officials added a second staffed lane during the airport's three busiest hours.",
-                "Missed flights due to security delays increased noticeably.",
-                "Missed flights due to security delays dropped to nearly zero."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Track cause and effect: a second lane leads to missed flights dropping to nearly zero. One option reverses that.",
-            "explanation": "Because missed flights drop to nearly zero, an option claiming they increased noticeably reverses the airport's own measured result.",
-            "storyKeyEvents": [
-                "A regional airport's security checkpoint had wait times so unpredictable that some travelers missed flights despite arriving early.",
-                "Officials added a second staffed lane during the airport's three busiest hours.",
-                "Missed flights due to security delays dropped to nearly zero.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L107_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional dairy cooperative's milk output had declined so sharply that several member farms considered leaving entirely. Veterinary consultants identified a shared feed supplier as the likely source of reduced yields. Switching suppliers restored output to its previous levels within two months.",
-            "options": [
-                "A regional dairy cooperative's milk output had declined so sharply that several member farms considered leaving entirely.",
-                "Veterinary consultants identified a shared feed supplier as the likely source of reduced yields.",
-                "Switching suppliers restored output to its previous levels within two months.",
-                "Several member farms left the cooperative before the cause was found."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Notice what actually happens once the veterinary consultants investigate the issue.",
-            "explanation": "Because switching suppliers restores output within two months, an option showing farms leaving before the cause was found contradicts that resolution.",
-            "storyKeyEvents": [
-                "A regional dairy cooperative's milk output had declined so sharply that several member farms considered leaving entirely.",
-                "Veterinary consultants identified a shared feed supplier as the likely source of reduced yields.",
-                "Switching suppliers restored output to its previous levels within two months.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L107_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A small city's public works department had a pothole-repair backlog so large that residents joked about it constantly. It introduced an app letting residents report and photograph potholes directly to a shared queue. Average repair time fell from months to under two weeks.",
-            "options": [
-                "Average repair time grew even longer than before.",
-                "A small city's public works department had a pothole-repair backlog so large that residents joked about it constantly.",
-                "The department introduced an app letting residents report and photograph potholes directly to a shared queue.",
-                "Average repair time fell from months to under two weeks."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Ask which option matches what actually happened to repair time after the app launched.",
-            "explanation": "Because average repair time falls to under two weeks, an option claiming it grew even longer reverses that measured improvement.",
-            "storyKeyEvents": [
-                "A small city's public works department had a pothole-repair backlog so large that residents joked about it constantly.",
-                "The department introduced an app letting residents report and photograph potholes directly to a shared queue.",
-                "Average repair time fell from months to under two weeks.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L108_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional bookstore chain's loyalty program had so few active users that most stores had stopped promoting it. It redesigned the program around a single simple reward: one free book after every ten purchased. Active membership grew to cover the majority of regular customers within a year.",
-            "options": [
-                "A regional bookstore chain's loyalty program had so few active users that most stores had stopped promoting it.",
-                "Active membership remained just as sparse as before the redesign.",
-                "The chain redesigned the program around a single simple reward: one free book after every ten purchased.",
-                "Active membership grew to cover the majority of regular customers within a year."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "One of these four sentences quietly contradicts what actually happened to active membership.",
-            "explanation": "Because membership grows to cover the majority of regular customers, an option claiming it remained just as sparse contradicts that measured growth.",
-            "storyKeyEvents": [
-                "A regional bookstore chain's loyalty program had so few active users that most stores had stopped promoting it.",
-                "The chain redesigned the program around a single simple reward: one free book after every ten purchased.",
-                "Active membership grew to cover the majority of regular customers within a year.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L108_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional shipping port had container processing delays so severe that several major clients threatened to take their business elsewhere. Port authorities invested in automated container-tracking software shared across every terminal. Processing delays fell to among the shortest of any port on the coast.",
-            "options": [
-                "A regional shipping port had container processing delays so severe that several major clients threatened to take their business elsewhere.",
-                "Port authorities invested in automated container-tracking software shared across every terminal.",
-                "Every major client eventually left for a competing port.",
-                "Processing delays fell to among the shortest of any port on the coast."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you whether the threatened clients actually leave.",
-            "explanation": "Because processing delays fall to among the shortest on the coast, an option showing every client leaving anyway contradicts that improvement.",
-            "storyKeyEvents": [
-                "A regional shipping port had container processing delays so severe that several major clients threatened to take their business elsewhere.",
-                "Port authorities invested in automated container-tracking software shared across every terminal.",
-                "Processing delays fell to among the shortest of any port on the coast.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L108_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional symphony's youth outreach program had reached so few schools that its funding was nearly cut entirely. Musicians began offering short virtual performances that any classroom could join remotely. The program reached triple the number of schools within a single school year.",
-            "options": [
-                "A regional symphony's youth outreach program had reached so few schools that its funding was nearly cut entirely.",
-                "Musicians began offering short virtual performances that any classroom could join remotely.",
-                "The program reached triple the number of schools within a single school year.",
-                "The program's funding was cut before the virtual performances began."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Check whether each option matches what actually happens to the program's funding.",
-            "explanation": "Because the program reaches triple the schools that year, an option claiming its funding was cut beforehand contradicts that expansion happening at all.",
-            "storyKeyEvents": [
-                "A regional symphony's youth outreach program had reached so few schools that its funding was nearly cut entirely.",
-                "Musicians began offering short virtual performances that any classroom could join remotely.",
-                "The program reached triple the number of schools within a single school year.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L109_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional trucking union's contract negotiations had stalled so completely that a strike seemed all but certain. An independent mediator proposed splitting the disputed issues into separate, smaller negotiations. Both sides reached a full agreement two days before the strike deadline.",
-            "options": [
-                "The strike proceeded exactly as originally planned.",
-                "A regional trucking union's contract negotiations had stalled so completely that a strike seemed all but certain.",
-                "An independent mediator proposed splitting the disputed issues into separate, smaller negotiations.",
-                "Both sides reached a full agreement two days before the strike deadline."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Notice what actually happens in the two days before the strike deadline.",
-            "explanation": "Because both sides reach a full agreement before the deadline, an option claiming the strike proceeded as planned contradicts that resolution.",
-            "storyKeyEvents": [
-                "A regional trucking union's contract negotiations had stalled so completely that a strike seemed all but certain.",
-                "An independent mediator proposed splitting the disputed issues into separate, smaller negotiations.",
-                "Both sides reached a full agreement two days before the strike deadline.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L109_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional children's hospital's surgical wait times had grown so long that some families sought treatment out of state. It recruited two additional pediatric surgeons and added a second operating room. Wait times fell below the national average within a year.",
-            "options": [
-                "A regional children's hospital's surgical wait times had grown so long that some families sought treatment out of state.",
-                "Wait times remained above the national average despite the changes.",
-                "The hospital recruited two additional pediatric surgeons and added a second operating room.",
-                "Wait times fell below the national average within a year."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Track cause and effect: more surgeons and rooms lead to wait times falling below average. One option reverses that.",
-            "explanation": "Because wait times fall below the national average, an option claiming they remained above it reverses the hospital's own measured outcome.",
-            "storyKeyEvents": [
-                "A regional children's hospital's surgical wait times had grown so long that some families sought treatment out of state.",
-                "The hospital recruited two additional pediatric surgeons and added a second operating room.",
-                "Wait times fell below the national average within a year.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L109_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional newspaper's investigative unit had been so underfunded that major stories often went unreported for months. A nonprofit journalism fund offered to cover the unit's costs for two years. The unit broke three major stories within its first six months of new funding.",
-            "options": [
-                "A regional newspaper's investigative unit had been so underfunded that major stories often went unreported for months.",
-                "A nonprofit journalism fund offered to cover the unit's costs for two years.",
-                "The newspaper turned down the nonprofit's funding offer.",
-                "The unit broke three major stories within its first six months of new funding."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you whether the newspaper actually accepts the funding.",
-            "explanation": "Because the unit breaks three major stories with the new funding, an option showing the paper turning down the offer contradicts that outcome.",
-            "storyKeyEvents": [
-                "A regional newspaper's investigative unit had been so underfunded that major stories often went unreported for months.",
-                "A nonprofit journalism fund offered to cover the unit's costs for two years.",
-                "The unit broke three major stories within its first six months of new funding.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L110_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional airline's baggage fee structure had grown so confusing that customer complaints about surprise charges tripled in a single year. It replaced the tiered fee system with one flat rate disclosed clearly at booking. Complaints about baggage fees fell to a small fraction of the previous year's total.",
-            "options": [
-                "A regional airline's baggage fee structure had grown so confusing that customer complaints about surprise charges tripled in a single year.",
-                "The airline replaced the tiered fee system with one flat rate disclosed clearly at booking.",
-                "Complaints about baggage fees fell to a small fraction of the previous year's total.",
-                "Complaints about baggage fees tripled again the following year."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Ask which option matches what actually happened to complaints after the flat rate began.",
-            "explanation": "Because complaints fall to a small fraction of the previous year's total, an option claiming they tripled again contradicts that measured drop.",
-            "storyKeyEvents": [
-                "A regional airline's baggage fee structure had grown so confusing that customer complaints about surprise charges tripled in a single year.",
-                "The airline replaced the tiered fee system with one flat rate disclosed clearly at booking.",
-                "Complaints about baggage fees fell to a small fraction of the previous year's total.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L110_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional pharmacy chain's prior-authorization process had grown so slow that some patients went days without needed medication. It assigned a dedicated team to handle only prior-authorization requests, separate from regular pharmacists. Average authorization time fell from days to under two hours.",
-            "options": [
-                "Average authorization time remained several days despite the new team.",
-                "A regional pharmacy chain's prior-authorization process had grown so slow that some patients went days without needed medication.",
-                "The chain assigned a dedicated team to handle only prior-authorization requests, separate from regular pharmacists.",
-                "Average authorization time fell from days to under two hours."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "This story moves in a clear line from days-long delays to a dedicated team to two-hour turnaround. Find the sentence outside it.",
-            "explanation": "Because authorization time falls to under two hours, an option claiming it remained several days contradicts that measured improvement.",
-            "storyKeyEvents": [
-                "A regional pharmacy chain's prior-authorization process had grown so slow that some patients went days without needed medication.",
-                "The chain assigned a dedicated team to handle only prior-authorization requests, separate from regular pharmacists.",
-                "Average authorization time fell from days to under two hours.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L110_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional university's career center had a job-placement rate so low that graduating seniors rarely bothered scheduling appointments. It partnered directly with regional employers to guarantee at least one interview per graduating senior. Job-placement rates for graduating seniors rose to among the highest in the state.",
-            "options": [
-                "A regional university's career center had a job-placement rate so low that graduating seniors rarely bothered scheduling appointments.",
-                "Job-placement rates remained among the lowest in the state.",
-                "The center partnered directly with regional employers to guarantee at least one interview per graduating senior.",
-                "Job-placement rates for graduating seniors rose to among the highest in the state."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Check whether each option matches what actually happened to job-placement rates.",
-            "explanation": "Because placement rates rise to among the highest in the state, an option claiming they remained among the lowest contradicts that measured shift.",
-            "storyKeyEvents": [
-                "A regional university's career center had a job-placement rate so low that graduating seniors rarely bothered scheduling appointments.",
-                "The center partnered directly with regional employers to guarantee at least one interview per graduating senior.",
-                "Job-placement rates for graduating seniors rose to among the highest in the state.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        }
-    ]
+  "gameType": "summarizeStoryWriting",
+  "batchIndex": 11,
+  "levels": "101-110",
+  "quests": [
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L101_Q1",
+      "instruction": "The story is about how the tenants got their heating fixed. Choose the three statements that give the most complete short retelling.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The tenants of Alder House had been without reliable heating since November. Their association collected signatures from forty-two flats and sent them to the landlord, who ignored them for a month. The chair, Mrs. Varga, then invited a local reporter to see the cold flats, and a short article appeared the following Monday. The landlord scheduled a boiler replacement within days. Meanwhile the association's treasurer moved to a new city and handed over the accounts. The new boiler was running by the end of January.",
+      "options": [
+        "A new boiler was running by the end of January.",
+        "The association's treasurer moved to a new city and handed over the accounts.",
+        "The chair invited a reporter to see the cold flats, and the article pushed the landlord to act.",
+        "The tenants collected signatures from forty-two flats, but the landlord ignored them for a month."
+      ],
+      "correctOrder": [3, 2, 0],
+      "hint": "Ask which events carry the heating problem to its end, and which belong to someone else's story.",
+      "explanation": "The treasurer's move is a change inside the association and has no effect on the boiler. The thread runs from the ignored petition, to the reporter's visit and article, to the new boiler.",
+      "storyKeyEvents": [
+        "The tenants collected signatures from forty-two flats, but the landlord ignored them for a month.",
+        "The chair invited a reporter to see the cold flats, and the article pushed the landlord to act.",
+        "A new boiler was running by the end of January."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L101_Q2",
+      "instruction": "Choose the three statements that carry the central thread from problem to result.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The university lab had only two working microscopes for sixty students. The lab manager asked the department for extra funding, but the budget had already been spent. She then set up a scheme to share eight microscopes with the neighbouring college, four hours each week. By March every student had at least two hours of hands-on time each week.",
+      "options": [
+        "The lab manager asked the department for extra funding, but the budget had already been spent.",
+        "The lab manager set up a scheme to share microscopes with the neighbouring college.",
+        "By March every student had at least two hours of hands-on time each week.",
+        "The university lab had only two working microscopes for sixty students."
+      ],
+      "correctOrder": [3, 1, 2],
+      "hint": "Decide which step changed the situation, and which was an approach that led nowhere.",
+      "explanation": "The funding request went nowhere and changed nothing, so it isn't part of the thread. The change came from the sharing scheme, which produced the hands-on hours.",
+      "storyKeyEvents": [
+        "The university lab had only two working microscopes for sixty students.",
+        "The lab manager set up a scheme to share microscopes with the neighbouring college.",
+        "By March every student had at least two hours of hands-on time each week."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L101_Q3",
+      "instruction": "Choose the three statements that make the best short retelling of the station's story.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The community radio station had broadcast from a rented basement for years. The founder had started it with a single microphone and a borrowed mixer. When the building's owner announced a rent rise the station could not pay, the volunteers appealed to listeners. Over three weekends they raised enough to move into a former post office and build a new studio. The first broadcast from the new studio went out in June.",
+      "options": [
+        "The founder had started the station with a single microphone and a borrowed mixer.",
+        "The owner announced a rent rise that the radio station could not pay.",
+        "The first broadcast from the new studio went out in June.",
+        "Volunteers appealed to listeners and raised enough over three weekends to move into a former post office."
+      ],
+      "correctOrder": [1, 3, 2],
+      "hint": "Ask whether history about how something began helps explain what happened now.",
+      "explanation": "The founder's early days are background that sits before the crisis and doesn't change it. The story is the rent rise, the appeal and the move, and the first broadcast from the new studio.",
+      "storyKeyEvents": [
+        "The owner announced a rent rise that the radio station could not pay.",
+        "Volunteers appealed to listeners and raised enough over three weekends to move into a former post office.",
+        "The first broadcast from the new studio went out in June."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L102_Q1",
+      "instruction": "The story is about how the pupils got to the exchange. Choose the three statements that tell it.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Ms. Petrov's class was invited to a school exchange in Gdańsk, but only fourteen of the thirty pupils could afford the trip. Ms. Petrov booked the coach and the hostel two months ahead. She then asked local firms to sponsor places, and eleven firms agreed to cover sixteen pupils. In April all thirty pupils travelled.",
+      "options": [
+        "Only fourteen of thirty pupils could afford the exchange trip to Gdańsk.",
+        "Ms. Petrov booked the coach and the hostel two months ahead.",
+        "Ms. Petrov asked local firms to sponsor places, and eleven firms covered sixteen pupils.",
+        "All thirty pupils travelled in April."
+      ],
+      "correctOrder": [0, 2, 3],
+      "hint": "Practical arrangements can be real without being what changed the outcome.",
+      "explanation": "Booking the coach and hostel was preparation that would have happened either way. What made the trip possible for all thirty was the sponsorship.",
+      "storyKeyEvents": [
+        "Only fourteen of thirty pupils could afford the exchange trip to Gdańsk.",
+        "Ms. Petrov asked local firms to sponsor places, and eleven firms covered sixteen pupils.",
+        "All thirty pupils travelled in April."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L102_Q2",
+      "instruction": "Choose the three statements that carry the central thread from problem to result.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The startup's online shop crashed on the day of its biggest promotion. The developer discovered that the database was overloaded and moved the product images to a faster server. Several customers posted angry comments on social media while the site was down. Within three hours the shop was back, and by evening sales had passed the previous record.",
+      "options": [
+        "Several customers posted angry comments on social media while the site was down.",
+        "Within three hours the shop was back, and by evening sales passed the previous record.",
+        "The startup's online shop crashed on the day of its biggest promotion.",
+        "The developer found the database overloaded and moved the product images to a faster server."
+      ],
+      "correctOrder": [2, 3, 1],
+      "hint": "Reactions from outsiders describe the mood, not the repair.",
+      "explanation": "The comments show how customers felt but don't affect the fix or the sales. The thread runs from the crash, to the diagnosis and move, to the recovery.",
+      "storyKeyEvents": [
+        "The startup's online shop crashed on the day of its biggest promotion.",
+        "The developer found the database overloaded and moved the product images to a faster server.",
+        "Within three hours the shop was back, and by evening sales passed the previous record."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L102_Q3",
+      "instruction": "Choose the three statements that make the best short retelling.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The town's youth football club had too few coaches for its six teams. Its secretary, Mr. Idowu, posted a call for volunteers at the supermarket and school gates, and nine parents signed up. The club paid for their coaching courses, and every team had a coach by October. Next season the club plans to add a girls' team if enough players sign up.",
+      "options": [
+        "The club planned to add a girls' team next season, if enough players signed up.",
+        "Mr. Idowu's call for volunteers at the supermarket and school gates brought nine parents to sign up.",
+        "The youth football club had too few coaches for its six teams.",
+        "The club paid for their courses and every team had a coach by October."
+      ],
+      "correctOrder": [2, 1, 3],
+      "hint": "Something planned for a later season isn't part of this season's story.",
+      "explanation": "The girls' team is a hope for later and doesn't affect the coaching shortage. The story goes from the shortage, to the volunteer call, to coaches for every team.",
+      "storyKeyEvents": [
+        "The youth football club had too few coaches for its six teams.",
+        "Mr. Idowu's call for volunteers at the supermarket and school gates brought nine parents to sign up.",
+        "The club paid for their courses and every team had a coach by October."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L103_Q1",
+      "instruction": "Choose the three statements that carry the central thread from problem to result.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Marisol's translation agency was due to deliver a 200-page legal document on Friday, but two of its four translators fell behind. Marisol split the final chapters into short sections and brought in a freelancer for the last forty pages. A heatwave made the office unbearably hot that week. The agency delivered on Friday at four.",
+      "options": [
+        "The agency delivered on Friday at four.",
+        "Marisol split the final chapters into short sections and brought in a freelancer for the last forty pages.",
+        "A heatwave made the office unbearably hot that week.",
+        "Two of the agency's four translators fell behind on a 200-page document due on Friday."
+      ],
+      "correctOrder": [3, 1, 0],
+      "hint": "Circumstances around the events can be vivid without changing them.",
+      "explanation": "The heatwave is uncomfortable but has no role in the delay or the fix. The thread is the falling behind, the reorganisation, and the on-time delivery.",
+      "storyKeyEvents": [
+        "Two of the agency's four translators fell behind on a 200-page document due on Friday.",
+        "Marisol split the final chapters into short sections and brought in a freelancer for the last forty pages.",
+        "The agency delivered on Friday at four."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L103_Q2",
+      "instruction": "Choose the three statements that give the best short retelling of the museum's story.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The city museum's audio guide was so out of date that visitors complained about it every month. The curator commissioned a new one from a local theatre group, who recorded stories for twenty exhibits. Halfway through the project, the museum announced that the guide would launch in spring. The new guide launched in April, and complaints nearly stopped.",
+      "options": [
+        "The curator commissioned a new guide from a local theatre group, who recorded stories for twenty exhibits.",
+        "The new guide launched in April and complaints nearly stopped.",
+        "An out-of-date audio guide drew complaints from visitors every month.",
+        "Halfway through the project the museum announced the guide would launch in spring."
+      ],
+      "correctOrder": [2, 0, 1],
+      "hint": "An announcement of a plan isn't the same as the plan being carried out.",
+      "explanation": "The spring announcement only promised what later happened and adds no new step. The guide's story runs from the complaints, to the commissioned guide, to the April launch.",
+      "storyKeyEvents": [
+        "An out-of-date audio guide drew complaints from visitors every month.",
+        "The curator commissioned a new guide from a local theatre group, who recorded stories for twenty exhibits.",
+        "The new guide launched in April and complaints nearly stopped."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L103_Q3",
+      "instruction": "Choose the three statements that tell how the café grew.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The repair café at the community centre attracted only a handful of visitors on its first Saturday. The hall could hold up to eighty people at a time. Volunteers put up posters in the library and the laundrette, and the local newsletter printed a notice. By the third session sixty people had come, and volunteers repaired most of the items they brought.",
+      "options": [
+        "The repair café attracted only a handful of visitors on its first Saturday.",
+        "By the third session sixty people had come and most items were repaired.",
+        "The community centre's hall could hold up to eighty people at a time.",
+        "Volunteers put up posters and the local newsletter printed a notice."
+      ],
+      "correctOrder": [0, 3, 1],
+      "hint": "A capacity figure describes the place, not what changed.",
+      "explanation": "How many people the hall holds doesn't explain why visitors increased. The growth follows the poor start, the publicity, and the busy third session.",
+      "storyKeyEvents": [
+        "The repair café attracted only a handful of visitors on its first Saturday.",
+        "Volunteers put up posters and the local newsletter printed a notice.",
+        "By the third session sixty people had come and most items were repaired."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L104_Q1",
+      "instruction": "The story is about how the hotel improved its rating. Choose the three statements that tell it.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The hotel on Quay Street had a run of poor reviews for its slow breakfast service. The manager studied the complaints, found that the kitchen was understaffed at weekends, and hired two extra cooks. In the same month, a dispute over a broken guest-room window was settled with a small refund. Within two months the average rating rose from 3.4 to 4.3.",
+      "options": [
+        "The manager found that the kitchen was understaffed at weekends and hired two extra cooks.",
+        "A dispute over a broken guest-room window was settled with a small refund.",
+        "The hotel on Quay Street had poor reviews for its slow breakfast service.",
+        "Within two months the average rating rose from 3.4 to 4.3."
+      ],
+      "correctOrder": [2, 0, 3],
+      "hint": "Two matters are settled at once. Only one is about the poor reviews.",
+      "explanation": "The window dispute has its own resolution but doesn't concern breakfast or the rating rise. The main thread is the reviews, the extra cooks, and the higher rating.",
+      "storyKeyEvents": [
+        "The hotel on Quay Street had poor reviews for its slow breakfast service.",
+        "The manager found that the kitchen was understaffed at weekends and hired two extra cooks.",
+        "Within two months the average rating rose from 3.4 to 4.3."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L104_Q2",
+      "instruction": "Choose the three statements that carry the central thread from problem to result.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The sailing club's regatta was postponed when a storm forecast arrived two days before the start. The race committee had already printed the programmes for all fifty entrants. The organiser called the fifty entrants, moved the event to the following weekend, and asked the harbour master to extend the mooring permits. On the new date the wind was steady, and all fifty boats started.",
+      "options": [
+        "On the new date the wind was steady and all fifty boats started.",
+        "The organiser called the fifty entrants, moved the event to the following weekend, and had the mooring permits extended.",
+        "The regatta was postponed when a storm forecast arrived two days before the start.",
+        "The race committee had already printed the programmes for all fifty entrants."
+      ],
+      "correctOrder": [2, 1, 0],
+      "hint": "Preparations made earlier are not part of how the postponement was handled.",
+      "explanation": "The printed programmes were prepared before the storm and don't change how the delay was managed. The thread is the postponement, the rescheduling, and the race going ahead.",
+      "storyKeyEvents": [
+        "The regatta was postponed when a storm forecast arrived two days before the start.",
+        "The organiser called the fifty entrants, moved the event to the following weekend, and had the mooring permits extended.",
+        "On the new date the wind was steady and all fifty boats started."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L104_Q3",
+      "instruction": "Choose the three statements that make the best short retelling.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The newspaper's redesigned website loaded slowly, and readers began leaving within seconds. A columnist joked on social media that the old site had been faster. The web team compressed the photos and removed two heavy scripts. Afterwards pages loaded in under two seconds, and reading time rose by a fifth.",
+      "options": [
+        "The redesigned website loaded slowly and readers left within seconds.",
+        "The web team compressed the photos and removed two heavy scripts.",
+        "Pages loaded in under two seconds and reading time rose by a fifth.",
+        "A columnist joked on social media that the old site had been faster."
+      ],
+      "correctOrder": [0, 1, 2],
+      "hint": "A joke about a problem doesn't help solve it.",
+      "explanation": "The columnist's joke is a comment and doesn't change the site's speed. The retelling needs the slow site, the compressed photos and scripts, and the faster result.",
+      "storyKeyEvents": [
+        "The redesigned website loaded slowly and readers left within seconds.",
+        "The web team compressed the photos and removed two heavy scripts.",
+        "Pages loaded in under two seconds and reading time rose by a fifth."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L105_Q1",
+      "instruction": "Choose the three statements that give the most complete short retelling.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The bike shed at Elm Court was always full of abandoned bikes, leaving no space for residents' bikes. The caretaker, who had looked after Elm Court's buildings for more than twenty years, tagged every bike with a notice asking owners to claim it within a month. Sixteen bikes were claimed, and the rest were donated to a charity workshop. Residents then had room for their own bikes.",
+      "options": [
+        "The caretaker had looked after Elm Court's buildings for more than twenty years.",
+        "Sixteen bikes were claimed and the rest were donated, leaving room for residents.",
+        "The caretaker tagged every bike with a notice asking owners to claim it within a month.",
+        "The bike shed at Elm Court was full of abandoned bikes and had no room for residents' bikes."
+      ],
+      "correctOrder": [3, 2, 1],
+      "hint": "Facts about a person's history may not add anything to what happens.",
+      "explanation": "The caretaker's long service doesn't change the shed's problem or its solution. The story is the full shed, the tagging, and the cleared space.",
+      "storyKeyEvents": [
+        "The bike shed at Elm Court was full of abandoned bikes and had no room for residents' bikes.",
+        "The caretaker tagged every bike with a notice asking owners to claim it within a month.",
+        "Sixteen bikes were claimed and the rest were donated, leaving room for residents."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L105_Q2",
+      "instruction": "Choose the three statements that carry the central thread from problem to result.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The floor of a dance studio became slippery after cleaning, and two students slipped in one week. The manager switched to a non-slip cleaner and asked teachers to test the floor before each lesson. The studio also received a delivery of new mirrors that week. For the rest of the term nobody slipped.",
+      "options": [
+        "The studio received a delivery of new mirrors that week.",
+        "The manager switched to a non-slip cleaner and asked teachers to test the floor before lessons.",
+        "For the rest of the term nobody slipped.",
+        "The studio floor became slippery after cleaning and two students slipped in one week."
+      ],
+      "correctOrder": [3, 1, 2],
+      "hint": "Two things happened in the same week. Only one touches the floor.",
+      "explanation": "The mirrors arrived at the same time but have no link to the slipping. The floor story is the slips, the new cleaner and tests, and the safe term.",
+      "storyKeyEvents": [
+        "The studio floor became slippery after cleaning and two students slipped in one week.",
+        "The manager switched to a non-slip cleaner and asked teachers to test the floor before lessons.",
+        "For the rest of the term nobody slipped."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L105_Q3",
+      "instruction": "Choose the three statements that make the best short retelling of the open day.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The volunteer fire brigade's open day was threatened by a wet forecast. The organiser, Ms. Hall, rented a marquee and moved the demonstrations under it. The brigade's cook swapped the planned barbecue for soup because of the cold. Despite the drizzle, the open day drew a record crowd of six hundred.",
+      "options": [
+        "A wet forecast threatened the fire brigade's open day.",
+        "The brigade's cook swapped the planned barbecue for soup because of the cold.",
+        "The open day drew a record crowd of six hundred despite the drizzle.",
+        "Ms. Hall rented a marquee and moved the demonstrations under it."
+      ],
+      "correctOrder": [0, 3, 2],
+      "hint": "Some changes affect only one person's task. Is it the main plan?",
+      "explanation": "The cook's menu change was a small adjustment that doesn't affect whether the event went ahead. The main thread is the forecast, the marquee, and the record crowd.",
+      "storyKeyEvents": [
+        "A wet forecast threatened the fire brigade's open day.",
+        "Ms. Hall rented a marquee and moved the demonstrations under it.",
+        "The open day drew a record crowd of six hundred despite the drizzle."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L106_Q1",
+      "instruction": "Choose the three statements that make the best compressed retelling of the main story.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Prices at the village shop kept rising because its supplier charged high delivery fees. The shop's committee negotiated a shared weekly delivery with two neighbouring shops. Halfway through the talks, the committee announced that a decision would be made in June. From June the delivery fees were cut by half, and prices fell.",
+      "options": [
+        "From June the delivery fees were halved and prices fell.",
+        "The committee negotiated a shared weekly delivery with two neighbouring shops.",
+        "Prices at the village shop kept rising because its supplier charged high delivery fees.",
+        "The committee announced that a decision would be made in June."
+      ],
+      "correctOrder": [2, 1, 0],
+      "hint": "Look for a statement that only tells us when something will be decided.",
+      "explanation": "The announcement only sets a date and adds nothing to the chain. The compressed story is the rising prices, the shared delivery, and the halved fees.",
+      "storyKeyEvents": [
+        "Prices at the village shop kept rising because its supplier charged high delivery fees.",
+        "The committee negotiated a shared weekly delivery with two neighbouring shops.",
+        "From June the delivery fees were halved and prices fell."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L106_Q2",
+      "instruction": "Choose the three statements that give the best compressed retelling of the main story.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The language school's evening classes were half empty. The director first cut prices for a month, which brought in almost no one. She then surveyed former students, learned that the classes started too late, and moved them to six o'clock. Enrolment doubled the next term.",
+      "options": [
+        "The director cut prices for a month, which brought in almost no one.",
+        "Enrolment doubled the next term.",
+        "The language school's evening classes were half empty.",
+        "The director surveyed former students and moved the classes to six o'clock."
+      ],
+      "correctOrder": [2, 3, 1],
+      "hint": "An approach that got nowhere can be dropped from a compressed retelling.",
+      "explanation": "The price cut failed and left the classes as empty as before. What turned things round was the survey and the earlier start.",
+      "storyKeyEvents": [
+        "The language school's evening classes were half empty.",
+        "The director surveyed former students and moved the classes to six o'clock.",
+        "Enrolment doubled the next term."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L106_Q3",
+      "instruction": "Choose the three statements that carry the main thread.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The library's summer reading programme signed up only twelve children in its first week. Mr. Sato put sign-up sheets in three primary schools and offered a small prize for each finished reading list. In the same week a broken photocopier at the library was replaced under warranty. By August a hundred and forty children had joined.",
+      "options": [
+        "By August a hundred and forty children had joined.",
+        "A broken photocopier at the library was replaced under warranty.",
+        "Mr. Sato put sign-up sheets in three primary schools and offered a small prize for finished lists.",
+        "The reading programme signed up only twelve children in its first week."
+      ],
+      "correctOrder": [3, 2, 0],
+      "hint": "Something else got fixed that week. Was it connected to the reading programme?",
+      "explanation": "The photocopier repair has its own small resolution but doesn't affect sign-ups. The programme's story is the low start, the outreach and prizes, and the big rise.",
+      "storyKeyEvents": [
+        "The reading programme signed up only twelve children in its first week.",
+        "Mr. Sato put sign-up sheets in three primary schools and offered a small prize for finished lists.",
+        "By August a hundred and forty children had joined."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L107_Q1",
+      "instruction": "Choose the three statements that give the best compressed retelling.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The robotics team's van broke down two days before the national final. The coach borrowed a minibus from the local scouts, and the team loaded their robots the same evening. They arrived with an hour to spare and reached the semi-final. Next year the coach hopes to buy the team a van of its own.",
+      "options": [
+        "The team arrived with an hour to spare and reached the semi-final.",
+        "The coach hoped to buy the team a van of its own next year.",
+        "The robotics team's van broke down two days before the national final.",
+        "The coach borrowed a minibus from the scouts and the team loaded their robots that evening."
+      ],
+      "correctOrder": [2, 3, 0],
+      "hint": "A hope for next year isn't an event in this story.",
+      "explanation": "The team van is a wish for later and doesn't change how they got to the final. The story runs from the breakdown, to the borrowed minibus, to arriving on time.",
+      "storyKeyEvents": [
+        "The robotics team's van broke down two days before the national final.",
+        "The coach borrowed a minibus from the scouts and the team loaded their robots that evening.",
+        "The team arrived with an hour to spare and reached the semi-final."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L107_Q2",
+      "instruction": "Choose the three statements that carry the main thread.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "A neighbourhood cinema club was losing members. The organiser switched the screenings from Tuesday to Friday evenings, when more members were free, and sent a text reminder before each one. The club had two hundred titles in its film library. Attendance grew from eleven to thirty-four in two months.",
+      "options": [
+        "The organiser moved the screenings to Friday evenings and sent text reminders.",
+        "Attendance grew from eleven to thirty-four in two months.",
+        "The club had two hundred titles in its film library.",
+        "The neighbourhood cinema club was losing members."
+      ],
+      "correctOrder": [3, 0, 1],
+      "hint": "Figures describing the club in general aren't the same as figures showing change.",
+      "explanation": "The size of the film library says nothing about why attendance rose. The story is the falling membership, the Friday change with reminders, and the growth.",
+      "storyKeyEvents": [
+        "The neighbourhood cinema club was losing members.",
+        "The organiser moved the screenings to Friday evenings and sent text reminders.",
+        "Attendance grew from eleven to thirty-four in two months."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L107_Q3",
+      "instruction": "Choose the three statements that give the most complete short retelling.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The town's old stone bridge was closed to lorries after cracks appeared in the parapet. It had been built in 1840 by local masons using river stone. The council had engineers survey it, and they recommended reinforcing the arches with steel ties. After six weeks of work the bridge reopened to lorries.",
+      "options": [
+        "After six weeks of work the bridge reopened to lorries.",
+        "The old stone bridge was closed to lorries after cracks appeared in the parapet.",
+        "The council had engineers survey it, and they recommended steel ties in the arches.",
+        "The bridge had been built in 1840 by local masons using river stone."
+      ],
+      "correctOrder": [1, 2, 0],
+      "hint": "Background about when something was made doesn't belong in a short account of its repair.",
+      "explanation": "The bridge's age is historical detail that plays no part in the closure or the fix. The retelling needs the closure, the engineers' recommendation, and the reopening.",
+      "storyKeyEvents": [
+        "The old stone bridge was closed to lorries after cracks appeared in the parapet.",
+        "The council had engineers survey it, and they recommended steel ties in the arches.",
+        "After six weeks of work the bridge reopened to lorries."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L108_Q1",
+      "instruction": "Choose the three statements that give the best compressed retelling of the main story.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The university print shop was swamped before every deadline, with students queuing for up to forty minutes. The manager introduced online order submission, so students could pick up finished prints. Before launch she spent a day training the two part-time staff. At the next deadline the queue dropped to five minutes.",
+      "options": [
+        "The university print shop was swamped before deadlines, with queues of up to forty minutes.",
+        "At the next deadline the queue dropped to five minutes.",
+        "The manager spent a day training the two part-time staff before launch.",
+        "The manager introduced online order submission so students could pick up finished prints."
+      ],
+      "correctOrder": [0, 3, 1],
+      "hint": "Preparation for a change isn't the change itself.",
+      "explanation": "The training day was preparation and doesn't add anything to the story of the queues and their fix. The retelling is the queues, the online system, and the short queue.",
+      "storyKeyEvents": [
+        "The university print shop was swamped before deadlines, with queues of up to forty minutes.",
+        "The manager introduced online order submission so students could pick up finished prints.",
+        "At the next deadline the queue dropped to five minutes."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L108_Q2",
+      "instruction": "Choose the three statements that make the best compressed retelling.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "A local charity's fundraising dinner had sold only twenty of its eighty tickets a week before the date. A journalist called the charity's earlier events sleepy. The organiser offered a group discount to local companies and phoned past donors. On the night seventy-four guests came.",
+      "options": [
+        "Seventy-four guests came on the night.",
+        "The charity's dinner had sold only twenty of its eighty tickets a week before the date.",
+        "A journalist called the charity's earlier events sleepy.",
+        "The organiser offered a group discount to local companies and phoned past donors."
+      ],
+      "correctOrder": [1, 3, 0],
+      "hint": "Opinions from outsiders don't count as steps in the plot.",
+      "explanation": "The journalist's comment is an opinion about the past and doesn't affect ticket sales. The story is the weak sales, the discount and phone calls, and the near-full dinner.",
+      "storyKeyEvents": [
+        "The charity's dinner had sold only twenty of its eighty tickets a week before the date.",
+        "The organiser offered a group discount to local companies and phoned past donors.",
+        "Seventy-four guests came on the night."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L108_Q3",
+      "instruction": "Choose the three statements that carry the main thread.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The bus company received hundreds of complaints about route 12's unreliable timings. During the review it announced that it would publish the results in autumn. The review found that the route was too long for its schedule, and the company split it into two shorter routes. After the split, punctuality rose from 61 to 88 percent.",
+      "options": [
+        "During the review the company announced it would publish the results in autumn.",
+        "The bus company received hundreds of complaints about route 12's unreliable timings.",
+        "The review found the route too long, and the company split it into two shorter routes.",
+        "After the split, punctuality rose from 61 to 88 percent."
+      ],
+      "correctOrder": [1, 2, 3],
+      "hint": "A promise to publish results later isn't a result.",
+      "explanation": "The autumn announcement only says when results will appear. The retelling is the complaints, the review and split, and the higher punctuality.",
+      "storyKeyEvents": [
+        "The bus company received hundreds of complaints about route 12's unreliable timings.",
+        "The review found the route too long, and the company split it into two shorter routes.",
+        "After the split, punctuality rose from 61 to 88 percent."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L109_Q1",
+      "instruction": "Choose the three statements that give the most complete short retelling.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Hansen's hardware shop struggled to attract younger customers. The owner's daughter started a video channel showing quick home-repair tips filmed in the shop, and viewers began visiting to buy the tools they had seen. Separately, the shop settled an old invoice dispute with one of its suppliers. Within a year customers under thirty made up a third of sales.",
+      "options": [
+        "The owner's daughter started a video channel with repair tips filmed in the shop.",
+        "Hansen's hardware shop struggled to attract younger customers.",
+        "Within a year customers under thirty made up a third of sales.",
+        "The shop settled an old invoice dispute with one of its suppliers."
+      ],
+      "correctOrder": [1, 0, 2],
+      "hint": "Watch for the word \"separately\", which signals a second storyline.",
+      "explanation": "The invoice dispute is a separate matter that has no link to younger customers. The main story is the struggle, the video channel, and the change in customers.",
+      "storyKeyEvents": [
+        "Hansen's hardware shop struggled to attract younger customers.",
+        "The owner's daughter started a video channel with repair tips filmed in the shop.",
+        "Within a year customers under thirty made up a third of sales."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L109_Q2",
+      "instruction": "Choose the three statements that carry the central thread from problem to result.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "A tenants' association wanted the courtyard lit at night after several residents tripped on the uneven paving. The chair, Mr. Ito, got three quotes, and the residents voted to install solar lamps along the path. The building's cleaner agreed to switch her shift to mornings so she could clean the courtyard in daylight. The lamps were installed in September.",
+      "options": [
+        "Several residents tripped on the uneven paving in the dark courtyard.",
+        "The building's cleaner agreed to switch her shift to mornings.",
+        "The chair got three quotes and the residents voted to install solar lamps.",
+        "The solar lamps were installed in September."
+      ],
+      "correctOrder": [0, 2, 3],
+      "hint": "A small change for one staff member isn't the residents' decision.",
+      "explanation": "The cleaner's shift change affects her own timetable and not the lighting decision. The thread is the tripping, the vote for lamps, and the installation.",
+      "storyKeyEvents": [
+        "Several residents tripped on the uneven paving in the dark courtyard.",
+        "The chair got three quotes and the residents voted to install solar lamps.",
+        "The solar lamps were installed in September."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L109_Q3",
+      "instruction": "Choose the three statements that make the best compressed retelling.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The farm co-op's vegetable boxes arrived late every Thursday because the van left after the packing finished. The co-op moved the packing to Wednesday afternoon and loaded the van that evening. The co-op's website received a new logo and a fresh colour scheme that week. On Thursday the boxes reached every customer by nine.",
+      "options": [
+        "The co-op moved the packing to Wednesday afternoon and loaded the van that evening.",
+        "The co-op's website received a new logo and a fresh colour scheme that week.",
+        "The co-op's vegetable boxes arrived late every Thursday because the van left after packing finished.",
+        "On Thursday the boxes reached every customer by nine."
+      ],
+      "correctOrder": [2, 0, 3],
+      "hint": "Something happened at the same time but for a different reason.",
+      "explanation": "The new logo has no link to the delivery time. The story is the late boxes, the earlier packing, and the on-time deliveries.",
+      "storyKeyEvents": [
+        "The co-op's vegetable boxes arrived late every Thursday because the van left after packing finished.",
+        "The co-op moved the packing to Wednesday afternoon and loaded the van that evening.",
+        "On Thursday the boxes reached every customer by nine."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L110_Q1",
+      "instruction": "Choose the three statements that give the best compressed retelling of the main story.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The sports club's registration form was so long that parents abandoned it halfway. The webmaster first added a progress bar, which made little difference. She then cut the form from twenty-two fields to eight. Completed registrations rose by sixty percent.",
+      "options": [
+        "The sports club's registration form was so long that parents abandoned it halfway.",
+        "The webmaster cut the form from twenty-two fields to eight.",
+        "Completed registrations rose by sixty percent.",
+        "The webmaster first added a progress bar, which made little difference."
+      ],
+      "correctOrder": [0, 1, 2],
+      "hint": "A first attempt that made little difference can be left out of a compressed retelling.",
+      "explanation": "The progress bar changed almost nothing, so it isn't what turned things round. The story is the long form, the shortened form, and the rise in registrations.",
+      "storyKeyEvents": [
+        "The sports club's registration form was so long that parents abandoned it halfway.",
+        "The webmaster cut the form from twenty-two fields to eight.",
+        "Completed registrations rose by sixty percent."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L110_Q2",
+      "instruction": "Choose the three statements that carry the main thread.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The town's recycling centre had queues stretching out to the main road on Saturdays. The manager opened a second entrance and added weekday evening hours. In the spring the council plans to install a bigger glass container. Within a month the queues had cleared.",
+      "options": [
+        "The manager opened a second entrance and added weekday evening hours.",
+        "In the spring the council planned to install a bigger glass container.",
+        "Within a month the queues had cleared.",
+        "The recycling centre had queues stretching out to the main road on Saturdays."
+      ],
+      "correctOrder": [3, 0, 2],
+      "hint": "Ask whether a sentence describes something the story says has already happened.",
+      "explanation": "The glass container is planned for the spring and doesn't affect the queues. The thread is the long queues, the second entrance and extra hours, and the cleared queues.",
+      "storyKeyEvents": [
+        "The recycling centre had queues stretching out to the main road on Saturdays.",
+        "The manager opened a second entrance and added weekday evening hours.",
+        "Within a month the queues had cleared."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L110_Q3",
+      "instruction": "Choose the three statements that give the most complete short retelling.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The primary school's science week was at risk when the visiting scientist cancelled. The head teacher asked parents whether any worked in science, and a parent who was a chemical engineer agreed to run three workshops. The school hall holds up to two hundred people at assemblies. Science week went ahead with all six classes taking part.",
+      "options": [
+        "The school hall holds up to two hundred people at assemblies.",
+        "The visiting scientist cancelled, putting the primary school's science week at risk.",
+        "Science week went ahead with all six classes taking part.",
+        "A parent who was a chemical engineer agreed to run three workshops."
+      ],
+      "correctOrder": [1, 3, 2],
+      "hint": "A capacity number tells you about the room, not about the rescue.",
+      "explanation": "The hall's capacity plays no part in how science week was saved. The story is the cancellation, the engineer's workshops, and the week going ahead.",
+      "storyKeyEvents": [
+        "The visiting scientist cancelled, putting the primary school's science week at risk.",
+        "A parent who was a chemical engineer agreed to run three workshops.",
+        "Science week went ahead with all six classes taking part."
+      ]
+    }
+  ]
 }

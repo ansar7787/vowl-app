@@ -5,1173 +5,1173 @@
     "quests": [
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L21_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE STEPS IN ORDER",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Last weekend you went to a shopping mall to buy a birthday present for a friend, but you could not decide what to choose. Describe how you finally picked a gift.",
+            "situation": "You want a hot cup of tea before starting work. Describe the steps you follow to make it, from beginning to end.",
             "emojis": [
-                "🏬",
-                "🎁",
-                "🤷",
-                "💳"
+                "🫖",
+                "🔥",
+                "🍵",
+                "⏲️"
             ],
             "keywords": {
                 "0": [
-                    "MALL",
-                    "STORE",
-                    "BROWSE"
+                    "KETTLE",
+                    "FILL",
+                    "WATER"
                 ],
                 "1": [
-                    "GIFT",
-                    "PRESENT",
-                    "WRAP"
+                    "STOVE",
+                    "BOIL",
+                    "HEAT"
                 ],
                 "2": [
-                    "UNDECIDED",
-                    "COMPARE",
-                    "THINK"
+                    "TEABAG",
+                    "STEEP",
+                    "CUP"
                 ],
                 "3": [
-                    "PAY",
-                    "CARD",
-                    "RECEIPT"
+                    "MINUTES",
+                    "WAIT",
+                    "TIMER"
                 ]
             },
-            "minWords": 21,
-            "hint": "Mention at least two gift options before explaining why you chose the final one.",
-            "explanation": "A strong shopping story compares options before reaching a decision, for example: 'I considered a book and a scarf, but I chose the scarf because it matched her style.'",
-            "modelAnswer": "A strong shopping story compares options before reaching a decision, for example: 'I considered a book and a scarf, but I chose the scarf because it matched her style.' Mention at least two gift options before explaining why you chose the final one. This serves as a model answer for the situation."
+            "minWords": 20,
+            "hint": "Put the steps in the order you actually do them, and use one sequence word to link two of the steps.",
+            "explanation": "Process writing works best when each sentence moves the reader one step forward. A single sequence word, such as then, is often enough to show the order clearly.",
+            "modelAnswer": "First, I fill the kettle with water and put it on the stove. Once it boils, I pour the water over a teabag in my cup. Then I let it steep for a few minutes before drinking it."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L21_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW YOU GET DRESSED FOR WORK",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You went to a new restaurant in town because a coworker recommended it, but the menu had many unfamiliar dishes. Describe how you decided what to order.",
+            "situation": "Every weekday morning, you follow the same order when getting dressed for work. Describe the steps you take.",
             "emojis": [
-                "📖",
-                "🍛",
-                "🤔",
-                "👍"
+                "👔",
+                "🧦",
+                "🪞",
+                "👞"
             ],
             "keywords": {
                 "0": [
-                    "MENU",
-                    "UNFAMILIAR",
-                    "READ"
+                    "SHIRT",
+                    "BUTTON",
+                    "IRON"
                 ],
                 "1": [
-                    "DISH",
-                    "SPICY",
-                    "FLAVOR"
+                    "SOCKS",
+                    "PULL",
+                    "DRAWER"
                 ],
                 "2": [
-                    "ASK",
-                    "WAITER",
-                    "RECOMMEND"
+                    "MIRROR",
+                    "CHECK",
+                    "STRAIGHTEN"
                 ],
                 "3": [
-                    "ORDER",
-                    "TRY",
-                    "ENJOY"
+                    "SHOES",
+                    "TIE",
+                    "LACES"
                 ]
             },
-            "minWords": 21,
-            "hint": "Explain what helped you decide, such as asking the waiter or trying something new.",
-            "explanation": "Good restaurant stories show reasoning, for example: 'Since I did not recognize the dishes, I asked the waiter for a recommendation.'",
-            "modelAnswer": "Good restaurant stories show reasoning, for example: 'Since I did not recognize the dishes, I asked the waiter for a recommendation.' Explain what helped you decide, such as asking the waiter or trying something new. This serves as a model answer for the situation."
+            "minWords": 20,
+            "hint": "List the clothing items in the order you put them on, and check yourself in the mirror near the end.",
+            "explanation": "A routine becomes clear writing when each garment appears in the order it is worn. Ending with a check, like looking in a mirror, shows the process is complete.",
+            "modelAnswer": "I put on my ironed shirt and button it up, then pull on a pair of socks from the drawer. After that, I tie my shoes and check myself quickly in the mirror before heading out."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L21_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW YOU LEAVE YOUR APARTMENT SAFELY",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your smartphone screen cracked after you accidentally dropped it on the pavement. Describe what you did right after it happened.",
+            "situation": "Before you leave your apartment each morning, you check a few things to make sure everything is safe. Describe the steps you take.",
             "emojis": [
-                "📱",
-                "💥",
-                "😬",
-                "🛠️"
+                "🔌",
+                "🚪",
+                "🔑",
+                "💡"
             ],
             "keywords": {
                 "0": [
-                    "PHONE",
-                    "DROP",
-                    "PAVEMENT"
+                    "STOVE",
+                    "CHECK",
+                    "OFF"
                 ],
                 "1": [
-                    "CRACK",
-                    "SCREEN",
-                    "DAMAGE"
+                    "LIGHTS",
+                    "SWITCH",
+                    "TURN"
                 ],
                 "2": [
-                    "SHOCK",
-                    "WORRY",
-                    "CHECK"
+                    "LOCK",
+                    "KEYS",
+                    "DOOR"
                 ],
                 "3": [
-                    "REPAIR",
-                    "SHOP",
-                    "FIX"
+                    "POCKET",
+                    "WALLET",
+                    "PHONE"
                 ]
             },
-            "minWords": 21,
-            "hint": "Describe your immediate reaction before explaining what you did to fix the problem.",
-            "explanation": "A clear answer shows cause and effect: the phone dropped, the screen cracked, and a repair shop fixed it.",
-            "modelAnswer": "A clear answer shows cause and effect: the phone dropped, the screen cracked, and a repair shop fixed it. Describe your immediate reaction before explaining what you did to fix the problem. This serves as a model answer for the situation."
+            "minWords": 20,
+            "hint": "Order the checks logically, from inside the apartment to the final action of locking the door.",
+            "explanation": "A safety routine is a process with a clear final step, such as locking the door. Writing the checks in the order they happen makes the habit easy to follow and repeat.",
+            "modelAnswer": "Before I leave, I check that the stove is off and turn off the lights in every room. Next, I make sure my phone and wallet are in my pocket, and finally I lock the door behind me."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L22_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE LAUNDRY PROCESS FROM START TO FINISH",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You caught a cold during the winter and had to stay home from work for two days. Describe how you took care of yourself.",
+            "situation": "On Saturday mornings, you do a full load of laundry. Describe the process from sorting the clothes to putting them away.",
             "emojis": [
-                "🤧",
-                "🛏️",
-                "🍵",
-                "💊"
+                "🧺",
+                "🌀",
+                "🧦",
+                "👕"
             ],
             "keywords": {
                 "0": [
-                    "COLD",
-                    "SNEEZE",
-                    "WINTER"
+                    "SORT",
+                    "COLORS",
+                    "PILE"
                 ],
                 "1": [
-                    "REST",
-                    "STAYHOME",
-                    "BED"
+                    "WASHER",
+                    "DETERGENT",
+                    "CYCLE"
                 ],
                 "2": [
-                    "TEA",
-                    "WARM",
-                    "SOUP"
+                    "DRYER",
+                    "TUMBLE",
+                    "WARM"
                 ],
                 "3": [
-                    "MEDICINE",
-                    "RECOVER",
-                    "BETTER"
+                    "FOLD",
+                    "DRAWERS",
+                    "STACK"
                 ]
             },
             "minWords": 21,
-            "hint": "Mention the symptoms first, then the things you did to feel better.",
-            "explanation": "Good health answers connect symptoms with remedies, for example: 'Because I had a sore throat, I drank warm tea and rested in bed.'",
-            "modelAnswer": "Good health answers connect symptoms with remedies, for example: 'Because I had a sore throat, I drank warm tea and rested in bed.' Mention the symptoms first, then the things you did to feel better. This serves as a model answer for the situation."
+            "hint": "Move through four clear stages: sorting, washing, drying, and putting the clothes away.",
+            "explanation": "A longer process needs clear stage markers so the reader does not lose track. Four short, connected sentences usually work better here than one long, crowded sentence.",
+            "modelAnswer": "First, I sort the clothes into light and dark piles. Then I load the washer with detergent and start the cycle. Once it finishes, I move everything to the dryer, and afterward I fold each piece and put it in the drawers."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L22_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW YOU MAKE A SIMPLE SALAD",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You and your family watched a thrilling movie together, but the ending surprised everyone. Describe the moment when the twist happened.",
+            "situation": "You are making a quick vegetable salad for lunch. Describe the steps you follow to prepare it.",
             "emojis": [
-                "🎬",
-                "😲",
-                "🍿",
-                "👨‍👩‍👧"
+                "🥬",
+                "🔪",
+                "🥒",
+                "🥣"
             ],
             "keywords": {
                 "0": [
-                    "MOVIE",
-                    "THRILLING",
-                    "SCREEN"
+                    "LETTUCE",
+                    "WASH",
+                    "RINSE"
                 ],
                 "1": [
-                    "TWIST",
-                    "SURPRISE",
-                    "ENDING"
+                    "CHOP",
+                    "SLICE",
+                    "BOARD"
                 ],
                 "2": [
-                    "GASP",
-                    "SHOCKED",
-                    "REACT"
+                    "CUCUMBER",
+                    "DICE",
+                    "PIECES"
                 ],
                 "3": [
-                    "FAMILY",
-                    "DISCUSS",
-                    "TALK"
+                    "BOWL",
+                    "TOSS",
+                    "MIX"
                 ]
             },
             "minWords": 21,
-            "hint": "Describe the surprising moment and how each family member reacted.",
-            "explanation": "Strong storytelling answers build suspense before the surprise, for example: 'Just when we thought we knew the ending, the main character revealed a secret.'",
-            "modelAnswer": "Strong storytelling answers build suspense before the surprise, for example: 'Just when we thought we knew the ending, the main character revealed a secret.' Describe the surprising moment and how each family member reacted. This serves as a model answer for the situation."
+            "hint": "Describe the preparation of each vegetable before you describe combining them in the bowl.",
+            "explanation": "In recipe-style writing, preparing each ingredient separately before combining them mirrors how the task is actually done, which helps the reader follow along step by step.",
+            "modelAnswer": "I wash the lettuce leaves and tear them into a large bowl. Next, I slice a cucumber and dice a tomato on the cutting board. Once everything is chopped, I add it to the bowl and toss it together."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L22_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW YOU PACK FOR A WEEKEND TRIP",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You need to write a short message to your landlord because the heater in your apartment stopped working. Describe what you say.",
+            "situation": "You are packing a small suitcase for a two-day trip. Describe the order in which you pack your things.",
             "emojis": [
-                "🏠",
-                "🔥",
-                "🚫",
-                "✉️"
+                "🧳",
+                "👕",
+                "🧴",
+                "🔌"
             ],
             "keywords": {
                 "0": [
-                    "LANDLORD",
-                    "APARTMENT",
-                    "MESSAGE"
+                    "SUITCASE",
+                    "OPEN",
+                    "LAYOUT"
                 ],
                 "1": [
-                    "HEATER",
-                    "BROKEN",
-                    "COLD"
+                    "CLOTHES",
+                    "FOLD",
+                    "STACK"
                 ],
                 "2": [
-                    "PROBLEM",
-                    "EXPLAIN",
-                    "DESCRIBE"
+                    "TOILETRIES",
+                    "BAG",
+                    "ZIP"
                 ],
                 "3": [
-                    "REPAIR",
-                    "SOON",
-                    "REQUEST"
+                    "CHARGER",
+                    "CABLE",
+                    "PLUG"
                 ]
             },
             "minWords": 21,
-            "hint": "Explain the problem clearly and politely ask when it can be repaired.",
-            "explanation": "A clear maintenance request states the problem and a polite request, for example: 'The heater stopped working yesterday. Could someone repair it soon?'",
-            "modelAnswer": "A clear maintenance request states the problem and a polite request, for example: 'The heater stopped working yesterday. Could someone repair it soon?' Explain the problem clearly and politely ask when it can be repaired. This serves as a model answer for the situation."
+            "hint": "Start with the suitcase itself, then move through clothes, toiletries, and finally small electronics.",
+            "explanation": "Packing lists become better writing when grouped by category rather than listed randomly. Grouping similar items together, like all clothing first, keeps each sentence focused.",
+            "modelAnswer": "I lay my open suitcase on the bed and start with folded clothes for two days. Then I add a small bag of toiletries and zip it shut. Last, I tuck my phone charger into a side pocket."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L23_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW YOU SET UP A NEW PHONE",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your neighborhood lost power for several hours during a storm. Describe how you and your family spent that time.",
+            "situation": "You just bought a new phone and need to set it up before using it. Describe the steps you follow.",
             "emojis": [
-                "⚡",
-                "🌩️",
-                "🕯️",
-                "👨‍👩‍👧‍👦"
+                "📦",
+                "🔋",
+                "📶",
+                "🔐"
             ],
             "keywords": {
                 "0": [
-                    "POWER",
-                    "STORM",
-                    "OUTAGE"
+                    "BOX",
+                    "UNBOX",
+                    "SCREEN"
                 ],
                 "1": [
-                    "DARK",
-                    "CANDLE",
-                    "FLASHLIGHT"
+                    "CHARGE",
+                    "BATTERY",
+                    "POWER"
                 ],
                 "2": [
-                    "WAIT",
-                    "BORED",
-                    "TALK"
+                    "WIFI",
+                    "CONNECT",
+                    "NETWORK"
                 ],
                 "3": [
-                    "FAMILY",
-                    "GAME",
-                    "TOGETHER"
+                    "PASSWORD",
+                    "ACCOUNT",
+                    "SIGNIN"
                 ]
             },
             "minWords": 21,
-            "hint": "Describe what you did to pass the time without electricity.",
-            "explanation": "Good storm stories show adaptation, for example: 'Since the lights went out, we lit candles and played cards together.'",
-            "modelAnswer": "Good storm stories show adaptation, for example: 'Since the lights went out, we lit candles and played cards together.' Describe what you did to pass the time without electricity. This serves as a model answer for the situation."
+            "hint": "Follow the natural order: unboxing, charging, connecting to the internet, and signing in.",
+            "explanation": "A technical setup process reads clearly when broken into short verified steps, each one completed before the next begins. This structure works for almost any device setup.",
+            "modelAnswer": "I take the phone out of the box and let it charge for a few minutes before turning it on. Once it powers up, I connect it to my home wifi and sign in with my account details."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L23_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW YOU ASSEMBLE A NEW BOOKSHELF",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "During an exam, you noticed that a classmate seemed to be struggling and looked very nervous. Describe what you did after the exam.",
+            "situation": "You bought a flat-pack bookshelf that needs assembly. Describe the steps you take to put it together.",
             "emojis": [
-                "📝",
-                "😰",
-                "🤝",
-                "🏫"
+                "🪛",
+                "📐",
+                "🪵",
+                "✅"
             ],
             "keywords": {
                 "0": [
-                    "EXAM",
-                    "DIFFICULT",
-                    "QUESTION"
+                    "SCREWDRIVER",
+                    "TURN",
+                    "SCREWS"
                 ],
                 "1": [
-                    "NERVOUS",
-                    "WORRY",
-                    "STRUGGLE"
+                    "INSTRUCTIONS",
+                    "READ",
+                    "DIAGRAM"
                 ],
                 "2": [
-                    "NOTICE",
-                    "CARE",
-                    "KIND"
+                    "PANELS",
+                    "ATTACH",
+                    "BOARDS"
                 ],
                 "3": [
-                    "TALK",
-                    "SUPPORT",
-                    "ENCOURAGE"
+                    "CHECK",
+                    "STEADY",
+                    "FINISHED"
                 ]
             },
-            "minWords": 21,
-            "hint": "Describe how you noticed your classmate's feelings and what you said to help.",
-            "explanation": "Thoughtful answers show empathy, for example: 'After the exam, I asked if she was okay and offered to study together next time.'",
-            "modelAnswer": "Thoughtful answers show empathy, for example: 'After the exam, I asked if she was okay and offered to study together next time.' Describe how you noticed your classmate's feelings and what you said to help. This serves as a model answer for the situation."
+            "minWords": 22,
+            "hint": "Mention checking the instructions before starting, then describe attaching the parts, and end by checking your work.",
+            "explanation": "Assembly instructions benefit from a check at the beginning and the end, showing that the writer confirmed the plan before starting and confirmed the result afterward.",
+            "modelAnswer": "First, I lay out all the wooden panels and read through the printed instructions carefully. Then I attach the side boards with a screwdriver, following the diagram step by step. When it is finished, I shake it gently to check it is steady."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L23_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW YOU USE A SELF-CHECKOUT MACHINE",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your team missed an important deadline because of a miscommunication. Describe what happened in the meeting afterward.",
+            "situation": "You are buying a few items at a self-checkout machine in a supermarket. Describe the steps you follow to pay.",
             "emojis": [
-                "📅",
-                "❌",
-                "💬",
-                "🤝"
+                "🛒",
+                "📱",
+                "💳",
+                "🧾"
             ],
             "keywords": {
                 "0": [
-                    "DEADLINE",
-                    "MISS",
-                    "PROJECT"
+                    "SCAN",
+                    "BARCODE",
+                    "BEEP"
                 ],
                 "1": [
-                    "MISCOMMUNICATION",
-                    "CONFUSE",
-                    "MISTAKE"
+                    "SCREEN",
+                    "TOUCH",
+                    "SELECT"
                 ],
                 "2": [
-                    "MEETING",
-                    "DISCUSS",
-                    "EXPLAIN"
+                    "CARD",
+                    "TAP",
+                    "PAYMENT"
                 ],
                 "3": [
-                    "SOLUTION",
-                    "IMPROVE",
-                    "AGREE"
+                    "RECEIPT",
+                    "PRINT",
+                    "TAKE"
                 ]
             },
-            "minWords": 21,
-            "hint": "Explain what caused the problem and what the team decided to do differently.",
-            "explanation": "Strong workplace answers explain cause and solution, for example: 'We missed the deadline because the instructions were unclear, so we agreed to confirm tasks in writing next time.'",
-            "modelAnswer": "Strong workplace answers explain cause and solution, for example: 'We missed the deadline because the instructions were unclear, so we agreed to confirm tasks in writing next time.' Explain what caused the problem and what the team decided to do differently. This serves as a model answer for the situation."
+            "minWords": 22,
+            "hint": "Describe scanning each item, then choosing a payment method, and finish with the receipt.",
+            "explanation": "A machine-based process is easy to describe when each screen prompt leads naturally to the next action. Keeping the steps in the order the machine actually presents them avoids confusion.",
+            "modelAnswer": "I scan each item one by one, and the machine beeps to confirm the price. After scanning everything, I touch the screen to choose card payment and tap my card on the reader. Finally, I take the printed receipt."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L24_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE YOUR MORNING WORKOUT ROUTINE",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your flight was cancelled at the last minute because of bad weather. Describe what you did to change your travel plans.",
+            "situation": "You exercise for thirty minutes every morning before breakfast. Describe your workout routine from warm-up to finish.",
             "emojis": [
-                "✈️",
-                "🌪️",
-                "📞",
-                "🏨"
+                "🧘",
+                "🏃",
+                "💪",
+                "🚿"
             ],
             "keywords": {
                 "0": [
-                    "FLIGHT",
-                    "CANCEL",
-                    "WEATHER"
+                    "STRETCH",
+                    "WARM",
+                    "MUSCLES"
                 ],
                 "1": [
-                    "STORM",
-                    "DELAY",
-                    "ANNOUNCE"
+                    "JOG",
+                    "TREADMILL",
+                    "MINUTES"
                 ],
                 "2": [
-                    "AIRLINE",
-                    "CALL",
-                    "REBOOK"
+                    "WEIGHTS",
+                    "LIFT",
+                    "ARMS"
                 ],
                 "3": [
-                    "HOTEL",
-                    "STAY",
-                    "WAIT"
+                    "SHOWER",
+                    "COOLDOWN",
+                    "REST"
                 ]
             },
-            "minWords": 21,
-            "hint": "Describe the steps you took after hearing the announcement about the cancellation.",
-            "explanation": "Clear travel-problem answers move logically from the news to the solution, for example: 'When the flight was cancelled, I called the airline and booked a hotel for the night.'",
-            "modelAnswer": "Clear travel-problem answers move logically from the news to the solution, for example: 'When the flight was cancelled, I called the airline and booked a hotel for the night.' Describe the steps you took after hearing the announcement about the cancellation. This serves as a model answer for the situation."
+            "minWords": 22,
+            "hint": "Move through the three natural stages of a workout: warming up, the main exercise, and cooling down afterward.",
+            "explanation": "Fitness routines follow a natural structure of preparation, main activity, and recovery. Describing all three stages, rather than only the middle one, gives a fuller picture of the process.",
+            "modelAnswer": "I start by stretching my legs and arms for five minutes to warm up. Then I jog on the treadmill for twenty minutes and lift some light weights. Afterward, I stretch again and take a shower to cool down."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L24_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW YOU PREPARE FOR A JOB INTERVIEW",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your older brother moved to another city for a new job, and your family had a farewell dinner before he left. Describe the evening.",
+            "situation": "You have a job interview at ten this morning. Describe the steps you take to prepare before you leave home.",
             "emojis": [
-                "🚗",
-                "📦",
-                "🍽️",
-                "😢"
+                "👔",
+                "📄",
+                "🪞",
+                "🕘"
             ],
             "keywords": {
                 "0": [
-                    "BROTHER",
-                    "MOVE",
-                    "CITY"
+                    "SUIT",
+                    "IRON",
+                    "PRESS"
                 ],
                 "1": [
-                    "FAREWELL",
-                    "DINNER",
-                    "LASTNIGHT"
+                    "RESUME",
+                    "PRINT",
+                    "COPIES"
                 ],
                 "2": [
-                    "FAMILY",
-                    "GATHER",
-                    "SHARE"
+                    "MIRROR",
+                    "PRACTICE",
+                    "ANSWERS"
                 ],
                 "3": [
-                    "EMOTIONAL",
-                    "HUG",
-                    "MISS"
+                    "TEN",
+                    "LEAVE",
+                    "EARLY"
                 ]
             },
-            "minWords": 21,
-            "hint": "Describe both the happy memories shared and the emotions of saying goodbye.",
-            "explanation": "Good farewell scenes balance emotion and detail, for example: 'We shared his favorite meal and talked about old memories before saying goodbye.'",
-            "modelAnswer": "Good farewell scenes balance emotion and detail, for example: 'We shared his favorite meal and talked about old memories before saying goodbye.' Describe both the happy memories shared and the emotions of saying goodbye. This serves as a model answer for the situation."
+            "minWords": 22,
+            "hint": "Include both physical preparation, like clothes, and mental preparation, like practicing answers.",
+            "explanation": "Preparation for an important event often includes practical steps and mental steps together. Showing both types gives a more complete and realistic description of getting ready.",
+            "modelAnswer": "I iron my shirt the night before and print two extra copies of my resume in the morning. While getting dressed, I practice a few answers out loud in front of the mirror, and I leave the house early to arrive on time."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L24_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW YOU CARE FOR YOUR HOUSEPLANTS EACH WEEK",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You bought a jacket online, but when it arrived, the color was different from the picture. Describe what you do next.",
+            "situation": "Every Sunday, you check on your houseplants and take care of them. Describe your weekly plant care routine.",
             "emojis": [
-                "🧥",
-                "📦",
-                "😕",
-                "💻"
+                "🪴",
+                "💧",
+                "✂️",
+                "☀️"
             ],
             "keywords": {
                 "0": [
-                    "ONLINE",
-                    "ORDER",
-                    "JACKET"
+                    "SOIL",
+                    "TOUCH",
+                    "DRY"
                 ],
                 "1": [
-                    "ARRIVE",
-                    "PACKAGE",
-                    "OPEN"
+                    "WATER",
+                    "POUR",
+                    "JUG"
                 ],
                 "2": [
-                    "COLOR",
-                    "DIFFERENT",
-                    "WRONG"
+                    "TRIM",
+                    "LEAVES",
+                    "YELLOW"
                 ],
                 "3": [
-                    "CONTACT",
-                    "RETURN",
-                    "COMPLAIN"
+                    "WINDOW",
+                    "MOVE",
+                    "SUNLIGHT"
                 ]
             },
-            "minWords": 21,
-            "hint": "Explain the difference you noticed and the action you take to fix it.",
-            "explanation": "Good complaint answers describe the issue clearly before stating the desired solution, such as contacting customer service for a return.",
-            "modelAnswer": "Good complaint answers describe the issue clearly before stating the desired solution, such as contacting customer service for a return. Explain the difference you noticed and the action you take to fix it. This serves as a model answer for the situation."
+            "minWords": 23,
+            "hint": "Describe checking the plants first, then the specific actions you take based on what you find.",
+            "explanation": "A checking step before an action step, such as touching the soil before watering, shows the reader that the routine is thoughtful rather than automatic.",
+            "modelAnswer": "Every Sunday, I touch the soil in each pot to see if it feels dry. If it does, I water the plants with a small jug, and I trim off any yellow leaves I notice. Finally, I move a few pots closer to the window for more sunlight."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L25_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW YOU APPLIED FOR A LIBRARY CARD",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You are hosting a dinner party, but one of your guests has a food allergy you did not know about. Describe how you handle the situation.",
+            "situation": "You went to your local library to get a library card for the first time. Describe the process from arriving to receiving the card.",
             "emojis": [
-                "🍽️",
-                "🥜",
-                "⚠️",
-                "🙋"
+                "📇",
+                "🪪",
+                "🖊️",
+                "📚"
             ],
             "keywords": {
                 "0": [
-                    "DINNER",
-                    "GUEST",
-                    "HOST"
+                    "DESK",
+                    "APPROACH",
+                    "LIBRARIAN"
                 ],
                 "1": [
-                    "ALLERGY",
-                    "PEANUT",
-                    "DANGEROUS"
+                    "FORM",
+                    "FILL",
+                    "DETAILS"
                 ],
                 "2": [
-                    "ASK",
-                    "CHECK",
-                    "CAREFUL"
+                    "ID",
+                    "SHOW",
+                    "PROOF"
                 ],
                 "3": [
-                    "ALTERNATIVE",
-                    "PREPARE",
-                    "SAFE"
+                    "CARD",
+                    "RECEIVE",
+                    "PLASTIC"
                 ]
             },
-            "minWords": 22,
-            "hint": "Describe how you discover the allergy and what you do to keep your guest safe.",
-            "explanation": "Responsible hosting answers show quick problem-solving, for example: 'When I learned about the allergy, I quickly prepared a different dish without nuts.'",
-            "modelAnswer": "Responsible hosting answers show quick problem-solving, for example: 'When I learned about the allergy, I quickly prepared a different dish without nuts.' Describe how you discover the allergy and what you do to keep your guest safe. This serves as a model answer for the situation."
+            "minWords": 23,
+            "hint": "Follow the order of a real registration process: approaching the desk, filling a form, showing identification, and receiving the card.",
+            "explanation": "Registration processes often repeat across daily life, so learning to describe one, such as getting a library card, transfers easily to similar situations like opening a bank account.",
+            "modelAnswer": "I walked up to the front desk and asked the librarian how to register. She gave me a short form to fill in with my name and address, and I showed my identification card as proof. A few minutes later, she handed me my new library card."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L25_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW YOU RETURNED AN ONLINE ORDER",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You accidentally deleted an important file right before a deadline. Describe how you tried to recover it.",
+            "situation": "An item you ordered online did not fit, so you needed to return it. Describe the steps you followed to send it back.",
             "emojis": [
-                "💻",
-                "🗑️",
-                "😱",
-                "🔍"
+                "📦",
+                "🖨️",
+                "🏷️",
+                "📮"
             ],
             "keywords": {
                 "0": [
-                    "FILE",
-                    "DELETE",
-                    "ACCIDENT"
+                    "WEBSITE",
+                    "LOGIN",
+                    "REQUEST"
                 ],
                 "1": [
-                    "DEADLINE",
-                    "IMPORTANT",
-                    "PANIC"
+                    "LABEL",
+                    "PRINT",
+                    "STICK"
                 ],
                 "2": [
-                    "SEARCH",
-                    "RECYCLEBIN",
-                    "FOLDER"
+                    "BOX",
+                    "REPACK",
+                    "TAPE"
                 ],
                 "3": [
-                    "RECOVER",
-                    "BACKUP",
-                    "RELIEF"
+                    "POST",
+                    "DROP",
+                    "OFFICE"
                 ]
             },
-            "minWords": 22,
-            "hint": "Describe the steps you tried, in order, to get the file back.",
-            "explanation": "Good tech-recovery answers show a logical search process, such as checking the recycle bin before trying backup software.",
-            "modelAnswer": "Good tech-recovery answers show a logical search process, such as checking the recycle bin before trying backup software. Describe the steps you tried, in order, to get the file back. This serves as a model answer for the situation."
+            "minWords": 23,
+            "hint": "Describe the online part of the process first, then the physical steps of preparing and sending the package.",
+            "explanation": "Many modern processes combine an online stage and a physical stage. Separating the two clearly, first the website, then the package, helps the reader understand the full process.",
+            "modelAnswer": "I logged into the website and requested a return, which let me print a shipping label at home. Then I repacked the item in its original box, taped it shut, and stuck the label on top before dropping it off at the post office."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L25_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW YOU PREPARED A CLASS PRESENTATION",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You decided to give up sugary drinks for a month to feel healthier. Describe what changes you noticed.",
+            "situation": "You had to prepare a five-minute presentation for a university class. Describe the steps you took from research to the final rehearsal.",
             "emojis": [
-                "🥤",
-                "🚫",
-                "🍎",
-                "💪"
+                "🔍",
+                "📊",
+                "🗒️",
+                "🎤"
             ],
             "keywords": {
                 "0": [
-                    "SUGAR",
-                    "DRINK",
-                    "GIVEUP"
+                    "RESEARCH",
+                    "SOURCES",
+                    "NOTES"
                 ],
                 "1": [
-                    "HABIT",
-                    "CHANGE",
-                    "MONTH"
+                    "SLIDES",
+                    "DESIGN",
+                    "POINTS"
                 ],
                 "2": [
-                    "FRUIT",
-                    "WATER",
-                    "CHOOSE"
+                    "SCRIPT",
+                    "WRITE",
+                    "PRACTICE"
                 ],
                 "3": [
-                    "ENERGY",
-                    "HEALTHY",
-                    "NOTICE"
+                    "MIRROR",
+                    "REHEARSE",
+                    "TIME"
                 ]
             },
-            "minWords": 22,
-            "hint": "Describe the habit you changed and the result you noticed afterward.",
-            "explanation": "Strong health answers link a specific change to a clear result, for example: 'After giving up soda, I slept better and had more energy.'",
-            "modelAnswer": "Strong health answers link a specific change to a clear result, for example: 'After giving up soda, I slept better and had more energy.' Describe the habit you changed and the result you noticed afterward. This serves as a model answer for the situation."
+            "minWords": 23,
+            "hint": "Move through research, building the slides, writing what you will say, and practicing out loud.",
+            "explanation": "Academic tasks often have four stages: gathering information, organizing it, writing it out, and rehearsing. Naming each stage briefly gives the reader a sense of real preparation.",
+            "modelAnswer": "I spent an evening researching the topic and taking notes from three reliable sources. The next day, I built five simple slides and wrote a short script for each one. Before class, I rehearsed the whole presentation twice, timing myself with my phone."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L26_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW YOU CHANGED A FLAT TIRE",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You went to see a comedian perform live for the first time, and the show was better than you expected. Describe the experience.",
+            "situation": "Your car got a flat tire on the side of the road. Describe the steps you followed to change it.",
             "emojis": [
-                "🎤",
-                "😂",
-                "🎟️",
-                "👏"
+                "🚗",
+                "🔧",
+                "🛞",
+                "⚠️"
             ],
             "keywords": {
                 "0": [
-                    "COMEDIAN",
-                    "STAGE",
-                    "PERFORM"
+                    "HAZARD",
+                    "LIGHTS",
+                    "SWITCH"
                 ],
                 "1": [
-                    "JOKE",
-                    "LAUGH",
-                    "FUNNY"
+                    "JACK",
+                    "LIFT",
+                    "GROUND"
                 ],
                 "2": [
-                    "AUDIENCE",
-                    "CLAP",
-                    "ENJOY"
+                    "WHEEL",
+                    "REMOVE",
+                    "BOLTS"
                 ],
                 "3": [
-                    "EXPECT",
-                    "SURPRISE",
-                    "MEMORABLE"
+                    "SPARE",
+                    "ATTACH",
+                    "TIGHTEN"
                 ]
             },
-            "minWords": 22,
-            "hint": "Describe what made the show funnier or better than you expected.",
-            "explanation": "Good entertainment reviews compare expectation with reality, for example: 'I expected a quiet evening, but the jokes were so funny that the whole audience was laughing.'",
-            "modelAnswer": "Good entertainment reviews compare expectation with reality, for example: 'I expected a quiet evening, but the jokes were so funny that the whole audience was laughing.' Describe what made the show funnier or better than you expected. This serves as a model answer for the situation."
+            "minWords": 23,
+            "hint": "Begin with the safety step, then describe lifting the car, removing the wheel, and attaching the spare.",
+            "explanation": "Practical processes involving safety, such as changing a tire, usually start with a safety step before the main task. Mentioning it first shows careful, realistic behavior.",
+            "modelAnswer": "I turned on my hazard lights and pulled the car safely onto the shoulder. Using the jack, I lifted the car and loosened the bolts on the flat tire. After removing it, I attached the spare wheel and tightened every bolt firmly."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L26_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW YOU SET UP A TENT WHILE CAMPING",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You need to politely ask your coworker to keep their voice down because it is distracting you while you work. Describe the conversation.",
+            "situation": "You arrived at a campsite in the evening and needed to set up your tent before dark. Describe the steps you followed.",
             "emojis": [
-                "🗣️",
-                "🤫",
-                "💼",
-                "😬"
+                "⛺",
+                "🔨",
+                "🌲",
+                "🕯️"
             ],
             "keywords": {
                 "0": [
-                    "COWORKER",
-                    "LOUD",
-                    "VOICE"
+                    "GROUND",
+                    "CLEAR",
+                    "STONES"
                 ],
                 "1": [
-                    "DISTRACT",
-                    "FOCUS",
-                    "WORK"
+                    "POLES",
+                    "ASSEMBLE",
+                    "SLIDE"
                 ],
                 "2": [
-                    "POLITE",
-                    "ASK",
-                    "QUIET"
+                    "STAKES",
+                    "HAMMER",
+                    "SECURE"
                 ],
                 "3": [
-                    "UNDERSTAND",
-                    "APOLOGIZE",
-                    "THANK"
+                    "LANTERN",
+                    "HANG",
+                    "LIGHT"
                 ]
             },
-            "minWords": 22,
-            "hint": "Think about how to make the request sound friendly rather than annoyed.",
-            "explanation": "A respectful workplace request explains the impact calmly, for example: 'Would you mind speaking a little quieter? I am finding it hard to concentrate.'",
-            "modelAnswer": "A respectful workplace request explains the impact calmly, for example: 'Would you mind speaking a little quieter? I am finding it hard to concentrate.' Think about how to make the request sound friendly rather than annoyed. This serves as a model answer for the situation."
+            "minWords": 23,
+            "hint": "Describe clearing the ground first, then assembling the poles, and finish with securing the tent for the night.",
+            "explanation": "Outdoor tasks often depend on the environment, so mentioning a detail like clearing stones from the ground grounds the process in a specific, believable place.",
+            "modelAnswer": "First, I cleared away a few stones and sticks from the ground where the tent would go. Then I slid the poles together and pushed them through the fabric loops. Once the tent stood up, I hammered the stakes into the soil and hung a small lantern inside."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L26_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW YOU BAKED COOKIES FROM A RECIPE",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You tried a new route to work to avoid traffic, but you ended up getting lost. Describe what happened.",
+            "situation": "You decided to bake chocolate chip cookies using an online recipe. Describe the steps you followed from mixing to taking them out of the oven.",
             "emojis": [
-                "🗺️",
-                "🚗",
-                "😕",
+                "🍪",
+                "🥄",
+                "🌡️",
                 "⏱️"
             ],
             "keywords": {
                 "0": [
-                    "ROUTE",
-                    "NEW",
-                    "TRAFFIC"
+                    "BOWL",
+                    "MIX",
+                    "BATTER"
                 ],
                 "1": [
-                    "AVOID",
-                    "SHORTCUT",
-                    "TRY"
+                    "SPOON",
+                    "SCOOP",
+                    "TRAY"
                 ],
                 "2": [
-                    "LOST",
-                    "CONFUSED",
-                    "WRONGTURN"
+                    "OVEN",
+                    "PREHEAT",
+                    "DEGREES"
                 ],
                 "3": [
-                    "LATE",
-                    "FINALLY",
-                    "ARRIVE"
+                    "TIMER",
+                    "MINUTES",
+                    "GOLDEN"
                 ]
             },
-            "minWords": 22,
-            "hint": "Describe your plan, what went wrong, and how the situation ended.",
-            "explanation": "Good cause-effect stories explain what was intended and what actually happened, for example: 'I tried a shortcut to save time, but I took a wrong turn and arrived late instead.'",
-            "modelAnswer": "Good cause-effect stories explain what was intended and what actually happened, for example: 'I tried a shortcut to save time, but I took a wrong turn and arrived late instead.' Describe your plan, what went wrong, and how the situation ended. This serves as a model answer for the situation."
+            "minWords": 24,
+            "hint": "Follow the recipe stages: mixing the ingredients, shaping the cookies, and baking them for the right amount of time.",
+            "explanation": "Recipes are one of the clearest examples of process writing, since each stage depends completely on the one before it. This makes them useful practice for logical, dependent sequencing.",
+            "modelAnswer": "I mixed the butter, sugar, and flour together in a bowl until it formed a smooth batter, then stirred in a handful of chocolate chips. After preheating the oven, I scooped small balls of dough onto a tray and baked them for twelve minutes until they turned golden."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L27_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW YOU SORT YOUR RECYCLING AT HOME",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your school organized a field trip to a museum, but the bus broke down on the way. Describe what the class did while waiting.",
+            "situation": "Every Wednesday evening, you sort your household waste before collection day. Describe the process you follow.",
             "emojis": [
-                "🚌",
-                "🏛️",
-                "😩",
+                "🗑️",
+                "♻️",
+                "📰",
+                "🍾"
+            ],
+            "keywords": {
+                "0": [
+                    "BINS",
+                    "SEPARATE",
+                    "COLORS"
+                ],
+                "1": [
+                    "PLASTIC",
+                    "BOTTLES",
+                    "RINSE"
+                ],
+                "2": [
+                    "PAPER",
+                    "CARDBOARD",
+                    "FLATTEN"
+                ],
+                "3": [
+                    "GLASS",
+                    "JARS",
+                    "WASH"
+                ]
+            },
+            "minWords": 24,
+            "hint": "Group the waste by material type, and mention one small preparation step for at least one type, like rinsing.",
+            "explanation": "Sorting tasks are naturally organized by category. Describing one category at a time, with a small detail like rinsing bottles, makes the process feel practical rather than abstract.",
+            "modelAnswer": "Every Wednesday, I take out three different bins and separate the waste by material. I rinse out plastic bottles before placing them in one bin, and I flatten cardboard boxes for another. Glass jars go into a separate container after a quick wash."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L27_Q2",
+            "instruction": "DESCRIBE HOW YOU SUBMITTED AN ASSIGNMENT ONLINE",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "You had to submit a written assignment through your university's online portal before midnight. Describe the steps you followed.",
+            "emojis": [
+                "💻",
+                "📁",
+                "⬆️",
+                "✔️"
+            ],
+            "keywords": {
+                "0": [
+                    "DOCUMENT",
+                    "SAVE",
+                    "FORMAT"
+                ],
+                "1": [
+                    "PORTAL",
+                    "LOGIN",
+                    "COURSE"
+                ],
+                "2": [
+                    "UPLOAD",
+                    "BUTTON",
+                    "CLICK"
+                ],
+                "3": [
+                    "CONFIRM",
+                    "MESSAGE",
+                    "RECEIVED"
+                ]
+            },
+            "minWords": 24,
+            "hint": "Move from preparing the file, to logging in, to uploading it, and finish with checking for confirmation.",
+            "explanation": "Digital submission processes usually end with a confirmation step. Including that final check reassures the reader, and yourself, that the process actually worked.",
+            "modelAnswer": "I saved my essay as a PDF and made sure the file name matched the instructions. Then I logged into the course portal and clicked the upload button next to the assignment. After uploading it, I waited for the confirmation message before closing my laptop."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L27_Q3",
+            "instruction": "DESCRIBE HOW YOU BREW COFFEE WITH A FRENCH PRESS",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "You are making a pot of coffee using a French press at home. Describe the process from grinding the beans to pouring the coffee.",
+            "emojis": [
+                "☕",
+                "⚙️",
+                "💧",
                 "⏳"
             ],
             "keywords": {
                 "0": [
-                    "FIELDTRIP",
-                    "MUSEUM",
-                    "BUS"
+                    "BEANS",
+                    "GRIND",
+                    "COARSE"
                 ],
                 "1": [
-                    "BREAKDOWN",
-                    "STOP",
-                    "WAIT"
+                    "PRESS",
+                    "PLUNGE",
+                    "SLOWLY"
                 ],
                 "2": [
-                    "STUDENT",
-                    "CONFUSED",
-                    "BORED"
+                    "WATER",
+                    "POUR",
+                    "HOT"
                 ],
                 "3": [
-                    "TEACHER",
-                    "MANAGE",
-                    "SOLVE"
+                    "FOUR",
+                    "MINUTES",
+                    "STEEP"
                 ]
             },
-            "minWords": 22,
-            "hint": "Describe both the problem and how the teacher kept the class calm.",
-            "explanation": "Strong field-trip stories show how a problem was managed, for example: 'While we waited, the teacher led a quiz to keep everyone entertained.'",
-            "modelAnswer": "Strong field-trip stories show how a problem was managed, for example: 'While we waited, the teacher led a quiz to keep everyone entertained.' Describe both the problem and how the teacher kept the class calm. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L27_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You were asked to train a new intern, but they had many questions about basic tasks. Describe how you helped them.",
-            "emojis": [
-                "🧑‍💼",
-                "❓",
-                "💡",
-                "🤝"
-            ],
-            "keywords": {
-                "0": [
-                    "INTERN",
-                    "TRAIN",
-                    "NEW"
-                ],
-                "1": [
-                    "QUESTION",
-                    "BASIC",
-                    "CONFUSE"
-                ],
-                "2": [
-                    "EXPLAIN",
-                    "PATIENT",
-                    "GUIDE"
-                ],
-                "3": [
-                    "LEARN",
-                    "IMPROVE",
-                    "THANK"
-                ]
-            },
-            "minWords": 22,
-            "hint": "Describe what kind of questions the intern asked and how you explained things clearly.",
-            "explanation": "Good training answers describe patient guidance, for example: 'Even though the questions were basic, I explained each step slowly until they understood.'",
-            "modelAnswer": "Good training answers describe patient guidance, for example: 'Even though the questions were basic, I explained each step slowly until they understood.' Describe what kind of questions the intern asked and how you explained things clearly. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L27_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "While travelling abroad, you realized you did not know enough of the local language to ask for directions. Describe how you communicated.",
-            "emojis": [
-                "🌍",
-                "🗣️",
-                "📱",
-                "🤷"
-            ],
-            "keywords": {
-                "0": [
-                    "ABROAD",
-                    "LANGUAGE",
-                    "UNKNOWN"
-                ],
-                "1": [
-                    "DIRECTION",
-                    "ASK",
-                    "LOST"
-                ],
-                "2": [
-                    "GESTURE",
-                    "POINT",
-                    "SIMPLE"
-                ],
-                "3": [
-                    "TRANSLATE",
-                    "APP",
-                    "UNDERSTAND"
-                ]
-            },
-            "minWords": 22,
-            "hint": "Describe the methods you used to communicate without sharing a language.",
-            "explanation": "Creative communication answers show resourcefulness, for example: 'Since we did not share a language, I used a translation app and simple gestures.'",
-            "modelAnswer": "Creative communication answers show resourcefulness, for example: 'Since we did not share a language, I used a translation app and simple gestures.' Describe the methods you used to communicate without sharing a language. This serves as a model answer for the situation."
+            "minWords": 24,
+            "hint": "Describe grinding, adding water, waiting, and finally pressing down and pouring, in that exact order.",
+            "explanation": "A process with a waiting period, like steeping coffee, needs a clear time marker such as four minutes to show why nothing happens during that stage.",
+            "modelAnswer": "I grind a scoop of coffee beans to a coarse texture and pour them into the French press. Then I add hot water and let it steep for four minutes. Finally, I push the plunger down slowly and pour the coffee into my mug."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L28_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE STEPS OF GETTING A HAIRCUT",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your grandparents visited for the weekend, and they wanted to hear about your recent achievements. Describe the conversation.",
+            "situation": "You go to a hair salon for a scheduled appointment. Describe the process from checking in to paying at the end.",
             "emojis": [
-                "👵",
-                "👴",
-                "🏆",
-                "💬"
+                "💇",
+                "🪞",
+                "💇‍♂️",
+                "💵"
             ],
             "keywords": {
                 "0": [
-                    "GRANDPARENT",
-                    "VISIT",
-                    "WEEKEND"
+                    "RECEPTION",
+                    "CHECKIN",
+                    "NAME"
                 ],
                 "1": [
-                    "ACHIEVEMENT",
-                    "PROUD",
-                    "SHARE"
+                    "CAPE",
+                    "WRAP",
+                    "CHAIR"
                 ],
                 "2": [
-                    "LISTEN",
-                    "ASK",
-                    "INTEREST"
+                    "SCISSORS",
+                    "TRIM",
+                    "STYLE"
                 ],
                 "3": [
-                    "STORY",
-                    "SMILE",
-                    "ADVICE"
+                    "PAYMENT",
+                    "TIP",
+                    "COUNTER"
                 ]
             },
-            "minWords": 22,
-            "hint": "Describe what achievement you shared and how your grandparents reacted.",
-            "explanation": "Good family conversations include specific details and reactions, for example: 'When I told them about my promotion, they smiled proudly and gave me advice.'",
-            "modelAnswer": "Good family conversations include specific details and reactions, for example: 'When I told them about my promotion, they smiled proudly and gave me advice.' Describe what achievement you shared and how your grandparents reacted. This serves as a model answer for the situation."
+            "minWords": 24,
+            "hint": "Describe checking in, sitting in the chair, the actual haircut, and finish with paying.",
+            "explanation": "Service appointments follow a predictable shape: arrival, the main service, and payment. Recognizing this shape helps you describe almost any appointment, from a haircut to a dentist visit.",
+            "modelAnswer": "At the salon, I check in at the reception desk and give my name. The stylist wraps a cape around me and asks what style I want before starting to trim my hair. When she finishes, I pay at the counter and leave a small tip."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L28_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW YOU FILLED OUT A FORM AT A GOVERNMENT OFFICE",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You went grocery shopping with a strict budget, but the prices were higher than usual. Describe how you adjusted your shopping list.",
+            "situation": "You visited a government office to renew an official document. Describe the process from taking a number to leaving with your paperwork.",
             "emojis": [
-                "🛒",
-                "💰",
-                "📈",
-                "✂️"
+                "🎫",
+                "🖊️",
+                "🪑",
+                "📄"
             ],
             "keywords": {
                 "0": [
-                    "GROCERY",
-                    "BUDGET",
-                    "LIST"
+                    "TICKET",
+                    "NUMBER",
+                    "MACHINE"
                 ],
                 "1": [
-                    "PRICE",
-                    "HIGH",
-                    "EXPENSIVE"
+                    "FORM",
+                    "DETAILS",
+                    "BLANK"
                 ],
                 "2": [
-                    "ADJUST",
-                    "REMOVE",
-                    "SUBSTITUTE"
+                    "WAIT",
+                    "CALLED",
+                    "SEAT"
                 ],
                 "3": [
-                    "SAVE",
-                    "CHEAPER",
-                    "COMPARE"
+                    "STAMP",
+                    "SIGN",
+                    "HANDED"
                 ]
             },
-            "minWords": 22,
-            "hint": "Explain which items you removed or replaced to stay within budget.",
-            "explanation": "Practical budgeting answers explain trade-offs, for example: 'Since the meat was too expensive, I bought beans instead to save money.'",
-            "modelAnswer": "Practical budgeting answers explain trade-offs, for example: 'Since the meat was too expensive, I bought beans instead to save money.' Explain which items you removed or replaced to stay within budget. This serves as a model answer for the situation."
+            "minWords": 24,
+            "hint": "Include the waiting stage explicitly, since it is often the longest part of this kind of process.",
+            "explanation": "Bureaucratic processes almost always include a waiting stage. Mentioning it honestly, rather than skipping to the end, makes the description more realistic and useful.",
+            "modelAnswer": "I took a numbered ticket from a machine near the entrance and filled in a form while I waited. After nearly forty minutes, my number was called, and a clerk checked my documents. She stamped the papers, and I signed where she pointed before leaving with my renewed document."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L28_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE HOW YOU SET UP A VIDEO CALL FOR WORK",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You tried to cook a recipe from another country, but you did not have one important ingredient. Describe how you adapted the recipe.",
+            "situation": "You need to set up a video call with a client for the first time using new software. Describe the steps you followed.",
             "emojis": [
-                "🍲",
-                "📃",
-                "🔄",
-                "🤔"
-            ],
-            "keywords": {
-                "0": [
-                    "RECIPE",
-                    "COUNTRY",
-                    "COOK"
-                ],
-                "1": [
-                    "INGREDIENT",
-                    "MISSING",
-                    "NEED"
-                ],
-                "2": [
-                    "SUBSTITUTE",
-                    "REPLACE",
-                    "CREATIVE"
-                ],
-                "3": [
-                    "TASTE",
-                    "RESULT",
-                    "SURPRISE"
-                ]
-            },
-            "minWords": 22,
-            "hint": "Describe what you used instead of the missing ingredient and how the dish turned out.",
-            "explanation": "Good adaptation stories explain a creative substitution, for example: 'I did not have coconut milk, so I used regular milk, and the dish still tasted great.'",
-            "modelAnswer": "Good adaptation stories explain a creative substitution, for example: 'I did not have coconut milk, so I used regular milk, and the dish still tasted great.' Describe what you used instead of the missing ingredient and how the dish turned out. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L29_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your video call kept freezing during an important online meeting. Describe how you and your colleagues solved the problem.",
-            "emojis": [
-                "💻",
-                "📡",
-                "🥶",
-                "🔄"
-            ],
-            "keywords": {
-                "0": [
-                    "VIDEOCALL",
-                    "FREEZE",
-                    "MEETING"
-                ],
-                "1": [
-                    "CONNECTION",
-                    "SLOW",
-                    "SIGNAL"
-                ],
-                "2": [
-                    "COLLEAGUE",
-                    "WAIT",
-                    "NOTICE"
-                ],
-                "3": [
-                    "RESTART",
-                    "RECONNECT",
-                    "CONTINUE"
-                ]
-            },
-            "minWords": 23,
-            "hint": "Describe the technical problem first, then how the meeting continued.",
-            "explanation": "Clear technical-issue answers identify the cause and the fix, for example: 'The call froze because of a weak connection, so we restarted it and continued the meeting.'",
-            "modelAnswer": "Clear technical-issue answers identify the cause and the fix, for example: 'The call froze because of a weak connection, so we restarted it and continued the meeting.' Describe the technical problem first, then how the meeting continued. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L29_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You felt anxious before an important job interview, so you tried a few methods to calm down. Describe what you did.",
-            "emojis": [
-                "😟",
-                "💼",
-                "🧘",
-                "📋"
-            ],
-            "keywords": {
-                "0": [
-                    "ANXIOUS",
-                    "NERVOUS",
-                    "INTERVIEW"
-                ],
-                "1": [
-                    "CALM",
-                    "BREATHE",
-                    "RELAX"
-                ],
-                "2": [
-                    "PREPARE",
-                    "PRACTICE",
-                    "NOTES"
-                ],
-                "3": [
-                    "CONFIDENT",
-                    "READY",
-                    "SUCCEED"
-                ]
-            },
-            "minWords": 23,
-            "hint": "Describe the steps you took to feel calmer before the interview.",
-            "explanation": "Good answers connect feelings to actions, for example: 'Because I felt nervous, I practiced deep breathing and reviewed my notes one more time.'",
-            "modelAnswer": "Good answers connect feelings to actions, for example: 'Because I felt nervous, I practiced deep breathing and reviewed my notes one more time.' Describe the steps you took to feel calmer before the interview. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L29_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You started a new TV series that everyone was talking about, but you found the first episode confusing. Describe your reaction.",
-            "emojis": [
-                "📺",
-                "😕",
-                "🍿",
-                "👍"
-            ],
-            "keywords": {
-                "0": [
-                    "SERIES",
-                    "EPISODE",
-                    "WATCH"
-                ],
-                "1": [
-                    "CONFUSING",
-                    "UNCLEAR",
-                    "PLOT"
-                ],
-                "2": [
-                    "CONTINUE",
-                    "CURIOUS",
-                    "WONDER"
-                ],
-                "3": [
-                    "UNDERSTAND",
-                    "ENJOY",
-                    "RECOMMEND"
-                ]
-            },
-            "minWords": 23,
-            "hint": "Describe what confused you and whether you decided to keep watching.",
-            "explanation": "Good review answers explain initial confusion followed by a clear opinion, for example: 'The plot was confusing at first, but it became more interesting by the third episode.'",
-            "modelAnswer": "Good review answers explain initial confusion followed by a clear opinion, for example: 'The plot was confusing at first, but it became more interesting by the third episode.' Describe what confused you and whether you decided to keep watching. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L30_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You need to write a short note to a colleague to thank them for covering your shift last week. Describe what you write.",
-            "emojis": [
-                "📝",
-                "🙏",
-                "💼",
+                "🖥️",
+                "🔗",
+                "🎙️",
                 "📅"
             ],
             "keywords": {
                 "0": [
-                    "NOTE",
-                    "WRITE",
-                    "COLLEAGUE"
+                    "SOFTWARE",
+                    "DOWNLOAD",
+                    "INSTALL"
                 ],
                 "1": [
-                    "COVER",
-                    "SHIFT",
-                    "LASTWEEK"
+                    "LINK",
+                    "SEND",
+                    "EMAIL"
                 ],
                 "2": [
-                    "THANK",
-                    "APPRECIATE",
-                    "KIND"
+                    "MICROPHONE",
+                    "TEST",
+                    "VOLUME"
                 ],
                 "3": [
-                    "OFFER",
-                    "RETURN",
-                    "FAVOR"
+                    "CALENDAR",
+                    "SCHEDULE",
+                    "REMINDER"
                 ]
             },
-            "minWords": 23,
-            "hint": "Mention the specific favor and offer to return the kindness.",
-            "explanation": "A genuine thank-you note names the favor clearly, for example: 'Thank you for covering my shift last week. I really appreciate it and I am happy to return the favor.'",
-            "modelAnswer": "A genuine thank-you note names the favor clearly, for example: 'Thank you for covering my shift last week. I really appreciate it and I am happy to return the favor.' Mention the specific favor and offer to return the kindness. This serves as a model answer for the situation."
+            "minWords": 25,
+            "hint": "Cover the technical setup first, then the communication step of sending the link, and finish with a final check.",
+            "explanation": "Technology-related processes often combine setup, communication, and a last-minute check. Writing all three stages shows the reader that the process was managed carefully.",
+            "modelAnswer": "First, I downloaded the video call software and created an account. Then I scheduled the meeting in my calendar and emailed the client a link to join. Just before the call, I tested my microphone and camera to make sure everything worked properly."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L29_Q1",
+            "instruction": "DESCRIBE HOW YOUR FAMILY PREPARED A HOLIDAY MEAL",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "Your family spent the whole afternoon preparing a large holiday meal together. Describe the process from planning to serving the food.",
+            "emojis": [
+                "📝",
+                "🍗",
+                "🍲",
+                "🍽️"
+            ],
+            "keywords": {
+                "0": [
+                    "MENU",
+                    "PLAN",
+                    "DECIDE"
+                ],
+                "1": [
+                    "OVEN",
+                    "ROAST",
+                    "BASTE"
+                ],
+                "2": [
+                    "POTS",
+                    "SIMMER",
+                    "STIR"
+                ],
+                "3": [
+                    "TABLE",
+                    "SERVE",
+                    "ARRANGE"
+                ]
+            },
+            "minWords": 25,
+            "hint": "Show how the cooking was divided between different dishes before everything came together on the table.",
+            "explanation": "Large processes often run in parallel, with several tasks happening at the same time rather than strictly one after another. Showing this parallel structure reflects how real cooking for a big meal actually works.",
+            "modelAnswer": "In the morning, we decided on the menu and wrote a shopping list together. While the turkey roasted slowly in the oven, my mother stirred a pot of soup and my aunt prepared the side dishes. By evening, we arranged everything on the table and finally sat down to eat."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L29_Q2",
+            "instruction": "DESCRIBE HOW YOU ORGANIZED A STUDY SESSION BEFORE AN EXAM",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "You have an important exam in three days, so you plan a structured study session. Describe the process from organizing your materials to reviewing what you learned.",
+            "emojis": [
+                "📖",
+                "🗂️",
+                "⏰",
+                "✅"
+            ],
+            "keywords": {
+                "0": [
+                    "NOTES",
+                    "GATHER",
+                    "TEXTBOOK"
+                ],
+                "1": [
+                    "TOPICS",
+                    "LIST",
+                    "PRIORITY"
+                ],
+                "2": [
+                    "TIMER",
+                    "STUDY",
+                    "BLOCKS"
+                ],
+                "3": [
+                    "REVIEW",
+                    "SUMMARY",
+                    "RECAP"
+                ]
+            },
+            "minWords": 25,
+            "hint": "Describe organizing your materials first, then studying in blocks, and finish with reviewing what you covered.",
+            "explanation": "Planning-based processes benefit from a clear structure: preparation, execution, and review. This three-part shape works for almost any task that requires focused effort over time.",
+            "modelAnswer": "I gathered my notes and textbook and made a short list of the topics I found hardest. Using a timer, I studied in forty-minute blocks with short breaks between them. At the end of the session, I reviewed my notes once more and wrote a brief summary of each topic."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L29_Q3",
+            "instruction": "DESCRIBE HOW YOU CLEANED THE HOUSE BEFORE GUESTS ARRIVED",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "Friends are coming to visit in two hours, and your house needs cleaning. Describe the process you followed to get everything ready in time.",
+            "emojis": [
+                "🧹",
+                "🧽",
+                "🪟",
+                "🕰️"
+            ],
+            "keywords": {
+                "0": [
+                    "VACUUM",
+                    "FLOOR",
+                    "CARPET"
+                ],
+                "1": [
+                    "SURFACES",
+                    "WIPE",
+                    "DUST"
+                ],
+                "2": [
+                    "WINDOWS",
+                    "STREAK",
+                    "CLEAN"
+                ],
+                "3": [
+                    "CLOCK",
+                    "RUSH",
+                    "QUICKLY"
+                ]
+            },
+            "minWords": 25,
+            "hint": "Prioritize the most visible tasks first, since there is limited time before the guests arrive.",
+            "explanation": "When a process has a time limit, prioritizing which steps matter most shows practical thinking. Mentioning the deadline itself, like two hours, adds useful pressure to the description.",
+            "modelAnswer": "With only two hours before my friends arrived, I started by vacuuming the living room carpet and wiping down every visible surface. Next, I cleaned the streaky windows near the entrance. By the time the doorbell rang, the house looked presentable, if not perfectly clean."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L30_Q1",
+            "instruction": "DESCRIBE THE FULL PROCESS OF MOVING INTO A NEW APARTMENT",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "You are moving into a new apartment today. Describe the entire process from picking up the keys to unpacking your first box, including any small problems that come up along the way.",
+            "emojis": [
+                "🔑",
+                "📦",
+                "🛋️",
+                "🧹"
+            ],
+            "keywords": {
+                "0": [
+                    "KEYS",
+                    "COLLECT",
+                    "AGENT"
+                ],
+                "1": [
+                    "CARTONS",
+                    "HAUL",
+                    "LANDING"
+                ],
+                "2": [
+                    "FURNITURE",
+                    "ARRANGE",
+                    "LIVINGROOM"
+                ],
+                "3": [
+                    "SWEEP",
+                    "DUST",
+                    "EMPTY"
+                ]
+            },
+            "minWords": 25,
+            "hint": "Organize the day into clear stages, and mention one small unexpected difficulty that you had to solve as you went.",
+            "explanation": "Longer real-world processes rarely go perfectly, so including one small complication, and how you handled it, makes a sequence feel authentic rather than mechanically ideal.",
+            "modelAnswer": "I collected the keys from the rental agent in the morning and found the empty apartment covered in dust. After sweeping the floors, I spent the afternoon carrying boxes up three flights of stairs, since the elevator was out of service. By evening, I had arranged the sofa and unpacked the first box of kitchen items."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L30_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE FULL PROCESS OF PREPARING AND DELIVERING A CLASS PRESENTATION",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your washing machine broke down right when you had a pile of laundry to clean. Describe how you solved the problem.",
+            "situation": "You had a presentation due for your history class. Describe the entire process, from your first research session to actually delivering it in front of your classmates.",
             "emojis": [
-                "🧺",
-                "🚫",
-                "🔧",
-                "🏪"
+                "📚",
+                "🖥️",
+                "🎤",
+                "👏"
             ],
             "keywords": {
                 "0": [
-                    "WASHINGMACHINE",
-                    "BREAK",
-                    "LAUNDRY"
+                    "LIBRARY",
+                    "BOOKS",
+                    "RESEARCH"
                 ],
                 "1": [
-                    "PILE",
-                    "DIRTY",
-                    "CLOTHES"
+                    "SLIDES",
+                    "BUILD",
+                    "IMAGES"
                 ],
                 "2": [
-                    "REPAIR",
-                    "CALL",
-                    "TECHNICIAN"
+                    "STAND",
+                    "SPEAK",
+                    "CLASSMATES"
                 ],
                 "3": [
-                    "LAUNDROMAT",
-                    "ALTERNATIVE",
-                    "SOLVE"
+                    "APPLAUSE",
+                    "FINISH",
+                    "RELIEF"
                 ]
             },
-            "minWords": 23,
-            "hint": "Describe the problem and the solution you found, such as calling a repair service or finding another place to wash clothes.",
-            "explanation": "Practical problem-solving answers show a clear backup plan, for example: 'Since the machine was broken, I took my clothes to the laundromat down the street.'",
-            "modelAnswer": "Practical problem-solving answers show a clear backup plan, for example: 'Since the machine was broken, I took my clothes to the laundromat down the street.' Describe the problem and the solution you found, such as calling a repair service or finding another place to wash clothes. This serves as a model answer for the situation."
+            "minWords": 25,
+            "hint": "Cover the research and preparation briefly, then spend more detail on the moment of actually presenting.",
+            "explanation": "When summarizing a whole process, it often helps to describe earlier stages more briefly and give the climax, such as delivering the talk, more detailed attention.",
+            "modelAnswer": "I spent two evenings in the library gathering information for my presentation and building ten simple slides afterward. On the day of the talk, I stood in front of the class with shaking hands and spoke for exactly five minutes. When my classmates applauded at the end, I finally felt relieved."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L30_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE A SATURDAY MORNING OF RUNNING SEVERAL ERRANDS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your group project partner did not complete their part of the work before the deadline. Describe how you handled the situation.",
+            "situation": "You had four separate errands to complete on Saturday morning before noon. Describe the whole process, including the order you chose and how you managed your time.",
             "emojis": [
-                "👥",
-                "📑",
-                "😤",
-                "⏰"
+                "🏦",
+                "📮",
+                "🥬",
+                "🚲"
             ],
             "keywords": {
                 "0": [
-                    "PARTNER",
-                    "PROJECT",
-                    "GROUP"
+                    "BANK",
+                    "DEPOSIT",
+                    "QUEUE"
                 ],
                 "1": [
-                    "INCOMPLETE",
-                    "MISSING",
-                    "WORK"
+                    "POST",
+                    "PACKAGE",
+                    "STAMP"
                 ],
                 "2": [
-                    "FRUSTRATED",
-                    "TALK",
-                    "EXPLAIN"
+                    "GROCERIES",
+                    "MARKET",
+                    "BAGS"
                 ],
                 "3": [
-                    "FINISH",
-                    "TOGETHER",
-                    "SUBMIT"
+                    "BICYCLE",
+                    "PEDAL",
+                    "ROUTE"
                 ]
             },
-            "minWords": 23,
-            "hint": "Describe how you felt and what you did to make sure the project was finished on time.",
-            "explanation": "Mature answers focus on solutions, for example: 'Instead of getting angry, I talked to my partner, and we finished the remaining part together.'",
-            "modelAnswer": "Mature answers focus on solutions, for example: 'Instead of getting angry, I talked to my partner, and we finished the remaining part together.' Describe how you felt and what you did to make sure the project was finished on time. This serves as a model answer for the situation."
+            "minWords": 25,
+            "hint": "Explain why you chose that particular order for your errands, based on distance or opening times.",
+            "explanation": "Multi-stop processes are clearer when the writer explains the reasoning behind the order, such as visiting the closest place first. This turns a simple list of stops into an organized plan.",
+            "modelAnswer": "Since the bank opened earliest, I went there first to deposit a check before the queue grew long. I then cycled to the post office to send a package, and stopped at the market on the way back for fresh vegetables. By eleven thirty, I had finished all four errands and returned home in time for lunch."
         }
     ]
 }

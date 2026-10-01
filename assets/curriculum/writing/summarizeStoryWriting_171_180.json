@@ -1,817 +1,637 @@
 {
-    "gameType": "summarizeStoryWriting",
-    "batchIndex": 18,
-    "levels": "171-180",
-    "quests": [
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L171_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A constitutional court had twice declined to hear a challenge to a contested redistricting map, citing procedural rather than substantive grounds both times. Petitioners refiled with corrected procedural standing after consulting a specialist in the court's own filing rules. The court agreed to hear the substantive challenge on its merits for the first time.",
-            "options": [
-                "The court declined to hear the case a third time on the same procedural grounds.",
-                "A constitutional court had twice declined to hear a challenge to a contested redistricting map, citing procedural rather than substantive grounds both times.",
-                "Petitioners refiled with corrected procedural standing after consulting a specialist in the court's own filing rules.",
-                "The court agreed to hear the substantive challenge on its merits for the first time."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Notice what the court actually decides once the procedural standing is corrected.",
-            "explanation": "Because the court agrees to hear the case on its merits, an option claiming it declined again on procedural grounds contradicts that outcome.",
-            "storyKeyEvents": [
-                "A constitutional court had twice declined to hear a challenge to a contested redistricting map, citing procedural rather than substantive grounds both times.",
-                "Petitioners refiled with corrected procedural standing after consulting a specialist in the court's own filing rules.",
-                "The court agreed to hear the substantive challenge on its merits for the first time.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L171_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A central clearinghouse's settlement failures had cascaded through three interconnected markets before regulators fully understood the scope of the exposure. Regulators required the clearinghouse to hold significantly higher collateral against its most interconnected positions. A comparable settlement failure the following year was contained within a single market.",
-            "options": [
-                "A central clearinghouse's settlement failures had cascaded through three interconnected markets before regulators fully understood the scope of the exposure.",
-                "A comparable settlement failure the following year cascaded through all three markets again.",
-                "Regulators required the clearinghouse to hold significantly higher collateral against its most interconnected positions.",
-                "A comparable settlement failure the following year was contained within a single market."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Check whether each option matches how the following year's failure actually plays out.",
-            "explanation": "Because the following failure is contained within a single market, an option claiming it again cascaded through all three contradicts that measured containment.",
-            "storyKeyEvents": [
-                "A central clearinghouse's settlement failures had cascaded through three interconnected markets before regulators fully understood the scope of the exposure.",
-                "Regulators required the clearinghouse to hold significantly higher collateral against its most interconnected positions.",
-                "A comparable settlement failure the following year was contained within a single market.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L171_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national standards body's certification requirements for a new medical device category had been so vague that manufacturers interpreted them in contradictory ways. The body published detailed technical guidance with specific, measurable thresholds for every requirement. Certification interpretations converged across manufacturers within the following review cycle.",
-            "options": [
-                "A national standards body's certification requirements for a new medical device category had been so vague that manufacturers interpreted them in contradictory ways.",
-                "The body published detailed technical guidance with specific, measurable thresholds for every requirement.",
-                "Interpretations remained just as contradictory across manufacturers.",
-                "Certification interpretations converged across manufacturers within the following review cycle."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Track cause and effect: detailed guidance leads to converging interpretations. One option reverses that.",
-            "explanation": "Because interpretations converge within the following cycle, an option claiming they remained just as contradictory reverses that measured outcome.",
-            "storyKeyEvents": [
-                "A national standards body's certification requirements for a new medical device category had been so vague that manufacturers interpreted them in contradictory ways.",
-                "The body published detailed technical guidance with specific, measurable thresholds for every requirement.",
-                "Certification interpretations converged across manufacturers within the following review cycle.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L172_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A sovereign debt restructuring had stalled for years because two classes of bondholders held veto power over incompatible repayment terms. Negotiators introduced a hybrid instrument that converted both classes' incompatible terms into a single unified structure. Both bondholder classes ratified the restructuring within the same negotiating round.",
-            "options": [
-                "A sovereign debt restructuring had stalled for years because two classes of bondholders held veto power over incompatible repayment terms.",
-                "Negotiators introduced a hybrid instrument that converted both classes' incompatible terms into a single unified structure.",
-                "Both bondholder classes ratified the restructuring within the same negotiating round.",
-                "One bondholder class ratified the restructuring while the other continued to hold out."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Read the ending closely: it tells you whether both classes actually ratify together.",
-            "explanation": "Because both classes ratify within the same round, an option claiming one class continued holding out contradicts that joint ratification.",
-            "storyKeyEvents": [
-                "A sovereign debt restructuring had stalled for years because two classes of bondholders held veto power over incompatible repayment terms.",
-                "Negotiators introduced a hybrid instrument that converted both classes' incompatible terms into a single unified structure.",
-                "Both bondholder classes ratified the restructuring within the same negotiating round.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L172_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A federal appeals circuit had split from a sister circuit on the interpretation of an identical statutory clause, creating conflicting precedent nationwide. The highest court granted review specifically to resolve the circuit split. Its ruling established a single nationwide interpretation binding on every circuit.",
-            "options": [
-                "The circuits remained divided even after the highest court's ruling.",
-                "A federal appeals circuit had split from a sister circuit on the interpretation of an identical statutory clause, creating conflicting precedent nationwide.",
-                "The highest court granted review specifically to resolve the circuit split.",
-                "Its ruling established a single nationwide interpretation binding on every circuit."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Notice what the passage says about the circuits' interpretations after the ruling.",
-            "explanation": "Because the ruling establishes a single nationwide interpretation binding on every circuit, an option claiming the circuits remained divided contradicts that outcome.",
-            "storyKeyEvents": [
-                "A federal appeals circuit had split from a sister circuit on the interpretation of an identical statutory clause, creating conflicting precedent nationwide.",
-                "The highest court granted review specifically to resolve the circuit split.",
-                "Its ruling established a single nationwide interpretation binding on every circuit.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L172_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A cross-border data-protection dispute had left a multinational technology firm unable to comply with two regulators' contradictory demands simultaneously. The two regulatory bodies negotiated a mutual recognition framework covering the disputed data category. The firm achieved simultaneous compliance with both regulators under the new framework.",
-            "options": [
-                "A cross-border data-protection dispute had left a multinational technology firm unable to comply with two regulators' contradictory demands simultaneously.",
-                "The firm was forced to withdraw from one jurisdiction entirely.",
-                "The two regulatory bodies negotiated a mutual recognition framework covering the disputed data category.",
-                "The firm achieved simultaneous compliance with both regulators under the new framework."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Check whether the firm actually withdraws from a jurisdiction once the framework is in place.",
-            "explanation": "Because the firm achieves simultaneous compliance with both regulators, an option showing it withdrawing from one jurisdiction contradicts that resolution.",
-            "storyKeyEvents": [
-                "A cross-border data-protection dispute had left a multinational technology firm unable to comply with two regulators' contradictory demands simultaneously.",
-                "The two regulatory bodies negotiated a mutual recognition framework covering the disputed data category.",
-                "The firm achieved simultaneous compliance with both regulators under the new framework.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L173_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national competition authority's merger block had been challenged so persuasively in court that the authority faced the prospect of the ruling being fully overturned. The authority negotiated a narrower set of behavioral remedies as an alternative to an outright block. The court accepted the revised remedies, allowing the merger to proceed under conditions.",
-            "options": [
-                "A national competition authority's merger block had been challenged so persuasively in court that the authority faced the prospect of the ruling being fully overturned.",
-                "The authority negotiated a narrower set of behavioral remedies as an alternative to an outright block.",
-                "The court rejected the revised remedies and upheld the original outright block.",
-                "The court accepted the revised remedies, allowing the merger to proceed under conditions."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you whether the merger actually proceeds under the revised remedies.",
-            "explanation": "Because the court accepts the revised remedies and allows the merger to proceed, an option claiming it upheld the original block contradicts that outcome.",
-            "storyKeyEvents": [
-                "A national competition authority's merger block had been challenged so persuasively in court that the authority faced the prospect of the ruling being fully overturned.",
-                "The authority negotiated a narrower set of behavioral remedies as an alternative to an outright block.",
-                "The court accepted the revised remedies, allowing the merger to proceed under conditions.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L173_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A multilateral fisheries agreement had collapsed after two member nations accused each other of exceeding agreed catch quotas using incompatible measurement methods. An independent scientific body was commissioned to establish a single measurement standard both nations would use going forward. Both nations rejoined the agreement once the unified standard was adopted.",
-            "options": [
-                "A multilateral fisheries agreement had collapsed after two member nations accused each other of exceeding agreed catch quotas using incompatible measurement methods.",
-                "An independent scientific body was commissioned to establish a single measurement standard both nations would use going forward.",
-                "Both nations rejoined the agreement once the unified standard was adopted.",
-                "Only one of the two nations rejoined the agreement."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Check whether both nations actually rejoin the agreement once the unified standard is adopted.",
-            "explanation": "Because both nations rejoin once the standard is adopted, an option claiming only one did contradicts that joint outcome.",
-            "storyKeyEvents": [
-                "A multilateral fisheries agreement had collapsed after two member nations accused each other of exceeding agreed catch quotas using incompatible measurement methods.",
-                "An independent scientific body was commissioned to establish a single measurement standard both nations would use going forward.",
-                "Both nations rejoined the agreement once the unified standard was adopted.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L173_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national health insurance scheme's reimbursement algorithm had systematically underpaid a specific category of rural clinics for nearly three years before the pattern was identified. Auditors traced the underpayment to a geographic cost-adjustment factor that had never been updated for those clinics. The scheme issued retroactive payments covering the full three-year underpayment period.",
-            "options": [
-                "The scheme declined to issue any retroactive compensation for the underpayment period.",
-                "A national health insurance scheme's reimbursement algorithm had systematically underpaid a specific category of rural clinics for nearly three years before the pattern was identified.",
-                "Auditors traced the underpayment to a geographic cost-adjustment factor that had never been updated for those clinics.",
-                "The scheme issued retroactive payments covering the full three-year underpayment period."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Notice what the scheme actually does once the underpayment is identified.",
-            "explanation": "Because the scheme issues retroactive payments covering the full period, an option claiming it declined any compensation contradicts that outcome.",
-            "storyKeyEvents": [
-                "A national health insurance scheme's reimbursement algorithm had systematically underpaid a specific category of rural clinics for nearly three years before the pattern was identified.",
-                "Auditors traced the underpayment to a geographic cost-adjustment factor that had never been updated for those clinics.",
-                "The scheme issued retroactive payments covering the full three-year underpayment period.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L174_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A transnational anti-corruption investigation had stalled because evidence gathered in one jurisdiction was ruled inadmissible under a second jurisdiction's stricter procedural standards. Investigators re-gathered the same evidence following the stricter jurisdiction's exact procedural requirements from the outset. The re-gathered evidence was admitted, and the case proceeded to trial in both jurisdictions.",
-            "options": [
-                "A transnational anti-corruption investigation had stalled because evidence gathered in one jurisdiction was ruled inadmissible under a second jurisdiction's stricter procedural standards.",
-                "The re-gathered evidence was ruled inadmissible for the same reason as before.",
-                "Investigators re-gathered the same evidence following the stricter jurisdiction's exact procedural requirements from the outset.",
-                "The re-gathered evidence was admitted, and the case proceeded to trial in both jurisdictions."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you whether the re-gathered evidence is actually admitted.",
-            "explanation": "Because the re-gathered evidence is admitted and the case proceeds to trial, an option claiming it was ruled inadmissible again contradicts that outcome.",
-            "storyKeyEvents": [
-                "A transnational anti-corruption investigation had stalled because evidence gathered in one jurisdiction was ruled inadmissible under a second jurisdiction's stricter procedural standards.",
-                "Investigators re-gathered the same evidence following the stricter jurisdiction's exact procedural requirements from the outset.",
-                "The re-gathered evidence was admitted, and the case proceeded to trial in both jurisdictions.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L174_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national telecommunications spectrum dispute between neighboring countries had persisted for over a decade due to conflicting technical interference models. Both countries commissioned a single joint technical panel to build one shared interference model. The shared model resolved the decade-long dispute within a single negotiating session.",
-            "options": [
-                "A national telecommunications spectrum dispute between neighboring countries had persisted for over a decade due to conflicting technical interference models.",
-                "Both countries commissioned a single joint technical panel to build one shared interference model.",
-                "The dispute continued unresolved despite the shared model.",
-                "The shared model resolved the decade-long dispute within a single negotiating session."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Check whether each option matches what actually happens to the dispute once the shared model exists.",
-            "explanation": "Because the shared model resolves the dispute within a single session, an option claiming it continued unresolved contradicts that outcome.",
-            "storyKeyEvents": [
-                "A national telecommunications spectrum dispute between neighboring countries had persisted for over a decade due to conflicting technical interference models.",
-                "Both countries commissioned a single joint technical panel to build one shared interference model.",
-                "The shared model resolved the decade-long dispute within a single negotiating session.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L174_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A multinational bank's anti-money-laundering flags had produced so many false positives across its European and Asian divisions that regulators in both regions opened separate inquiries. The bank unified both divisions' flagging criteria under a single global compliance standard. Both regulators closed their inquiries after reviewing the unified standard's results.",
-            "options": [
-                "A multinational bank's anti-money-laundering flags had produced so many false positives across its European and Asian divisions that regulators in both regions opened separate inquiries.",
-                "The bank unified both divisions' flagging criteria under a single global compliance standard.",
-                "Both regulators closed their inquiries after reviewing the unified standard's results.",
-                "One regulator closed its inquiry while the other escalated to formal charges."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Notice whether both regulators actually close their inquiries or whether one escalates instead.",
-            "explanation": "Because both regulators close their inquiries after the review, an option showing one escalating to formal charges contradicts that joint resolution.",
-            "storyKeyEvents": [
-                "A multinational bank's anti-money-laundering flags had produced so many false positives across its European and Asian divisions that regulators in both regions opened separate inquiries.",
-                "The bank unified both divisions' flagging criteria under a single global compliance standard.",
-                "Both regulators closed their inquiries after reviewing the unified standard's results.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L175_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national pharmaceutical pricing board's formula for a critical medication category had produced prices so divergent from three comparable countries that a formal trade complaint was filed. The board revised its formula to reference the same basket of comparator countries used internationally. Prices for that medication category aligned within the range of the three comparable countries.",
-            "options": [
-                "The trade complaint proceeded to formal arbitration despite the revised formula.",
-                "A national pharmaceutical pricing board's formula for a critical medication category had produced prices so divergent from three comparable countries that a formal trade complaint was filed.",
-                "The board revised its formula to reference the same basket of comparator countries used internationally.",
-                "Prices for that medication category aligned within the range of the three comparable countries."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Check whether the trade complaint actually proceeds to arbitration once prices align.",
-            "explanation": "Because prices align within the comparable range after the revision, an option claiming the complaint still proceeded to arbitration contradicts that resolution.",
-            "storyKeyEvents": [
-                "A national pharmaceutical pricing board's formula for a critical medication category had produced prices so divergent from three comparable countries that a formal trade complaint was filed.",
-                "The board revised its formula to reference the same basket of comparator countries used internationally.",
-                "Prices for that medication category aligned within the range of the three comparable countries.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L175_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A binational river-management commission had failed to agree on flood-control protocols for over fifteen years due to disputed historical water-flow data. Both countries commissioned a joint satellite-based flow-monitoring system replacing all disputed historical records. The commission adopted unified flood-control protocols within a year of the new monitoring system.",
-            "options": [
-                "A binational river-management commission had failed to agree on flood-control protocols for over fifteen years due to disputed historical water-flow data.",
-                "The commission remained deadlocked even with the new satellite data.",
-                "Both countries commissioned a joint satellite-based flow-monitoring system replacing all disputed historical records.",
-                "The commission adopted unified flood-control protocols within a year of the new monitoring system."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Notice what the commission actually does once the new satellite data replaces the disputed records.",
-            "explanation": "Because unified protocols are adopted within a year, an option claiming the commission remained deadlocked contradicts that resolution.",
-            "storyKeyEvents": [
-                "A binational river-management commission had failed to agree on flood-control protocols for over fifteen years due to disputed historical water-flow data.",
-                "Both countries commissioned a joint satellite-based flow-monitoring system replacing all disputed historical records.",
-                "The commission adopted unified flood-control protocols within a year of the new monitoring system.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L175_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A federal banking regulator's stress-test criteria had diverged so significantly from an international standard that domestic banks faced conflicting capital requirements abroad. The regulator harmonized its criteria with the international standard while preserving one domestic-specific safeguard. Domestic banks operating abroad reported meeting both sets of requirements without any further conflict.",
-            "options": [
-                "A federal banking regulator's stress-test criteria had diverged so significantly from an international standard that domestic banks faced conflicting capital requirements abroad.",
-                "The regulator harmonized its criteria with the international standard while preserving one domestic-specific safeguard.",
-                "Domestic banks operating abroad continued facing the same conflicting requirements.",
-                "Domestic banks operating abroad reported meeting both sets of requirements without any further conflict."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Check whether each option matches what banks actually report once the criteria are harmonized.",
-            "explanation": "Because banks report meeting both sets of requirements without conflict, an option claiming the conflict continued contradicts that resolution.",
-            "storyKeyEvents": [
-                "A federal banking regulator's stress-test criteria had diverged so significantly from an international standard that domestic banks faced conflicting capital requirements abroad.",
-                "The regulator harmonized its criteria with the international standard while preserving one domestic-specific safeguard.",
-                "Domestic banks operating abroad reported meeting both sets of requirements without any further conflict.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L176_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A transnational shipping alliance's two founding members had disputed control over a shared logistics platform so bitterly that a third member threatened to leave the alliance entirely. An independent governance structure was created, giving no single member majority control over the platform. The third member withdrew its threat to leave and remained in the alliance.",
-            "options": [
-                "A transnational shipping alliance's two founding members had disputed control over a shared logistics platform so bitterly that a third member threatened to leave the alliance entirely.",
-                "An independent governance structure was created, giving no single member majority control over the platform.",
-                "The third member withdrew its threat to leave and remained in the alliance.",
-                "The third member left the alliance despite the new governance structure."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Read the ending closely: it tells you whether the third member actually stays or leaves.",
-            "explanation": "Because the third member withdraws its threat and remains, an option claiming it left anyway contradicts that outcome.",
-            "storyKeyEvents": [
-                "A transnational shipping alliance's two founding members had disputed control over a shared logistics platform so bitterly that a third member threatened to leave the alliance entirely.",
-                "An independent governance structure was created, giving no single member majority control over the platform.",
-                "The third member withdrew its threat to leave and remained in the alliance.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L176_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national securities regulator's insider-trading surveillance had missed a coordinated scheme spanning three separate brokerages for over two years. Analysts developed cross-brokerage pattern detection that the previous system had never applied. The new system flagged a second coordinated scheme within its first month of operation.",
-            "options": [
-                "The new system failed to detect any further coordinated schemes.",
-                "A national securities regulator's insider-trading surveillance had missed a coordinated scheme spanning three separate brokerages for over two years.",
-                "Analysts developed cross-brokerage pattern detection that the previous system had never applied.",
-                "The new system flagged a second coordinated scheme within its first month of operation."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Check whether each option matches what the new detection system actually accomplishes.",
-            "explanation": "Because the system flags a second scheme within its first month, an option claiming it detected nothing further contradicts that outcome.",
-            "storyKeyEvents": [
-                "A national securities regulator's insider-trading surveillance had missed a coordinated scheme spanning three separate brokerages for over two years.",
-                "Analysts developed cross-brokerage pattern detection that the previous system had never applied.",
-                "The new system flagged a second coordinated scheme within its first month of operation.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L176_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A multinational engineering consortium's two lead contractors had each blamed the other for a structural flaw discovered midway through a major infrastructure project. An independent forensic engineering review traced the flaw to a specification error made before either contractor was hired. Both contractors continued the project jointly once liability was clarified.",
-            "options": [
-                "A multinational engineering consortium's two lead contractors had each blamed the other for a structural flaw discovered midway through a major infrastructure project.",
-                "One contractor withdrew from the project after the review's findings.",
-                "An independent forensic engineering review traced the flaw to a specification error made before either contractor was hired.",
-                "Both contractors continued the project jointly once liability was clarified."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Notice whether both contractors actually continue the project together once liability is clarified.",
-            "explanation": "Because both contractors continue the project jointly, an option showing one withdrawing contradicts that continued collaboration.",
-            "storyKeyEvents": [
-                "A multinational engineering consortium's two lead contractors had each blamed the other for a structural flaw discovered midway through a major infrastructure project.",
-                "An independent forensic engineering review traced the flaw to a specification error made before either contractor was hired.",
-                "Both contractors continued the project jointly once liability was clarified.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L177_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional currency union's two largest member economies had pursued such divergent fiscal policies that the union's shared currency faced mounting speculative pressure. Finance ministers from both economies agreed to a coordinated fiscal framework with shared deficit targets. Speculative pressure on the shared currency eased significantly within two quarters.",
-            "options": [
-                "A regional currency union's two largest member economies had pursued such divergent fiscal policies that the union's shared currency faced mounting speculative pressure.",
-                "Finance ministers from both economies agreed to a coordinated fiscal framework with shared deficit targets.",
-                "Speculative pressure on the shared currency intensified within those two quarters.",
-                "Speculative pressure on the shared currency eased significantly within two quarters."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Track cause and effect: a coordinated framework leads to easing pressure. One option reverses that.",
-            "explanation": "Because pressure eases significantly within two quarters, an option claiming it intensified reverses that measured outcome.",
-            "storyKeyEvents": [
-                "A regional currency union's two largest member economies had pursued such divergent fiscal policies that the union's shared currency faced mounting speculative pressure.",
-                "Finance ministers from both economies agreed to a coordinated fiscal framework with shared deficit targets.",
-                "Speculative pressure on the shared currency eased significantly within two quarters.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L177_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national telecommunications infrastructure fund's two co-managing agencies had approved conflicting build-out plans for the same underserved region. An independent arbitrator merged both plans into a single build-out schedule with no overlapping construction. The unified schedule connected the region to broadband service ahead of the original combined timeline.",
-            "options": [
-                "A national telecommunications infrastructure fund's two co-managing agencies had approved conflicting build-out plans for the same underserved region.",
-                "An independent arbitrator merged both plans into a single build-out schedule with no overlapping construction.",
-                "The unified schedule connected the region to broadband service ahead of the original combined timeline.",
-                "The unified schedule delayed broadband connection well beyond the original timeline."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Check whether each option matches what the unified schedule actually accomplishes for the region.",
-            "explanation": "Because the region connects ahead of the original timeline, an option claiming it was delayed well beyond it reverses that outcome.",
-            "storyKeyEvents": [
-                "A national telecommunications infrastructure fund's two co-managing agencies had approved conflicting build-out plans for the same underserved region.",
-                "An independent arbitrator merged both plans into a single build-out schedule with no overlapping construction.",
-                "The unified schedule connected the region to broadband service ahead of the original combined timeline.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L177_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A binational customs union's two member states had applied a shared external tariff so inconsistently that importers routinely exploited the gap between them. Both states adopted a single, jointly administered customs computer system replacing their separate national systems. Tariff application became identical at every entry point across both states.",
-            "options": [
-                "Importers continued exploiting the gap between the two states' tariff applications.",
-                "A binational customs union's two member states had applied a shared external tariff so inconsistently that importers routinely exploited the gap between them.",
-                "Both states adopted a single, jointly administered customs computer system replacing their separate national systems.",
-                "Tariff application became identical at every entry point across both states."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Notice what the passage says about tariff application once the joint system is in place.",
-            "explanation": "Because application becomes identical at every entry point, an option claiming importers kept exploiting a gap contradicts that outcome.",
-            "storyKeyEvents": [
-                "A binational customs union's two member states had applied a shared external tariff so inconsistently that importers routinely exploited the gap between them.",
-                "Both states adopted a single, jointly administered customs computer system replacing their separate national systems.",
-                "Tariff application became identical at every entry point across both states.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L178_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A federal appellate ruling had created such deep uncertainty about a specific class of environmental permits that two states' regulatory agencies suspended new approvals entirely. The highest court agreed to review the case specifically to clarify the permit class's legal status. Both states resumed processing that permit class once the clarifying ruling was issued.",
-            "options": [
-                "A federal appellate ruling had created such deep uncertainty about a specific class of environmental permits that two states' regulatory agencies suspended new approvals entirely.",
-                "Only one of the two states resumed processing after the ruling.",
-                "The highest court agreed to review the case specifically to clarify the permit class's legal status.",
-                "Both states resumed processing that permit class once the clarifying ruling was issued."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Check whether both states actually resume processing once the clarifying ruling is issued.",
-            "explanation": "Because both states resume processing once the ruling is issued, an option claiming only one did contradicts that joint resumption.",
-            "storyKeyEvents": [
-                "A federal appellate ruling had created such deep uncertainty about a specific class of environmental permits that two states' regulatory agencies suspended new approvals entirely.",
-                "The highest court agreed to review the case specifically to clarify the permit class's legal status.",
-                "Both states resumed processing that permit class once the clarifying ruling was issued.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L178_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A multinational shipping insurer's two regional underwriting offices had assessed identical vessel-risk profiles so differently that reinsurers questioned the company's overall methodology. The insurer unified both offices under a single global underwriting model reviewed by an external actuary. Reinsurers restored full confidence in the company's methodology within the following renewal cycle.",
-            "options": [
-                "A multinational shipping insurer's two regional underwriting offices had assessed identical vessel-risk profiles so differently that reinsurers questioned the company's overall methodology.",
-                "The insurer unified both offices under a single global underwriting model reviewed by an external actuary.",
-                "Reinsurers withdrew from the relationship before the unified model was implemented.",
-                "Reinsurers restored full confidence in the company's methodology within the following renewal cycle."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Notice whether reinsurers actually withdraw before the unified model is implemented.",
-            "explanation": "Because confidence is restored within the following renewal cycle, an option showing reinsurers withdrawing beforehand contradicts that sequence.",
-            "storyKeyEvents": [
-                "A multinational shipping insurer's two regional underwriting offices had assessed identical vessel-risk profiles so differently that reinsurers questioned the company's overall methodology.",
-                "The insurer unified both offices under a single global underwriting model reviewed by an external actuary.",
-                "Reinsurers restored full confidence in the company's methodology within the following renewal cycle.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L178_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national grid interconnection agreement between two power authorities had broken down after each authority accused the other of drawing more than its allotted share during peak demand. Both authorities installed synchronized real-time metering at the shared interconnection point. The synchronized data showed both authorities had, in fact, stayed within their allotted shares throughout.",
-            "options": [
-                "A national grid interconnection agreement between two power authorities had broken down after each authority accused the other of drawing more than its allotted share during peak demand.",
-                "Both authorities installed synchronized real-time metering at the shared interconnection point.",
-                "The synchronized data showed both authorities had, in fact, stayed within their allotted shares throughout.",
-                "The synchronized data confirmed one authority had been drawing well beyond its allotted share."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Read the ending closely: it tells you what the synchronized data actually reveals.",
-            "explanation": "Because the data shows both authorities stayed within their shares, an option claiming it confirmed one authority overdrew reverses that specific finding.",
-            "storyKeyEvents": [
-                "A national grid interconnection agreement between two power authorities had broken down after each authority accused the other of drawing more than its allotted share during peak demand.",
-                "Both authorities installed synchronized real-time metering at the shared interconnection point.",
-                "The synchronized data showed both authorities had, in fact, stayed within their allotted shares throughout.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L179_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A transnational data-sharing agreement between three national police forces had stalled for years over incompatible evidentiary standards across jurisdictions. Legal representatives from all three forces drafted a single evidentiary standard acceptable in every jurisdiction. All three forces ratified the data-sharing agreement under the unified standard within the same year.",
-            "options": [
-                "Two of the three forces ratified the agreement while the third continued to object.",
-                "A transnational data-sharing agreement between three national police forces had stalled for years over incompatible evidentiary standards across jurisdictions.",
-                "Legal representatives from all three forces drafted a single evidentiary standard acceptable in every jurisdiction.",
-                "All three forces ratified the data-sharing agreement under the unified standard within the same year."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Check whether all three forces actually ratify the agreement together.",
-            "explanation": "Because all three forces ratify within the same year, an option claiming one continued to object contradicts that joint ratification.",
-            "storyKeyEvents": [
-                "A transnational data-sharing agreement between three national police forces had stalled for years over incompatible evidentiary standards across jurisdictions.",
-                "Legal representatives from all three forces drafted a single evidentiary standard acceptable in every jurisdiction.",
-                "All three forces ratified the data-sharing agreement under the unified standard within the same year.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L179_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national telecommunications regulator's two licensing divisions had approved conflicting spectrum allocations to the same rural cooperative, creating overlapping claims. Senior leadership consolidated both divisions' licensing databases into a single system with automatic conflict detection. No overlapping spectrum allocations have been approved in the two years since the consolidation.",
-            "options": [
-                "A national telecommunications regulator's two licensing divisions had approved conflicting spectrum allocations to the same rural cooperative, creating overlapping claims.",
-                "Overlapping allocations continued to occur at the same rate after the consolidation.",
-                "Senior leadership consolidated both divisions' licensing databases into a single system with automatic conflict detection.",
-                "No overlapping spectrum allocations have been approved in the two years since the consolidation."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Check whether each option matches what the passage says about allocations in the two years since.",
-            "explanation": "Because no overlapping allocations have occurred in two years, an option claiming they continued at the same rate contradicts that record.",
-            "storyKeyEvents": [
-                "A national telecommunications regulator's two licensing divisions had approved conflicting spectrum allocations to the same rural cooperative, creating overlapping claims.",
-                "Senior leadership consolidated both divisions' licensing databases into a single system with automatic conflict detection.",
-                "No overlapping spectrum allocations have been approved in the two years since the consolidation.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L179_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional development bank's two country offices had approved separate, overlapping infrastructure loans to the same border municipality without either office's knowledge of the other. Headquarters merged the two loans into a single coordinated financing package for the municipality. The municipality completed its infrastructure project under the merged financing without further complication.",
-            "options": [
-                "A regional development bank's two country offices had approved separate, overlapping infrastructure loans to the same border municipality without either office's knowledge of the other.",
-                "Headquarters merged the two loans into a single coordinated financing package for the municipality.",
-                "The municipality was forced to abandon the project after the loans were merged.",
-                "The municipality completed its infrastructure project under the merged financing without further complication."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Notice whether the municipality actually completes or abandons the project after the merger.",
-            "explanation": "Because the municipality completes the project under the merged financing, an option claiming it was forced to abandon it contradicts that outcome.",
-            "storyKeyEvents": [
-                "A regional development bank's two country offices had approved separate, overlapping infrastructure loans to the same border municipality without either office's knowledge of the other.",
-                "Headquarters merged the two loans into a single coordinated financing package for the municipality.",
-                "The municipality completed its infrastructure project under the merged financing without further complication.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L180_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A transnational climate-monitoring network's two founding member agencies had produced conflicting emissions estimates for the same industrial region for nearly a decade. Both agencies adopted a shared satellite-verification protocol replacing their separate ground-based estimation methods. Emissions estimates from both agencies converged within a narrow, internationally accepted margin.",
-            "options": [
-                "A transnational climate-monitoring network's two founding member agencies had produced conflicting emissions estimates for the same industrial region for nearly a decade.",
-                "Both agencies adopted a shared satellite-verification protocol replacing their separate ground-based estimation methods.",
-                "Emissions estimates from both agencies converged within a narrow, internationally accepted margin.",
-                "Emissions estimates from both agencies diverged even further after the new protocol."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Track cause and effect: shared satellite verification leads to converging estimates. One option reverses that.",
-            "explanation": "Because estimates converge within an accepted margin, an option claiming they diverged even further reverses that measured outcome.",
-            "storyKeyEvents": [
-                "A transnational climate-monitoring network's two founding member agencies had produced conflicting emissions estimates for the same industrial region for nearly a decade.",
-                "Both agencies adopted a shared satellite-verification protocol replacing their separate ground-based estimation methods.",
-                "Emissions estimates from both agencies converged within a narrow, internationally accepted margin.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L180_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A multinational pension consortium's two actuarial teams had produced retirement-age recommendations so different that member governments delayed adopting either one. Both teams were merged under a single lead actuary who reconciled their underlying demographic assumptions. Member governments adopted the reconciled recommendation within the following legislative session.",
-            "options": [
-                "Member governments continued delaying adoption even after the reconciliation.",
-                "A multinational pension consortium's two actuarial teams had produced retirement-age recommendations so different that member governments delayed adopting either one.",
-                "Both teams were merged under a single lead actuary who reconciled their underlying demographic assumptions.",
-                "Member governments adopted the reconciled recommendation within the following legislative session."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Check whether each option matches what governments actually do once the recommendation is reconciled.",
-            "explanation": "Because governments adopt the reconciled recommendation within the following session, an option claiming they kept delaying contradicts that outcome.",
-            "storyKeyEvents": [
-                "A multinational pension consortium's two actuarial teams had produced retirement-age recommendations so different that member governments delayed adopting either one.",
-                "Both teams were merged under a single lead actuary who reconciled their underlying demographic assumptions.",
-                "Member governments adopted the reconciled recommendation within the following legislative session.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L180_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A transnational judicial cooperation treaty had stalled for years because two signatory nations interpreted a key extradition clause in opposite ways. Both nations submitted the disputed clause to a jointly agreed international arbitration panel. The panel's binding interpretation allowed the treaty to be ratified by both nations.",
-            "options": [
-                "A transnational judicial cooperation treaty had stalled for years because two signatory nations interpreted a key extradition clause in opposite ways.",
-                "One nation rejected the panel's interpretation and withdrew from the treaty process.",
-                "Both nations submitted the disputed clause to a jointly agreed international arbitration panel.",
-                "The panel's binding interpretation allowed the treaty to be ratified by both nations."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you whether the treaty is actually ratified by both nations.",
-            "explanation": "Because the treaty is ratified by both nations following the panel's interpretation, an option showing one nation withdrawing contradicts that joint ratification.",
-            "storyKeyEvents": [
-                "A transnational judicial cooperation treaty had stalled for years because two signatory nations interpreted a key extradition clause in opposite ways.",
-                "Both nations submitted the disputed clause to a jointly agreed international arbitration panel.",
-                "The panel's binding interpretation allowed the treaty to be ratified by both nations.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        }
-    ]
+  "gameType": "summarizeStoryWriting",
+  "batchIndex": 18,
+  "levels": "171-180",
+  "quests": [
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L171_Q1",
+      "instruction": "Choose the situation, the main turning point, and the outcome of the main arc, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Ingrid's nursery school planned an outdoor sports day, but a week of rain flooded the field. The head, Ms. Roos, asked the neighbouring school to lend its sports hall, and it agreed for one morning. While the staff rearranged the races, a parent, Mr. Dean, lost his car keys and found them in the coat pile an hour later. The children ran shortened races on the hall floor, and every child got a ribbon.",
+      "options": [
+        "A parent, Mr. Dean, lost his car keys and found them in the coat pile an hour later.",
+        "A week of rain flooded the field and threatened the school's outdoor sports day.",
+        "The children ran shortened races indoors and every child got a ribbon.",
+        "Ms. Roos got the neighbouring school to lend its sports hall for one morning."
+      ],
+      "correctOrder": [1, 3, 2],
+      "hint": "A small subplot can have its own beginning and end. Does it touch the main arc?",
+      "explanation": "Mr. Dean's keys are a mini-story of their own that doesn't affect the sports day. The main arc is the flooded field, the borrowed hall, and the ribbons.",
+      "storyKeyEvents": [
+        "A week of rain flooded the field and threatened the school's outdoor sports day.",
+        "Ms. Roos got the neighbouring school to lend its sports hall for one morning.",
+        "The children ran shortened races indoors and every child got a ribbon."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L171_Q2",
+      "instruction": "Choose the three primary events. One secondary event looks important but isn't. Arrange the three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Karim's company was pitching for a big contract, and his team had one week to prepare a prototype. On Wednesday the prototype's screen froze, but a colleague restarted it in seconds and it ran normally. On Thursday the client asked for a change to the interface, which forced the team to redesign the main menu overnight. The redesigned prototype impressed the client on Friday, and the company won the contract.",
+      "options": [
+        "The client asked for an interface change, forcing the team to redesign the main menu overnight.",
+        "The redesigned prototype impressed the client and the company won the contract.",
+        "The prototype's screen froze on Wednesday but was restarted in seconds.",
+        "Karim's team had a week to prepare a prototype for a big contract pitch."
+      ],
+      "correctOrder": [3, 0, 1],
+      "hint": "A problem fixed in seconds isn't a turning point. Which problem actually changed the plan?",
+      "explanation": "The freeze was cured at once and left the plan unchanged. The overnight redesign forced by the client is what turned the week around.",
+      "storyKeyEvents": [
+        "Karim's team had a week to prepare a prototype for a big contract pitch.",
+        "The client asked for an interface change, forcing the team to redesign the main menu overnight.",
+        "The redesigned prototype impressed the client and the company won the contract."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L171_Q3",
+      "instruction": "Choose the situation, the main turning point, and the outcome of the main arc, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Mireille planned to open a small print shop with her cousin, and they spent two months searching for a unit. At first they considered crowdfunding but never launched a campaign. After the landlord of the best unit raised the rent, they gave up renting and converted Mireille's garage over three weekends instead. The garage shop opened in June and had regular customers within a month.",
+      "options": [
+        "The garage shop opened in June and had regular customers within a month.",
+        "Mireille and her cousin considered crowdfunding but never launched a campaign.",
+        "Mireille and her cousin planned a print shop, but the rent on a unit proved too high.",
+        "They converted Mireille's garage over three weekends."
+      ],
+      "correctOrder": [2, 3, 0],
+      "hint": "A plan that was never carried out isn't a turning point.",
+      "explanation": "Crowdfunding was only considered and never happened, so it changed nothing. The garage conversion was the real change of direction.",
+      "storyKeyEvents": [
+        "Mireille and her cousin planned a print shop, but the rent on a unit proved too high.",
+        "They converted Mireille's garage over three weekends.",
+        "The garage shop opened in June and had regular customers within a month."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L172_Q1",
+      "instruction": "Choose the situation, the main turning point, and the outcome of the main arc, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The town's youth orchestra lost its rehearsal hall when the roof was condemned. For two weeks the players rehearsed in the car park, huddled in coats, until a nearby company offered a warehouse floor. The acoustics there were poor, so volunteers hung blankets on the walls. By the spring concert the sound had improved enough for a standing ovation.",
+      "options": [
+        "For two weeks the players rehearsed in the car park, huddled in coats.",
+        "The youth orchestra lost its rehearsal hall when the roof was condemned.",
+        "A nearby company offered a warehouse floor for rehearsals.",
+        "With blankets hung on the walls, the sound improved and the spring concert earned a standing ovation."
+      ],
+      "correctOrder": [1, 2, 3],
+      "hint": "A temporary stop between two events is not a turning point.",
+      "explanation": "The car park rehearsals were a stop-gap between losing the hall and getting the warehouse. The arc is the loss, the offer, and the improved sound.",
+      "storyKeyEvents": [
+        "The youth orchestra lost its rehearsal hall when the roof was condemned.",
+        "A nearby company offered a warehouse floor for rehearsals.",
+        "With blankets hung on the walls, the sound improved and the spring concert earned a standing ovation."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L172_Q2",
+      "instruction": "Choose the three primary events. One secondary event looks important but isn't. Arrange the three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Two colleagues, Nikolai and Amara, were asked to fix a bug that crashed the company's app every night at midnight. Nikolai examined the server logs and found that a scheduled backup started at midnight and overloaded the memory. Amara suggested moving the backup to three a.m., and the team agreed. Meanwhile their manager decided to buy new chairs for the office. After the change, the app stopped crashing.",
+      "options": [
+        "Nikolai found that the midnight backup overloaded the memory.",
+        "Their manager decided to buy new chairs for the office.",
+        "The company's app crashed every night at midnight.",
+        "The team moved the backup to three a.m. and the crashes stopped."
+      ],
+      "correctOrder": [2, 0, 3],
+      "hint": "Someone decided something, but does the decision touch the bug?",
+      "explanation": "The chairs are an unrelated purchase. The bug is solved by finding the overloading backup and moving it.",
+      "storyKeyEvents": [
+        "The company's app crashed every night at midnight.",
+        "Nikolai found that the midnight backup overloaded the memory.",
+        "The team moved the backup to three a.m. and the crashes stopped."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L172_Q3",
+      "instruction": "Choose the situation, the main turning point, and the outcome of the main arc, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Rosalind's café hosted a poetry night that filled every seat. Halfway through, the power failed, so Rosalind lit candles and the poets carried on, reading by candlelight. Next door the bakery's fridge stopped, and its owner spent the night moving stock to a neighbour's freezer. The power returned at ten, and the audience asked the poets to read again.",
+      "options": [
+        "A poetry night filled every seat at Rosalind's café.",
+        "The power returned at ten and the audience asked the poets to read again.",
+        "When the power failed halfway through, Rosalind lit candles and the poets carried on.",
+        "The bakery next door lost its fridge power and its owner moved stock to a neighbour's freezer."
+      ],
+      "correctOrder": [0, 2, 1],
+      "hint": "\"Next door\" points to a parallel story. Is it part of the poetry night?",
+      "explanation": "The bakery's stock is a parallel problem elsewhere with its own solution. The café's arc is the full house, the candlelit reading, and the encore.",
+      "storyKeyEvents": [
+        "A poetry night filled every seat at Rosalind's café.",
+        "When the power failed halfway through, Rosalind lit candles and the poets carried on.",
+        "The power returned at ten and the audience asked the poets to read again."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L173_Q1",
+      "instruction": "Choose the three primary events. One secondary event looks important but isn't. Arrange the three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Ebele's netball team needed a win to stay in the league. In the week before the match the coach booked a bus and printed new match programmes. On the day the team fell behind by two goals at half-time, so the coach switched to a more attacking formation. The team scored three goals in the second half, won, and stayed up.",
+      "options": [
+        "The coach booked a bus and printed new match programmes that week.",
+        "The team scored three goals in the second half, won, and stayed up.",
+        "Ebele's netball team needed a win to stay in the league.",
+        "The team fell behind at half-time, and the coach switched to a more attacking formation."
+      ],
+      "correctOrder": [2, 3, 1],
+      "hint": "Preparation before a match isn't the same as what decides it.",
+      "explanation": "The bus and programmes were routine arrangements that had nothing to do with the result. The match turned when the coach changed the formation at half-time.",
+      "storyKeyEvents": [
+        "Ebele's netball team needed a win to stay in the league.",
+        "The team fell behind at half-time, and the coach switched to a more attacking formation.",
+        "The team scored three goals in the second half, won, and stayed up."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L173_Q2",
+      "instruction": "Choose the situation, the main turning point, and the outcome of the main arc, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Marta's start-up had run out of money in the autumn. An investor visited and seemed enthusiastic, and the team celebrated, but he decided not to invest after reading the accounts. The team then cut costs, moved to a smaller office and focused on one product. Within six months the start-up broke even.",
+      "options": [
+        "Within six months the start-up broke even.",
+        "The team cut costs, moved to a smaller office and focused on one product.",
+        "An investor visited and seemed enthusiastic, and the team celebrated.",
+        "Marta's start-up ran out of money in the autumn."
+      ],
+      "correctOrder": [3, 1, 0],
+      "hint": "Some events look like turning points but change nothing. Did the investor change the situation?",
+      "explanation": "The investor's visit lifted spirits but ended with no investment, so nothing changed. The real turning point was the team's decision to cut costs and focus.",
+      "storyKeyEvents": [
+        "Marta's start-up ran out of money in the autumn.",
+        "The team cut costs, moved to a smaller office and focused on one product.",
+        "Within six months the start-up broke even."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L173_Q3",
+      "instruction": "Choose the three primary events. One secondary event looks important but isn't. Arrange the three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Petra arrived at the dance final with a sprained ankle. Two years earlier she had won the same competition, and the trophy still stood in her studio. She asked the physio to tape the ankle, changed her routine to avoid jumps, and danced a slower, more controlled piece. The judges awarded her second place.",
+      "options": [
+        "Two years earlier Petra had won the same competition.",
+        "Petra had the ankle taped and changed her routine to avoid jumps.",
+        "The judges awarded Petra second place.",
+        "Petra arrived at the dance final with a sprained ankle."
+      ],
+      "correctOrder": [3, 1, 2],
+      "hint": "A sentence about the past may add colour without being part of this final.",
+      "explanation": "Her earlier win is background from two years before. This final's arc is the injury, the adapted routine, and the second place.",
+      "storyKeyEvents": [
+        "Petra arrived at the dance final with a sprained ankle.",
+        "Petra had the ankle taped and changed her routine to avoid jumps.",
+        "The judges awarded Petra second place."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L174_Q1",
+      "instruction": "Choose the situation, the main turning point, and the outcome of the main arc, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Hakon's village lost its only bus route when the operator withdrew the service. The parish council surveyed residents, found forty who relied on it, and negotiated with a taxi firm to run a shared minibus three days a week. Within a month the minibus was full on market days. A year later the parish council won an award for community transport.",
+      "options": [
+        "Within a month the minibus was full on market days.",
+        "The village lost its only bus route when the operator withdrew the service.",
+        "The parish council found forty residents relied on it and negotiated a shared minibus three days a week.",
+        "A year later the parish council won an award for community transport."
+      ],
+      "correctOrder": [1, 2, 0],
+      "hint": "Something that happens long after the resolution isn't part of the main arc.",
+      "explanation": "The award came a year after the minibus was already working, so it is an epilogue. The arc ends with the full minibus on market days.",
+      "storyKeyEvents": [
+        "The village lost its only bus route when the operator withdrew the service.",
+        "The parish council found forty residents relied on it and negotiated a shared minibus three days a week.",
+        "Within a month the minibus was full on market days."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L174_Q2",
+      "instruction": "Choose the three primary events. One secondary event looks important but isn't. Arrange the three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Lotta was organising a book fair at her school. She booked twelve authors, but two dropped out a week before, leaving gaps in the schedule. She asked local writers to step in and rearranged the timetable. Meanwhile the school caretaker spent the week trying to fix a broken lift and finally succeeded on Friday. The fair went ahead with a full programme.",
+      "options": [
+        "The fair went ahead with a full programme.",
+        "Lotta asked local writers to step in and rearranged the timetable.",
+        "Lotta booked twelve authors for the book fair, but two dropped out a week before.",
+        "The caretaker spent the week fixing a broken lift and succeeded on Friday."
+      ],
+      "correctOrder": [2, 1, 0],
+      "hint": "Someone else worked hard all week. Does it affect the fair?",
+      "explanation": "The lift repair is a task with its own success that doesn't affect the programme. The fair's story is the drop-outs, the substitutes, and the full programme.",
+      "storyKeyEvents": [
+        "Lotta booked twelve authors for the book fair, but two dropped out a week before.",
+        "Lotta asked local writers to step in and rearranged the timetable.",
+        "The fair went ahead with a full programme."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L174_Q3",
+      "instruction": "Choose the situation, the main turning point, and the outcome of the main arc, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The rowing team launched at dawn for the regional race. A rope snagged in the first minute, but the cox untangled it at once and the team lost only seconds. At the halfway point one rower's oar broke, and the team switched to a spare while still moving, falling behind by a length. They caught up in the final stretch and won by a nose.",
+      "options": [
+        "The rowing team launched at dawn for the regional race.",
+        "The team caught up in the final stretch and won by a nose.",
+        "A rope snagged in the first minute, but the cox untangled it at once.",
+        "One rower's oar broke at the halfway point and the team fell behind by a length."
+      ],
+      "correctOrder": [0, 3, 1],
+      "hint": "A trouble that is over in seconds seldom changes the story.",
+      "explanation": "The snag cost only seconds and was cleared straight away. The main arc turns on the broken oar and the comeback.",
+      "storyKeyEvents": [
+        "The rowing team launched at dawn for the regional race.",
+        "One rower's oar broke at the halfway point and the team fell behind by a length.",
+        "The team caught up in the final stretch and won by a nose."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L175_Q1",
+      "instruction": "Choose the three primary events. One secondary event looks important but isn't. Arrange the three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Nour's building had no bike storage, and residents left their bikes in the hallway. The residents' committee considered building a shed in the yard, but the cost was too high, so it approached the landlord. The landlord agreed to install two bike racks in the unused cellar. Within a month the hallway was clear.",
+      "options": [
+        "The committee approached the landlord about the problem.",
+        "Residents left bikes in the hallway because the building had no storage.",
+        "The committee considered building a shed in the yard.",
+        "The landlord installed two bike racks in the cellar, and the hallway was clear within a month."
+      ],
+      "correctOrder": [1, 0, 3],
+      "hint": "A plan that was dropped isn't one of the main events.",
+      "explanation": "The shed was considered and set aside because of the cost. What the committee actually did was approach the landlord.",
+      "storyKeyEvents": [
+        "Residents left bikes in the hallway because the building had no storage.",
+        "The committee approached the landlord about the problem.",
+        "The landlord installed two bike racks in the cellar, and the hallway was clear within a month."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L175_Q2",
+      "instruction": "Choose the situation, the main turning point, and the outcome of the main arc, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Gustavo's mobile app was rejected by the app store for a privacy issue. For a week the app stayed hidden while his team tried different fixes with the store's reviewers. The third fix satisfied the reviewers, and the app was approved on Friday. The following Monday, downloads reached a thousand.",
+      "options": [
+        "The third fix satisfied the reviewers.",
+        "The app was approved on Friday, and downloads reached a thousand the following Monday.",
+        "Gustavo's app was rejected by the app store for a privacy issue.",
+        "For a week the app stayed hidden while the team tried different fixes."
+      ],
+      "correctOrder": [2, 0, 1],
+      "hint": "Ask what changed things, rather than what simply had to be endured.",
+      "explanation": "The hidden week is the period during which the team worked on fixes. The turning point was the third fix that satisfied the reviewers.",
+      "storyKeyEvents": [
+        "Gustavo's app was rejected by the app store for a privacy issue.",
+        "The third fix satisfied the reviewers.",
+        "The app was approved on Friday, and downloads reached a thousand the following Monday."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L175_Q3",
+      "instruction": "Choose the three primary events. One secondary event looks important but isn't. Arrange the three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Ms. Aziz and Mr. Lund set out to fix the school's lunch queue, because pupils kept missing their afternoon lessons. Ms. Aziz proposed staggering lunch times by year group. Mr. Lund decided to swap the canteen's tablecloths for wipe-clean ones. After the change, pupils were back in class on time.",
+      "options": [
+        "Pupils were back in class on time.",
+        "Mr. Lund decided to swap the canteen's tablecloths for wipe-clean ones.",
+        "Ms. Aziz proposed staggering lunch times by year group.",
+        "Long lunch queues made pupils miss their afternoon lessons."
+      ],
+      "correctOrder": [3, 2, 0],
+      "hint": "Two people each decide something. Which decision touches the queue?",
+      "explanation": "The tablecloths have no effect on the queue or the lessons. The problem is solved by the staggered lunch times.",
+      "storyKeyEvents": [
+        "Long lunch queues made pupils miss their afternoon lessons.",
+        "Ms. Aziz proposed staggering lunch times by year group.",
+        "Pupils were back in class on time."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L176_Q1",
+      "instruction": "Choose the situation, the main turning point, and the outcome of the main arc, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Freya's team planned to launch an online course on Monday. On Sunday night the video platform went down, so Freya moved the launch to the team's own website within a few hours. Meanwhile the marketing intern was rewriting the course's brochure text for the following month. On Monday three hundred learners enrolled.",
+      "options": [
+        "Freya's team planned to launch an online course on Monday.",
+        "When the video platform went down, Freya moved the launch to the team's own website.",
+        "The marketing intern rewrote the course's brochure text for the following month.",
+        "Three hundred learners enrolled on Monday."
+      ],
+      "correctOrder": [0, 1, 3],
+      "hint": "\"Meanwhile\" introduces a parallel task. Is it part of the launch?",
+      "explanation": "The brochure is for the following month and doesn't affect the launch. The launch story is the plan, the switch of platform, and the enrolments.",
+      "storyKeyEvents": [
+        "Freya's team planned to launch an online course on Monday.",
+        "When the video platform went down, Freya moved the launch to the team's own website.",
+        "Three hundred learners enrolled on Monday."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L176_Q2",
+      "instruction": "Choose the three primary events. One secondary event looks important but isn't. Arrange the three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "After a storm a fallen tree blocked the only road to Edda's farm. Neighbours arrived with chainsaws, and by noon a path was cut. The day before, Edda had bought extra sacks of feed and checked the barn roof. By evening the road was open, and the milk truck reached the farm.",
+      "options": [
+        "A fallen tree blocked the only road to Edda's farm.",
+        "The day before, Edda had bought extra sacks of feed and checked the barn roof.",
+        "By evening the road was open and the milk truck reached the farm.",
+        "Neighbours arrived with chainsaws and cut a path by noon."
+      ],
+      "correctOrder": [0, 3, 2],
+      "hint": "Preparation before the storm isn't an event of the road being cleared.",
+      "explanation": "Edda's earlier preparations belong to the day before and don't help clear the road. The road story is the blockage, the neighbours' chainsaws, and the milk truck getting through.",
+      "storyKeyEvents": [
+        "A fallen tree blocked the only road to Edda's farm.",
+        "Neighbours arrived with chainsaws and cut a path by noon.",
+        "By evening the road was open and the milk truck reached the farm."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L176_Q3",
+      "instruction": "Choose the situation, the main turning point, and the outcome of the main arc, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Yasmin was applying to study architecture, and her first portfolio was rejected. A famous architect praised one of her drawings at a public talk, which made her hopeful, but nothing came of it. She then took a six-week course on drawing plans and resubmitted, and this time she was accepted.",
+      "options": [
+        "Yasmin's first architecture portfolio was rejected.",
+        "A famous architect praised one of her drawings at a public talk.",
+        "Yasmin took a six-week course on drawing plans.",
+        "She resubmitted and was accepted."
+      ],
+      "correctOrder": [0, 2, 3],
+      "hint": "Praise that leads nowhere doesn't change the situation.",
+      "explanation": "The architect's praise made her hopeful but changed nothing. The turning point was taking the course and resubmitting.",
+      "storyKeyEvents": [
+        "Yasmin's first architecture portfolio was rejected.",
+        "Yasmin took a six-week course on drawing plans.",
+        "She resubmitted and was accepted."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L177_Q1",
+      "instruction": "Choose the three primary events. One secondary event looks important but isn't. Arrange the three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "By the time Mr. Chua retired, the shop he had run for forty years was struggling. He had opened it in 1984 with a single shelf of stationery. His niece Elodie took over and updated the window display and the prices. Within a year she had doubled the number of regular customers.",
+      "options": [
+        "Within a year Elodie had doubled the number of regular customers.",
+        "The shop was struggling when Mr. Chua retired after forty years.",
+        "His niece Elodie took over and updated the window display and the prices.",
+        "Mr. Chua had opened the shop in 1984 with a single shelf of stationery."
+      ],
+      "correctOrder": [1, 2, 0],
+      "hint": "A sentence about the past may explain how the shop began, not what changed.",
+      "explanation": "The shop's beginnings in 1984 are background and don't drive Elodie's changes. The arc is the struggling shop, Elodie's updates, and the doubled customers.",
+      "storyKeyEvents": [
+        "The shop was struggling when Mr. Chua retired after forty years.",
+        "His niece Elodie took over and updated the window display and the prices.",
+        "Within a year Elodie had doubled the number of regular customers."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L177_Q2",
+      "instruction": "Choose the situation, the main turning point, and the outcome of the main arc, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The village's annual fair was cancelled two days before the date when the field flooded. The organiser, Mrs. Ito, called every stallholder and moved the fair to the school hall. Two hundred visitors came, and the stalls sold out. Next year the village plans to add a covered marquee.",
+      "options": [
+        "Mrs. Ito called every stallholder and moved the fair to the school hall.",
+        "Two hundred visitors came and the stalls sold out.",
+        "Next year the village plans to add a covered marquee.",
+        "The village fair was cancelled two days before the date when the field flooded."
+      ],
+      "correctOrder": [3, 0, 1],
+      "hint": "A plan for next year comes after the story's resolution.",
+      "explanation": "The marquee is a future plan, outside the fair that took place. The arc is the flood, the move to the hall, and the sell-out.",
+      "storyKeyEvents": [
+        "The village fair was cancelled two days before the date when the field flooded.",
+        "Mrs. Ito called every stallholder and moved the fair to the school hall.",
+        "Two hundred visitors came and the stalls sold out."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L177_Q3",
+      "instruction": "Choose the three primary events. One secondary event looks important but isn't. Arrange the three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Tomas's band was booked to play at a wedding, but the singer lost her voice the night before. Tomas rang an old friend, Livia, who agreed to learn six songs in a day. Meanwhile the bride's uncle discovered that he had left his speech at home and drove back to fetch it. Livia sang all six songs with a lyric sheet, and the couple danced until midnight.",
+      "options": [
+        "Livia agreed to learn six songs in a day.",
+        "The band's singer lost her voice the night before a wedding gig.",
+        "Livia sang all six songs with a lyric sheet and the couple danced until midnight.",
+        "The bride's uncle left his speech at home and drove back to fetch it."
+      ],
+      "correctOrder": [1, 0, 2],
+      "hint": "A wedding guest's small crisis is not the band's crisis.",
+      "explanation": "The uncle's speech is a separate mini-drama at the same wedding. The band's story is the lost voice, Livia's rescue, and the dancing.",
+      "storyKeyEvents": [
+        "The band's singer lost her voice the night before a wedding gig.",
+        "Livia agreed to learn six songs in a day.",
+        "Livia sang all six songs with a lyric sheet and the couple danced until midnight."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L178_Q1",
+      "instruction": "Choose the situation, the main turning point, and the outcome of the main arc, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Anders's team was building a bridge model for a school contest. On Tuesday the glue failed on one joint, but they reapplied it and it held. On Wednesday a heavier test load cracked the main beam, and the team rebuilt it with thicker strips. By Friday the rebuilt bridge held the judges' full load.",
+      "options": [
+        "Anders's team was building a bridge model for a school contest.",
+        "A heavier test load cracked the main beam, and the team rebuilt it with thicker strips.",
+        "The glue failed on one joint on Tuesday, but it held once reapplied.",
+        "The rebuilt bridge held the judges' full load on Friday."
+      ],
+      "correctOrder": [0, 1, 3],
+      "hint": "A quick repair on the way isn't the big setback.",
+      "explanation": "The glue problem was repaired at once and didn't change the design. The cracked beam and rebuild were the turning point.",
+      "storyKeyEvents": [
+        "Anders's team was building a bridge model for a school contest.",
+        "A heavier test load cracked the main beam, and the team rebuilt it with thicker strips.",
+        "The rebuilt bridge held the judges' full load on Friday."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L178_Q2",
+      "instruction": "Choose the three primary events. One secondary event looks important but isn't. Arrange the three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Bianca wanted to move abroad for a year. She considered working as an au pair, but she wasn't sure about living with a family, so she applied for a language-school placement instead. The school accepted her, and she left in September. By December she was holding conversations in the new language.",
+      "options": [
+        "Bianca applied for a language-school placement and was accepted.",
+        "Bianca wanted to move abroad for a year.",
+        "Bianca considered working as an au pair.",
+        "By December she was holding conversations in the new language."
+      ],
+      "correctOrder": [1, 0, 3],
+      "hint": "Options that were only considered don't count as events.",
+      "explanation": "Working as an au pair was an idea she set aside. Her story is the wish, the language-school place, and the conversations.",
+      "storyKeyEvents": [
+        "Bianca wanted to move abroad for a year.",
+        "Bianca applied for a language-school placement and was accepted.",
+        "By December she was holding conversations in the new language."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L178_Q3",
+      "instruction": "Choose the situation, the main turning point, and the outcome of the main arc, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Oskar's basement flooded, and for two days everything he owned sat on the pavement under tarpaulin. On the third day the insurer's assessor visited and approved the claim, and a specialist firm dried the walls in a week. Oskar then repainted, and by the end of the month he had moved back.",
+      "options": [
+        "Oskar's basement flooded.",
+        "For two days everything Oskar owned sat on the pavement under tarpaulin.",
+        "A specialist firm dried the walls, and by the end of the month Oskar had moved back.",
+        "The insurer's assessor approved his claim."
+      ],
+      "correctOrder": [0, 3, 2],
+      "hint": "A waiting period between two events is a state, not a turning point.",
+      "explanation": "The two days under tarpaulin were the wait before the assessor came. The turning point was the approved claim, which led to the drying and the move back.",
+      "storyKeyEvents": [
+        "Oskar's basement flooded.",
+        "The insurer's assessor approved his claim.",
+        "A specialist firm dried the walls, and by the end of the month Oskar had moved back."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L179_Q1",
+      "instruction": "Choose the three primary events. One secondary event looks important but isn't. Arrange the three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Jana and her brother Milo were clearing their parents' loft when they found a box of old photos. Jana suggested scanning them for a family website, and Milo decided to repaint the loft door white. They scanned two hundred photos over a weekend and shared the site with relatives, who added names to the pictures.",
+      "options": [
+        "Milo decided to repaint the loft door white.",
+        "Jana suggested scanning the photos for a family website, and they scanned two hundred over a weekend.",
+        "Jana and Milo found a box of old photos in their parents' loft.",
+        "Relatives added names to the pictures after the site was shared."
+      ],
+      "correctOrder": [2, 1, 3],
+      "hint": "Who decides what? Which decision belongs to the photos?",
+      "explanation": "The door is a separate job that has nothing to do with the photos or the website. The photo story is the find, the scanning, and the relatives' contributions.",
+      "storyKeyEvents": [
+        "Jana and Milo found a box of old photos in their parents' loft.",
+        "Jana suggested scanning the photos for a family website, and they scanned two hundred over a weekend.",
+        "Relatives added names to the pictures after the site was shared."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L179_Q2",
+      "instruction": "Choose the situation, the main turning point, and the outcome of the main arc, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The town's marathon route had to be changed after a burst water main on the main road. The organiser, Ms. Holm, redrew the route through the park, and volunteers re-marked it overnight. At the same time a charity tent on the high street ran out of tea and was restocked by a nearby shop. The marathon started on time, and a record field of one thousand runners finished without trouble.",
+      "options": [
+        "Ms. Holm redrew the route through the park and volunteers re-marked it overnight.",
+        "A charity tent ran out of tea and was restocked by a nearby shop.",
+        "The marathon started on time and a record field of one thousand runners finished without trouble.",
+        "A burst water main forced a change to the marathon route."
+      ],
+      "correctOrder": [3, 0, 2],
+      "hint": "\"At the same time\" points to something happening elsewhere.",
+      "explanation": "The tea shortage is a small problem with its own quick solution. The marathon's arc is the water main, the new route, and the trouble-free race.",
+      "storyKeyEvents": [
+        "A burst water main forced a change to the marathon route.",
+        "Ms. Holm redrew the route through the park and volunteers re-marked it overnight.",
+        "The marathon started on time and a record field of one thousand runners finished without trouble."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L179_Q3",
+      "instruction": "Choose the three primary events. One secondary event looks important but isn't. Arrange the three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The school's robotics team had to fix a jam in its robot's arm before the match. They took the arm apart, found a bent gear and swapped it for a spare. The day before, they had packed the toolkit and charged all the batteries. In the match the arm worked perfectly and the team advanced to the next round.",
+      "options": [
+        "The day before, the team had packed the toolkit and charged all the batteries.",
+        "The arm worked perfectly and the team advanced to the next round.",
+        "The team took the arm apart, found a bent gear and swapped it for a spare.",
+        "The robot's arm jammed before the match."
+      ],
+      "correctOrder": [3, 2, 1],
+      "hint": "A routine preparation isn't what fixed the arm.",
+      "explanation": "Packing tools and charging batteries had nothing to do with the jam. The repair came from finding and swapping the bent gear.",
+      "storyKeyEvents": [
+        "The robot's arm jammed before the match.",
+        "The team took the arm apart, found a bent gear and swapped it for a spare.",
+        "The arm worked perfectly and the team advanced to the next round."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L180_Q1",
+      "instruction": "Choose the situation, the main turning point, and the outcome of the main arc, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Ravi's family shoe-repair shop was losing money after a discount chain began offering cheap repairs. A newspaper article brought a rush of visitors for a weekend, and Ravi thought the problem was solved, but trade returned to normal the next week. He then began offering a same-day service and repairing leather bags, which the chain didn't. Within a year the shop was profitable again.",
+      "options": [
+        "Ravi's family shoe-repair shop was losing money after a discount chain began offering cheap repairs.",
+        "Ravi began offering a same-day service and repairing leather bags, which the chain didn't.",
+        "Within a year the shop was profitable again.",
+        "A newspaper article brought a rush of visitors, and Ravi thought the problem was solved."
+      ],
+      "correctOrder": [0, 1, 2],
+      "hint": "Did the newspaper visit change the shop's situation for good?",
+      "explanation": "The rush lasted a weekend and trade went back to normal, so it wasn't the turning point. What lasted was the same-day service and the bag repairs.",
+      "storyKeyEvents": [
+        "Ravi's family shoe-repair shop was losing money after a discount chain began offering cheap repairs.",
+        "Ravi began offering a same-day service and repairing leather bags, which the chain didn't.",
+        "Within a year the shop was profitable again."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L180_Q2",
+      "instruction": "Choose the three primary events. One secondary event looks important but isn't. Arrange the three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "When the council closed the swimming baths, the swimming club had nowhere to train. The chairwoman, Ms. Kwok, arranged early-morning lane hire at a hotel pool, and parents organised a car rota. Ms. Kwok herself had trained at the old baths as a child. Within a season the club had more members than before the closure.",
+      "options": [
+        "Ms. Kwok herself had trained at the old baths as a child.",
+        "The council closed the swimming baths and the club had nowhere to train.",
+        "Within a season the club had more members than before the closure.",
+        "Ms. Kwok arranged early-morning lane hire at a hotel pool, and parents organised a car rota."
+      ],
+      "correctOrder": [1, 3, 2],
+      "hint": "A sentence about someone's childhood may not be part of the club's arc.",
+      "explanation": "Ms. Kwok's childhood is background about her and doesn't change the club's story. The arc is the closure, the hotel pool arrangement, and the growth in members.",
+      "storyKeyEvents": [
+        "The council closed the swimming baths and the club had nowhere to train.",
+        "Ms. Kwok arranged early-morning lane hire at a hotel pool, and parents organised a car rota.",
+        "Within a season the club had more members than before the closure."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L180_Q3",
+      "instruction": "Choose the situation, the main turning point, and the outcome of the main arc, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The local radio station was about to close because its sponsor withdrew. The presenters launched a listener appeal, and in three weeks they raised enough for another year. A local firm then agreed to sponsor the breakfast show. Ten years later the station still broadcast, and the presenters were invited to its anniversary.",
+      "options": [
+        "A local firm agreed to sponsor the breakfast show.",
+        "The presenters launched a listener appeal and raised enough for another year in three weeks.",
+        "The local radio station was about to close because its sponsor withdrew.",
+        "Ten years later the station still broadcast and its presenters were invited to an anniversary."
+      ],
+      "correctOrder": [2, 1, 0],
+      "hint": "Something that happens a decade later lies beyond the story's arc.",
+      "explanation": "The anniversary is an epilogue from ten years on. The arc is the withdrawn sponsor, the listener appeal, and the new sponsor.",
+      "storyKeyEvents": [
+        "The local radio station was about to close because its sponsor withdrew.",
+        "The presenters launched a listener appeal and raised enough for another year in three weeks.",
+        "A local firm agreed to sponsor the breakfast show."
+      ]
+    }
+  ]
 }

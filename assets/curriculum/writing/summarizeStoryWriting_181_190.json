@@ -1,817 +1,637 @@
 {
-    "gameType": "summarizeStoryWriting",
-    "batchIndex": 19,
-    "levels": "181-190",
-    "quests": [
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L181_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "An international arbitration tribunal had ruled on jurisdiction in a dispute between a sovereign state and a private investor, but stopped short of ruling on the underlying merits. Both parties submitted supplementary briefs addressing the merits before the tribunal reconvened. The tribunal's final award required the state to compensate the investor for a specific portion of the claimed damages.",
-            "options": [
-                "The tribunal dismissed the investor's claim in its entirety.",
-                "An international arbitration tribunal had ruled on jurisdiction in a dispute between a sovereign state and a private investor, but stopped short of ruling on the underlying merits.",
-                "Both parties submitted supplementary briefs addressing the merits before the tribunal reconvened.",
-                "The tribunal's final award required the state to compensate the investor for a specific portion of the claimed damages."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Notice what the tribunal's final award actually requires once the merits are argued.",
-            "explanation": "Because the final award requires partial compensation, an option claiming the entire claim was dismissed contradicts that specific outcome.",
-            "storyKeyEvents": [
-                "An international arbitration tribunal had ruled on jurisdiction in a dispute between a sovereign state and a private investor, but stopped short of ruling on the underlying merits.",
-                "Both parties submitted supplementary briefs addressing the merits before the tribunal reconvened.",
-                "The tribunal's final award required the state to compensate the investor for a specific portion of the claimed damages.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L181_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A multilateral development bank's environmental safeguard policy had been invoked to pause a major hydroelectric project pending an independent impact assessment. The assessment recommended modifying the dam's design to preserve a specific migratory fish corridor. The bank approved continued financing once the modified design was adopted.",
-            "options": [
-                "A multilateral development bank's environmental safeguard policy had been invoked to pause a major hydroelectric project pending an independent impact assessment.",
-                "The bank withdrew financing entirely regardless of the assessment's recommendations.",
-                "The assessment recommended modifying the dam's design to preserve a specific migratory fish corridor.",
-                "The bank approved continued financing once the modified design was adopted."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Check whether the bank actually approves or withdraws financing once the design is modified.",
-            "explanation": "Because the bank approves continued financing once the modified design is adopted, an option claiming it withdrew regardless contradicts that outcome.",
-            "storyKeyEvents": [
-                "A multilateral development bank's environmental safeguard policy had been invoked to pause a major hydroelectric project pending an independent impact assessment.",
-                "The assessment recommended modifying the dam's design to preserve a specific migratory fish corridor.",
-                "The bank approved continued financing once the modified design was adopted.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L181_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national constitutional court had reserved judgment on a challenge to an emergency economic decree for an unusually long eighteen months. During that period, the legislature independently passed a permanent statute covering much of the same subject matter. The court ultimately ruled the original challenge moot given the new permanent statute.",
-            "options": [
-                "A national constitutional court had reserved judgment on a challenge to an emergency economic decree for an unusually long eighteen months.",
-                "During that period, the legislature independently passed a permanent statute covering much of the same subject matter.",
-                "The court ruled squarely on the merits of the original emergency decree.",
-                "The court ultimately ruled the original challenge moot given the new permanent statute."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you whether the court actually rules on the merits or declares the case moot.",
-            "explanation": "Because the court rules the challenge moot given the new statute, an option claiming it ruled squarely on the original decree's merits contradicts that outcome.",
-            "storyKeyEvents": [
-                "A national constitutional court had reserved judgment on a challenge to an emergency economic decree for an unusually long eighteen months.",
-                "During that period, the legislature independently passed a permanent statute covering much of the same subject matter.",
-                "The court ultimately ruled the original challenge moot given the new permanent statute.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L182_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A transnational insolvency proceeding had left creditors in two jurisdictions each claiming priority over the same pool of remaining assets. A cross-border insolvency protocol, invoked for the first time in either jurisdiction, established a single coordinated distribution plan. Creditors in both jurisdictions received distributions calculated under that single coordinated plan.",
-            "options": [
-                "A transnational insolvency proceeding had left creditors in two jurisdictions each claiming priority over the same pool of remaining assets.",
-                "A cross-border insolvency protocol, invoked for the first time in either jurisdiction, established a single coordinated distribution plan.",
-                "Creditors in both jurisdictions received distributions calculated under that single coordinated plan.",
-                "Creditors in one jurisdiction received nothing under the coordinated plan."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Check whether each option matches how distributions are actually calculated under the coordinated plan.",
-            "explanation": "Because creditors in both jurisdictions receive distributions under the plan, an option claiming one jurisdiction received nothing contradicts that outcome.",
-            "storyKeyEvents": [
-                "A transnational insolvency proceeding had left creditors in two jurisdictions each claiming priority over the same pool of remaining assets.",
-                "A cross-border insolvency protocol, invoked for the first time in either jurisdiction, established a single coordinated distribution plan.",
-                "Creditors in both jurisdictions received distributions calculated under that single coordinated plan.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L182_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national telecommunications regulator's proposed net-neutrality framework had drawn formal objections from both major carriers and consumer advocacy groups, though for opposite reasons. The regulator revised the framework's enforcement mechanism while leaving its core principles unchanged. Both carriers and advocacy groups withdrew their formal objections to the revised framework.",
-            "options": [
-                "Carriers withdrew their objections while advocacy groups escalated theirs further.",
-                "A national telecommunications regulator's proposed net-neutrality framework had drawn formal objections from both major carriers and consumer advocacy groups, though for opposite reasons.",
-                "The regulator revised the framework's enforcement mechanism while leaving its core principles unchanged.",
-                "Both carriers and advocacy groups withdrew their formal objections to the revised framework."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Notice whether both groups actually withdraw their objections or whether only one does.",
-            "explanation": "Because both carriers and advocacy groups withdraw their objections, an option claiming only carriers did while advocates escalated contradicts that joint withdrawal.",
-            "storyKeyEvents": [
-                "A national telecommunications regulator's proposed net-neutrality framework had drawn formal objections from both major carriers and consumer advocacy groups, though for opposite reasons.",
-                "The regulator revised the framework's enforcement mechanism while leaving its core principles unchanged.",
-                "Both carriers and advocacy groups withdrew their formal objections to the revised framework.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L182_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A sovereign wealth fund's disclosed investment strategy had drawn criticism from two entirely different constituencies: domestic taxpayers and foreign portfolio partners. The fund published a revised strategy with clearer risk disclosures aimed specifically at addressing both constituencies' concerns. Both domestic taxpayer groups and foreign partners publicly endorsed the revised strategy.",
-            "options": [
-                "A sovereign wealth fund's disclosed investment strategy had drawn criticism from two entirely different constituencies: domestic taxpayers and foreign portfolio partners.",
-                "Domestic taxpayer groups endorsed the revision while foreign partners withdrew entirely.",
-                "The fund published a revised strategy with clearer risk disclosures aimed specifically at addressing both constituencies' concerns.",
-                "Both domestic taxpayer groups and foreign partners publicly endorsed the revised strategy."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Check whether both constituencies actually endorse the revised strategy together.",
-            "explanation": "Because both groups publicly endorse the revised strategy, an option claiming foreign partners withdrew instead contradicts that joint endorsement.",
-            "storyKeyEvents": [
-                "A sovereign wealth fund's disclosed investment strategy had drawn criticism from two entirely different constituencies: domestic taxpayers and foreign portfolio partners.",
-                "The fund published a revised strategy with clearer risk disclosures aimed specifically at addressing both constituencies' concerns.",
-                "Both domestic taxpayer groups and foreign partners publicly endorsed the revised strategy.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L183_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A landmark class-action settlement had been provisionally approved by a trial court but remained subject to a formal fairness hearing before finalization. A subset of class members formally objected to the settlement's proposed allocation formula at that hearing. The court approved the settlement with a modified allocation formula addressing those specific objections.",
-            "options": [
-                "A landmark class-action settlement had been provisionally approved by a trial court but remained subject to a formal fairness hearing before finalization.",
-                "A subset of class members formally objected to the settlement's proposed allocation formula at that hearing.",
-                "The court rejected the settlement outright and ordered the case to trial.",
-                "The court approved the settlement with a modified allocation formula addressing those specific objections."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Notice what the court actually does with the settlement once the objections are addressed.",
-            "explanation": "Because the court approves the settlement with a modified formula, an option claiming it rejected the settlement outright contradicts that specific approval.",
-            "storyKeyEvents": [
-                "A landmark class-action settlement had been provisionally approved by a trial court but remained subject to a formal fairness hearing before finalization.",
-                "A subset of class members formally objected to the settlement's proposed allocation formula at that hearing.",
-                "The court approved the settlement with a modified allocation formula addressing those specific objections.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L183_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A multinational corporation's board had authorized an internal investigation into allegations against its chief executive, with findings to be reported directly to an independent committee. The committee's findings substantiated some allegations while finding others unsupported by the available evidence. The board took disciplinary action calibrated to the substantiated findings alone.",
-            "options": [
-                "A multinational corporation's board had authorized an internal investigation into allegations against its chief executive, with findings to be reported directly to an independent committee.",
-                "The committee's findings substantiated some allegations while finding others unsupported by the available evidence.",
-                "The board took disciplinary action calibrated to the substantiated findings alone.",
-                "The board dismissed the chief executive based on the full original set of allegations."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Read the ending closely: it tells you exactly what the board's disciplinary action is based on.",
-            "explanation": "Because the board's action is calibrated to only the substantiated findings, an option basing dismissal on the full original allegations contradicts that specific calibration.",
-            "storyKeyEvents": [
-                "A multinational corporation's board had authorized an internal investigation into allegations against its chief executive, with findings to be reported directly to an independent committee.",
-                "The committee's findings substantiated some allegations while finding others unsupported by the available evidence.",
-                "The board took disciplinary action calibrated to the substantiated findings alone.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L183_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national data-protection authority had opened a formal inquiry into a technology company's cross-border data transfers under two separate legal provisions simultaneously. The company demonstrated compliance under one provision while the authority found a genuine gap under the other. The authority closed the inquiry under the first provision while requiring specific remediation under the second.",
-            "options": [
-                "The authority closed the inquiry entirely under both provisions without requiring any remediation.",
-                "A national data-protection authority had opened a formal inquiry into a technology company's cross-border data transfers under two separate legal provisions simultaneously.",
-                "The company demonstrated compliance under one provision while the authority found a genuine gap under the other.",
-                "The authority closed the inquiry under the first provision while requiring specific remediation under the second."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Check whether each option matches exactly what the authority does under each of the two provisions.",
-            "explanation": "Because the authority closes one provision while requiring remediation under the other, an option closing both entirely contradicts that specific split outcome.",
-            "storyKeyEvents": [
-                "A national data-protection authority had opened a formal inquiry into a technology company's cross-border data transfers under two separate legal provisions simultaneously.",
-                "The company demonstrated compliance under one provision while the authority found a genuine gap under the other.",
-                "The authority closed the inquiry under the first provision while requiring specific remediation under the second.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L184_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A federal antitrust consent decree governing a technology platform had included a five-year review clause allowing either party to request modification. At the five-year mark, the platform requested loosening one specific restriction it argued was no longer necessary. The court granted the requested modification while leaving every other restriction in the decree fully intact.",
-            "options": [
-                "A federal antitrust consent decree governing a technology platform had included a five-year review clause allowing either party to request modification.",
-                "The court dissolved the entire consent decree in response to the platform's request.",
-                "At the five-year mark, the platform requested loosening one specific restriction it argued was no longer necessary.",
-                "The court granted the requested modification while leaving every other restriction in the decree fully intact."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Notice the exact scope of what the court actually grants in response to the request.",
-            "explanation": "Because the court grants only the one requested modification while leaving the rest intact, an option dissolving the entire decree contradicts that limited scope.",
-            "storyKeyEvents": [
-                "A federal antitrust consent decree governing a technology platform had included a five-year review clause allowing either party to request modification.",
-                "At the five-year mark, the platform requested loosening one specific restriction it argued was no longer necessary.",
-                "The court granted the requested modification while leaving every other restriction in the decree fully intact.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L184_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A sovereign bond prospectus had contained a collective-action clause permitting a supermajority of bondholders to bind dissenting holdouts to a restructuring. A supermajority approved a restructuring that a small minority of holdout bondholders explicitly opposed. The clause bound the holdout minority to the restructuring's terms despite their explicit opposition.",
-            "options": [
-                "A sovereign bond prospectus had contained a collective-action clause permitting a supermajority of bondholders to bind dissenting holdouts to a restructuring.",
-                "A supermajority approved a restructuring that a small minority of holdout bondholders explicitly opposed.",
-                "The holdout minority successfully avoided the restructuring's terms.",
-                "The clause bound the holdout minority to the restructuring's terms despite their explicit opposition."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Check whether the holdout minority is actually bound by the clause or successfully avoids it.",
-            "explanation": "Because the clause binds the minority despite their opposition, an option claiming they successfully avoided the terms contradicts that binding effect.",
-            "storyKeyEvents": [
-                "A sovereign bond prospectus had contained a collective-action clause permitting a supermajority of bondholders to bind dissenting holdouts to a restructuring.",
-                "A supermajority approved a restructuring that a small minority of holdout bondholders explicitly opposed.",
-                "The clause bound the holdout minority to the restructuring's terms despite their explicit opposition.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L184_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A whistleblower's disclosure to a securities regulator had triggered parallel investigations by both the regulator and a separate criminal prosecutor's office. The regulator's civil investigation concluded with a settlement, while the prosecutor's criminal investigation remained ongoing on a separate track. The settlement explicitly did not resolve or affect the pending criminal matter.",
-            "options": [
-                "A whistleblower's disclosure to a securities regulator had triggered parallel investigations by both the regulator and a separate criminal prosecutor's office.",
-                "The regulator's civil investigation concluded with a settlement, while the prosecutor's criminal investigation remained ongoing on a separate track.",
-                "The settlement explicitly did not resolve or affect the pending criminal matter.",
-                "The civil settlement automatically resolved the pending criminal matter as well."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Read the ending closely: it tells you exactly what the civil settlement does and does not resolve.",
-            "explanation": "Because the settlement explicitly does not resolve the criminal matter, an option claiming it automatically did contradicts that explicit limitation.",
-            "storyKeyEvents": [
-                "A whistleblower's disclosure to a securities regulator had triggered parallel investigations by both the regulator and a separate criminal prosecutor's office.",
-                "The regulator's civil investigation concluded with a settlement, while the prosecutor's criminal investigation remained ongoing on a separate track.",
-                "The settlement explicitly did not resolve or affect the pending criminal matter.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L185_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national pension fund's governing statute required its board to divest from a specific asset class within eighteen months of a legislative directive. The board completed divestment from most, but not all, qualifying holdings before the eighteen-month deadline. The legislature granted a narrow extension covering only the specific remaining holdings.",
-            "options": [
-                "The legislature granted a full, open-ended extension covering the entire asset class.",
-                "A national pension fund's governing statute required its board to divest from a specific asset class within eighteen months of a legislative directive.",
-                "The board completed divestment from most, but not all, qualifying holdings before the eighteen-month deadline.",
-                "The legislature granted a narrow extension covering only the specific remaining holdings."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Notice the precise scope of the extension the legislature actually grants.",
-            "explanation": "Because the extension covers only the specific remaining holdings, an option describing a full, open-ended extension contradicts that narrow scope.",
-            "storyKeyEvents": [
-                "A national pension fund's governing statute required its board to divest from a specific asset class within eighteen months of a legislative directive.",
-                "The board completed divestment from most, but not all, qualifying holdings before the eighteen-month deadline.",
-                "The legislature granted a narrow extension covering only the specific remaining holdings.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L185_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional trade agreement's dispute-settlement panel had found a member state's subsidy program partially, but not entirely, inconsistent with the agreement's terms. The member state amended only the specific inconsistent portion of the program. The panel certified the amended program as fully compliant on review.",
-            "options": [
-                "A regional trade agreement's dispute-settlement panel had found a member state's subsidy program partially, but not entirely, inconsistent with the agreement's terms.",
-                "The panel required the member state to eliminate the subsidy program in its entirety.",
-                "The member state amended only the specific inconsistent portion of the program.",
-                "The panel certified the amended program as fully compliant on review."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Check whether the panel's original finding actually required full elimination or only partial correction.",
-            "explanation": "Because the panel found the program only partially inconsistent, an option claiming it required full elimination contradicts that specific, partial finding.",
-            "storyKeyEvents": [
-                "A regional trade agreement's dispute-settlement panel had found a member state's subsidy program partially, but not entirely, inconsistent with the agreement's terms.",
-                "The member state amended only the specific inconsistent portion of the program.",
-                "The panel certified the amended program as fully compliant on review.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L185_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A multinational bank's regulatory capital plan had been conditionally approved by one supervisor but flagged for further review by a second supervisor in a different jurisdiction. The second supervisor's review concluded the plan met its jurisdiction's requirements without any modification. The bank's capital plan received unconditional approval from both supervisors.",
-            "options": [
-                "A multinational bank's regulatory capital plan had been conditionally approved by one supervisor but flagged for further review by a second supervisor in a different jurisdiction.",
-                "The second supervisor's review concluded the plan met its jurisdiction's requirements without any modification.",
-                "The second supervisor ultimately rejected the plan outright.",
-                "The bank's capital plan received unconditional approval from both supervisors."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you whether the second supervisor actually rejects or approves the plan.",
-            "explanation": "Because the plan receives unconditional approval from both supervisors, an option claiming the second supervisor rejected it outright contradicts that outcome.",
-            "storyKeyEvents": [
-                "A multinational bank's regulatory capital plan had been conditionally approved by one supervisor but flagged for further review by a second supervisor in a different jurisdiction.",
-                "The second supervisor's review concluded the plan met its jurisdiction's requirements without any modification.",
-                "The bank's capital plan received unconditional approval from both supervisors.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L186_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A landmark environmental liability settlement had established a compensation fund with eligibility criteria that excluded one specific category of claimants by its original terms. That excluded category successfully petitioned the court overseeing the fund to expand eligibility criteria. The court expanded eligibility to include that category for future claims only, not retroactively.",
-            "options": [
-                "A landmark environmental liability settlement had established a compensation fund with eligibility criteria that excluded one specific category of claimants by its original terms.",
-                "That excluded category successfully petitioned the court overseeing the fund to expand eligibility criteria.",
-                "The court expanded eligibility to include that category for future claims only, not retroactively.",
-                "The court expanded eligibility retroactively, covering all claims filed since the fund's original creation."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Notice the precise scope of the court's expansion: does it apply retroactively or only going forward?",
-            "explanation": "Because the expansion applies to future claims only, an option describing full retroactive coverage contradicts that specific limitation.",
-            "storyKeyEvents": [
-                "A landmark environmental liability settlement had established a compensation fund with eligibility criteria that excluded one specific category of claimants by its original terms.",
-                "That excluded category successfully petitioned the court overseeing the fund to expand eligibility criteria.",
-                "The court expanded eligibility to include that category for future claims only, not retroactively.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L186_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A cross-border merger had been cleared by one national competition authority but remained pending before a second authority reviewing the same transaction independently. The second authority identified a narrow overlap concern in a single product category unaddressed by the first authority's review. The merger proceeded globally once the parties divested the specific overlapping product line.",
-            "options": [
-                "The second authority blocked the entire global merger over the narrow overlap concern.",
-                "A cross-border merger had been cleared by one national competition authority but remained pending before a second authority reviewing the same transaction independently.",
-                "The second authority identified a narrow overlap concern in a single product category unaddressed by the first authority's review.",
-                "The merger proceeded globally once the parties divested the specific overlapping product line."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Check whether the second authority actually blocks the entire merger or allows it to proceed with a limited divestiture.",
-            "explanation": "Because the merger proceeds globally after the specific divestiture, an option claiming the entire merger was blocked contradicts that resolution.",
-            "storyKeyEvents": [
-                "A cross-border merger had been cleared by one national competition authority but remained pending before a second authority reviewing the same transaction independently.",
-                "The second authority identified a narrow overlap concern in a single product category unaddressed by the first authority's review.",
-                "The merger proceeded globally once the parties divested the specific overlapping product line.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L186_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A sovereign immunity doctrine had shielded a state-owned enterprise from a commercial dispute in one jurisdiction, though the plaintiff pursued enforcement in a second jurisdiction with different immunity rules. The second jurisdiction's courts determined the enterprise's commercial activities fell outside the scope of immunity there. The plaintiff successfully enforced the judgment against the enterprise's commercial assets in that second jurisdiction.",
-            "options": [
-                "A sovereign immunity doctrine had shielded a state-owned enterprise from a commercial dispute in one jurisdiction, though the plaintiff pursued enforcement in a second jurisdiction with different immunity rules.",
-                "The second jurisdiction extended the same immunity protection, barring enforcement there as well.",
-                "The second jurisdiction's courts determined the enterprise's commercial activities fell outside the scope of immunity there.",
-                "The plaintiff successfully enforced the judgment against the enterprise's commercial assets in that second jurisdiction."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you whether enforcement actually succeeds in the second jurisdiction.",
-            "explanation": "Because the plaintiff successfully enforces the judgment in the second jurisdiction, an option claiming immunity barred enforcement there too contradicts that outcome.",
-            "storyKeyEvents": [
-                "A sovereign immunity doctrine had shielded a state-owned enterprise from a commercial dispute in one jurisdiction, though the plaintiff pursued enforcement in a second jurisdiction with different immunity rules.",
-                "The second jurisdiction's courts determined the enterprise's commercial activities fell outside the scope of immunity there.",
-                "The plaintiff successfully enforced the judgment against the enterprise's commercial assets in that second jurisdiction.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L187_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national securities exchange had suspended trading in a company's shares pending clarification of a disputed corporate-control transaction. An independent panel determined the transaction had been properly authorized under the company's own governance rules. The exchange resumed trading in the company's shares without any further restriction.",
-            "options": [
-                "A national securities exchange had suspended trading in a company's shares pending clarification of a disputed corporate-control transaction.",
-                "An independent panel determined the transaction had been properly authorized under the company's own governance rules.",
-                "The exchange permanently delisted the company despite the panel's determination.",
-                "The exchange resumed trading in the company's shares without any further restriction."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Notice what the exchange actually does once the panel confirms proper authorization.",
-            "explanation": "Because trading resumes without further restriction, an option claiming the company was permanently delisted contradicts that specific outcome.",
-            "storyKeyEvents": [
-                "A national securities exchange had suspended trading in a company's shares pending clarification of a disputed corporate-control transaction.",
-                "An independent panel determined the transaction had been properly authorized under the company's own governance rules.",
-                "The exchange resumed trading in the company's shares without any further restriction.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L187_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A multilateral climate fund's disbursement to a member country had been conditioned on meeting one specific, independently verified emissions-reduction milestone. Independent verifiers confirmed the country had met that specific milestone precisely on schedule. The fund released the full conditioned disbursement to the country.",
-            "options": [
-                "A multilateral climate fund's disbursement to a member country had been conditioned on meeting one specific, independently verified emissions-reduction milestone.",
-                "Independent verifiers confirmed the country had met that specific milestone precisely on schedule.",
-                "The fund released the full conditioned disbursement to the country.",
-                "The fund withheld the disbursement pending additional, previously unstated conditions."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Check whether the fund actually releases the disbursement once the milestone is verified as met.",
-            "explanation": "Because the fund releases the full disbursement once the milestone is confirmed met, an option claiming it withheld the funds for new conditions contradicts that release.",
-            "storyKeyEvents": [
-                "A multilateral climate fund's disbursement to a member country had been conditioned on meeting one specific, independently verified emissions-reduction milestone.",
-                "Independent verifiers confirmed the country had met that specific milestone precisely on schedule.",
-                "The fund released the full conditioned disbursement to the country.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L187_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national telecommunications spectrum license had included a specific build-out requirement that the licensee missed by a narrow margin in one rural region only. The regulator imposed a targeted penalty specific to that one region while leaving the remainder of the license in good standing. The licensee retained its spectrum rights everywhere except that specific underperforming region.",
-            "options": [
-                "The regulator revoked the licensee's spectrum rights across the entire national license.",
-                "A national telecommunications spectrum license had included a specific build-out requirement that the licensee missed by a narrow margin in one rural region only.",
-                "The regulator imposed a targeted penalty specific to that one region while leaving the remainder of the license in good standing.",
-                "The licensee retained its spectrum rights everywhere except that specific underperforming region."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you the actual scope of what the licensee retains and loses.",
-            "explanation": "Because the licensee retains rights everywhere except the one region, an option describing a full national revocation contradicts that limited, region-specific outcome.",
-            "storyKeyEvents": [
-                "A national telecommunications spectrum license had included a specific build-out requirement that the licensee missed by a narrow margin in one rural region only.",
-                "The regulator imposed a targeted penalty specific to that one region while leaving the remainder of the license in good standing.",
-                "The licensee retained its spectrum rights everywhere except that specific underperforming region.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L188_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A federal court had certified a nationwide class action but limited certification to plaintiffs asserting one specific legal theory among several the complaint had raised. Plaintiffs pursuing the uncertified theories proceeded separately through individual arbitration instead. The certified class proceeded to a jury trial limited strictly to the single certified theory.",
-            "options": [
-                "A federal court had certified a nationwide class action but limited certification to plaintiffs asserting one specific legal theory among several the complaint had raised.",
-                "The certified class proceeded to trial on every legal theory originally raised in the complaint.",
-                "Plaintiffs pursuing the uncertified theories proceeded separately through individual arbitration instead.",
-                "The certified class proceeded to a jury trial limited strictly to the single certified theory."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Notice the exact scope of what the certified class actually goes to trial on.",
-            "explanation": "Because the trial is limited strictly to the single certified theory, an option describing a trial on every original theory contradicts that specific limitation.",
-            "storyKeyEvents": [
-                "A federal court had certified a nationwide class action but limited certification to plaintiffs asserting one specific legal theory among several the complaint had raised.",
-                "Plaintiffs pursuing the uncertified theories proceeded separately through individual arbitration instead.",
-                "The certified class proceeded to a jury trial limited strictly to the single certified theory.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L188_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A binding international arbitration award had ordered a state to pay damages but remained subject to a narrow set-aside challenge on procedural grounds only. A national court reviewing the set-aside challenge found the procedural objection entirely without merit. The court confirmed the award in full and ordered its enforcement.",
-            "options": [
-                "A binding international arbitration award had ordered a state to pay damages but remained subject to a narrow set-aside challenge on procedural grounds only.",
-                "A national court reviewing the set-aside challenge found the procedural objection entirely without merit.",
-                "The court set aside the award based on the procedural objection.",
-                "The court confirmed the award in full and ordered its enforcement."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Check whether the court actually confirms or sets aside the award once it finds the objection without merit.",
-            "explanation": "Because the court confirms the award in full once it finds the objection meritless, an option claiming it set the award aside contradicts that specific outcome.",
-            "storyKeyEvents": [
-                "A binding international arbitration award had ordered a state to pay damages but remained subject to a narrow set-aside challenge on procedural grounds only.",
-                "A national court reviewing the set-aside challenge found the procedural objection entirely without merit.",
-                "The court confirmed the award in full and ordered its enforcement.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L188_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national telecommunications merger review had been remanded back to the regulator by an appellate court for reconsideration of one specific competitive-harm factor. On remand, the regulator reconsidered that single factor while leaving its analysis of every other factor unchanged. The regulator's revised decision on remand reached the identical conclusion approving the merger.",
-            "options": [
-                "A national telecommunications merger review had been remanded back to the regulator by an appellate court for reconsideration of one specific competitive-harm factor.",
-                "On remand, the regulator reconsidered that single factor while leaving its analysis of every other factor unchanged.",
-                "The regulator's revised decision on remand reached the identical conclusion approving the merger.",
-                "The regulator's revised decision on remand reversed course and blocked the merger entirely."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Read the ending closely: it tells you whether the regulator's conclusion actually changes on remand.",
-            "explanation": "Because the revised decision reaches the identical conclusion approving the merger, an option claiming it reversed course and blocked it contradicts that specific outcome.",
-            "storyKeyEvents": [
-                "A national telecommunications merger review had been remanded back to the regulator by an appellate court for reconsideration of one specific competitive-harm factor.",
-                "On remand, the regulator reconsidered that single factor while leaving its analysis of every other factor unchanged.",
-                "The regulator's revised decision on remand reached the identical conclusion approving the merger.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L189_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A sovereign default restructuring had offered bondholders a choice between two distinct instruments, each with different maturity and interest terms. A slim majority of bondholders by value selected the longer-maturity instrument, while a substantial minority chose the shorter one. The restructuring closed with both instruments issued proportionally according to each group's actual selections.",
-            "options": [
-                "The restructuring closed with only the longer-maturity instrument issued to all bondholders.",
-                "A sovereign default restructuring had offered bondholders a choice between two distinct instruments, each with different maturity and interest terms.",
-                "A slim majority of bondholders by value selected the longer-maturity instrument, while a substantial minority chose the shorter one.",
-                "The restructuring closed with both instruments issued proportionally according to each group's actual selections."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Check whether both instruments are actually issued according to bondholders' individual selections.",
-            "explanation": "Because both instruments are issued proportionally to actual selections, an option claiming only the longer-maturity instrument was issued to everyone contradicts that split outcome.",
-            "storyKeyEvents": [
-                "A sovereign default restructuring had offered bondholders a choice between two distinct instruments, each with different maturity and interest terms.",
-                "A slim majority of bondholders by value selected the longer-maturity instrument, while a substantial minority chose the shorter one.",
-                "The restructuring closed with both instruments issued proportionally according to each group's actual selections.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L189_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national securities regulator's settlement with a financial institution had included a specific, narrowly defined admission of fact rather than a broader admission of legal wrongdoing. A separate private class action later cited that narrow factual admission as supporting evidence. The court in the private action ruled the narrow admission did not establish legal liability on its own.",
-            "options": [
-                "A national securities regulator's settlement with a financial institution had included a specific, narrowly defined admission of fact rather than a broader admission of legal wrongdoing.",
-                "The court ruled the narrow admission alone was sufficient to establish full legal liability.",
-                "A separate private class action later cited that narrow factual admission as supporting evidence.",
-                "The court in the private action ruled the narrow admission did not establish legal liability on its own."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Notice precisely what the court rules the narrow factual admission does and does not establish.",
-            "explanation": "Because the court rules the admission does not establish liability on its own, an option claiming it was sufficient on its own contradicts that specific ruling.",
-            "storyKeyEvents": [
-                "A national securities regulator's settlement with a financial institution had included a specific, narrowly defined admission of fact rather than a broader admission of legal wrongdoing.",
-                "A separate private class action later cited that narrow factual admission as supporting evidence.",
-                "The court in the private action ruled the narrow admission did not establish legal liability on its own.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L189_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A binational tax treaty's dispute-resolution mechanism had been invoked over the classification of a specific cross-border royalty payment. Competent authorities from both countries reached a mutual agreement on the payment's classification. That mutual agreement applied only to the specific payment at issue, not to the taxpayer's other cross-border transactions.",
-            "options": [
-                "A binational tax treaty's dispute-resolution mechanism had been invoked over the classification of a specific cross-border royalty payment.",
-                "Competent authorities from both countries reached a mutual agreement on the payment's classification.",
-                "The mutual agreement automatically applied to all of the taxpayer's other cross-border transactions as well.",
-                "That mutual agreement applied only to the specific payment at issue, not to the taxpayer's other cross-border transactions."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you the actual scope of what the mutual agreement covers.",
-            "explanation": "Because the agreement applies only to the specific payment at issue, an option extending it automatically to all other transactions contradicts that limited scope.",
-            "storyKeyEvents": [
-                "A binational tax treaty's dispute-resolution mechanism had been invoked over the classification of a specific cross-border royalty payment.",
-                "Competent authorities from both countries reached a mutual agreement on the payment's classification.",
-                "That mutual agreement applied only to the specific payment at issue, not to the taxpayer's other cross-border transactions.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L190_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A national anti-corruption tribunal had convicted a former official on several counts while acquitting the same official on one specific count for insufficient evidence. Prosecutors appealed only the acquittal on that single count, leaving the convictions unchallenged. An appellate panel upheld the acquittal, finding the evidentiary gap had been correctly identified.",
-            "options": [
-                "A national anti-corruption tribunal had convicted a former official on several counts while acquitting the same official on one specific count for insufficient evidence.",
-                "Prosecutors appealed only the acquittal on that single count, leaving the convictions unchallenged.",
-                "An appellate panel upheld the acquittal, finding the evidentiary gap had been correctly identified.",
-                "The appellate panel overturned all of the original convictions along with the acquittal."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Check whether each option matches exactly what the appellate panel's ruling actually covers.",
-            "explanation": "Because the panel upholds the acquittal while the convictions were never appealed or challenged, an option overturning all convictions contradicts that limited scope of appeal.",
-            "storyKeyEvents": [
-                "A national anti-corruption tribunal had convicted a former official on several counts while acquitting the same official on one specific count for insufficient evidence.",
-                "Prosecutors appealed only the acquittal on that single count, leaving the convictions unchallenged.",
-                "An appellate panel upheld the acquittal, finding the evidentiary gap had been correctly identified.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L190_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A multinational corporation's shareholders had brought a derivative lawsuit alleging the board breached its duty of care in approving a specific acquisition. A special litigation committee investigated and found the board's process met the applicable standard of care despite the acquisition's poor outcome. The court dismissed the derivative lawsuit based on the committee's findings.",
-            "options": [
-                "The court allowed the lawsuit to proceed to trial despite the committee's findings.",
-                "A multinational corporation's shareholders had brought a derivative lawsuit alleging the board breached its duty of care in approving a specific acquisition.",
-                "A special litigation committee investigated and found the board's process met the applicable standard of care despite the acquisition's poor outcome.",
-                "The court dismissed the derivative lawsuit based on the committee's findings."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you whether the court actually dismisses the case or lets it proceed.",
-            "explanation": "Because the court dismisses the lawsuit based on the committee's findings, an option claiming it allowed the case to proceed anyway contradicts that dismissal.",
-            "storyKeyEvents": [
-                "A multinational corporation's shareholders had brought a derivative lawsuit alleging the board breached its duty of care in approving a specific acquisition.",
-                "A special litigation committee investigated and found the board's process met the applicable standard of care despite the acquisition's poor outcome.",
-                "The court dismissed the derivative lawsuit based on the committee's findings.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L190_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A binational extradition treaty's dual-criminality requirement had been challenged on the grounds that the requesting country's offense had no precise equivalent in the requested country's law. The requested country's highest court ruled that a close, though not identical, equivalent offense satisfied the treaty's requirement. Extradition proceeded on the basis of that close equivalent offense.",
-            "options": [
-                "A binational extradition treaty's dual-criminality requirement had been challenged on the grounds that the requesting country's offense had no precise equivalent in the requested country's law.",
-                "Extradition was permanently denied for lack of an identical equivalent offense.",
-                "The requested country's highest court ruled that a close, though not identical, equivalent offense satisfied the treaty's requirement.",
-                "Extradition proceeded on the basis of that close equivalent offense."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Notice what the highest court's ruling actually allows for the extradition to proceed.",
-            "explanation": "Because extradition proceeds on the basis of a close equivalent, an option claiming it was denied for lack of an identical offense contradicts that specific ruling.",
-            "storyKeyEvents": [
-                "A binational extradition treaty's dual-criminality requirement had been challenged on the grounds that the requesting country's offense had no precise equivalent in the requested country's law.",
-                "The requested country's highest court ruled that a close, though not identical, equivalent offense satisfied the treaty's requirement.",
-                "Extradition proceeded on the basis of that close equivalent offense.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        }
-    ]
+  "gameType": "summarizeStoryWriting",
+  "batchIndex": 19,
+  "levels": "181-190",
+  "quests": [
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L181_Q1",
+      "instruction": "Choose the three statements that form the most concise accurate summary, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "In March the Ridgeway Cycling Club noticed that its Saturday rides were losing members: attendance had fallen from thirty-five to nineteen over a year. A survey of former members, sent by the secretary, Ms. Adler, showed that most found the pace too fast and the routes too long. The committee introduced two groups, a relaxed fifteen-mile ride and a faster thirty-mile ride, both leaving at nine from the same car park. By September attendance had climbed to forty-four.",
+      "options": [
+        "By September attendance had climbed to forty-four.",
+        "Attendance at the Ridgeway Cycling Club's Saturday rides fell from thirty-five to nineteen in a year.",
+        "A survey sent by the secretary, Ms. Adler, asked former members about the routes, and both rides left at nine from the same car park.",
+        "A survey showed former members found the pace too fast and the routes too long, so the committee introduced a relaxed ride and a faster one."
+      ],
+      "correctOrder": [1, 3, 0],
+      "hint": "A good summary keeps the cause and effect, not the logistics.",
+      "explanation": "The survey's sender and the start time are true but minor, and they leave out why the rides changed. The summary needs the drop, the survey-driven split, and the recovery.",
+      "storyKeyEvents": [
+        "Attendance at the Ridgeway Cycling Club's Saturday rides fell from thirty-five to nineteen in a year.",
+        "A survey showed former members found the pace too fast and the routes too long, so the committee introduced a relaxed ride and a faster one.",
+        "By September attendance had climbed to forty-four."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L181_Q2",
+      "instruction": "One statement changes or adds to what the author says. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The new library app lets members renew books and reserve study rooms. In its first month eight hundred members installed it, about a fifth of all members. Staff noticed that renewals at the desk dropped by a third, which freed up an hour a day to help visitors with research questions. The librarian called the app a useful addition but admitted that older members still preferred the desk.",
+      "options": [
+        "The librarian called the app useful but said older members still preferred the desk.",
+        "The librarian called the app an essential addition to the library and said that older members had now stopped using the desk altogether.",
+        "Desk renewals dropped by a third, freeing about an hour a day for research help.",
+        "The library's new app let members renew books and reserve study rooms, and about a fifth of members installed it in the first month."
+      ],
+      "correctOrder": [3, 2, 0],
+      "hint": "Watch for words that make a claim stronger than the author's.",
+      "explanation": "The librarian said \"useful\", not \"essential\", and older members still preferred the desk. The altered statement strengthens one claim and reverses another.",
+      "storyKeyEvents": [
+        "The library's new app let members renew books and reserve study rooms, and about a fifth of members installed it in the first month.",
+        "Desk renewals dropped by a third, freeing about an hour a day for research help.",
+        "The librarian called the app useful but said older members still preferred the desk."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L181_Q3",
+      "instruction": "One statement changes or adds to what the author says. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The council resurfaced Albert Street in July, closing it to traffic for three weeks. Shops reported a fall in sales of about a fifth, and the council offered them a rates rebate. When the street reopened, footfall returned to its usual level within a week. The council said it would publish a report on the project's costs in the autumn.",
+      "options": [
+        "Albert Street was closed to traffic for three weeks for resurfacing, and shops reported sales falling by about a fifth.",
+        "Footfall returned to its usual level within a week of the street reopening.",
+        "The council offered the shops a rates rebate.",
+        "The council's disastrous closure of Albert Street ruined local shops."
+      ],
+      "correctOrder": [0, 2, 1],
+      "hint": "Look for a judgement that the author never makes.",
+      "explanation": "\"Disastrous\" and \"ruined\" are opinions, and the shops' footfall recovered within a week. A fair summary reports the closure, the rebate and the recovery.",
+      "storyKeyEvents": [
+        "Albert Street was closed to traffic for three weeks for resurfacing, and shops reported sales falling by about a fifth.",
+        "The council offered the shops a rates rebate.",
+        "Footfall returned to its usual level within a week of the street reopening."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L182_Q1",
+      "instruction": "Choose the three statements that preserve cause, effect and outcome without excess detail, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Dara's group project on renewable energy had three members, but one, Kofi, missed the first two meetings. Dara reallocated the workload so that Kofi took over the data charts, which suited his skills, and scheduled shorter, more frequent meetings. Kofi attended every meeting after that and finished his charts early. The group received a mark of 72, their best of the term, although the tutor noted that the conclusion was thin.",
+      "options": [
+        "Kofi attended every later meeting and the group earned 72, their best mark of the term.",
+        "Dara gave Kofi the data charts and scheduled shorter, more frequent meetings.",
+        "The group earned a perfect mark and full praise.",
+        "Dara's group project suffered when Kofi missed the first two meetings."
+      ],
+      "correctOrder": [3, 1, 0],
+      "hint": "Compare the mark and the tutor's comment with the story's.",
+      "explanation": "The group earned 72, not full marks, and the tutor called the conclusion thin. The statement inflates both the mark and the praise.",
+      "storyKeyEvents": [
+        "Dara's group project suffered when Kofi missed the first two meetings.",
+        "Dara gave Kofi the data charts and scheduled shorter, more frequent meetings.",
+        "Kofi attended every later meeting and the group earned 72, their best mark of the term."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L182_Q2",
+      "instruction": "Choose the three statements that preserve cause, effect and outcome without excess detail, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "When the ferry timetable changed, the island's post office lost its daily delivery. The postmaster, Mr. Bell, asked the ferry company to carry mail bags on the early boat, and they agreed for a small fee. A neighbour, Ms. Quill, volunteered to sort the bags at the pier. Deliveries to the island resumed within a week, and letters arrived by nine each morning.",
+      "options": [
+        "Deliveries resumed within a week, with letters arriving by nine each morning.",
+        "Ms. Quill, a neighbour, volunteered to sort the mail bags at the pier, and her help saved the delivery.",
+        "A new ferry timetable cost the island's post office its daily delivery.",
+        "The postmaster arranged for the ferry company to carry mail on the early boat for a small fee."
+      ],
+      "correctOrder": [2, 3, 0],
+      "hint": "Who solved the main problem, and who only helped along the way?",
+      "explanation": "Ms. Quill's sorting was a helpful extra, but the delivery was restored by the postmaster's arrangement with the ferry. The statement promotes her to the centre of the story.",
+      "storyKeyEvents": [
+        "A new ferry timetable cost the island's post office its daily delivery.",
+        "The postmaster arranged for the ferry company to carry mail on the early boat for a small fee.",
+        "Deliveries resumed within a week, with letters arriving by nine each morning."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L182_Q3",
+      "instruction": "Choose the three statements that preserve cause, effect and outcome without excess detail, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "A food festival on the town green had to be postponed when heavy rain waterlogged the ground. The organisers moved it to the following Saturday and asked stallholders to confirm by email. Sixty of the seventy stallholders confirmed, and the rest were replaced from a waiting list. On the new date the festival drew around four thousand visitors, and a local radio station interviewed the mayor on site.",
+      "options": [
+        "A local radio station interviewed the mayor at the festival.",
+        "A food festival was postponed when rain waterlogged the town green.",
+        "The organisers moved it to the following Saturday and filled the vacant stalls from a waiting list.",
+        "On the new date around four thousand visitors came."
+      ],
+      "correctOrder": [1, 2, 3],
+      "hint": "An interesting extra at the end isn't the outcome.",
+      "explanation": "The interview is a side event and doesn't describe how the festival turned out. The outcome is the crowd on the new date.",
+      "storyKeyEvents": [
+        "A food festival was postponed when rain waterlogged the town green.",
+        "The organisers moved it to the following Saturday and filled the vacant stalls from a waiting list.",
+        "On the new date around four thousand visitors came."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L183_Q1",
+      "instruction": "One statement changes or adds to what the author says. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "After three complaints about slow service, the manager of the Harbour Café reviewed the order system. She found that orders written on paper were often misread in the kitchen. She introduced a tablet system that sent orders directly to a screen, and waiting times fell from twenty minutes to twelve. The waiters said the screens were easy to learn, and two new staff were trained in a morning.",
+      "options": [
+        "Tablet order systems make every café faster.",
+        "She introduced a tablet system that sent orders straight to a kitchen screen.",
+        "Waiting times fell from twenty minutes to twelve.",
+        "After complaints about slow service, the Harbour Café's manager found that paper orders were often misread in the kitchen."
+      ],
+      "correctOrder": [3, 1, 2],
+      "hint": "A conclusion about all cafés goes beyond a story about one.",
+      "explanation": "The story reports one café's results, so a claim about every café generalises beyond the evidence. The accurate summary stays with the Harbour Café.",
+      "storyKeyEvents": [
+        "After complaints about slow service, the Harbour Café's manager found that paper orders were often misread in the kitchen.",
+        "She introduced a tablet system that sent orders straight to a kitchen screen.",
+        "Waiting times fell from twenty minutes to twelve."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L183_Q2",
+      "instruction": "Choose the three statements that preserve cause, effect and outcome without excess detail, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Clara's company lost a major client in January after a late delivery. A review found that the delay began when a supplier's invoice was filed in the wrong folder, but the main cause was that no one was responsible for checking incoming deliveries. Clara appointed a delivery coordinator and set a weekly check. By June the company had won back a smaller contract from the client.",
+      "options": [
+        "Clara's company lost a major client after a late delivery.",
+        "The delivery was late because one invoice was filed in the wrong folder.",
+        "A review found the main cause was that nobody was responsible for checking incoming deliveries, so Clara appointed a coordinator.",
+        "By June the company had won back a smaller contract from the client."
+      ],
+      "correctOrder": [0, 2, 3],
+      "hint": "Which cause does the review call the main one?",
+      "explanation": "The misfiled invoice was where the delay began, but the review names the lack of responsibility as the main cause. The statement puts the smaller trigger in the place of the main cause.",
+      "storyKeyEvents": [
+        "Clara's company lost a major client after a late delivery.",
+        "A review found the main cause was that nobody was responsible for checking incoming deliveries, so Clara appointed a coordinator.",
+        "By June the company had won back a smaller contract from the client."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L183_Q3",
+      "instruction": "One statement changes or adds to what the author says. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The school's after-school club was oversubscribed, with sixty children competing for thirty places. The head teacher asked parents for volunteers to supervise, and twelve responded. With the extra supervisors the school could open a second room and accept all sixty children. Parents also asked for a club in the holidays, which the school said it would consider.",
+      "options": [
+        "Twelve parents volunteered to supervise when the head teacher asked.",
+        "With the extra supervisors a second room opened and all sixty children were accepted.",
+        "The after-school club had sixty children competing for thirty places.",
+        "The school opened a second room, which led twelve parents to volunteer."
+      ],
+      "correctOrder": [2, 0, 1],
+      "hint": "Check which happened first, and which made the other possible.",
+      "explanation": "The volunteers came first, and their help made the second room possible. The altered statement reverses cause and effect.",
+      "storyKeyEvents": [
+        "The after-school club had sixty children competing for thirty places.",
+        "Twelve parents volunteered to supervise when the head teacher asked.",
+        "With the extra supervisors a second room opened and all sixty children were accepted."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L184_Q1",
+      "instruction": "One statement changes or adds to what the author says. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Orla's book club moved from a pub to a library room after the pub raised its room fee. The move cost nothing, and the library offered free tea. Attendance stayed at twelve members, but two members said they missed the pub's atmosphere. The club agreed to review the decision in six months.",
+      "options": [
+        "The club moved to the library to stop two members drinking during meetings.",
+        "Attendance stayed at twelve, and the club agreed to review the decision in six months.",
+        "The book club left the pub when it raised its room fee.",
+        "The club moved to a free library room that offered free tea."
+      ],
+      "correctOrder": [2, 3, 1],
+      "hint": "Stick to the reason the author gives for the move.",
+      "explanation": "The story gives the pub's room fee as the reason. Stopping members drinking is an intention nobody states.",
+      "storyKeyEvents": [
+        "The book club left the pub when it raised its room fee.",
+        "The club moved to a free library room that offered free tea.",
+        "Attendance stayed at twelve, and the club agreed to review the decision in six months."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L184_Q2",
+      "instruction": "Choose the three statements that form the most concise accurate summary, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The parish church's bell tower developed a crack after a cold winter. An engineer surveyed it on a Tuesday and recommended steel braces, at a cost of twelve thousand pounds. The congregation held a summer fair, a sponsored walk and a raffle, and raised fourteen thousand. The braces were fitted in October, and the bells rang again at Christmas.",
+      "options": [
+        "The congregation raised £14,000 through a summer fair, a sponsored walk and a raffle.",
+        "An engineer surveyed the crack on a Tuesday, and the congregation held events over the summer, including a fair and a raffle.",
+        "The church bell tower cracked after a cold winter, and an engineer recommended steel braces costing £12,000.",
+        "The braces were fitted in October and the bells rang again at Christmas."
+      ],
+      "correctOrder": [2, 0, 3],
+      "hint": "A good summary says what the events achieved, not just that they took place.",
+      "explanation": "The survey day and the vague \"events\" give detail without the cost, the amount raised or the result. The summary needs the recommended repair, the money raised, and the ringing bells.",
+      "storyKeyEvents": [
+        "The church bell tower cracked after a cold winter, and an engineer recommended steel braces costing £12,000.",
+        "The congregation raised £14,000 through a summer fair, a sponsored walk and a raffle.",
+        "The braces were fitted in October and the bells rang again at Christmas."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L184_Q3",
+      "instruction": "One statement changes or adds to what the author says. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "A survey of a hundred commuters found that the number 7 bus was late more often than any other route. The bus company adjusted two timetable stops and added a bus at peak times. On-time performance rose from seventy per cent to eighty-two. Commuters said the service was better, though several still wanted real-time tracking.",
+      "options": [
+        "A survey found the number 7 bus was late more often than any other route.",
+        "On-time performance rose from seventy to eighty-two per cent, though several commuters still wanted real-time tracking.",
+        "Commuters said the service had become perfect and no longer wanted any changes.",
+        "The company adjusted two timetable stops and added a peak-time bus."
+      ],
+      "correctOrder": [0, 3, 1],
+      "hint": "Look at what the commuters still wanted.",
+      "explanation": "Several commuters still wanted real-time tracking, so the service wasn't called perfect. The statement removes the reservation the author reports.",
+      "storyKeyEvents": [
+        "A survey found the number 7 bus was late more often than any other route.",
+        "The company adjusted two timetable stops and added a peak-time bus.",
+        "On-time performance rose from seventy to eighty-two per cent, though several commuters still wanted real-time tracking."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L185_Q1",
+      "instruction": "One statement changes or adds to what the author says. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The company's new open-plan office opened in April. Staff reported more interruptions, and a noise survey showed levels above the recommended limit in two areas. The manager added quiet booths and set a rule for phone calls. Two months later the number of noise complaints had dropped by half.",
+      "options": [
+        "Staff reported more interruptions in the new open-plan office, and a noise survey showed levels above the limit in two areas.",
+        "The manager added quiet booths and a rule for phone calls.",
+        "The badly designed open-plan office was a foolish idea from the start.",
+        "Noise complaints dropped by half within two months."
+      ],
+      "correctOrder": [0, 1, 3],
+      "hint": "An opinion word like \"foolish\" isn't part of a neutral summary.",
+      "explanation": "The author reports figures and changes, not a verdict, and the complaints fell after the fixes. The judgement is added by the statement.",
+      "storyKeyEvents": [
+        "Staff reported more interruptions in the new open-plan office, and a noise survey showed levels above the limit in two areas.",
+        "The manager added quiet booths and a rule for phone calls.",
+        "Noise complaints dropped by half within two months."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L185_Q2",
+      "instruction": "Choose the three statements that preserve cause, effect and outcome without excess detail, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Hassan's new delivery firm started with two vans. A local supermarket offered him a contract for morning deliveries, and he hired a third driver to cover it. Within a year his firm delivered to forty shops, and he bought a fourth van. He said the growth had been faster than he expected but steady.",
+      "options": [
+        "Hassan's delivery firm started with two vans.",
+        "Within a year the firm served forty shops and had a fourth van.",
+        "A supermarket's morning delivery contract led him to hire a third driver.",
+        "Within a year Hassan's firm became the region's largest delivery company."
+      ],
+      "correctOrder": [0, 2, 1],
+      "hint": "Check how big the result the story reports really is.",
+      "explanation": "Forty shops and four vans is growth, but the story never says his firm was the region's largest. The statement inflates the outcome.",
+      "storyKeyEvents": [
+        "Hassan's delivery firm started with two vans.",
+        "A supermarket's morning delivery contract led him to hire a third driver.",
+        "Within a year the firm served forty shops and had a fourth van."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L185_Q3",
+      "instruction": "Choose the three statements that preserve cause, effect and outcome without excess detail, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The theatre's annual costume sale was in danger because the storeroom flooded. The manager, Ms. Dupont, moved the undamaged costumes to the foyer and arranged for the damaged ones to be cleaned by a specialist. A volunteer, Mr. Acker, made a new price list. The sale went ahead a week later and raised three thousand pounds.",
+      "options": [
+        "Ms. Dupont moved the undamaged costumes to the foyer and had the damaged ones professionally cleaned.",
+        "The sale went ahead a week later and raised £3,000.",
+        "A flood in the storeroom endangered the theatre's annual costume sale.",
+        "Mr. Acker, a volunteer, made a new price list that saved the sale."
+      ],
+      "correctOrder": [2, 0, 1],
+      "hint": "A helper's task isn't the same as what saved the event.",
+      "explanation": "The price list is a helpful task, but the sale was rescued by moving and cleaning the costumes. The statement gives a minor helper the main credit.",
+      "storyKeyEvents": [
+        "A flood in the storeroom endangered the theatre's annual costume sale.",
+        "Ms. Dupont moved the undamaged costumes to the foyer and had the damaged ones professionally cleaned.",
+        "The sale went ahead a week later and raised £3,000."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L186_Q1",
+      "instruction": "Choose the three statements that form the most concise accurate summary, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The students' union wanted to reduce single-use cups on campus. It gave a free reusable cup to every first-year and offered a twenty-pence discount on drinks for anyone who brought one. After a term, sales of single-use cups had fallen by forty per cent. Separately, the union's shop reported a rise in sales of reusable bottles.",
+      "options": [
+        "After a term single-use cup sales had fallen by forty per cent.",
+        "It gave every first-year a free reusable cup and a 20p discount for bringing one.",
+        "The union's shop reported a rise in sales of reusable bottles.",
+        "The students' union wanted to reduce single-use cups on campus."
+      ],
+      "correctOrder": [3, 1, 0],
+      "hint": "\"Separately\" signals an extra, not the outcome.",
+      "explanation": "The bottle sales are a side result and don't say whether the cup scheme worked. The outcome is the forty per cent fall in single-use cups.",
+      "storyKeyEvents": [
+        "The students' union wanted to reduce single-use cups on campus.",
+        "It gave every first-year a free reusable cup and a 20p discount for bringing one.",
+        "After a term single-use cup sales had fallen by forty per cent."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L186_Q2",
+      "instruction": "One statement changes or adds to what the author says. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "When Esther started mentoring a new colleague, the two met for thirty minutes every Thursday. Esther asked the colleague to choose a topic each week and to summarise what she learned at the end. After three months the colleague led her first client meeting, and Esther's manager asked her to mentor another newcomer.",
+      "options": [
+        "Esther mentored a new colleague in weekly thirty-minute sessions on topics the colleague chose.",
+        "Weekly mentoring always turns newcomers into confident leaders within three months.",
+        "After three months the colleague led her first client meeting, and Esther was asked to mentor another newcomer.",
+        "The colleague summarised what she learned at the end of each session."
+      ],
+      "correctOrder": [0, 3, 2],
+      "hint": "Does the story claim something about all newcomers, or about one?",
+      "explanation": "It reports one colleague's progress, and \"always\" turns that into a rule about everyone. A faithful summary stays with the single case.",
+      "storyKeyEvents": [
+        "Esther mentored a new colleague in weekly thirty-minute sessions on topics the colleague chose.",
+        "The colleague summarised what she learned at the end of each session.",
+        "After three months the colleague led her first client meeting, and Esther was asked to mentor another newcomer."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L186_Q3",
+      "instruction": "Choose the three statements that preserve cause, effect and outcome without excess detail, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "An online shop's returns rose sharply in May. Analysis showed that customers had received the wrong size in a quarter of the cases and that the size chart on the website was out of date. The manager updated the chart and added a size-check step at packing. The packer's shift pattern had also changed in May. By July returns had fallen to their usual level.",
+      "options": [
+        "By July returns were back to their usual level.",
+        "The manager updated the out-of-date size chart and added a size check at packing.",
+        "An online shop's returns rose sharply in May, with wrong sizes in a quarter of the cases.",
+        "Returns rose as the packer's shifts changed."
+      ],
+      "correctOrder": [2, 1, 0],
+      "hint": "Which cause did the analysis point to?",
+      "explanation": "The shift change happened at the same time, but the analysis pointed to wrong sizes and an out-of-date chart. The statement swaps a coincidence for the real cause.",
+      "storyKeyEvents": [
+        "An online shop's returns rose sharply in May, with wrong sizes in a quarter of the cases.",
+        "The manager updated the out-of-date size chart and added a size check at packing.",
+        "By July returns were back to their usual level."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L187_Q1",
+      "instruction": "Choose the three statements that preserve cause, effect and outcome without excess detail, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The village hall's heating bills doubled one winter. The committee had an energy audit done, which found that the windows leaked heat. They fitted secondary glazing at a cost of three thousand pounds, and the next winter's bills fell by a third. The committee also found a donor for the hall's new kitchen.",
+      "options": [
+        "The committee had an energy audit done because the glazing was fitted.",
+        "The committee fitted secondary glazing for £3,000.",
+        "The village hall's heating bills doubled, and an energy audit found the windows leaked heat.",
+        "The next winter's bills fell by a third."
+      ],
+      "correctOrder": [2, 1, 3],
+      "hint": "Which came first: the audit or the glazing?",
+      "explanation": "The audit found the leaks, and then the glazing was fitted. The statement turns the order and the reason round.",
+      "storyKeyEvents": [
+        "The village hall's heating bills doubled, and an energy audit found the windows leaked heat.",
+        "The committee fitted secondary glazing for £3,000.",
+        "The next winter's bills fell by a third."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L187_Q2",
+      "instruction": "One statement changes or adds to what the author says. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "A farmers' cooperative began selling vegetable boxes by subscription. In the first month it had fifty subscribers, most of whom lived within five miles. The cooperative then added a pick-up point at the railway station, and subscribers rose to ninety. The organisers said they would wait for another season's data before adding delivery.",
+      "options": [
+        "Subscribers rose to ninety, and the organisers would wait for another season's data before adding delivery.",
+        "The cooperative began selling vegetable boxes by subscription and had fifty subscribers, mostly within five miles.",
+        "The cooperative added the station pick-up to undercut a rival supermarket.",
+        "It added a pick-up point at the railway station."
+      ],
+      "correctOrder": [1, 3, 0],
+      "hint": "Only count a motive the story supplies.",
+      "explanation": "No rival supermarket appears in the story. The pick-up point is presented simply as a way to reach more people.",
+      "storyKeyEvents": [
+        "The cooperative began selling vegetable boxes by subscription and had fifty subscribers, mostly within five miles.",
+        "It added a pick-up point at the railway station.",
+        "Subscribers rose to ninety, and the organisers would wait for another season's data before adding delivery."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L187_Q3",
+      "instruction": "Choose the three statements that form the most concise accurate summary, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "In autumn the students' radio society received a complaint that its late-night show was too loud for the neighbouring flats. The society's president, Lina, measured the volume with a phone app and found it above the agreed limit. She fitted a volume limiter on the mixing desk and apologised to residents in a letter. No further complaints were received.",
+      "options": [
+        "Lina used a phone app to measure the volume and apologised to residents in a letter.",
+        "The president found the volume above the agreed limit and fitted a volume limiter.",
+        "No further complaints were received.",
+        "The radio society received a complaint that its late-night show was too loud for the neighbouring flats."
+      ],
+      "correctOrder": [3, 1, 2],
+      "hint": "A summary needs the action that solved the problem.",
+      "explanation": "Measuring with an app and writing a letter are details that leave out the limiter, the real fix. The summary needs the complaint, the limiter, and the quiet that followed.",
+      "storyKeyEvents": [
+        "The radio society received a complaint that its late-night show was too loud for the neighbouring flats.",
+        "The president found the volume above the agreed limit and fitted a volume limiter.",
+        "No further complaints were received."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L188_Q1",
+      "instruction": "One statement changes or adds to what the author says. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The regional hospital's outpatient clinic had an average wait of fifty minutes. A new triage nurse was assigned at the door to sort patients by urgency. Average waits fell to thirty-five minutes, and patient satisfaction scores improved slightly. The hospital said it would review the change after six months.",
+      "options": [
+        "A triage nurse was assigned at the door to sort patients by urgency.",
+        "Waits fell almost to nothing; satisfaction soared.",
+        "The hospital's outpatient clinic had an average wait of fifty minutes.",
+        "Waits fell to thirty-five minutes and satisfaction improved slightly."
+      ],
+      "correctOrder": [2, 0, 3],
+      "hint": "Check how big the improvement was in the story.",
+      "explanation": "Waits fell from fifty to thirty-five minutes and satisfaction improved only slightly. The statement magnifies both.",
+      "storyKeyEvents": [
+        "The hospital's outpatient clinic had an average wait of fifty minutes.",
+        "A triage nurse was assigned at the door to sort patients by urgency.",
+        "Waits fell to thirty-five minutes and satisfaction improved slightly."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L188_Q2",
+      "instruction": "One statement changes or adds to what the author says. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "A regional newspaper moved its reporters into a shared newsroom to save rent. Reporters found it harder to concentrate, but editors said conversations across desks were helping them share leads. The paper kept the new layout and added a quiet room for writing. Readership of its online edition grew by twelve per cent that year.",
+      "options": [
+        "The paper's chaotic, overcrowded newsroom was a disaster that hurt its reporters, its editors and its readers alike.",
+        "The paper kept the layout, and online readership grew by twelve per cent.",
+        "A regional newspaper moved its reporters into a shared newsroom to save rent.",
+        "Editors said conversations across desks helped share leads, and a quiet room was added for writing."
+      ],
+      "correctOrder": [2, 3, 1],
+      "hint": "Notice the adjectives. Does the author use them?",
+      "explanation": "\"Chaotic\" and \"disaster\" are the statement's own judgements, and the paper actually kept the layout. The accurate summary reports the move, the benefit, and the growth.",
+      "storyKeyEvents": [
+        "A regional newspaper moved its reporters into a shared newsroom to save rent.",
+        "Editors said conversations across desks helped share leads, and a quiet room was added for writing.",
+        "The paper kept the layout, and online readership grew by twelve per cent."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L188_Q3",
+      "instruction": "Choose the three statements that preserve cause, effect and outcome without excess detail, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The town introduced free Sunday parking in the high street. In the first six months Sunday footfall rose by eight per cent and two cafés extended their opening hours. The council estimated it lost about nine thousand pounds in parking income. It decided to continue the scheme for another year.",
+      "options": [
+        "Sunday footfall rose eight per cent and two cafés extended their hours, while the council lost about £9,000 in parking income.",
+        "The council decided to continue the scheme for another year.",
+        "Sunday footfall doubled and every shop extended its opening hours.",
+        "The town introduced free Sunday parking in the high street."
+      ],
+      "correctOrder": [3, 0, 1],
+      "hint": "Compare the size of the change with the figures given.",
+      "explanation": "Footfall rose eight per cent and two cafés extended their hours. Doubling and every shop vastly overstate what the story says.",
+      "storyKeyEvents": [
+        "The town introduced free Sunday parking in the high street.",
+        "Sunday footfall rose eight per cent and two cafés extended their hours, while the council lost about £9,000 in parking income.",
+        "The council decided to continue the scheme for another year."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L189_Q1",
+      "instruction": "Choose the three statements that preserve cause, effect and outcome without excess detail, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "When the school's sports kit was stolen from the changing room, the PE teacher, Mr. Okon, reported it and asked the office to check the camera footage. The footage showed the door had been left unlocked overnight. The school introduced a lock-up rota for the caretaker and ordered replacement kit, which arrived in two weeks. A parent also offered to donate some old balls.",
+      "options": [
+        "The school's sports kit was stolen from the changing room, and footage showed the door had been left unlocked overnight.",
+        "A parent offered to donate some old balls, which solved the shortage.",
+        "The school introduced a lock-up rota for the caretaker.",
+        "Replacement kit arrived within two weeks."
+      ],
+      "correctOrder": [0, 2, 3],
+      "hint": "An offered donation isn't the same as the replacement that arrived.",
+      "explanation": "The parent's offer is an extra, and the story says the ordered kit solved the shortage. The statement gives the donation the main role.",
+      "storyKeyEvents": [
+        "The school's sports kit was stolen from the changing room, and footage showed the door had been left unlocked overnight.",
+        "The school introduced a lock-up rota for the caretaker.",
+        "Replacement kit arrived within two weeks."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L189_Q2",
+      "instruction": "Choose the three statements that form the most concise accurate summary, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The local council wanted to reduce litter in the park. It added ten bins and posted signs asking visitors to take rubbish home. Litter collected by the council fell by a third over the summer. At the same time the park's café reported higher sales, which it put down to the warm weather.",
+      "options": [
+        "It added ten bins and posted signs asking visitors to take rubbish home.",
+        "The council wanted to reduce litter in the park.",
+        "Litter collected by the council fell by a third over the summer.",
+        "The park café's sales rose in the summer."
+      ],
+      "correctOrder": [1, 0, 2],
+      "hint": "Is the café's result the result of the council's action?",
+      "explanation": "The café's higher sales were credited to the weather and have nothing to do with the litter scheme. The outcome of the scheme is the fall in litter.",
+      "storyKeyEvents": [
+        "The council wanted to reduce litter in the park.",
+        "It added ten bins and posted signs asking visitors to take rubbish home.",
+        "Litter collected by the council fell by a third over the summer."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L189_Q3",
+      "instruction": "One statement changes or adds to what the author says. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "After a month of daily thirty-minute walks, Isaac reported that he felt less tired in the afternoons. He kept a diary of his energy levels and noticed the biggest improvement on days when he walked before lunch. His manager suggested a walking meeting on Fridays, which the team tried for six weeks.",
+      "options": [
+        "His manager suggested Friday walking meetings, which the team tried for six weeks.",
+        "Walking before lunch is the best way for everyone to beat afternoon tiredness.",
+        "Isaac began daily thirty-minute walks and felt less tired in the afternoons.",
+        "His diary showed the biggest improvement on days when he walked before lunch."
+      ],
+      "correctOrder": [2, 3, 0],
+      "hint": "The story describes one person's diary. Does it say \"everyone\"?",
+      "explanation": "It reports what Isaac noticed, and claiming it's best for everyone goes beyond that. The faithful summary stays with his experience and the team trial.",
+      "storyKeyEvents": [
+        "Isaac began daily thirty-minute walks and felt less tired in the afternoons.",
+        "His diary showed the biggest improvement on days when he walked before lunch.",
+        "His manager suggested Friday walking meetings, which the team tried for six weeks."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L190_Q1",
+      "instruction": "Choose the three statements that preserve cause, effect and outcome without excess detail, in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The city library's visitor numbers fell by a fifth over two years. A survey found that opening hours no longer suited working families, although the building's dated decor was also mentioned. The library extended its evening hours to nine o'clock and left the decor for later. Within a year visitor numbers recovered to within five per cent of their earlier level.",
+      "options": [
+        "Visitors fell because the building's decor was dated, and the library redecorated.",
+        "The city library's visitor numbers fell by a fifth over two years.",
+        "Within a year visitor numbers recovered to within five per cent of their earlier level.",
+        "A survey found that opening hours no longer suited working families, so the library extended its evening hours to nine."
+      ],
+      "correctOrder": [1, 3, 2],
+      "hint": "Which cause did the library act on?",
+      "explanation": "The decor was mentioned but left for later, and the library acted on the opening hours. The statement picks the minor complaint and invents a redecoration.",
+      "storyKeyEvents": [
+        "The city library's visitor numbers fell by a fifth over two years.",
+        "A survey found that opening hours no longer suited working families, so the library extended its evening hours to nine.",
+        "Within a year visitor numbers recovered to within five per cent of their earlier level."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L190_Q2",
+      "instruction": "One statement changes or adds to what the author says. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The company's sales team struggled to follow up with leads promptly. A review showed that leads arrived in three different inboxes. The manager created a single shared inbox and assigned a daily owner for it. Average response time fell from two days to four hours, and conversions rose by a tenth.",
+      "options": [
+        "Leads arrived in three different inboxes because the manager created a shared inbox and a daily owner.",
+        "The sales team struggled to follow up promptly because leads arrived in three different inboxes.",
+        "The manager created a single shared inbox with a daily owner.",
+        "Response time fell from two days to four hours and conversions rose by a tenth."
+      ],
+      "correctOrder": [1, 2, 3],
+      "hint": "Which came first: the three inboxes or the shared one?",
+      "explanation": "The three inboxes existed before the manager made one shared inbox, and they were the problem. The statement turns the fix into the cause.",
+      "storyKeyEvents": [
+        "The sales team struggled to follow up promptly because leads arrived in three different inboxes.",
+        "The manager created a single shared inbox with a daily owner.",
+        "Response time fell from two days to four hours and conversions rose by a tenth."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L190_Q3",
+      "instruction": "One statement changes or adds to what the author says. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The museum extended its opening hours on Thursdays until nine o'clock. On the first Thursday six hundred people came, most of them under thirty. The director said the evening would continue for a trial year and that the team would add talks if demand held. By spring attendance on Thursdays remained above five hundred.",
+      "options": [
+        "The director planned a trial year, and Thursday attendance stayed above five hundred by spring.",
+        "The museum extended its Thursday opening hours until nine.",
+        "On the first Thursday six hundred people came, most under thirty.",
+        "The museum extended Thursday hours to attract tourists from abroad."
+      ],
+      "correctOrder": [1, 2, 0],
+      "hint": "Does the story say why the museum did it?",
+      "explanation": "No reason is given, and the visitors were mostly under thirty, with no mention of tourists. The statement invents a motive.",
+      "storyKeyEvents": [
+        "The museum extended its Thursday opening hours until nine.",
+        "On the first Thursday six hundred people came, most under thirty.",
+        "The director planned a trial year, and Thursday attendance stayed above five hundred by spring."
+      ]
+    }
+  ]
 }

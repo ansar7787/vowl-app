@@ -8,35 +8,35 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "I have visited Paris last summer and loved every single minute of it.",
-            "missingWord": "have visited",
+            "passage": "The audit should have finished by now, but the auditors still work through the last department.",
+            "missingWord": "still work",
             "options": [
-                "visited",
-                "have visited",
-                "was visiting",
-                "had visited"
+                "have still worked",
+                "still worked",
+                "are still working",
+                "still work"
             ],
-            "correctAnswer": "visited",
-            "hint": "'Last summer' is a finished time period. Which tense is used for actions completed at a specific past time?",
-            "explanation": "With specific past time markers like 'last summer', use simple past: 'I visited Paris last summer'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "are still working",
+            "hint": "The sentence describes something in progress at this moment, despite an earlier expectation. Which verb form shows that?",
+            "explanation": "An action in progress now takes present continuous: 'are still working'. Simple present would suggest a habit.",
+            "errorType": "Tense Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L101_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She already finished her homework before dinner, which is why she went out.",
-            "missingWord": "already finished",
+            "passage": "Had the supplier informed us earlier, we could avoid the shortage entirely.",
+            "missingWord": "could avoid",
             "options": [
-                "had already finished",
-                "already finished",
-                "has already finished",
-                "would have finished"
+                "could have avoided",
+                "could avoid",
+                "can avoid",
+                "would avoid"
             ],
-            "correctAnswer": "had already finished",
-            "hint": "She finished homework before another past event (dinner). Which tense expresses the earlier of two past actions?",
-            "explanation": "Use past perfect ('had finished') for an action completed before another past event: 'She had already finished her homework'.",
+            "correctAnswer": "could have avoided",
+            "hint": "The opening clause has an inverted past perfect, referring to an unreal past. What does the main clause need?",
+            "explanation": "Inverted 'Had + subject + participle' signals a third conditional, so the main clause needs 'could have avoided'.",
             "errorType": "Grammar Error"
         },
         {
@@ -44,17 +44,17 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He has seen that film three years ago and still remembers every scene.",
-            "missingWord": "has seen",
+            "passage": "The manager insisted that the report be submitted on time and that everyone attends the review.",
+            "missingWord": "attends",
             "options": [
-                "saw",
-                "has seen",
-                "had seen",
-                "was seeing"
+                "to attend",
+                "attends",
+                "attending",
+                "attend"
             ],
-            "correctAnswer": "saw",
-            "hint": "'Three years ago' is a specific past time. Which tense - simple past or present perfect - is correct here?",
-            "explanation": "With 'three years ago' (specific finished time), use simple past: 'He saw that film three years ago'.",
+            "correctAnswer": "attend",
+            "hint": "The sentence already contains a subjunctive after 'insisted that'. What form should the second verb take?",
+            "explanation": "After verbs like 'insist', 'demand' and 'recommend', the that-clause uses the base form. The two verbs should match: 'be submitted' and 'attend'.",
             "errorType": "Grammar Error"
         },
         {
@@ -62,17 +62,17 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She works at this company since 2019 and absolutely loves her job.",
-            "missingWord": "works",
+            "passage": "If she had accepted the offer in Toronto, she would have lived there now.",
+            "missingWord": "would have lived",
             "options": [
-                "has worked",
-                "works",
-                "worked",
-                "is working"
+                "would have lived",
+                "will be living",
+                "would be living",
+                "lived"
             ],
-            "correctAnswer": "has worked",
-            "hint": "The action started in 2019 and continues now. Which tense describes a situation from the past to now?",
-            "explanation": "Use present perfect ('has worked') for situations starting in the past and continuing now: 'She has worked here since 2019'.",
+            "correctAnswer": "would be living",
+            "hint": "The 'if' clause is in the past, but the result concerns the present. Which form fits?",
+            "explanation": "A mixed conditional links a past condition to a present result: 'if + past perfect, would + base form'.",
             "errorType": "Grammar Error"
         },
         {
@@ -80,17 +80,17 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "Have you seen the new manager when he visited the office yesterday?",
-            "missingWord": "Have you seen",
+            "passage": "Unless the fees are paid by Friday, your account will suspend without further notice.",
+            "missingWord": "will suspend",
             "options": [
-                "Did you see",
-                "Have you seen",
-                "Had you seen",
-                "Were you seeing"
+                "will be suspended",
+                "suspends",
+                "will suspend",
+                "would suspend"
             ],
-            "correctAnswer": "Did you see",
-            "hint": "'Yesterday' is a specific finished time. Does present perfect or simple past work with 'yesterday'?",
-            "explanation": "Present perfect cannot be used with specific past times. Use simple past: 'Did you see the manager yesterday?'",
+            "correctAnswer": "will be suspended",
+            "hint": "Who suspends the account? Is it the account itself?",
+            "explanation": "The account receives the action, so the sentence needs a passive: 'will be suspended'.",
             "errorType": "Grammar Error"
         },
         {
@@ -98,17 +98,17 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He worked here for ten years, and he still works here now every day.",
-            "missingWord": "worked",
+            "passage": "If customers pay by card, a small fee applied automatically at the checkout.",
+            "missingWord": "applied",
             "options": [
-                "has worked",
-                "worked",
-                "had worked",
-                "was working"
+                "apply",
+                "is applied",
+                "applied",
+                "applying"
             ],
-            "correctAnswer": "has worked",
-            "hint": "He started working ten years ago and still works here now. The situation is ongoing. Which tense fits?",
-            "explanation": "For ongoing situations started in the past, use present perfect: 'He has worked here for ten years'.",
+            "correctAnswer": "is applied",
+            "hint": "This is a general rule, not a past event. What form of the passive fits?",
+            "explanation": "A zero conditional describes general rules and takes present tenses. The passive is 'is applied'.",
             "errorType": "Grammar Error"
         },
         {
@@ -116,107 +116,107 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "I have lost my keys yesterday and spent an hour looking for them.",
-            "missingWord": "have lost",
+            "passage": "The house, which was built in 1890 and which has been in our family for generations, are being sold next spring.",
+            "missingWord": "are",
             "options": [
-                "lost",
-                "have lost",
-                "had lost",
-                "was losing"
+                "are",
+                "have",
+                "were",
+                "is"
             ],
-            "correctAnswer": "lost",
-            "hint": "'Yesterday' is a specific completed time. Can we use present perfect with 'yesterday'?",
-            "explanation": "Never use present perfect with specific past times like 'yesterday': 'I lost my keys yesterday'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "is",
+            "hint": "Which noun is the real subject, and how many are there?",
+            "explanation": "The subject is 'the house', which is singular. The relative clauses between commas don't affect agreement.",
+            "errorType": "Agreement Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L103_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She already ate, so she doesn't want anything else to eat right now.",
-            "missingWord": "already ate",
+            "passage": "Only after the inspector had left, did the staff realise that the storage room had been left unlocked.",
+            "missingWord": "left, did",
             "options": [
-                "has already eaten",
-                "already ate",
-                "had already eaten",
-                "was eating"
+                "left; did",
+                "left, did",
+                "left did",
+                "left. did"
             ],
-            "correctAnswer": "has already eaten",
-            "hint": "She ate recently, and the result affects now (she's not hungry). Which tense links past action to present?",
-            "explanation": "Use present perfect when a past action has a present result: 'She has already eaten' - that's why she's not hungry.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "left did",
+            "hint": "After an introductory 'Only after' clause, does the inverted verb follow directly?",
+            "explanation": "When the clause after 'only' comes first, no comma separates it from the inverted main clause.",
+            "errorType": "Punctuation Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L103_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He never tried sushi before, but he loved it when he finally did.",
-            "missingWord": "never tried",
+            "passage": "The contract, signed by both parties last March and which sets out the payment schedule, is legally binding.",
+            "missingWord": "and which sets out",
             "options": [
-                "had never tried",
-                "never tried",
-                "has never tried",
-                "didn't try"
+                "and setting out",
+                "and which is setting out",
+                "and which sets out",
+                "and it sets out"
             ],
-            "correctAnswer": "had never tried",
-            "hint": "He tried sushi for the first time at a specific past moment ('when he finally did'). What came before that?",
-            "explanation": "Use past perfect ('had never tried') for a state before a specific past moment: 'He had never tried sushi before'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "and setting out",
+            "hint": "The phrase begins with a participle ('signed'). What should the second element be?",
+            "explanation": "Elements joined by 'and' should have the same form. A participle should be followed by a participle: 'signed... and setting out'.",
+            "errorType": "Parallelism Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L104_Q1",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She has graduated from university in 2021 and now works as an engineer.",
-            "missingWord": "has graduated",
+            "passage": "The quality of the reports have improved noticeably since we introduced the new template.",
+            "missingWord": "have",
             "options": [
-                "graduated",
-                "has graduated",
-                "had graduated",
-                "was graduating"
+                "were",
+                "have",
+                "has",
+                "are"
             ],
-            "correctAnswer": "graduated",
-            "hint": "'In 2021' is a specific past year. Which tense is used for completed actions at a specific past time?",
-            "explanation": "Use simple past with specific past times: 'She graduated from university in 2021'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "has",
+            "hint": "Which noun does the verb need to agree with?",
+            "explanation": "The subject is 'the quality', which is singular. 'Reports' is only a modifier, so the verb must be 'has'.",
+            "errorType": "Agreement Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L104_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "I study English for five years and still have a lot more to learn.",
-            "missingWord": "study",
+            "passage": "Much of the equipment were damaged in the flood, and the insurers have started their assessment.",
+            "missingWord": "were",
             "options": [
-                "have studied",
-                "study",
-                "studied",
-                "am studying"
+                "are",
+                "have been",
+                "were",
+                "was"
             ],
-            "correctAnswer": "have studied",
-            "hint": "The studying started five years ago and continues now. Which tense expresses this ongoing situation?",
-            "explanation": "For situations that started in the past and continue now, use present perfect: 'I have studied English for five years'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "was",
+            "hint": "Is 'equipment' countable? Match the verb to its number.",
+            "explanation": "'Equipment' is an uncountable noun and takes a singular verb: 'was damaged'.",
+            "errorType": "Agreement Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L104_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He didn't finish the report yet - he's still working on it at his desk.",
-            "missingWord": "didn't finish",
+            "passage": "Less people attended this year's conference than last year's.",
+            "missingWord": "Less",
             "options": [
-                "hasn't finished",
-                "didn't finish",
-                "hadn't finished",
-                "won't have finished"
+                "Lesser",
+                "Less",
+                "Little",
+                "Fewer"
             ],
-            "correctAnswer": "hasn't finished",
-            "hint": "'Yet' is often used with negative present perfect. The task is still incomplete now. Which tense fits?",
-            "explanation": "Use present perfect negative with 'yet' for incomplete tasks: 'He hasn't finished the report yet'.",
+            "correctAnswer": "Fewer",
+            "hint": "Can you count 'people' one by one?",
+            "explanation": "'Fewer' is used with countable plural nouns. 'Less' is for uncountable nouns.",
             "errorType": "Grammar Error"
         },
         {
@@ -224,17 +224,17 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "Did you ever try sushi before? I'm sure you would absolutely love it.",
-            "missingWord": "Did you ever try",
+            "passage": "The director allowed the interns leaving early on Friday because of the public holiday.",
+            "missingWord": "leaving",
             "options": [
-                "Have you ever tried",
-                "Did you ever try",
-                "Had you ever tried",
-                "Were you ever trying"
+                "leaving",
+                "to leave",
+                "left",
+                "leave"
             ],
-            "correctAnswer": "Have you ever tried",
-            "hint": "This is about life experience up to now - no specific time is mentioned. Which tense asks about experiences?",
-            "explanation": "Use present perfect for life experiences: 'Have you ever tried sushi?' 'Did' implies a specific past time.",
+            "correctAnswer": "to leave",
+            "hint": "Which pattern follows 'allow' when you name the person permitted?",
+            "explanation": "'Allow someone to do something' is the standard pattern.",
             "errorType": "Grammar Error"
         },
         {
@@ -242,35 +242,35 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She has bought a new laptop two days ago and is very happy with it.",
-            "missingWord": "has bought",
+            "passage": "It was decided that the responsibility for the budget would be shared between he and the finance manager.",
+            "missingWord": "he",
             "options": [
-                "bought",
-                "has bought",
-                "had bought",
-                "was buying"
+                "himself",
+                "he",
+                "his",
+                "him"
             ],
-            "correctAnswer": "bought",
-            "hint": "'Two days ago' is a specific past time. Which tense - present perfect or simple past - works with 'ago'?",
-            "explanation": "Present perfect cannot be used with specific past times. Use simple past: 'She bought a new laptop two days ago'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "him",
+            "hint": "What form of the pronoun follows a preposition?",
+            "explanation": "After a preposition, use an object pronoun: 'between him and the finance manager'.",
+            "errorType": "Pronoun Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L105_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "The update has been released on Tuesday and fixed several important bugs.",
-            "missingWord": "has been released",
+            "passage": "Being new to the team, Tara felt nervous about ask questions during meetings.",
+            "missingWord": "ask",
             "options": [
-                "was released",
-                "has been released",
-                "had been released",
-                "is released"
+                "asked",
+                "asking",
+                "to ask",
+                "ask"
             ],
-            "correctAnswer": "was released",
-            "hint": "'On Tuesday' is a specific past day. Which tense is used for actions completed at a specific past time?",
-            "explanation": "Use simple past with specific past times: 'The update was released on Tuesday'. Present perfect doesn't take 'on Tuesday'.",
+            "correctAnswer": "asking",
+            "hint": "In 'nervous about', is 'about' followed by a verb form or a noun?",
+            "explanation": "A preposition is followed by a gerund: 'about asking'.",
             "errorType": "Grammar Error"
         },
         {
@@ -278,35 +278,35 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "I've been to the doctor last week for a routine annual check-up.",
-            "missingWord": "I've been",
+            "passage": "Ordering supplies in bulk have reduced our costs by nearly a fifth.",
+            "missingWord": "have",
             "options": [
-                "I went",
-                "I've been",
-                "I had been",
-                "I was going"
+                "are",
+                "has",
+                "were",
+                "have"
             ],
-            "correctAnswer": "I went",
-            "hint": "'Last week' is a specific completed time period. Which tense works with 'last week'?",
-            "explanation": "With 'last week', use simple past: 'I went to the doctor last week'. Present perfect can't be used with 'last week'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "has",
+            "hint": "What is the subject: 'supplies' or the whole gerund phrase?",
+            "explanation": "A gerund phrase acts as a singular subject, so the verb is 'has'. The plural noun inside it doesn't change that.",
+            "errorType": "Agreement Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L106_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She felt unwell since Monday and still hasn't visited a doctor.",
-            "missingWord": "felt",
+            "passage": "I regret to inform that your application was unsuccessful on this occasion.",
+            "missingWord": "inform that",
             "options": [
-                "has been feeling",
-                "felt",
-                "is feeling",
-                "was feeling"
+                "inform that",
+                "informing that",
+                "inform you that",
+                "inform to you that"
             ],
-            "correctAnswer": "has been feeling",
-            "hint": "'Since Monday' connects to the present - the feeling is ongoing. Which tense describes a situation from past to now?",
-            "explanation": "Use present perfect continuous: 'She has been feeling unwell since Monday' - it started Monday and continues.",
+            "correctAnswer": "inform you that",
+            "hint": "Which verb pattern requires a person after 'inform'?",
+            "explanation": "'Inform' needs a person: 'inform you that'. 'Inform that' is incomplete.",
             "errorType": "Grammar Error"
         },
         {
@@ -314,17 +314,17 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He didn't take his medication yet - please remind him before he leaves.",
-            "missingWord": "didn't take",
+            "passage": "There is no point to argue about the deadline now; it has already been set.",
+            "missingWord": "to argue",
             "options": [
-                "hasn't taken",
-                "didn't take",
-                "hadn't taken",
-                "won't take"
+                "in arguing",
+                "to argue",
+                "on arguing",
+                "arguing"
             ],
-            "correctAnswer": "hasn't taken",
-            "hint": "'Yet' with a present-moment situation - which tense naturally pairs with 'yet' for incomplete actions?",
-            "explanation": "Use present perfect with 'yet': 'He hasn't taken his medication yet'. 'Didn't' refers to a specific past time.",
+            "correctAnswer": "in arguing",
+            "hint": "Which pattern follows 'there is no point'?",
+            "explanation": "The fixed phrase is 'there is no point in + -ing': 'in arguing'.",
             "errorType": "Grammar Error"
         },
         {
@@ -332,107 +332,107 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She has been to Australia when she was eighteen years old and loved it.",
-            "missingWord": "has been",
+            "passage": "The report noted that unemployment had fallen for three consecutive quarters and that it will continue to fall.",
+            "missingWord": "will",
             "options": [
-                "went",
-                "has been",
-                "had been",
-                "was going"
+                "will",
+                "shall",
+                "can",
+                "would"
             ],
-            "correctAnswer": "went",
-            "hint": "'When she was eighteen' is a specific past time. Which tense goes with specific past time references?",
-            "explanation": "With 'when she was eighteen' (specific past time), use simple past: 'She went to Australia when she was eighteen'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "would",
+            "hint": "The reporting verb is in the past. How should the second clause be adjusted?",
+            "explanation": "After a past reporting verb, 'will' shifts to 'would' to keep tense consistency.",
+            "errorType": "Tense Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L107_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He took over forty flights in his career and is still a nervous flyer.",
-            "missingWord": "took",
+            "passage": "After the merger will be completed, the two teams will share one office.",
+            "missingWord": "will be completed",
             "options": [
-                "has taken",
-                "took",
-                "was taking",
-                "had taken"
+                "would be completed",
+                "will be completed",
+                "was completing",
+                "is completed"
             ],
-            "correctAnswer": "has taken",
-            "hint": "This refers to accumulated experience over a career to the present. No specific past time is mentioned.",
-            "explanation": "Present perfect for accumulated experience: 'He has taken over forty flights in his career'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "is completed",
+            "hint": "Which tense follows 'after' when it refers to the future?",
+            "explanation": "After time conjunctions like 'after' and 'when', use present simple for a future event.",
+            "errorType": "Tense Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L107_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "They just arrived at the hotel and are checking in at the front desk.",
-            "missingWord": "arrived",
+            "passage": "I had been working in Lisbon for two years when I have been offered the job in Madrid.",
+            "missingWord": "have been offered",
             "options": [
-                "arrived",
-                "have just arrived",
-                "just arrived",
-                "had arrived"
+                "have been offered",
+                "am offered",
+                "was offered",
+                "had offered"
             ],
-            "correctAnswer": "have just arrived",
-            "hint": "'Just' with a very recent action that has a present impact - which tense naturally uses 'just' this way?",
-            "explanation": "Use present perfect with 'just' for very recent actions: 'They have just arrived at the hotel'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "was offered",
+            "hint": "The first half sets the past. What time frame does the second half need?",
+            "explanation": "Both events are in the past: 'was offered' matches the past time frame.",
+            "errorType": "Tense Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L108_Q1",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "I never ate oysters, but I would really like to try them some day.",
-            "missingWord": "never ate",
+            "passage": "Rarely one finds such a well-preserved manuscript outside a museum.",
+            "missingWord": "one finds",
             "options": [
-                "have never eaten",
-                "never ate",
-                "had never eaten",
-                "never eat"
+                "does one find",
+                "finds one",
+                "one finds",
+                "one does find"
             ],
-            "correctAnswer": "have never eaten",
-            "hint": "This is about a life experience (or lack of one) up to now. Which tense is used for life experiences?",
-            "explanation": "Use present perfect for experiences: 'I have never eaten oysters' - this refers to all time up to now.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "does one find",
+            "hint": "A negative adverb opens the sentence. What happens to the word order?",
+            "explanation": "After 'Rarely' at the start, use inversion with an auxiliary: 'does one find'.",
+            "errorType": "Sentence Structure Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L108_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She has tried the new restaurant downtown last Friday and liked it.",
-            "missingWord": "has tried",
+            "passage": "Do you know where might the parcel be? The tracking page hasn't updated.",
+            "missingWord": "where might the parcel be",
             "options": [
-                "tried",
-                "has tried",
-                "had tried",
-                "was trying"
+                "where might be the parcel",
+                "where the parcel might be",
+                "where might the parcel be",
+                "where the parcel be might"
             ],
-            "correctAnswer": "tried",
-            "hint": "'Last Friday' is a specific past time. Can present perfect be used with specific past time markers?",
-            "explanation": "Present perfect cannot be used with 'last Friday'. Use simple past: 'She tried the restaurant last Friday'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "where the parcel might be",
+            "hint": "This is an indirect question. Which word order is needed?",
+            "explanation": "Indirect questions use statement order: subject, then modal, then verb.",
+            "errorType": "Sentence Structure Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L108_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He has only arrived a few minutes ago and is still getting settled in.",
-            "missingWord": "has only arrived",
+            "passage": "You had better to check the terms before you sign anything.",
+            "missingWord": "had better to check",
             "options": [
-                "only arrived",
-                "has only arrived",
-                "had only arrived",
-                "was only arriving"
+                "had better check",
+                "had better checked",
+                "had better to check",
+                "had better checking"
             ],
-            "correctAnswer": "only arrived",
-            "hint": "'A few minutes ago' gives a specific past time. Which tense works with 'ago'?",
-            "explanation": "Simple past is used with 'ago': 'He only arrived a few minutes ago'. Present perfect never takes 'ago'.",
+            "correctAnswer": "had better check",
+            "hint": "Which form follows 'had better'?",
+            "explanation": "'Had better' behaves like a modal and takes the bare infinitive.",
             "errorType": "Grammar Error"
         },
         {
@@ -440,17 +440,17 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She has completed the training programme last month and is now fully qualified.",
-            "missingWord": "has completed",
+            "passage": "A little people know that the museum offers free guided tours on Sundays.",
+            "missingWord": "A little",
             "options": [
-                "completed",
-                "has completed",
-                "had completed",
-                "was completing"
+                "A little",
+                "Few",
+                "Much",
+                "Little"
             ],
-            "correctAnswer": "completed",
-            "hint": "'Last month' specifies a past time. Which tense is required when a specific past time is mentioned?",
-            "explanation": "Use simple past with specific past times: 'She completed the training last month'.",
+            "correctAnswer": "Few",
+            "hint": "Can you count 'people'? Which quantifier fits a countable plural noun and a negative feeling?",
+            "explanation": "'Few' goes with countable plural nouns. 'Little' and 'much' are for uncountable nouns.",
             "errorType": "Grammar Error"
         },
         {
@@ -458,35 +458,35 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "I've worked here for three months when I got promoted to team leader.",
-            "missingWord": "I've worked",
+            "passage": "The two departments rarely communicate with one other about shared deadlines.",
+            "missingWord": "one other",
             "options": [
-                "I had worked",
-                "I've worked",
-                "I worked",
-                "I was working"
+                "the other one",
+                "each another",
+                "one other",
+                "each other"
             ],
-            "correctAnswer": "I had worked",
-            "hint": "The sentence describes working before a past promotion event. Which tense shows action before another past event?",
-            "explanation": "Use past perfect for the earlier action: 'I had worked here for three months when I got promoted'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "each other",
+            "hint": "What is the standard reciprocal pronoun for two parties?",
+            "explanation": "The reciprocal pronoun is 'each other'. 'One other' is not used this way.",
+            "errorType": "Pronoun Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L109_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "The team achieved its annual target three months ahead of schedule and everyone is thrilled.",
-            "missingWord": "achieved",
+            "passage": "There was hardly no time to review the slides before the presentation began.",
+            "missingWord": "hardly no",
             "options": [
-                "has achieved",
-                "achieved",
-                "had achieved",
-                "was achieving"
+                "hardly any",
+                "hardly some",
+                "hardly no",
+                "hardly a"
             ],
-            "correctAnswer": "has achieved",
-            "hint": "The achievement is recent and the result ('everyone is thrilled') is relevant now. Which tense links past to present?",
-            "explanation": "Use present perfect when a past action has current relevance: 'The team has achieved its target' - that's why everyone is thrilled.",
+            "correctAnswer": "hardly any",
+            "hint": "'Hardly' is already negative. Which word can follow it?",
+            "explanation": "'Hardly' already carries negative meaning, so it goes with 'any', not 'no'.",
             "errorType": "Grammar Error"
         },
         {
@@ -494,17 +494,17 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He watched that film at least ten times and still never gets bored of it.",
-            "missingWord": "watched",
+            "passage": "Had I realised how complicated the process was, I would ask for help sooner.",
+            "missingWord": "would ask",
             "options": [
-                "has watched",
-                "watched",
-                "had watched",
-                "is watching"
+                "would ask",
+                "would have asked",
+                "asked",
+                "will ask"
             ],
-            "correctAnswer": "has watched",
-            "hint": "This refers to accumulated viewings up to the present. No specific past time is mentioned. Which tense fits?",
-            "explanation": "Present perfect for accumulated experience: 'He has watched that film at least ten times'.",
+            "correctAnswer": "would have asked",
+            "hint": "The sentence begins with an inverted past perfect. What should the result clause be?",
+            "explanation": "Third conditional results need 'would have + participle'.",
             "errorType": "Grammar Error"
         },
         {
@@ -512,17 +512,17 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She read the book twice since it was published and loves it each time.",
-            "missingWord": "read",
+            "passage": "The board objected to change the deadline without consulting anyone.",
+            "missingWord": "to change",
             "options": [
-                "has read",
-                "read",
-                "had read",
-                "reads"
+                "to changing",
+                "to change",
+                "for change",
+                "at change"
             ],
-            "correctAnswer": "has read",
-            "hint": "'Since it was published' connects this to an ongoing period up to now. Which tense works with 'since'?",
-            "explanation": "Use present perfect with 'since': 'She has read the book twice since it was published'.",
+            "correctAnswer": "to changing",
+            "hint": "Is 'to' part of an infinitive here, or is it a preposition?",
+            "explanation": "'Object to' uses 'to' as a preposition, so a gerund follows.",
             "errorType": "Grammar Error"
         },
         {
@@ -530,18 +530,18 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "The band released three albums since they formed, all to critical acclaim.",
-            "missingWord": "released",
+            "passage": "Not only was the room expensive, but it also was dirty and cramped.",
+            "missingWord": "also was",
             "options": [
-                "has released",
-                "released",
-                "had released",
-                "releases"
+                "also was",
+                "being also",
+                "was also",
+                "also being"
             ],
-            "correctAnswer": "has released",
-            "hint": "'Since they formed' links this to an ongoing period from the past to now. Which tense works with 'since'?",
-            "explanation": "Use present perfect with 'since': 'The band has released three albums since they formed'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "was also",
+            "hint": "Where does 'also' sit with the verb 'be'?",
+            "explanation": "'Also' comes after 'be' but before other verbs: 'was also dirty'.",
+            "errorType": "Sentence Structure Error"
         }
     ]
 }

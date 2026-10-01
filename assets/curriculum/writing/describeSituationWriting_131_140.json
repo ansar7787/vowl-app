@@ -5,1173 +5,1173 @@
     "quests": [
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L131_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE EVIDENCE AND WHAT IT SUGGESTS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your decision to boycott a major retailer over its labor practices put you at odds with family members who depended on the store's low prices to make ends meet. Describe the disagreement that followed.",
+            "situation": "You walk into your roommate's room and find the desk covered in scattered papers, an open backpack, and a chair pushed back at an angle. Describe what you see and what it suggests about what happened.",
             "emojis": [
-                "🏬",
-                "⚖️",
-                "😤",
-                "🗣️"
+                "🤔",
+                "📄",
+                "🎒",
+                "🪑"
             ],
             "keywords": {
                 "0": [
-                    "BOYCOTT",
-                    "MAJORRETAILER",
-                    "LABORPRACTICE"
+                    "SUGGEST",
+                    "HURRY",
+                    "LEAVE"
                 ],
                 "1": [
-                    "ODDSWITH",
-                    "FAMILYMEMBERS",
-                    "DEPEND"
+                    "PAPERS",
+                    "SCATTER",
+                    "DESK"
                 ],
                 "2": [
-                    "LOWPRICES",
-                    "MAKEENDSMEET",
-                    "DISAGREEMENT"
+                    "BACKPACK",
+                    "OPEN",
+                    "HALFPACKED"
                 ],
                 "3": [
-                    "NAVIGATE",
-                    "RESPECT",
-                    "COMPROMISE"
+                    "CHAIR",
+                    "ANGLE",
+                    "PUSHED"
                 ]
             },
-            "minWords": 51,
-            "hint": "Describe how you navigated the disagreement while respecting your family's financial reality.",
-            "explanation": "Good values-versus-circumstance answers show genuine empathy, for example: 'I realized that lecturing my mother about ethics meant little when she was simply trying to afford groceries, so I focused on supporting her budget in other ways instead.'",
-            "modelAnswer": "Good values-versus-circumstance answers show genuine empathy, for example: 'I realized that lecturing my mother about ethics meant little when she was simply trying to afford groceries, so I focused on supporting her budget in other ways instead.' Describe how you navigated the disagreement while respecting your family's financial reality. This serves as a model answer for the situation."
+            "minWords": 48,
+            "hint": "List the specific visible details first, then use a phrase like this suggests to introduce your careful conclusion.",
+            "explanation": "Inference writing begins with concrete, listed evidence before moving to a conclusion, and the word suggests signals to the reader that what follows is a reasonable guess rather than a stated fact.",
+            "modelAnswer": "Papers lie scattered across the desk, one edge curling over the side, and the backpack sits half-open on the bed with a single shoe visible inside it. The desk chair has been pushed back at an odd angle, still slightly turned toward the door, which together suggests she left in a considerable hurry rather than finishing her packing calmly."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L131_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE EVIDENCE AND WHAT IT SUGGESTS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your decision to leave a stable corporate career to open a small restaurant fulfilled a lifelong dream but forced you to confront the financial anxieties your family had long warned you about. Describe this transition.",
+            "situation": "You notice your coworker's breakfast sandwich sitting almost completely untouched on his desk, along with a half-empty coffee cup that has gone cold. Describe what you see and what it suggests.",
             "emojis": [
-                "🍽️",
-                "💼",
-                "😟",
-                "💭"
+                "☕",
+                "😕",
+                "🤔",
+                "🥪"
             ],
             "keywords": {
                 "0": [
-                    "LEAVECORPORATE",
-                    "STABLE",
-                    "LIFELONGDREAM"
+                    "COFFEE",
+                    "COLD",
+                    "HALFEMPTY"
                 ],
                 "1": [
-                    "OPENSMALLRESTAURANT",
-                    "FULFILL",
-                    "FORCE"
+                    "DESK",
+                    "EMPTY",
+                    "CHAIR"
                 ],
                 "2": [
-                    "FINANCIALANXIETY",
-                    "FAMILY",
-                    "WARN"
+                    "SUGGEST",
+                    "INTERRUPT",
+                    "UNWELL"
                 ],
                 "3": [
-                    "CONFRONT",
-                    "TRANSITION",
-                    "RESILIENT"
+                    "SANDWICH",
+                    "UNTOUCHED",
+                    "WRAP"
                 ]
             },
-            "minWords": 51,
-            "hint": "Describe the specific anxieties you confronted and how you managed them during the transition.",
-            "explanation": "Good career-risk answers show honest reckoning with fear, for example: 'Every warning my parents had given me echoed in my head during the first slow month, but watching the restaurant slowly find its footing made the risk feel worthwhile.'",
-            "modelAnswer": "Good career-risk answers show honest reckoning with fear, for example: 'Every warning my parents had given me echoed in my head during the first slow month, but watching the restaurant slowly find its footing made the risk feel worthwhile.' Describe the specific anxieties you confronted and how you managed them during the transition. This serves as a model answer for the situation."
+            "minWords": 48,
+            "hint": "Describe the untouched food clearly, then offer a careful, hedged guess about why he might have left it.",
+            "explanation": "Small, everyday evidence like an untouched meal invites a modest inference, and phrasing the guess carefully, such as might suggest, keeps the description honest about the limits of what can actually be known.",
+            "modelAnswer": "His breakfast sandwich sits mostly wrapped on the desk, only one small bite missing, beside a coffee cup that has clearly gone cold with a thin film across the surface. His chair sits empty, pushed slightly away from the desk, which might suggest he was called away suddenly, perhaps to an unexpected meeting or a phone call he needed to take somewhere quieter."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L131_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE EVIDENCE AND WHAT IT SUGGESTS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your role in developing a widely used productivity tool came with an unexpected moral weight when you realized how much unpaid overtime it was inadvertently enabling employers to extract. Describe how you grappled with this realization.",
+            "situation": "You notice a packed suitcase sitting by your neighbor's front door, along with a taxi idling outside the building. Describe what you see and what it suggests.",
             "emojis": [
-                "💻",
-                "⚖️",
-                "😟",
-                "💭"
+                "🧳",
+                "🤔",
+                "🚕",
+                "🚪"
             ],
             "keywords": {
                 "0": [
-                    "DEVELOP",
-                    "PRODUCTIVITYTOOL",
-                    "WIDELYUSED"
+                    "SUITCASE",
+                    "ZIP",
+                    "READY"
                 ],
                 "1": [
-                    "MORALWEIGHT",
-                    "REALIZE",
-                    "UNPAIDOVERTIME"
+                    "SUGGEST",
+                    "DEPART",
+                    "TRIP"
                 ],
                 "2": [
-                    "INADVERTENTLY",
-                    "ENABLE",
-                    "EMPLOYERS"
+                    "TAXI",
+                    "IDLE",
+                    "OUTSIDE"
                 ],
                 "3": [
-                    "GRAPPLE",
-                    "RESPONSIBILITY",
-                    "RECONSIDER"
+                    "DOOR",
+                    "AJAR",
+                    "PARTIALLY"
                 ]
             },
-            "minWords": 51,
-            "hint": "Describe the specific realization that made you reconsider the broader impact of your work.",
-            "explanation": "Good ethical-technology-reflection answers connect personal craft to wider consequence, for example: 'Reading a user comment about feeling unable to disconnect made me realize the feature I had championed needed built-in limits, not just efficiency.'",
-            "modelAnswer": "Good ethical-technology-reflection answers connect personal craft to wider consequence, for example: 'Reading a user comment about feeling unable to disconnect made me realize the feature I had championed needed built-in limits, not just efficiency.' Describe the specific realization that made you reconsider the broader impact of your work. This serves as a model answer for the situation."
+            "minWords": 48,
+            "hint": "Describe the suitcase and the taxi as specific visible facts, then use a cautious phrase to introduce your conclusion.",
+            "explanation": "Combining two separate pieces of evidence, an object and a vehicle, strengthens an inference more than either detail alone would, and the description should still present the conclusion as likely rather than certain.",
+            "modelAnswer": "A neatly packed suitcase sits by the front door, its zipper fully closed, while a taxi idles patiently at the curb outside with its engine running. The front door stands slightly ajar, as though someone stepped back inside for one last forgotten item, which together suggests my neighbor is about to leave for a trip rather than simply returning from one."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L132_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE STUDENT'S REACTION AND WHAT IT SUGGESTS ABOUT HIS FEELINGS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your decision to advocate publicly for a rare condition affecting your family required revealing deeply personal details you had previously kept private. Describe how you weighed privacy against the potential to help others.",
+            "situation": "A student receives his graded exam back and stares at it silently for several seconds before quietly folding it and placing it in his bag. Describe his reaction and what it might suggest about his feelings.",
             "emojis": [
-                "🏥",
-                "🗣️",
-                "😟",
-                "💭"
+                "📝",
+                "😐",
+                "🤔",
+                "🎒"
             ],
             "keywords": {
                 "0": [
-                    "ADVOCATEPUBLICLY",
-                    "RARECONDITION",
-                    "FAMILY"
+                    "EXAM",
+                    "STARE",
+                    "SILENT"
                 ],
                 "1": [
-                    "REVEAL",
-                    "DEEPLYPERSONAL",
-                    "PREVIOUSLYPRIVATE"
+                    "FOLD",
+                    "QUIETLY",
+                    "CAREFUL"
                 ],
                 "2": [
-                    "WEIGHPRIVACY",
-                    "POTENTIAL",
-                    "HELPOTHERS"
+                    "BAG",
+                    "PLACE",
+                    "HIDE"
                 ],
                 "3": [
-                    "DECIDE",
-                    "COURAGEOUS",
-                    "IMPACT"
+                    "SUGGEST",
+                    "DISAPPOINT",
+                    "PRIVATE"
                 ]
             },
-            "minWords": 51,
-            "hint": "Describe the reasoning that ultimately led you to choose advocacy over continued privacy.",
-            "explanation": "Good personal-advocacy answers show meaningful trade-offs, for example: 'Sharing our story felt deeply uncomfortable at first, but knowing it might help another family navigate a diagnosis made the vulnerability worth it.'",
-            "modelAnswer": "Good personal-advocacy answers show meaningful trade-offs, for example: 'Sharing our story felt deeply uncomfortable at first, but knowing it might help another family navigate a diagnosis made the vulnerability worth it.' Describe the reasoning that ultimately led you to choose advocacy over continued privacy. This serves as a model answer for the situation."
+            "minWords": 48,
+            "hint": "Describe only his physical actions clearly, then use a cautious phrase like might suggest to guess at the feeling behind them.",
+            "explanation": "Inferring an emotion from behavior works best when the behavior itself, staring silently, folding the paper away, is described precisely, since these specific actions carry more evidence than a vague statement like he looked sad.",
+            "modelAnswer": "He stares at the returned exam for several long seconds without any visible expression, then quietly folds the paper in half before sliding it into the very bottom of his bag, away from view. The careful, almost secretive way he hides it might suggest disappointment with his grade, though he says nothing and simply turns back to face the front of the room."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L132_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE COWORKER'S REACTION AND WHAT IT SUGGESTS ABOUT HER FEELINGS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your discovery that an emotionally significant piece of art you owned had a disputed and possibly unethical history of acquisition created an uncomfortable moral question about ownership. Describe how you resolved this dilemma.",
+            "situation": "When a colleague announces her promotion to the team, a coworker sitting nearby offers a brief smile but says nothing further and looks down at her notebook. Describe the reaction and what it might suggest about her feelings.",
             "emojis": [
-                "🖼️",
-                "⚖️",
-                "😟",
-                "💭"
+                "😐",
+                "📢",
+                "🤔",
+                "📓"
             ],
             "keywords": {
                 "0": [
-                    "EMOTIONALLYSIGNIFICANT",
-                    "ART",
-                    "OWN"
+                    "SMILE",
+                    "BRIEF",
+                    "TIGHT"
                 ],
                 "1": [
-                    "DISPUTED",
-                    "UNETHICAL",
-                    "ACQUISITION"
+                    "ANNOUNCE",
+                    "PROMOTION",
+                    "APPLAUD"
                 ],
                 "2": [
-                    "MORALQUESTION",
-                    "OWNERSHIP",
-                    "UNCOMFORTABLE"
+                    "IMPLY",
+                    "ENVY",
+                    "QUIET"
                 ],
                 "3": [
-                    "RESOLVE",
-                    "DECIDE",
-                    "RETURN"
+                    "NOTEBOOK",
+                    "LOOK",
+                    "DOWN"
                 ]
             },
-            "minWords": 51,
-            "hint": "Describe the reasoning that guided your final decision about the piece.",
-            "explanation": "Good ethical-ownership answers show principled reflection, for example: 'Despite my personal attachment to the piece, I ultimately decided returning it to its documented rightful owners mattered more than keeping it.'",
-            "modelAnswer": "Good ethical-ownership answers show principled reflection, for example: 'Despite my personal attachment to the piece, I ultimately decided returning it to its documented rightful owners mattered more than keeping it.' Describe the reasoning that guided your final decision about the piece. This serves as a model answer for the situation."
+            "minWords": 49,
+            "hint": "Describe her brief smile and the shift of her attention to her notebook, then carefully guess at what these details might imply.",
+            "explanation": "A brief, tight smile followed by looking away is a small but telling piece of evidence, and describing exactly this contrast, a polite gesture followed by withdrawal, supports a careful inference better than a broader, vaguer description would.",
+            "modelAnswer": "As the room breaks into applause for the announcement, one coworker offers a brief, tight smile toward her newly promoted colleague before quickly looking back down at her notebook, saying nothing for the rest of the meeting. This small shift might suggest some quiet disappointment of her own, perhaps because she had also been hoping for the position, though of course she could simply be focused on her notes."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L132_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE CHILD'S REACTION AND WHAT IT SUGGESTS ABOUT HIS FEELINGS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You need to write a message to a research journal disputing the way your contribution was characterized in a published study, while maintaining a professional tone. Describe what you write.",
+            "situation": "When his parents cancel a promised trip to the zoo due to rain, a young boy sits quietly by the window without saying a word, occasionally tracing raindrops on the glass with his finger. Describe his reaction and what it might suggest about his feelings.",
             "emojis": [
-                "📄",
-                "⚖️",
-                "✉️",
-                "🔬"
+                "🤔",
+                "😔",
+                "🌧️",
+                "🪟"
             ],
             "keywords": {
                 "0": [
-                    "RESEARCHJOURNAL",
-                    "DISPUTE",
-                    "CHARACTERIZE"
+                    "SUGGEST",
+                    "DISAPPOINT",
+                    "QUIET"
                 ],
                 "1": [
-                    "CONTRIBUTION",
-                    "PUBLISHEDSTUDY",
-                    "MAINTAIN"
+                    "QUIET",
+                    "WINDOW",
+                    "SIT"
                 ],
                 "2": [
-                    "PROFESSIONALTONE",
-                    "EXPLAIN",
-                    "EVIDENCE"
+                    "CANCEL",
+                    "TRIP",
+                    "RAIN"
                 ],
                 "3": [
-                    "PURSUE",
-                    "AMENDMENT",
-                    "FIRM"
+                    "TRACE",
+                    "RAINDROP",
+                    "FINGER"
                 ]
             },
-            "minWords": 51,
-            "hint": "Use specific evidence to support your dispute while keeping the tone collegial.",
-            "explanation": "A strong academic dispute is evidence-based and measured, for example: 'According to the original lab notes, my role involved designing the methodology, not merely assisting with data collection as the published version suggests.'",
-            "modelAnswer": "A strong academic dispute is evidence-based and measured, for example: 'According to the original lab notes, my role involved designing the methodology, not merely assisting with data collection as the published version suggests.' Use specific evidence to support your dispute while keeping the tone collegial. This serves as a model answer for the situation."
+            "minWords": 49,
+            "hint": "Describe his quiet, repetitive action at the window in detail, then offer a careful guess about the feeling behind it.",
+            "explanation": "A repeated, quiet physical action, like tracing raindrops, often reveals emotion more clearly than words would from a young child, and describing that specific gesture supports a gentle, careful inference about his disappointment.",
+            "modelAnswer": "Without complaining or arguing, the boy simply sits by the window, watching the rain fall and occasionally tracing the path of a single raindrop down the glass with his finger. His unusual quietness, so different from his normal chatter, might suggest genuine disappointment about the canceled trip, even though he never actually says so out loud to anyone."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L133_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE ACTIONS AND WHAT THEY SUGGEST ABOUT HIS INTENTIONS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your decision to fully embrace a slower, more intentional pace of life after years of relentless busyness was met with skepticism from colleagues who interpreted it as a lack of ambition. Describe how you addressed their assumptions.",
+            "situation": "A coworker has been quietly packing personal items from his desk into a small box over the past few days, without mentioning anything to the team. Describe his actions and what they might suggest about his intentions.",
             "emojis": [
-                "🐢",
-                "😌",
-                "😕",
-                "🗣️"
+                "🤔",
+                "📦",
+                "🧑‍💼",
+                "🤐"
             ],
             "keywords": {
                 "0": [
-                    "SLOWERPACE",
-                    "INTENTIONAL",
-                    "EMBRACE"
+                    "SUGGEST",
+                    "LEAVING",
+                    "JOB"
                 ],
                 "1": [
-                    "YEARS",
-                    "RELENTLESSBUSYNESS",
-                    "AFTER"
+                    "BOX",
+                    "PACK",
+                    "GRADUAL"
                 ],
                 "2": [
-                    "SKEPTICISM",
-                    "COLLEAGUES",
-                    "LACKAMBITION"
+                    "DESK",
+                    "EMPTY",
+                    "SLOWLY"
                 ],
                 "3": [
-                    "ADDRESS",
-                    "ASSUMPTION",
-                    "CONFIDENT"
+                    "QUIET",
+                    "MENTION",
+                    "NOTHING"
                 ]
             },
-            "minWords": 51,
-            "hint": "Describe how you confidently explained your choice without feeling the need to justify it excessively.",
-            "explanation": "Good values-confidence answers show calm self-assurance, for example: 'When a colleague implied I had lost my drive, I simply explained that I had redefined what ambition meant to me, and left it at that.'",
-            "modelAnswer": "Good values-confidence answers show calm self-assurance, for example: 'When a colleague implied I had lost my drive, I simply explained that I had redefined what ambition meant to me, and left it at that.' Describe how you confidently explained your choice without feeling the need to justify it excessively. This serves as a model answer for the situation."
+            "minWords": 49,
+            "hint": "Describe the gradual packing over several days as specific evidence, then carefully suggest what intention it might point toward.",
+            "explanation": "Intentions are often inferred from a pattern of behavior over time rather than a single action, and describing that gradual pattern, packing a little each day, gives the inference more weight than a single observed moment would.",
+            "modelAnswer": "Over the course of a week, a colleague has been quietly emptying his desk drawers into a small cardboard box, one or two items at a time, careful never to draw attention to what he is doing. He has mentioned nothing to the team about his plans, but the slow, deliberate emptying of his workspace might reasonably suggest that he intends to leave the company soon."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L133_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE ACTIONS AND WHAT THEY SUGGEST ABOUT HER INTENTIONS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your decision to publicly correct a widely respected professor's factual error during a guest lecture created a tense but ultimately productive moment of academic accountability. Describe how the exchange unfolded.",
+            "situation": "A friend who has always split bills evenly suddenly insists on paying for everything during a recent outing, brushing off every attempt to argue. Describe her actions and what they might suggest about her intentions.",
             "emojis": [
-                "🎓",
-                "🗣️",
-                "😬",
-                "✅"
+                "😊",
+                "🙅",
+                "🤔",
+                "💳"
             ],
             "keywords": {
                 "0": [
-                    "PUBLICLYCORRECT",
-                    "RESPECTEDPROFESSOR",
-                    "FACTUALERROR"
+                    "BRUSHOFF",
+                    "ARGUMENT",
+                    "WAVEAWAY"
                 ],
                 "1": [
-                    "GUESTLECTURE",
-                    "TENSE",
-                    "PRODUCTIVE"
+                    "UNUSUAL",
+                    "BEHAVIOR",
+                    "DIFFERENT"
                 ],
                 "2": [
-                    "ACADEMICACCOUNTABILITY",
-                    "EXCHANGE",
-                    "UNFOLD"
+                    "SUGGEST",
+                    "GRATEFUL",
+                    "GENEROUS"
                 ],
                 "3": [
-                    "RESPECTFUL",
-                    "OUTCOME",
-                    "LEARN"
+                    "INSIST",
+                    "PAY",
+                    "EVERYTHING"
                 ]
             },
-            "minWords": 51,
-            "hint": "Describe how you raised the correction respectfully and how the professor responded.",
-            "explanation": "Good academic-courage answers show respectful assertiveness, for example: 'I phrased the correction as a genuine question rather than a challenge, which allowed the professor to graciously acknowledge the mistake without losing face.'",
-            "modelAnswer": "Good academic-courage answers show respectful assertiveness, for example: 'I phrased the correction as a genuine question rather than a challenge, which allowed the professor to graciously acknowledge the mistake without losing face.' Describe how you raised the correction respectfully and how the professor responded. This serves as a model answer for the situation."
+            "minWords": 49,
+            "hint": "Describe the specific change in her usual behavior, then carefully guess at the possible reason behind her sudden generosity.",
+            "explanation": "A change from someone's usual pattern of behavior, such as always splitting bills before now insisting on paying, is a strong piece of evidence for inference, since the contrast itself draws attention to something worth explaining.",
+            "modelAnswer": "Unlike every other outing, where she has always insisted on splitting the bill exactly down the middle, this time she quickly hands over her card before anyone else can react, waving away every objection with a firm smile. This unusual insistence on paying might suggest she is feeling especially grateful about something recent, perhaps some help I gave her, though she has not directly explained why."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L133_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE ACTIONS AND WHAT THEY SUGGEST ABOUT HIS INTENTIONS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your decision to whistleblow on a colleague's data falsification, despite the personal relationship between you, tested the boundary between loyalty and professional ethics. Describe how you navigated this conflict.",
+            "situation": "During a first date, a man checks his phone repeatedly under the table every few minutes, glancing toward the restaurant door each time. Describe his actions and what they might suggest about his intentions.",
             "emojis": [
-                "💼",
-                "⚠️",
-                "😟",
-                "⚖️"
+                "📱",
+                "🤔",
+                "🍽️",
+                "👀"
             ],
             "keywords": {
                 "0": [
-                    "WHISTLEBLOW",
-                    "COLLEAGUE",
-                    "DATAFALSIFICATION"
+                    "PHONE",
+                    "CHECK",
+                    "REPEATEDLY"
                 ],
                 "1": [
-                    "DESPITE",
-                    "PERSONALRELATIONSHIP",
-                    "TEST"
+                    "SUGGEST",
+                    "DISINTEREST",
+                    "ELSEWHERE"
                 ],
                 "2": [
-                    "BOUNDARY",
-                    "LOYALTY",
-                    "PROFESSIONALETHICS"
+                    "GLANCE",
+                    "DOOR",
+                    "FREQUENT"
                 ],
                 "3": [
-                    "NAVIGATE",
-                    "CONFLICT",
-                    "INTEGRITY"
+                    "DISTRACT",
+                    "ATTENTION",
+                    "DIVIDE"
                 ]
             },
-            "minWords": 51,
-            "hint": "Describe the internal conflict you faced and the reasoning that guided your final decision.",
-            "explanation": "Good ethics-versus-loyalty answers show principled struggle, for example: 'Reporting a close friend was one of the hardest decisions I have made, but I ultimately concluded that the integrity of our research mattered more than personal comfort.'",
-            "modelAnswer": "Good ethics-versus-loyalty answers show principled struggle, for example: 'Reporting a close friend was one of the hardest decisions I have made, but I ultimately concluded that the integrity of our research mattered more than personal comfort.' Describe the internal conflict you faced and the reasoning that guided your final decision. This serves as a model answer for the situation."
+            "minWords": 49,
+            "hint": "Describe the specific, repeated behavior clearly, then carefully suggest what it might indicate about where his attention actually lies.",
+            "explanation": "Repeated behavior, checking a phone several times rather than once, provides stronger evidence for an inference than a single instance would, since a pattern is harder to dismiss as coincidence.",
+            "modelAnswer": "Throughout dinner, he checks his phone under the table at least six separate times, and after each glance, his eyes flick briefly toward the restaurant's front door before returning to the conversation. This repeated pattern might suggest either a genuine distraction with something urgent elsewhere or, less generously, a lack of real interest in how the date itself is going."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L134_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "ANALYZE THE SCENE, SEPARATING FACTS FROM ASSUMPTIONS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your immersive volunteer experience in a community vastly different from your own forced you to confront unconscious biases you had not previously recognized in yourself. Describe this uncomfortable but valuable realization.",
+            "situation": "You arrive home to find your car parked slightly askew in the driveway and a small crack in one of the side windows. Describe the observable facts, and separately, the assumptions someone might jump to that are not actually confirmed.",
             "emojis": [
-                "🌍",
-                "😳",
-                "💭",
-                "🌱"
+                "🚗",
+                "🪟",
+                "🤔",
+                "⚠️"
             ],
             "keywords": {
                 "0": [
-                    "IMMERSIVEVOLUNTEER",
-                    "COMMUNITY",
-                    "VASTLYDIFFERENT"
+                    "ASKEW",
+                    "ANGLE",
+                    "DRIVEWAY"
                 ],
                 "1": [
-                    "FORCE",
-                    "CONFRONT",
-                    "UNCONSCIOUSBIAS"
+                    "CRACK",
+                    "WINDOW",
+                    "SIDE"
                 ],
                 "2": [
-                    "NOTPREVIOUSLY",
-                    "RECOGNIZE",
-                    "YOURSELF"
+                    "FACT",
+                    "CONFIRM",
+                    "OBSERVE"
                 ],
                 "3": [
-                    "UNCOMFORTABLE",
-                    "VALUABLE",
-                    "REALIZATION"
+                    "ASSUME",
+                    "BURGLARY",
+                    "JUMP"
                 ]
             },
-            "minWords": 52,
-            "hint": "Describe the specific moment that revealed a bias you had not previously recognized.",
-            "explanation": "Good self-aware-growth answers show genuine humility, for example: 'Catching myself assuming a community member needed help with something he clearly already understood made me realize how much unconscious assumption I had brought with me.'",
-            "modelAnswer": "Good self-aware-growth answers show genuine humility, for example: 'Catching myself assuming a community member needed help with something he clearly already understood made me realize how much unconscious assumption I had brought with me.' Describe the specific moment that revealed a bias you had not previously recognized. This serves as a model answer for the situation."
+            "minWords": 49,
+            "hint": "List only the confirmed observable facts first, then separately name an assumption someone might make, and note that it is not yet confirmed.",
+            "explanation": "Explicitly labeling a guess as an assumption not yet confirmed, rather than simply stating it, teaches careful reasoning under uncertainty, which matters especially in situations that could otherwise trigger unnecessary alarm.",
+            "modelAnswer": "The facts I can confirm are simple: the car sits at a slightly odd angle in the driveway, and there is a small crack running across the corner of the passenger window. It would be easy to immediately assume a break-in occurred, but that conclusion is not actually confirmed by anything I have observed, since the crack could just as easily have come from a stray branch or a small stone thrown up by traffic."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L134_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "ANALYZE THE SCENE, SEPARATING FACTS FROM ASSUMPTIONS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your decision to publicly support a family member through a controversial life choice strained relationships with relatives who expected you to share their disapproval. Describe how you navigated the family tension.",
+            "situation": "You find a bouquet of flowers and a handwritten note left on your doorstep with no name attached. Describe the observable facts, and separately, the assumptions someone might jump to that are not actually confirmed.",
             "emojis": [
-                "👨‍👩‍👧‍👦",
-                "🛡️",
-                "😤",
-                "🤝"
+                "💐",
+                "✉️",
+                "🤔",
+                "🚪"
             ],
             "keywords": {
                 "0": [
-                    "PUBLICLYSUPPORT",
-                    "FAMILYMEMBER",
-                    "CONTROVERSIAL"
+                    "FLOWERS",
+                    "BOUQUET",
+                    "LEAVE"
                 ],
                 "1": [
-                    "STRAIN",
-                    "RELATIVES",
-                    "EXPECT"
+                    "NOTE",
+                    "HANDWRITTEN",
+                    "UNSIGNED"
                 ],
                 "2": [
-                    "SHAREDISAPPROVAL",
-                    "NAVIGATE",
-                    "TENSION"
+                    "VERIFY",
+                    "KNOWN",
+                    "ESTABLISH"
                 ],
                 "3": [
-                    "STANDFIRM",
-                    "LOYAL",
-                    "RESOLVE"
+                    "ASSUME",
+                    "SECRETADMIRER",
+                    "GUESS"
                 ]
             },
-            "minWords": 52,
-            "hint": "Describe how you balanced standing by your family member with managing relatives' disapproval.",
-            "explanation": "Good loyalty-under-pressure answers show principled support, for example: 'I made clear to my relatives that my support was non-negotiable, even though it meant some uncomfortable conversations at family events for a while.'",
-            "modelAnswer": "Good loyalty-under-pressure answers show principled support, for example: 'I made clear to my relatives that my support was non-negotiable, even though it meant some uncomfortable conversations at family events for a while.' Describe how you balanced standing by your family member with managing relatives' disapproval. This serves as a model answer for the situation."
+            "minWords": 49,
+            "hint": "State the confirmed facts about the flowers and note first, then clearly separate any romantic assumption as unconfirmed.",
+            "explanation": "A mysterious but pleasant scene, like unsigned flowers, still benefits from careful separation between fact and assumption, since even a positive guess should be flagged as a guess rather than presented as settled.",
+            "modelAnswer": "The confirmed facts are that a small bouquet of white flowers sits on my doorstep, along with a short, handwritten note that simply reads thinking of you, with no name signed at the bottom. It is tempting to assume a secret admirer left them, but that remains entirely unconfirmed, since a friend, a relative, or even a neighbor thanking me for something could just as easily be responsible."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L134_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "ANALYZE THE SCENE, SEPARATING FACTS FROM ASSUMPTIONS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your growing realization that a beloved local artisan you regularly supported was mass-producing items under the guise of handmade craftsmanship created an uncomfortable ethical question about your continued patronage. Describe how you resolved it.",
+            "situation": "You notice a coworker's chair sitting empty with a coffee cup left half full and now completely cold on the desk beside it. Describe the observable facts, and separately, the assumptions someone might jump to that are not actually confirmed.",
             "emojis": [
-                "🎨",
-                "😕",
-                "🔍",
-                "⚖️"
+                "🪑",
+                "☕",
+                "🤔",
+                "🏢"
             ],
             "keywords": {
                 "0": [
-                    "BELOVEDARTISAN",
-                    "REGULARLYSUPPORT",
-                    "MASSPRODUCE"
+                    "CHAIR",
+                    "EMPTY",
+                    "PUSHED"
                 ],
                 "1": [
-                    "GUISE",
-                    "HANDMADE",
-                    "CRAFTSMANSHIP"
+                    "COFFEE",
+                    "COLD",
+                    "HALFFULL"
                 ],
                 "2": [
-                    "ETHICALQUESTION",
-                    "CONTINUEDPATRONAGE",
-                    "UNCOMFORTABLE"
+                    "CERTAIN",
+                    "VERIFY",
+                    "KNOWNFACT"
                 ],
                 "3": [
-                    "RESOLVE",
-                    "DECIDE",
-                    "VALUES"
+                    "ASSUME",
+                    "QUIT",
+                    "LEFTABRUPTLY"
                 ]
             },
-            "minWords": 52,
-            "hint": "Describe the evidence that led to your realization and how you ultimately decided to act.",
-            "explanation": "Good informed-consumer-ethics answers show careful reasoning, for example: 'Once I confirmed the items were factory-produced, I felt the deception mattered more than the quality, and I quietly stopped buying from that vendor.'",
-            "modelAnswer": "Good informed-consumer-ethics answers show careful reasoning, for example: 'Once I confirmed the items were factory-produced, I felt the deception mattered more than the quality, and I quietly stopped buying from that vendor.' Describe the evidence that led to your realization and how you ultimately decided to act. This serves as a model answer for the situation."
+            "minWords": 49,
+            "hint": "List the two confirmed physical facts first, then clearly label any guess about why the person left as an unconfirmed assumption.",
+            "explanation": "In workplace settings, jumping to dramatic assumptions from ordinary evidence, such as a cold coffee cup, is common, and this exercise practices resisting that impulse by labeling the guess honestly rather than treating it as established fact.",
+            "modelAnswer": "The confirmed facts are that his chair sits empty, pushed back slightly from the desk, and a coffee cup beside his keyboard is still half full but has clearly gone completely cold. Some might assume he quit suddenly or left the building in frustration, but that is not confirmed by anything observable, since he may simply be in a meeting, at lunch, or dealing with a personal matter elsewhere in the building."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L135_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "EXPLAIN WHAT THE TORN TICKET STUB SUGGESTS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your role in exposing unsafe practices at a popular restaurant chain where you once worked created personal and professional fallout you had not fully anticipated. Describe how you managed the aftermath.",
+            "situation": "You find a torn concert ticket stub in your friend's jacket pocket while helping her carry groceries. Describe the evidence and explain specifically what it suggests about how she spent her evening.",
             "emojis": [
-                "🍽️",
-                "⚠️",
-                "😟",
-                "🛡️"
+                "🤔",
+                "🎫",
+                "🧥",
+                "🎵"
             ],
             "keywords": {
                 "0": [
-                    "EXPOSE",
-                    "UNSAFEPRACTICES",
-                    "POPULARCHAIN"
+                    "SUGGEST",
+                    "CONCERT",
+                    "ATTEND"
                 ],
                 "1": [
-                    "ONCEWORKED",
-                    "PERSONAL",
-                    "PROFESSIONALFALLOUT"
+                    "STUB",
+                    "TORN",
+                    "HALF"
                 ],
                 "2": [
-                    "NOTFULLY",
-                    "ANTICIPATE",
-                    "AFTERMATH"
+                    "POCKET",
+                    "JACKET",
+                    "FIND"
                 ],
                 "3": [
-                    "MANAGE",
-                    "INTEGRITY",
-                    "CONSEQUENCE"
+                    "VENUE",
+                    "NAME",
+                    "PRINT"
                 ]
             },
-            "minWords": 52,
-            "hint": "Describe the specific consequences you faced and how you reasoned through them.",
-            "explanation": "Good whistleblower-aftermath answers show honest reckoning with consequence, for example: 'Losing a few professional contacts who sided with the company was painful, but knowing customers were safer made the decision easier to stand behind.'",
-            "modelAnswer": "Good whistleblower-aftermath answers show honest reckoning with consequence, for example: 'Losing a few professional contacts who sided with the company was painful, but knowing customers were safer made the decision easier to stand behind.' Describe the specific consequences you faced and how you reasoned through them. This serves as a model answer for the situation."
+            "minWords": 49,
+            "hint": "Describe the ticket stub's specific details, such as a venue name, and explain exactly what these details suggest, not just that they suggest something.",
+            "explanation": "Explaining what evidence suggests means connecting the specific detail directly to the conclusion, such as a venue's name pointing to a particular concert, rather than simply asserting a conclusion without showing the reasoning behind it.",
+            "modelAnswer": "Reaching into her jacket pocket for her keys, I find a torn ticket stub with the name of a downtown music venue still faintly printed across the top half. Since that venue only hosts evening concerts and she mentioned feeling unusually tired this morning, the stub strongly suggests she attended a late show last night rather than simply staying in as she had originally told me."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L135_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "EXPLAIN WHAT THE STACK OF UNOPENED MAIL SUGGESTS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your growing unease about the addictive design of an app you helped build led to an internal conflict between professional success and personal conscience. Describe how you resolved this tension.",
+            "situation": "You notice a thick stack of unopened mail piling up in your elderly neighbor's mailbox over the past week. Describe the evidence and explain specifically what it suggests about his recent absence.",
             "emojis": [
-                "📱",
-                "😟",
-                "⚖️",
-                "💭"
+                "📮",
+                "👴",
+                "🤔",
+                "📬"
             ],
             "keywords": {
                 "0": [
-                    "GROWINGUNEASE",
-                    "ADDICTIVEDESIGN",
-                    "APP"
+                    "ENVELOPES",
+                    "UNOPENED",
+                    "SEVERAL"
                 ],
                 "1": [
-                    "HELPBUILD",
-                    "INTERNALCONFLICT",
-                    "SUCCESS"
+                    "DATES",
+                    "POSTMARK",
+                    "SPREAD"
                 ],
                 "2": [
-                    "PROFESSIONALSUCCESS",
-                    "PERSONALCONSCIENCE",
-                    "TENSION"
+                    "SUGGEST",
+                    "AWAY",
+                    "UNWELL"
                 ],
                 "3": [
-                    "RESOLVE",
-                    "ADVOCATE",
-                    "CHANGE"
+                    "MAILBOX",
+                    "OVERFLOW",
+                    "STACK"
                 ]
             },
-            "minWords": 52,
-            "hint": "Describe the specific change you advocated for within the company to address your unease.",
-            "explanation": "Good tech-ethics answers show principled internal advocacy, for example: 'I proposed adding a usage-limit feature, and although leadership resisted at first, I felt better having at least raised the concern formally.'",
-            "modelAnswer": "Good tech-ethics answers show principled internal advocacy, for example: 'I proposed adding a usage-limit feature, and although leadership resisted at first, I felt better having at least raised the concern formally.' Describe the specific change you advocated for within the company to address your unease. This serves as a model answer for the situation."
+            "minWords": 50,
+            "hint": "Describe the specific accumulation and the range of dates on the mail, then explain exactly how these details support your conclusion.",
+            "explanation": "Noticing a range of dates within the evidence itself, several days of postmarks rather than just one, strengthens an inference by showing a pattern over time rather than a single isolated detail.",
+            "modelAnswer": "Peering into my elderly neighbor's overflowing mailbox, I count at least six unopened envelopes, their postmarks stretching across nearly a full week without a single one being collected. Since he usually checks his mail every single day without exception, this steady accumulation over several days strongly suggests he has either traveled somewhere unexpectedly or, more concerningly, might not be feeling well enough to leave his apartment."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L135_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "EXPLAIN WHAT THE MISMATCHED SHOES SUGGEST",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your decision to seek a second medical opinion that contradicted your trusted family doctor's diagnosis created an uncomfortable rift in a relationship built over decades. Describe how you navigated this tension.",
+            "situation": "You notice your roommate wearing two slightly different shoes as he rushes out the door for work. Describe the evidence and explain specifically what it suggests about his morning.",
             "emojis": [
-                "🩺",
-                "😟",
-                "🤝",
-                "💭"
+                "👟",
+                "🤔",
+                "🚪",
+                "😅"
             ],
             "keywords": {
                 "0": [
-                    "SECONDOPINION",
-                    "CONTRADICT",
-                    "TRUSTEDDOCTOR"
+                    "SHOES",
+                    "MISMATCH",
+                    "NOTICE"
                 ],
                 "1": [
-                    "FAMILYDOCTOR",
-                    "DECADES",
-                    "RELATIONSHIP"
+                    "SUGGEST",
+                    "OVERSLEPT",
+                    "DISTRACTED"
                 ],
                 "2": [
-                    "UNCOMFORTABLE",
-                    "RIFT",
-                    "NAVIGATE"
+                    "SIMILAR",
+                    "COLOR",
+                    "CLOSE"
                 ],
                 "3": [
-                    "TENSION",
-                    "RESOLVE",
-                    "HEALTH"
+                    "RUSH",
+                    "DOOR",
+                    "HURRY"
                 ]
             },
-            "minWords": 52,
-            "hint": "Describe how you balanced loyalty to your longtime doctor with the need for accurate information.",
-            "explanation": "Good patient-advocacy answers show balanced reasoning, for example: 'I explained to my doctor that seeking clarity was not about distrust, but about making sure I had the full picture for such an important decision.'",
-            "modelAnswer": "Good patient-advocacy answers show balanced reasoning, for example: 'I explained to my doctor that seeking clarity was not about distrust, but about making sure I had the full picture for such an important decision.' Describe how you balanced loyalty to your longtime doctor with the need for accurate information. This serves as a model answer for the situation."
+            "minWords": 50,
+            "hint": "Describe how similar the shoes look at a glance, then explain exactly why this small detail suggests a rushed morning specifically.",
+            "explanation": "The specific reason mismatched shoes go unnoticed, their similar color making the mistake easy to miss, is itself useful supporting evidence, since it explains exactly how someone could rush out the door without realizing the mistake.",
+            "modelAnswer": "As my roommate dashes out the door, I notice he is wearing two dark shoes that look almost identical at a glance, but one has a slightly thicker sole than the other. The fact that the mistake is so easy to miss, combined with his unusually fast pace down the stairs, strongly suggests he overslept this morning and grabbed whatever was nearest without checking carefully in the dim closet light."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L136_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE MULTIPLE CLUES AND THE CONFIDENT INFERENCE THEY SUPPORT",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your realization that a beloved childhood franchise had quietly shifted its values to align more with commercial interests than its original artistic vision left you grappling with conflicted nostalgia. Describe this internal experience.",
+            "situation": "Walking into your friend's apartment, you notice deflated balloons in the corner, a stack of paper plates in the sink, and a handwritten banner half taped to the wall. Describe the multiple clues and what they together suggest happened recently.",
             "emojis": [
-                "🎬",
-                "😕",
-                "💭",
-                "🔍"
+                "🎊",
+                "🍽️",
+                "🤔",
+                "🎈"
             ],
             "keywords": {
                 "0": [
-                    "BELOVEDFRANCHISE",
-                    "QUIETLYSHIFT",
-                    "VALUES"
+                    "BANNER",
+                    "HALFTAPED",
+                    "WALL"
                 ],
                 "1": [
-                    "COMMERCIALINTEREST",
-                    "ORIGINAL",
-                    "ARTISTICVISION"
+                    "PLATES",
+                    "STACK",
+                    "SINK"
                 ],
                 "2": [
-                    "CONFLICTED",
-                    "NOSTALGIA",
-                    "GRAPPLE"
+                    "SUGGEST",
+                    "PARTY",
+                    "RECENT"
                 ],
                 "3": [
-                    "INTERNAL",
-                    "REFLECT",
-                    "RECONCILE"
+                    "BALLOONS",
+                    "DEFLATE",
+                    "CORNER"
                 ]
             },
-            "minWords": 52,
-            "hint": "Describe the specific change that triggered this realization and how you processed the conflicted feelings.",
-            "explanation": "Good nuanced-nostalgia answers hold complexity honestly, for example: 'Watching the newest installment feel more like a product than a story made me appreciate the original films even more, even as it left me a little sad.'",
-            "modelAnswer": "Good nuanced-nostalgia answers hold complexity honestly, for example: 'Watching the newest installment feel more like a product than a story made me appreciate the original films even more, even as it left me a little sad.' Describe the specific change that triggered this realization and how you processed the conflicted feelings. This serves as a model answer for the situation."
+            "minWords": 50,
+            "hint": "List each individual clue clearly, then explain how combining all three together makes your conclusion more confident than any single clue alone would.",
+            "explanation": "Combining several independent clues, rather than relying on just one, allows a writer to state a conclusion with more confidence, since multiple pieces of consistent evidence together are far less likely to have an unrelated explanation.",
+            "modelAnswer": "Several deflated balloons lie scattered in the corner of the living room, a tall stack of used paper plates sits piled in the sink, and a colorful handwritten banner droops from where one corner has come loose from the wall. Taken together, these three separate clues make it fairly confident to conclude that a birthday party or similar celebration took place here just a day or two earlier."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L136_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE MULTIPLE CLUES AND THE CONFIDENT INFERENCE THEY SUPPORT",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You need to write a message to a former mentor explaining why you can no longer endorse their current professional conduct, despite your past gratitude toward them. Describe what you write.",
+            "situation": "Walking through your neighbor's garden, you notice fresh soil turned over in neat rows, a pair of muddy gloves left on a bench, and several small plant labels stuck into the ground. Describe the multiple clues and what they together suggest.",
             "emojis": [
-                "🎓",
-                "😟",
-                "✉️",
-                "⚖️"
+                "🧤",
+                "🌱",
+                "🤔",
+                "🪴"
             ],
             "keywords": {
                 "0": [
-                    "FORMERMENTOR",
-                    "EXPLAIN",
-                    "CANNOTENDORSE"
+                    "GLOVES",
+                    "MUDDY",
+                    "ABANDON"
                 ],
                 "1": [
-                    "CURRENTCONDUCT",
-                    "DESPITE",
-                    "PASTGRATITUDE"
+                    "SOIL",
+                    "TURN",
+                    "FRESH"
                 ],
                 "2": [
-                    "CAREFUL",
-                    "HONEST",
-                    "RESPECTFUL"
+                    "SUGGEST",
+                    "PLANT",
+                    "RECENT"
                 ],
                 "3": [
-                    "DISTANCE",
-                    "EXPLAIN",
-                    "INTEGRITY"
+                    "LABELS",
+                    "STICK",
+                    "GROUND"
                 ]
             },
-            "minWords": 52,
-            "hint": "Acknowledge your past gratitude honestly while clearly explaining the reason for your distance.",
-            "explanation": "A mature distancing message separates past debt from present conduct, for example: 'I remain deeply grateful for everything you taught me early in my career, but I can no longer publicly associate myself with recent decisions I believe compromise our shared values.'",
-            "modelAnswer": "A mature distancing message separates past debt from present conduct, for example: 'I remain deeply grateful for everything you taught me early in my career, but I can no longer publicly associate myself with recent decisions I believe compromise our shared values.' Acknowledge your past gratitude honestly while clearly explaining the reason for your distance. This serves as a model answer for the situation."
+            "minWords": 50,
+            "hint": "List the three clues clearly, then explain how the combination points more confidently toward a recent gardening project.",
+            "explanation": "This level continues practicing the strengthening effect of multiple clues, showing that a description built from three consistent details reads as more thoroughly reasoned than one built from a single vague impression.",
+            "modelAnswer": "Rows of dark, freshly turned soil run neatly across one section of the garden, a pair of muddy gardening gloves lies abandoned on a nearby bench, and several small plastic labels poke up from the ground marking different rows. Together, these three clues confidently suggest that my neighbor recently spent an afternoon planting a new vegetable garden, likely interrupted partway through before finishing the labeling."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L136_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE MULTIPLE CLUES AND THE CONFIDENT INFERENCE THEY SUPPORT",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your decision to formally request mediation with a longtime neighbor over an unresolved property boundary dispute revealed how much an old friendship had quietly deteriorated. Describe how the mediation unfolded.",
+            "situation": "At a friend's desk, you notice several color-coded sticky notes covering the monitor, a thick textbook open to a bookmarked page, and an energy drink can standing empty beside the keyboard. Describe the multiple clues and what they together suggest.",
             "emojis": [
-                "🏡",
-                "⚖️",
-                "😕",
-                "🤝"
+                "🤔",
+                "📚",
+                "📝",
+                "🥤"
             ],
             "keywords": {
                 "0": [
-                    "FORMALMEDIATION",
-                    "LONGTIMENEIGHBOR",
-                    "REQUEST"
+                    "SUGGEST",
+                    "STUDY",
+                    "EXAM"
                 ],
                 "1": [
-                    "UNRESOLVED",
-                    "PROPERTYBOUNDARY",
-                    "DISPUTE"
+                    "TEXTBOOK",
+                    "BOOKMARK",
+                    "OPEN"
                 ],
                 "2": [
-                    "REVEAL",
-                    "OLDFRIENDSHIP",
-                    "DETERIORATE"
+                    "STICKYNOTES",
+                    "COLORCODE",
+                    "COVER"
                 ],
                 "3": [
-                    "MEDIATION",
-                    "UNFOLD",
-                    "RESOLVE"
+                    "CAN",
+                    "EMPTY",
+                    "ENERGYDRINK"
                 ]
             },
-            "minWords": 52,
-            "hint": "Describe how the mediation process revealed deeper feelings beneath the practical dispute.",
-            "explanation": "Good mediation-reflection answers show layered insight, for example: 'What began as a simple fence dispute revealed years of small grievances neither of us had ever directly addressed, and the mediator helped us finally clear the air.'",
-            "modelAnswer": "Good mediation-reflection answers show layered insight, for example: 'What began as a simple fence dispute revealed years of small grievances neither of us had ever directly addressed, and the mediator helped us finally clear the air.' Describe how the mediation process revealed deeper feelings beneath the practical dispute. This serves as a model answer for the situation."
+            "minWords": 50,
+            "hint": "List all three clues clearly, then explain how they combine to suggest a specific kind of activity rather than a general one.",
+            "explanation": "Combining evidence to point toward a specific conclusion, exam preparation rather than simply studying, shows a more precise and confident use of inference than a vaguer statement would allow.",
+            "modelAnswer": "The monitor is almost entirely covered in color-coded sticky notes, each one filled with small, cramped handwriting, while a thick textbook lies open beside it, bookmarked at a chapter clearly marked with several folded corners. An empty energy drink can standing beside the keyboard, together with the late hour, confidently suggests she has been cramming intensely for an important exam rather than simply reviewing casual notes."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L137_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE INTERACTION AND WHAT IT SUGGESTS ABOUT THEIR RELATIONSHIP",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your decision to challenge a long-standing departmental tradition you believed perpetuated outdated and exclusionary practices put you at odds with senior faculty members. Describe how you advocated for change.",
+            "situation": "You overhear two coworkers teasing each other easily during lunch, finishing each other's sentences and laughing at jokes only they seem to understand. Describe the interaction and what it might suggest about their relationship outside work.",
             "emojis": [
-                "🎓",
-                "⚖️",
-                "😤",
-                "🗣️"
+                "🤔",
+                "😄",
+                "🍽️",
+                "👥"
             ],
             "keywords": {
                 "0": [
-                    "CHALLENGE",
-                    "LONGSTANDING",
-                    "DEPARTMENTALTRADITION"
+                    "SUGGEST",
+                    "CLOSEFRIENDS",
+                    "BEYOND"
                 ],
                 "1": [
-                    "PERPETUATE",
-                    "OUTDATED",
-                    "EXCLUSIONARY"
+                    "TEASE",
+                    "EASY",
+                    "COMFORTABLE"
                 ],
                 "2": [
-                    "ATODDSWITH",
-                    "SENIORFACULTY",
-                    "ADVOCATE"
+                    "FINISH",
+                    "SENTENCES",
+                    "OVERLAP"
                 ],
                 "3": [
-                    "CHANGE",
-                    "PERSIST",
-                    "OUTCOME"
+                    "LAUGH",
+                    "INSIDEJOKE",
+                    "SHARED"
                 ]
             },
-            "minWords": 53,
-            "hint": "Describe the specific argument you made and how senior faculty eventually responded.",
-            "explanation": "Good institutional-advocacy answers show persistent, principled effort, for example: 'I gathered data showing how the tradition disadvantaged certain students, which eventually persuaded even skeptical faculty members to support a revision.'",
-            "modelAnswer": "Good institutional-advocacy answers show persistent, principled effort, for example: 'I gathered data showing how the tradition disadvantaged certain students, which eventually persuaded even skeptical faculty members to support a revision.' Describe the specific argument you made and how senior faculty eventually responded. This serves as a model answer for the situation."
+            "minWords": 50,
+            "hint": "Describe the specific patterns in their conversation, such as finishing sentences, then use these details to support a careful guess about the depth of their friendship.",
+            "explanation": "Specific conversational patterns, such as finishing each other's sentences or sharing inside jokes, provide stronger evidence for inferring closeness between two people than a general statement that they seem friendly.",
+            "modelAnswer": "Throughout lunch, the two coworkers tease each other with an easy familiarity, often finishing one another's sentences without seeming to notice, and laughing at brief references that clearly mean something neither bothers to explain to the rest of the table. This comfortable shorthand between them suggests a friendship that extends well beyond the office, likely built over years rather than the few months they have officially worked together."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L137_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE INTERACTION AND WHAT IT SUGGESTS ABOUT THEIR RELATIONSHIP",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your decision to decline an ethically questionable but highly lucrative project required weighing immediate financial security against long-term professional integrity. Describe the reasoning behind your choice.",
+            "situation": "You watch an older child patiently tie a younger child's shoelaces at a playground, gently correcting them without a hint of frustration. Describe the interaction and what it might suggest about their relationship.",
             "emojis": [
-                "💼",
-                "💰",
-                "⚖️",
-                "😟"
+                "🧒",
+                "🤝",
+                "🤔",
+                "👟"
             ],
             "keywords": {
                 "0": [
-                    "DECLINE",
-                    "ETHICALLYQUESTIONABLE",
-                    "LUCRATIVE"
+                    "CORRECT",
+                    "GENTLE",
+                    "REPEAT"
                 ],
                 "1": [
-                    "WEIGH",
-                    "IMMEDIATEFINANCIAL",
-                    "SECURITY"
+                    "WATCH",
+                    "CLOSE",
+                    "ATTENTIVE"
                 ],
                 "2": [
-                    "LONGTERM",
-                    "PROFESSIONALINTEGRITY",
-                    "REASONING"
+                    "SUGGEST",
+                    "SIBLING",
+                    "FAMILIAR"
                 ],
                 "3": [
-                    "CHOICE",
-                    "PRINCIPLED",
-                    "CONSEQUENCE"
+                    "TIE",
+                    "SHOELACE",
+                    "PATIENT"
                 ]
             },
-            "minWords": 53,
-            "hint": "Describe the specific factors you weighed before reaching your final decision.",
-            "explanation": "Good principled-decision answers show clear-eyed trade-offs, for example: 'The fee was tempting, but I realized that compromising my standards once would make it easier to do so again, so I turned the project down.'",
-            "modelAnswer": "Good principled-decision answers show clear-eyed trade-offs, for example: 'The fee was tempting, but I realized that compromising my standards once would make it easier to do so again, so I turned the project down.' Describe the specific factors you weighed before reaching your final decision. This serves as a model answer for the situation."
+            "minWords": 50,
+            "hint": "Describe the specific patience and gentleness shown, then use these details to carefully guess at the nature of their relationship.",
+            "explanation": "Small acts of patient care, especially when repeated without frustration, offer meaningful evidence about a relationship's closeness, since this kind of consistent gentleness is not typical between strangers or casual acquaintances.",
+            "modelAnswer": "Kneeling down beside the younger child, the older one carefully re-ties a loosened shoelace, gently explaining the steps again without any sign of impatience, even though this appears to be at least the third time today. The easy, unhurried patience in this small routine suggests a sibling relationship or an equally close family bond, rather than a first meeting between two children who had just met at the park."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L137_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE INTERACTION AND WHAT IT SUGGESTS ABOUT THEIR RELATIONSHIP",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your encounter with a fellow traveler whose worldview directly challenged your own long-held political beliefs forced an uncomfortable but ultimately enriching conversation during a long train journey. Describe how the exchange unfolded.",
+            "situation": "Two strangers sitting beside each other on a long train ride begin sharing snacks and chatting comfortably after only a short conversation. Describe the interaction and what it might carefully suggest, while acknowledging that the friendliness alone does not prove a long history.",
             "emojis": [
                 "🚆",
-                "💬",
-                "😬",
-                "🌱"
+                "🤔",
+                "🍪",
+                "💬"
             ],
             "keywords": {
                 "0": [
-                    "FELLOWTRAVELER",
-                    "WORLDVIEW",
-                    "CHALLENGE"
+                    "SHARE",
+                    "SNACKS",
+                    "OFFER"
                 ],
                 "1": [
-                    "LONGHELD",
-                    "POLITICALBELIEFS",
-                    "FORCE"
+                    "SUGGEST",
+                    "FRIENDLY",
+                    "NOTNECESSARILY"
                 ],
                 "2": [
-                    "UNCOMFORTABLE",
-                    "ENRICHING",
-                    "CONVERSATION"
+                    "CHAT",
+                    "EASY",
+                    "COMFORTABLE"
                 ],
                 "3": [
-                    "EXCHANGE",
-                    "UNFOLD",
-                    "PERSPECTIVE"
+                    "STRANGERS",
+                    "JUSTMET",
+                    "RECENT"
                 ]
             },
-            "minWords": 53,
-            "hint": "Describe how the initial discomfort gave way to genuine mutual understanding, even amid disagreement.",
-            "explanation": "Good open-minded-dialogue answers show genuine intellectual growth, for example: 'We never agreed by the end of the journey, but listening to his reasoning made me reconsider an assumption I had never actually examined closely.'",
-            "modelAnswer": "Good open-minded-dialogue answers show genuine intellectual growth, for example: 'We never agreed by the end of the journey, but listening to his reasoning made me reconsider an assumption I had never actually examined closely.' Describe how the initial discomfort gave way to genuine mutual understanding, even amid disagreement. This serves as a model answer for the situation."
+            "minWords": 51,
+            "hint": "Describe the friendliness clearly, but also acknowledge directly that this evidence does not necessarily prove a long-standing friendship, since strangers can be friendly too.",
+            "explanation": "This level introduces a more nuanced inference, one that resists the temptation to overstate a conclusion, and explicitly acknowledging the limits of the evidence models careful, honest reasoning rather than jumping to the most dramatic explanation.",
+            "modelAnswer": "Within twenty minutes of the train departing, the two strangers are already offering each other snacks from their bags and chatting easily about their destinations, laughing more than once at some shared observation about the journey. While their comfort together might suggest an unusually quick friendship forming, it does not necessarily mean they have known each other long, since some people simply connect easily with strangers during a shared, uneventful journey."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L138_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE SCENE, ACKNOWLEDGING SEVERAL POSSIBLE EXPLANATIONS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your decision to step back from a caregiving role you had held for years, in order to protect your own wellbeing, forced your family to confront uncomfortable questions about shared responsibility. Describe how the family redistributed the care.",
+            "situation": "At the airport, you notice a woman crying quietly near the arrivals gate while checking her phone repeatedly. Describe the scene, and rather than settling on a single explanation, acknowledge a few different possibilities for her tears.",
             "emojis": [
-                "👵",
-                "😓",
-                "🤝",
-                "⚖️"
+                "📱",
+                "😢",
+                "🤔",
+                "✈️"
             ],
             "keywords": {
                 "0": [
-                    "STEPBACK",
-                    "CAREGIVINGROLE",
-                    "YEARS"
+                    "ARRIVALS",
+                    "GATE",
+                    "WAIT"
                 ],
                 "1": [
-                    "PROTECT",
-                    "OWNWELLBEING",
-                    "FORCE"
+                    "SCREEN",
+                    "GLANCE",
+                    "ANXIOUS"
                 ],
                 "2": [
-                    "FAMILY",
-                    "CONFRONT",
-                    "SHAREDRESPONSIBILITY"
+                    "EXPLANATION",
+                    "AMBIGUOUS",
+                    "OPEN"
                 ],
                 "3": [
-                    "REDISTRIBUTE",
-                    "CARE",
-                    "RESOLVE"
+                    "TEARS",
+                    "QUIET",
+                    "WIPE"
                 ]
             },
-            "minWords": 53,
-            "hint": "Describe how the family reorganized caregiving responsibilities after your decision.",
-            "explanation": "Good caregiver-boundary answers show necessary, healthy change, for example: 'Once I explained how depleted I had become, my siblings finally agreed to a rotating schedule that I had been asking for unsuccessfully for years.'",
-            "modelAnswer": "Good caregiver-boundary answers show necessary, healthy change, for example: 'Once I explained how depleted I had become, my siblings finally agreed to a rotating schedule that I had been asking for unsuccessfully for years.' Describe how the family reorganized caregiving responsibilities after your decision. This serves as a model answer for the situation."
+            "minWords": 50,
+            "hint": "Describe her visible behavior first, then offer at least two genuinely different possible explanations, rather than settling confidently on just one.",
+            "explanation": "Nuanced inference acknowledges that the same evidence can point toward more than one reasonable explanation, and naming at least two possibilities, rather than committing to a single confident guess, produces more honest, thoughtful writing.",
+            "modelAnswer": "A woman stands near the arrivals gate, quietly wiping tears from her cheeks while glancing down at her phone every few seconds, as if waiting for some message to arrive. Her tears could just as easily reflect overwhelming happiness at finally reuniting with someone she has missed as they could reflect grief or worry over difficult news, and without more information, either explanation remains genuinely possible."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L138_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE SCENE, ACKNOWLEDGING SEVERAL POSSIBLE EXPLANATIONS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your discovery that a luxury brand you admired had been deliberately destroying unsold inventory rather than donating it created a moral conflict about continuing to support them. Describe how you reasoned through this revelation.",
+            "situation": "You notice a small candle-lit table set for two at a restaurant, complete with a bottle of wine, but it remains completely untouched throughout the evening. Describe the scene, and acknowledge a few different possible explanations for why it stayed empty.",
             "emojis": [
-                "👜",
-                "🔥",
-                "😠",
-                "⚖️"
+                "🕯️",
+                "🍷",
+                "🤔",
+                "🍽️"
             ],
             "keywords": {
                 "0": [
-                    "LUXURYBRAND",
-                    "DELIBERATELY",
-                    "DESTROY"
+                    "WINE",
+                    "UNOPENED",
+                    "BOTTLE"
                 ],
                 "1": [
-                    "UNSOLDINVENTORY",
-                    "RATHERTHAN",
-                    "DONATE"
+                    "TABLE",
+                    "SET",
+                    "CANDLES"
                 ],
                 "2": [
-                    "MORALCONFLICT",
-                    "CONTINUE",
-                    "SUPPORT"
+                    "POSSIBLE",
+                    "SEVERAL",
+                    "EXPLANATIONS"
                 ],
                 "3": [
-                    "REASON",
-                    "DECIDE",
-                    "VALUES"
+                    "EMPTY",
+                    "UNTOUCHED",
+                    "EVENING"
                 ]
             },
-            "minWords": 53,
-            "hint": "Describe the reasoning that led to your final decision about supporting the brand.",
-            "explanation": "Good ethical-luxury-consumer answers show principled reasoning, for example: 'Learning that perfectly good products were being destroyed to protect exclusivity made the brand's image feel hollow, so I redirected my spending elsewhere.'",
-            "modelAnswer": "Good ethical-luxury-consumer answers show principled reasoning, for example: 'Learning that perfectly good products were being destroyed to protect exclusivity made the brand's image feel hollow, so I redirected my spending elsewhere.' Describe the reasoning that led to your final decision about supporting the brand. This serves as a model answer for the situation."
+            "minWords": 51,
+            "hint": "Describe the untouched table carefully, then suggest at least two very different reasons someone might never have shown up.",
+            "explanation": "An untouched romantic setup naturally invites a single dramatic story, but resisting that pull and offering multiple, equally plausible explanations demonstrates more careful, mature reasoning about incomplete evidence.",
+            "modelAnswer": "Throughout the entire evening, an elegantly set table for two sits untouched near the window, its candles slowly burning down and an unopened bottle of wine sweating slightly in its bucket of melting ice. It is possible that one guest simply never arrived due to a last-minute emergency, though it is equally possible the reservation itself was cancelled earlier in the day and the staff simply never cleared the table."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L138_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE SCENE, ACKNOWLEDGING SEVERAL POSSIBLE EXPLANATIONS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your decision to publicly share the financial struggles behind keeping your family restaurant afloat invited an outpouring of community support that left you both grateful and emotionally overwhelmed. Describe this experience.",
+            "situation": "During recess, you notice a child sitting alone on a bench at the edge of the playground while the rest of the class plays together nearby. Describe the scene, and acknowledge a few different possible explanations, rather than assuming the most negative one.",
             "emojis": [
-                "🍽️",
-                "😢",
-                "🤝",
-                "📢"
+                "🤔",
+                "🪑",
+                "🧒",
+                "👥"
             ],
             "keywords": {
                 "0": [
-                    "PUBLICLYSHARE",
-                    "FINANCIALSTRUGGLE",
-                    "FAMILYRESTAURANT"
+                    "EXPLANATION",
+                    "MULTIPLE",
+                    "OPEN"
                 ],
                 "1": [
-                    "OUTPOURING",
-                    "COMMUNITYSUPPORT",
-                    "INVITE"
+                    "WATCH",
+                    "OTHERS",
+                    "DISTANCE"
                 ],
                 "2": [
-                    "GRATEFUL",
-                    "EMOTIONALLYOVERWHELMED",
-                    "EXPERIENCE"
+                    "ALONE",
+                    "BENCH",
+                    "EDGE"
                 ],
                 "3": [
-                    "REFLECT",
-                    "GRATITUDE",
-                    "RESILIENT"
+                    "QUIET",
+                    "STILL",
+                    "CALM"
                 ]
             },
-            "minWords": 53,
-            "hint": "Describe the specific gestures of community support and how they affected you emotionally.",
-            "explanation": "Good community-gratitude answers show genuine emotional depth, for example: 'Strangers I had never met began showing up just to order a meal and offer encouragement, which moved me far more than I expected.'",
-            "modelAnswer": "Good community-gratitude answers show genuine emotional depth, for example: 'Strangers I had never met began showing up just to order a meal and offer encouragement, which moved me far more than I expected.' Describe the specific gestures of community support and how they affected you emotionally. This serves as a model answer for the situation."
+            "minWords": 51,
+            "hint": "Describe the child's behavior neutrally, then offer at least two different possible reasons, avoiding an immediate assumption of loneliness or exclusion.",
+            "explanation": "This scenario deliberately resists the most obvious, worrying explanation, since a careful writer should consider that a quiet child might simply prefer solitude, rather than automatically assuming loneliness or exclusion without further evidence.",
+            "modelAnswer": "A young boy sits calmly on a bench at the edge of the playground, watching the rest of his classmates chase each other across the field without joining in, though his posture seems relaxed rather than tense. While it is possible he feels excluded from the group, it is equally possible that he simply prefers a quiet moment to himself after a busy morning, and his calm expression alone does not confirm either explanation."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L139_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE ASSESSMENT AND THE EVIDENCE-BASED CONCLUSION",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your decision to leave a high-paying position at a major tech company over ethical concerns about a controversial new feature was met with disbelief from colleagues who saw it as career suicide. Describe how you stood by your decision.",
+            "situation": "An insurance assessor examines a damaged wooden fence after a homeowner files a storm damage claim. Describe the evidence he observes and the careful, evidence-based conclusion he reaches.",
             "emojis": [
-                "💻",
-                "🚪",
-                "⚖️",
-                "😟"
+                "🏠",
+                "🪵",
+                "🔍",
+                "📋"
             ],
             "keywords": {
                 "0": [
-                    "LEAVE",
-                    "HIGHPAYING",
-                    "MAJORTECHCOMPANY"
+                    "FENCE",
+                    "SPLINTER",
+                    "BROKEN"
                 ],
                 "1": [
-                    "ETHICALCONCERN",
-                    "CONTROVERSIALFEATURE",
-                    "DISBELIEF"
+                    "DIRECTION",
+                    "LEAN",
+                    "CONSISTENT"
                 ],
                 "2": [
-                    "COLLEAGUES",
-                    "CAREERSUICIDE",
-                    "SEE"
+                    "DEBRIS",
+                    "SCATTER",
+                    "NEARBY"
                 ],
                 "3": [
-                    "STANDBY",
-                    "DECISION",
-                    "PRINCIPLED"
+                    "CONCLUDE",
+                    "CONSISTENT",
+                    "STORM"
                 ]
             },
-            "minWords": 53,
-            "hint": "Describe how you explained your decision to skeptical colleagues and how you felt about it afterward.",
-            "explanation": "Good principled-career answers show conviction despite social pressure, for example: 'Several colleagues called the decision reckless, but knowing I could no longer justify the feature's impact made leaving feel like the only honest choice.'",
-            "modelAnswer": "Good principled-career answers show conviction despite social pressure, for example: 'Several colleagues called the decision reckless, but knowing I could no longer justify the feature's impact made leaving feel like the only honest choice.' Describe how you explained your decision to skeptical colleagues and how you felt about it afterward. This serves as a model answer for the situation."
+            "minWords": 51,
+            "hint": "Describe the physical evidence in professional detail, then show how the assessor's conclusion follows logically and cautiously from that specific evidence.",
+            "explanation": "Professional inference, such as an insurance assessment, is described convincingly through methodical, specific observation followed by a conclusion phrased cautiously, such as consistent with, rather than an overconfident, absolute claim.",
+            "modelAnswer": "Walking the length of the fence, the assessor notes that every broken panel leans in the same direction, away from the house, and small branches from a nearby tree lie scattered consistently along that same side of the yard. Based on this consistent pattern of damage, he concludes that the evidence is consistent with strong straight-line winds from last week's storm, rather than any other likely cause."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L139_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE INVESTIGATION AND THE EVIDENCE-BASED CONCLUSION",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your decision to take an extended leave from work to address burnout you had long ignored required confronting a deeply ingrained belief that your worth was tied to constant productivity. Describe this period of reflection.",
+            "situation": "A facilities manager investigates why an office vending machine suddenly stopped dispensing snacks properly. Describe the evidence she gathers and the careful conclusion she reaches.",
             "emojis": [
-                "😓",
-                "🧠",
-                "🌱",
-                "💭"
+                "🏢",
+                "🔧",
+                "🔍",
+                "📋"
             ],
             "keywords": {
                 "0": [
-                    "EXTENDEDLEAVE",
-                    "ADDRESSBURNOUT",
-                    "LONGIGNORE"
+                    "MACHINE",
+                    "JAM",
+                    "INSPECT"
                 ],
                 "1": [
-                    "CONFRONT",
-                    "INGRAINEDBELIEF",
-                    "WORTH"
+                    "COIN",
+                    "STUCK",
+                    "MECHANISM"
                 ],
                 "2": [
-                    "TIE",
-                    "CONSTANTPRODUCTIVITY",
-                    "REQUIRE"
+                    "LOG",
+                    "RECORD",
+                    "PATTERN"
                 ],
                 "3": [
-                    "REFLECTION",
-                    "PERIOD",
-                    "RECOVER"
+                    "CONCLUDE",
+                    "MALFUNCTION",
+                    "MECHANICAL"
                 ]
             },
-            "minWords": 53,
-            "hint": "Describe the specific belief you had to confront and how the time away changed your perspective.",
-            "explanation": "Good burnout-recovery answers show genuine psychological insight, for example: 'The hardest part was not the rest itself but unlearning the idea that resting meant I was falling behind, which the leave finally gave me space to challenge.'",
-            "modelAnswer": "Good burnout-recovery answers show genuine psychological insight, for example: 'The hardest part was not the rest itself but unlearning the idea that resting meant I was falling behind, which the leave finally gave me space to challenge.' Describe the specific belief you had to confront and how the time away changed your perspective. This serves as a model answer for the situation."
+            "minWords": 51,
+            "hint": "Describe her methodical inspection process, then show how each piece of evidence supports her final, carefully worded conclusion.",
+            "explanation": "Investigative inference is described well through a methodical process, checking one component after another, since this shows the reader the reasoning path rather than a conclusion that appears without any visible investigation.",
+            "modelAnswer": "Opening the machine's front panel, the facilities manager finds a single coin wedged sideways inside the payment mechanism, blocking the tray from releasing properly. Cross-checking this against the machine's error log, which shows the same fault appearing repeatedly since Tuesday, she concludes that the issue is most likely a simple mechanical jam rather than anything related to the machine's electronics."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L139_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE REVIEW AND THE EVIDENCE-BASED CONCLUSION",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your involvement in a community theater production that tackled a deeply personal and painful family history forced you to navigate the discomfort of performing your own vulnerability publicly. Describe this experience.",
+            "situation": "A store manager reviews security footage after noticing a small discrepancy between the register total and the actual cash drawer. Describe what she observes in the footage and the careful conclusion she reaches.",
             "emojis": [
-                "🎭",
-                "😢",
-                "🤝",
-                "🌱"
+                "🎥",
+                "💰",
+                "🔍",
+                "📋"
             ],
             "keywords": {
                 "0": [
-                    "COMMUNITYTHEATER",
-                    "DEEPLYPERSONAL",
-                    "PAINFULHISTORY"
+                    "FOOTAGE",
+                    "REVIEW",
+                    "TIMESTAMP"
                 ],
                 "1": [
-                    "TACKLE",
-                    "FORCE",
-                    "NAVIGATE"
+                    "DRAWER",
+                    "OPEN",
+                    "BRIEFLY"
                 ],
                 "2": [
-                    "DISCOMFORT",
-                    "PERFORM",
-                    "VULNERABILITY"
+                    "EMPLOYEE",
+                    "DISTRACT",
+                    "CUSTOMER"
                 ],
                 "3": [
-                    "PUBLICLY",
-                    "EXPERIENCE",
-                    "GROWTH"
+                    "CONCLUDE",
+                    "HONEST",
+                    "MISTAKE"
                 ]
             },
-            "minWords": 53,
-            "hint": "Describe the specific discomfort of performing something so personal and how you processed it.",
-            "explanation": "Good vulnerable-artistic-expression answers show genuine emotional honesty, for example: 'Standing on stage retelling my grandmother's story felt unbearably exposing at first, but by the final performance, it had become a source of healing rather than discomfort.'",
-            "modelAnswer": "Good vulnerable-artistic-expression answers show genuine emotional honesty, for example: 'Standing on stage retelling my grandmother's story felt unbearably exposing at first, but by the final performance, it had become a source of healing rather than discomfort.' Describe the specific discomfort of performing something so personal and how you processed it. This serves as a model answer for the situation."
+            "minWords": 51,
+            "hint": "Describe exactly what the footage shows, then reach a conclusion that fits the evidence rather than assuming the most serious explanation.",
+            "explanation": "Reviewing evidence in a professional context sometimes leads away from a suspicious conclusion, and this level practices reaching a fair, evidence-supported outcome, such as an honest mistake, rather than defaulting to the most dramatic interpretation.",
+            "modelAnswer": "Reviewing the timestamped footage carefully, she notices the drawer was opened briefly while the employee was distracted helping two customers at once, likely explaining an incorrectly counted bill during the rush. Based on the clear, uneventful footage and the employee's otherwise spotless record, she concludes the discrepancy was almost certainly an honest counting mistake rather than any deliberate wrongdoing."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L140_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE ABANDONED CAMPSITE, OFFERING SEVERAL HEDGED INFERENCES",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You need to write a message to a long-time client explaining a significant price increase necessitated by rising costs, without risking the relationship. Describe what you write.",
+            "situation": "Hiking through a forest, you come across an apparently abandoned campsite with a half-burned fire pit, a torn tent, and a single boot left behind. Describe the scene in detail and offer several careful, hedged inferences about what might have happened, while acknowledging the genuine uncertainty.",
             "emojis": [
-                "💼",
-                "📈",
-                "😟",
-                "✉️"
+                "👢",
+                "🔥",
+                "🤔",
+                "⛺"
             ],
             "keywords": {
                 "0": [
-                    "LONGTIMECLIENT",
-                    "EXPLAIN",
-                    "PRICEINCREASE"
+                    "BOOT",
+                    "SINGLE",
+                    "ABANDON"
                 ],
                 "1": [
-                    "NECESSITATE",
-                    "RISINGCOSTS",
-                    "SIGNIFICANT"
+                    "TENT",
+                    "TORN",
+                    "COLLAPSE"
                 ],
                 "2": [
-                    "WITHOUTRISKING",
-                    "RELATIONSHIP",
-                    "CAREFUL"
+                    "UNCERTAIN",
+                    "SEVERAL",
+                    "POSSIBLE"
                 ],
                 "3": [
-                    "TRANSPARENT",
-                    "JUSTIFY",
-                    "MAINTAIN"
+                    "FIREPIT",
+                    "ASH",
+                    "HALFBURN"
                 ]
             },
-            "minWords": 53,
-            "hint": "Be transparent about the reasons for the increase while reaffirming your commitment to the relationship.",
-            "explanation": "A strong price-increase message is transparent and appreciative, for example: 'Due to rising material costs, we must adjust our rates starting next quarter, though we remain deeply grateful for your continued partnership and are happy to discuss this further.'",
-            "modelAnswer": "A strong price-increase message is transparent and appreciative, for example: 'Due to rising material costs, we must adjust our rates starting next quarter, though we remain deeply grateful for your continued partnership and are happy to discuss this further.' Be transparent about the reasons for the increase while reaffirming your commitment to the relationship. This serves as a model answer for the situation."
+            "minWords": 51,
+            "hint": "Offer at least two different possible explanations for the scene overall, clearly acknowledging that the true story remains genuinely uncertain.",
+            "explanation": "At the highest level of inference, a description holds multiple pieces of evidence and multiple possible explanations together without forcing a single confident conclusion, which reflects mature, honest reasoning about a genuinely ambiguous situation.",
+            "modelAnswer": "The fire pit contains only half-burned logs, still faintly smelling of smoke despite what looks like several days of exposure to rain, and nearby a tent lies collapsed with a long tear running down one side, its stakes still driven firmly into the ground. A single worn boot sits abandoned a few feet away, and while it is tempting to imagine a hurried, perhaps frightened departure, it is equally possible that the campers simply left in a rush due to sudden bad weather, or even abandoned gear they no longer wanted to carry."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L140_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE ABANDONED OFFICE DESK, OFFERING SEVERAL HEDGED INFERENCES",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your decision to formally complain about persistent late-night noise from a neighboring apartment escalated into a building-wide dispute about acceptable standards of urban living. Describe how the conflict ultimately played out.",
+            "situation": "Arriving at work the morning after major news broke about the company, you find a colleague's desk unusually cleared, a half-drunk coffee left cold, and her computer still logged in. Describe the scene in detail and offer several careful, hedged inferences about what might have happened, while acknowledging genuine uncertainty.",
             "emojis": [
-                "🔊",
-                "🏢",
-                "😤",
-                "⚖️"
+                "☕",
+                "🖥️",
+                "🤔",
+                "📦"
             ],
             "keywords": {
                 "0": [
-                    "FORMALLYCOMPLAIN",
-                    "PERSISTENT",
-                    "LATENIGHTNOISE"
+                    "COFFEE",
+                    "COLD",
+                    "HALFDRUNK"
                 ],
                 "1": [
-                    "ESCALATE",
-                    "BUILDINGWIDE",
-                    "DISPUTE"
+                    "DESK",
+                    "CLEAR",
+                    "UNUSUAL"
                 ],
                 "2": [
-                    "ACCEPTABLESTANDARDS",
-                    "URBANLIVING",
-                    "DEBATE"
+                    "AMBIGUOUS",
+                    "UNCLEAR",
+                    "OPENQUESTION"
                 ],
                 "3": [
-                    "PLAYOUT",
-                    "RESOLVE",
-                    "OUTCOME"
+                    "COMPUTER",
+                    "LOGGEDIN",
+                    "SCREEN"
                 ]
             },
-            "minWords": 53,
-            "hint": "Describe how the initial complaint grew into a wider building debate and how it was finally resolved.",
-            "explanation": "Good escalating-conflict answers trace cause and resolution clearly, for example: 'What started as a single complaint sparked a building meeting where residents finally agreed on formal quiet hours for everyone.'",
-            "modelAnswer": "Good escalating-conflict answers trace cause and resolution clearly, for example: 'What started as a single complaint sparked a building meeting where residents finally agreed on formal quiet hours for everyone.' Describe how the initial complaint grew into a wider building debate and how it was finally resolved. This serves as a model answer for the situation."
+            "minWords": 52,
+            "hint": "Offer at least two genuinely different explanations for the scene, given the context of the company news, without confidently choosing between them.",
+            "explanation": "Providing context, such as recent company news, alongside physical evidence gives the reader more material to reason with, while still requiring the writer to hold back from a single, overconfident conclusion given how little is actually confirmed.",
+            "modelAnswer": "Her desk, usually cluttered with photographs and sticky notes, now sits almost entirely bare except for a coffee cup gone completely cold, still half full beside an untouched keyboard, and the computer screen remains logged in exactly as she left it. Given the unsettling company news that broke overnight, it is possible she left abruptly after receiving difficult news of her own, though it is equally possible she simply had an early appointment and packed up calmly the night before, and without asking her directly, there is genuinely no way to know for certain."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L140_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE PARK BENCH SCENE, OFFERING SEVERAL HEDGED INFERENCES",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your decision to advocate for a classmate facing unfair disciplinary action, despite barely knowing them, tested your willingness to take a personal risk for a stranger's sake. Describe what motivated your choice.",
+            "situation": "Walking through a quiet park, you notice an old black-and-white photograph resting on a bench beside a small bunch of slightly wilted flowers. Describe the scene in detail and offer several careful, hedged inferences about what it might mean, while acknowledging genuine uncertainty.",
             "emojis": [
-                "🎓",
-                "⚖️",
-                "😟",
-                "🤝"
+                "🤔",
+                "🌼",
+                "📷",
+                "🪑"
             ],
             "keywords": {
                 "0": [
-                    "ADVOCATE",
-                    "CLASSMATE",
-                    "UNFAIRDISCIPLINARY"
+                    "GENTLE",
+                    "PLAUSIBLE",
+                    "UNRESOLVED"
                 ],
                 "1": [
-                    "BARELYKNOW",
-                    "PERSONALRISK",
-                    "STRANGER"
+                    "FLOWERS",
+                    "WILT",
+                    "SLIGHT"
                 ],
                 "2": [
-                    "TEST",
-                    "WILLINGNESS",
-                    "MOTIVATE"
+                    "PHOTOGRAPH",
+                    "BLACKWHITE",
+                    "WORN"
                 ],
                 "3": [
-                    "CHOICE",
-                    "COURAGE",
-                    "JUSTICE"
+                    "BENCH",
+                    "QUIET",
+                    "UNDISTURB"
                 ]
             },
-            "minWords": 53,
-            "hint": "Describe the specific reasoning or value that motivated you to get involved despite the risk.",
-            "explanation": "Good moral-courage answers articulate clear values, for example: 'I barely knew her, but watching an obviously unfair process unfold made staying silent feel impossible, so I spoke up on her behalf at the hearing.'",
-            "modelAnswer": "Good moral-courage answers articulate clear values, for example: 'I barely knew her, but watching an obviously unfair process unfold made staying silent feel impossible, so I spoke up on her behalf at the hearing.' Describe the specific reasoning or value that motivated you to get involved despite the risk. This serves as a model answer for the situation."
+            "minWords": 52,
+            "hint": "Offer at least two gentle, plausible explanations for the scene, keeping the tone respectful given the possible sentimental nature of the objects.",
+            "explanation": "Objects with obvious sentimental weight, like an old photograph and flowers, call for particularly careful, respectful inference, since more than one gentle explanation, remembrance or a simple accidental drop, deserves consideration before settling on the most emotional one.",
+            "modelAnswer": "The edges of the small photograph have softened with age, showing a young couple smiling somewhere near this same park decades earlier, and beside it rests a modest bunch of flowers whose petals have only just begun to wilt, suggesting they were placed there fairly recently. It seems entirely possible that someone visits this bench each year to quietly remember a loved one, though it is equally possible the photograph was simply dropped by accident by someone unrelated to the flowers, and without more information, both gentle explanations remain reasonably plausible."
         }
     ]
 }

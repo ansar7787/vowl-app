@@ -1,607 +1,589 @@
 {
-    "gameType": "opinionWriting",
-    "batchIndex": 15,
-    "levels": "141-150",
-    "quests": [
-        {
-            "id": "WRT_OPINIONWRITING_L141_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "All fossil fuels should be phased out and banned within the next ten years.",
-            "options": [
-                "A ten-year fossil fuel ban is technically impossible given current energy system dependency globally.",
-                "The scientific consensus is clear that continuing fossil fuel combustion makes climate targets unachievable.",
-                "An accelerated phase-out creates the urgent investment pressure needed to scale renewable alternatives.",
-                "Abrupt phase-out without adequate alternatives causes energy poverty, economic collapse, and social unrest."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about the scientific urgency case for rapid fossil fuel phase-out (Pros) and the technical and social feasibility concerns (Cons).",
-            "explanation": "Scientific consensus makes continued fossil fuel use incompatible with climate targets, and urgency drives renewable scaling (Pros), but a ten-year ban is technically impossible globally, and abrupt phase-out without alternatives causes severe harm to the most vulnerable (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L141_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "A rapid fossil fuel phase-out must be paired with just transition support for affected workers.",
-            "options": [
-                "Just transition commitments are frequently made but insufficiently funded when implemented in practice.",
-                "Coal and oil workers in affected communities deserve retraining, income support, and economic alternatives.",
-                "A just transition that wins community support is essential for the political sustainability of climate policy.",
-                "Transition support for fossil fuel workers competes with the enormous investment needed in renewable infrastructure."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Consider the just transition case for pairing phase-out with worker support (Pros) and the funding and competition concerns (Cons).",
-            "explanation": "Fossil fuel workers and communities deserve genuine transition support, and just transitions are politically essential (Pros), but transition commitments are chronically underfunded and compete with the infrastructure investment urgently needed for clean energy (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L141_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Carbon capture and storage technology allows fossil fuels to continue within climate targets.",
-            "options": [
-                "CCS at scale is not yet technically demonstrated and remains very expensive per tonne of carbon captured.",
-                "Investing in CCS may delay the renewable energy deployment that is needed urgently and independently.",
-                "CCS technology can capture emissions from fossil fuel plants, enabling their continued operation at lower impact.",
-                "Investment in CCS buys time for renewable deployment without risking energy security or economic disruption."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about CCS as a fossil fuel continuation strategy (Pros) and the technical readiness and delay concerns (Cons).",
-            "explanation": "CCS enables fossil fuel continuation at reduced emissions, buying time for renewable scaling without energy disruption (Pros), but CCS is not yet demonstrated at scale, is expensive, and investment in it may delay the urgent renewable deployment that is needed regardless (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L142_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Nuclear energy must be part of a realistic plan to address climate change.",
-            "options": [
-                "Nuclear waste remains dangerously radioactive for thousands of years with no permanent storage solution.",
-                "Nuclear power provides reliable low-carbon baseload electricity that intermittent renewables cannot deliver alone.",
-                "The long construction timelines and enormous costs of nuclear plants make them too slow for the climate window.",
-                "Advanced nuclear technologies including SMRs promise lower costs, improved safety, and faster deployment."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about the reliable low-carbon baseload case for nuclear (Pros) and the waste and timeline concerns (Cons).",
-            "explanation": "Nuclear delivers reliable low-carbon baseload and advanced technologies promise improved economics and safety (Pros), but unsolved long-term waste storage and decade-long construction times make nuclear too slow and problematic for urgent climate targets (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L142_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The risks of nuclear energy are exaggerated relative to the risks of climate change.",
-            "options": [
-                "Nuclear accidents, while rare, can produce severe and long-lasting environmental and public health consequences.",
-                "Nuclear proliferation risks are real: civilian nuclear programmes can provide cover for weapons development.",
-                "Nuclear power's safety record per unit of energy generated is statistically better than fossil fuels.",
-                "Abandoning nuclear in the name of safety while continuing coal combustion has demonstrably worse public health outcomes."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Consider whether nuclear risks are overstated relative to climate change risks (Pros) and the accident and proliferation concerns (Cons).",
-            "explanation": "Nuclear's statistical safety record per unit of energy is better than fossil fuels, and abandoning nuclear for coal produces worse health outcomes (Pros), but rare nuclear accidents carry severe long-term consequences, and civilian programmes can enable weapons proliferation (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L142_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Investing in renewables, storage, and grids is a better use of capital than nuclear.",
-            "options": [
-                "The cost of solar and wind has fallen dramatically, making renewables cheaper than nuclear per unit generated.",
-                "Battery storage and smart grid technology are developing rapidly to address renewable intermittency.",
-                "Renewables cannot yet guarantee the firm dispatchable power that industrial economies require around the clock.",
-                "Grid transformation at the scale needed requires decades of investment that a nuclear bridge could shorten."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about the economic and technical case for prioritising renewables over nuclear (Pros) and the firm power and timeline concerns (Cons).",
-            "explanation": "Renewables are now cheaper than nuclear and storage technology is rapidly improving to address intermittency (Pros), but firm dispatchable power for industrial economies cannot yet be reliably guaranteed by renewables alone, and nuclear provides a bridge during the grid transformation period (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L143_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Individual carbon footprints should be subject to legal annual limits.",
-            "options": [
-                "Individual carbon limits are administratively impossible to monitor and enforce across all behaviours.",
-                "Per-capita carbon limits ensure that climate responsibility is shared fairly across the entire population.",
-                "People in rural areas, cold climates, or physically demanding work cannot reduce their footprints as easily as urban professionals.",
-                "Individual limits remove the moral hazard of wealthy people buying unlimited carbon access through offsets."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about the fairness and moral hazard case for individual carbon limits (Pros) and the enforceability and equity concerns (Cons).",
-            "explanation": "Per-capita limits ensure fair shared responsibility and prevent wealthy individuals from offsetting without limits (Pros), but monitoring is administratively impossible, and rural, cold-climate, and manual workers cannot reduce footprints as easily as urban knowledge workers (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L143_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Carbon pricing is more effective and equitable than individual carbon limits.",
-            "options": [
-                "A carbon price sends an economy-wide signal that shifts all decisions towards lower-carbon alternatives.",
-                "Carbon pricing generates revenue that can fund a dividend, making the policy progressive across income levels.",
-                "Carbon prices at the level required to meet targets may be politically unacceptable to voters.",
-                "Carbon pricing benefits those who can afford to pay for emissions over those who genuinely cannot reduce them."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Consider carbon pricing as an alternative to individual limits (Pros) and the political feasibility and equity concerns (Cons).",
-            "explanation": "Carbon pricing sends economy-wide signals and revenue dividends make it progressive (Pros), but the price level needed is politically unacceptable to most electorates, and pricing still benefits those who can afford to pay for emissions (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L143_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Personal carbon trading would be more equitable than either limits or pricing alone.",
-            "options": [
-                "A personal carbon allowance system with trading gives lower-income people a valuable asset to sell.",
-                "Trading allows those who genuinely cannot reduce emissions to purchase credits from those who can.",
-                "Personal carbon trading systems are enormously complex to administer across every consumer decision.",
-                "Carbon credit markets are vulnerable to fraud, price manipulation, and gaming by sophisticated participants."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about personal carbon trading as the most equitable carbon policy (Pros) and the complexity and market integrity concerns (Cons).",
-            "explanation": "Personal carbon allowances give lower-income people a valuable tradeable asset and enable flexible compliance (Pros), but administration across all consumer decisions is enormously complex, and carbon markets are vulnerable to fraud and sophisticated gaming (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L144_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "All large companies should be legally required to achieve net-zero emissions.",
-            "options": [
-                "Mandatory net-zero requirements create clear and certain investment signals for corporate decarbonisation.",
-                "Small and medium enterprises lack the resources and expertise to achieve net-zero at the same pace as corporates.",
-                "Net-zero targets are vulnerable to gaming through creative accounting and low-quality carbon offsetting.",
-                "Legal requirements prevent the free rider problem of companies waiting for competitors to act first."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about mandatory net-zero requirements for large companies (Pros) and the SME and accounting integrity concerns (Cons).",
-            "explanation": "Mandatory requirements create investment certainty and prevent free riding (Pros), but SMEs cannot move at the same pace as corporates, and net-zero accounting is routinely gamed through creative offsets (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L144_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Science-based targets are more rigorous than voluntary net-zero commitments.",
-            "options": [
-                "Science-based targets require companies to align reductions with a credible 1.5°C pathway.",
-                "Science-based target frameworks are complex and expensive to implement for smaller companies.",
-                "Third-party verification of science-based targets significantly reduces greenwashing risk.",
-                "The science-based target methodology itself contains contested assumptions about sectoral pathways."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Consider science-based targets as superior to voluntary net-zero commitments (Pros) and the complexity and methodology concerns (Cons).",
-            "explanation": "Science-based targets align with credible climate pathways and third-party verification reduces greenwashing (Pros), but complexity and cost exclude smaller companies, and the methodology contains contested assumptions about how emission reductions should be distributed across sectors (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L144_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Supply chain decarbonisation requirements must accompany direct operational net-zero targets.",
-            "options": [
-                "Measuring Scope 3 emissions accurately is technically very difficult and data quality is often poor.",
-                "Scope 3 emissions from supply chains typically represent the majority of large companies' carbon impact.",
-                "Compliance costs for supply chain requirements may push production to lower-regulation jurisdictions, worsening outcomes.",
-                "Requiring supply chain decarbonisation creates economy-wide pressure that market incentives alone cannot generate."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about supply chain decarbonisation as a necessary extension of corporate net-zero requirements (Pros) and the measurement and leakage concerns (Cons).",
-            "explanation": "Supply chain emissions often dominate corporate carbon impact and systemic pressure requires extending targets beyond operations (Pros), but Scope 3 measurement is technically difficult, and compliance costs may relocate production to less-regulated regions, worsening global outcomes (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L145_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The sale of new petrol and diesel cars should be banned by 2035.",
-            "options": [
-                "A clear regulatory deadline creates the investment certainty needed to scale electric vehicle production.",
-                "An ICE sales ban accelerates the transition away from one of the largest sources of urban air pollution.",
-                "Sufficient electric vehicle charging infrastructure will not be in place everywhere by 2035.",
-                "An ICE ban disproportionately affects lower-income drivers for whom electric vehicles remain unaffordable."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about the investment certainty and air quality case for a 2035 ICE ban (Pros) and the infrastructure and equity concerns (Cons).",
-            "explanation": "A 2035 deadline creates investment certainty for EV scaling and eliminates a major source of urban pollution (Pros), but charging infrastructure will not be ubiquitous by then, and ICE bans disproportionately burden lower-income drivers who cannot afford EVs (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L145_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The 2035 ICE ban should be brought forward to accelerate the clean transport transition.",
-            "options": [
-                "The automotive industry needs adequate lead time to retool manufacturing for electric vehicle production.",
-                "An earlier ban date risks stranding investment in ICE technology before alternatives are widely available.",
-                "Moving the deadline to 2030 creates greater urgency in the automotive industry and supply chain.",
-                "Earlier bans produce faster air quality improvements in urban areas with disproportionate pollution health impacts."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Consider the urgency case for moving the ICE ban forward to 2030 (Pros) and the industry readiness and stranded investment concerns (Cons).",
-            "explanation": "An earlier deadline creates greater automotive industry urgency and faster urban air quality improvements (Pros), but manufacturers need lead time to retool factories, and accelerating the ban risks stranding substantial ICE manufacturing investment (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L145_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Technology neutrality is preferable to mandating electric vehicles through an ICE ban.",
-            "options": [
-                "Technology neutrality allows hydrogen and other clean alternatives to compete alongside battery electric vehicles.",
-                "Electric vehicles are the most mature and commercially ready low-carbon transport alternative available.",
-                "Technology neutrality in practice delays action while awaiting the emergence of commercially perfect alternatives.",
-                "Mandating a specific technology through ICE bans risks backing the wrong horse if better alternatives emerge."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about technology neutrality versus a specific EV mandate (Pros for neutrality) and the maturity and delay concerns (Cons).",
-            "explanation": "Technology neutrality allows hydrogen and other alternatives to compete and avoids mandating potentially inferior solutions (Pros), but EVs are already the most mature technology, and neutrality in practice delays necessary action while awaiting perfect alternatives (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L146_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Intensive factory farming of animals should be made illegal.",
-            "options": [
-                "Banning intensive farming would dramatically increase food prices, affecting lower-income consumers most.",
-                "Factory farming inflicts systematic suffering on billions of sentient animals kept in inhumane conditions.",
-                "Many developing countries depend on affordable animal protein that intensive farming makes possible.",
-                "Intensive animal agriculture is a significant driver of greenhouse gas emissions, deforestation, and water pollution."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about the animal welfare and environmental case for banning factory farming (Pros) and the food cost and global access concerns (Cons).",
-            "explanation": "Factory farming inflicts systematic animal suffering and drives major environmental harms (Pros), but banning it would dramatically increase food prices, hitting lower-income consumers hardest and limiting affordable protein access globally (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L146_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The environmental harms of industrial animal agriculture justify urgent regulatory intervention.",
-            "options": [
-                "Livestock farming produces 14.5% of global greenhouse gas emissions, more than the entire transport sector.",
-                "Regulating rather than banning animal farming can deliver significant environmental improvements.",
-                "Consumer demand for cheap meat makes political intervention against industrial farming extremely difficult.",
-                "Industrial animal agriculture drives catastrophic biodiversity loss through land clearance and monoculture feed crops."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Consider the environmental emergency case for intervening in industrial animal agriculture (Pros) and the regulatory and political concerns (Cons).",
-            "explanation": "Livestock emissions exceed total transport and industrial animal farming devastates biodiversity (Pros), but regulation rather than banning can deliver improvements, and consumer demand for cheap meat makes ambitious political intervention extremely difficult (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L146_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "A significant reduction in meat consumption is more achievable than banning intensive farming.",
-            "options": [
-                "Reducing meat demand through taxation, education, and plant-based alternatives achieves environmental benefits.",
-                "Dietary change alone is insufficient given the scale and speed of transformation climate targets require.",
-                "Voluntary dietary change is slow and leaves intensive farming profitable and protected from regulation.",
-                "A dietary shift away from meat is already occurring through market forces and changing consumer values."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about demand reduction as an alternative to supply-side farming bans (Pros) and the scale and speed concerns (Cons).",
-            "explanation": "Demand reduction through taxes, education, and plant-based alternatives leverages existing consumer trends (Pros), but voluntary dietary change is too slow and limited in scale to achieve the transformation that climate urgency requires (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L147_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Large-scale rewilding of natural landscapes should be a national environmental policy priority.",
-            "options": [
-                "Rewilding at scale restores biodiversity, sequesters carbon, and rebuilds natural ecosystem services.",
-                "Rewilding of productive agricultural land threatens food security and rural livelihoods.",
-                "Large rewilded landscapes provide flood protection, water purification, and climate resilience benefits.",
-                "Rewilding programmes without adequate community consent and support create destructive conflicts."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about the biodiversity and ecosystem services case for rewilding (Pros) and the food security and community consent concerns (Cons).",
-            "explanation": "Rewilding restores biodiversity, sequesters carbon, and delivers valuable ecosystem services including flood protection (Pros), but converting productive agricultural land threatens food security, and rewilding without community consent creates destructive and politically damaging conflicts (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L147_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Reintroducing apex predators is essential for genuine ecological restoration.",
-            "options": [
-                "Apex predators regulate ecosystems through trophic cascades that rewilding without them cannot achieve.",
-                "Reintroducing large predators poses genuine safety and livestock security risks for rural communities.",
-                "Wolf reintroduction in Yellowstone demonstrates measurable and wide-ranging ecological benefits.",
-                "Without adequate compensation and dialogue, predator reintroduction generates powerful opposition that undermines broader rewilding."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Consider the ecological necessity of apex predator reintroduction (Pros) and the safety and community relations concerns (Cons).",
-            "explanation": "Apex predators drive ecological restoration through trophic cascades and Yellowstone demonstrates measurable benefits (Pros), but predators pose genuine safety and livestock risks, and inadequate community engagement generates opposition that undermines broader rewilding programmes (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L147_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Urban rewilding and green infrastructure provide rewilding benefits accessible to most citizens.",
-            "options": [
-                "Urban areas represent a small fraction of total land and cannot deliver the scale of ecosystem restoration needed.",
-                "Urban rewilding risks becoming a superficial substitute for the large-landscape transformation actually required.",
-                "Urban nature corridors, green roofs, and rewilded parks deliver biodiversity near where most people live.",
-                "Urban rewilding provides accessible mental health and physical wellbeing benefits alongside ecological restoration."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about urban rewilding as an accessible rewilding approach (Pros) and its scale and substitution concerns (Cons).",
-            "explanation": "Urban nature corridors and green infrastructure deliver biodiversity and wellbeing benefits near most citizens (Pros), but urban land is a tiny fraction of total land, and urban rewilding cannot deliver the ecosystem scale needed and risks becoming a cosmetic substitute for genuine large-landscape transformation (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L148_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Climate change education should be a compulsory part of the curriculum in every school.",
-            "options": [
-                "Climate education builds the scientifically literate, engaged citizenry that democracy needs to make informed policy.",
-                "Students who understand climate change are more likely to adopt sustainable behaviours and career choices.",
-                "Climate education risks becoming one-sided advocacy rather than genuine scientific and critical inquiry.",
-                "An already overcrowded curriculum makes adding compulsory climate content a significant practical challenge."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about the civic and behavioural case for compulsory climate education (Pros) and the balance and curriculum space concerns (Cons).",
-            "explanation": "Climate literacy builds democratic capacity and sustainable behaviour choices (Pros), but poorly designed climate education risks advocacy over inquiry, and finding curriculum space for new compulsory content is genuinely challenging (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L148_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Climate anxiety in students is a serious concern that climate education must address.",
-            "options": [
-                "Avoiding difficult climate realities to protect students' wellbeing leaves them unprepared for the future.",
-                "Teaching climate change without emotional support and agency-building creates paralyzing anxiety in students.",
-                "Teacher training for emotionally sensitive climate education is currently inadequate and under-resourced.",
-                "Effective climate education must balance scientific honesty with empowerment and solution-focused thinking."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Consider the climate anxiety dimension of climate education (Pros for balanced approach) and the avoidance and training concerns (Cons).",
-            "explanation": "Climate education must pair scientific honesty with emotional support and solution focus to avoid paralysing anxiety (Pros), but softening difficult realities leaves students unprepared, and teachers currently lack adequate training for emotionally sensitive delivery (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L148_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Integrating climate content across all subjects is more effective than dedicated climate lessons.",
-            "options": [
-                "Embedding climate into geography, science, economics, and humanities shows its relevance across all domains.",
-                "Without dedicated climate lessons, coverage depends on individual teacher enthusiasm and varies enormously.",
-                "Cross-curricular integration avoids curriculum crowding while reinforcing climate literacy in multiple contexts.",
-                "Cross-curricular climate education without a dedicated lead champion can lack depth and coherence."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about cross-curricular climate integration versus dedicated lessons (Pros for integration) and the consistency and depth concerns (Cons).",
-            "explanation": "Embedding climate across subjects demonstrates its universal relevance and avoids curriculum crowding (Pros), but without dedicated lessons coverage becomes inconsistent and teacher-dependent, and cross-curricular approaches often lack the depth that dedicated teaching provides (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L149_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Businesses that generate excessive waste should face substantial financial penalties.",
-            "options": [
-                "Waste penalties fall hardest on small businesses that lack the resources to invest in waste reduction.",
-                "Financial penalties provide powerful incentives for businesses to invest in waste reduction and circular design.",
-                "Poorly designed penalty systems create perverse incentives to conceal rather than reduce waste.",
-                "Polluter-pays principles ensure that businesses bear the cost of the waste they generate rather than the public."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about the incentive and polluter-pays case for business waste penalties (Pros) and the small business and design concerns (Cons).",
-            "explanation": "Waste penalties incentivise reduction and circular design through the polluter-pays principle (Pros), but small businesses face disproportionate burdens, and poorly designed systems incentivise concealment rather than genuine reduction (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L149_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Extended producer responsibility is more effective than waste penalties in reducing business waste.",
-            "options": [
-                "EPR makes producers responsible for the full lifecycle of their products, including disposal and recycling.",
-                "EPR administrative complexity creates significant compliance costs that smaller businesses disproportionately bear.",
-                "EPR works only when recycling infrastructure meets the quality standards producers are required to fund.",
-                "End-of-life responsibility gives manufacturers strong design incentives to produce less waste from the outset."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Consider EPR as superior to waste penalties for reducing business waste (Pros) and the complexity and infrastructure concerns (Cons).",
-            "explanation": "EPR creates full lifecycle responsibility and motivates less wasteful product design from the outset (Pros), but administrative complexity disadvantages small businesses, and EPR requires recycling infrastructure of adequate quality to function (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L149_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Circular economy regulation would reduce waste more effectively than penalties or EPR alone.",
-            "options": [
-                "Circular economy standards require extraordinary international coordination to prevent regulatory arbitrage.",
-                "Circular economy standards mandate design for repair, reuse, and recyclability across entire product categories.",
-                "System-level circular requirements prevent waste from being generated rather than managing it after creation.",
-                "Mandatory design standards may constrain innovation and prevent better solutions from emerging organically."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about circular economy regulation as the most effective waste reduction approach (Pros) and the coordination and innovation concerns (Cons).",
-            "explanation": "Circular economy standards prevent waste generation through design requirements rather than managing it after creation (Pros), but international coordination requirements are immense, and mandatory design standards may constrain the innovation needed to find better solutions (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L150_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Binding international agreements are the only effective response to the climate crisis.",
-            "options": [
-                "No meaningful binding climate treaty with universal participation has been achieved despite decades of effort.",
-                "Countries routinely exit or undermine binding climate commitments when domestic political costs become apparent.",
-                "The global nature of climate change requires coordinated international action that national policies alone cannot deliver.",
-                "Binding treaties with verification mechanisms create the accountability necessary for genuine emission reductions."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about the necessity of binding international climate agreements (Pros) and the historical effectiveness concerns (Cons).",
-            "explanation": "Climate change is inherently global and requires coordinated international commitment with accountability (Pros), but no binding universal climate treaty has succeeded, and countries abandon commitments when domestic political costs materialise (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L150_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "National policy and technology leadership can drive global climate action without binding treaties.",
-            "options": [
-                "Countries that lead on clean technology create cheaper renewable energy that other nations adopt voluntarily.",
-                "Voluntary national action produces insufficient ambition and is not resilient to changes in national government.",
-                "Economic competitiveness in clean industries creates powerful incentives for global adoption without coercion.",
-                "Geopolitical competition between major powers undermines the cooperative climate action that is urgently needed."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Consider whether national technology leadership can substitute for binding treaties (Pros) and the ambition and geopolitical concerns (Cons).",
-            "explanation": "Technology leadership makes clean energy cheaper globally and creates economic incentives for adoption (Pros), but voluntary action lacks ambition and resilience to political change, and great power competition undermines necessary cooperation (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L150_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Climate clubs among willing nations can create effective international pressure without universal treaties.",
-            "options": [
-                "Climate clubs of ambitious nations can impose border carbon adjustments on non-participating countries.",
-                "Club-based approaches allow willing parties to advance ambition without being held back by reluctant nations.",
-                "Climate clubs risk fragmenting the global trading system and provoking trade wars with excluded nations.",
-                "Border carbon adjustment mechanisms are complex to design legally and require substantial WTO reform."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about climate clubs as an effective international mechanism (Pros) and the trade fragmentation and legal concerns (Cons).",
-            "explanation": "Climate clubs allow ambitious nations to advance without waiting for universal agreement and border adjustments create pressure on non-participants (Pros), but clubs risk trade fragmentation and retaliatory measures, and border carbon adjustments require complex legal design and WTO reform (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        }
-    ]
+  "gameType": "opinionWriting",
+  "batchIndex": 15,
+  "levels": "141-150",
+  "quests": [
+    {
+      "id": "WRT_OPINIONWRITING_L141_Q1",
+      "instruction": "Choose the introduction that gives context and a clear position.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Topic: paid internships.",
+      "options": [
+        "Companies should pay interns. Some interns are paid, and some are not, depending on the company.",
+        "Many graduates take unpaid internships to gain experience, and companies offer them in many industries. Internships last from a few weeks to several months.",
+        "Many graduates take unpaid internships to gain experience, but not everyone can afford to work for free. Companies should pay all interns at least a basic wage.",
+        "In this essay, I will talk about internships and whether they should be paid or unpaid."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "An introduction should set the scene and tell the reader what the writer argues.",
+      "explanation": "This introduction includes context and a position. The alternatives only describe, only assert, or announce the topic.",
+      "structureGuide": "Introduction → Context → Thesis"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L141_Q2",
+      "instruction": "Choose the best introduction.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Topic: allowing well-behaved pets in offices.",
+      "options": [
+        "In this essay, I will discuss pets in offices, looking at different views on the subject.",
+        "Offices are places where many people work every day. They have desks, meeting rooms and kitchens.",
+        "Pets are loved by millions of people around the world. Many households own a cat, a dog or a rabbit.",
+        "For many staff, the hardest part of returning to the office is leaving a pet at home. Offices should allow well-behaved pets on set days."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Which version connects the topic to a position?",
+      "explanation": "This version opens with a relatable situation and states a position. The others talk about pets or offices in general, or announce the essay.",
+      "structureGuide": "Introduction → Context → Thesis"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L141_Q3",
+      "instruction": "Choose the best thesis statement.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Topic: a reading week at university.",
+      "options": [
+        "Reading weeks exist at some universities in a few countries, and they vary in length and timing.",
+        "Reading week is a good idea for students at university, and it is one that many of them talk about.",
+        "Reading week is a topic that many students often discuss, especially near the end of each term.",
+        "Universities should schedule a reading week each term because it reduces stress and allows deeper study."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "A thesis takes a position and previews reasons.",
+      "explanation": "The best thesis takes a position and gives two reasons. The others are too vague or only state facts.",
+      "structureGuide": "Introduction → Thesis"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L142_Q1",
+      "instruction": "Which sentence is a clear, arguable thesis?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Topic: phones at school lunchtime.",
+      "options": [
+        "Phone-free lunchtimes would improve students' friendships and reduce afternoon distraction.",
+        "This essay is about the use of phones at lunchtime, and it looks at what schools currently allow.",
+        "Lunchtime is the break between the morning and afternoon lessons, and it usually lasts about an hour.",
+        "Many schools have rules about the use of phones, and the rules differ from one school to the next."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "A thesis is something a reader could agree or disagree with.",
+      "explanation": "The correct thesis takes a position and offers two reasons. The others announce, state a fact or describe.",
+      "structureGuide": "Thesis"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L142_Q2",
+      "instruction": "Which thesis previews the reasons the essay will discuss?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Topic: city bike hire.",
+      "options": [
+        "City bike hire should be expanded because it is cheaper than owning a bike and replaces short car trips.",
+        "I believe that city bike hire is a good thing for everyone who lives in or visits a large city.",
+        "City bike hire should be expanded for many different reasons, several of which are discussed below.",
+        "City bike hire is a service that some cities offer to residents, usually through a phone app or a card."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Look for the sentence that names the reasons.",
+      "explanation": "The best thesis names cost and replacing car trips. The alternatives don't preview specific reasons.",
+      "structureGuide": "Thesis"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L142_Q3",
+      "instruction": "Which thesis has the right scope for a short essay?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Topic: student councils.",
+      "options": [
+        "Schools should spend money on education for all students.",
+        "The student council bought twelve new chairs last term.",
+        "Student councils usually meet on Tuesday afternoons.",
+        "Student councils should control a small part of the school budget."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "A good thesis is neither too broad nor a simple fact.",
+      "explanation": "This thesis makes a specific claim that can be argued. The alternatives are too broad or are facts.",
+      "structureGuide": "Thesis"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L143_Q1",
+      "instruction": "Choose the best revision of the weak thesis.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'Public Wi-Fi in parks is a topic.'",
+      "options": [
+        "Everybody knows that Wi-Fi in parks is useful and popular, so there is no need to discuss it any further.",
+        "Cities should provide free Wi-Fi in parks so that residents without home internet can study and work outdoors.",
+        "Free Wi-Fi in parks already exists in some cities and towns, where it is used by thousands of people.",
+        "Public Wi-Fi in parks is something that people have different opinions about, depending on where they live."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Turn the topic into a position with a reason.",
+      "explanation": "This revision takes a position and names a reason. The remaining options describe or assert without support.",
+      "structureGuide": "Thesis → Revision"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L143_Q2",
+      "instruction": "Choose the best revision of the over-broad thesis.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'Technology is good for society.'",
+      "options": [
+        "Schools use technology every day in lessons and in offices, and most students are used to it.",
+        "Digital tools are better than non-digital tools in most cases, so schools should use them more often.",
+        "Schools should replace paper timetables with a live app because it shows room changes immediately.",
+        "Technology helps society in many ways and should be used more in schools, hospitals and workplaces."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "A revised thesis narrows the topic to a specific proposal.",
+      "explanation": "The best revision focuses on a specific change and reason. The other choices remain broad.",
+      "structureGuide": "Thesis → Revision"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L143_Q3",
+      "instruction": "Choose the best revision of the announcement.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'In this essay, I will discuss whether subscription services are worth it.'",
+      "options": [
+        "Subscription services are worth it only for people who use them at least weekly.",
+        "This essay will look at subscription services from different points of view.",
+        "Subscription services are worth discussing in an essay like this one.",
+        "Subscription services are discussed below in detail and with examples."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Replace 'I will discuss' with the actual answer.",
+      "explanation": "This revision states a position with a condition. The other choices still announce the topic.",
+      "structureGuide": "Thesis → Revision"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L144_Q1",
+      "instruction": "Which hook leads best into a thesis about reducing plastic packaging?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Choose the opening that connects to the thesis.",
+      "options": [
+        "One online order recently arrived in four layers of plastic for a single pair of socks.",
+        "Packaging has been used to protect goods for thousands of years, from woven baskets to wooden crates.",
+        "Many people enjoy shopping online for clothes and other items, and the number of orders grows each year.",
+        "Plastic is a material that can be made from oil and gas, and it has been widely used since the 1950s."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "A good hook makes the reader notice the problem the thesis addresses.",
+      "explanation": "This hook shows the problem of excess packaging. The others are general facts.",
+      "structureGuide": "Introduction → Hook"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L144_Q2",
+      "instruction": "Which hook is most appropriate for a formal essay?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Topic: packaging waste.",
+      "options": [
+        "OMG, have you seen how much packaging there is in the shops these days?! It is absolutely crazy!",
+        "Listen up, because packaging is destroying the whole planet, and nobody seems to be doing anything.",
+        "Packaging: some people love it, some people hate it, and it is a subject that divides opinion.",
+        "How much of your weekly shopping bill goes on packaging that you throw away?"
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Formal hooks are engaging but not slangy or dramatic.",
+      "explanation": "This hook asks a thoughtful question. The other choices use slang, exaggeration or a vague statement.",
+      "structureGuide": "Introduction → Hook"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L144_Q3",
+      "instruction": "Which hook does NOT lead naturally into the thesis?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Thesis: Schools should teach basic cooking skills.",
+      "options": [
+        "When I left home, I could not boil an egg.",
+        "A first-year student recently spent £40 a week on takeaways.",
+        "One in three students I surveyed could not cook a simple meal.",
+        "The first cars were built in the 1880s."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Which opening has no link with cooking?",
+      "explanation": "The history of cars has no link to cooking skills. The others lead directly to the problem the thesis addresses.",
+      "structureGuide": "Introduction → Hook"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L145_Q1",
+      "instruction": "Put the introduction in order: hook, context, thesis, preview.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Arrange the four sentences of an introduction about water fountains at a school.",
+      "options": [
+        "These stations would reduce queues, cut plastic waste and help students stay hydrated.",
+        "Our school has 900 students but only two working fountains.",
+        "On Tuesday morning, thirty students queued for a single water fountain.",
+        "The school should install refill stations on every floor."
+      ],
+      "correctOrder": [
+        2,
+        1,
+        3,
+        0
+      ],
+      "hint": "The thesis comes after the context, and the preview follows the thesis.",
+      "explanation": "The hook grabs attention, the context explains, the thesis states the position and the preview names the reasons.",
+      "structureGuide": "Hook → Context → Thesis → Preview"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L145_Q2",
+      "instruction": "Arrange the introduction.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Order the sentences of an introduction about tourists and an old bridge.",
+      "options": [
+        "Every year, thousands of tourists photograph the same old bridge.",
+        "Its narrow footpath, however, was built for local traffic.",
+        "A cap would protect the bridge, ease congestion and keep the experience enjoyable.",
+        "The city should limit daily visitor numbers."
+      ],
+      "correctOrder": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "hint": "The context creates the problem that the thesis solves.",
+      "explanation": "The hook introduces the scene, the context reveals a problem, the thesis proposes a solution and the preview lists benefits.",
+      "structureGuide": "Hook → Context → Thesis → Preview"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L145_Q3",
+      "instruction": "Arrange the introduction.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Order the sentences of an introduction about too many meetings.",
+      "options": [
+        "Last month, my team spent nine hours in meetings.",
+        "Companies should set a meeting-free afternoon each week.",
+        "That is more than a full working day, and nothing was decided.",
+        "Protected time would help staff finish focused work and reduce overload."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        1,
+        3
+      ],
+      "hint": "Start with the specific scene and end with the benefits.",
+      "explanation": "The example opens, the comparison gives context, the thesis follows and the last sentence previews the reasons.",
+      "structureGuide": "Hook → Context → Thesis → Preview"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L146_Q1",
+      "instruction": "Which order of body paragraphs builds a logical argument?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "The essay argues that a city should introduce a tourist cap.",
+      "options": [
+        "Problem → cause → solution → objection answered",
+        "Cause → objection answered → solution → problem",
+        "Objection answered → solution → cause → problem",
+        "Solution → problem → objection answered → cause"
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "A reader needs to understand the problem before the solution.",
+      "explanation": "The correct order moves from problem to cause to solution, and then deals with objections. The others start with the answer or objection before the problem is explained.",
+      "structureGuide": "Body → Sequence"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L146_Q2",
+      "instruction": "Which body plan groups related points together?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A writer has four points for closing a street to traffic: lower noise, cleaner air, more café income and more shop visitors.",
+      "options": [
+        "Paragraph 1: lower noise and more café income. Paragraph 2: cleaner air and more shop visitors.",
+        "Paragraph 1: lower noise and cleaner air. Paragraph 2: more café income and more shop visitors.",
+        "Paragraph 1: more café income and lower noise. Paragraph 2: more shop visitors and cleaner air.",
+        "Paragraph 1: cleaner air and more shop visitors. Paragraph 2: lower noise and more café income."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Group points into one paragraph when they belong to the same theme.",
+      "explanation": "Noise and air are environmental benefits; income and visitors are economic. The correct plan groups points by theme.",
+      "structureGuide": "Body → Sequence"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L146_Q3",
+      "instruction": "Which sequence builds logically, with each point leading to the next?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "The essay argues that schools should protect sleep with later start times.",
+      "options": [
+        "Schools can protect sleep with later starts → better memory improves exam results → sleep helps students remember",
+        "Sleep helps students remember → better memory improves exam results → schools can protect sleep with later starts",
+        "Better memory improves exam results → schools can protect sleep with later starts → sleep helps students remember",
+        "Sleep helps students remember → schools can protect sleep with later starts → better memory improves exam results"
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Each idea should depend on the one before it.",
+      "explanation": "This sequence moves from cause to effect to action. The others place effects or actions before their causes.",
+      "structureGuide": "Body → Sequence"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L147_Q1",
+      "instruction": "Choose the best sentence to begin the second body paragraph.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "The first paragraph explained how refill stations save money. The second will discuss the environment.",
+      "options": [
+        "In conclusion, refill stations are a good idea, and the school should consider installing them soon.",
+        "Cost is an important issue for most schools, and every budget has to be carefully planned.",
+        "Refill stations already exist in some public buildings, such as libraries and leisure centres.",
+        "Beyond the savings, there is a strong environmental case for refill stations."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "A transition points back and forward at the same time.",
+      "explanation": "The correct sentence links to the savings and introduces the environment. The others repeat, describe or conclude too early.",
+      "structureGuide": "Body → Transition"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L147_Q2",
+      "instruction": "Choose the best transition from the concession paragraph to the rebuttal paragraph.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "The concession paragraph admitted that setup costs are real.",
+      "options": [
+        "Meanwhile, many people like to plan their spending carefully and to keep a record of every purchase.",
+        "These concerns are valid, but they can be managed with careful planning.",
+        "Some people have concerns about many things, and it is normal for people to worry about the future.",
+        "Planning is normally done by managers and supervisors, who have more experience of the whole project."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "The transition should lead from admitting a concern to answering it.",
+      "explanation": "The best sentence acknowledges the concern and moves to the response. The alternatives change the subject.",
+      "structureGuide": "Body → Transition"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L147_Q3",
+      "instruction": "Which opening links back to the previous paragraph about quiet rooms?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Previous paragraph: 'Quiet rooms help individuals to focus.' Next paragraph: about collaboration spaces.",
+      "options": [
+        "Some people prefer noisy places to quiet places.",
+        "Focus alone, however, is not enough; teams also need places to talk.",
+        "Teams exist in a great many companies around the world.",
+        "Rooms can be booked online through the company website."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "The next paragraph should build on the previous idea, not restart.",
+      "explanation": "The correct sentence refers back to focus and moves to teams. The other choices don't connect the two paragraphs.",
+      "structureGuide": "Body → Transition"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L148_Q1",
+      "instruction": "What should the second body paragraph do?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "The introduction states the thesis, and the first body paragraph develops Reason 1.",
+      "options": [
+        "Present a different reason and support it with evidence.",
+        "Restate the thesis word for word.",
+        "Introduce a new topic that is unrelated to the thesis.",
+        "Repeat the first reason with only new examples."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Each body paragraph should add something new to the argument.",
+      "explanation": "A second body paragraph usually develops a new reason. Repeating, drifting or restating adds nothing.",
+      "structureGuide": "Structure → Progression"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L148_Q2",
+      "instruction": "Where does the counterargument paragraph fit best?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "The essay has an introduction, three main reasons and a conclusion.",
+      "options": [
+        "As the very first sentence of the essay",
+        "Before the thesis statement",
+        "After the main reasons and before the conclusion",
+        "After the conclusion has ended"
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "The counterargument should test the argument after it has been made.",
+      "explanation": "After the main reasons, the writer can respond to objections. Placing it earlier or later disrupts the flow.",
+      "structureGuide": "Structure → Progression"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L148_Q3",
+      "instruction": "Which sentence is the best link from the last body paragraph to the conclusion?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "The essay argues for making a trial programme permanent.",
+      "options": [
+        "There are more things that could be said about the trial, but there is no space to say them here.",
+        "That is all I wish to write on this topic, and I hope the reader has found it interesting.",
+        "Finally, the trial began in March of last year and has been running in two schools since then.",
+        "Taken together, these benefits show why the trial should become permanent."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "A closing link gathers the argument.",
+      "explanation": "This sentence sums up the argument and points to the recommendation. The rest are irrelevant or end abruptly.",
+      "structureGuide": "Structure → Conclusion"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L149_Q1",
+      "instruction": "Choose the best topic sentence for a body paragraph about teams.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Thesis: Companies should offer four paid volunteering days a year because it builds skills, strengthens teams and helps communities.",
+      "options": [
+        "Volunteering is a popular activity across the country, and many people take part in it every year.",
+        "Volunteering together can strengthen teams by giving colleagues a shared goal outside their usual roles.",
+        "Colleagues work in different departments of a company, and many of them rarely meet during the year.",
+        "Communities need helpers in many different ways, from cleaning parks to running food banks."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "The topic sentence should connect to one reason in the thesis.",
+      "explanation": "The best sentence links volunteering to team strength. The alternatives are general facts.",
+      "structureGuide": "Thesis → Topic Sentence"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L149_Q2",
+      "instruction": "Which topic sentence does NOT connect to the thesis?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Thesis: Local shops deserve support because they keep money in the community, offer personal service and reduce transport emissions.",
+      "options": [
+        "Shorter delivery distances reduce vehicle emissions.",
+        "Money spent locally circulates among neighbours instead of leaving town.",
+        "Supermarkets have introduced self-checkouts in many towns.",
+        "Local shopkeepers know their customers and can give tailored advice."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Test each sentence against the three reasons.",
+      "explanation": "Self-checkouts are not connected to money, service or emissions. The other three each match a reason.",
+      "structureGuide": "Thesis → Topic Sentence"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L149_Q3",
+      "instruction": "Choose the best topic sentence for the paragraph that answers the cost objection.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Thesis: Libraries should stay open late during exam periods.",
+      "options": [
+        "Exam students often study alone or in small groups, and many of them prefer a quiet room to a café.",
+        "Extending hours has a cost, but the expense is small compared with the benefit to exam students.",
+        "Libraries have many different costs throughout the year, including heating, staff and new books.",
+        "Costs are numbers that are usually written in pounds, and they can be compared from one year to the next."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "The topic sentence should signal the objection and the reply.",
+      "explanation": "This sentence acknowledges the cost and moves to the benefit. The others are general or unrelated.",
+      "structureGuide": "Thesis → Topic Sentence"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L150_Q1",
+      "instruction": "Put the essay skeleton in order: thesis, reason 1, reason 2, conclusion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Arrange this essay skeleton about students helping to set the timetable.",
+      "options": [
+        "Second, shared decisions build responsibility.",
+        "Schools should give students a voice in setting the timetable.",
+        "First, students know when they concentrate best.",
+        "Overall, a student voice would improve both learning and trust."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "hint": "The thesis comes first and the overall sentence comes last.",
+      "explanation": "The thesis opens, 'first' and 'second' introduce the reasons and 'overall' introduces the conclusion.",
+      "structureGuide": "Thesis → Reason 1 → Reason 2 → Conclusion"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L150_Q2",
+      "instruction": "Choose the best introduction.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Topic: subsidised school trips abroad.",
+      "options": [
+        "A week abroad can change how a student sees the world, yet many families cannot afford the cost. Schools should offer subsidised trips so that every student has the same chance.",
+        "A week abroad can change how a student sees the world. Many students enjoy travelling to different countries with their friends.",
+        "In this essay, I will discuss school trips abroad and the different opinions about them.",
+        "Schools should offer subsidised trips. Many schools have trips that go to different places."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Look for context and a clear position.",
+      "explanation": "The best introduction states the context and the position. The alternatives miss the position or announce.",
+      "structureGuide": "Introduction → Context → Thesis"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L150_Q3",
+      "instruction": "Which thesis is strongest?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Topic: a yearly reading challenge.",
+      "options": [
+        "Schools should run a reading challenge for lots of reasons, and this essay will describe several of them.",
+        "A yearly reading challenge is a topic that teachers often discuss when they plan the school calendar.",
+        "Schools should run a yearly reading challenge because it builds vocabulary and gives students shared topics to talk about.",
+        "Reading challenges are held in some schools, and they usually run for a term with a small prize for finishing."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Choose the thesis that takes a position and gives reasons.",
+      "explanation": "The best thesis makes a claim and names two reasons. The others state a fact or a topic.",
+      "structureGuide": "Thesis"
+    }
+  ]
 }

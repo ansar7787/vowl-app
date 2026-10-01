@@ -5,1173 +5,1173 @@
     "quests": [
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L81_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE PROBLEM AT CHECK-IN AND HOW IT WAS RESOLVED",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "A streaming platform abruptly cancelled a critically acclaimed series after just one season, sparking outrage among its dedicated fanbase. Describe how fans organized their response.",
+            "situation": "At the airport check-in counter, your suitcase turns out to be several kilograms over the weight limit. Describe the situation and how it was resolved with the airline staff.",
             "emojis": [
-                "📺",
-                "❌",
-                "😡",
-                "✊"
+                "✅",
+                "🧳",
+                "⚖️",
+                "😟"
             ],
             "keywords": {
                 "0": [
-                    "STREAMING",
-                    "CANCEL",
-                    "SERIES"
+                    "REPACK",
+                    "SHIFT",
+                    "BOARDINGPASS"
                 ],
                 "1": [
-                    "ACCLAIMED",
-                    "ONESEASON",
-                    "ABRUPT"
+                    "SUITCASE",
+                    "WEIGH",
+                    "LIMIT"
                 ],
                 "2": [
-                    "OUTRAGE",
-                    "FANBASE",
-                    "SPARK"
+                    "OVERWEIGHT",
+                    "EXCEED",
+                    "KILOGRAMS"
                 ],
                 "3": [
-                    "ORGANIZE",
-                    "PETITION",
-                    "CAMPAIGN"
+                    "STAFF",
+                    "EXPLAIN",
+                    "OPTIONS"
                 ]
             },
-            "minWords": 37,
-            "hint": "Describe the specific actions fans took to express their frustration and push for change.",
-            "explanation": "Strong fan-advocacy answers show organized action, for example: 'Fans launched an online petition and trended a hashtag, eventually convincing another platform to pick up the show.'",
-            "modelAnswer": "Strong fan-advocacy answers show organized action, for example: 'Fans launched an online petition and trended a hashtag, eventually convincing another platform to pick up the show.' Describe the specific actions fans took to express their frustration and push for change. This serves as a model answer for the situation."
+            "minWords": 35,
+            "hint": "Describe the exact problem with a number, then explain the options the staff member offered before the situation was resolved.",
+            "explanation": "Service resolutions are clearer when a specific option, such as paying a fee or repacking, is named, rather than simply saying the problem was solved.",
+            "modelAnswer": "When my suitcase weighs six kilograms over the limit at check-in, the agent calmly explains that I can either pay an extra fee or transfer some items into my carry-on bag. Choosing to save money, I quickly shift a few heavy books into my backpack, and the agent reweighs the bag before finally printing my boarding pass."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L81_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE PROBLEM AT SECURITY AND HOW IT WAS RESOLVED",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You need to write a diplomatic message to a vendor who consistently delivers late, without damaging the business relationship. Describe what you write.",
+            "situation": "At the airport security checkpoint, you forget to remove a laptop from your bag, causing a delay in the line. Describe the situation and how it was resolved.",
             "emojis": [
-                "📦",
-                "⏰",
-                "😐",
-                "✉️"
+                "🛂",
+                "😳",
+                "✅",
+                "💻"
             ],
             "keywords": {
                 "0": [
-                    "VENDOR",
-                    "DELIVER",
-                    "LATE"
+                    "SCANNER",
+                    "FLAG",
+                    "BEEP"
                 ],
                 "1": [
-                    "CONSISTENT",
-                    "PATTERN",
-                    "NOTICE"
+                    "OFFICER",
+                    "ASK",
+                    "REMOVE"
                 ],
                 "2": [
-                    "DIPLOMATIC",
-                    "FIRM",
-                    "PROFESSIONAL"
+                    "RESCAN",
+                    "PASS",
+                    "APOLOGIZE"
                 ],
                 "3": [
-                    "RELATIONSHIP",
-                    "IMPROVE",
-                    "MAINTAIN"
+                    "FORGET",
+                    "LAPTOP",
+                    "BAG"
                 ]
             },
-            "minWords": 37,
-            "hint": "Be firm about the problem while keeping the tone respectful and constructive.",
-            "explanation": "A strong diplomatic message names the pattern without being harsh, for example: 'We have noticed several recent deliveries arriving a few days late, and we would appreciate discussing how we might resolve this together.'",
-            "modelAnswer": "A strong diplomatic message names the pattern without being harsh, for example: 'We have noticed several recent deliveries arriving a few days late, and we would appreciate discussing how we might resolve this together.' Be firm about the problem while keeping the tone respectful and constructive. This serves as a model answer for the situation."
+            "minWords": 35,
+            "hint": "Describe the mistake and the officer's reaction, then how the situation was quickly corrected.",
+            "explanation": "Minor service disruptions, like a security delay, are described well through a short, specific interaction rather than an exaggerated account of the inconvenience.",
+            "modelAnswer": "Rushing through the line, I completely forget to take my laptop out of my bag, and the scanner immediately flags it with a loud beep. The security officer politely asks me to step aside, remove the laptop, and send it through separately, and after a brief apology to the people behind me, I finally clear security without further issues."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L81_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE SEATING PROBLEM AND HOW IT WAS RESOLVED",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "After years of putting it off, you finally decided to learn to drive in your thirties, which felt intimidating among much younger classmates. Describe your first lesson.",
+            "situation": "At the gate, an airline employee announces that your flight has been overbooked and your original seat is no longer guaranteed. Describe the situation and how it was resolved.",
             "emojis": [
-                "🚗",
-                "😬",
-                "👨‍🏫",
-                "📘"
+                "✈️",
+                "✅",
+                "😰",
+                "🎫"
             ],
             "keywords": {
                 "0": [
-                    "DRIVE",
-                    "LEARN",
-                    "THIRTIES"
+                    "OVERBOOK",
+                    "ANNOUNCE",
+                    "GATE"
                 ],
                 "1": [
-                    "INTIMIDATE",
-                    "YOUNGER",
-                    "CLASSMATE"
+                    "ACCEPT",
+                    "UPGRADE",
+                    "COMPENSATE"
                 ],
                 "2": [
-                    "FIRSTLESSON",
-                    "NERVOUS",
-                    "INSTRUCTOR"
+                    "ORIGINAL",
+                    "SEAT",
+                    "LOSE"
                 ],
                 "3": [
-                    "PROGRESS",
-                    "CONFIDENT",
-                    "PROUD"
+                    "EMPLOYEE",
+                    "OFFER",
+                    "ALTERNATIVE"
                 ]
             },
-            "minWords": 37,
-            "hint": "Describe your initial nervousness and how the instructor helped build your confidence.",
-            "explanation": "Good late-learning answers acknowledge vulnerability honestly, for example: 'I felt embarrassed at first, but my instructor reminded me that age has nothing to do with learning a new skill.'",
-            "modelAnswer": "Good late-learning answers acknowledge vulnerability honestly, for example: 'I felt embarrassed at first, but my instructor reminded me that age has nothing to do with learning a new skill.' Describe your initial nervousness and how the instructor helped build your confidence. This serves as a model answer for the situation."
+            "minWords": 35,
+            "hint": "Describe the announcement clearly, then explain the specific alternative or compensation offered to resolve it.",
+            "explanation": "Overbooking situations are common in real travel, and describing the specific compensation offered, such as an upgrade, makes the resolution concrete rather than vague.",
+            "modelAnswer": "Just before boarding, an airline employee announces over the intercom that the flight has been overbooked and asks for volunteers to take a later flight. When I hesitate, she quietly offers me a seat upgrade to business class as compensation, and I happily accept, ending up far more comfortable than my original economy seat would have been."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L82_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE TICKET PROBLEM AND HOW IT WAS RESOLVED",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your university offered an unpaid but highly competitive research position, and you had to weigh the experience against the financial sacrifice. Describe your decision.",
+            "situation": "You accidentally purchase the wrong type of train ticket at a station kiosk, realizing the mistake only after boarding. Describe the situation and how it was resolved.",
             "emojis": [
-                "🎓",
-                "🔬",
-                "💰",
-                "🤔"
+                "😳",
+                "🚆",
+                "✅",
+                "🎫"
             ],
             "keywords": {
                 "0": [
-                    "RESEARCH",
-                    "UNPAID",
-                    "COMPETITIVE"
+                    "EXPLAIN",
+                    "MISTAKE",
+                    "HONEST"
                 ],
                 "1": [
-                    "OPPORTUNITY",
-                    "EXPERIENCE",
-                    "VALUE"
+                    "CONDUCTOR",
+                    "CHECK",
+                    "NOTICE"
                 ],
                 "2": [
-                    "WEIGH",
-                    "FINANCIAL",
-                    "SACRIFICE"
+                    "UPGRADE",
+                    "FEE",
+                    "SMALL"
                 ],
                 "3": [
-                    "DECIDE",
-                    "APPLY",
-                    "COMMIT"
+                    "KIOSK",
+                    "PURCHASE",
+                    "WRONGTYPE"
                 ]
             },
-            "minWords": 37,
-            "hint": "Explain how you balanced the career value against the financial cost.",
-            "explanation": "Good long-term-thinking answers weigh short-term cost against future benefit, for example: 'Taking the unpaid position meant working a part-time job on weekends, but the research experience was worth the trade-off.'",
-            "modelAnswer": "Good long-term-thinking answers weigh short-term cost against future benefit, for example: 'Taking the unpaid position meant working a part-time job on weekends, but the research experience was worth the trade-off.' Explain how you balanced the career value against the financial cost. This serves as a model answer for the situation."
+            "minWords": 35,
+            "hint": "Describe how the mistake was discovered, then the conversation with the conductor that led to a resolution.",
+            "explanation": "Transport ticketing problems are resolved realistically through a short, honest conversation with staff, and naming the small consequence, such as a fee, keeps the outcome believable.",
+            "modelAnswer": "After boarding, I realize the ticket I bought at the kiosk is for a regional train, not the faster express service I am actually sitting on. When the conductor checks my ticket, I explain the honest mistake, and she kindly lets me pay a small difference in fare instead of a full penalty."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L82_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE MISSED STOP AND HOW IT WAS RESOLVED",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your company asked you to mentor a struggling new hire, but your own workload was already overwhelming. Describe how you balanced both responsibilities.",
+            "situation": "A bus driver accidentally skips your stop because you did not ring the bell in time. Describe the situation and how it was resolved.",
             "emojis": [
-                "💼",
-                "🧑‍💼",
-                "⚖️",
-                "😓"
+                "😩",
+                "🚌",
+                "✅",
+                "🗣️"
             ],
             "keywords": {
                 "0": [
-                    "MENTOR",
-                    "STRUGGLING",
-                    "NEWHIRE"
+                    "STOP",
+                    "PASS",
+                    "REALIZE"
                 ],
                 "1": [
-                    "WORKLOAD",
-                    "OVERWHELM",
-                    "ALREADY"
+                    "BELL",
+                    "RING",
+                    "MISS"
                 ],
                 "2": [
-                    "BALANCE",
-                    "PRIORITIZE",
-                    "SCHEDULE"
+                    "NEXTSTOP",
+                    "WALKBACK",
+                    "RESOLVE"
                 ],
                 "3": [
-                    "SUPPORT",
-                    "MANAGE",
-                    "SUCCEED"
+                    "DRIVER",
+                    "APPROACH",
+                    "EXPLAIN"
                 ]
             },
-            "minWords": 37,
-            "hint": "Describe how you managed your time to support the new hire without falling behind.",
-            "explanation": "Good time-management answers show specific strategies, for example: 'I set aside thirty minutes each morning for mentoring, which kept both my own tasks and his training on track.'",
-            "modelAnswer": "Good time-management answers show specific strategies, for example: 'I set aside thirty minutes each morning for mentoring, which kept both my own tasks and his training on track.' Describe how you managed your time to support the new hire without falling behind. This serves as a model answer for the situation."
+            "minWords": 35,
+            "hint": "Explain how you realized the stop was missed, then describe how you handled it with the driver or by walking back.",
+            "explanation": "Small transport mishaps are described clearly through the moment of realization followed by a simple, practical fix, rather than an overly dramatic reaction.",
+            "modelAnswer": "Distracted by my phone, I forget to ring the bell in time, and the bus continues straight past my usual stop. Once I notice, I walk to the front and explain the situation to the driver, who lets me off at the very next stop, leaving me with just a short walk back."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L82_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE BOOKING ERROR AND HOW IT WAS RESOLVED",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your visa application was unexpectedly delayed just days before your planned international move, threatening your start date at a new job. Describe how you handled the uncertainty.",
+            "situation": "While booking a train ticket online, you accidentally submit the payment twice, resulting in two identical bookings. Describe the situation and how it was resolved when you contacted customer support.",
             "emojis": [
-                "🛂",
-                "⏳",
-                "😰",
-                "💼"
+                "✅",
+                "🎫",
+                "💻",
+                "😖"
             ],
             "keywords": {
                 "0": [
-                    "VISA",
-                    "DELAY",
-                    "UNEXPECTED"
+                    "REFUND",
+                    "PROCESS",
+                    "CONFIRM"
                 ],
                 "1": [
-                    "INTERNATIONAL",
-                    "MOVE",
-                    "THREATEN"
+                    "CHARGE",
+                    "TWICE",
+                    "NOTICE"
                 ],
                 "2": [
-                    "UNCERTAIN",
-                    "CONTACT",
-                    "FOLLOWUP"
+                    "ONLINE",
+                    "DUPLICATE",
+                    "BOOKING"
                 ],
                 "3": [
-                    "RESOLVE",
-                    "RELIEF",
-                    "ARRIVE"
+                    "SUPPORT",
+                    "CONTACT",
+                    "EXPLAIN"
                 ]
             },
-            "minWords": 37,
-            "hint": "Describe the steps you took to manage the uncertainty while waiting for a resolution.",
-            "explanation": "Good high-stakes-waiting answers show proactive communication, for example: 'I contacted both the embassy and my new employer to explain the delay, which bought me an extra week to start.'",
-            "modelAnswer": "Good high-stakes-waiting answers show proactive communication, for example: 'I contacted both the embassy and my new employer to explain the delay, which bought me an extra week to start.' Describe the steps you took to manage the uncertainty while waiting for a resolution. This serves as a model answer for the situation."
+            "minWords": 35,
+            "hint": "Describe how you discovered the duplicate charge, then the steps you took with customer support to get it fixed.",
+            "explanation": "Online booking errors are common real-world problems, and describing the exact contact method, such as a chat or phone call, makes the resolution process feel authentic and specific.",
+            "modelAnswer": "Checking my email confirmation, I notice I have somehow been charged twice for the exact same train journey after the website seemed to freeze during payment. I contact customer support through their online chat, explain the situation with both booking numbers, and within two days they confirm a full refund for the duplicate charge."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L83_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE OVERBOOKING PROBLEM AND HOW IT WAS RESOLVED",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your sibling's business failed, and they asked to move back in with the family temporarily while rebuilding their finances. Describe how the household adjusted.",
+            "situation": "You arrive at your hotel to check in, only to be told the hotel is overbooked and your reserved room is unavailable. Describe the situation and how the front desk resolved it.",
             "emojis": [
-                "👫",
-                "💸",
-                "🏠",
-                "😕"
+                "✅",
+                "🏨",
+                "😳",
+                "🗝️"
             ],
             "keywords": {
                 "0": [
-                    "SIBLING",
-                    "BUSINESS",
-                    "FAIL"
+                    "UPGRADE",
+                    "NEARBYHOTEL",
+                    "COMPENSATE"
                 ],
                 "1": [
-                    "MOVEBACK",
-                    "TEMPORARY",
-                    "REBUILD"
+                    "RESERVATION",
+                    "CONFIRM",
+                    "ARRIVE"
                 ],
                 "2": [
-                    "HOUSEHOLD",
-                    "ADJUST",
-                    "SPACE"
+                    "OVERBOOK",
+                    "UNAVAILABLE",
+                    "APOLOGIZE"
                 ],
                 "3": [
-                    "SUPPORT",
-                    "PATIENCE",
-                    "RECOVER"
+                    "RECEPTIONIST",
+                    "EXPLAIN",
+                    "OPTIONS"
                 ]
             },
-            "minWords": 38,
-            "hint": "Describe the practical and emotional adjustments the family made.",
-            "explanation": "Good family-support answers balance practicality and empathy, for example: 'We cleared out the guest room and agreed on a few house rules, while making sure he never felt like a burden.'",
-            "modelAnswer": "Good family-support answers balance practicality and empathy, for example: 'We cleared out the guest room and agreed on a few house rules, while making sure he never felt like a burden.' Describe the practical and emotional adjustments the family made. This serves as a model answer for the situation."
+            "minWords": 36,
+            "hint": "Describe your confusion at hearing the news, then the specific solution the front desk offered to make things right.",
+            "explanation": "Overbooking is one of the most common real hotel problems, and describing a specific compensation, such as a free upgrade, gives the resolution genuine substance.",
+            "modelAnswer": "After a long flight, I arrive at the hotel only to be told, with an awkward apology, that my confirmed room has been given away due to overbooking. Visibly frustrated, I wait while the receptionist makes a few calls, and she eventually offers me a free upgrade to a suite at a partner hotel just two blocks away, along with a voucher for breakfast."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L83_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE EARLY ARRIVAL AND HOW IT WAS RESOLVED",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You discovered that a small local shop you loved was struggling to compete with a nearby chain store offering lower prices. Describe how you decided where to shop.",
+            "situation": "Your flight lands much earlier than expected, and you arrive at your hotel several hours before the official check-in time. Describe the situation and how it was resolved.",
             "emojis": [
-                "🏪",
-                "🏬",
-                "💭",
-                "⚖️"
+                "🕐",
+                "🧳",
+                "✅",
+                "🏨"
             ],
             "keywords": {
                 "0": [
-                    "LOCALSHOP",
-                    "STRUGGLE",
-                    "COMPETE"
+                    "CHECKIN",
+                    "OFFICIAL",
+                    "LATER"
                 ],
                 "1": [
-                    "CHAINSTORE",
-                    "LOWERPRICE",
-                    "NEARBY"
+                    "LUGGAGE",
+                    "STORE",
+                    "LOBBY"
                 ],
                 "2": [
-                    "DECIDE",
-                    "VALUE",
-                    "LOYALTY"
+                    "ROOM",
+                    "READY",
+                    "EARLIER"
                 ],
                 "3": [
-                    "SUPPORT",
-                    "COMMUNITY",
-                    "CHOICE"
+                    "ARRIVE",
+                    "EARLY",
+                    "HOURS"
                 ]
             },
-            "minWords": 38,
-            "hint": "Explain the values that influenced your decision between price and community support.",
-            "explanation": "Good ethical-consumer answers weigh competing values thoughtfully, for example: 'The chain store was cheaper, but I chose to keep shopping locally because the owner had always treated my family well.'",
-            "modelAnswer": "Good ethical-consumer answers weigh competing values thoughtfully, for example: 'The chain store was cheaper, but I chose to keep shopping locally because the owner had always treated my family well.' Explain the values that influenced your decision between price and community support. This serves as a model answer for the situation."
+            "minWords": 36,
+            "hint": "Explain the time gap clearly, then describe the practical arrangement made while you waited for the room.",
+            "explanation": "Time-based service problems, like an early arrival, are resolved with practical, temporary solutions, such as storing luggage, and naming that detail makes the description feel real.",
+            "modelAnswer": "My flight lands almost four hours before the hotel's official check-in time, leaving me tired and unsure what to do with my luggage. The front desk kindly stores my bags securely behind the counter and suggests a nearby café, and by the time I return two hours later, they are able to get my room ready earlier than expected."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L83_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE BILLING DISCREPANCY AND HOW IT WAS RESOLVED",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "A renowned chef agreed to mentor you for a week in their kitchen, but the fast-paced environment was far more demanding than you anticipated. Describe your experience.",
+            "situation": "At checkout, you notice your hotel bill includes charges for services you never used. Describe the situation and how it was resolved with the front desk.",
             "emojis": [
-                "👨‍🍳",
-                "🔥",
-                "😅",
-                "🏆"
-            ],
-            "keywords": {
-                "0": [
-                    "CHEF",
-                    "MENTOR",
-                    "KITCHEN"
-                ],
-                "1": [
-                    "FASTPACED",
-                    "DEMANDING",
-                    "ANTICIPATE"
-                ],
-                "2": [
-                    "STRUGGLE",
-                    "ADAPT",
-                    "LEARN"
-                ],
-                "3": [
-                    "IMPROVE",
-                    "GRATEFUL",
-                    "GROW"
-                ]
-            },
-            "minWords": 38,
-            "hint": "Describe a specific demanding moment and how you adapted to keep up.",
-            "explanation": "Good mentorship-under-pressure answers show growth through difficulty, for example: 'On my first night, I could barely keep up with the orders, but by the end of the week, I had learned to work twice as fast.'",
-            "modelAnswer": "Good mentorship-under-pressure answers show growth through difficulty, for example: 'On my first night, I could barely keep up with the orders, but by the end of the week, I had learned to work twice as fast.' Describe a specific demanding moment and how you adapted to keep up. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L84_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your startup's app went viral overnight, and the sudden traffic surge nearly crashed the entire system. Describe how the small team responded.",
-            "emojis": [
-                "📱",
-                "📈",
-                "😰",
-                "🛠️"
-            ],
-            "keywords": {
-                "0": [
-                    "STARTUP",
-                    "VIRAL",
-                    "OVERNIGHT"
-                ],
-                "1": [
-                    "TRAFFICSURGE",
-                    "NEARLYCRASH",
-                    "SUDDEN"
-                ],
-                "2": [
-                    "TEAM",
-                    "RESPOND",
-                    "SCRAMBLE"
-                ],
-                "3": [
-                    "STABILIZE",
-                    "RELIEF",
-                    "GROW"
-                ]
-            },
-            "minWords": 38,
-            "hint": "Describe the urgent decisions the team made to keep the app running.",
-            "explanation": "Good crisis-response answers show urgency and teamwork, for example: 'We worked through the night upgrading our servers just to keep the app from collapsing under the sudden demand.'",
-            "modelAnswer": "Good crisis-response answers show urgency and teamwork, for example: 'We worked through the night upgrading our servers just to keep the app from collapsing under the sudden demand.' Describe the urgent decisions the team made to keep the app running. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L84_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your company's health insurance changed providers, and the new plan unexpectedly did not cover a medication you relied on. Describe how you addressed the issue.",
-            "emojis": [
-                "💊",
-                "🏢",
-                "😟",
-                "📞"
-            ],
-            "keywords": {
-                "0": [
-                    "INSURANCE",
-                    "CHANGEPROVIDER",
-                    "UNEXPECTED"
-                ],
-                "1": [
-                    "MEDICATION",
-                    "NOTCOVER",
-                    "RELYON"
-                ],
-                "2": [
-                    "CONTACT",
-                    "APPEAL",
-                    "ADVOCATE"
-                ],
-                "3": [
-                    "RESOLVE",
-                    "COVERAGE",
-                    "RELIEF"
-                ]
-            },
-            "minWords": 38,
-            "hint": "Describe the steps you took to resolve the coverage problem.",
-            "explanation": "Good advocacy answers show persistence through bureaucracy, for example: 'I filed a formal appeal with supporting documents from my doctor, and the coverage was eventually approved.'",
-            "modelAnswer": "Good advocacy answers show persistence through bureaucracy, for example: 'I filed a formal appeal with supporting documents from my doctor, and the coverage was eventually approved.' Describe the steps you took to resolve the coverage problem. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L84_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "An independent film you helped fund through crowdfunding finally premiered, but the final version differed significantly from what backers expected. Describe the reaction.",
-            "emojis": [
-                "🎬",
-                "💰",
-                "😕",
-                "🎟️"
-            ],
-            "keywords": {
-                "0": [
-                    "CROWDFUND",
-                    "FILM",
-                    "PREMIERE"
-                ],
-                "1": [
-                    "DIFFER",
-                    "EXPECT",
-                    "SIGNIFICANT"
-                ],
-                "2": [
-                    "BACKER",
-                    "REACT",
-                    "DISAPPOINT"
-                ],
-                "3": [
-                    "DISCUSS",
-                    "UNDERSTAND",
-                    "RESPECT"
-                ]
-            },
-            "minWords": 38,
-            "hint": "Describe the specific difference that surprised backers and how the filmmaker addressed it.",
-            "explanation": "Good creative-accountability answers show honest dialogue, for example: 'Many backers were surprised by the darker tone, so the director held an open Q&A to explain the creative reasoning.'",
-            "modelAnswer": "Good creative-accountability answers show honest dialogue, for example: 'Many backers were surprised by the darker tone, so the director held an open Q&A to explain the creative reasoning.' Describe the specific difference that surprised backers and how the filmmaker addressed it. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L85_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You need to write a message mediating a disagreement between two friends who both want you to take their side. Describe what you write to each of them.",
-            "emojis": [
-                "👫",
-                "⚖️",
-                "💬",
-                "🤝"
-            ],
-            "keywords": {
-                "0": [
-                    "MEDIATE",
-                    "FRIENDS",
-                    "DISAGREEMENT"
-                ],
-                "1": [
-                    "TAKESIDE",
-                    "BOTH",
-                    "PRESSURE"
-                ],
-                "2": [
-                    "NEUTRAL",
-                    "LISTEN",
-                    "FAIR"
-                ],
-                "3": [
-                    "ENCOURAGE",
-                    "RESOLVE",
-                    "MAINTAIN"
-                ]
-            },
-            "minWords": 38,
-            "hint": "Stay neutral while encouraging both friends to communicate directly with each other.",
-            "explanation": "A good mediating message avoids taking sides, for example: 'I care about you both, and I think this is something the two of you should talk through directly rather than through me.'",
-            "modelAnswer": "A good mediating message avoids taking sides, for example: 'I care about you both, and I think this is something the two of you should talk through directly rather than through me.' Stay neutral while encouraging both friends to communicate directly with each other. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L85_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your landlord announced plans to renovate the building, requiring all tenants to temporarily relocate for several weeks. Describe how you prepared for the disruption.",
-            "emojis": [
-                "🏠",
-                "🔨",
-                "📦",
-                "😤"
-            ],
-            "keywords": {
-                "0": [
-                    "LANDLORD",
-                    "RENOVATE",
-                    "TENANT"
-                ],
-                "1": [
-                    "RELOCATE",
-                    "TEMPORARY",
-                    "SEVERALWEEKS"
-                ],
-                "2": [
-                    "PREPARE",
-                    "PACK",
-                    "ARRANGE"
-                ],
-                "3": [
-                    "ADAPT",
-                    "INCONVENIENT",
-                    "MANAGE"
-                ]
-            },
-            "minWords": 38,
-            "hint": "Describe the arrangements you made to manage the temporary disruption.",
-            "explanation": "Good disruption-management answers show practical planning, for example: 'I arranged to stay with a friend for three weeks and put my furniture in storage until the renovation finished.'",
-            "modelAnswer": "Good disruption-management answers show practical planning, for example: 'I arranged to stay with a friend for three weeks and put my furniture in storage until the renovation finished.' Describe the arrangements you made to manage the temporary disruption. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L85_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your thesis advisor suddenly left the university midway through your final research project, leaving you without proper guidance. Describe how you completed your work.",
-            "emojis": [
-                "🎓",
-                "📚",
-                "😰",
-                "🔍"
-            ],
-            "keywords": {
-                "0": [
-                    "THESISADVISOR",
-                    "LEAVE",
-                    "MIDWAY"
-                ],
-                "1": [
-                    "GUIDANCE",
-                    "WITHOUT",
-                    "SUDDENLY"
-                ],
-                "2": [
-                    "RESEARCH",
-                    "COMPLETE",
-                    "INDEPENDENT"
-                ],
-                "3": [
-                    "ADAPT",
-                    "FINISH",
-                    "SUCCEED"
-                ]
-            },
-            "minWords": 38,
-            "hint": "Describe how you found alternative support to finish your research independently.",
-            "explanation": "Good academic-resilience answers show resourcefulness, for example: 'I reached out to two other professors for occasional guidance and relied heavily on my own research skills to finish the thesis on time.'",
-            "modelAnswer": "Good academic-resilience answers show resourcefulness, for example: 'I reached out to two other professors for occasional guidance and relied heavily on my own research skills to finish the thesis on time.' Describe how you found alternative support to finish your research independently. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L86_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your team's project received significant praise from senior leadership, but the credit was mistakenly given to a different department. Describe how the team addressed the misattribution.",
-            "emojis": [
-                "💼",
-                "🏆",
-                "😤",
-                "🗣️"
-            ],
-            "keywords": {
-                "0": [
-                    "PRAISE",
-                    "SENIORLEADERSHIP",
-                    "SIGNIFICANT"
-                ],
-                "1": [
-                    "CREDIT",
-                    "MISTAKE",
-                    "DIFFERENTDEPARTMENT"
-                ],
-                "2": [
-                    "ADDRESS",
-                    "CLARIFY",
-                    "DIPLOMATIC"
-                ],
-                "3": [
-                    "RECOGNIZE",
-                    "RESOLVE",
-                    "FAIR"
-                ]
-            },
-            "minWords": 38,
-            "hint": "Describe how the team raised the issue professionally without seeming petty.",
-            "explanation": "Good professional-recognition answers stay diplomatic, for example: 'Our manager calmly clarified the mix-up in the next leadership meeting, and the correct team received proper recognition.'",
-            "modelAnswer": "Good professional-recognition answers stay diplomatic, for example: 'Our manager calmly clarified the mix-up in the next leadership meeting, and the correct team received proper recognition.' Describe how the team raised the issue professionally without seeming petty. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L86_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your cultural exchange host family had very different customs around mealtimes and personal space, which took time to understand. Describe how you adjusted.",
-            "emojis": [
-                "🏠",
-                "🍽️",
-                "🌍",
-                "😅"
-            ],
-            "keywords": {
-                "0": [
-                    "HOSTFAMILY",
-                    "CUSTOM",
-                    "DIFFERENT"
-                ],
-                "1": [
-                    "MEALTIME",
-                    "PERSONALSPACE",
-                    "UNDERSTAND"
-                ],
-                "2": [
-                    "ADJUST",
-                    "OBSERVE",
-                    "LEARN"
-                ],
-                "3": [
-                    "COMFORTABLE",
-                    "APPRECIATE",
-                    "BOND"
-                ]
-            },
-            "minWords": 38,
-            "hint": "Describe a specific custom that surprised you and how you adapted to it.",
-            "explanation": "Good cross-cultural answers show openness and growth, for example: 'I was surprised that meals lasted nearly two hours, but I grew to appreciate the unhurried conversation that came with it.'",
-            "modelAnswer": "Good cross-cultural answers show openness and growth, for example: 'I was surprised that meals lasted nearly two hours, but I grew to appreciate the unhurried conversation that came with it.' Describe a specific custom that surprised you and how you adapted to it. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L86_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your teenage daughter wanted more independence than you felt comfortable allowing, leading to repeated arguments at home. Describe how you eventually found common ground.",
-            "emojis": [
-                "👧",
-                "😤",
-                "🏠",
-                "🤝"
-            ],
-            "keywords": {
-                "0": [
-                    "TEENAGE",
-                    "INDEPENDENCE",
-                    "UNCOMFORTABLE"
-                ],
-                "1": [
-                    "ARGUMENT",
-                    "REPEAT",
-                    "HOME"
-                ],
-                "2": [
-                    "LISTEN",
-                    "UNDERSTAND",
-                    "NEGOTIATE"
-                ],
-                "3": [
-                    "TRUST",
-                    "COMPROMISE",
-                    "COMMONGROUND"
-                ]
-            },
-            "minWords": 38,
-            "hint": "Describe the compromise that addressed both her need for independence and your concerns.",
-            "explanation": "Good parenting-negotiation answers show mutual respect, for example: 'We agreed she could go out with friends on weekends as long as she texted to let us know she was safe.'",
-            "modelAnswer": "Good parenting-negotiation answers show mutual respect, for example: 'We agreed she could go out with friends on weekends as long as she texted to let us know she was safe.' Describe the compromise that addressed both her need for independence and your concerns. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L87_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "A friend asked you to co-sign a large purchase, but you were uncertain whether it was financially wise to agree. Describe how you made your decision.",
-            "emojis": [
-                "🤝",
-                "💰",
-                "😟",
-                "📝"
-            ],
-            "keywords": {
-                "0": [
-                    "COSIGN",
-                    "LARGEPURCHASE",
-                    "FRIEND"
-                ],
-                "1": [
-                    "UNCERTAIN",
-                    "FINANCIALLY",
-                    "WISE"
-                ],
-                "2": [
-                    "CONSIDER",
-                    "RISK",
-                    "CONSEQUENCE"
-                ],
-                "3": [
-                    "DECIDE",
-                    "BOUNDARY",
-                    "EXPLAIN"
-                ]
-            },
-            "minWords": 39,
-            "hint": "Explain the risks you considered before reaching a final decision.",
-            "explanation": "Good financial-boundary answers show careful reasoning, for example: 'I cared about helping my friend, but co-signing would have put my own credit at risk, so I offered to help in a different way instead.'",
-            "modelAnswer": "Good financial-boundary answers show careful reasoning, for example: 'I cared about helping my friend, but co-signing would have put my own credit at risk, so I offered to help in a different way instead.' Explain the risks you considered before reaching a final decision. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L87_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your community garden project faced unexpected opposition from a few residents who worried about pests and noise. Describe how the organizers addressed the concerns.",
-            "emojis": [
-                "🌱",
-                "🏡",
-                "😟",
-                "🗣️"
-            ],
-            "keywords": {
-                "0": [
-                    "COMMUNITYGARDEN",
-                    "OPPOSITION",
-                    "UNEXPECTED"
-                ],
-                "1": [
-                    "RESIDENT",
-                    "WORRY",
-                    "PEST"
-                ],
-                "2": [
-                    "ADDRESS",
-                    "MEETING",
-                    "EXPLAIN"
-                ],
-                "3": [
-                    "COMPROMISE",
-                    "APPROVE",
-                    "SUCCEED"
-                ]
-            },
-            "minWords": 39,
-            "hint": "Describe the specific concerns raised and how the organizers responded to them.",
-            "explanation": "Good community-project answers show responsive problem-solving, for example: 'The organizers agreed to regular pest control and quiet hours, which eased most residents' concerns.'",
-            "modelAnswer": "Good community-project answers show responsive problem-solving, for example: 'The organizers agreed to regular pest control and quiet hours, which eased most residents' concerns.' Describe the specific concerns raised and how the organizers responded to them. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L87_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your team built a chatbot for customer service, but early testing revealed it gave confusing answers to common questions. Describe how you improved it.",
-            "emojis": [
-                "🤖",
-                "💬",
-                "❓",
-                "🛠️"
-            ],
-            "keywords": {
-                "0": [
-                    "CHATBOT",
-                    "CUSTOMERSERVICE",
-                    "BUILD"
-                ],
-                "1": [
-                    "TESTING",
-                    "CONFUSING",
-                    "REVEAL"
-                ],
-                "2": [
-                    "ANALYZE",
-                    "RETRAIN",
-                    "ADJUST"
-                ],
-                "3": [
-                    "IMPROVE",
-                    "CLEAR",
-                    "SUCCESSFUL"
-                ]
-            },
-            "minWords": 39,
-            "hint": "Describe what kind of mistakes the chatbot made and how the team fixed them.",
-            "explanation": "Good iterative-development answers show a clear improvement process, for example: 'We reviewed the failed conversations, retrained the responses, and the accuracy improved significantly within a week.'",
-            "modelAnswer": "Good iterative-development answers show a clear improvement process, for example: 'We reviewed the failed conversations, retrained the responses, and the accuracy improved significantly within a week.' Describe what kind of mistakes the chatbot made and how the team fixed them. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L88_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your close friend was diagnosed with a chronic illness, and you wanted to support them without being overbearing. Describe how you balanced your support.",
-            "emojis": [
-                "🤍",
-                "🏥",
-                "😟",
-                "🤝"
-            ],
-            "keywords": {
-                "0": [
-                    "FRIEND",
-                    "CHRONICILLNESS",
-                    "DIAGNOSE"
-                ],
-                "1": [
-                    "SUPPORT",
-                    "WITHOUT",
-                    "OVERBEARING"
-                ],
-                "2": [
-                    "BALANCE",
-                    "LISTEN",
-                    "RESPECT"
-                ],
-                "3": [
-                    "PRESENT",
-                    "HELPFUL",
-                    "PATIENT"
-                ]
-            },
-            "minWords": 39,
-            "hint": "Describe how you offered support while letting your friend set the pace.",
-            "explanation": "Good supportive-friendship answers respect autonomy, for example: 'I checked in regularly but let her decide when she wanted to talk about it, which she later told me she appreciated.'",
-            "modelAnswer": "Good supportive-friendship answers respect autonomy, for example: 'I checked in regularly but let her decide when she wanted to talk about it, which she later told me she appreciated.' Describe how you offered support while letting your friend set the pace. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L88_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "A popular video game you helped design received harsh criticism for a feature you personally fought hard to include. Describe how you reflected on the feedback.",
-            "emojis": [
-                "🎮",
-                "😞",
-                "💭",
-                "🛠️"
-            ],
-            "keywords": {
-                "0": [
-                    "VIDEOGAME",
-                    "DESIGN",
-                    "CRITICISM"
-                ],
-                "1": [
-                    "FEATURE",
-                    "FOUGHTFOR",
-                    "PERSONALLY"
-                ],
-                "2": [
-                    "REFLECT",
-                    "FEEDBACK",
-                    "DEFENSIVE"
-                ],
-                "3": [
-                    "REVISE",
-                    "LEARN",
-                    "IMPROVE"
-                ]
-            },
-            "minWords": 39,
-            "hint": "Describe your initial reaction and how you separated personal pride from useful feedback.",
-            "explanation": "Good professional-reflection answers show growth from criticism, for example: 'At first I felt defensive, but rereading the feedback calmly helped me see a fair point I had missed.'",
-            "modelAnswer": "Good professional-reflection answers show growth from criticism, for example: 'At first I felt defensive, but rereading the feedback calmly helped me see a fair point I had missed.' Describe your initial reaction and how you separated personal pride from useful feedback. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L88_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You need to write a message declining a request to lend money to a relative, while keeping the relationship intact. Describe what you write.",
-            "emojis": [
-                "💰",
-                "🙅",
-                "👨‍👩‍👧‍👦",
-                "✉️"
-            ],
-            "keywords": {
-                "0": [
-                    "LENDMONEY",
-                    "DECLINE",
-                    "RELATIVE"
-                ],
-                "1": [
-                    "REQUEST",
-                    "UNCOMFORTABLE",
-                    "FINANCIAL"
-                ],
-                "2": [
-                    "HONEST",
-                    "KIND",
-                    "BOUNDARY"
-                ],
-                "3": [
-                    "RELATIONSHIP",
-                    "MAINTAIN",
-                    "RESPECT"
-                ]
-            },
-            "minWords": 39,
-            "hint": "Be honest about your reasons while expressing continued care for the relationship.",
-            "explanation": "A respectful decline explains a boundary kindly, for example: 'I really want to help, but lending money has caused problems in my own finances before, so I have decided not to lend right now. I still want us to stay close.'",
-            "modelAnswer": "A respectful decline explains a boundary kindly, for example: 'I really want to help, but lending money has caused problems in my own finances before, so I have decided not to lend right now. I still want us to stay close.' Be honest about your reasons while expressing continued care for the relationship. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L89_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your apartment building installed a new keyless entry system, but the unreliable technology locked several residents out during the first week. Describe what happened.",
-            "emojis": [
-                "🔑",
-                "📱",
-                "😤",
-                "🏢"
-            ],
-            "keywords": {
-                "0": [
-                    "KEYLESSENTRY",
-                    "INSTALL",
-                    "SYSTEM"
-                ],
-                "1": [
-                    "UNRELIABLE",
-                    "LOCKEDOUT",
-                    "RESIDENT"
-                ],
-                "2": [
-                    "FRUSTRATED",
-                    "REPORT",
-                    "COMPLAIN"
-                ],
-                "3": [
-                    "FIX",
-                    "IMPROVE",
-                    "RESOLVE"
-                ]
-            },
-            "minWords": 39,
-            "hint": "Describe a specific incident and how the building management responded.",
-            "explanation": "Good technology-malfunction answers show cause and resolution, for example: 'After three residents got locked out overnight, management quickly reverted to traditional keys until the system was fixed.'",
-            "modelAnswer": "Good technology-malfunction answers show cause and resolution, for example: 'After three residents got locked out overnight, management quickly reverted to traditional keys until the system was fixed.' Describe a specific incident and how the building management responded. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L89_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your study group disagreed about how to split the workload fairly for a major group assignment. Describe how the conflict was resolved.",
-            "emojis": [
-                "👥",
-                "📚",
-                "⚖️",
-                "🤝"
-            ],
-            "keywords": {
-                "0": [
-                    "STUDYGROUP",
-                    "WORKLOAD",
-                    "SPLIT"
-                ],
-                "1": [
-                    "DISAGREE",
-                    "FAIR",
-                    "ASSIGNMENT"
-                ],
-                "2": [
-                    "DISCUSS",
-                    "NEGOTIATE",
-                    "COMPROMISE"
-                ],
-                "3": [
-                    "RESOLVE",
-                    "COMPLETE",
-                    "SUCCESSFUL"
-                ]
-            },
-            "minWords": 39,
-            "hint": "Describe the disagreement and the system the group used to divide tasks fairly.",
-            "explanation": "Good group-work answers show structured negotiation, for example: 'We assigned tasks based on each person's strengths and agreed to check in weekly, which resolved the earlier tension.'",
-            "modelAnswer": "Good group-work answers show structured negotiation, for example: 'We assigned tasks based on each person's strengths and agreed to check in weekly, which resolved the earlier tension.' Describe the disagreement and the system the group used to divide tasks fairly. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L89_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "A key client threatened to leave after a major service failure, and your team had forty-eight hours to win back their trust. Describe what the team did.",
-            "emojis": [
-                "💼",
-                "😠",
-                "⏰",
-                "🤝"
-            ],
-            "keywords": {
-                "0": [
-                    "CLIENT",
-                    "THREATEN",
-                    "LEAVE"
-                ],
-                "1": [
-                    "SERVICEFAILURE",
-                    "MAJOR",
-                    "FORTYEIGHTHOURS"
-                ],
-                "2": [
-                    "TEAM",
-                    "RESPOND",
-                    "URGENT"
-                ],
-                "3": [
-                    "REGAIN",
-                    "TRUST",
-                    "SUCCEED"
-                ]
-            },
-            "minWords": 39,
-            "hint": "Describe the urgent actions the team took to address the client's concerns.",
-            "explanation": "Good crisis-recovery answers show decisive action, for example: 'We scheduled an emergency call, offered a sincere apology with a concrete fix, and the client agreed to stay.'",
-            "modelAnswer": "Good crisis-recovery answers show decisive action, for example: 'We scheduled an emergency call, offered a sincere apology with a concrete fix, and the client agreed to stay.' Describe the urgent actions the team took to address the client's concerns. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L90_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your overseas exchange program placed you with a roommate from a culture you knew almost nothing about, leading to early misunderstandings. Describe how the friendship developed.",
-            "emojis": [
-                "🌍",
-                "👫",
-                "❓",
-                "🤝"
-            ],
-            "keywords": {
-                "0": [
-                    "EXCHANGE",
-                    "ROOMMATE",
-                    "CULTURE"
-                ],
-                "1": [
-                    "MISUNDERSTANDING",
-                    "EARLY",
-                    "UNKNOWN"
-                ],
-                "2": [
-                    "CURIOUS",
-                    "ASK",
-                    "LEARN"
-                ],
-                "3": [
-                    "FRIENDSHIP",
-                    "DEVELOP",
-                    "APPRECIATE"
-                ]
-            },
-            "minWords": 40,
-            "hint": "Describe a specific misunderstanding and how curiosity helped resolve it.",
-            "explanation": "Good cross-cultural friendship answers show growth through communication, for example: 'We misunderstood each other's silence at first, but once we talked openly about our customs, we became close friends.'",
-            "modelAnswer": "Good cross-cultural friendship answers show growth through communication, for example: 'We misunderstood each other's silence at first, but once we talked openly about our customs, we became close friends.' Describe a specific misunderstanding and how curiosity helped resolve it. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L90_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your parents disagreed about how much financial support to give you while you searched for your first job after graduation. Describe how the family discussed it.",
-            "emojis": [
-                "👨‍👩‍👧‍👦",
-                "💰",
+                "🧾",
+                "✅",
                 "😕",
                 "💬"
             ],
             "keywords": {
                 "0": [
-                    "PARENTS",
-                    "FINANCIALSUPPORT",
-                    "DISAGREE"
+                    "BILL",
+                    "REVIEW",
+                    "CHECKOUT"
                 ],
                 "1": [
-                    "GRADUATION",
-                    "SEARCH",
-                    "FIRSTJOB"
+                    "REMOVE",
+                    "ADJUST",
+                    "APOLOGY"
                 ],
                 "2": [
-                    "DISCUSS",
-                    "EXPECTATION",
-                    "HONEST"
+                    "CHARGE",
+                    "UNFAMILIAR",
+                    "MINIBAR"
                 ],
                 "3": [
-                    "AGREE",
-                    "SUPPORT",
-                    "INDEPENDENT"
+                    "QUESTION",
+                    "POLITELY",
+                    "EXPLAIN"
                 ]
             },
-            "minWords": 40,
-            "hint": "Describe the different opinions and the agreement the family eventually reached.",
-            "explanation": "Good family-finance answers show honest negotiation, for example: 'My parents agreed to cover rent for three months while I focused fully on finding the right job.'",
-            "modelAnswer": "Good family-finance answers show honest negotiation, for example: 'My parents agreed to cover rent for three months while I focused fully on finding the right job.' Describe the different opinions and the agreement the family eventually reached. This serves as a model answer for the situation."
+            "minWords": 36,
+            "hint": "Point out the specific unfamiliar charge, then describe how the staff investigated and corrected the bill.",
+            "explanation": "Billing disputes are resolved clearly when the specific incorrect charge is named, since this shows the reader exactly what needed correcting, rather than a vague complaint about the total.",
+            "modelAnswer": "While reviewing my final bill at checkout, I notice an unfamiliar charge for minibar snacks I never touched during my stay. I politely point it out to the receptionist, who checks the room's records and quickly realizes the previous guest's charges were mistakenly added to my account, apologizing and removing the amount immediately."
         },
         {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L90_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "id": "WRT_DESCRIBESITUATIONWRITING_L84_Q1",
+            "instruction": "DESCRIBE THE REQUEST AND HOW THE STORE HANDLED IT",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You ordered a wedding dress online from overseas, but customs delays threatened to push delivery past the wedding date. Describe how you handled the stress.",
+            "situation": "You buy a gift at a store and ask them to wrap it and ship it directly to a relative in another city. Describe your request and how the store handled it.",
             "emojis": [
-                "👰",
                 "📦",
-                "😰",
-                "⏰"
+                "🏬",
+                "✅",
+                "🎁"
             ],
             "keywords": {
                 "0": [
-                    "WEDDINGDRESS",
-                    "ORDER",
-                    "OVERSEAS"
+                    "ADDRESS",
+                    "PROVIDE",
+                    "SHIPPING"
                 ],
                 "1": [
-                    "CUSTOMSDELAY",
-                    "THREATEN",
-                    "WEDDINGDATE"
+                    "WRAP",
+                    "REQUEST",
+                    "SPECIAL"
                 ],
                 "2": [
-                    "STRESS",
-                    "CONTACT",
-                    "TRACK"
+                    "CONFIRM",
+                    "TRACKING",
+                    "EMAIL"
                 ],
                 "3": [
-                    "RESOLVE",
-                    "ARRIVE",
-                    "RELIEF"
+                    "GIFT",
+                    "SELECT",
+                    "CHOOSE"
                 ]
             },
-            "minWords": 40,
-            "hint": "Describe the steps you took to track down the dress before the deadline.",
-            "explanation": "Good high-stakes-timing answers show persistence, for example: 'I contacted the shipping company daily, and the dress finally arrived just two days before the ceremony.'",
-            "modelAnswer": "Good high-stakes-timing answers show persistence, for example: 'I contacted the shipping company daily, and the dress finally arrived just two days before the ceremony.' Describe the steps you took to track down the dress before the deadline. This serves as a model answer for the situation."
+            "minWords": 36,
+            "hint": "Describe your specific request clearly, including the wrapping and the shipping address, then how the store confirmed it.",
+            "explanation": "Service requests involving several steps, wrapping and shipping together, are described clearly when each requirement is stated separately rather than combined vaguely.",
+            "modelAnswer": "After choosing a small ceramic vase as a birthday gift, I ask the sales assistant if they can gift-wrap it and ship it directly to my aunt's address in another city. She happily takes down the shipping details, wraps the vase carefully in front of me, and emails me a tracking number a few hours later to confirm it is on its way."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L84_Q2",
+            "instruction": "DESCRIBE THE DEFECTIVE ITEM AND HOW THE RETURN WAS RESOLVED",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "You bring a recently purchased electronic device back to the store because it stopped working after only three days. Describe the situation and how the return was resolved.",
+            "emojis": [
+                "😕",
+                "📱",
+                "✅",
+                "🧾"
+            ],
+            "keywords": {
+                "0": [
+                    "RECEIPT",
+                    "BRING",
+                    "PROOF"
+                ],
+                "1": [
+                    "DEVICE",
+                    "STOPWORKING",
+                    "THREEDAYS"
+                ],
+                "2": [
+                    "REPLACE",
+                    "EXCHANGE",
+                    "NEWDEVICE"
+                ],
+                "3": [
+                    "STAFF",
+                    "TEST",
+                    "CONFIRM"
+                ]
+            },
+            "minWords": 36,
+            "hint": "Explain the defect and bring proof of purchase, then describe the store's specific resolution, such as a replacement.",
+            "explanation": "Return and exchange situations are resolved convincingly through a clear sequence: proof of purchase, verification of the defect, and a specific outcome such as a replacement or refund.",
+            "modelAnswer": "Just three days after buying a new pair of wireless headphones, one side suddenly stops producing sound entirely. I bring them back to the store along with my receipt, and after a staff member confirms the defect himself, he offers me a brand new replacement device on the spot, with no further questions asked."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L84_Q3",
+            "instruction": "DESCRIBE THE NEGOTIATION AND HOW IT WAS RESOLVED",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "You notice a small scratch on a floor model television and decide to ask the salesperson for a discount. Describe the negotiation and how it was resolved.",
+            "emojis": [
+                "✅",
+                "💬",
+                "📺",
+                "💰"
+            ],
+            "keywords": {
+                "0": [
+                    "AGREE",
+                    "REDUCE",
+                    "PRICE"
+                ],
+                "1": [
+                    "FLOORMODEL",
+                    "DISPLAY",
+                    "LAST"
+                ],
+                "2": [
+                    "SCRATCH",
+                    "NOTICE",
+                    "MINOR"
+                ],
+                "3": [
+                    "REQUEST",
+                    "DISCOUNT",
+                    "POLITELY"
+                ]
+            },
+            "minWords": 36,
+            "hint": "Point out the specific flaw, then describe the back-and-forth conversation that leads to a final agreed price.",
+            "explanation": "Price negotiations read clearly when a specific flaw justifies the request, and showing at least one exchange of offers gives the reader a sense of the actual back-and-forth conversation.",
+            "modelAnswer": "Noticing a small scratch along the bottom corner of the last floor model television, I politely ask the salesperson if a discount is possible since it is not a new, boxed unit. After a brief back and forth, he agrees to reduce the price by fifteen percent, and I leave the store satisfied with the deal."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L85_Q1",
+            "instruction": "DESCRIBE THE RESERVATION REQUEST AND HOW IT WAS HANDLED",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "You call a popular restaurant to book a table for a special anniversary dinner, mentioning a dietary restriction. Describe your request and how the staff handled it.",
+            "emojis": [
+                "✅",
+                "📞",
+                "🍽️",
+                "🥗"
+            ],
+            "keywords": {
+                "0": [
+                    "CONFIRM",
+                    "TABLE",
+                    "QUIET"
+                ],
+                "1": [
+                    "RESERVE",
+                    "ANNIVERSARY",
+                    "SPECIAL"
+                ],
+                "2": [
+                    "DIETARY",
+                    "VEGETARIAN",
+                    "MENTION"
+                ],
+                "3": [
+                    "STAFF",
+                    "NOTE",
+                    "ACCOMMODATE"
+                ]
+            },
+            "minWords": 36,
+            "hint": "Include both the special occasion and the dietary need clearly, then describe how the staff confirmed the arrangements.",
+            "explanation": "Reservation requests are described clearly when multiple specific needs, an occasion and a dietary restriction, are both stated, showing the reader a realistic, detailed conversation.",
+            "modelAnswer": "When I call to book a table for our tenth anniversary, I mention that my partner follows a strict vegetarian diet and ask if the chef could prepare something special. The host notes everything carefully, confirms a quiet corner table by the window, and promises the kitchen will have a few vegetarian options ready in advance."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L85_Q2",
+            "instruction": "DESCRIBE THE LOST RESERVATION AND HOW IT WAS RESOLVED",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "You arrive at a restaurant for a reservation you made a week in advance, but the staff has no record of it. Describe the situation and how it was resolved.",
+            "emojis": [
+                "😳",
+                "📋",
+                "✅",
+                "🍽️"
+            ],
+            "keywords": {
+                "0": [
+                    "RECORD",
+                    "MISSING",
+                    "SYSTEM"
+                ],
+                "1": [
+                    "MANAGER",
+                    "APOLOGIZE",
+                    "CHECK"
+                ],
+                "2": [
+                    "TABLE",
+                    "ARRANGE",
+                    "SHORTLY"
+                ],
+                "3": [
+                    "ARRIVE",
+                    "RESERVATION",
+                    "CONFIRM"
+                ]
+            },
+            "minWords": 36,
+            "hint": "Describe your confusion at the lost reservation, then how the manager resolved it despite the mistake.",
+            "explanation": "A lost reservation is a realistic service failure, and showing the manager's specific action, checking availability and finding a solution, gives the resolution real substance rather than a vague apology.",
+            "modelAnswer": "Standing at the host stand, I give my name for our reservation, only to be told with an awkward pause that there is no record of it in the system. The manager apologizes sincerely, checks the floor plan carefully, and within ten minutes manages to arrange a table for us near the back, even offering a complimentary drink for the inconvenience."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L85_Q3",
+            "instruction": "DESCRIBE THE TABLE REQUEST AND HOW IT WAS HANDLED",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "Shortly after being seated at a restaurant, you notice a cold draft coming from a nearby door and ask to move tables. Describe your request and how the staff handled it.",
+            "emojis": [
+                "🌬️",
+                "✅",
+                "🍽️",
+                "💬"
+            ],
+            "keywords": {
+                "0": [
+                    "DRAFT",
+                    "COLD",
+                    "NOTICE"
+                ],
+                "1": [
+                    "MOVE",
+                    "RELOCATE",
+                    "WARMER"
+                ],
+                "2": [
+                    "UNCOMFORTABLE",
+                    "SHIVER",
+                    "SEATED"
+                ],
+                "3": [
+                    "REQUEST",
+                    "POLITELY",
+                    "ASK"
+                ]
+            },
+            "minWords": 36,
+            "hint": "Describe the discomfort clearly, then the polite request you made and how quickly the staff responded.",
+            "explanation": "Small in-the-moment service requests, like changing tables, are resolved smoothly when the request is specific and the response is prompt, both of which are worth naming clearly.",
+            "modelAnswer": "Within minutes of sitting down, I notice a steady cold draft coming from the door beside our table every time someone enters. I politely ask a passing waiter if we could move somewhere warmer, and he apologizes for not noticing sooner, quickly finding us a cozy table near the kitchen instead."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L86_Q1",
+            "instruction": "DESCRIBE THE SCHEDULING CONFLICT AND HOW IT WAS RESOLVED",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "While calling to confirm a doctor's appointment, you realize the scheduled time conflicts with an important work commitment. Describe the situation and how it was resolved.",
+            "emojis": [
+                "📅",
+                "🩺",
+                "✅",
+                "📞"
+            ],
+            "keywords": {
+                "0": [
+                    "RECEPTIONIST",
+                    "APOLOGIZE",
+                    "EXPLAIN"
+                ],
+                "1": [
+                    "CONFLICT",
+                    "REALIZE",
+                    "OVERLAP"
+                ],
+                "2": [
+                    "RESCHEDULE",
+                    "ALTERNATIVE",
+                    "OFFER"
+                ],
+                "3": [
+                    "CONFIRM",
+                    "CALL",
+                    "APPOINTMENT"
+                ]
+            },
+            "minWords": 36,
+            "hint": "Explain the scheduling conflict clearly, then describe how the receptionist helped find a new time.",
+            "explanation": "Appointment rescheduling is a common everyday service situation, and naming the specific reason for the conflict makes the description feel personal rather than generic.",
+            "modelAnswer": "While confirming my appointment over the phone, I suddenly remember that the same afternoon I am scheduled for an important client presentation at work. I explain the conflict apologetically to the receptionist, who checks the calendar and offers me an earlier slot the same week, which fits my schedule far better."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L86_Q2",
+            "instruction": "DESCRIBE THE PAPERWORK ISSUE AND HOW IT WAS RESOLVED",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "You arrive at a new dentist's office for your first appointment and need to fill out unfamiliar insurance paperwork. Describe the situation and how it was resolved.",
+            "emojis": [
+                "📋",
+                "🦷",
+                "✅",
+                "💬"
+            ],
+            "keywords": {
+                "0": [
+                    "INSURANCE",
+                    "CONFUSED",
+                    "UNFAMILIAR"
+                ],
+                "1": [
+                    "ARRIVE",
+                    "NEWPATIENT",
+                    "FORMS"
+                ],
+                "2": [
+                    "COMPLETE",
+                    "SUBMIT",
+                    "CLARIFIED"
+                ],
+                "3": [
+                    "RECEPTIONIST",
+                    "EXPLAIN",
+                    "GUIDE"
+                ]
+            },
+            "minWords": 37,
+            "hint": "Describe your confusion with the forms, then how the receptionist's help resolved the issue before your appointment started.",
+            "explanation": "New-patient paperwork situations are described clearly when the specific confusion, such as unfamiliar insurance terms, is named alongside the staff member's practical help in resolving it.",
+            "modelAnswer": "Filling out the new-patient forms, I get stuck on a section asking for insurance codes I have never seen before, unsure how to answer correctly. Noticing my hesitation, the receptionist kindly walks me through each unfamiliar term, and within a few minutes I finish the paperwork just as the dentist calls me back for my appointment."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L86_Q3",
+            "instruction": "DESCRIBE THE VET VISIT AND HOW THE CONCERN WAS ADDRESSED",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "You bring your dog to the veterinarian after noticing she has been unusually tired for several days. Describe the appointment and how the vet addressed your concern.",
+            "emojis": [
+                "✅",
+                "🩺",
+                "🐕",
+                "😟"
+            ],
+            "keywords": {
+                "0": [
+                    "DIAGNOSIS",
+                    "REASSURE",
+                    "TREATMENT"
+                ],
+                "1": [
+                    "EXPLAIN",
+                    "SYMPTOMS",
+                    "DESCRIBE"
+                ],
+                "2": [
+                    "DOG",
+                    "TIRED",
+                    "NOTICE"
+                ],
+                "3": [
+                    "VET",
+                    "EXAMINE",
+                    "CAREFULLY"
+                ]
+            },
+            "minWords": 37,
+            "hint": "Describe your specific concern about your pet's symptoms, then the vet's examination and eventual explanation.",
+            "explanation": "Veterinary visits are described well when the pet owner's specific observation, such as tiredness over several days, leads directly to the vet's examination and explanation, mirroring how real consultations unfold.",
+            "modelAnswer": "Worried that my dog has been unusually sluggish and uninterested in her food for almost a week, I explain the symptoms carefully to the vet as soon as we sit down. After a thorough examination, she reassures me it is likely a minor stomach issue, prescribes a short course of medication, and asks me to call back if there is no improvement within a few days."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L87_Q1",
+            "instruction": "DESCRIBE OPENING THE ACCOUNT AND HOW THE PROCESS WAS RESOLVED",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "You visit a bank branch to open a new savings account, unsure exactly which documents you need. Describe the situation and how the process was handled.",
+            "emojis": [
+                "✅",
+                "🏦",
+                "📄",
+                "💬"
+            ],
+            "keywords": {
+                "0": [
+                    "ACCOUNT",
+                    "OPEN",
+                    "COMPLETE"
+                ],
+                "1": [
+                    "BRANCH",
+                    "VISIT",
+                    "UNSURE"
+                ],
+                "2": [
+                    "DOCUMENTS",
+                    "MISSING",
+                    "IDENTIFICATION"
+                ],
+                "3": [
+                    "ADVISOR",
+                    "EXPLAIN",
+                    "GUIDE"
+                ]
+            },
+            "minWords": 37,
+            "hint": "Describe your uncertainty about the documents, then how the bank advisor guided you through what was actually needed.",
+            "explanation": "Financial service situations are described clearly when the customer's initial uncertainty is followed by the specific guidance a staff member provides, rather than assuming the process went smoothly from the start.",
+            "modelAnswer": "Unsure exactly which documents I actually need, I arrive at the bank with only my passport and a recent utility bill. The advisor kindly explains that I also need proof of my current address dated within the last three months, and once I email it to her from my phone, she completes the account setup within twenty minutes."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L87_Q2",
+            "instruction": "DESCRIBE THE FRAUDULENT CHARGE AND HOW IT WAS RESOLVED",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "You notice an unfamiliar charge on your credit card statement that you never made. Describe the situation and how it was resolved after contacting the bank.",
+            "emojis": [
+                "😨",
+                "☎️",
+                "✅",
+                "💳"
+            ],
+            "keywords": {
+                "0": [
+                    "CHARGE",
+                    "UNFAMILIAR",
+                    "SUSPICIOUS"
+                ],
+                "1": [
+                    "BANK",
+                    "REPORT",
+                    "DISPUTE"
+                ],
+                "2": [
+                    "REFUND",
+                    "CARDREPLACE",
+                    "RESOLVE"
+                ],
+                "3": [
+                    "STATEMENT",
+                    "REVIEW",
+                    "NOTICE"
+                ]
+            },
+            "minWords": 37,
+            "hint": "Describe the moment you noticed the charge, then the steps the bank took to investigate and resolve it.",
+            "explanation": "Fraud disputes are resolved through a clear process, reporting, investigation, and resolution, and naming each stage shows the reader exactly how the bank handled the concern.",
+            "modelAnswer": "While reviewing my monthly statement, I notice an unfamiliar charge from a store I have never shopped at, and my stomach immediately tightens with worry. I call the bank right away to report it, and after a short investigation, they confirm it was fraudulent, refund the amount within a week, and send me a replacement card."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L87_Q3",
+            "instruction": "DESCRIBE THE LOAN MEETING AND HOW THE TERMS WERE CLARIFIED",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "You meet with a bank advisor to discuss taking out a small business loan, but some of the terms in the paperwork are unclear. Describe the meeting and how the terms were clarified.",
+            "emojis": [
+                "🖊️",
+                "✅",
+                "📄",
+                "💬"
+            ],
+            "keywords": {
+                "0": [
+                    "MEETING",
+                    "ADVISOR",
+                    "DISCUSS"
+                ],
+                "1": [
+                    "UNDERSTAND",
+                    "AGREE",
+                    "SIGN"
+                ],
+                "2": [
+                    "TERMS",
+                    "UNCLEAR",
+                    "CONFUSED"
+                ],
+                "3": [
+                    "QUESTION",
+                    "ASK",
+                    "CLARIFY"
+                ]
+            },
+            "minWords": 37,
+            "hint": "Point out the specific term that confused you, then describe how the advisor explained it clearly before you proceeded.",
+            "explanation": "Financial paperwork situations are described convincingly when a specific confusing term is named, since a vague statement like the paperwork was complicated gives the reader nothing concrete to picture.",
+            "modelAnswer": "Sitting across from the bank advisor, I stop him partway through explaining the interest rate structure, admitting I do not fully understand the difference between the two repayment options listed. He patiently draws a simple comparison on paper, and once I finally understand which option saves more money long term, I feel confident enough to sign the agreement."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L88_Q1",
+            "instruction": "DESCRIBE THE CANCELLATION CALL AND HOW IT WAS HANDLED",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "You call a streaming service to cancel your subscription, and the representative offers you a discount to stay. Describe the call and how the situation was resolved.",
+            "emojis": [
+                "💬",
+                "🖥️",
+                "✅",
+                "📞"
+            ],
+            "keywords": {
+                "0": [
+                    "CONSIDER",
+                    "DECIDE",
+                    "POLITELY"
+                ],
+                "1": [
+                    "REPRESENTATIVE",
+                    "OFFER",
+                    "DISCOUNT"
+                ],
+                "2": [
+                    "CONFIRM",
+                    "FINAL",
+                    "DECISION"
+                ],
+                "3": [
+                    "CALL",
+                    "CANCEL",
+                    "SUBSCRIPTION"
+                ]
+            },
+            "minWords": 37,
+            "hint": "Describe the retention offer clearly, then your final decision, whether you accept it or stick with cancelling.",
+            "explanation": "Customer retention calls are described well when the specific counteroffer is named, since this shows the reader the actual tactic used before revealing the customer's final decision.",
+            "modelAnswer": "When I call to cancel my streaming subscription, the representative immediately offers me a fifty percent discount for the next three months if I decide to stay. After thinking it over for a moment, I politely decline, explaining that I simply do not watch it enough anymore, and she confirms the cancellation without any further pressure."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L88_Q2",
+            "instruction": "DESCRIBE THE OUTAGE CALL AND HOW IT WAS RESOLVED",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "You call your internet provider to report that your connection has been down for hours. Describe the call and the troubleshooting steps that eventually resolved it.",
+            "emojis": [
+                "☎️",
+                "📡",
+                "✅",
+                "🔧"
+            ],
+            "keywords": {
+                "0": [
+                    "REPRESENTATIVE",
+                    "TROUBLESHOOT",
+                    "STEPS"
+                ],
+                "1": [
+                    "INTERNET",
+                    "DOWN",
+                    "HOURS"
+                ],
+                "2": [
+                    "RESTORE",
+                    "CONNECTION",
+                    "RESOLVED"
+                ],
+                "3": [
+                    "ROUTER",
+                    "RESTART",
+                    "UNPLUG"
+                ]
+            },
+            "minWords": 37,
+            "hint": "Describe the specific troubleshooting steps the representative asks you to try, in the order you perform them.",
+            "explanation": "Technical support calls are described clearly through the actual sequence of steps attempted, which mirrors how real troubleshooting works and avoids a vague summary like they fixed it eventually.",
+            "modelAnswer": "After my internet stays down for nearly three hours, I finally call the provider, and the representative first asks me to check if any lights on the router are flashing red. She then walks me through unplugging it for thirty seconds before restarting it, and to my relief, the connection comes back fully within a couple of minutes."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L88_Q3",
+            "instruction": "DESCRIBE THE ESCALATED CALL AND HOW IT WAS RESOLVED",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A billing error on your phone bill remains unresolved after speaking to two different customer service representatives. Describe the situation and how it was finally resolved after speaking to a supervisor.",
+            "emojis": [
+                "✅",
+                "😤",
+                "📱",
+                "☎️"
+            ],
+            "keywords": {
+                "0": [
+                    "RESOLVE",
+                    "CREDIT",
+                    "APOLOGIZE"
+                ],
+                "1": [
+                    "REPRESENTATIVE",
+                    "TRANSFER",
+                    "SECOND"
+                ],
+                "2": [
+                    "BILLING",
+                    "ERROR",
+                    "UNRESOLVED"
+                ],
+                "3": [
+                    "SUPERVISOR",
+                    "REQUEST",
+                    "ESCALATE"
+                ]
+            },
+            "minWords": 38,
+            "hint": "Show your growing frustration through two failed attempts before describing how the supervisor finally resolved it.",
+            "explanation": "Escalation is described convincingly through repetition, showing two unsuccessful attempts before the final resolution, which proves to the reader that persistence, not luck, solved the problem.",
+            "modelAnswer": "The first representative promises to fix the incorrect charge but never follows up, and the second one seems unable to find any record of my previous call at all. Frustrated, I firmly ask to speak with a supervisor, who finally reviews my full account history, applies a credit to correct the error, and personally apologizes for the earlier confusion."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L89_Q1",
+            "instruction": "DESCRIBE THE MEMBERSHIP REQUEST AND HOW IT WAS HANDLED",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "Before a long trip abroad, you ask your gym if you can temporarily freeze your membership instead of cancelling it. Describe your request and how the staff handled it.",
+            "emojis": [
+                "✅",
+                "🏋️",
+                "✈️",
+                "💬"
+            ],
+            "keywords": {
+                "0": [
+                    "APPROVE",
+                    "RESUME",
+                    "RETURN"
+                ],
+                "1": [
+                    "TRAVEL",
+                    "ABROAD",
+                    "MONTHS"
+                ],
+                "2": [
+                    "FREEZE",
+                    "REQUEST",
+                    "MEMBERSHIP"
+                ],
+                "3": [
+                    "STAFF",
+                    "EXPLAIN",
+                    "POLICY"
+                ]
+            },
+            "minWords": 37,
+            "hint": "Explain the reason for your request clearly, then describe how the staff member's response addressed it.",
+            "explanation": "Membership and facility requests are described clearly through the specific reason behind them, since a clear reason, such as travel, helps the reader understand why the policy applies here.",
+            "modelAnswer": "Before leaving for a three-month trip abroad, I ask the gym's front desk if I can freeze my membership instead of paying for months I will not use. The staff member explains their freeze policy allows up to ninety days, approves my request on the spot, and confirms my membership will automatically resume the week I return."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L89_Q2",
+            "instruction": "DESCRIBE THE LIBRARY REQUEST AND HOW IT WAS HANDLED",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A book you need for a research project is not available at your local library. Describe how you requested an interlibrary loan and how the staff handled it.",
+            "emojis": [
+                "🔍",
+                "💬",
+                "✅",
+                "📚"
+            ],
+            "keywords": {
+                "0": [
+                    "LIBRARIAN",
+                    "REQUEST",
+                    "INTERLIBRARY"
+                ],
+                "1": [
+                    "EXPLAIN",
+                    "NEEDED",
+                    "RESEARCH"
+                ],
+                "2": [
+                    "ARRIVE",
+                    "NOTIFY",
+                    "COLLECT"
+                ],
+                "3": [
+                    "SEARCH",
+                    "CATALOG",
+                    "UNAVAILABLE"
+                ]
+            },
+            "minWords": 38,
+            "hint": "Describe how you discovered the book was unavailable, then the specific process the librarian used to help you.",
+            "explanation": "Library service requests are described well when the specific process, such as an interlibrary loan, is named, since this shows a real system at work rather than a vague solution.",
+            "modelAnswer": "After searching the catalog and finding that the specific book I need for my research project is unavailable anywhere in the local system, I ask the librarian for help. She submits an interlibrary loan request from a university library two hours away, and about ten days later, I receive an email notifying me that the book has arrived for me to collect."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L89_Q3",
+            "instruction": "DESCRIBE THE BOOKING CONFLICT AND HOW IT WAS RESOLVED",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "You try to book a room at your local community center for a family event, only to discover the date you want is already taken. Describe the situation and how it was resolved.",
+            "emojis": [
+                "🏢",
+                "✅",
+                "📅",
+                "😕"
+            ],
+            "keywords": {
+                "0": [
+                    "BOOK",
+                    "ROOM",
+                    "REQUEST"
+                ],
+                "1": [
+                    "AGREE",
+                    "NEARBYDATE",
+                    "CONFIRM"
+                ],
+                "2": [
+                    "UNAVAILABLE",
+                    "ALREADYRESERVED",
+                    "DATE"
+                ],
+                "3": [
+                    "STAFF",
+                    "CHECK",
+                    "ALTERNATIVE"
+                ]
+            },
+            "minWords": 38,
+            "hint": "Describe your disappointment at the conflict, then how the staff worked with you to find a workable alternative.",
+            "explanation": "Booking conflicts at public facilities are resolved most convincingly through compromise, and describing a specific nearby alternative shows realistic, practical problem-solving rather than the conflict simply disappearing.",
+            "modelAnswer": "Hoping to book the main hall for my mother's retirement party, I discover the exact Saturday I wanted has already been reserved by another family for the whole afternoon. A little disappointed, I ask the staff member what else is available, and she suggests the following Saturday instead, which, after checking with my family, turns out to work just as well."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L90_Q1",
+            "instruction": "DESCRIBE THE TRAVEL DAY AND HOW EACH PROBLEM WAS RESOLVED",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "During a single day of travel, your flight is delayed, your original hotel reservation falls through, and you must resolve both issues before finally settling in for the night. Describe the full day and how each problem was resolved.",
+            "emojis": [
+                "😩",
+                "🏨",
+                "✅",
+                "✈️"
+            ],
+            "keywords": {
+                "0": [
+                    "REBOOK",
+                    "AIRLINE",
+                    "ALTERNATIVE"
+                ],
+                "1": [
+                    "HOTEL",
+                    "RESERVATION",
+                    "LOST"
+                ],
+                "2": [
+                    "ARRANGE",
+                    "NEWHOTEL",
+                    "SETTLE"
+                ],
+                "3": [
+                    "FLIGHT",
+                    "DELAY",
+                    "ANNOUNCE"
+                ]
+            },
+            "minWords": 38,
+            "hint": "Handle the two separate service problems one at a time, giving each a clear resolution before moving to the next.",
+            "explanation": "Multi-service situations are managed in writing the same way they are managed in real life, one problem resolved fully before attention moves to the next, which keeps a complex day easy to follow.",
+            "modelAnswer": "My flight is delayed by nearly four hours due to a technical issue, forcing the airline to rebook several passengers, including me, onto a later connecting flight. By the time I finally reach my destination close to midnight, the hotel has already given away my unclaimed reservation, but after a tense phone call, the airline agrees to cover a nearby replacement hotel, and I finally collapse into bed just after one in the morning."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L90_Q2",
+            "instruction": "DESCRIBE THE WEDDING DAY CRISIS AND HOW IT WAS RESOLVED",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "On the morning of a wedding, the catering company arrives at the wrong venue while the florist delivers flowers an hour late. Describe the situation and how the wedding planner resolved both problems.",
+            "emojis": [
+                "🚚",
+                "💒",
+                "✅",
+                "😰"
+            ],
+            "keywords": {
+                "0": [
+                    "FLORIST",
+                    "LATE",
+                    "DELIVER"
+                ],
+                "1": [
+                    "CATERER",
+                    "WRONGVENUE",
+                    "ARRIVE"
+                ],
+                "2": [
+                    "CEREMONY",
+                    "BEGIN",
+                    "ONTIME"
+                ],
+                "3": [
+                    "PLANNER",
+                    "CALL",
+                    "REDIRECT"
+                ]
+            },
+            "minWords": 38,
+            "hint": "Show the planner handling both crises calmly, one after the other, before revealing the eventual outcome for the ceremony itself.",
+            "explanation": "High-pressure event situations are believable when the person in charge is shown solving problems in sequence rather than everything resolving itself, which reflects how real event coordination works under stress.",
+            "modelAnswer": "Just two hours before the ceremony, the catering van pulls up to entirely the wrong address across town, while the florist calls to say the flower delivery will now be nearly an hour late. The wedding planner calmly redirects the caterer with clear directions over the phone and rearranges the ceremony schedule slightly to buy the florist extra time, and somehow, by the time guests begin arriving, everything looks perfectly in place."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L90_Q3",
+            "instruction": "DESCRIBE THE RENOVATION SCHEDULING CONFLICT AND HOW IT WAS RESOLVED",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "While coordinating a kitchen renovation, you discover that the plumber and the electrician have both been scheduled for the exact same day, when only one can work in the space at a time. Describe the situation and how it was resolved.",
+            "emojis": [
+                "✅",
+                "🛠️",
+                "🔧",
+                "📅"
+            ],
+            "keywords": {
+                "0": [
+                    "SEQUENCE",
+                    "AGREE",
+                    "PROCEED"
+                ],
+                "1": [
+                    "SCHEDULE",
+                    "OVERLAP",
+                    "SAMEDAY"
+                ],
+                "2": [
+                    "PLUMBER",
+                    "ELECTRICIAN",
+                    "BOTH"
+                ],
+                "3": [
+                    "CONTRACTOR",
+                    "CALL",
+                    "REARRANGE"
+                ]
+            },
+            "minWords": 38,
+            "hint": "Explain the scheduling clash clearly, then describe the specific new order the contractors agreed to follow.",
+            "explanation": "Coordinating several contractors involves managing overlapping schedules, and describing the specific new sequence agreed upon shows the reader a realistic, practical resolution rather than a vague statement about sorting it out.",
+            "modelAnswer": "Reviewing the renovation calendar, I realize with some frustration that both the plumber and the electrician have been booked for Thursday morning, even though the small kitchen space only allows one tradesperson to work safely at a time. After calling both contractors, we agree that the plumber will finish his work by midday, allowing the electrician to begin in the afternoon, and the renovation continues without any further delay."
         }
     ]
 }

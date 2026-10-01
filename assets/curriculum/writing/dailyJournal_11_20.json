@@ -1,577 +1,577 @@
 {
-    "gameType": "dailyJournal",
-    "batchIndex": 2,
-    "levels": "11-20",
-    "quests": [
-        {
-            "id": "WRT_DAILYJOURNAL_L11_Q1",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about sending a message and getting a reply.",
-            "options": [
-                "text",
-                "reply",
-                "later"
-            ],
-            "sampleAnswer": "I sent a text to my friend, and she replied a few hours later.",
-            "hint": "Think about a message you sent and what happened afterward.",
-            "explanation": "The connector 'and' joins two related actions into one clear, simple sentence.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L11_Q2",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about calling someone who could not answer.",
-            "options": [
-                "call",
-                "busy",
-                "voicemail"
-            ],
-            "sampleAnswer": "I tried to call my sister, but she was busy, so I left a voicemail.",
-            "hint": "Think about a call that didn't go through and what you did next.",
-            "explanation": "The connectors 'but' and 'so' link three related ideas smoothly into one natural sentence.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L11_Q3",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about inviting a friend to an event.",
-            "options": [
-                "invite",
-                "party",
-                "excited"
-            ],
-            "sampleAnswer": "I sent an invite for my party, and my friend was really excited.",
-            "hint": "Think about how a friend reacted to being invited somewhere.",
-            "explanation": "Pairing an action with a reaction using 'and' makes a simple sentence feel complete and natural.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L12_Q1",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about doing chores at home.",
-            "options": [
-                "laundry",
-                "dishes",
-                "tired"
-            ],
-            "sampleAnswer": "I did the laundry and washed the dishes, so now I feel quite tired.",
-            "hint": "Think about two chores you did and how you feel afterward.",
-            "explanation": "Joining two actions with 'and' before adding a result with 'so' is a simple way to build a longer sentence.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L12_Q2",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about your weekend plans changing.",
-            "options": [
-                "plan",
-                "rain",
-                "stayed"
-            ],
-            "sampleAnswer": "I had a plan to go out, but it started to rain, so I stayed home.",
-            "hint": "Think about an outdoor plan that was changed by the weather.",
-            "explanation": "This sentence uses 'but' and 'so' together to show a clear cause-and-effect chain in everyday language.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L12_Q3",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about cleaning your room.",
-            "options": [
-                "messy",
-                "cleaned",
-                "neat"
-            ],
-            "sampleAnswer": "My room was messy this morning, but now it looks neat because I cleaned it.",
-            "hint": "Think about how a space looked before and after you cleaned it.",
-            "explanation": "Contrasting 'before' and 'after' with 'but' is a simple, effective way to show change in a sentence.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L13_Q1",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about how you felt during a test.",
-            "options": [
-                "nervous",
-                "exam",
-                "relieved"
-            ],
-            "sampleAnswer": "I felt nervous before the exam, but I was relieved when it was over.",
-            "hint": "Think about your feelings before and after a stressful test.",
-            "explanation": "Using two feeling adjectives connected by 'but' shows how an emotion can change over time.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L13_Q2",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about how a class made you feel.",
-            "options": [
-                "bored",
-                "lecture",
-                "excited"
-            ],
-            "sampleAnswer": "I was bored during the long lecture, but the science class made me excited.",
-            "hint": "Think about one class you find boring and one you find exciting.",
-            "explanation": "Comparing two different feelings about two classes makes the sentence more specific and interesting.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L13_Q3",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about presenting in front of your class.",
-            "options": [
-                "shy",
-                "presentation",
-                "proud"
-            ],
-            "sampleAnswer": "I am usually shy, but I felt proud after finishing my presentation.",
-            "hint": "Think about a personality trait and how an achievement changed your feeling.",
-            "explanation": "This sentence shows personal growth in a single sentence by contrasting a usual trait with a specific moment.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L14_Q1",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about how a busy day at work felt.",
-            "options": [
-                "stressed",
-                "busy",
-                "relaxed"
-            ],
-            "sampleAnswer": "I felt stressed during the busy morning, but I finally relaxed in the afternoon.",
-            "hint": "Think about how your mood changed during one work day.",
-            "explanation": "Showing an emotional shift from morning to afternoon makes a simple work journal entry feel realistic.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L14_Q2",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about receiving good news at work.",
-            "options": [
-                "promotion",
-                "surprised",
-                "happy"
-            ],
-            "sampleAnswer": "I was surprised and very happy when I heard about my promotion.",
-            "hint": "Think about good news you received and how it made you feel.",
-            "explanation": "Listing two positive feelings together strengthens the emotional impact of good news in writing.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L14_Q3",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about a difficult task at work.",
-            "options": [
-                "confused",
-                "task",
-                "confident"
-            ],
-            "sampleAnswer": "I felt confused about the new task at first, but now I feel confident.",
-            "hint": "Think about a task that was hard to understand but later made sense.",
-            "explanation": "Contrasting confusion with confidence shows progress, which makes the writing more engaging.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L15_Q1",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about a trip you are planning.",
-            "options": [
-                "going",
-                "beach",
-                "weekend"
-            ],
-            "sampleAnswer": "I am going to the beach with my family this weekend.",
-            "hint": "Think about a short trip you have already decided to take soon.",
-            "explanation": "'Going to' is the simplest way to talk about a plan that is already decided.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L15_Q2",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about a place you plan to visit next year.",
-            "options": [
-                "going",
-                "visit",
-                "country"
-            ],
-            "sampleAnswer": "Next year, I am going to visit a new country for the first time.",
-            "hint": "Think about a travel goal you have for the near future.",
-            "explanation": "Adding a time phrase like 'next year' makes a future plan feel more specific and real.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L15_Q3",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about preparing for an upcoming trip.",
-            "options": [
-                "going",
-                "pack",
-                "tomorrow"
-            ],
-            "sampleAnswer": "I am going to pack my suitcase tomorrow morning before the trip.",
-            "hint": "Think about a task you plan to do right before you travel.",
-            "explanation": "This sentence uses 'going to' with a clear time word, 'tomorrow,' to show a near-future plan.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L16_Q1",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about a family event you are planning.",
-            "options": [
-                "going",
-                "visit",
-                "grandparents"
-            ],
-            "sampleAnswer": "We are going to visit my grandparents this Sunday afternoon.",
-            "hint": "Think about a family visit you already have planned.",
-            "explanation": "'Going to' clearly expresses a decided plan involving family members.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L16_Q2",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about a celebration your family is planning.",
-            "options": [
-                "going",
-                "celebrate",
-                "birthday"
-            ],
-            "sampleAnswer": "My family is going to celebrate my sister's birthday next week.",
-            "hint": "Think about an upcoming celebration in your family.",
-            "explanation": "Using 'going to' with a specific event makes the future plan clear and easy to picture.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L16_Q3",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about a family meal you are planning.",
-            "options": [
-                "going",
-                "cook",
-                "together"
-            ],
-            "sampleAnswer": "This weekend, my family is going to cook dinner together.",
-            "hint": "Think about a meal your family plans to make as a group.",
-            "explanation": "Adding 'together' shows that the planned activity involves more than one person, which adds detail.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L17_Q1",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Answer this question in one sentence: What did you buy recently?",
-            "options": [
-                "bought",
-                "jacket",
-                "store"
-            ],
-            "sampleAnswer": "I bought a warm jacket from a store near my house.",
-            "hint": "Think about a recent purchase and where you got it.",
-            "explanation": "Answering a Wh- question directly with a simple past sentence is good practice for clear, complete writing.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L17_Q2",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Answer this question in one sentence: Why did you return an item?",
-            "options": [
-                "returned",
-                "size",
-                "wrong"
-            ],
-            "sampleAnswer": "I returned the shoes because the size was wrong.",
-            "hint": "Think about a reason you once had to return something you bought.",
-            "explanation": "Using 'because' to answer a 'why' question directly is a simple, clear way to explain a reason.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L17_Q3",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Answer this question in one sentence: What do you usually buy at the supermarket?",
-            "options": [
-                "usually",
-                "buy",
-                "groceries"
-            ],
-            "sampleAnswer": "I usually buy fresh groceries and a few snacks at the supermarket.",
-            "hint": "Think about the items that are always on your shopping list.",
-            "explanation": "The word 'usually' signals a habit, which directly answers a question about routine behavior.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L18_Q1",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Answer this question in one sentence: What did you cook last night?",
-            "options": [
-                "cooked",
-                "rice",
-                "chicken"
-            ],
-            "sampleAnswer": "Last night, I cooked rice with grilled chicken for dinner.",
-            "hint": "Think about the last meal you actually prepared yourself.",
-            "explanation": "Answering with a time word and a simple past verb makes a clear, direct response to the question.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L18_Q2",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Answer this question in one sentence: Why do you like a certain restaurant?",
-            "options": [
-                "restaurant",
-                "friendly",
-                "delicious"
-            ],
-            "sampleAnswer": "I like that restaurant because the staff is friendly and the food is delicious.",
-            "hint": "Think of two reasons you enjoy going to a particular restaurant.",
-            "explanation": "Giving two reasons after 'because' makes an opinion sound more convincing and complete.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L18_Q3",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Answer this question in one sentence: What is something you have never tried?",
-            "options": [
-                "never",
-                "tried",
-                "sushi"
-            ],
-            "sampleAnswer": "I have never tried sushi, but I want to soon.",
-            "hint": "Think of a food you haven't eaten yet but are curious about.",
-            "explanation": "The present perfect 'have never tried' is the natural way to talk about a lifetime experience.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L19_Q1",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence giving your opinion about social media.",
-            "options": [
-                "think",
-                "social",
-                "addictive"
-            ],
-            "sampleAnswer": "I think social media can be addictive because it's so easy to keep scrolling.",
-            "hint": "Think about why social media can be hard to put down.",
-            "explanation": "The pattern 'I think...because' is a simple but powerful way to state and support an opinion.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L19_Q2",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence giving your opinion about online shopping.",
-            "options": [
-                "think",
-                "online",
-                "convenient"
-            ],
-            "sampleAnswer": "I think online shopping is convenient because I can buy things from home.",
-            "hint": "Think about why shopping online saves you time or effort.",
-            "explanation": "Supporting an opinion with a clear reason after 'because' makes a simple sentence more persuasive.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L19_Q3",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence giving your opinion about smartphones in class.",
-            "options": [
-                "think",
-                "phones",
-                "distracting"
-            ],
-            "sampleAnswer": "I think phones in class are distracting because students check messages constantly.",
-            "hint": "Think about why phones might make it hard to focus during lessons.",
-            "explanation": "This sentence models how to state a simple opinion and justify it with one clear reason.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L20_Q1",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence giving your opinion about sleep.",
-            "options": [
-                "think",
-                "sleep",
-                "important"
-            ],
-            "sampleAnswer": "I think sleep is really important because it helps me focus the next day.",
-            "hint": "Think about why getting enough rest matters to you personally.",
-            "explanation": "The 'I think...because' structure helps beginners express and support an opinion clearly.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L20_Q2",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence giving your opinion about drinking water.",
-            "options": [
-                "think",
-                "water",
-                "healthy"
-            ],
-            "sampleAnswer": "I think drinking enough water is healthy because it keeps my body energized.",
-            "hint": "Think about one benefit you notice when you drink enough water.",
-            "explanation": "Stating a benefit after 'because' turns a simple opinion into a more convincing statement.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L20_Q3",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence giving your opinion about regular exercise.",
-            "options": [
-                "think",
-                "exercise",
-                "energy"
-            ],
-            "sampleAnswer": "I think regular exercise gives me more energy because it wakes up my whole body.",
-            "hint": "Think about how moving your body changes the way you feel.",
-            "explanation": "This sentence shows how a simple cause-and-effect reason can strengthen a basic personal opinion.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        }
-    ]
+  "gameType": "dailyJournal",
+  "batchIndex": 2,
+  "levels": "11-20",
+  "quests": [
+    {
+      "id": "WRT_DAILYJOURNAL_L11_Q1",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about something you did yesterday that you don't normally do.",
+      "options": [
+        "yesterday",
+        "tried",
+        "unusual"
+      ],
+      "sampleAnswer": "Yesterday I tried a new bakery near my office instead of going to my usual coffee shop.",
+      "hint": "Think of one small break from your normal routine.",
+      "explanation": "The word \"yesterday\" signals simple past tense and anchors the sentence to a specific finished day.",
+      "promptQuestions": [
+        "What did you do differently yesterday?",
+        "Why did you decide to try something new?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L11_Q2",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about a conversation you had yesterday that you remember clearly.",
+      "options": [
+        "phone",
+        "call",
+        "laughed"
+      ],
+      "sampleAnswer": "I called my sister yesterday, and we ended up laughing about a story from years ago.",
+      "hint": "Name who you spoke with and briefly what happened during the conversation.",
+      "explanation": "Combining who, how, and what (\"called... ended up laughing\") gives a short but complete memory.",
+      "promptQuestions": [
+        "Who did you talk to yesterday?",
+        "What made the conversation memorable?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L11_Q3",
+      "instruction": "Write one or two connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a decision you made yesterday and what led you to make it.",
+      "options": [
+        "decided",
+        "instead",
+        "reason"
+      ],
+      "sampleAnswer": "Yesterday I decided to walk home instead of taking the bus because the weather was too nice to waste.",
+      "hint": "State the decision first, then use \"because\" to give your reason.",
+      "explanation": "Placing the reason after the decision (\"decided... because\") mirrors how people naturally explain choices out loud.",
+      "promptQuestions": [
+        "What decision did you make?",
+        "What was your main reason for it?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L12_Q1",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about something unexpected that happened this morning.",
+      "options": [
+        "unexpected",
+        "spilled",
+        "rush"
+      ],
+      "sampleAnswer": "This morning I spilled coffee on my shirt right as I was about to rush out the door.",
+      "hint": "Pick a small, believable surprise, not something huge.",
+      "explanation": "The word \"right as\" shows the surprise happened at the worst possible moment, which adds natural humor or frustration.",
+      "promptQuestions": [
+        "What surprised you this morning?",
+        "How did it change your plans, if at all?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L12_Q2",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about a small delay you experienced this morning.",
+      "options": [
+        "delayed",
+        "train",
+        "waited"
+      ],
+      "sampleAnswer": "My train was delayed by fifteen minutes this morning, so I waited on the platform scrolling through my phone.",
+      "hint": "Name the delay, then add what you did while waiting.",
+      "explanation": "Adding what you did during the wait (\"scrolling through my phone\") makes the moment feel real instead of just stating a fact.",
+      "promptQuestions": [
+        "What caused the delay?",
+        "What did you do while you waited?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L12_Q3",
+      "instruction": "Write one or two connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a small mistake you made this morning and how you noticed it.",
+      "options": [
+        "forgot",
+        "realized",
+        "turned"
+      ],
+      "sampleAnswer": "I forgot my umbrella at home, and I only realized it when the rain started as I stepped off the bus.",
+      "hint": "Describe the mistake first, then the exact moment you noticed it.",
+      "explanation": "Sequencing the mistake before the realization (\"forgot... only realized\") builds a small, natural moment of surprise.",
+      "promptQuestions": [
+        "What mistake did you make?",
+        "When exactly did you notice it?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L13_Q1",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about what you did last night before falling asleep.",
+      "options": [
+        "last night",
+        "read",
+        "late"
+      ],
+      "sampleAnswer": "Last night I stayed up later than I planned, reading a book I couldn't put down.",
+      "hint": "Think about your actual activity, not just \"I went to sleep\".",
+      "explanation": "Phrases like \"later than I planned\" show a gap between intention and reality, which feels natural in journal writing.",
+      "promptQuestions": [
+        "What kept you up last night?",
+        "Was it something you planned to do?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L13_Q2",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about a sound or noise that you noticed last night.",
+      "options": [
+        "rain",
+        "window",
+        "noticed"
+      ],
+      "sampleAnswer": "I noticed the rain tapping against my window for almost an hour before I finally fell asleep.",
+      "hint": "Focus on one specific sound and how long you noticed it.",
+      "explanation": "Sensory details like sound make a simple sentence feel more vivid and specific than a general statement.",
+      "promptQuestions": [
+        "What sound did you notice?",
+        "How did it affect your night?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L13_Q3",
+      "instruction": "Write one or two connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a text message or call you received last night and how you responded.",
+      "options": [
+        "message",
+        "late",
+        "replied"
+      ],
+      "sampleAnswer": "A friend messaged me late last night asking for advice, so I stayed up a bit longer to reply properly.",
+      "hint": "Explain what the message was about and what you chose to do about it.",
+      "explanation": "Showing a small choice (\"so I stayed up... to reply\") turns a simple event into a mini decision with a reason.",
+      "promptQuestions": [
+        "Who contacted you?",
+        "What did you decide to do about it?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L14_Q1",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about a small problem you had recently.",
+      "options": [
+        "recently",
+        "broke",
+        "annoying"
+      ],
+      "sampleAnswer": "My headphones broke last week, which has been pretty annoying during my commute.",
+      "hint": "Name the problem and one way it has affected you.",
+      "explanation": "Describing the effect of a problem (\"which has been annoying during\") makes the sentence more than just a complaint.",
+      "promptQuestions": [
+        "What problem did you have?",
+        "How has it affected your routine?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L14_Q2",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about a task that took longer than you expected this week.",
+      "options": [
+        "drag on",
+        "patience",
+        "clock"
+      ],
+      "sampleAnswer": "Cleaning my apartment took almost three hours, much longer than I had expected.",
+      "hint": "State the task, then compare the actual time to your expectation.",
+      "explanation": "Comparing expectation to reality (\"much longer than I had expected\") is a simple but effective way to show frustration.",
+      "promptQuestions": [
+        "What task took longer than planned?",
+        "How did the extra time affect your day?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L14_Q3",
+      "instruction": "Write one or two connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a small argument or disagreement you had recently and what it was about.",
+      "options": [
+        "disagreement",
+        "roommate",
+        "schedule"
+      ],
+      "sampleAnswer": "My roommate and I had a small disagreement about the cleaning schedule, but we sorted it out over dinner.",
+      "hint": "Explain who the disagreement was with and briefly how it ended.",
+      "explanation": "Mentioning the resolution (\"but we sorted it out\") keeps the tone realistic and prevents the sentence from sounding overly negative.",
+      "promptQuestions": [
+        "Who was the disagreement with?",
+        "How did it end?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L15_Q1",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about something small you accomplished this week.",
+      "options": [
+        "finished",
+        "proud",
+        "finally"
+      ],
+      "sampleAnswer": "I finally finished the book I had been reading on and off for a month.",
+      "hint": "Pick a small, specific accomplishment, not something huge.",
+      "explanation": "Small, specific accomplishments feel more authentic in a journal than vague statements like \"I did well\".",
+      "promptQuestions": [
+        "What did you accomplish?",
+        "Why does it feel like an achievement to you?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L15_Q2",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about a moment recently when you handled a problem well.",
+      "options": [
+        "handled",
+        "calmly",
+        "solved"
+      ],
+      "sampleAnswer": "When my laptop crashed during a meeting, I stayed calm and solved it in a few minutes.",
+      "hint": "Describe the problem briefly, then focus on how you responded.",
+      "explanation": "Focusing on your response, not just the problem, highlights personal growth and confidence.",
+      "promptQuestions": [
+        "What problem did you handle?",
+        "What did you do that made it go well?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L15_Q3",
+      "instruction": "Write one or two connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about something you learned to do recently, even something small.",
+      "options": [
+        "learned",
+        "practice",
+        "easier"
+      ],
+      "sampleAnswer": "I learned how to make a simple pasta sauce this week, and it got easier after a bit of practice.",
+      "hint": "Name the new skill, then mention how practice changed your experience.",
+      "explanation": "Mentioning improvement over time (\"got easier after a bit of practice\") shows growth instead of a single flat statement.",
+      "promptQuestions": [
+        "What new thing did you learn?",
+        "How did it feel to improve at it?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L16_Q1",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about your reaction to a piece of news you heard this week.",
+      "options": [
+        "headline",
+        "gut reaction",
+        "unforeseen"
+      ],
+      "sampleAnswer": "I was surprised to hear that my favorite coffee shop is closing at the end of the month.",
+      "hint": "Name the news, then describe your honest reaction to it.",
+      "explanation": "Starting with a feeling word (\"I was surprised to hear\") signals your reaction before you even give the details.",
+      "promptQuestions": [
+        "What news surprised you?",
+        "How did you react when you first heard it?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L16_Q2",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about how you felt after reading a message from someone important to you.",
+      "options": [
+        "message",
+        "relieved",
+        "checked"
+      ],
+      "sampleAnswer": "I felt relieved after reading my mother's message saying she had arrived home safely.",
+      "hint": "Name who sent the message and the feeling it caused.",
+      "explanation": "Connecting the message content to a feeling shows why the message mattered, not just that it existed.",
+      "promptQuestions": [
+        "Who sent the message?",
+        "Why did it affect you the way it did?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L16_Q3",
+      "instruction": "Write one or two connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about news that changed your plans for the day or week.",
+      "options": [
+        "cancelled",
+        "changed",
+        "instead"
+      ],
+      "sampleAnswer": "My weekend trip got cancelled because of the weather, so I ended up rearranging my whole schedule instead.",
+      "hint": "Explain the news first, then what you had to change because of it.",
+      "explanation": "Showing cause and effect (\"got cancelled... so I ended up\") connects an outside event to your own actions.",
+      "promptQuestions": [
+        "What news changed your plans?",
+        "What did you do differently as a result?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L17_Q1",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about a change in your daily routine recently.",
+      "options": [
+        "changed",
+        "earlier",
+        "adjusting"
+      ],
+      "sampleAnswer": "I've started waking up an hour earlier this week, and I'm still adjusting to it.",
+      "hint": "Name what changed, and add how you feel about adjusting to it.",
+      "explanation": "The present perfect (\"I've started\") connects a past change to how things are right now.",
+      "promptQuestions": [
+        "What changed in your routine?",
+        "How are you adjusting to it so far?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L17_Q2",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about something you stopped doing recently and why.",
+      "options": [
+        "stopped",
+        "habit",
+        "healthier"
+      ],
+      "sampleAnswer": "I stopped drinking soda a few weeks ago because I wanted to feel a bit healthier.",
+      "hint": "Name the habit you stopped, then give one clear reason.",
+      "explanation": "Explaining motivation (\"because I wanted to\") turns a simple fact into a small personal goal.",
+      "promptQuestions": [
+        "What habit did you stop?",
+        "What motivated the change?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L17_Q3",
+      "instruction": "Write one or two connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a new routine you started recently and how it's going so far.",
+      "options": [
+        "habit",
+        "adjusting",
+        "early days"
+      ],
+      "sampleAnswer": "I started going for short walks after dinner, and so far it has helped me sleep a little better.",
+      "hint": "Describe the new routine and one early result you've noticed.",
+      "explanation": "Mentioning an early result (\"so far it has helped\") shows the routine is still developing, which feels honest.",
+      "promptQuestions": [
+        "What new routine did you start?",
+        "What result have you noticed so far?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L18_Q1",
+      "instruction": "Write two connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about two things that happened yesterday afternoon, in the order they happened.",
+      "options": [
+        "afternoon",
+        "then",
+        "later"
+      ],
+      "sampleAnswer": "I finished a work call around two, and then I met a friend for coffee an hour later.",
+      "hint": "Use a time word between the two events to keep the order clear.",
+      "explanation": "A single connector like \"and then\" links two separate events into one smooth timeline.",
+      "promptQuestions": [
+        "What happened first yesterday afternoon?",
+        "What happened right after that?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L18_Q2",
+      "instruction": "Write two connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about how your evening started and how it ended, in order.",
+      "options": [
+        "unwind",
+        "shift",
+        "close of day"
+      ],
+      "sampleAnswer": "My evening started with a quiet dinner at home, and it eventually ended with a long phone call with an old friend.",
+      "hint": "Describe the beginning of the evening, then describe how it finished.",
+      "explanation": "Framing the evening as \"started with... ended with\" gives even a simple entry a clear shape.",
+      "promptQuestions": [
+        "How did your evening begin?",
+        "How did it eventually end?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L18_Q3",
+      "instruction": "Write two or three connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a small errand you ran recently, describing what happened before, during, and after.",
+      "options": [
+        "task",
+        "along the way",
+        "wrap-up"
+      ],
+      "sampleAnswer": "Before heading to the pharmacy, I checked my list twice, and while I was there, the line moved faster than expected, so I was home again within twenty minutes.",
+      "hint": "Break the errand into three parts: before, during, and after.",
+      "explanation": "Dividing an event into before/during/after is a simple structure that makes even small errands easy to narrate clearly.",
+      "promptQuestions": [
+        "What did you do before the errand?",
+        "What happened once you were there, and afterward?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L19_Q1",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about a pleasant surprise you had recently.",
+      "options": [
+        "surprise",
+        "unexpected",
+        "happy"
+      ],
+      "sampleAnswer": "I was pleasantly surprised when an old classmate messaged me out of nowhere after years of silence.",
+      "hint": "Describe the surprise and briefly why it was unexpected.",
+      "explanation": "Explaining why something was unexpected (\"after years of silence\") gives the surprise more meaning.",
+      "promptQuestions": [
+        "What surprised you?",
+        "Why was it unexpected?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L19_Q2",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about an unpleasant surprise you had recently and how you reacted.",
+      "options": [
+        "jolt",
+        "composure",
+        "handled"
+      ],
+      "sampleAnswer": "I was frustrated to discover a parking fine on my windshield, but I stayed calm and paid it online right away.",
+      "hint": "Name the surprise, then focus on how you handled it.",
+      "explanation": "Ending on your reaction (\"but I stayed calm\") keeps the tone balanced instead of purely negative.",
+      "promptQuestions": [
+        "What unpleasant surprise did you face?",
+        "How did you react to it?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L19_Q3",
+      "instruction": "Write one or two connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a moment recently when something turned out better than you expected.",
+      "options": [
+        "guess",
+        "outcome",
+        "pleasant"
+      ],
+      "sampleAnswer": "I expected the job interview to go badly, but it turned out to be one of the smoothest conversations I've had in a while.",
+      "hint": "Start with your expectation, then contrast it with what actually happened.",
+      "explanation": "Contrasting expectation with outcome (\"expected... but it turned out\") is a natural way to build a small twist into your writing.",
+      "promptQuestions": [
+        "What did you expect to happen?",
+        "How did the actual result compare to your expectation?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L20_Q1",
+      "instruction": "Write two connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a small problem you faced recently and how you resolved it.",
+      "options": [
+        "snag",
+        "fix",
+        "relief"
+      ],
+      "sampleAnswer": "My phone kept freezing all week, so I finally restarted it completely and the issue disappeared.",
+      "hint": "Describe the problem in one part, then the solution in the next.",
+      "explanation": "Following a problem directly with its solution (\"so I finally\") gives the sentence a satisfying, complete shape.",
+      "promptQuestions": [
+        "What was the problem?",
+        "What finally solved it?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L20_Q2",
+      "instruction": "Write two connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a plan that didn't work out recently and what you did instead.",
+      "options": [
+        "fell through",
+        "backup",
+        "pivot"
+      ],
+      "sampleAnswer": "My plan to study at the library fell through because it was closed, so I adjusted and worked from a café instead.",
+      "hint": "Explain what went wrong with the original plan, then your backup choice.",
+      "explanation": "Showing a backup plan (\"so I adjusted... instead\") demonstrates flexibility, a useful skill to describe in writing.",
+      "promptQuestions": [
+        "What was your original plan?",
+        "What did you do when it didn't work out?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L20_Q3",
+      "instruction": "Write three connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write a short entry about something that went wrong this week, what you did about it, and how it turned out in the end.",
+      "options": [
+        "hiccup",
+        "response",
+        "ending"
+      ],
+      "sampleAnswer": "Early this week, I missed an important deadline because I misread the date. I emailed my manager right away to explain and asked for one extra day. In the end, she understood completely, and the situation turned out far less stressful than I had feared.",
+      "hint": "Move through three parts: the problem, your action, and the final result.",
+      "explanation": "This problem–action–result pattern is a small but complete story shape you'll use often in journal writing.",
+      "promptQuestions": [
+        "What went wrong this week?",
+        "What did you do, and how did it turn out?"
+      ]
+    }
+  ]
 }

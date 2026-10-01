@@ -5,572 +5,602 @@
     "quests": [
         {
             "id": "WRT_SHORTANSWERWRITING_L161_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Give a nuanced answer in a single sentence, acknowledging another side. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how a critical researcher interrogates unstated assumptions within foundational academic literature.",
+            "prompt": "Is social media harmful to teenagers? Give a nuanced answer.",
             "options": [
-                "interrogate",
-                "assumption",
-                "literature"
+                "neither",
+                "passive",
+                "depends"
             ],
-            "sampleAnswer": "A rigorous researcher interrogates the unstated assumptions embedded in foundational literature before building upon its conclusions.",
-            "hint": "Name what a rigorous researcher does to existing literature, then state what must happen before building on it.",
-            "explanation": "'Before building upon its conclusions' shows that interrogation precedes construction - critique is not destructive but foundational.",
+            "sampleAnswer": "Social media is neither clearly harmful nor harmless: it depends on how teenagers use it, since passive scrolling seems worse than talking with friends.",
+            "hint": "Avoid a yes-or-no answer and name what the effect depends on.",
+            "explanation": "A nuanced answer identifies the variable that changes the result, so it is more accurate than a simple yes or no.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "depends",
+                "neither",
+                "passive"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L161_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a balanced answer in a single sentence that shows more than one view. Use all three words naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how machine learning systems improve their accuracy through repeated exposure to training data.",
+            "prompt": "Is competition good for students? Give a nuanced answer.",
             "options": [
-                "machine learning",
-                "improve",
-                "repeated"
+                "healthy",
+                "pressure",
+                "excessive"
             ],
-            "sampleAnswer": "Machine learning systems gradually improve their accuracy through repeated exposure to large volumes of training data.",
-            "hint": "Name the type of system, then explain how repeated exposure to data changes its performance over time.",
-            "explanation": "'Gradually improve' signals that learning is incremental - the system doesn't understand all at once, but refines itself with each pass through the data.",
+            "sampleAnswer": "Competition can be healthy when it motivates students, but excessive competition creates pressure that harms both learning and wellbeing.",
+            "hint": "State when it helps and when it harms.",
+            "explanation": "A nuanced view identifies the point at which something changes from helpful to harmful.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "excessive",
+                "healthy",
+                "pressure"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L161_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Give a nuanced answer in a single sentence, acknowledging another side. Make sure all three words fit the meaning.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why some people's opinions get dismissed more easily than others in a discussion, regardless of merit.",
+            "prompt": "Should companies monitor employee productivity? Give a nuanced answer.",
             "options": [
-                "dismiss",
-                "credibility",
-                "regardless"
+                "trust",
+                "monitoring",
+                "outcomes"
             ],
-            "sampleAnswer": "Some voices get dismissed too easily in group discussions, regardless of merit, simply because listeners assign them less credibility.",
-            "hint": "Name what happens to some voices in discussions, then explain the unfair reason behind it.",
-            "explanation": "'Regardless of merit' is the key phrase - it shows the dismissal is based on bias, not on the actual quality of the argument.",
+            "sampleAnswer": "Monitoring can help when it focuses on outcomes, but tracking every minute damages trust and often reduces the quality of the work.",
+            "hint": "Separate two kinds of monitoring and judge them differently.",
+            "explanation": "Splitting a topic into kinds, here outcome-based and constant monitoring, shows that the answer is different for each kind instead of one flat verdict.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "monitoring",
+                "outcomes",
+                "trust"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L162_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Give a nuanced answer in one clear sentence, acknowledging another side. Include the three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how the language used by institutions can shape what people believe is normal or acceptable.",
+            "prompt": "Does eating breakfast improve concentration? Give a careful, evidence-aware answer.",
             "options": [
-                "institution",
-                "shape",
-                "acceptable"
+                "evidence",
+                "although",
+                "suggests"
             ],
-            "sampleAnswer": "Language used by powerful institutions can quietly shape what an entire society comes to view as normal and acceptable.",
-            "hint": "Name what kind of language has this power, then explain what it gradually changes in society's thinking.",
-            "explanation": "'Quietly shape' suggests the influence works gradually and often invisibly - people rarely notice their assumptions being formed this way.",
+            "sampleAnswer": "Some evidence suggests that breakfast helps concentration, although the effect appears small and may differ from person to person.",
+            "hint": "Use 'some evidence suggests' and 'although' to show the limits.",
+            "explanation": "Careful academic writing avoids absolute claims, and phrases like 'some evidence suggests' show the strength of the evidence.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "although",
+                "evidence",
+                "suggests"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L162_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Give a nuanced answer in a single sentence, acknowledging another side. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why continuous innovation, not just natural resources, drives a country's long-term economic growth.",
+            "prompt": "Are open-plan offices bad for productivity? Give a careful answer.",
             "options": [
-                "innovation",
-                "long-term",
-                "resource"
+                "studies",
+                "mixed",
+                "concentration"
             ],
-            "sampleAnswer": "Sustained innovation drives long-term economic growth far more reliably than an abundance of natural resources alone.",
-            "hint": "State what drives lasting growth, then compare it favorably to relying on natural resources.",
-            "explanation": "Comparing innovation to natural resources with 'far more reliably' makes a clear, defensible claim - one factor is more sustainable than the other.",
+            "sampleAnswer": "Studies on open-plan offices are mixed: some report weaker concentration, while others find better collaboration, so the outcome probably depends on the work.",
+            "hint": "Report that the results are mixed and say what may explain it.",
+            "explanation": "Reporting mixed evidence honestly is more accurate than picking a side, and naming what may explain the difference shows analytical care.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "concentration",
+                "mixed",
+                "studies"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L162_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Give a nuanced answer in one clear sentence, acknowledging another side. Use the three words meaningfully.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about a simple test for judging whether an action is ethical: asking what would happen if everyone did it.",
+            "prompt": "Do bilingual people have better memory? Give a careful answer.",
             "options": [
-                "universal",
-                "duty",
-                "consequence"
+                "limited",
+                "advantage",
+                "research"
             ],
-            "sampleAnswer": "One useful ethical test asks whether an action would remain acceptable as a universal duty, not just a convenient one-time consequence.",
-            "hint": "Name the test, then explain what it asks you to imagine everyone doing.",
-            "explanation": "Framing an action as a 'universal duty' forces you to judge it by a consistent standard, not by convenient exceptions made just for yourself.",
+            "sampleAnswer": "Research suggests a possible advantage for bilinguals, but the evidence is limited, and the results differ between studies.",
+            "hint": "Use hedges for the claim and state the limit.",
+            "explanation": "Hedging words such as 'possible' and 'limited' match the strength of your claim to the strength of the evidence.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "advantage",
+                "limited",
+                "research"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L163_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Show how one thing leads to another in one sentence. Include all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how a strong academic essay maintains a consistent argumentative trajectory from opening to synthesis.",
+            "prompt": "Explain the chain: more remote work, less demand for offices, and what may follow for city centers.",
             "options": [
-                "trajectory",
-                "argument",
-                "maintain"
+                "remote",
+                "eventually",
+                "demand"
             ],
-            "sampleAnswer": "The best essays maintain a coherent argumentative trajectory from the opening thesis through every paragraph to the final synthesis.",
-            "hint": "State what the best essays maintain, then trace the argument's path from start to finish.",
-            "explanation": "'From the opening thesis...to the final synthesis' names the two poles of the argumentative arc precisely.",
+            "sampleAnswer": "As more people work remotely, demand for offices falls, which reduces footfall in city centers and eventually forces some shops and cafes to close.",
+            "hint": "Show each link in the chain with a connecting word.",
+            "explanation": "A causal chain needs each link, and words like 'eventually' show that the effects take time.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "demand",
+                "eventually",
+                "remote"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L163_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Explain the cause and its effect in a single sentence. Each word should appear in your answer.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how CRISPR-Cas9 enables precision editing of specific genomic sequences.",
+            "prompt": "Explain how traffic can create a self-reinforcing problem.",
             "options": [
-                "edit",
-                "genome",
-                "precision"
+                "vicious",
+                "encourages",
+                "congestion"
             ],
-            "sampleAnswer": "The CRISPR-Cas9 system enables precision genome editing by directing molecular scissors to specific DNA sequences with unprecedented accuracy.",
-            "hint": "Name the gene-editing system, then describe the mechanism using a vivid comparison.",
-            "explanation": "'Directing molecular scissors to specific DNA sequences' uses a vivid explanatory metaphor grounded in biochemical fact.",
+            "sampleAnswer": "Congestion encourages people to leave earlier, which puts more cars on the road at the same time, creating a vicious circle.",
+            "hint": "Show how the effect feeds back into the cause.",
+            "explanation": "A feedback loop is explained by showing how the result makes the original cause stronger.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "congestion",
+                "encourages",
+                "vicious"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L163_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Show how one thing leads to another in a single sentence. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how schools and the media can pass on a society's shared values to each new generation.",
+            "prompt": "Describe an unintended consequence of a well-meant rule.",
             "options": [
-                "institution",
-                "pass on",
-                "generation"
+                "backfire",
+                "intended",
+                "unintended"
             ],
-            "sampleAnswer": "Schools and the media function as powerful institutions that pass on a society's shared values to each new generation.",
-            "hint": "Name two institutions that transmit values, then say who receives them.",
-            "explanation": "Naming specific institutions ('schools and the media') grounds an abstract idea in concrete, recognizable examples.",
+            "sampleAnswer": "The rule was intended to reduce waste, but it had an unintended effect: people bought more small packages, so it backfired.",
+            "hint": "Say what was intended and what happened instead.",
+            "explanation": "Unintended consequences show that good aims are not enough, and the contrast between intended and unintended makes the point clear.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "backfire",
+                "intended",
+                "unintended"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L164_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Explain what would happen in a single sentence. Each word should appear in your answer.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how the same factual sentence can sound either neutral or biased depending on which words a writer selects.",
+            "prompt": "A product launch failed because it was not tested. Say what would have happened with testing.",
             "options": [
-                "neutral",
-                "biased",
-                "select"
+                "errors",
+                "would have",
+                "tested"
             ],
-            "sampleAnswer": "The same factual sentence can sound neutral or subtly biased, depending entirely on which words a writer chooses to select.",
-            "hint": "State the two possible tones the same fact can carry, then explain what causes the difference.",
-            "explanation": "This shows that 'objective' facts are never fully separate from language choices - even neutral-sounding claims involve decisions that can tilt a reader's impression.",
+            "sampleAnswer": "If the team had tested the product, they would have found the errors and avoided the failed launch.",
+            "hint": "Use the third conditional: 'if... had', 'would have'.",
+            "explanation": "The third conditional talks about a past that did not happen and what its result would have been.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "errors",
+                "tested",
+                "would have"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L164_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a conditional answer in one sentence. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why emergent properties at the macro level of complex systems cannot be predicted from their micro components.",
+            "prompt": "A traveler missed a connection because she left late. Explain what would have been different.",
             "options": [
-                "emergent property",
-                "macro",
-                "micro"
+                "missed",
+                "would have",
+                "earlier"
             ],
-            "sampleAnswer": "Emergent properties at the macro level cannot be predicted from micro-level analysis alone, however thoroughly the components are studied.",
-            "hint": "Use 'Emergent properties at the macro level of complex systems cannot be predicted from micro-level analysis' and add 'alone' plus a concession.",
-            "explanation": "'Alone' is the critical qualifier - micro-level analysis is necessary but insufficient for explaining macro emergence.",
+            "sampleAnswer": "If she had left earlier, she would not have missed the connection, and she would have arrived on time.",
+            "hint": "Use a past perfect in the 'if' clause.",
+            "explanation": "Past perfect in the 'if' clause and 'would have' in the result is the standard structure for regrets about the past.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "earlier",
+                "missed",
+                "would have"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L164_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a conditional answer in one sentence. Make sure all three words fit the meaning.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about what moral realism asserts about the existence and nature of objective moral facts.",
+            "prompt": "Imagine your city had never built its main metro or bus system. Say how daily life would be different.",
             "options": [
-                "objective",
-                "moral fact",
-                "independent"
+                "depend",
+                "would",
+                "never"
             ],
-            "sampleAnswer": "Moral realists assert that objective moral facts exist independently of any human attitude, culture, or belief system.",
-            "hint": "Name what moral realists claim exists, then list what these facts don't depend on.",
-            "explanation": "Three parallel nouns ('attitude, culture, or belief system') show the range of human phenomena that moral facts transcend.",
+            "sampleAnswer": "If the city had never built its main transport system, many residents would depend on cars, and the center would probably be far more congested.",
+            "hint": "Mix the third conditional with a present result.",
+            "explanation": "Mixed conditionals link a past change to a present result, so they let you explain how a decision made long ago still affects daily life today.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "depend",
+                "never",
+                "would"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L165_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Describe the problem and a practical fix in one sentence. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how invoking a canonical intellectual tradition lends authority and legitimacy to an argument.",
+            "prompt": "Describe how to make a slow approval process faster, using precise vocabulary.",
             "options": [
-                "invoke",
-                "tradition",
-                "legitimize"
+                "streamline",
+                "bottleneck",
+                "redundant"
             ],
-            "sampleAnswer": "Writers often invoke a canonical philosophical tradition to legitimize an argument by situating it within a well-established intellectual lineage.",
-            "hint": "State what writers do to a canonical tradition, then describe the positioning this achieves for their argument.",
-            "explanation": "'Well-established intellectual lineage' treats the tradition as a resource that confers scholarly authority on whoever invokes it.",
+            "sampleAnswer": "To streamline the process, we should find the bottleneck, which is the final approval, and remove redundant steps that repeat earlier checks.",
+            "hint": "Use exact words for the problem instead of 'slow' and 'bad'.",
+            "explanation": "Precise words such as 'bottleneck' and 'redundant' say exactly what is wrong, so the reader knows what to fix.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "bottleneck",
+                "redundant",
+                "streamline"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L165_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Describe the problem and a practical fix in one sentence. Each word should appear in your answer.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about what the second law of thermodynamics states about entropy in irreversible physical processes.",
+            "prompt": "Describe a website that is confusing using precise vocabulary.",
             "options": [
-                "entropy",
-                "disorder",
-                "irreversible"
+                "cluttered",
+                "navigation",
+                "intuitive"
             ],
-            "sampleAnswer": "The second law of thermodynamics states that entropy - the measure of disorder - increases in every irreversible physical process.",
-            "hint": "State the law and define the key term using a dash, then specify which processes it applies to.",
-            "explanation": "The em-dash appositive ('- the measure of disorder -') defines entropy parenthetically - a formal explanatory device.",
+            "sampleAnswer": "The site's navigation is confusing because the pages are cluttered, and the menu is not intuitive for new visitors.",
+            "hint": "Choose exact words for design problems, such as navigation and clutter, instead of saying the site is bad.",
+            "explanation": "Specific vocabulary makes a complaint more convincing, because the site owner can see exactly which parts of the design cause the confusion.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "cluttered",
+                "intuitive",
+                "navigation"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L165_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Describe the problem and a practical fix in one sentence. Make sure all three words fit the meaning.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how knowing you are being watched can change your behaviour even without anyone actually intervening.",
+            "prompt": "Describe an unreliable supplier using precise vocabulary.",
             "options": [
-                "surveillance",
-                "behaviour",
-                "internalize"
+                "unreliable",
+                "delivery",
+                "inconsistent"
             ],
-            "sampleAnswer": "Constant surveillance can change behaviour on its own, as people internalize the sense of being watched and start to police themselves.",
-            "hint": "State what surveillance alone can do to behaviour, then explain what people start doing to themselves as a result.",
-            "explanation": "'Police themselves' captures the core idea - the mere possibility of being watched can be as powerful as being watched directly.",
+            "sampleAnswer": "The supplier is unreliable: delivery dates are inconsistent, and the quality varies from one order to the next.",
+            "hint": "Choose exact words for the type of unreliability.",
+            "explanation": "Precise adjectives such as 'inconsistent' show the kind of problem, so the reader knows how to respond.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "delivery",
+                "inconsistent",
+                "unreliable"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L166_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Give your reason. Work in each of the three words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how appositive phrases work syntactically to embed additional information beside a noun.",
+            "prompt": "Write two sentences about the benefits of exercise. Connect the second sentence with 'in addition'.",
             "options": [
-                "appositive",
-                "embed",
-                "syntactically"
+                "in addition",
+                "mood",
+                "exercise"
             ],
-            "sampleAnswer": "An appositive phrase is syntactically embedded beside its head noun, providing supplementary identity or classificatory information.",
-            "hint": "Name the grammatical structure, then describe what kind of information it adds beside the noun.",
-            "explanation": "'Supplementary identity or classificatory information' distinguishes what appositives add - they name or categorise.",
+            "sampleAnswer": "Regular exercise improves physical health. In addition, it lifts mood and helps people manage stress.",
+            "hint": "Use 'in addition' to add a related idea in the second sentence.",
+            "explanation": "Linking words connect sentences so that a paragraph reads as one argument, and 'in addition' tells the reader that the second point supports the first.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "exercise",
+                "in addition",
+                "mood"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L166_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a comparison that shows how they differ. Include the three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how environmental signals can produce heritable changes in gene expression through epigenetic mechanisms.",
+            "prompt": "Write two sentences comparing city and country life. Use 'nevertheless' to link them.",
             "options": [
-                "gene expression",
-                "environmental",
-                "heritable"
+                "peaceful",
+                "noisy",
+                "nevertheless"
             ],
-            "sampleAnswer": "Environmental factors can trigger heritable changes in gene expression through epigenetic mechanisms that do not alter the DNA sequence itself.",
-            "hint": "State what environmental factors can trigger, then add a defining clause about what stays unchanged.",
-            "explanation": "'That do not alter the DNA sequence itself' distinguishes epigenetic from genetic change - a critical biological distinction.",
+            "sampleAnswer": "City life is often noisy and crowded. Nevertheless, many people prefer it to the peaceful countryside because of the opportunities it offers.",
+            "hint": "Use 'nevertheless' to show that a fact does not change the conclusion.",
+            "explanation": "'Nevertheless' signals that the second sentence holds true in spite of the first, which lets you admit a drawback without changing your conclusion.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "nevertheless",
+                "noisy",
+                "peaceful"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L166_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Explain the cause and its effect. Use the three words meaningfully.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how a heavily edited social media image can start to feel more real to viewers than reality itself.",
+            "prompt": "Write two sentences about a company's problem and its result. Use 'consequently' to link them.",
             "options": [
-                "curated",
-                "authentic",
-                "perception"
+                "shortage",
+                "consequently",
+                "stock"
             ],
-            "sampleAnswer": "A carefully curated social media image can shape perception so powerfully that it starts to feel more authentic than everyday reality.",
-            "hint": "Name the kind of image that shapes perception, then explain the surprising effect it can have compared to real life.",
-            "explanation": "Calling the curated image 'more authentic' than reality is a deliberate paradox - it captures how convincing polished images have become.",
+            "sampleAnswer": "The company had a shortage of stock in December. Consequently, it lost several large orders.",
+            "hint": "Put the cause in the first sentence, then use 'consequently' to introduce what happened as a result.",
+            "explanation": "'Consequently' marks the result of the previous sentence and works best in formal writing.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "consequently",
+                "shortage",
+                "stock"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L167_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Clarify in one clear sentence so nothing is confusing. Include all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how academic writers use tentative language to posit a theory pending further empirical verification.",
+            "prompt": "A server upgrade caused 30 minutes of downtime. Explain it to a technical colleague.",
             "options": [
-                "tentatively",
-                "posit",
-                "pending"
+                "downtime",
+                "upgrade",
+                "rollback"
             ],
-            "sampleAnswer": "The theory is tentatively posited as a working hypothesis pending independent empirical validation from multiple research groups.",
-            "hint": "State how the theory is presented cautiously, then specify what it's still waiting for.",
-            "explanation": "'From multiple research groups' adds a condition for independent replication - a standard of scientific rigour.",
+            "sampleAnswer": "The server upgrade caused 30 minutes of downtime, so we did a rollback and will test the configuration before the next attempt.",
+            "hint": "Use the specific terms that a technical colleague expects.",
+            "explanation": "Technical readers value precise terms and actions, and using them shows that you understand their needs.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "downtime",
+                "rollback",
+                "upgrade"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L167_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Make the meaning clear in one sentence. Make sure all three words fit the meaning.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how vaccines train the immune system to recognize and fight future infections.",
+            "prompt": "Explain the same downtime to a customer who is not technical.",
             "options": [
-                "immune system",
-                "recognize",
-                "train"
+                "apologize",
+                "temporarily",
+                "unavailable"
             ],
-            "sampleAnswer": "Vaccines train the immune system to recognize a specific pathogen, preparing the body to fight off future infections rapidly.",
-            "hint": "Name what vaccines train, then explain what this preparation allows the body to do later.",
-            "explanation": "'Train' is a fitting verb - the immune system doesn't just react, it learns and retains a memory of the threat for future encounters.",
+            "sampleAnswer": "We apologize that the service was temporarily unavailable for half an hour while we improved our systems, and everything is working normally again.",
+            "hint": "Avoid technical terms and lead with an apology and the current situation.",
+            "explanation": "Non-technical readers need the effect on them and the current status, not the technical steps.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "apologize",
+                "temporarily",
+                "unavailable"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L167_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Explain it in a single sentence so the other person understands. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how the meaning of a word can shift depending on the context surrounding it.",
+            "prompt": "Explain the same downtime to a manager who needs to decide about a customer message.",
             "options": [
-                "shift",
-                "context",
-                "precise"
+                "recommend",
+                "impact",
+                "resolved"
             ],
-            "sampleAnswer": "A word's meaning can shift dramatically depending on context, which is why precise writers choose their surrounding words with care.",
-            "hint": "State what can change a word's meaning, then explain what careful writers do as a result.",
-            "explanation": "Linking context sensitivity to writer behaviour ('choose their surrounding words with care') turns an abstract linguistic fact into practical writing advice.",
+            "sampleAnswer": "The impact was 30 minutes of downtime, which is now resolved, and I recommend sending customers a short apology today.",
+            "hint": "Give the impact, the status, and your recommendation.",
+            "explanation": "Managers need the impact, the current status, and a recommended action, and nothing more, because they are deciding what to do next.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "impact",
+                "recommend",
+                "resolved"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L168_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Reply in one or two sentences as you would in real life. Use the three words meaningfully.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how excessive nominalisation increases lexical density but can obscure meaning without conciseness.",
+            "prompt": "Tell a friend informally that you cannot come to her party, and why.",
             "options": [
-                "nominalize",
-                "density",
-                "conciseness"
+                "gutted",
+                "sorry",
+                "another"
             ],
-            "sampleAnswer": "Heavy nominalization increases lexical density significantly but can obscure meaning if not balanced with conciseness.",
-            "hint": "Use 'Heavy nominalization increases lexical density significantly but can obscure' and specify the condition for clarity.",
-            "explanation": "'If not balanced with conciseness' shows that nominalization is a risk when used without restraint.",
+            "sampleAnswer": "I'm so sorry, I'm gutted, but I can't make it because I have to work. Let's do something another time soon!",
+            "hint": "Keep it warm and casual with contractions, an exclamation, and an offer to meet another time.",
+            "explanation": "Informal writing uses contractions, exclamations, and colloquial words such as 'gutted', which show closeness and real feeling to a friend.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "another",
+                "gutted",
+                "sorry"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L168_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Respond in a single sentence in a clear, polite workplace tone. Include all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how Marxist theory identifies contradictions within capitalist accumulation as drivers of systemic crisis.",
+            "prompt": "Tell a client formally that you cannot attend a meeting.",
             "options": [
-                "accumulation",
-                "contradiction",
-                "capital"
+                "attend",
+                "reschedule",
+                "regret"
             ],
-            "sampleAnswer": "Marxist theory identifies the inherent contradictions within capital accumulation as the structural driver of recurring economic crisis.",
-            "hint": "Name the theory, then state what it identifies as the underlying driver of economic crisis.",
-            "explanation": "'Structural driver of recurring economic crisis' is precise - the contradictions are built in, not accidental.",
+            "sampleAnswer": "I regret to inform you that I will be unable to attend the meeting, and I would be grateful if we could reschedule.",
+            "hint": "Use formal phrases, avoid contractions, and end with a polite request to reschedule.",
+            "explanation": "Formal writing avoids contractions and uses fixed phrases such as 'I regret to inform you'.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "attend",
+                "regret",
+                "reschedule"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L168_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a concise workplace message in a single sentence. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how separate groups with different specific goals can unite around one shared political cause.",
+            "prompt": "Tell a colleague you cannot attend a team meeting, in a friendly-professional tone.",
             "options": [
-                "coalition",
-                "unite",
-                "shared"
+                "clash",
+                "catch up",
+                "afraid"
             ],
-            "sampleAnswer": "Diverse groups with very different specific goals can still form a coalition and unite around one shared, larger cause.",
-            "hint": "Name what forms when different groups work together, then state what draws them together despite their differences.",
-            "explanation": "The contrast between 'different specific goals' and 'one shared, larger cause' shows how coalitions work: unity on the big picture, not on every detail.",
+            "sampleAnswer": "I'm afraid I can't make the meeting because of a clash with another commitment, but I'd be happy to catch up afterwards.",
+            "hint": "Aim for polite but relaxed, with contractions but no slang, and offer a way to catch up.",
+            "explanation": "A friendly-professional tone lies between the two: contractions are fine, but the language remains polite.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "afraid",
+                "catch up",
+                "clash"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L169_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Summarize the key information. Include all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how a strong essay can combine two opposing viewpoints into a more complete third position.",
+            "prompt": "Explain in one sentence of about twenty words why regular breaks improve work.",
             "options": [
-                "opposing",
-                "combine",
-                "complete"
+                "breaks",
+                "focus",
+                "restore"
             ],
-            "sampleAnswer": "A strong essay can combine two opposing viewpoints into a more complete position that keeps what is valuable in each.",
-            "hint": "Name what a strong essay does with two conflicting views, then explain what it keeps from each one.",
-            "explanation": "Keeping 'what is valuable in each' shows genuine synthesis, not just picking a side - the strongest arguments often draw from multiple perspectives.",
+            "sampleAnswer": "Regular breaks restore attention and energy, so people can maintain their focus and make fewer mistakes during the day.",
+            "hint": "Include the effect and the benefit in a single sentence of around twenty words.",
+            "explanation": "Concision means keeping only the most important information, and a length limit forces you to choose it.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "breaks",
+                "focus",
+                "restore"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L169_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Summarize the key information. Include the three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how excessive cognitive load impairs working memory and reduces performance on complex tasks.",
+            "prompt": "Summarize in one sentence what a good apology includes.",
             "options": [
-                "working memory",
-                "cognitive load",
-                "impair"
+                "acknowledges",
+                "responsibility",
+                "apology"
             ],
-            "sampleAnswer": "Excessive cognitive load impairs working memory capacity, reducing the resources available for complex reasoning and decision-making.",
-            "hint": "State what excessive load does to memory, then describe the effect on complex tasks.",
-            "explanation": "'Resources available for complex reasoning and decision-making' identifies the specific cognitive capacities affected.",
+            "sampleAnswer": "A good apology acknowledges the mistake, accepts responsibility, and offers a way to put things right.",
+            "hint": "Use three parallel verbs that describe what a good apology contains.",
+            "explanation": "Parallel verbs give a compact list that is easy to remember, and a one-sentence limit forces you to keep only the essential elements.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "acknowledges",
+                "apology",
+                "responsibility"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L169_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Summarize the key information. Make sure all three words fit the meaning.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about the feeling of being awestruck when confronted with something vast, like a mountain range or the night sky.",
+            "prompt": "Summarize in one sentence why clear instructions save time.",
             "options": [
-                "awestruck",
-                "vast",
-                "insignificant"
+                "instructions",
+                "prevent",
+                "misunderstandings"
             ],
-            "sampleAnswer": "Standing before something vast, like a star-filled night sky, can leave you feeling awestruck and briefly insignificant.",
-            "hint": "Give an example of something vast, then describe the two feelings it can create in a person.",
-            "explanation": "Pairing 'awestruck' with 'insignificant' captures a real emotional paradox - awe can be both thrilling and humbling at once.",
+            "sampleAnswer": "Clear instructions prevent misunderstandings, so people spend less time asking questions or fixing mistakes.",
+            "hint": "State the cause, which is clarity, and the saving, which is time, in one sentence.",
+            "explanation": "Concise writing links cause and effect in a single sentence and does not repeat itself.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "instructions",
+                "misunderstandings",
+                "prevent"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L170_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Give a nuanced answer in one sentence, acknowledging another side. Include all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about what it means for a philosophical argument to be internally consistent and logically valid.",
+            "prompt": "Give a nuanced opinion on placing sensors that track traffic and noise across a city.",
             "options": [
-                "internally consistent",
-                "logical validity",
-                "argument"
+                "sensors",
+                "depends",
+                "privacy"
             ],
-            "sampleAnswer": "A philosophically rigorous argument must be internally consistent and satisfy the formal requirements of logical validity throughout.",
-            "hint": "State the two requirements a rigorous argument must meet, then specify how consistently they must hold.",
-            "explanation": "'Throughout' signals that consistency must be sustained across the entire argument, not just in isolated sections.",
+            "sampleAnswer": "Sensors can improve city planning, but whether they are acceptable depends on how the data is used and whether it protects privacy.",
+            "hint": "State your position and name the condition on which your judgment depends, such as how data is used.",
+            "explanation": "A nuanced position names the condition on which the judgment depends, so the reader sees that you neither fully accept nor fully reject the idea.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "depends",
+                "privacy",
+                "sensors"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L170_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Explain the cause and its effect in a single sentence. Include the three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how historians use large datasets to identify long-term patterns across centuries of human history.",
+            "prompt": "Explain a possible chain of effects from better traffic data.",
             "options": [
-                "dataset",
-                "pattern",
-                "century"
+                "congestion",
+                "adjust",
+                "data"
             ],
-            "sampleAnswer": "By analyzing large datasets that span many centuries, historians can identify long-term patterns hidden within individual events.",
-            "hint": "Name what historians analyze, then explain what long-term view this method reveals.",
-            "explanation": "'Hidden within individual events' shows the value of this method - patterns only become visible at scale, not when looking at any single moment.",
+            "sampleAnswer": "Better data lets the city adjust traffic lights in real time, which reduces congestion and shortens journeys.",
+            "hint": "Show two or three linked effects, each one causing the next, starting from the data.",
+            "explanation": "A chain of effects explains how a small change can produce a larger result.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "adjust",
+                "congestion",
+                "data"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L170_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a conditional answer in a single sentence. Include all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how the Sapir-Whorf hypothesis argues that language shapes the structure of thought and cognition.",
+            "prompt": "Say what would have happened if the city had not collected any data before building new roads.",
             "options": [
-                "shape",
-                "cognition",
-                "relativity"
+                "collected",
+                "without",
+                "wasted"
             ],
-            "sampleAnswer": "The Sapir-Whorf hypothesis proposes that language shapes cognition through degrees of linguistic relativity that vary across cultures.",
-            "hint": "Name the hypothesis, then explain what it claims language does to thought.",
-            "explanation": "'That vary across cultures' is a defining relative clause - it shows that the effect is not uniform but culturally specific.",
+            "sampleAnswer": "If the city had not collected data, it would have built roads without knowing where they were needed, and money would have been wasted.",
+            "hint": "Use the third conditional to imagine the past.",
+            "explanation": "The third conditional shows how a past decision would have led to a different outcome.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "collected",
+                "wasted",
+                "without"
             ]
         }
     ]

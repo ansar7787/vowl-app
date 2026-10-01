@@ -1,817 +1,637 @@
 {
-    "gameType": "summarizeStoryWriting",
-    "batchIndex": 14,
-    "levels": "131-140",
-    "quests": [
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L131_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A veteran negotiator walked into her final contract talks having lost the previous two rounds on nearly identical terms. She shifted the entire discussion away from price toward long-term delivery guarantees instead. The other side agreed to terms more favorable than either of the two previous rounds.",
-            "options": [
-                "She walked away from the table without reaching any agreement at all.",
-                "A veteran negotiator walked into her final contract talks having lost the previous two rounds on nearly identical terms.",
-                "She shifted the entire discussion away from price toward long-term delivery guarantees instead.",
-                "The other side agreed to terms more favorable than either of the two previous rounds."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Notice what actually happens once the negotiator shifts the discussion away from price.",
-            "explanation": "Because the other side agrees to more favorable terms, an option showing her walking away without any agreement contradicts that outcome.",
-            "storyKeyEvents": [
-                "A veteran negotiator walked into her final contract talks having lost the previous two rounds on nearly identical terms.",
-                "She shifted the entire discussion away from price toward long-term delivery guarantees instead.",
-                "The other side agreed to terms more favorable than either of the two previous rounds.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L131_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "Two rival auto parts suppliers had undercut each other's prices for years until neither could turn a meaningful profit. Executives from both companies agreed to a joint venture covering just one shared product line. Combined profits from that product line exceeded what either company had earned alone.",
-            "options": [
-                "Two rival auto parts suppliers had undercut each other's prices for years until neither could turn a meaningful profit.",
-                "Regulators blocked the joint venture before it could take effect.",
-                "Executives from both companies agreed to a joint venture covering just one shared product line.",
-                "Combined profits from that product line exceeded what either company had earned alone."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Check whether regulators actually block the joint venture in the passage.",
-            "explanation": "Because combined profits exceed what either earned alone, an option showing regulators blocking the venture contradicts it ever taking effect.",
-            "storyKeyEvents": [
-                "Two rival auto parts suppliers had undercut each other's prices for years until neither could turn a meaningful profit.",
-                "Executives from both companies agreed to a joint venture covering just one shared product line.",
-                "Combined profits from that product line exceeded what either company had earned alone.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L131_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A veteran diplomat had watched three previous rounds of border talks collapse over the exact same disputed clause. She proposed removing that clause entirely and addressing it in a separate side agreement. Both sides signed the main agreement within a week of that proposal.",
-            "options": [
-                "A veteran diplomat had watched three previous rounds of border talks collapse over the exact same disputed clause.",
-                "She proposed removing that clause entirely and addressing it in a separate side agreement.",
-                "Talks collapsed a fourth time over the same disputed clause.",
-                "Both sides signed the main agreement within a week of that proposal."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you whether the main agreement is actually signed.",
-            "explanation": "Because both sides sign the main agreement within a week, an option claiming talks collapsed a fourth time contradicts that resolution.",
-            "storyKeyEvents": [
-                "A veteran diplomat had watched three previous rounds of border talks collapse over the exact same disputed clause.",
-                "She proposed removing that clause entirely and addressing it in a separate side agreement.",
-                "Both sides signed the main agreement within a week of that proposal.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L132_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "An economist had predicted a regional recession for three consecutive quarters, but each time the downturn failed to materialize. She revised her model to account for an unusually resilient local labor market. Her fourth-quarter prediction of continued growth proved accurate.",
-            "options": [
-                "An economist had predicted a regional recession for three consecutive quarters, but each time the downturn failed to materialize.",
-                "She revised her model to account for an unusually resilient local labor market.",
-                "Her fourth-quarter prediction of continued growth proved accurate.",
-                "She abandoned economic forecasting after her third incorrect prediction."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Ask which option matches what the economist actually does after revising her model.",
-            "explanation": "Because her fourth prediction proves accurate, an option showing her abandoning forecasting after the third miss contradicts that eventual success.",
-            "storyKeyEvents": [
-                "An economist had predicted a regional recession for three consecutive quarters, but each time the downturn failed to materialize.",
-                "She revised her model to account for an unusually resilient local labor market.",
-                "Her fourth-quarter prediction of continued growth proved accurate.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L132_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A city council had rejected the same affordable-housing proposal in two separate votes over minor procedural objections. Sponsors rewrote the proposal to address every procedural objection raised in the earlier votes. The revised proposal passed unanimously on its third submission.",
-            "options": [
-                "The revised proposal failed by an even wider margin than before.",
-                "A city council had rejected the same affordable-housing proposal in two separate votes over minor procedural objections.",
-                "Sponsors rewrote the proposal to address every procedural objection raised in the earlier votes.",
-                "The revised proposal passed unanimously on its third submission."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Track cause and effect: addressing every objection leads to a unanimous third vote. One option reverses that.",
-            "explanation": "Because the revised proposal passes unanimously, an option claiming it failed by a wider margin reverses that specific outcome.",
-            "storyKeyEvents": [
-                "A city council had rejected the same affordable-housing proposal in two separate votes over minor procedural objections.",
-                "Sponsors rewrote the proposal to address every procedural objection raised in the earlier votes.",
-                "The revised proposal passed unanimously on its third submission.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L132_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A veteran mediator had been called in after two failed attempts to settle a bitter dispute between neighboring property owners. She had each side write down what they actually needed, rather than what they were demanding. The two sides reached a settlement neither had previously considered possible.",
-            "options": [
-                "A veteran mediator had been called in after two failed attempts to settle a bitter dispute between neighboring property owners.",
-                "The dispute ended up in court after the mediation also failed.",
-                "She had each side write down what they actually needed, rather than what they were demanding.",
-                "The two sides reached a settlement neither had previously considered possible."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "One of these four sentences quietly contradicts whether the mediation actually succeeds.",
-            "explanation": "Because the two sides reach a settlement, an option sending the dispute to court contradicts that successful resolution.",
-            "storyKeyEvents": [
-                "A veteran mediator had been called in after two failed attempts to settle a bitter dispute between neighboring property owners.",
-                "She had each side write down what they actually needed, rather than what they were demanding.",
-                "The two sides reached a settlement neither had previously considered possible.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L133_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "An options trader kept losing money on the same type of contract, unable to pinpoint exactly what he was doing wrong. He identified that he had consistently misjudged how quickly the market would react to earnings reports. His next attempt, adjusted for that timing error, turned his largest profit of the year.",
-            "options": [
-                "An options trader kept losing money on the same type of contract, unable to pinpoint exactly what he was doing wrong.",
-                "He identified that he had consistently misjudged how quickly the market would react to earnings reports.",
-                "He stopped trading that type of contract altogether.",
-                "His next attempt, adjusted for that timing error, turned his largest profit of the year."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Notice what the trader actually does after identifying the timing error.",
-            "explanation": "Because his next attempt turns his largest profit of the year, an option showing him quitting that type of trade contradicts that later success.",
-            "storyKeyEvents": [
-                "An options trader kept losing money on the same type of contract, unable to pinpoint exactly what he was doing wrong.",
-                "He identified that he had consistently misjudged how quickly the market would react to earnings reports.",
-                "His next attempt, adjusted for that timing error, turned his largest profit of the year.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L133_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A university's admissions office had seen application quality decline for two years after simplifying its essay requirements. It restored a single, more specific essay prompt in place of the open-ended one. Application quality, measured by admitted-student performance, rebounded within a year.",
-            "options": [
-                "A university's admissions office had seen application quality decline for two years after simplifying its essay requirements.",
-                "The admissions office restored a single, more specific essay prompt in place of the open-ended one.",
-                "Application quality, measured by admitted-student performance, rebounded within a year.",
-                "Application quality continued declining despite the more specific prompt."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Check whether each option matches what actually happened to application quality.",
-            "explanation": "Because quality rebounds within a year, an option claiming it continued declining contradicts that measured recovery.",
-            "storyKeyEvents": [
-                "A university's admissions office had seen application quality decline for two years after simplifying its essay requirements.",
-                "The admissions office restored a single, more specific essay prompt in place of the open-ended one.",
-                "Application quality, measured by admitted-student performance, rebounded within a year.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L133_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A chess coach noticed his top student consistently lost to the same rival, no matter how much they practiced general strategy. He had her study nothing but that specific opponent's past games for a full month. She defeated that same opponent decisively in their next meeting.",
-            "options": [
-                "She withdrew from the tournament rather than face the same opponent again.",
-                "A chess coach noticed his top student consistently lost to the same rival, no matter how much they practiced general strategy.",
-                "He had her study nothing but that specific opponent's past games for a full month.",
-                "She defeated that same opponent decisively in their next meeting."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you whether the next match actually takes place.",
-            "explanation": "Because she defeats the opponent in their next meeting, an option showing her withdrawing instead contradicts that match ever happening.",
-            "storyKeyEvents": [
-                "A chess coach noticed his top student consistently lost to the same rival, no matter how much they practiced general strategy.",
-                "He had her study nothing but that specific opponent's past games for a full month.",
-                "She defeated that same opponent decisively in their next meeting.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L134_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional currency had lost so much value against its neighbors that cross-border trade had nearly stopped. The central bank tied its exchange rate to a stable basket of neighboring currencies. Cross-border trade volume returned to its pre-crisis level within a year.",
-            "options": [
-                "A regional currency had lost so much value against its neighbors that cross-border trade had nearly stopped.",
-                "Cross-border trade remained near zero despite the new exchange policy.",
-                "The central bank tied its exchange rate to a stable basket of neighboring currencies.",
-                "Cross-border trade volume returned to its pre-crisis level within a year."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Track cause and effect: the new exchange policy leads to trade returning to pre-crisis levels. One option reverses that.",
-            "explanation": "Because trade returns to its pre-crisis level within a year, an option claiming it remained near zero reverses that measured recovery.",
-            "storyKeyEvents": [
-                "A regional currency had lost so much value against its neighbors that cross-border trade had nearly stopped.",
-                "The central bank tied its exchange rate to a stable basket of neighboring currencies.",
-                "Cross-border trade volume returned to its pre-crisis level within a year.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L134_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A veteran labor organizer had failed to unionize the same warehouse in two previous campaigns years apart. On her third attempt, she focused entirely on workplace safety rather than pay. Workers voted to unionize by a wide margin for the first time in the warehouse's history.",
-            "options": [
-                "A veteran labor organizer had failed to unionize the same warehouse in two previous campaigns years apart.",
-                "On her third attempt, she focused entirely on workplace safety rather than pay.",
-                "Workers voted against unionizing for a third consecutive time.",
-                "Workers voted to unionize by a wide margin for the first time in the warehouse's history."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "This story moves in a clear line from two failed campaigns to a safety-focused approach to a first successful vote. Find the sentence outside it.",
-            "explanation": "Because workers vote to unionize for the first time, an option claiming they voted against it a third time contradicts that outcome.",
-            "storyKeyEvents": [
-                "A veteran labor organizer had failed to unionize the same warehouse in two previous campaigns years apart.",
-                "On her third attempt, she focused entirely on workplace safety rather than pay.",
-                "Workers voted to unionize by a wide margin for the first time in the warehouse's history.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L134_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A veteran film distributor had passed on the same director's previous two projects, both of which underperformed at the box office elsewhere. He watched an early cut of her third film and changed his assessment completely. That third film became the studio's highest-grossing release of the year.",
-            "options": [
-                "A veteran film distributor had passed on the same director's previous two projects, both of which underperformed at the box office elsewhere.",
-                "He watched an early cut of her third film and changed his assessment completely.",
-                "That third film became the studio's highest-grossing release of the year.",
-                "He passed on her third film as well, just as he had the previous two."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Ask which option matches what the distributor actually decides after watching the early cut.",
-            "explanation": "Because the third film becomes the studio's highest-grossing release, an option showing him passing on it again contradicts that outcome.",
-            "storyKeyEvents": [
-                "A veteran film distributor had passed on the same director's previous two projects, both of which underperformed at the box office elsewhere.",
-                "He watched an early cut of her third film and changed his assessment completely.",
-                "That third film became the studio's highest-grossing release of the year.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L135_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional currency exchange had processed transactions manually for so long that errors cost customers real money every week. It adopted automated rate verification checked against three independent data feeds. Transaction errors fell to a level regulators described as effectively negligible.",
-            "options": [
-                "Regulators still described transaction errors as a serious ongoing concern.",
-                "A regional currency exchange had processed transactions manually for so long that errors cost customers real money every week.",
-                "The exchange adopted automated rate verification checked against three independent data feeds.",
-                "Transaction errors fell to a level regulators described as effectively negligible."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Notice what regulators actually say about errors once the automated verification is adopted.",
-            "explanation": "Because regulators call the error level effectively negligible, an option claiming they still called it a serious concern contradicts that assessment.",
-            "storyKeyEvents": [
-                "A regional currency exchange had processed transactions manually for so long that errors cost customers real money every week.",
-                "The exchange adopted automated rate verification checked against three independent data feeds.",
-                "Transaction errors fell to a level regulators described as effectively negligible.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L135_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A talent scout's recommended prospects kept failing to make their professional league's roster despite obvious raw ability. For his next recommendation, he focused on a metric he had previously overlooked entirely. That prospect became an all-star within his first two professional seasons.",
-            "options": [
-                "A talent scout's recommended prospects kept failing to make their professional league's roster despite obvious raw ability.",
-                "Teams stopped taking his recommendations seriously altogether.",
-                "For his next recommendation, he focused on a metric he had previously overlooked entirely.",
-                "That prospect became an all-star within his first two professional seasons."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Check whether each option matches how teams actually respond to his next recommendation.",
-            "explanation": "Because the prospect becomes an all-star, an option claiming teams dismissed his recommendations afterward contradicts that success.",
-            "storyKeyEvents": [
-                "A talent scout's recommended prospects kept failing to make their professional league's roster despite obvious raw ability.",
-                "For his next recommendation, he focused on a metric he had previously overlooked entirely.",
-                "That prospect became an all-star within his first two professional seasons.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L135_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A veteran restaurant critic had panned the same chef's first two ventures, both of which closed within a year. She reviewed his third restaurant expecting a similar experience. Her review of that third restaurant was the most favorable she had written all year.",
-            "options": [
-                "A veteran restaurant critic had panned the same chef's first two ventures, both of which closed within a year.",
-                "She reviewed his third restaurant expecting a similar experience.",
-                "She refused to review his third restaurant at all.",
-                "Her review of that third restaurant was the most favorable she had written all year."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you whether the critic actually reviews the third restaurant.",
-            "explanation": "Because her review of the third restaurant is her most favorable of the year, an option claiming she refused to review it contradicts that review existing.",
-            "storyKeyEvents": [
-                "A veteran restaurant critic had panned the same chef's first two ventures, both of which closed within a year.",
-                "She reviewed his third restaurant expecting a similar experience.",
-                "Her review of that third restaurant was the most favorable she had written all year.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L136_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional exporter's shipments had been rejected at customs twice due to incomplete documentation. It hired a customs specialist to review every document before each shipment left the warehouse. Every shipment has cleared customs without incident in the two years since.",
-            "options": [
-                "A regional exporter's shipments had been rejected at customs twice due to incomplete documentation.",
-                "The exporter hired a customs specialist to review every document before each shipment left the warehouse.",
-                "Every shipment has cleared customs without incident in the two years since.",
-                "A third shipment was rejected shortly after the specialist was hired."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Check whether a third rejection actually occurs after the specialist is hired.",
-            "explanation": "Because every shipment has cleared without incident for two years, an option claiming a third rejection occurred contradicts that record.",
-            "storyKeyEvents": [
-                "A regional exporter's shipments had been rejected at customs twice due to incomplete documentation.",
-                "The exporter hired a customs specialist to review every document before each shipment left the warehouse.",
-                "Every shipment has cleared customs without incident in the two years since.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L136_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A venture capitalist had passed on a founder's earlier startup pitches, both of which later failed elsewhere. He reviewed her newest pitch after a colleague specifically flagged it as different. He led the funding round for that startup, which is now profitable.",
-            "options": [
-                "He passed on the newest pitch as well, consistent with his earlier decisions.",
-                "A venture capitalist had passed on a founder's earlier startup pitches, both of which later failed elsewhere.",
-                "He reviewed her newest pitch after a colleague specifically flagged it as different.",
-                "He led the funding round for that startup, which is now profitable."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "One of these four sentences quietly contradicts what the investor actually decides about the newest pitch.",
-            "explanation": "Because he leads the funding round and the startup becomes profitable, an option showing him passing again contradicts that investment.",
-            "storyKeyEvents": [
-                "A venture capitalist had passed on a founder's earlier startup pitches, both of which later failed elsewhere.",
-                "He reviewed her newest pitch after a colleague specifically flagged it as different.",
-                "He led the funding round for that startup, which is now profitable.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L136_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional shipping insurer had denied the same category of weather-related claim twice, drawing formal complaints from policyholders. An internal review found the denials had relied on an outdated weather-classification system. The insurer approved every previously denied claim after updating the classification system.",
-            "options": [
-                "A regional shipping insurer had denied the same category of weather-related claim twice, drawing formal complaints from policyholders.",
-                "The insurer upheld its original denials even after the review.",
-                "An internal review found the denials had relied on an outdated weather-classification system.",
-                "The insurer approved every previously denied claim after updating the classification system."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Notice what the insurer actually does with the previously denied claims after the review.",
-            "explanation": "Because the insurer approves every previously denied claim, an option claiming it upheld the original denials contradicts that outcome.",
-            "storyKeyEvents": [
-                "A regional shipping insurer had denied the same category of weather-related claim twice, drawing formal complaints from policyholders.",
-                "An internal review found the denials had relied on an outdated weather-classification system.",
-                "The insurer approved every previously denied claim after updating the classification system.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L137_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional grant committee had rejected the same research proposal twice, citing unclear methodology both times. The researchers rewrote the methodology section with a statistician's direct input. The committee approved the revised proposal with full funding on its third submission.",
-            "options": [
-                "A regional grant committee had rejected the same research proposal twice, citing unclear methodology both times.",
-                "The researchers rewrote the methodology section with a statistician's direct input.",
-                "The committee rejected the proposal a third time for the same reason.",
-                "The committee approved the revised proposal with full funding on its third submission."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Ask which option matches what the committee actually decides on the third submission.",
-            "explanation": "Because the committee approves the proposal with full funding, an option showing a third rejection contradicts that specific outcome.",
-            "storyKeyEvents": [
-                "A regional grant committee had rejected the same research proposal twice, citing unclear methodology both times.",
-                "The researchers rewrote the methodology section with a statistician's direct input.",
-                "The committee approved the revised proposal with full funding on its third submission.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L137_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A veteran union negotiator had walked away from the bargaining table twice without a deal, both times over the same disputed benefit. She proposed phasing the disputed benefit in gradually over three years instead of all at once. Both sides signed a contract within a week of that proposal.",
-            "options": [
-                "A veteran union negotiator had walked away from the bargaining table twice without a deal, both times over the same disputed benefit.",
-                "She proposed phasing the disputed benefit in gradually over three years instead of all at once.",
-                "Both sides signed a contract within a week of that proposal.",
-                "Negotiations broke down a third time over the same benefit."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Read the ending closely: it tells you whether a contract is actually signed.",
-            "explanation": "Because both sides sign a contract within a week, an option claiming negotiations broke down a third time contradicts that resolution.",
-            "storyKeyEvents": [
-                "A veteran union negotiator had walked away from the bargaining table twice without a deal, both times over the same disputed benefit.",
-                "She proposed phasing the disputed benefit in gradually over three years instead of all at once.",
-                "Both sides signed a contract within a week of that proposal.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L137_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional bond issuer had seen its credit rating downgraded twice within eighteen months due to unclear debt disclosures. It published a fully itemized debt schedule reviewed by an independent auditor. Its credit rating was upgraded at its next scheduled review.",
-            "options": [
-                "Its credit rating was downgraded a third time at the next review.",
-                "A regional bond issuer had seen its credit rating downgraded twice within eighteen months due to unclear debt disclosures.",
-                "The issuer published a fully itemized debt schedule reviewed by an independent auditor.",
-                "Its credit rating was upgraded at its next scheduled review."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Track cause and effect: full disclosure leads to an upgrade at the next review. One option reverses that.",
-            "explanation": "Because the rating is upgraded at the next review, an option claiming it was downgraded a third time reverses that specific outcome.",
-            "storyKeyEvents": [
-                "A regional bond issuer had seen its credit rating downgraded twice within eighteen months due to unclear debt disclosures.",
-                "The issuer published a fully itemized debt schedule reviewed by an independent auditor.",
-                "Its credit rating was upgraded at its next scheduled review.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L138_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional freight broker had lost the same major client's business twice to competitors offering marginally lower rates. It proposed a service-guarantee clause promising compensation for any late delivery. The client signed an exclusive three-year contract after reviewing the guarantee.",
-            "options": [
-                "A regional freight broker had lost the same major client's business twice to competitors offering marginally lower rates.",
-                "The client chose yet another competitor after reviewing the guarantee.",
-                "The broker proposed a service-guarantee clause promising compensation for any late delivery.",
-                "The client signed an exclusive three-year contract after reviewing the guarantee."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Check whether each option matches what the client actually decides after seeing the guarantee.",
-            "explanation": "Because the client signs an exclusive three-year contract, an option claiming they chose a competitor instead contradicts that specific outcome.",
-            "storyKeyEvents": [
-                "A regional freight broker had lost the same major client's business twice to competitors offering marginally lower rates.",
-                "The broker proposed a service-guarantee clause promising compensation for any late delivery.",
-                "The client signed an exclusive three-year contract after reviewing the guarantee.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L138_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional theater festival had been rejected twice by the same touring production company over scheduling conflicts. Organizers offered the company an entirely custom date outside the festival's usual fixed schedule. The touring company accepted and later called it their most successful stop of the tour.",
-            "options": [
-                "A regional theater festival had been rejected twice by the same touring production company over scheduling conflicts.",
-                "Organizers offered the company an entirely custom date outside the festival's usual fixed schedule.",
-                "The touring company rejected the custom date as well.",
-                "The touring company accepted and later called it their most successful stop of the tour."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "One of these four sentences quietly contradicts whether the touring company actually accepts the custom date.",
-            "explanation": "Because the company accepts and calls it their most successful stop, an option claiming they rejected the custom date too contradicts that outcome.",
-            "storyKeyEvents": [
-                "A regional theater festival had been rejected twice by the same touring production company over scheduling conflicts.",
-                "Organizers offered the company an entirely custom date outside the festival's usual fixed schedule.",
-                "The touring company accepted and later called it their most successful stop of the tour.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L138_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional biotech startup had been turned down for patent protection twice due to overly broad claims in its application. Patent attorneys narrowed the claims to cover only the specific mechanism the startup had actually developed. The narrowed application was approved on its third submission.",
-            "options": [
-                "A regional biotech startup had been turned down for patent protection twice due to overly broad claims in its application.",
-                "Patent attorneys narrowed the claims to cover only the specific mechanism the startup had actually developed.",
-                "The narrowed application was approved on its third submission.",
-                "The narrowed application was rejected for the same reason as before."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Read the ending closely: it tells you whether the narrowed application is actually approved.",
-            "explanation": "Because the narrowed application is approved on its third submission, an option claiming it was rejected again contradicts that outcome.",
-            "storyKeyEvents": [
-                "A regional biotech startup had been turned down for patent protection twice due to overly broad claims in its application.",
-                "Patent attorneys narrowed the claims to cover only the specific mechanism the startup had actually developed.",
-                "The narrowed application was approved on its third submission.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L139_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional airline's pilots' union had rejected two previous contract offers over disputed rest-time provisions. Management proposed an independent third-party arbitrator to settle just the rest-time dispute. The union ratified the full contract once the arbitrator's decision was accepted by both sides.",
-            "options": [
-                "The union rejected the contract a third time despite the arbitration.",
-                "A regional airline's pilots' union had rejected two previous contract offers over disputed rest-time provisions.",
-                "Management proposed an independent third-party arbitrator to settle just the rest-time dispute.",
-                "The union ratified the full contract once the arbitrator's decision was accepted by both sides."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Track cause and effect: arbitration leads to the contract being ratified. One option reverses that.",
-            "explanation": "Because the union ratifies the full contract, an option claiming they rejected it a third time reverses that specific outcome.",
-            "storyKeyEvents": [
-                "A regional airline's pilots' union had rejected two previous contract offers over disputed rest-time provisions.",
-                "Management proposed an independent third-party arbitrator to settle just the rest-time dispute.",
-                "The union ratified the full contract once the arbitrator's decision was accepted by both sides.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L139_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional craft distillery had been denied a coveted spot at the same trade show twice, citing limited booth space. Organizers offered it a shared booth alongside a complementary but non-competing brand. The distillery reported its highest sales volume from any single event that year.",
-            "options": [
-                "A regional craft distillery had been denied a coveted spot at the same trade show twice, citing limited booth space.",
-                "The distillery declined the shared booth arrangement entirely.",
-                "Organizers offered it a shared booth alongside a complementary but non-competing brand.",
-                "The distillery reported its highest sales volume from any single event that year."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Notice whether the distillery actually declines or accepts the shared booth.",
-            "explanation": "Because the distillery reports its highest sales from that event, an option claiming it declined the booth altogether contradicts it ever attending.",
-            "storyKeyEvents": [
-                "A regional craft distillery had been denied a coveted spot at the same trade show twice, citing limited booth space.",
-                "Organizers offered it a shared booth alongside a complementary but non-competing brand.",
-                "The distillery reported its highest sales volume from any single event that year.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L139_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional public radio station had been denied the same federal grant twice for insufficient community-impact data. It partnered with a local university to formally survey its listener base for the first time. The grant was approved on the third application, citing the newly documented community impact.",
-            "options": [
-                "A regional public radio station had been denied the same federal grant twice for insufficient community-impact data.",
-                "The station partnered with a local university to formally survey its listener base for the first time.",
-                "The grant was denied a third time for the same original reason.",
-                "The grant was approved on the third application, citing the newly documented community impact."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Ask which option matches what the grant committee actually decides on the third application.",
-            "explanation": "Because the grant is approved citing the newly documented impact, an option claiming it was denied for the same reason again contradicts that outcome.",
-            "storyKeyEvents": [
-                "A regional public radio station had been denied the same federal grant twice for insufficient community-impact data.",
-                "The station partnered with a local university to formally survey its listener base for the first time.",
-                "The grant was approved on the third application, citing the newly documented community impact.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L140_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional grocery chain's private-label yogurt had been rejected by two major retailers over inconsistent texture between batches. Food scientists traced the inconsistency to a single fermentation-temperature variable. Both retailers agreed to carry the product after reviewing the corrected batches.",
-            "options": [
-                "A regional grocery chain's private-label yogurt had been rejected by two major retailers over inconsistent texture between batches.",
-                "Food scientists traced the inconsistency to a single fermentation-temperature variable.",
-                "Both retailers agreed to carry the product after reviewing the corrected batches.",
-                "Both retailers rejected the corrected batches as well."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Read the ending closely: it tells you whether both retailers actually agree to carry the product.",
-            "explanation": "Because both retailers agree to carry the product after the correction, an option claiming they rejected it again contradicts that outcome.",
-            "storyKeyEvents": [
-                "A regional grocery chain's private-label yogurt had been rejected by two major retailers over inconsistent texture between batches.",
-                "Food scientists traced the inconsistency to a single fermentation-temperature variable.",
-                "Both retailers agreed to carry the product after reviewing the corrected batches.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L140_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional aerospace supplier had failed the same certification test twice due to inconsistent tolerances in a single component. Engineers redesigned the manufacturing jig used to produce that specific component. The component passed certification on its third submission with margin to spare.",
-            "options": [
-                "The component failed certification a third time for the same reason.",
-                "A regional aerospace supplier had failed the same certification test twice due to inconsistent tolerances in a single component.",
-                "Engineers redesigned the manufacturing jig used to produce that specific component.",
-                "The component passed certification on its third submission with margin to spare."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Check whether each option matches what actually happens on the third certification attempt.",
-            "explanation": "Because the component passes certification with margin to spare, an option claiming it failed a third time contradicts that specific outcome.",
-            "storyKeyEvents": [
-                "A regional aerospace supplier had failed the same certification test twice due to inconsistent tolerances in a single component.",
-                "Engineers redesigned the manufacturing jig used to produce that specific component.",
-                "The component passed certification on its third submission with margin to spare.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L140_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional publisher had rejected the same debut novelist twice, citing an unclear narrative structure both times. A developmental editor helped her restructure the novel around a single unifying timeline. The same publisher accepted the restructured manuscript within weeks of resubmission.",
-            "options": [
-                "A regional publisher had rejected the same debut novelist twice, citing an unclear narrative structure both times.",
-                "The same publisher rejected the restructured manuscript as well.",
-                "A developmental editor helped her restructure the novel around a single unifying timeline.",
-                "The same publisher accepted the restructured manuscript within weeks of resubmission."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "One of these four sentences quietly contradicts whether the publisher actually accepts the restructured manuscript.",
-            "explanation": "Because the publisher accepts the manuscript within weeks, an option claiming it rejected the restructured version too contradicts that outcome.",
-            "storyKeyEvents": [
-                "A regional publisher had rejected the same debut novelist twice, citing an unclear narrative structure both times.",
-                "A developmental editor helped her restructure the novel around a single unifying timeline.",
-                "The same publisher accepted the restructured manuscript within weeks of resubmission.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        }
-    ]
+  "gameType": "summarizeStoryWriting",
+  "batchIndex": 14,
+  "levels": "131-140",
+  "quests": [
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L131_Q1",
+      "instruction": "Choose the three statements the story supports, directly or by clear inference, and put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Ola glanced at the departures board, grabbed her bag and jogged to the far end of the platform. The doors of the 8:12 were already beeping when she slipped through them. She sat down, breathing hard, and checked the time.",
+      "options": [
+        "Out of breath, Ola sat down and checked the time.",
+        "Ola slipped onto the 8:12 just as its doors were beeping to close.",
+        "Ola was rushing because she had overslept that morning.",
+        "Seeing the departures board, Ola hurried along the platform, worried about missing her train."
+      ],
+      "correctOrder": [3, 1, 0],
+      "hint": "Find the clue that shows why she hurried. Does the story say why she was late?",
+      "explanation": "The jogging and the beeping doors show she feared missing the train, but nothing says why she was late. Oversleeping is a guess with no clue behind it.",
+      "storyKeyEvents": [
+        "Seeing the departures board, Ola hurried along the platform, worried about missing her train.",
+        "Ola slipped onto the 8:12 just as its doors were beeping to close.",
+        "Out of breath, Ola sat down and checked the time."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L131_Q2",
+      "instruction": "Which three statements can be justified from the story's clues? Put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Lennart pushed his plate away after two spoonfuls of soup and said he wasn't hungry. His aunt, who had cooked all afternoon, folded her arms and stayed silent for the rest of the meal. When Lennart left, he thanked her at the door, and she nodded without smiling.",
+      "options": [
+        "Lennart left most of his soup, saying he wasn't hungry.",
+        "His aunt, who had cooked all afternoon, seemed hurt and said nothing for the rest of the meal.",
+        "Lennart's aunt was pleased that he had eaten so little of her soup.",
+        "At the door Lennart thanked her, and she nodded without smiling."
+      ],
+      "correctOrder": [0, 1, 3],
+      "hint": "Look at what the aunt does with her arms and her face.",
+      "explanation": "Folded arms, silence and a nod without a smile point to disappointment, the opposite of being pleased. The clues in her behaviour contradict the statement.",
+      "storyKeyEvents": [
+        "Lennart left most of his soup, saying he wasn't hungry.",
+        "His aunt, who had cooked all afternoon, seemed hurt and said nothing for the rest of the meal.",
+        "At the door Lennart thanked her, and she nodded without smiling."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L131_Q3",
+      "instruction": "One statement goes beyond what the story supports. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The new maths teacher, Mr. Ibarra, arrived on the first day with a rucksack and a bicycle helmet. He wrote a problem on the board and asked the class to solve it in pairs, then walked around listening rather than answering. By the end of the lesson three pairs had found different methods.",
+      "options": [
+        "Instead of answering, he walked around listening to the pairs.",
+        "On his first day Mr. Ibarra had the class solve a problem in pairs.",
+        "By the end of the lesson three pairs had found different methods.",
+        "Mr. Ibarra cycled to school because he couldn't afford to run a car."
+      ],
+      "correctOrder": [1, 0, 2],
+      "hint": "A detail such as a helmet doesn't tell you why someone chose it.",
+      "explanation": "The helmet shows he cycled, but the reason is a stereotype the story doesn't back up. The teaching method and its result are what the story supports.",
+      "storyKeyEvents": [
+        "On his first day Mr. Ibarra had the class solve a problem in pairs.",
+        "Instead of answering, he walked around listening to the pairs.",
+        "By the end of the lesson three pairs had found different methods."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L132_Q1",
+      "instruction": "Choose the three statements the story supports, directly or by clear inference, and put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Carmela handed Pedro her spare key and reminded him to feed the fish every morning. Pedro wrote her flight dates on the back of his hand. When Carmela returned two weeks later, the fish were swimming and the tank was clean.",
+      "options": [
+        "On her return two weeks later the fish were fine and the tank was clean.",
+        "Pedro was Carmela's younger brother and often looked after her flat.",
+        "Carmela gave Pedro her spare key and asked him to feed her fish while she was away.",
+        "Pedro noted her flight dates on the back of his hand."
+      ],
+      "correctOrder": [2, 3, 0],
+      "hint": "The story never says how the two people are connected. Which option invents that?",
+      "explanation": "Nothing in the story says they are related, only that Pedro was trusted with the key and the fish. His role can be inferred; his family tie can't.",
+      "storyKeyEvents": [
+        "Carmela gave Pedro her spare key and asked him to feed her fish while she was away.",
+        "Pedro noted her flight dates on the back of his hand.",
+        "On her return two weeks later the fish were fine and the tank was clean."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L132_Q2",
+      "instruction": "Which three statements can be justified from the story's clues? Put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Renske read the email from the university, closed her laptop and stared at the wall for a while. Then she opened it again and typed a reply asking about the appeal process. That evening she asked her sister to read the draft of her appeal letter.",
+      "options": [
+        "Renske wrote back to ask about the appeal process.",
+        "That evening Renske asked her sister to read her draft appeal letter.",
+        "Renske read the university's email and then stared at the wall for a while.",
+        "Renske was furious with the university and threatened to complain publicly."
+      ],
+      "correctOrder": [2, 0, 1],
+      "hint": "What do her actions suggest? Disappointment, or public anger?",
+      "explanation": "Asking about an appeal suggests she had bad news and wanted to challenge it calmly. Public threats are a much stronger reaction than the story shows.",
+      "storyKeyEvents": [
+        "Renske read the university's email and then stared at the wall for a while.",
+        "Renske wrote back to ask about the appeal process.",
+        "That evening Renske asked her sister to read her draft appeal letter."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L132_Q3",
+      "instruction": "Choose the three statements the story supports, directly or by clear inference, and put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The road outside Fatima's shop was closed for a week for cable work. Sales dropped sharply that week, and she put a note on her door offering free delivery in the neighbourhood. When the road reopened, customers came back and sales returned to normal.",
+      "options": [
+        "Fatima put a note on her door offering free delivery in the neighbourhood.",
+        "The road outside Fatima's shop was closed for a week, and sales dropped sharply.",
+        "Fatima's shop lost most of its customers for good after the road closure.",
+        "When the road reopened, customers came back and sales returned to normal."
+      ],
+      "correctOrder": [1, 0, 3],
+      "hint": "Ask whether the story presents the drop in sales as temporary.",
+      "explanation": "Sales returned to normal once the road reopened, so the loss was short-lived. Saying customers were lost for good turns a temporary dip into a permanent one.",
+      "storyKeyEvents": [
+        "The road outside Fatima's shop was closed for a week, and sales dropped sharply.",
+        "Fatima put a note on her door offering free delivery in the neighbourhood.",
+        "When the road reopened, customers came back and sales returned to normal."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L133_Q1",
+      "instruction": "One statement goes beyond what the story supports. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The power in Malika's flat went out for an hour on Tuesday. She had switched to a new coffee brand that morning and half-joked that it might be to blame. A note from the building manager on Wednesday explained that the electricity company had been repairing a cable. Malika laughed and went on drinking the new coffee.",
+      "options": [
+        "Malika laughed and kept drinking the new coffee.",
+        "The power in Malika's flat went out for an hour on Tuesday.",
+        "A note on Wednesday explained that the electricity company had been repairing a cable.",
+        "The new coffee brand had caused the power cut in Malika's flat."
+      ],
+      "correctOrder": [1, 2, 0],
+      "hint": "Two things happened on the same day. Does the story link them?",
+      "explanation": "The manager's note gives the real cause, the cable repair, and the coffee only happened to be new that morning. Timing alone doesn't create a cause.",
+      "storyKeyEvents": [
+        "The power in Malika's flat went out for an hour on Tuesday.",
+        "A note on Wednesday explained that the electricity company had been repairing a cable.",
+        "Malika laughed and kept drinking the new coffee."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L133_Q2",
+      "instruction": "Which three statements can be justified from the story's clues? Put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Halima's phone slid off the table and landed on Mr. Reid's foot during the meeting. She apologised at once, and he waved it away with a smile. Halima kept her phone in her bag for the rest of the meeting.",
+      "options": [
+        "Halima dropped the phone on Mr. Reid's foot on purpose.",
+        "She apologised immediately, and he smiled it away.",
+        "Halima's phone slid off the table and landed on Mr. Reid's foot.",
+        "Halima kept her phone in her bag for the rest of the meeting."
+      ],
+      "correctOrder": [2, 1, 3],
+      "hint": "Look at her reaction. Would someone who did it deliberately behave like that?",
+      "explanation": "She apologised at once, which fits an accident. Deliberate action is an intention the story gives no clue for.",
+      "storyKeyEvents": [
+        "Halima's phone slid off the table and landed on Mr. Reid's foot.",
+        "She apologised immediately, and he smiled it away.",
+        "Halima kept her phone in her bag for the rest of the meeting."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L133_Q3",
+      "instruction": "Choose the three statements the story supports, directly or by clear inference, and put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Emeka's colleagues had decorated his desk with balloons before he arrived. He stopped, laughed and asked who had remembered. Then he saw a card signed by the whole team and read it twice.",
+      "options": [
+        "He saw a card signed by the whole team and read it twice.",
+        "Emeka laughed and asked who had remembered.",
+        "Emeka's colleagues had decorated his desk with balloons before he arrived.",
+        "Emeka had asked his colleagues to decorate his desk."
+      ],
+      "correctOrder": [2, 1, 0],
+      "hint": "His question tells you something about what he knew. What?",
+      "explanation": "Asking who had remembered shows he was surprised, so he hadn't arranged it. The decoration was a surprise from the team.",
+      "storyKeyEvents": [
+        "Emeka's colleagues had decorated his desk with balloons before he arrived.",
+        "Emeka laughed and asked who had remembered.",
+        "He saw a card signed by the whole team and read it twice."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L134_Q1",
+      "instruction": "One statement goes beyond what the story supports. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The forecast promised heavy rain on Saturday, so Nia moved the barbecue to Sunday and texted the guests. On Saturday it poured all day. On Sunday the sky was clear, and everyone brought a dish to share.",
+      "options": [
+        "Because the forecast promised heavy rain, Nia moved the barbecue to Sunday and told the guests.",
+        "Nia would have to cancel the barbecue for the whole month.",
+        "On Sunday the sky was clear and everyone brought a dish to share.",
+        "On Saturday it poured all day."
+      ],
+      "correctOrder": [0, 3, 2],
+      "hint": "Is this a result the story reports, or a worry that the story never mentions?",
+      "explanation": "The barbecue went ahead on Sunday, so nothing points to a month-long cancellation. That outcome is entirely outside the story.",
+      "storyKeyEvents": [
+        "Because the forecast promised heavy rain, Nia moved the barbecue to Sunday and told the guests.",
+        "On Saturday it poured all day.",
+        "On Sunday the sky was clear and everyone brought a dish to share."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L134_Q2",
+      "instruction": "Which three statements can be justified from the story's clues? Put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Petros ordered two portions of chips and asked the waiter to hold the drinks. Ten minutes later his brother walked in, still wearing his uniform, and slid into the seat opposite.",
+      "options": [
+        "Petros ordered two portions of chips.",
+        "Petros's brother was a police officer.",
+        "He asked the waiter to hold the drinks, apparently waiting for someone.",
+        "Ten minutes later his brother arrived in uniform and sat down opposite."
+      ],
+      "correctOrder": [0, 2, 3],
+      "hint": "\"Uniform\" could mean many jobs. What does the story tell you?",
+      "explanation": "A uniform is the only clue, and it fits dozens of jobs. Naming one is a guess that the story doesn't support.",
+      "storyKeyEvents": [
+        "Petros ordered two portions of chips.",
+        "He asked the waiter to hold the drinks, apparently waiting for someone.",
+        "Ten minutes later his brother arrived in uniform and sat down opposite."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L134_Q3",
+      "instruction": "Choose the three statements the story supports, directly or by clear inference, and put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The librarian slid the form across the desk and said, \"Ask your mother to sign here.\" Kian took it home, and the next morning he returned it signed and smiling.",
+      "options": [
+        "Kian's mother worked at the library.",
+        "The librarian told Kian to get his mother to sign the form.",
+        "The next morning Kian returned it signed.",
+        "Kian took the form home."
+      ],
+      "correctOrder": [1, 3, 2],
+      "hint": "What do you actually know about how these people are connected?",
+      "explanation": "Kian's mother signs the form at home, so nothing suggests she works at the library. That link is invented.",
+      "storyKeyEvents": [
+        "The librarian told Kian to get his mother to sign the form.",
+        "Kian took the form home.",
+        "The next morning Kian returned it signed."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L135_Q1",
+      "instruction": "One statement goes beyond what the story supports. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Gustav kept checking his phone during dinner and left his dessert untouched. As soon as it buzzed, he apologised and stepped outside. When he came back he was grinning and held up the phone: his sister's baby had arrived.",
+      "options": [
+        "Gustav was annoyed with his dinner companions for ignoring him.",
+        "When his phone buzzed, he apologised and stepped outside.",
+        "He returned grinning with the news that his sister's baby had arrived.",
+        "Gustav kept checking his phone during dinner and left his dessert untouched."
+      ],
+      "correctOrder": [3, 1, 2],
+      "hint": "Find the reason for his distraction. Whose behaviour is it?",
+      "explanation": "He was waiting anxiously for news and apologised to the others. Annoyance with them is an invented feeling.",
+      "storyKeyEvents": [
+        "Gustav kept checking his phone during dinner and left his dessert untouched.",
+        "When his phone buzzed, he apologised and stepped outside.",
+        "He returned grinning with the news that his sister's baby had arrived."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L135_Q2",
+      "instruction": "Which three statements can be justified from the story's clues? Put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The council closed the old footbridge for a month to replace its handrails. Walkers had to use the road bridge, which added ten minutes to the route. When the footbridge reopened, the path was busy again.",
+      "options": [
+        "When the footbridge reopened, the path was busy again.",
+        "The old footbridge was closed permanently by the council.",
+        "Walkers had to use the road bridge, which added ten minutes to their route.",
+        "The council closed the old footbridge for a month to replace its handrails."
+      ],
+      "correctOrder": [3, 2, 0],
+      "hint": "Was the closure described as temporary or final?",
+      "explanation": "The closure lasted a month and ended when the footbridge reopened. \"Permanently\" turns a temporary measure into a permanent one.",
+      "storyKeyEvents": [
+        "The council closed the old footbridge for a month to replace its handrails.",
+        "Walkers had to use the road bridge, which added ten minutes to their route.",
+        "When the footbridge reopened, the path was busy again."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L135_Q3",
+      "instruction": "Choose the three statements the story supports, directly or by clear inference, and put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Ulrika slid the last sandwich to her brother. \"Take it,\" she said, \"I already had two.\" He grinned and ate it in three bites, and she watched, satisfied.",
+      "options": [
+        "She watched him, satisfied.",
+        "Ulrika offered the last sandwich to her brother, saying she had already had two.",
+        "Ulrika was still hungry and resented giving it up.",
+        "He ate it in three bites, grinning."
+      ],
+      "correctOrder": [1, 3, 0],
+      "hint": "She explains why she is offering it. What does that tell you about her hunger?",
+      "explanation": "She said she had already eaten two and looked satisfied, so resentment isn't supported. The clues point to generosity.",
+      "storyKeyEvents": [
+        "Ulrika offered the last sandwich to her brother, saying she had already had two.",
+        "He ate it in three bites, grinning.",
+        "She watched him, satisfied."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L136_Q1",
+      "instruction": "One statement goes beyond what the story supports. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The new intern, Yasmin, arrived at the office in a suit and asked where she could plug in her laptop. Nobody else wore suits, but Mr. Pak smiled and pointed to the socket by the window. By lunchtime she had sat with three teams and learned everyone's names.",
+      "options": [
+        "Yasmin was inexperienced and had never worked in an office before.",
+        "Yasmin arrived in a suit and asked where to plug in her laptop.",
+        "Mr. Pak smiled and pointed her to the socket by the window.",
+        "By lunchtime she had sat with three teams and learned everyone's names."
+      ],
+      "correctOrder": [1, 2, 3],
+      "hint": "Ask what facts support an assumption about her experience.",
+      "explanation": "Wearing a suit and asking about a socket say nothing about her experience. The assumption comes from expectation, not from the story.",
+      "storyKeyEvents": [
+        "Yasmin arrived in a suit and asked where to plug in her laptop.",
+        "Mr. Pak smiled and pointed her to the socket by the window.",
+        "By lunchtime she had sat with three teams and learned everyone's names."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L136_Q2",
+      "instruction": "Which three statements can be justified from the story's clues? Put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The lights on Marcelo's street flickered at eight. At nine his neighbour's dog started barking. At half past nine the lights went out completely, and a repair van was outside by ten.",
+      "options": [
+        "At half past nine the lights went out completely.",
+        "A repair van was outside by ten.",
+        "The dog's barking made the lights go out.",
+        "The lights on Marcelo's street flickered at eight."
+      ],
+      "correctOrder": [3, 0, 1],
+      "hint": "Things that happen around the same time aren't always connected.",
+      "explanation": "The barking merely came before the blackout, and the repair van points to a fault in the supply. The story gives no link to the dog.",
+      "storyKeyEvents": [
+        "The lights on Marcelo's street flickered at eight.",
+        "At half past nine the lights went out completely.",
+        "A repair van was outside by ten."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L136_Q3",
+      "instruction": "Choose the three statements the story supports, directly or by clear inference, and put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Ines was arranging the shelf of glasses when one slipped and cracked on the floor. She said sorry to the manager, swept up the pieces and offered to pay for it. The manager shook her head and said accidents happen.",
+      "options": [
+        "Ines broke the glass on purpose to get out of her shift.",
+        "The manager declined, saying accidents happen.",
+        "A glass slipped from Ines's hands and cracked while she was arranging the shelf.",
+        "She apologised, swept up the pieces and offered to pay."
+      ],
+      "correctOrder": [2, 3, 1],
+      "hint": "How do both people describe what happened?",
+      "explanation": "The manager calls it an accident and Ines offers to pay, so an intention to sabotage has no support. The story reads as a slip.",
+      "storyKeyEvents": [
+        "A glass slipped from Ines's hands and cracked while she was arranging the shelf.",
+        "She apologised, swept up the pieces and offered to pay.",
+        "The manager declined, saying accidents happen."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L137_Q1",
+      "instruction": "One statement goes beyond what the story supports. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Freya found a note on her windscreen that said, \"Sorry about the scratch. Call me,\" with a phone number. She examined her car and found no scratch. She rang the number, and a man said he had left the note on the wrong car.",
+      "options": [
+        "Freya recognised the phone number and knew who had written it.",
+        "Freya found a note on her windscreen apologising for a scratch.",
+        "She checked her car and found no scratch.",
+        "She rang the number, and the man said he had put the note on the wrong car."
+      ],
+      "correctOrder": [1, 2, 3],
+      "hint": "Did Freya know who it was before she called?",
+      "explanation": "She rang the number to find out, and the man's explanation surprised her. Recognising it would contradict her need to call.",
+      "storyKeyEvents": [
+        "Freya found a note on her windscreen apologising for a scratch.",
+        "She checked her car and found no scratch.",
+        "She rang the number, and the man said he had put the note on the wrong car."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L137_Q2",
+      "instruction": "Which three statements can be justified from the story's clues? Put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Barnaby's application for a market stall was accepted for the spring season. He received a form to fill in and a list of the fees. The list showed that a full-season pitch cost more than he had saved.",
+      "options": [
+        "The fees showed that a full-season pitch cost more than he had saved.",
+        "He received a form and a list of fees.",
+        "Barnaby's application for a spring market stall was accepted.",
+        "Barnaby withdrew his application because he could not afford the fees."
+      ],
+      "correctOrder": [2, 1, 0],
+      "hint": "The story ends at a problem. Does it say what he did about it?",
+      "explanation": "The story stops when Barnaby sees the fees, and it never reports what he decided. Withdrawing is a possible next step but not a stated one.",
+      "storyKeyEvents": [
+        "Barnaby's application for a spring market stall was accepted.",
+        "He received a form and a list of fees.",
+        "The fees showed that a full-season pitch cost more than he had saved."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L137_Q3",
+      "instruction": "Choose the three statements the story supports, directly or by clear inference, and put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Solveig hung her wet coat by the radiator, kicked off her boots and switched the kettle on. Only after she had drunk half her tea did she open her phone. It showed twelve new messages.",
+      "options": [
+        "Solveig hung her wet coat by the radiator and switched the kettle on.",
+        "After drinking half her tea, she opened her phone.",
+        "The phone showed twelve new messages.",
+        "Solveig had been walking in the rain for hours."
+      ],
+      "correctOrder": [0, 1, 2],
+      "hint": "A wet coat tells you it rained. How long was she out?",
+      "explanation": "The wet coat shows she came in from the rain, but not for how long. \"For hours\" adds a length the story doesn't give.",
+      "storyKeyEvents": [
+        "Solveig hung her wet coat by the radiator and switched the kettle on.",
+        "After drinking half her tea, she opened her phone.",
+        "The phone showed twelve new messages."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L138_Q1",
+      "instruction": "One statement goes beyond what the story supports. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Casper's team lost the final by a single goal. He shook hands with each opponent and told the winning captain, \"You deserved it.\" On the bus home he was quiet, but he was the first to suggest a rematch next season.",
+      "options": [
+        "He shook hands with every opponent and told the winning captain, \"You deserved it.\"",
+        "On the bus he was quiet but was the first to suggest a rematch.",
+        "Casper refused to shake hands with the winners.",
+        "Casper's team lost the final by a single goal."
+      ],
+      "correctOrder": [3, 0, 1],
+      "hint": "Which actions show how he treated the other team?",
+      "explanation": "He shook hands and congratulated the captain, which contradicts any refusal. The story shows him as a gracious loser.",
+      "storyKeyEvents": [
+        "Casper's team lost the final by a single goal.",
+        "He shook hands with every opponent and told the winning captain, \"You deserved it.\"",
+        "On the bus he was quiet but was the first to suggest a rematch."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L138_Q2",
+      "instruction": "Which three statements can be justified from the story's clues? Put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Arvid brought two coffees to Mrs. Hahn's desk each morning and stayed for five minutes to talk about her weekend. When she was promoted to head of department, Arvid was the first person she invited to her office.",
+      "options": [
+        "Arvid brought two coffees to Mrs. Hahn's desk each morning.",
+        "He stayed for five minutes to chat about her weekend.",
+        "Arvid was Mrs. Hahn's son, which is why she invited him first.",
+        "When she was promoted, she invited him first to her new office."
+      ],
+      "correctOrder": [0, 1, 3],
+      "hint": "Friendly and close isn't the same as related.",
+      "explanation": "The morning coffee and the first invitation show a friendly working bond. Being her son is not stated or needed to explain any of it.",
+      "storyKeyEvents": [
+        "Arvid brought two coffees to Mrs. Hahn's desk each morning.",
+        "He stayed for five minutes to chat about her weekend.",
+        "When she was promoted, she invited him first to her new office."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L138_Q3",
+      "instruction": "Choose the three statements the story supports, directly or by clear inference, and put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Reza opened the fridge, closed it and opened it again. He then sat on a kitchen chair looking at the empty shelf, and after a moment he picked up his jacket and headed for the supermarket.",
+      "options": [
+        "Reza was angry with his flatmate for eating everything.",
+        "He sat looking at the empty shelf.",
+        "He picked up his jacket and went to the supermarket.",
+        "Reza opened and closed the fridge and found the shelf empty."
+      ],
+      "correctOrder": [3, 1, 2],
+      "hint": "What do his actions show about how he felt?",
+      "explanation": "Nothing suggests a flatmate, or anger. He simply finds nothing to eat and decides to shop.",
+      "storyKeyEvents": [
+        "Reza opened and closed the fridge and found the shelf empty.",
+        "He sat looking at the empty shelf.",
+        "He picked up his jacket and went to the supermarket."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L139_Q1",
+      "instruction": "One statement goes beyond what the story supports. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The school introduced a no-phone rule in the corridors for one term. Teachers reported quieter corridors within days. At the end of the term the head teacher asked pupils and staff to vote on continuing it.",
+      "options": [
+        "The rule was made permanent after the vote at the end of term.",
+        "Teachers reported quieter corridors within days.",
+        "The school introduced a no-phone rule in the corridors for one term.",
+        "At the end of the term the head teacher asked everyone to vote on continuing it."
+      ],
+      "correctOrder": [2, 1, 3],
+      "hint": "How did the story describe the rule's length?",
+      "explanation": "The rule was for one term and the vote was still to come. Making it permanent turns a trial into a final decision.",
+      "storyKeyEvents": [
+        "The school introduced a no-phone rule in the corridors for one term.",
+        "Teachers reported quieter corridors within days.",
+        "At the end of the term the head teacher asked everyone to vote on continuing it."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L139_Q2",
+      "instruction": "Which three statements can be justified from the story's clues? Put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Konrad revised for three hours every evening the week before his exam. On Monday he wore his lucky socks and sat the exam. He passed, and he told his tutor that his revision plan had made the difference.",
+      "options": [
+        "He passed and credited his revision plan to his tutor.",
+        "On Monday he sat the exam, wearing his lucky socks.",
+        "The lucky socks were the real reason he passed the exam.",
+        "Konrad revised for three hours every evening the week before his exam."
+      ],
+      "correctOrder": [3, 1, 0],
+      "hint": "Who does Konrad credit for his success?",
+      "explanation": "Konrad himself gave the credit to his revision plan. The socks were only worn at the same time.",
+      "storyKeyEvents": [
+        "Konrad revised for three hours every evening the week before his exam.",
+        "On Monday he sat the exam, wearing his lucky socks.",
+        "He passed and credited his revision plan to his tutor."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L139_Q3",
+      "instruction": "Choose the three statements the story supports, directly or by clear inference, and put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Vesna's elbow caught the vase as she reached for the salt, and it toppled off the table. Her host caught it before it hit the floor. Vesna laughed with relief and thanked him.",
+      "options": [
+        "Vesna laughed with relief and thanked him.",
+        "Vesna's elbow knocked the vase as she reached for the salt.",
+        "Vesna knocked the vase over deliberately to test her host.",
+        "Her host caught it before it hit the floor."
+      ],
+      "correctOrder": [1, 3, 0],
+      "hint": "Look at how she reacts when it is saved.",
+      "explanation": "Her relief and thanks fit an accident. A deliberate test would need some clue of intention that the story lacks.",
+      "storyKeyEvents": [
+        "Vesna's elbow knocked the vase as she reached for the salt.",
+        "Her host caught it before it hit the floor.",
+        "Vesna laughed with relief and thanked him."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L140_Q1",
+      "instruction": "One statement goes beyond what the story supports. Arrange the other three in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Hendrik was told that the meeting was at three, so he arrived at ten to. The room was empty, and the whiteboard still showed the morning's notes. He checked his email and found that the meeting had been moved to four.",
+      "options": [
+        "Hendrik was told the meeting was at three and arrived at ten to.",
+        "Hendrik knew the meeting had been moved before he arrived at ten to.",
+        "He checked his email and found the meeting had moved to four.",
+        "The room was empty, with the morning's notes still on the whiteboard."
+      ],
+      "correctOrder": [0, 3, 2],
+      "hint": "What did he have to do to find out about the change?",
+      "explanation": "He only discovered the change by checking his email after arriving, so he could not have known earlier. The empty room is the clue.",
+      "storyKeyEvents": [
+        "Hendrik was told the meeting was at three and arrived at ten to.",
+        "The room was empty, with the morning's notes still on the whiteboard.",
+        "He checked his email and found the meeting had moved to four."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L140_Q2",
+      "instruction": "Which three statements can be justified from the story's clues? Put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Odile filled in the rental application and attached three payslips. The agent scanned them, nodded and said the landlord would decide by Friday. Odile put the folder away and went back to work.",
+      "options": [
+        "The landlord rejected Odile's application after checking her payslips.",
+        "Odile put the folder away and went back to work.",
+        "The agent scanned the papers and said the landlord would decide by Friday.",
+        "Odile filled in the rental application and attached three payslips."
+      ],
+      "correctOrder": [3, 2, 1],
+      "hint": "Has the landlord made a decision by the end of the story?",
+      "explanation": "The decision was due by Friday and the story ends before it. A rejection would be an outcome nobody has reported.",
+      "storyKeyEvents": [
+        "Odile filled in the rental application and attached three payslips.",
+        "The agent scanned the papers and said the landlord would decide by Friday.",
+        "Odile put the folder away and went back to work."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L140_Q3",
+      "instruction": "Choose the three statements the story supports, directly or by clear inference, and put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Bram carried a violin case into the lift, and a woman with a shopping bag asked which floor he wanted. He said the seventh, adding that he was late for his class, not a concert. She laughed, pressed seven, and then eight for herself.",
+      "options": [
+        "Bram entered the lift carrying a violin case.",
+        "Bram was a professional soloist, as most violinists with cases are.",
+        "He said he was going to the seventh floor for a class, not a concert.",
+        "The woman laughed and pressed seven, then eight for herself."
+      ],
+      "correctOrder": [0, 2, 3],
+      "hint": "Ask what Bram himself says about where he is going.",
+      "explanation": "He says he is going to a class, not a concert. The story doesn't call him a professional, and the generalisation isn't a clue.",
+      "storyKeyEvents": [
+        "Bram entered the lift carrying a violin case.",
+        "He said he was going to the seventh floor for a class, not a concert.",
+        "The woman laughed and pressed seven, then eight for herself."
+      ]
+    }
+  ]
 }

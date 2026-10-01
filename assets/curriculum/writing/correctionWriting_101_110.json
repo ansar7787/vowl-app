@@ -11,13 +11,13 @@
             "passage": "[While] the bell rings, all students must leave the building quickly.",
             "options": [
                 "When",
-                "Despite",
-                "Until",
-                "While"
+                "While",
+                "As soon as",
+                "Until"
             ],
             "correctAnswer": "When",
-            "hint": "Think about a time clause showing the exact moment an action should start.",
-            "explanation": "'When' introduces the exact moment something happens, not 'While,' which describes an ongoing action.",
+            "hint": "This connector introduces a single, brief moment, not an ongoing period.",
+            "explanation": "'When' fits a single, momentary event like a bell ringing. 'While' is used for ongoing actions happening at the same time as another.",
             "errorCount": 3
         },
         {
@@ -25,16 +25,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "Please stay in your seats [when] the teacher gives further instructions.",
+            "passage": "Please stay seated [when] the teacher gives further instructions.",
             "options": [
                 "when",
-                "despite",
-                "until",
-                "while"
+                "as soon as",
+                "while",
+                "until"
             ],
             "correctAnswer": "until",
-            "hint": "Think about a time clause meaning 'up to the moment that' something happens.",
-            "explanation": "'Until' means 'up to the point when,' fitting staying seated up to a moment, not 'when.'",
+            "hint": "The instruction is to keep waiting up to a certain point, not to act at a specific moment.",
+            "explanation": "'Until' expresses continuing an action up to a point in time, matching 'stay seated' as an ongoing state. 'When' would suggest a single triggering moment instead.",
             "errorCount": 3
         },
         {
@@ -44,14 +44,14 @@
             "interactionType": "typing",
             "passage": "[While] I finish grading these papers, I'll send you the results.",
             "options": [
-                "As soon as",
+                "Until",
                 "While",
-                "When",
-                "Until"
+                "As soon as",
+                "When"
             ],
             "correctAnswer": "As soon as",
-            "hint": "Think about a time clause meaning 'immediately after.'",
-            "explanation": "'As soon as' means 'immediately after,' not 'While,' which describes two simultaneous actions.",
+            "hint": "This sentence describes one action happening immediately after another finishes, not simultaneously.",
+            "explanation": "'As soon as' expresses that the second action follows immediately after the first is complete. 'While' would incorrectly suggest the two actions happen at the same time.",
             "errorCount": 3
         },
         {
@@ -61,14 +61,14 @@
             "interactionType": "typing",
             "passage": "[When] the manager is in a meeting, please don't interrupt her at all.",
             "options": [
-                "Until",
-                "Despite",
                 "When",
-                "While"
+                "While",
+                "As soon as",
+                "Until"
             ],
             "correctAnswer": "While",
-            "hint": "Think about a time clause describing an action happening during another action.",
-            "explanation": "'While' describes an action happening at the same time as another ongoing one, not 'When.'",
+            "hint": "The interruption should be avoided for the duration of the meeting, not at one single moment.",
+            "explanation": "'While' fits an ongoing situation (the entire meeting), whereas 'when' typically signals a single point in time.",
             "errorCount": 3
         },
         {
@@ -78,14 +78,14 @@
             "interactionType": "typing",
             "passage": "[While] you finish the report, send it directly to the client right away.",
             "options": [
-                "Until",
                 "When",
                 "While",
-                "Despite"
+                "As soon as",
+                "Until"
             ],
             "correctAnswer": "When",
-            "hint": "Think about a time clause meaning 'at the moment that' something is completed.",
-            "explanation": "'When' shows the exact moment an action is completed, not 'While,' which describes simultaneous actions.",
+            "hint": "The sending should happen at the moment the report is done, not throughout the process.",
+            "explanation": "'When' introduces the specific point at which the report is finished, triggering the next action. 'While' would incorrectly suggest simultaneous actions.",
             "errorCount": 3
         },
         {
@@ -95,14 +95,14 @@
             "interactionType": "typing",
             "passage": "We can't submit the proposal [when] everyone approves the final draft.",
             "options": [
-                "while",
+                "as soon as",
                 "until",
-                "despite",
+                "while",
                 "when"
             ],
             "correctAnswer": "until",
-            "hint": "Think about a time clause meaning 'up to the point that.'",
-            "explanation": "'Until' shows an action can't happen before a certain point is reached, not 'when.'",
+            "hint": "The submission is being delayed up to a certain point, not triggered by it.",
+            "explanation": "'Until' expresses a delay up to a point in time, matching the idea of waiting for approval before submitting. 'When' doesn't capture this ongoing restriction.",
             "errorCount": 3
         },
         {
@@ -110,16 +110,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "All passports [must shown] be at the border before crossing into the country.",
+            "passage": "All passports [must shown] at the border before crossing into the country.",
             "options": [
-                "must shown",
                 "must showing",
-                "must be shown",
-                "are must shown"
+                "must shown",
+                "must showed",
+                "must be shown"
             ],
             "correctAnswer": "must be shown",
-            "hint": "Passive with modals follows the pattern modal + be + past participle, with nothing missing.",
-            "explanation": "Passive with modals needs 'be' between the modal and the past participle: 'must be shown,' not 'must shown.'",
+            "hint": "Modal passives follow the pattern 'modal + be + past participle' — check the word order here.",
+            "explanation": "The correct modal passive structure is 'must be shown,' with 'be' placed between the modal and the past participle.",
             "errorCount": 3
         },
         {
@@ -127,16 +127,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "This luggage tag [should removed] be before the flight leaves the gate.",
+            "passage": "This luggage tag [should removed] before the flight leaves the gate.",
             "options": [
                 "should removing",
                 "should removed",
                 "should be removed",
-                "is should removed"
+                "should remove"
             ],
             "correctAnswer": "should be removed",
-            "hint": "This passive structure needs the helping verb 'be' inserted between the modal and the participle.",
-            "explanation": "Passive with modals needs 'be': 'should be removed,' not 'should removed.'",
+            "hint": "The auxiliary 'be' is missing from the passive structure — where should it go?",
+            "explanation": "The modal passive requires 'be' before the past participle: 'should be removed,' not 'should removed.'",
             "errorCount": 3
         },
         {
@@ -144,16 +144,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "Tickets [can booked] be at least two weeks in advance for the best prices.",
+            "passage": "Tickets [can booked] at least two weeks in advance for the best prices.",
             "options": [
-                "are can booked",
-                "can booking",
+                "can book",
+                "can booked",
                 "can be booked",
-                "can booked"
+                "can booking"
             ],
             "correctAnswer": "can be booked",
-            "hint": "Don't skip 'be' when combining a modal verb with a passive past participle.",
-            "explanation": "Passive with modals needs 'be': 'can be booked,' not 'can booked.'",
+            "hint": "Rearrange the words so 'be' sits correctly between the modal and the past participle.",
+            "explanation": "The correct order for modal passives is 'modal + be + past participle': 'can be booked,' not 'can booked be.'",
             "errorCount": 3
         },
         {
@@ -161,16 +161,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "These old photographs [should kept] be somewhere safe and dry at all times.",
+            "passage": "These old photographs [should kept] somewhere safe and dry at all times.",
             "options": [
-                "should keeping",
-                "should be kept",
                 "should kept",
-                "are should kept"
+                "should be kept",
+                "should keep",
+                "should keeping"
             ],
             "correctAnswer": "should be kept",
-            "hint": "Remember that passive modals always include 'be' right before the past participle.",
-            "explanation": "Passive with modals needs 'be': 'should be kept,' not 'should kept.'",
+            "hint": "Check the placement of 'be' relative to the modal and the past participle.",
+            "explanation": "The modal passive structure requires 'be' directly after the modal and before the past participle: 'should be kept.'",
             "errorCount": 3
         },
         {
@@ -178,16 +178,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "This family recipe [has passed] down for four generations now in our family.",
+            "passage": "This family recipe [has passed] down for four generations now.",
             "options": [
-                "has passing",
+                "was being passed",
+                "is passed",
                 "has passed",
-                "has been passed",
-                "is has passed"
+                "has been passed"
             ],
             "correctAnswer": "has been passed",
-            "hint": "The passive present perfect needs 'has been' plus the past participle, with nothing missing.",
-            "explanation": "The passive present perfect uses 'has been' + past participle: 'has been passed down,' not just 'has passed.'",
+            "hint": "The recipe is being passed down by people over generations — it's the receiver of the action, spanning up to now.",
+            "explanation": "Since the recipe receives the action across an ongoing period up to now, the present perfect passive 'has been passed' is correct, not the active 'has passed.'",
             "errorCount": 3
         },
         {
@@ -195,16 +195,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "Important decisions like this [must discussed] be by the whole family together.",
+            "passage": "Important decisions like this [must discussed] by the whole family together.",
             "options": [
-                "must discussing",
                 "must be discussed",
-                "must discussed",
-                "are must discussed"
+                "must discuss",
+                "must discussing",
+                "must discussed"
             ],
             "correctAnswer": "must be discussed",
-            "hint": "Check that 'be' appears between the modal verb and the past participle here.",
-            "explanation": "Passive with modals needs 'be': 'must be discussed,' not 'must discussed.'",
+            "hint": "Reorder the words so 'be' correctly follows the modal.",
+            "explanation": "The modal passive needs 'be' right after the modal: 'must be discussed,' not 'must discussed be.'",
             "errorCount": 3
         },
         {
@@ -214,14 +214,14 @@
             "interactionType": "typing",
             "passage": "The cashier asked me [did I want] a paper or plastic bag for my groceries.",
             "options": [
-                "do I want",
                 "did I want",
-                "I wanted",
-                "if I wanted"
+                "if I wanted",
+                "that I wanted",
+                "if did I want"
             ],
             "correctAnswer": "if I wanted",
-            "hint": "Reported yes/no questions use 'if' plus normal statement word order, not question word order.",
-            "explanation": "Reported yes/no questions need 'if' and statement order: 'if I wanted,' not the inverted 'did I want.'",
+            "hint": "Reported yes/no questions need 'if' or 'whether' and normal statement word order, without the auxiliary inverted.",
+            "explanation": "Reported yes/no questions use 'if' or 'whether' followed by normal subject-verb order: 'if I wanted,' not the inverted question form 'did I want.'",
             "errorCount": 3
         },
         {
@@ -231,14 +231,14 @@
             "interactionType": "typing",
             "passage": "She asked me [had I found] the right size for the jacket I wanted.",
             "options": [
-                "did I find",
+                "had I found",
+                "that had I found",
                 "if I had found",
-                "I had found",
-                "had I found"
+                "if had I found"
             ],
             "correctAnswer": "if I had found",
-            "hint": "Reported yes/no questions use 'if' plus normal statement word order, not inverted question order.",
-            "explanation": "Reported questions need 'if' and statement word order: 'if I had found,' not the inverted 'had I found.'",
+            "hint": "Add 'if' and keep the subject before the verb, without question-word-order inversion.",
+            "explanation": "The reported question needs 'if' plus normal word order: 'if I had found.' The inverted form 'had I found' belongs only to direct questions.",
             "errorCount": 3
         },
         {
@@ -248,14 +248,14 @@
             "interactionType": "typing",
             "passage": "The manager wanted to know what time [does the store close] on weekends.",
             "options": [
-                "the store closes",
+                "does close the store",
+                "does the store close",
                 "did the store close",
-                "closes the store",
-                "does the store close"
+                "the store closes"
             ],
             "correctAnswer": "the store closes",
-            "hint": "In reported questions, normal statement word order is used, not question word order.",
-            "explanation": "Reported questions use statement order (subject + verb): 'the store closes,' not the inverted question form.",
+            "hint": "In reported wh-questions, the subject comes before the verb, without an extra auxiliary.",
+            "explanation": "Reported wh-questions drop the extra auxiliary and use normal word order: 'what time the store closes,' not the inverted 'does the store close.'",
             "errorCount": 3
         },
         {
@@ -265,14 +265,14 @@
             "interactionType": "typing",
             "passage": "The waiter asked us [were we ready] to order our meal yet.",
             "options": [
-                "were we ready",
-                "we were ready",
                 "if we were ready",
-                "are we ready"
+                "were we ready",
+                "if were we ready",
+                "that we were ready"
             ],
             "correctAnswer": "if we were ready",
-            "hint": "Reported yes/no questions use 'if' plus normal statement word order.",
-            "explanation": "Reported questions need 'if' and statement order: 'if we were ready,' not the inverted 'were we ready.'",
+            "hint": "This yes/no question needs 'if' and normal subject-verb order in the reported form.",
+            "explanation": "Reported yes/no questions require 'if' with regular word order: 'if we were ready,' not the inverted direct-question form.",
             "errorCount": 3
         },
         {
@@ -282,14 +282,14 @@
             "interactionType": "typing",
             "passage": "She asked me what kind of food [did I like] the most.",
             "options": [
-                "I liked",
+                "I did like",
                 "liked I",
-                "do I like",
-                "did I like"
+                "did I like",
+                "I liked"
             ],
             "correctAnswer": "I liked",
-            "hint": "In reported questions, normal statement word order is used, with a tense shift to the past.",
-            "explanation": "Reported questions use statement order with a tense shift: 'I liked,' not the inverted 'did I like.'",
+            "hint": "Drop the extra auxiliary and keep normal subject-verb word order in the reported clause.",
+            "explanation": "Reported wh-questions use plain subject-verb order without the extra auxiliary 'did': 'what kind of food I liked.'",
             "errorCount": 3
         },
         {
@@ -299,14 +299,14 @@
             "interactionType": "typing",
             "passage": "He wanted to know how much [did the dessert cost] at that fancy restaurant.",
             "options": [
-                "cost the dessert",
                 "the dessert cost",
+                "did the dessert cost",
                 "does the dessert cost",
-                "did the dessert cost"
+                "cost the dessert"
             ],
             "correctAnswer": "the dessert cost",
-            "hint": "In reported questions, normal statement word order is used, often with a tense shift to the past.",
-            "explanation": "Reported questions use statement order with a tense shift: 'the dessert cost,' not the inverted question form.",
+            "hint": "Remove the auxiliary and place the subject before the verb, as in a normal statement.",
+            "explanation": "Reported wh-questions use normal statement word order without the auxiliary 'did': 'how much the dessert cost.'",
             "errorCount": 3
         },
         {
@@ -316,14 +316,14 @@
             "interactionType": "typing",
             "passage": "If I [didn't lose] my phone, I wouldn't have missed your important call.",
             "options": [
-                "don't lose",
-                "hadn't lost",
                 "didn't lose",
-                "won't lose"
+                "haven't lost",
+                "hadn't lost",
+                "wouldn't lose"
             ],
             "correctAnswer": "hadn't lost",
-            "hint": "Third conditional uses the past perfect in the 'if' clause to talk about an unreal past situation, not the simple past.",
-            "explanation": "The third conditional uses the past perfect in the 'if' clause: 'hadn't lost,' not the simple past 'didn't lose.'",
+            "hint": "Third conditional 'if' clauses need the past perfect, describing an unreal past event.",
+            "explanation": "The third conditional 'if' clause uses past perfect: 'hadn't lost.' The simple past 'didn't lose' doesn't match this structure.",
             "errorCount": 3
         },
         {
@@ -335,12 +335,12 @@
             "options": [
                 "wouldn't lose",
                 "wouldn't have lost",
-                "won't lose",
-                "doesn't lose"
+                "hadn't lost",
+                "didn't lose"
             ],
             "correctAnswer": "wouldn't have lost",
-            "hint": "The main clause of a third conditional uses 'would have' plus the past participle, not just 'would.'",
-            "explanation": "The result clause of a third conditional uses 'would have' + past participle: 'wouldn't have lost,' not 'wouldn't lose.'",
+            "hint": "The result clause of a third conditional needs 'would have' plus the past participle.",
+            "explanation": "Third conditional result clauses use 'would have + past participle': 'wouldn't have lost,' not the simple 'wouldn't lose.'",
             "errorCount": 3
         },
         {
@@ -350,14 +350,14 @@
             "interactionType": "typing",
             "passage": "If the software [was] updated sooner, the system wouldn't have crashed last week.",
             "options": [
-                "were",
                 "is",
-                "had been",
-                "was"
+                "would be",
+                "was",
+                "had been"
             ],
             "correctAnswer": "had been",
-            "hint": "Third conditional uses the past perfect (passive here) in the 'if' clause, not the simple past.",
-            "explanation": "The 'if' clause of a third conditional uses the past perfect, here passive: 'had been updated,' not 'was updated.'",
+            "hint": "The 'if' clause of a third conditional needs the past perfect passive form.",
+            "explanation": "The third conditional 'if' clause requires past perfect: 'had been updated,' not the simple past 'was updated.'",
             "errorCount": 3
         },
         {
@@ -367,14 +367,14 @@
             "interactionType": "typing",
             "passage": "If he [went] to the doctor sooner, he would have recovered much faster.",
             "options": [
-                "would go",
-                "goes",
                 "went",
-                "had gone"
+                "had gone",
+                "goes",
+                "would go"
             ],
             "correctAnswer": "had gone",
-            "hint": "Third conditional uses the past perfect in the 'if' clause to discuss an unreal past situation, not the simple past.",
-            "explanation": "The third conditional's 'if' clause uses the past perfect for an unreal past situation: 'had gone,' not 'went.'",
+            "hint": "The 'if' clause of a third conditional needs the past perfect tense.",
+            "explanation": "The correct third conditional 'if' clause form is 'had gone,' the past perfect, not the simple past 'went.'",
             "errorCount": 3
         },
         {
@@ -384,14 +384,14 @@
             "interactionType": "typing",
             "passage": "If she had rested more, she [wouldn't have been] so exhausted right now.",
             "options": [
-                "wouldn't be",
-                "won't be",
                 "wouldn't have been",
-                "isn't"
+                "wasn't",
+                "wouldn't be",
+                "hadn't been"
             ],
             "correctAnswer": "wouldn't be",
-            "hint": "This links a past condition to a present result, a mixed conditional pattern, so the result is about now.",
-            "explanation": "When a past condition affects a present state, the result clause uses 'would' + base verb: 'wouldn't be,' not 'wouldn't have been.'",
+            "hint": "This is a mixed conditional — a past condition affecting a present result, which changes the result clause's tense.",
+            "explanation": "This is a mixed conditional: the 'if' clause describes a past condition, but the result describes the present, so it uses 'wouldn't be,' not 'wouldn't have been.'",
             "errorCount": 3
         },
         {
@@ -401,14 +401,14 @@
             "interactionType": "typing",
             "passage": "If I [knew] about the side effects, I wouldn't have taken that medicine at all.",
             "options": [
-                "knew",
                 "had known",
-                "know",
-                "would know"
+                "knew",
+                "would know",
+                "know"
             ],
             "correctAnswer": "had known",
-            "hint": "Third conditional uses the past perfect in the 'if' clause, not the simple past.",
-            "explanation": "The 'if' clause of a third conditional requires the past perfect: 'had known,' not the simple past 'knew.'",
+            "hint": "The 'if' clause of a third conditional needs the past perfect form.",
+            "explanation": "The third conditional 'if' clause requires past perfect: 'had known,' not the simple past 'knew.'",
             "errorCount": 3
         },
         {
@@ -416,16 +416,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "The concert [must] have ended already, because the lights are off and the doors are locked.",
+            "passage": "The concert [must] ended already, because the lights are off and the doors are locked.",
             "options": [
-                "must have",
-                "shouldn't have",
                 "must",
-                "mustn't have"
+                "could have",
+                "might have",
+                "must have"
             ],
             "correctAnswer": "must have",
-            "hint": "Modals of speculation about the past need 'have' plus the past participle, not the bare modal alone.",
-            "explanation": "Past speculation needs 'modal + have + past participle': 'must have ended,' not just 'must ended.'",
+            "hint": "This is a deduction about the past, which needs 'have' plus the past participle.",
+            "explanation": "Past deductions use 'must have + past participle': 'must have ended.' The bare modal 'must' alone doesn't complete this structure.",
             "errorCount": 3
         },
         {
@@ -435,14 +435,14 @@
             "interactionType": "typing",
             "passage": "She didn't answer her phone; she [might] been at the cinema with friends.",
             "options": [
-                "mightn't have",
-                "shouldn't have",
                 "might have",
-                "might"
+                "must",
+                "might",
+                "could"
             ],
             "correctAnswer": "might have",
-            "hint": "Modals of speculation about the past need 'have' plus the past participle.",
-            "explanation": "Past speculation needs 'have': 'might have been,' not just 'might been.'",
+            "hint": "This past deduction is missing the auxiliary 'have.'",
+            "explanation": "Past modal deductions require 'have' between the modal and the past participle: 'might have been,' not just 'might been.'",
             "errorCount": 3
         },
         {
@@ -452,14 +452,14 @@
             "interactionType": "typing",
             "passage": "He knew every detail about the film, so he [must] watched it already.",
             "options": [
+                "could",
+                "must have",
                 "must",
-                "shouldn't have",
-                "mustn't have",
-                "must have"
+                "might"
             ],
             "correctAnswer": "must have",
-            "hint": "Speculating about a past event needs 'have' added before the past participle.",
-            "explanation": "Past speculation needs 'have': 'must have watched,' not just 'must watched.'",
+            "hint": "This deduction about a past action needs the full modal perfect structure.",
+            "explanation": "The structure for confident past deduction is 'must have + past participle': 'must have watched,' not the bare modal alone.",
             "errorCount": 3
         },
         {
@@ -469,14 +469,14 @@
             "interactionType": "typing",
             "passage": "She hasn't replied to my message; she [might] been busy at work all day.",
             "options": [
-                "might",
-                "mightn't have",
-                "shouldn't have",
-                "might have"
+                "could",
+                "must",
+                "might have",
+                "might"
             ],
             "correctAnswer": "might have",
-            "hint": "This modal of speculation requires 'have' linking it to the past participle.",
-            "explanation": "Speculating about the past requires 'have': 'might have been,' never 'might been.'",
+            "hint": "This deduction about the past needs the auxiliary 'have' included.",
+            "explanation": "Past deductions require 'have' after the modal: 'might have been,' not the incomplete 'might been.'",
             "errorCount": 3
         },
         {
@@ -486,14 +486,14 @@
             "interactionType": "typing",
             "passage": "He knew exactly what I meant, so he [must] read my email very carefully.",
             "options": [
-                "must have",
+                "could",
+                "might",
                 "must",
-                "shouldn't have",
-                "mustn't have"
+                "must have"
             ],
             "correctAnswer": "must have",
-            "hint": "Don't drop 'have' when speculating about something that already happened.",
-            "explanation": "Past speculation needs 'have': 'must have read,' not just 'must read.'",
+            "hint": "This confident deduction about a completed past action needs the full modal perfect form.",
+            "explanation": "'Must have read' is the correct structure for a confident deduction about a past action, not the incomplete 'must read.'",
             "errorCount": 3
         },
         {
@@ -503,14 +503,14 @@
             "interactionType": "typing",
             "passage": "I'm not sure why she left early; she [might] had an emergency at home.",
             "options": [
-                "might have",
-                "mightn't have",
                 "might",
-                "shouldn't have"
+                "could",
+                "might have",
+                "must"
             ],
             "correctAnswer": "might have",
-            "hint": "Modals of speculation about the past need 'have' plus the past participle, with both words present correctly.",
-            "explanation": "Past speculation needs 'might have had,' combining 'have' with the past participle 'had,' not just 'might had.'",
+            "hint": "The modal perfect structure needs 'have,' not 'had,' after the modal verb.",
+            "explanation": "After a modal, the auxiliary is always 'have,' never 'had': 'might have had,' not 'might had.'",
             "errorCount": 3
         }
     ]

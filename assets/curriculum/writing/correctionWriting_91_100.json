@@ -10,14 +10,14 @@
             "interactionType": "typing",
             "passage": "My manager said that she [will finish] the report by Friday afternoon.",
             "options": [
-                "finished",
-                "will finish",
                 "finishes",
+                "will finish",
+                "has finished",
                 "would finish"
             ],
             "correctAnswer": "would finish",
-            "hint": "In reported speech, 'will' usually changes to another form when reporting a past statement.",
-            "explanation": "When reporting a past statement, 'will' typically changes to 'would': 'said she would finish,' not 'will finish.'",
+            "hint": "In reported speech, 'will' in the original statement shifts back one tense.",
+            "explanation": "When reporting a past statement, 'will' shifts back to 'would': 'said that she would finish.' This backshift is standard in reported speech.",
             "errorCount": 3
         },
         {
@@ -27,14 +27,14 @@
             "interactionType": "typing",
             "passage": "He told me that he [is] very tired after the long overnight shift.",
             "options": [
-                "being",
+                "will be",
                 "is",
-                "be",
-                "was"
+                "was",
+                "has been"
             ],
             "correctAnswer": "was",
-            "hint": "In reported speech, the present tense in the original statement usually shifts back one step.",
-            "explanation": "Reported speech generally shifts the present tense back to the past: 'is' becomes 'was,' not staying 'is.'",
+            "hint": "Reported speech typically shifts present tense back to past tense.",
+            "explanation": "Since the reporting verb 'told' is in the past, the present tense 'is' shifts back to 'was' in reported speech.",
             "errorCount": 3
         },
         {
@@ -44,14 +44,14 @@
             "interactionType": "typing",
             "passage": "They explained that they [have] already sent the invoice to the client.",
             "options": [
-                "having",
-                "have",
                 "has",
-                "had"
+                "had",
+                "were having",
+                "have"
             ],
             "correctAnswer": "had",
-            "hint": "In reported speech, the present perfect usually shifts back to the past perfect.",
-            "explanation": "When reporting speech, the present perfect typically shifts to the past perfect: 'have' becomes 'had.'",
+            "hint": "Present perfect in the original statement shifts back to past perfect in reported speech.",
+            "explanation": "'Have' in the original statement backshifts to 'had' in reported speech, forming the past perfect: 'explained that they had already sent.'",
             "errorCount": 3
         },
         {
@@ -61,14 +61,14 @@
             "interactionType": "typing",
             "passage": "The agent said that our flight [is] delayed by two hours that afternoon.",
             "options": [
-                "being",
-                "be",
                 "was",
-                "is"
+                "has been",
+                "is",
+                "will be"
             ],
             "correctAnswer": "was",
-            "hint": "In reported speech, the present tense usually shifts back one step into the past.",
-            "explanation": "Reported speech shifts the present tense back: 'is delayed' becomes 'was delayed,' not staying 'is.'",
+            "hint": "The reporting verb is in the past, so the tense inside the reported clause typically shifts back too.",
+            "explanation": "Because 'said' is past tense, the present 'is' shifts back to 'was' in the reported statement.",
             "errorCount": 3
         },
         {
@@ -78,14 +78,14 @@
             "interactionType": "typing",
             "passage": "She mentioned that she [will] visit Japan the following year after saving up.",
             "options": [
+                "has",
+                "is going to",
                 "will",
-                "would",
-                "going to",
-                "is going to"
+                "would"
             ],
             "correctAnswer": "would",
-            "hint": "In reported speech, 'will' usually changes to another form.",
-            "explanation": "When reporting a statement, 'will' generally changes to 'would,' not staying as 'will.'",
+            "hint": "'Will' in direct speech backshifts to a specific past-tense modal in reported speech.",
+            "explanation": "'Will' shifts back to 'would' in reported speech, matching the past-tense reporting verb 'mentioned.'",
             "errorCount": 3
         },
         {
@@ -95,14 +95,14 @@
             "interactionType": "typing",
             "passage": "He said that he [has] never been to that country before that trip.",
             "options": [
-                "having",
                 "has",
+                "have",
                 "had",
-                "have"
+                "was having"
             ],
             "correctAnswer": "had",
-            "hint": "When reporting speech, present perfect verbs typically move back to the past perfect.",
-            "explanation": "The present perfect 'has been' shifts to the past perfect 'had been' in reported speech, not staying 'has.'",
+            "hint": "Present perfect in the original quote shifts to past perfect in reported speech.",
+            "explanation": "'Has' backshifts to 'had' in reported speech, forming the past perfect 'had never been,' matching the past-tense reporting verb.",
             "errorCount": 3
         },
         {
@@ -110,16 +110,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "My grandfather is [old too] to climb stairs without help now.",
+            "passage": "My grandfather is [old too] to climb the stairs without help now.",
             "options": [
-                "enough old",
-                "too old",
+                "too much old",
                 "old enough",
-                "old too"
+                "old too",
+                "too old"
             ],
             "correctAnswer": "too old",
-            "hint": "Think about where 'too' goes relative to the adjective it modifies.",
-            "explanation": "'Too' goes before the adjective: 'too old,' not after it as in 'old too.'",
+            "hint": "'Too' comes before the adjective it modifies, not after it.",
+            "explanation": "'Too' is placed directly before the adjective: 'too old.' Placing it after the adjective, as in 'old too,' is incorrect word order.",
             "errorCount": 3
         },
         {
@@ -130,13 +130,13 @@
             "passage": "My little sister isn't [enough tall] to reach the top shelf just yet.",
             "options": [
                 "tall too",
-                "enough tall",
+                "too tall",
                 "tall enough",
-                "too tall"
+                "enough tall"
             ],
             "correctAnswer": "tall enough",
-            "hint": "Think about where 'enough' goes relative to the adjective it modifies.",
-            "explanation": "'Enough' goes after the adjective: 'tall enough,' not before it as in 'enough tall.'",
+            "hint": "'Enough' comes after the adjective it modifies, unlike 'too,' which comes before.",
+            "explanation": "'Enough' follows the adjective it modifies: 'tall enough.' Placing it before the adjective, as in 'enough tall,' is incorrect.",
             "errorCount": 3
         },
         {
@@ -146,14 +146,14 @@
             "interactionType": "typing",
             "passage": "My nephew is [young too] to understand what's happening just yet.",
             "options": [
-                "enough young",
-                "young too",
                 "too young",
-                "young enough"
+                "too much young",
+                "young enough",
+                "young too"
             ],
             "correctAnswer": "too young",
-            "hint": "Check whether this word belongs before or after the adjective here.",
-            "explanation": "'Too' goes before the adjective: 'too young,' not after it as in 'young too.'",
+            "hint": "'Too' always precedes the adjective it describes.",
+            "explanation": "'Too' comes before the adjective: 'too young.' The reversed order 'young too' is not standard English word order.",
             "errorCount": 3
         },
         {
@@ -164,13 +164,13 @@
             "passage": "This jacket is [expensive too] for my budget right now, unfortunately.",
             "options": [
                 "expensive too",
-                "expensive enough",
-                "enough expensive",
-                "too expensive"
+                "too expensive",
+                "too much expensive",
+                "expensive enough"
             ],
             "correctAnswer": "too expensive",
-            "hint": "This word's position relative to the adjective changes its meaning.",
-            "explanation": "'Too' goes before the adjective: 'too expensive,' not after it as in 'expensive too.'",
+            "hint": "Check the word order between 'too' and the adjective it modifies.",
+            "explanation": "'Too' must come before the adjective it modifies: 'too expensive.' Reversing the order is a common but incorrect pattern.",
             "errorCount": 3
         },
         {
@@ -180,14 +180,14 @@
             "interactionType": "typing",
             "passage": "I don't have [money enough] to buy both items today, sadly.",
             "options": [
-                "money too",
                 "enough money",
                 "money enough",
-                "too money"
+                "too money",
+                "enough of money"
             ],
             "correctAnswer": "enough money",
-            "hint": "Think about where 'enough' goes relative to the noun it modifies.",
-            "explanation": "'Enough' goes before a noun: 'enough money,' not after it as in 'money enough.'",
+            "hint": "'Enough' comes before a noun, but after an adjective — check which pattern applies here.",
+            "explanation": "Before a noun, 'enough' comes first: 'enough money.' After an adjective, however, 'enough' comes second, as in 'tall enough' — the position depends on what's being modified.",
             "errorCount": 3
         },
         {
@@ -198,13 +198,13 @@
             "passage": "These shoes aren't [enough comfortable] to wear all day at work.",
             "options": [
                 "too comfortable",
+                "comfortable enough",
                 "comfortable too",
-                "enough comfortable",
-                "comfortable enough"
+                "enough comfortable"
             ],
             "correctAnswer": "comfortable enough",
-            "hint": "This word's position after the adjective is what makes it correct here.",
-            "explanation": "'Enough' goes after the adjective: 'comfortable enough,' not before it as in 'enough comfortable.'",
+            "hint": "'Enough' follows the adjective it modifies, unlike 'too,' which precedes it.",
+            "explanation": "After an adjective, 'enough' goes second: 'comfortable enough.' Placing it before the adjective is incorrect word order.",
             "errorCount": 3
         },
         {
@@ -215,13 +215,13 @@
             "passage": "I've decided [trying] a vegetarian diet starting next month.",
             "options": [
                 "try",
-                "to try",
+                "tried",
                 "trying",
-                "tried"
+                "to try"
             ],
             "correctAnswer": "to try",
-            "hint": "After the verb 'decide,' we generally use the infinitive form, not the gerund.",
-            "explanation": "'Decide' is followed by the infinitive (to + verb): 'decided to try,' not the gerund 'trying.'",
+            "hint": "'Decide' is one of several verbs that must be followed by the infinitive form.",
+            "explanation": "'Decide' is always followed by an infinitive ('to' + base verb), not a gerund, so 'to try' is correct.",
             "errorCount": 3
         },
         {
@@ -232,13 +232,13 @@
             "passage": "She stopped [to eat] meat a few years ago for health reasons.",
             "options": [
                 "ate",
-                "eat",
                 "to eat",
-                "eating"
+                "eating",
+                "eat"
             ],
             "correctAnswer": "eating",
-            "hint": "After the verb 'stop' meaning to quit a habit, we use the gerund, not the infinitive.",
-            "explanation": "'Stop' followed by a gerund means to quit a habit: 'stopped eating,' not 'stopped to eat,' which means a different thing.",
+            "hint": "'Stop + gerund' means ending a habit, while 'stop + infinitive' means pausing to do something else — which meaning fits here?",
+            "explanation": "'Stop eating' means she no longer eats meat (ending the habit). 'Stop to eat' would mean pausing another activity in order to eat, which changes the meaning entirely.",
             "errorCount": 3
         },
         {
@@ -248,14 +248,14 @@
             "interactionType": "typing",
             "passage": "We agreed [trying] a new recipe for the dinner party next weekend.",
             "options": [
-                "to try",
-                "try",
+                "trying",
                 "tried",
-                "trying"
+                "to try",
+                "try"
             ],
             "correctAnswer": "to try",
-            "hint": "After the verb 'agree,' we generally use the infinitive form, not the gerund.",
-            "explanation": "'Agree' is followed by the infinitive (to + verb): 'agreed to try,' not the gerund 'trying.'",
+            "hint": "'Agree' consistently requires the infinitive form after it.",
+            "explanation": "'Agree' is always followed by an infinitive, so 'to try' is correct, not the gerund 'trying.'",
             "errorCount": 3
         },
         {
@@ -265,14 +265,14 @@
             "interactionType": "typing",
             "passage": "I've decided [creating] a new password for all my accounts today.",
             "options": [
-                "to create",
+                "creating",
                 "created",
                 "create",
-                "creating"
+                "to create"
             ],
             "correctAnswer": "to create",
-            "hint": "Remember that 'decide' is typically followed by a to-infinitive, not an -ing form.",
-            "explanation": "'Decide' takes the infinitive form: 'decided to create,' not the gerund 'creating.'",
+            "hint": "'Decide' is consistently followed by the infinitive, never the gerund.",
+            "explanation": "'Decide' takes an infinitive after it: 'decided to create.' The gerund form 'creating' doesn't fit this pattern.",
             "errorCount": 3
         },
         {
@@ -280,16 +280,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "He stopped [to use] that app because it used too much battery.",
+            "passage": "He stopped [to use] that app because it drained his battery too quickly.",
             "options": [
                 "using",
+                "used",
                 "to use",
-                "use",
-                "used"
+                "use"
             ],
             "correctAnswer": "using",
-            "hint": "After 'stop' meaning to quit doing something, we use the gerund, not the infinitive.",
-            "explanation": "'Stop' followed by a gerund means to quit doing something: 'stopped using,' not 'stopped to use.'",
+            "hint": "The meaning here is that he ended a habit, not that he paused something else to use the app.",
+            "explanation": "'Stop using' means he no longer uses the app (ending a habit). 'Stop to use' would mean pausing another action in order to use it, which doesn't match the meaning here.",
             "errorCount": 3
         },
         {
@@ -299,14 +299,14 @@
             "interactionType": "typing",
             "passage": "They plan [updating] the entire system before the end of the month.",
             "options": [
-                "update",
                 "updated",
+                "to update",
                 "updating",
-                "to update"
+                "update"
             ],
             "correctAnswer": "to update",
-            "hint": "After the verb 'plan,' we generally use the infinitive form, not the gerund.",
-            "explanation": "'Plan' is typically followed by the infinitive: 'plan to update,' not the gerund 'updating.'",
+            "hint": "'Plan' is consistently followed by an infinitive verb form.",
+            "explanation": "'Plan' takes an infinitive after it: 'plan to update.' The gerund form doesn't fit this verb pattern.",
             "errorCount": 3
         },
         {
@@ -316,14 +316,14 @@
             "interactionType": "typing",
             "passage": "You look exhausted; you [must] have slept very well last night.",
             "options": [
+                "might",
                 "must",
                 "can't",
-                "mustn't",
                 "should"
             ],
             "correctAnswer": "can't",
-            "hint": "Think about a deduction that something is unlikely to be true, based on the evidence of looking tired.",
-            "explanation": "'Can't have' expresses strong doubt that something was true, fitting someone who looks exhausted, not 'must.'",
+            "hint": "Looking exhausted logically contradicts having slept well — this calls for a negative deduction.",
+            "explanation": "Since looking exhausted contradicts sleeping well, the logical deduction is negative certainty: 'can't have slept well,' not 'must.'",
             "errorCount": 3
         },
         {
@@ -333,14 +333,14 @@
             "interactionType": "typing",
             "passage": "She hasn't eaten all day, so she [can't] be starving by now.",
             "options": [
-                "should",
-                "mustn't",
                 "must",
-                "can't"
+                "can't",
+                "might",
+                "should"
             ],
             "correctAnswer": "must",
-            "hint": "Think about a confident deduction based on clear evidence of skipping meals.",
-            "explanation": "'Must' expresses a strong, logical deduction based on clear evidence, not 'can't,' which expresses doubt.",
+            "hint": "Not eating all day logically supports the idea that she is hungry — this calls for a confident positive deduction.",
+            "explanation": "Since the evidence strongly supports hunger, the sentence needs 'must' for positive certainty, not 'can't,' which would express the opposite.",
             "errorCount": 3
         },
         {
@@ -350,14 +350,14 @@
             "interactionType": "typing",
             "passage": "He answered every question correctly, so he [can't] have studied a lot beforehand.",
             "options": [
-                "must",
                 "can't",
                 "should",
-                "mustn't"
+                "might",
+                "must"
             ],
             "correctAnswer": "must",
-            "hint": "Think about a confident deduction based on his strong performance.",
-            "explanation": "'Must have' shows a confident deduction about a past action, based on evidence, not 'can't.'",
+            "hint": "Answering everything correctly strongly supports the idea that he prepared well.",
+            "explanation": "The evidence strongly supports the deduction that he studied, so 'must have studied' fits, expressing near-certainty rather than 'can't.'",
             "errorCount": 3
         },
         {
@@ -367,14 +367,14 @@
             "interactionType": "typing",
             "passage": "The show sold out in minutes, so it [can't] be extremely popular right now.",
             "options": [
-                "must",
                 "can't",
-                "mustn't",
+                "must",
+                "might",
                 "should"
             ],
             "correctAnswer": "must",
-            "hint": "Think about a confident deduction based on the evidence of quick ticket sales.",
-            "explanation": "'Must' expresses a strong, logical conclusion based on clear evidence, not 'can't,' which expresses doubt.",
+            "hint": "Selling out quickly is strong evidence supporting a positive conclusion.",
+            "explanation": "Selling out quickly logically supports the conclusion that the show is popular, so 'must be' fits rather than the negative 'can't be.'",
             "errorCount": 3
         },
         {
@@ -382,16 +382,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "He says he watched the whole series in one night, but that [must] be true - it's twenty hours long.",
+            "passage": "He says he watched the whole series in one night, but that [must] be true — it's twenty hours long.",
             "options": [
-                "can't",
-                "mustn't",
                 "should",
-                "must"
+                "can't",
+                "must",
+                "might"
             ],
             "correctAnswer": "can't",
-            "hint": "Think about a deduction that something is very unlikely to be true.",
-            "explanation": "'Can't' expresses strong doubt that something is true based on logic, not 'must,' which expresses confidence.",
+            "hint": "The length described contradicts the claim, which calls for a negative deduction.",
+            "explanation": "Since watching twenty hours in one night seems implausible, the sentence needs 'can't be true,' expressing doubt, rather than 'must.'",
             "errorCount": 3
         },
         {
@@ -399,16 +399,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "This actor is in every single scene, so the role [can't] be the lead character.",
+            "passage": "This actor appears in every single scene, so the role [can't] be the lead character.",
             "options": [
                 "should",
-                "mustn't",
+                "can't",
                 "must",
-                "can't"
+                "might"
             ],
             "correctAnswer": "must",
-            "hint": "Think about a confident deduction based on the evidence given.",
-            "explanation": "'Must' shows a confident, logical deduction supported by clear evidence, not 'can't.'",
+            "hint": "Appearing in every scene strongly supports the conclusion that this is the lead role.",
+            "explanation": "The evidence strongly supports a positive conclusion, so 'must be' is correct, expressing confident certainty rather than doubt.",
             "errorCount": 3
         },
         {
@@ -416,16 +416,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "[However] the bad weather, the event continued exactly as planned.",
+            "passage": "[However] the terrible weather, the outdoor event continued exactly as planned.",
             "options": [
+                "Even though",
                 "However",
                 "Although",
-                "Despite",
-                "Because"
+                "Despite"
             ],
             "correctAnswer": "Despite",
-            "hint": "Think about a linking word followed directly by a noun phrase, not a full clause.",
-            "explanation": "'Despite' is followed by a noun phrase, such as 'despite the bad weather,' not 'However.'",
+            "hint": "This connector is followed directly by a noun phrase ('the terrible weather'), not a full clause.",
+            "explanation": "'Despite' is followed by a noun phrase, matching 'the terrible weather.' 'However' and 'although' require different sentence structures.",
             "errorCount": 3
         },
         {
@@ -435,14 +435,14 @@
             "interactionType": "typing",
             "passage": "[Despite] I called twice, nobody answered the phone at all.",
             "options": [
+                "Although",
+                "Nevertheless",
                 "However",
-                "Because of",
-                "Despite",
-                "Although"
+                "Despite"
             ],
             "correctAnswer": "Although",
-            "hint": "Think about a linking word that introduces a full clause showing contrast.",
-            "explanation": "'Although' introduces a full clause showing contrast: 'although I called twice,' not 'Despite.'",
+            "hint": "This connector is followed by a full clause with a subject and verb ('I called twice').",
+            "explanation": "'Although' introduces a full clause with a subject and verb, which fits 'I called twice.' 'Despite' would need a noun phrase instead.",
             "errorCount": 3
         },
         {
@@ -453,13 +453,13 @@
             "passage": "The line was very long; [although], we decided to wait anyway.",
             "options": [
                 "however",
-                "because",
                 "although",
+                "even though",
                 "despite"
             ],
             "correctAnswer": "however",
-            "hint": "Think about a linking word used at the start of a new sentence, often after a semicolon.",
-            "explanation": "'However' is often used after a semicolon to show contrast between two sentences, not 'although.'",
+            "hint": "This connector joins two independent sentences and typically needs a semicolon and comma around it.",
+            "explanation": "'However' connects two independent clauses with a semicolon before and comma after: '...long; however, we decided...' 'Although' cannot be used this way.",
             "errorCount": 3
         },
         {
@@ -467,16 +467,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "[However] feeling tired, she finished all her chores before bed.",
+            "passage": "[However] feeling exhausted, she finished all her chores before bed.",
             "options": [
                 "However",
-                "Because",
-                "Despite",
-                "Although"
+                "Even though",
+                "Although",
+                "Despite"
             ],
             "correctAnswer": "Despite",
-            "hint": "Think about a linking word followed directly by a gerund phrase, not a full clause.",
-            "explanation": "'Despite' can be followed by a gerund phrase, such as 'despite feeling tired,' not 'However.'",
+            "hint": "This connector is followed by a gerund phrase ('feeling exhausted'), not a full clause.",
+            "explanation": "'Despite' can be followed by a gerund phrase like 'feeling exhausted.' 'However' does not fit this grammatical pattern.",
             "errorCount": 3
         },
         {
@@ -486,14 +486,14 @@
             "interactionType": "typing",
             "passage": "[Despite] I usually wake up early, I overslept this morning by accident.",
             "options": [
-                "Because of",
-                "Despite",
+                "Nevertheless",
                 "Although",
-                "However"
+                "However",
+                "Despite"
             ],
             "correctAnswer": "Although",
-            "hint": "This connector needs a complete clause after it to express contrast.",
-            "explanation": "'Although' introduces a complete clause expressing contrast: 'although I usually wake up early,' not 'Despite.'",
+            "hint": "This connector introduces a complete clause with a subject and verb.",
+            "explanation": "'Although' fits before a full clause ('I usually wake up early'), while 'despite' would require a noun phrase instead.",
             "errorCount": 3
         },
         {
@@ -503,14 +503,14 @@
             "interactionType": "typing",
             "passage": "It was raining heavily; [although], we still went for our usual walk.",
             "options": [
-                "however",
-                "despite",
                 "although",
-                "because"
+                "even though",
+                "however",
+                "despite"
             ],
             "correctAnswer": "however",
-            "hint": "Think about a linking word used at the start of a new sentence after a semicolon.",
-            "explanation": "'However' is commonly placed after a semicolon to introduce a contrasting idea, not 'although.'",
+            "hint": "This connector links two complete sentences, typically with a semicolon before it.",
+            "explanation": "'However' joins two independent clauses with a semicolon and comma: '...heavily; however, we still went...' 'Although' cannot be used this way.",
             "errorCount": 3
         }
     ]

@@ -1,607 +1,586 @@
 {
-    "gameType": "opinionWriting",
-    "batchIndex": 16,
-    "levels": "151-160",
-    "quests": [
-        {
-            "id": "WRT_OPINIONWRITING_L151_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Artificial intelligence development should be governed by a binding global treaty.",
-            "options": [
-                "Binding AI treaties are virtually impossible to verify and enforce across secretive development environments.",
-                "A global AI treaty would prevent the race-to-the-bottom on safety standards between competing nations.",
-                "AI governance requires technical expertise and agility that slow-moving international treaty processes cannot provide.",
-                "International governance of AI risk prevents any single nation from imposing existential technology risks on humanity."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about the safety and global risk case for an AI treaty (Pros) and the verifiability and agility concerns (Cons).",
-            "explanation": "A global AI treaty prevents safety races to the bottom and protects humanity from unilateral existential risks (Pros), but verifying compliance is nearly impossible in secretive environments, and treaty processes are too slow for a rapidly evolving technology (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L151_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "National AI regulation is more practical than global governance and can set international standards.",
-            "options": [
-                "Fragmented national AI regulations create compliance complexity and regulatory arbitrage opportunities.",
-                "Jurisdictions like the EU are already creating comprehensive AI regulation that is influencing global standards.",
-                "AI systems trained in unregulated jurisdictions can be deployed globally regardless of national restrictions.",
-                "National regulation can move faster and adapt more readily to technical developments than global processes."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Consider national AI regulation as an alternative to global governance (Pros) and the fragmentation and deployment concerns (Cons).",
-            "explanation": "National regulation like the EU AI Act moves faster and already influences global standards (Pros), but fragmented rules create arbitrage opportunities, and AI systems trained in unregulated jurisdictions can be deployed globally regardless of national restrictions (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L151_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "AI self-regulation by companies is insufficient and creates fundamental conflicts of interest.",
-            "options": [
-                "AI companies have technical expertise that regulators lack and are better placed to identify and manage risks.",
-                "Companies have direct financial incentives to minimise the constraints that safety regulation would impose.",
-                "Independent technical advisory bodies can provide expertise to regulators without requiring industry self-regulation.",
-                "Historical precedents from tobacco, firearms, and social media show that industry self-regulation consistently fails."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about the limitations of AI self-regulation (Pros for external regulation) and the expertise and advisory alternative (Cons).",
-            "explanation": "Financial incentives create fundamental self-regulation conflicts and tobacco and social media show industry self-regulation consistently fails (Pros), but AI companies have irreplaceable technical expertise, and independent advisory bodies can channel that expertise into effective external regulation (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L152_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Large social media corporations should be broken up by competition regulators.",
-            "options": [
-                "Network effects and data advantages have created monopoly power that cannot be addressed without structural remedies.",
-                "Breaking up successful companies punishes innovation and success rather than addressing specific harms.",
-                "Breaking up dominant platforms would create space for competing services with different values and moderation approaches.",
-                "Fragmented smaller platforms may lack the resources to invest adequately in safety and content moderation."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about the competition and values diversity case for breaking up social media companies (Pros) and the innovation punishment and safety resource concerns (Cons).",
-            "explanation": "Network monopolies cannot be addressed without structural remedies, and breakup creates diversity of platform values (Pros), but breaking up successful companies punishes innovation, and smaller platforms may lack resources for adequate safety investment (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L152_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Interoperability requirements are more effective than breakup at restoring social media competition.",
-            "options": [
-                "Interoperability standards are technically complex to implement and can create new security vulnerabilities.",
-                "Requiring platforms to allow data portability lets users move between services without losing social connections.",
-                "Dominant platforms can comply superficially with interoperability requirements while retaining competitive advantages.",
-                "Interoperability enables competitive entry without destroying the network scale that users benefit from."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Consider interoperability as an alternative to social media breakup (Pros) and the technical and gaming concerns (Cons).",
-            "explanation": "Interoperability enables competition without destroying network scale benefits that users value (Pros), but technical implementation is complex, creates security risks, and dominant platforms can game compliance while retaining competitive advantages (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L152_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Public ownership of core social media infrastructure offers an alternative to corporate dominance.",
-            "options": [
-                "Publicly owned social media infrastructure could operate for public benefit rather than private profit.",
-                "Governments have no track record of successfully managing large-scale digital social platforms.",
-                "Public ownership of communication infrastructure raises fundamental freedom of speech and censorship concerns.",
-                "A non-profit or public model eliminates the profit incentive that drives engagement-maximising harmful design."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about public social media ownership as an alternative to corporate dominance (Pros) and the governance and freedom concerns (Cons).",
-            "explanation": "Public ownership could eliminate profit-driven harmful design and operate infrastructure for public benefit (Pros), but governments have no successful track record managing digital platforms, and state ownership of social communication raises serious freedom of speech risks (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L153_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Personal data privacy should be enshrined as a fundamental right in national and international law.",
-            "options": [
-                "Strong data privacy rights can conflict with legitimate law enforcement and national security needs.",
-                "Without legal protection, data privacy depends entirely on corporate goodwill that market incentives undermine.",
-                "Legal data rights give individuals enforceable recourse against organisations that misuse their personal data.",
-                "Privacy as absolute right ignores the genuine social benefits of data sharing for research and public services."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about the legal protection case for data privacy rights (Pros) and the law enforcement and social benefit concerns (Cons).",
-            "explanation": "Legal data rights protect individuals from corporate misuse through enforceable recourse (Pros), but strong privacy rights conflict with law enforcement needs and can prevent the data sharing that delivers real public health and social research benefits (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L153_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Consent-based data collection fails to provide genuine privacy protection for citizens.",
-            "options": [
-                "Redesigning consent mechanisms with clearer language and genuine choice can make consent genuinely meaningful.",
-                "Alternative models like data trusts can provide collective rather than individual protection from privacy harm.",
-                "Consent agreements are routinely designed to obscure data uses and obtain blanket permission without understanding.",
-                "The power imbalance between individuals and platforms makes meaningful consent practically impossible."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Consider whether consent-based privacy protection is fundamentally broken (Pros) and the reform and alternative models (Cons).",
-            "explanation": "Consent agreements are designed to obscure and the power imbalance makes genuine individual consent impossible (Pros), but redesigned clear consent with genuine choice can be meaningful, and collective data trust models offer alternative protection frameworks (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L153_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Data minimisation requirements are more effective than consent at protecting privacy.",
-            "options": [
-                "Restricting how much data can be collected removes the privacy risk before consent questions even arise.",
-                "Data minimisation may prevent legitimate personalisation and analytics that users genuinely value and choose.",
-                "Defining what data is necessary is contested and varies significantly by service and individual user need.",
-                "Data minimisation requirements reduce the security risk and harm potential of large personal data breaches."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about data minimisation requirements as an alternative to consent-based protection (Pros) and the personalisation and definition concerns (Cons).",
-            "explanation": "Data minimisation prevents collection before consent risks arise and reduces breach harm potential (Pros), but it may prevent personalisation users want, and defining necessary data is contested and service-specific (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L154_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "National governments should have significantly greater powers to regulate the internet.",
-            "options": [
-                "Governments bear responsibility for the safety of their citizens online and require appropriate regulatory powers.",
-                "Democratic accountability for online harms requires governments to be able to enforce safety standards.",
-                "Extending government internet powers threatens freedom of expression and enables authoritarian censorship.",
-                "Democratic and authoritarian governments would use identical regulatory powers to very different ends."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about the safety and accountability case for greater government internet powers (Pros) and the freedom and authoritarian risk concerns (Cons).",
-            "explanation": "Governments bear responsibility for citizen safety online and need enforcement powers (Pros), but identical regulatory powers used by democratic and authoritarian governments have very different implications for freedom of expression (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L154_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Internet regulation should be multi-stakeholder rather than purely governmental.",
-            "options": [
-                "Multi-stakeholder governance lacks democratic accountability and is dominated by powerful industry interests.",
-                "Corporate and civil society representatives in multi-stakeholder bodies are unelected and unrepresentative.",
-                "Multi-stakeholder governance including civil society, technical experts, and users produces more balanced outcomes.",
-                "A non-governmental approach maintains the decentralised architecture that has driven internet innovation."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Consider multi-stakeholder internet governance as an alternative to government control (Pros) and the accountability and industry dominance concerns (Cons).",
-            "explanation": "Multi-stakeholder governance produces more balanced decisions and preserves the decentralised architecture enabling innovation (Pros), but it lacks democratic accountability and is dominated by industry interests rather than genuine civil society representation (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L154_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "An independent global internet governance body is necessary to address transborder harms.",
-            "options": [
-                "Nation states are extremely unlikely to delegate significant internet governance authority to an international body.",
-                "The interests of authoritarian and democratic nations are so divergent that meaningful consensus is unachievable.",
-                "Transborder internet harms require coordination between jurisdictions that no single government can provide.",
-                "An independent body with technical expertise and international legitimacy can set globally consistent standards."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about a global internet governance body (Pros) and the political feasibility and divergent interests concerns (Cons).",
-            "explanation": "Transborder internet harms require internationally coordinated governance beyond any single jurisdiction (Pros), but nation states will not cede significant authority to international bodies, and the interests of democratic and authoritarian governments are irreconcilably divergent (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L155_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Technology companies should pay full taxes in every country where they generate profit.",
-            "options": [
-                "Current international tax rules allow technology companies to report profits in low-tax jurisdictions where little value is created.",
-                "International tax reform requires unanimous agreement among nations with very different interests.",
-                "Tax competition between countries reflects legitimate national policy choices and is not inherently unfair.",
-                "Full country-by-country profit taxation would restore billions in public revenue for health and education."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about the fairness and revenue case for full tech company country-by-country taxation (Pros) and the coordination and sovereignty concerns (Cons).",
-            "explanation": "Current rules allow profit shifting to low-tax jurisdictions and full country-level taxation would restore public revenue (Pros), but unanimous international agreement is extremely difficult, and tax competition reflects legitimate national sovereignty choices (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L155_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The OECD global minimum corporate tax is an important but insufficient step towards tech company fairness.",
-            "options": [
-                "A global minimum rate prevents the most extreme profit shifting to near-zero tax havens.",
-                "The minimum rate agreed is set too low and is unlikely to capture the vast majority of foregone revenue.",
-                "Even an imperfect global minimum represents unprecedented international tax cooperation and a foundation to build on.",
-                "Powerful lobbying by technology companies will continue to weaken and delay implementation of minimum tax rules."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Consider whether the OECD minimum tax is a meaningful step (Pros) and the inadequacy and lobbying concerns (Cons).",
-            "explanation": "A global minimum prevents extreme profit shifting and represents unprecedented tax cooperation as a building block (Pros), but the agreed rate is too low to capture most foregone revenue, and industry lobbying will continue to weaken and delay implementation (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L155_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Digital services taxes targeting revenue rather than profit better capture tech company tax liability.",
-            "options": [
-                "Revenue-based taxes are harder to avoid through profit-shifting and capture value created in source countries.",
-                "Digital services taxes targeted at market jurisdictions better reflect where user value is generated.",
-                "Unilateral digital services taxes provoke retaliation and trade disputes that harm non-tech industries.",
-                "Revenue taxes on loss-making companies are commercially unfair and may deter technology investment."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about digital services taxes as an alternative to profit-based tech taxation (Pros) and the retaliation and fairness concerns (Cons).",
-            "explanation": "Revenue-based taxes are harder to avoid through profit shifting and better capture source-country value creation (Pros), but unilateral digital services taxes provoke trade retaliation and are commercially unfair to companies that are loss-making despite high revenue (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L156_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Creating or distributing deepfake content without consent should be a criminal offence.",
-            "options": [
-                "Defining deepfake content precisely for criminal prosecution creates significant technical legal challenges.",
-                "Non-consensual deepfake pornography causes severe psychological harm to victims whose images are misused.",
-                "Satire, parody, and artistic uses of manipulated imagery may be criminalised under broadly drawn laws.",
-                "Criminal law against deepfakes without consent protects individual dignity and deters malicious creation."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about the victim harm and deterrence case for criminalising deepfakes (Pros) and the definition and artistic freedom concerns (Cons).",
-            "explanation": "Non-consensual deepfakes cause severe harm and criminalisation deters creation and distribution (Pros), but precise legal definition of deepfakes is technically challenging, and broadly drawn laws risk criminalising legitimate satire and artistic uses (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L156_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Deepfake technology poses a fundamental threat to democratic elections and public trust.",
-            "options": [
-                "Technology to detect deepfakes is developing in parallel with creation tools.",
-                "Media literacy education can help citizens identify and resist deepfake disinformation.",
-                "Realistic AI-generated video of candidates saying false things can irreversibly damage electoral integrity.",
-                "Once deepfake disinformation spreads, it cannot be recalled or corrected before electoral damage occurs."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Consider the electoral threat of deepfakes (Pros for strong regulation) and the detection and literacy counters (Cons).",
-            "explanation": "Realistic AI video disinformation can damage elections irreversibly before correction is possible (Pros), but detection technology is advancing alongside creation tools, and media literacy education helps citizens identify and resist deepfake content (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L156_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Platform responsibility for hosting deepfake content is as important as criminalising its creation.",
-            "options": [
-                "Requiring platforms to detect and remove deepfakes at scale is technically extremely challenging.",
-                "Platforms that host and algorithmically amplify deepfake content share moral and legal responsibility for its harm.",
-                "Over-aggressive automated deepfake removal may remove legitimate satire and parody content incorrectly.",
-                "Platform liability for deepfakes creates financial incentives to invest in detection and removal technology."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about platform responsibility for deepfake content (Pros) and the technical and false positive concerns (Cons).",
-            "explanation": "Platforms that amplify deepfakes share responsibility and liability creates detection investment incentives (Pros), but large-scale automated deepfake detection is technically very difficult and risks incorrectly removing legitimate satirical content (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L157_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Using algorithms to make hiring decisions without human review should be prohibited.",
-            "options": [
-                "Well-designed algorithmic screening can reduce human bias and provide more consistent evaluation than human reviewers.",
-                "Algorithmic hiring systems embed and amplify historical biases that disadvantage already marginalised groups.",
-                "Prohibiting algorithmic hiring tools may return decision-making to biased human processes without improving fairness.",
-                "Without human oversight, algorithmic errors that exclude qualified candidates cannot be identified or corrected."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about the bias and accountability case for prohibiting algorithmic hiring (Pros) and the consistent evaluation and return-to-bias concerns (Cons).",
-            "explanation": "Algorithmic hiring embeds historical bias and excludes oversight needed to identify and correct errors (Pros), but well-designed algorithms can reduce human bias, and prohibiting tools may return decision-making to equally or more biased human processes (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L157_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Algorithmic hiring tools must be subject to mandatory bias auditing and transparency.",
-            "options": [
-                "Regular independent bias audits identify and quantify discriminatory patterns in hiring algorithm outputs.",
-                "Bias auditing methodologies are contested and auditors may miss discriminatory patterns in opaque systems.",
-                "Transparency about algorithmic hiring criteria may enable gaming of criteria rather than genuine candidate improvement.",
-                "Transparency requirements allow candidates to understand and challenge automated hiring decisions."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Consider mandatory bias auditing and transparency for algorithmic hiring (Pros) and the audit quality and gaming concerns (Cons).",
-            "explanation": "Bias audits identify discriminatory patterns and transparency enables candidate challenges (Pros), but auditing methodologies are contested, opaque systems resist meaningful auditing, and transparency about criteria enables gaming (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L157_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Human decision-makers in hiring are subject to bias that algorithmic tools can reduce.",
-            "options": [
-                "Research consistently demonstrates that human recruiters hold systematic biases around race, gender, and age.",
-                "Algorithmic tools trained on historical hiring data perpetuate past discriminatory patterns at scale.",
-                "Accountability for discriminatory algorithmic hiring decisions is more difficult to assign than for human decisions.",
-                "Structured algorithmic assessments can evaluate candidates on job-relevant criteria with greater consistency."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about the human bias argument for algorithmic hiring tools (Pros) and the historical data and accountability concerns (Cons).",
-            "explanation": "Human recruiters hold well-documented systematic biases that structured algorithmic tools can reduce (Pros), but tools trained on biased historical data perpetuate past discrimination at scale, and assigning accountability for algorithmic discrimination is far harder than for human decisions (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L158_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Every person should have a legally enforceable right to be forgotten online.",
-            "options": [
-                "The right to be forgotten enables individuals to escape permanently damaging digital records from their past.",
-                "Allowing people to remove outdated personal information restores the human capacity for growth and reinvention.",
-                "The right to be forgotten conflicts directly with the public interest in accurate historical information.",
-                "Powerful individuals and institutions may abuse the right to be forgotten to suppress legitimate journalism."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about the personal redemption case for the right to be forgotten (Pros) and the historical accuracy and abuse concerns (Cons).",
-            "explanation": "The right to be forgotten enables escape from damaging past records and restores capacity for personal reinvention (Pros), but it conflicts with accurate historical records and risks abuse by powerful individuals seeking to suppress legitimate reporting (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L158_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The right to be forgotten must be balanced against the public's right to accurate information.",
-            "options": [
-                "Courts must weigh private individuals' right to data removal against the public interest in historical accuracy.",
-                "Case-by-case judicial balancing is expensive, slow, and produces inconsistent outcomes across different cases.",
-                "Requiring judicial review of every removal request creates enormous backlogs that prevent the right from functioning.",
-                "Proportionate case-by-case judicial balancing produces fairer outcomes than absolute rights in either direction."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Consider judicial balancing as the appropriate way to implement the right to be forgotten (Pros) and the practical concerns (Cons).",
-            "explanation": "Proportionate judicial balancing produces fairer outcomes than absolute rules in either direction (Pros), but individual judicial review is expensive, slow, produces inconsistent results, and creates massive backlogs that prevent the right from operating effectively (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L158_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Platform-level implementation of the right to be forgotten is more practical than judicial oversight.",
-            "options": [
-                "Platform-level decisions lack the impartiality and legal rigour of judicial oversight.",
-                "Platforms with technical capacity can implement removal requests far more efficiently than court systems.",
-                "Commercial platforms have incentives to both over-retain and over-remove data depending on competing interests.",
-                "Clear platform removal criteria can deliver consistent outcomes without expensive individual judicial proceedings."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about platform-level removal implementation (Pros) and the impartiality and commercial incentive concerns (Cons).",
-            "explanation": "Platform implementation is faster and more efficient than court-by-court review (Pros), but platforms lack judicial impartiality, and commercial incentives create contradictory pressures to retain or remove data based on platform interests rather than public interest (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L159_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Biometric mass surveillance in public spaces is fundamentally incompatible with a free society.",
-            "options": [
-                "Real-time facial recognition in public enables the state to track every citizen's movements permanently.",
-                "Targeted and appropriately regulated biometric surveillance provides valuable tools for serious crime detection.",
-                "Mass surveillance has a chilling effect on free assembly, protest, and political dissent.",
-                "Democratic nations have consistently demonstrated the ability to use surveillance powers with legal safeguards."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about the freedom and chilling effect case against mass biometric surveillance (Pros) and the targeted use and safeguard arguments (Cons).",
-            "explanation": "Mass biometric surveillance enables permanent movement tracking and chills protest and political dissent (Pros), but targeted biometric tools with legal safeguards provide valuable crime detection, and democratic nations can govern surveillance powers responsibly (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L159_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Facial recognition technology in policing carries unacceptable accuracy and bias problems.",
-            "options": [
-                "Facial recognition systems demonstrate significantly higher error rates for darker-skinned and female faces.",
-                "Wrongful identification based on biased systems has caused real harm to innocent people.",
-                "Accuracy improvements in facial recognition technology are progressing rapidly.",
-                "Human identification processes also contain systematic racial bias that algorithmic tools may reduce."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Consider the accuracy and bias case against police facial recognition (Pros) and the improvement and human bias comparison (Cons).",
-            "explanation": "Facial recognition shows higher error rates for non-white and female faces, causing documented wrongful identifications (Pros), but accuracy is improving rapidly and human identification processes carry their own systematic racial biases (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L159_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Public biometric surveillance requires explicit legislative authorisation and strict judicial oversight.",
-            "options": [
-                "Strict oversight requirements may prevent legitimate and effective use of surveillance tools in emergencies.",
-                "International human rights law already provides frameworks for regulating surveillance with or without domestic legislation.",
-                "Democratic legitimacy for powerful surveillance tools requires explicit legislative consent rather than executive discretion.",
-                "Judicial oversight of biometric surveillance prevents executive overreach and protects against misuse."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about legislative authorisation and judicial oversight as necessary conditions for biometric surveillance (Pros) and the emergency and international law concerns (Cons).",
-            "explanation": "Democratic legitimacy requires explicit legislative authorisation and judicial oversight prevents executive overreach (Pros), but strict prior authorisation requirements may impede legitimate emergency use, and international human rights frameworks already provide governing principles (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L160_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Government agencies should switch to open-source software to improve transparency and security.",
-            "options": [
-                "Open-source code can be publicly audited for security vulnerabilities and malicious backdoors.",
-                "Open-source software often lacks the commercial support, documentation, and usability of proprietary alternatives.",
-                "Government security requirements may not be met by community-maintained open-source software.",
-                "Switching to open-source eliminates vendor lock-in and the recurring licensing costs of proprietary software."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about the transparency and cost case for government open-source adoption (Pros) and the support and security quality concerns (Cons).",
-            "explanation": "Open-source enables public security auditing and eliminates proprietary licensing costs and vendor lock-in (Pros), but commercial support and documentation quality often lags proprietary alternatives, and some government security requirements may not be met by community-maintained code (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L160_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Open-source government software creates economic benefits and reduces dependency on foreign technology.",
-            "options": [
-                "Open-source reduces dependence on foreign technology companies that may be subject to foreign government influence.",
-                "Developing high-quality open-source government software requires substantial initial public investment.",
-                "Domestic open-source development may duplicate existing quality solutions, representing inefficient use of resources.",
-                "Investment in domestic open-source development builds national digital sovereignty and technical capacity."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Consider the sovereignty and economic case for government open-source (Pros) and the investment and duplication concerns (Cons).",
-            "explanation": "Open-source reduces foreign technology dependency and builds national digital sovereignty and technical capacity (Pros), but developing quality open-source government software requires substantial initial investment, and domestic development may inefficiently duplicate excellent existing solutions (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L160_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "A mixed model combining open-source and proprietary government software is most practical.",
-            "options": [
-                "Hybrid models create complex system integration challenges between open and proprietary components.",
-                "Critical public-facing infrastructure benefits from open-source transparency while back-office systems use best-available tools.",
-                "Partial open-source adoption may be used to claim transparency credentials while critical systems remain opaque.",
-                "Hybrid approaches allow governments to adopt open-source where benefits are clear while maintaining continuity elsewhere."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about a mixed open-source and proprietary government software model (Pros) and the integration and credibility concerns (Cons).",
-            "explanation": "Hybrid models apply open-source where transparency benefits are greatest while maintaining continuity in other areas (Pros), but open-proprietary integration is technically complex, and partial adoption can create false transparency claims while critical opaque systems remain unchallenged (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        }
-    ]
+  "gameType": "opinionWriting",
+  "batchIndex": 16,
+  "levels": "151-160",
+  "quests": [
+    {
+      "id": "WRT_OPINIONWRITING_L151_Q1",
+      "instruction": "What is missing from this body paragraph?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Public art can make streets feel safer. In one district, a mural covered a wall that had been tagged repeatedly. Afterwards, residents reported using the street after dark more often.'",
+      "options": [
+        "A definition of the term 'public art' with a reference to museums",
+        "A second mural example that names another street and another year",
+        "A concluding sentence that sums up the whole essay and repeats the thesis",
+        "An explanation of how the mural changed people's feelings or behaviour"
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "The paragraph has a claim and evidence. Something must connect them.",
+      "explanation": "The evidence is given, but the paragraph does not explain why the mural made the street feel safer.",
+      "structureGuide": "Body → Anatomy"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L151_Q2",
+      "instruction": "Which sentence best completes the paragraph structure?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Thesis: Cities should invest in wider cultural access. Paragraph: 'Most museums close at 5 p.m., when many people finish work. A pilot late opening on Thursdays brought in 1,200 visitors who had never been before. ____'",
+      "options": [
+        "Late opening would require some museums to hire more staff.",
+        "Museums have many different rooms and galleries.",
+        "This shows that small changes in opening hours can widen cultural access.",
+        "Museums are already open on Saturdays in many towns."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "The last sentence should connect the evidence to the essay's main claim.",
+      "explanation": "The best sentence links the pilot to the thesis on cultural access. The others describe, raise a cost or add a fact.",
+      "structureGuide": "Body → Anatomy"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L151_Q3",
+      "instruction": "Which body paragraph is best organised?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Four paragraphs support 'Employers should measure results, not hours.'",
+      "options": [
+        "At one firm, teams with monthly targets finished 20% more projects. Measuring results gives staff clear goals. Clear targets show people what matters, so effort goes where it counts. Some firms prefer to measure hours.",
+        "Measuring results gives staff clear goals. At one firm, teams with monthly targets finished 20% more projects. Clear targets show people what matters, so effort goes where it counts. This supports the case for focusing on results, not hours.",
+        "Measuring results gives staff clear goals. At one firm, teams with monthly targets finished 20% more projects. Many firms have offices in several cities and countries. This supports the case for focusing on results, not hours.",
+        "Measuring results gives staff clear goals. Clear goals help staff to know their goals. Staff with clear goals have goals that are clear. This supports the case for focusing on results, not hours."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Look for topic sentence, evidence, explanation and a link back.",
+      "explanation": "This paragraph has all four parts in a logical order. The remaining options begin with evidence, repeat the topic sentence, or include an off-topic sentence.",
+      "structureGuide": "Topic Sentence → Evidence → Explanation → Link"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L152_Q1",
+      "instruction": "Choose the best final sentence for the paragraph.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Thesis: Cafés should offer quiet hours because they support workers, reduce stress and attract loyal customers. The paragraph explains how freelancers struggle to find calm places to work.",
+      "options": [
+        "This is the first reason that I will discuss, and the next paragraph will introduce the second one.",
+        "Quiet is the absence of loud or distracting noise, and it can be hard to find in a busy town centre.",
+        "For workers with nowhere else to concentrate, a quiet hour turns a café into a workable office.",
+        "Cafés also sell cake, sandwiches and a range of drinks, and many of them offer discounts in the afternoon."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "The final sentence should tie the paragraph back to the reason it supports.",
+      "explanation": "The correct sentence links the paragraph to 'support workers'. The remaining options add unrelated detail or announce the structure.",
+      "structureGuide": "Body → Link to Thesis"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L152_Q2",
+      "instruction": "Choose the sentence that best links this paragraph to the thesis.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Thesis: Schools should teach basic budgeting because it prepares students for adult life and prevents debt. The paragraph describes young adults who took on credit card debt.",
+      "options": [
+        "Some students have savings accounts at their local bank, and a few of them add to it every month.",
+        "Debt is something that many adults have at some stage, and it can take years to pay off.",
+        "Budgeting can be difficult for some students to learn, especially when they have never managed money before.",
+        "By learning to budget early, students are less likely to slide into the debt that the thesis warns about."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "The link sentence should use the paragraph's evidence to support the thesis.",
+      "explanation": "This sentence explicitly connects budgeting lessons to preventing debt. The alternatives do not support the thesis.",
+      "structureGuide": "Body → Link to Thesis"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L152_Q3",
+      "instruction": "Choose the best link sentence.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Thesis: City bike hire should be expanded because it is cheaper than owning a bike and replaces short car trips. The paragraph shows that hiring costs £2 a day compared with £300 to buy a bike.",
+      "options": [
+        "Lower travel costs make bike hire a realistic alternative to short car trips.",
+        "Costs are usually measured in pounds and pence, and they can be compared from one month to the next.",
+        "Not everyone likes cycling in the city centre, especially when the traffic is heavy in the mornings.",
+        "Bike hire stations are found in many parts of the city, including the station and the market square."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Which sentence turns the cost evidence into support for the thesis?",
+      "explanation": "The best sentence connects cost to the aim of replacing car trips. The rest describe, object or add a fact.",
+      "structureGuide": "Body → Link to Thesis"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L153_Q1",
+      "instruction": "Where is the most effective place to acknowledge an objection?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A writer wants to address an objection without weakening the argument.",
+      "options": [
+        "In every sentence of the essay, so that the reader is reminded of the objection at all times",
+        "After presenting the strongest reasons, and answering it before the conclusion",
+        "At the very start of the essay, before the writer has stated any position at all",
+        "In the conclusion, as a new idea that the reader has not yet seen or thought about"
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Readers should see the writer's case first, then the reply to objections.",
+      "explanation": "Placing the objection after the main reasons shows the argument first and then tests it. The other positions weaken or confuse the essay.",
+      "structureGuide": "Counterargument → Placement"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L153_Q2",
+      "instruction": "Which arrangement of a counterargument paragraph works best?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Choose the most convincing sequence.",
+      "options": [
+        "Answer the objection → state the objection → concede what is valid",
+        "Concede what is valid → answer it → state the objection fairly",
+        "State the objection unfairly → ignore what is valid → repeat the thesis",
+        "State the objection fairly → concede what is valid → answer it with a reason or evidence"
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "The reader must know what the objection is before hearing the answer.",
+      "explanation": "The right sequence introduces the objection, accepts the valid part, and then responds. The others put steps in the wrong order or distort the objection.",
+      "structureGuide": "Counterargument → Placement"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L153_Q3",
+      "instruction": "Where should this sentence go: 'Some readers may argue that this will be expensive.'?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Choose the best place.",
+      "options": [
+        "At the start of a paragraph that will answer the cost objection",
+        "In the hook of the introduction",
+        "As the last sentence of the essay, with no reply",
+        "In the middle of the thesis statement"
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "The sentence introduces an objection that the paragraph should address.",
+      "explanation": "The correct place opens a paragraph that follows with a reply. The rest leave the objection unanswered or place it awkwardly.",
+      "structureGuide": "Counterargument → Placement"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L154_Q1",
+      "instruction": "Put the sentences in order: claim, objection, concession, reason.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Arrange the sentences into a paragraph about public art funding.",
+      "options": [
+        "Critics say the money would be better spent on repairs.",
+        "Repairs matter, and an arts budget could grow alongside a repair budget rather than replace it.",
+        "Councils should fund public art on residential streets.",
+        "Art also brings visitors and makes neighbourhoods feel valued in ways repairs alone rarely do."
+      ],
+      "correctOrder": [
+        2,
+        0,
+        1,
+        3
+      ],
+      "hint": "The concession follows the objection, and the final reason reinforces the claim.",
+      "explanation": "The claim opens, the objection follows, the writer concedes part of it and closes with a fresh reason.",
+      "structureGuide": "Claim → Objection → Concession → Reason"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L154_Q2",
+      "instruction": "Arrange the sentences.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Put the paragraph about weekend sports halls in order.",
+      "options": [
+        "That loss is real, yet weekend morning slots are rarely booked by paying groups.",
+        "Free sessions in those slots would cost little and give children safe exercise.",
+        "Community sports halls should be free for children on weekends.",
+        "Some councillors worry about lost income from bookings."
+      ],
+      "correctOrder": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "hint": "The reply must follow the worry it answers.",
+      "explanation": "The claim leads, the worry appears, the reply shows the loss is small and the closing reasserts the benefit.",
+      "structureGuide": "Claim → Objection → Reply → Benefit"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L154_Q3",
+      "instruction": "Arrange the sentences.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Put the paragraph about measuring results in order.",
+      "options": [
+        "That fear is understandable, but clear targets give managers more useful information than time at a desk.",
+        "Employers should measure results, not hours.",
+        "With targets in place, staff manage their time and managers manage outcomes.",
+        "Managers may fear losing control of the working day."
+      ],
+      "correctOrder": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "hint": "Look for the sentence that turns the fear into a solution.",
+      "explanation": "The claim opens, the managers' fear is stated, the concession and reply follow and the closing describes the result.",
+      "structureGuide": "Claim → Objection → Concession → Benefit"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L155_Q1",
+      "instruction": "Choose the best conclusion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Thesis: Cities should limit tourist numbers at fragile sites.",
+      "options": [
+        "Limiting visitor numbers protects the sites that draw people in the first place. With a fair booking system, visitors can still enjoy them, and so can future generations.",
+        "However, hotels might also lose money if visitor numbers fall, which is another problem that cities should consider before acting.",
+        "Visitor numbers are a complex topic with many sides, and much more could be said about the different views on it.",
+        "In conclusion, I have shown that cities should limit visitors to fragile sites. Thank you for reading my essay to the end."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "A conclusion restates the position, gathers the reasons and closes strongly.",
+      "explanation": "This conclusion restates the thesis, reflects on the reasons and looks ahead. The others thank the reader, avoid the position or introduce a new problem.",
+      "structureGuide": "Conclusion → Structure"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L155_Q2",
+      "instruction": "Which sentence best restates the thesis in fresh words?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Thesis: Schools should teach basic budgeting because it prepares students for adult life and prevents debt.",
+      "options": [
+        "Schools should teach basic budgeting because it prepares students for adult life and prevents debt.",
+        "Budgeting is a subject that is taught in some schools.",
+        "Teaching students to budget early gives them practical protection against money problems later.",
+        "Students should have a large amount of money to spend."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Restate the idea in new words, not the same words.",
+      "explanation": "The best sentence expresses the same position in different words. One repeats the thesis word for word; the others change the meaning.",
+      "structureGuide": "Conclusion → Structure"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L155_Q3",
+      "instruction": "Which final sentence gives a strong closing thought without adding a new argument?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "The essay argued that schools should start later.",
+      "options": [
+        "I hope you have enjoyed reading this essay about school start times.",
+        "There is also a completely different reason to consider, which is cost.",
+        "A small change to the timetable could give students something valuable: time to think.",
+        "Nothing more can be said on this issue by anyone."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "The closing thought should leave the reader with the main idea.",
+      "explanation": "This sentence closes with a memorable line linked to the argument. The alternatives add a new point, address the reader awkwardly or end flatly.",
+      "structureGuide": "Conclusion → Structure"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L156_Q1",
+      "instruction": "What is the main problem with this conclusion?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'In conclusion, this essay has discussed refill stations. There are many opinions on this topic.'",
+      "options": [
+        "It summarises the topic but never restates the writer's position.",
+        "It introduces a new argument at the end, which the essay has not prepared the reader to accept.",
+        "It is much too long for a conclusion, and the reader is likely to lose interest before the end.",
+        "It uses formal words that are hard to follow, so the reader loses track of the argument."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Does the conclusion tell you what the writer believes?",
+      "explanation": "The conclusion describes the essay but does not restate the thesis. It is short and has no new argument.",
+      "structureGuide": "Conclusion → Diagnosis"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L156_Q2",
+      "instruction": "What is the main problem with this conclusion?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'To sum up, refill stations are good. However, I have not mentioned that some stations might break down.'",
+      "options": [
+        "It repeats the introduction word for word.",
+        "It uses a transition that is not needed.",
+        "It is too persuasive for a conclusion.",
+        "It introduces a new problem without discussing it."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "A conclusion should not raise a fresh issue.",
+      "explanation": "Raising a new problem at the end leaves the reader with doubts. The conclusion is short and does not copy the introduction.",
+      "structureGuide": "Conclusion → Diagnosis"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L156_Q3",
+      "instruction": "Which conclusion is confident and clear?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "The essay recommends a trial of a new schedule.",
+      "options": [
+        "I am not sure anyone will agree, but I tried.",
+        "Maybe a trial could possibly be tried, if people want it.",
+        "This is only my opinion, and I might be wrong about everything.",
+        "The evidence supports a trial, and the trial should begin this term."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Confidence is not the same as exaggeration.",
+      "explanation": "The right conclusion is direct and supported. The other choices undermine the writer with excessive doubt.",
+      "structureGuide": "Conclusion → Diagnosis"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L157_Q1",
+      "instruction": "Which sentence connects most clearly to the previous sentence?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Previous sentence: 'The new tram line links the hospital to the station.'",
+      "options": [
+        "Many cities have similar transport systems.",
+        "This link cuts commuting time for 300 staff.",
+        "Trams are electric vehicles that run on rails.",
+        "Staff are important to the running of hospitals."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "A cohesive sentence refers back to something just mentioned and adds to it.",
+      "explanation": "'This link' refers back to the tram line and adds a consequence. The others move away from the idea.",
+      "structureGuide": "Cohesion"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L157_Q2",
+      "instruction": "Which revision improves cohesion by avoiding repeated words and vague references?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'The scheme helps students. The scheme helps students to save. The scheme is good for students.'",
+      "options": [
+        "The scheme helps students, and the scheme helps them save, and the scheme is good.",
+        "The scheme helps students by making saving automatic, which builds the habit early.",
+        "This helps them, and it is good for them, and they save.",
+        "The scheme, the scheme, helps students to save money."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Combine repeated ideas and add meaning.",
+      "explanation": "This version merges the ideas and explains how. The rest still repeat or become vague.",
+      "structureGuide": "Cohesion"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L157_Q3",
+      "instruction": "Choose the sentence that connects smoothly by using a pronoun or a synonym.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Previous sentence: 'Residents complained about the late-night noise from the market.'",
+      "options": [
+        "Their complaints led the council to set a ten o'clock finish time.",
+        "The council set a ten o'clock finish time for all of the markets that are held in the square.",
+        "Noise is a sound that can be loud or quiet, and it is measured in units called decibels.",
+        "Markets are held in many towns and cities, and some of them have been running for hundreds of years."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "The next sentence should refer back to the residents or their complaints.",
+      "explanation": "'Their complaints' links directly to the residents and shows a result. The alternatives don't refer back.",
+      "structureGuide": "Cohesion"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L158_Q1",
+      "instruction": "What is the relationship between paragraph 2 and paragraph 1?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Paragraph 1: 'Free bike storage would encourage cycling.' Paragraph 2 begins: 'However, storage costs money to build and maintain.'",
+      "options": [
+        "Addition: paragraph 2 gives another benefit.",
+        "Example: paragraph 2 gives a case of paragraph 1.",
+        "Contrast: paragraph 2 raises a limitation.",
+        "Cause: paragraph 2 explains why paragraph 1 happens."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "'However' is a clue to the relationship.",
+      "explanation": "'However' signals contrast, and paragraph 2 raises a cost that limits paragraph 1's idea.",
+      "structureGuide": "Paragraph Relationships"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L158_Q2",
+      "instruction": "What is the relationship between the two paragraphs?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Paragraph 1: 'Many shops in the town centre have closed.' Paragraph 2 begins: 'As a result, fewer people visit the centre on weekends.'",
+      "options": [
+        "Cause and effect",
+        "Contrast",
+        "Definition",
+        "Example"
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "'As a result' shows that the second paragraph follows from the first.",
+      "explanation": "'As a result' links a cause (closed shops) to an effect (fewer visitors).",
+      "structureGuide": "Paragraph Relationships"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L158_Q3",
+      "instruction": "What is the relationship between the two paragraphs?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Paragraph 1: 'Apprenticeships give young people paid training.' Paragraph 2 begins: 'In addition, they give employers workers who know the company's methods.'",
+      "options": [
+        "Concession: a point is admitted",
+        "Conclusion: the essay is summed up",
+        "Contrast: a limitation is raised",
+        "Addition: another benefit is added"
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Look at the transition 'in addition'.",
+      "explanation": "'In addition' adds another benefit rather than contrasting, conceding or concluding.",
+      "structureGuide": "Paragraph Relationships"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L159_Q1",
+      "instruction": "Which outline is best for an essay arguing that companies should measure results, not hours?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Choose the outline with the strongest order.",
+      "options": [
+        "Introduction with thesis → Objection about loss of control → Reason 1 → Reason 2 → Conclusion that adds new evidence",
+        "Reason 1 → Introduction with thesis → Reason 2 → Objection about loss of control, with reply → Conclusion",
+        "Introduction with thesis → Reason 1: trust and autonomy → Reason 2: clearer performance data → Objection about loss of control, with reply → Conclusion",
+        "Introduction with thesis → Reason 1 → the same Reason 1 again → Reason 1 once more → Conclusion"
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "The thesis comes first, reasons follow, the objection is answered and the conclusion gathers the argument.",
+      "explanation": "This outline has a logical order. The others put the objection first, place the introduction after a reason, or repeat one reason.",
+      "structureGuide": "Outline"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L159_Q2",
+      "instruction": "Which item does not belong in this outline?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Essay: Schools should offer coding classes. Outline: Introduction and thesis / Reason: job skills / Reason: problem solving / A history of typewriters / Objection: cost, with reply / Conclusion.",
+      "options": [
+        "A history of typewriters",
+        "Reason: problem solving",
+        "Objection: cost, with reply",
+        "Reason: job skills"
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Check each item against the thesis.",
+      "explanation": "The history of typewriters does not support the argument about coding classes. The other items are reasons or an objection with a reply.",
+      "structureGuide": "Outline"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L159_Q3",
+      "instruction": "Which outline uses the strongest ordering for a proposal?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A proposal to change how a company books rooms.",
+      "options": [
+        "The expected benefits → the call to action → the proposed change → the problem → the objections",
+        "The proposed change → the call to action → the problem → the expected benefits → likely objections",
+        "The problem with the current system → the proposed change → the expected benefits → likely objections and replies → a call to action",
+        "Likely objections → the call to action → the problem → the proposed change → the expected benefits"
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "A reader needs to see a problem before a solution.",
+      "explanation": "The best outline moves from problem to solution to benefits to objections to action. The alternatives begin with the solution, benefits or objections.",
+      "structureGuide": "Outline"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L160_Q1",
+      "instruction": "What should the writer change?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "An essay has a thesis in the introduction, evidence in paragraph 2, another reason in paragraph 3, and a conclusion that introduces a new argument about cost.",
+      "options": [
+        "Add another paragraph after the conclusion so that the new argument about cost has room to develop.",
+        "Remove the new argument from the conclusion and restate the thesis.",
+        "Make the introduction longer than the body so that the essay begins with a strong statement.",
+        "Delete the thesis from the introduction, because the conclusion already contains the main argument."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "A conclusion should gather the argument, not extend it.",
+      "explanation": "The new argument belongs in a body paragraph or should be cut. The conclusion should restate the thesis.",
+      "structureGuide": "Essay → Revision"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L160_Q2",
+      "instruction": "Which set of opening sentences gives the smoothest progression?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Three body paragraphs argue that refill stations should be installed.",
+      "options": [
+        "Refill stations save students money. Meanwhile, plastic is a material made from oil. Critics like plastic bottles more than stations.",
+        "Critics worry about setup costs. Refill stations save students money. Beyond savings, they are a good thing.",
+        "Beyond savings, refill stations exist. Refill stations save students money. Setup costs exist too.",
+        "Refill stations save students money. Beyond savings, they cut plastic waste. Critics worry about setup costs, but these are small."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "The paragraph openings should build on each other.",
+      "explanation": "The correct set moves from benefit to another benefit to an objection with a reply. The rest contain disconnected or reversed links.",
+      "structureGuide": "Essay → Transitions"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L160_Q3",
+      "instruction": "Choose the best revision of the conclusion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'So that is my essay. I think refill stations are good, and I hope you agree, and thanks.'",
+      "options": [
+        "Thank you for reading about refill stations and all of their good points, and I hope you enjoyed the essay.",
+        "Refill stations are good, and there are also other water-saving ideas to consider, such as taps that stop themselves.",
+        "So, in conclusion, refill stations are good, and I hope that you agree with me about them and their benefits.",
+        "Refill stations would save money, cut plastic and keep students hydrated; the school should install them this year."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "A strong conclusion states the position and the recommendation.",
+      "explanation": "This revision gathers the reasons and makes a clear recommendation. The others are weak, add a new idea or thank the reader.",
+      "structureGuide": "Conclusion → Revision"
+    }
+  ]
 }

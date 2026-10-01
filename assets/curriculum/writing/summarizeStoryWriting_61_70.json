@@ -1,817 +1,637 @@
 {
-    "gameType": "summarizeStoryWriting",
-    "batchIndex": 7,
-    "levels": "61-70",
-    "quests": [
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L61_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "Even though the marketing team had never launched a product internationally before, they were assigned a rollout across six new countries within a single quarter. They hired local consultants in each region to adapt the messaging appropriately. The rollout succeeded in five of the six countries within the deadline.",
-            "options": [
-                "The rollout failed in every single country they targeted.",
-                "The marketing team, with no prior international experience, was assigned a rollout across six new countries in one quarter.",
-                "The team hired local consultants in each region to adapt the messaging appropriately.",
-                "The rollout succeeded in five of the six countries within the deadline."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Notice how many countries the rollout actually succeeds in by the deadline.",
-            "explanation": "Since the rollout succeeds in five of six countries, an option claiming total failure everywhere contradicts that specific, partial success.",
-            "storyKeyEvents": [
-                "The marketing team, with no prior international experience, was assigned a rollout across six new countries in one quarter.",
-                "The team hired local consultants in each region to adapt the messaging appropriately.",
-                "The rollout succeeded in five of the six countries within the deadline.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L61_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A mid-level manager had been passed over for promotion twice despite strong performance reviews. She requested direct feedback from leadership about what was missing. She used that feedback to earn a promotion within the following year.",
-            "options": [
-                "A mid-level manager had been passed over for promotion twice despite strong performance reviews.",
-                "She resigned without ever asking why she was overlooked.",
-                "She requested direct feedback from leadership about what was missing.",
-                "She used that feedback to earn a promotion within the following year."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Check whether each option matches what the manager actually does after being passed over twice.",
-            "explanation": "Because she requests feedback and later earns a promotion, an option showing her resigning without asking contradicts that path to advancement.",
-            "storyKeyEvents": [
-                "A mid-level manager had been passed over for promotion twice despite strong performance reviews.",
-                "She requested direct feedback from leadership about what was missing.",
-                "She used that feedback to earn a promotion within the following year.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L61_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional theater company had never attempted a full-scale musical due to its limited budget. It partnered with a local music school to share costs and talent. Together, they staged a sold-out production that exceeded every expectation.",
-            "options": [
-                "A regional theater company had never attempted a full-scale musical due to its limited budget.",
-                "The company partnered with a local music school to share costs and talent.",
-                "The partnership fell apart before rehearsals even began.",
-                "Together, they staged a sold-out production that exceeded every expectation."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you what actually became of the theater's partnership.",
-            "explanation": "Since the partnership leads to a sold-out production, an option showing it collapsing before rehearsals contradicts that successful outcome.",
-            "storyKeyEvents": [
-                "A regional theater company had never attempted a full-scale musical due to its limited budget.",
-                "The company partnered with a local music school to share costs and talent.",
-                "Together, they staged a sold-out production that exceeded every expectation.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L62_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A midsize accounting firm noticed that junior staff routinely made the same three data-entry errors. Senior accountants created a short checklist targeting those specific mistakes. Those particular errors nearly disappeared from client reports.",
-            "options": [
-                "A midsize accounting firm noticed that junior staff routinely made the same three data-entry errors.",
-                "Senior accountants created a short checklist targeting those specific mistakes.",
-                "Those particular errors nearly disappeared from client reports.",
-                "The same errors appeared even more frequently afterward."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Track cause and effect: the checklist leads to those errors nearly disappearing. One option reverses that.",
-            "explanation": "Because the targeted errors nearly disappear after the checklist, an option claiming they appeared more often reverses the firm's own measured result.",
-            "storyKeyEvents": [
-                "A midsize accounting firm noticed that junior staff routinely made the same three data-entry errors.",
-                "Senior accountants created a short checklist targeting those specific mistakes.",
-                "Those particular errors nearly disappeared from client reports.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L62_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional zoo's breeding program for an endangered bird had failed for three consecutive seasons. Keepers adjusted the enclosure's temperature and lighting to match the bird's natural habitat more closely. The fourth season produced the program's first successful hatching.",
-            "options": [
-                "The breeding program was shut down after the third failed season.",
-                "A regional zoo's breeding program for an endangered bird had failed for three consecutive seasons.",
-                "Keepers adjusted the enclosure's temperature and lighting to match the bird's natural habitat more closely.",
-                "The fourth season produced the program's first successful hatching."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Notice what happens in the fourth season, after the enclosure adjustments.",
-            "explanation": "Since the fourth season produces the program's first successful hatching, an option shutting the program down after season three contradicts that eventual success.",
-            "storyKeyEvents": [
-                "A regional zoo's breeding program for an endangered bird had failed for three consecutive seasons.",
-                "Keepers adjusted the enclosure's temperature and lighting to match the bird's natural habitat more closely.",
-                "The fourth season produced the program's first successful hatching.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L62_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A community college noticed that evening students often struggled to attend office hours during the day. It scheduled a rotating set of evening office hours once a week. Evening students' use of academic support services rose sharply.",
-            "options": [
-                "A community college noticed that evening students often struggled to attend office hours during the day.",
-                "Evening students still rarely used any academic support services.",
-                "The college scheduled a rotating set of evening office hours once a week.",
-                "Evening students' use of academic support services rose sharply."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Ask which option matches how evening students actually respond to the new office hours.",
-            "explanation": "Because use of support services rises sharply among evening students, an option claiming they still rarely used them contradicts that measured increase.",
-            "storyKeyEvents": [
-                "A community college noticed that evening students often struggled to attend office hours during the day.",
-                "The college scheduled a rotating set of evening office hours once a week.",
-                "Evening students' use of academic support services rose sharply.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L63_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional supermarket chain noticed that its own-brand products sold poorly compared to national brands. It redesigned the packaging to highlight local sourcing and lower prices. Own-brand sales overtook national brands within eighteen months.",
-            "options": [
-                "A regional supermarket chain noticed that its own-brand products sold poorly compared to national brands.",
-                "The chain redesigned the packaging to highlight local sourcing and lower prices.",
-                "Own-brand sales remained far behind national brands after the redesign.",
-                "Own-brand sales overtook national brands within eighteen months."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "This story moves in a clear line from poor sales to a redesign to sales overtaking competitors. Find the sentence outside it.",
-            "explanation": "Since own-brand sales overtake national brands within eighteen months, an option claiming they remained far behind denies that specific milestone.",
-            "storyKeyEvents": [
-                "A regional supermarket chain noticed that its own-brand products sold poorly compared to national brands.",
-                "The chain redesigned the packaging to highlight local sourcing and lower prices.",
-                "Own-brand sales overtook national brands within eighteen months.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L63_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A small city's public library had seen a steady decline in teen membership for nearly five years. It hired a teen librarian to design programs based directly on student surveys. Teen membership more than doubled within the first year of the new programs.",
-            "options": [
-                "A small city's public library had seen a steady decline in teen membership for nearly five years.",
-                "The library hired a teen librarian to design programs based directly on student surveys.",
-                "Teen membership more than doubled within the first year of the new programs.",
-                "Teen membership continued declining despite the new programs."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Notice what actually happens to teen membership once the new programs begin.",
-            "explanation": "Because teen membership more than doubles within a year, an option claiming it kept declining denies that clear turnaround.",
-            "storyKeyEvents": [
-                "A small city's public library had seen a steady decline in teen membership for nearly five years.",
-                "The library hired a teen librarian to design programs based directly on student surveys.",
-                "Teen membership more than doubled within the first year of the new programs.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L63_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A veteran salesperson had consistently missed her quarterly targets for over a year. Her manager paired her with a mentor who reviewed her sales calls weekly. She exceeded her target for the first time in five consecutive quarters.",
-            "options": [
-                "She was let go before the mentorship could take effect.",
-                "A veteran salesperson had consistently missed her quarterly targets for over a year.",
-                "Her manager paired her with a mentor who reviewed her sales calls weekly.",
-                "She exceeded her target for the first time in five consecutive quarters."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Check whether each option matches what actually happens to the salesperson's results.",
-            "explanation": "Since she exceeds her target for the first time in five quarters, an option showing her let go before the mentorship worked contradicts that later success.",
-            "storyKeyEvents": [
-                "A veteran salesperson had consistently missed her quarterly targets for over a year.",
-                "Her manager paired her with a mentor who reviewed her sales calls weekly.",
-                "She exceeded her target for the first time in five consecutive quarters.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L64_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A pharmaceutical company's new drug trial showed promising early results but faced a shortage of qualified volunteers. Researchers partnered with several regional clinics to broaden recruitment. The trial reached its full target enrollment within two months.",
-            "options": [
-                "A pharmaceutical company's new drug trial showed promising early results but faced a shortage of qualified volunteers.",
-                "The trial was canceled due to a lack of volunteers.",
-                "Researchers partnered with several regional clinics to broaden recruitment.",
-                "The trial reached its full target enrollment within two months."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you what actually happened to the trial's enrollment numbers.",
-            "explanation": "Because the trial reaches full enrollment within two months, an option canceling it for lack of volunteers contradicts that successful recruitment.",
-            "storyKeyEvents": [
-                "A pharmaceutical company's new drug trial showed promising early results but faced a shortage of qualified volunteers.",
-                "Researchers partnered with several regional clinics to broaden recruitment.",
-                "The trial reached its full target enrollment within two months.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L64_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "An architecture firm had a reputation for submitting proposals well past client deadlines. Partners restructured internal review stages to remove unnecessary approval steps. The firm has submitted every proposal on time for the past year.",
-            "options": [
-                "An architecture firm had a reputation for submitting proposals well past client deadlines.",
-                "Partners restructured internal review stages to remove unnecessary approval steps.",
-                "The firm continued missing deadlines just as often as before.",
-                "The firm has submitted every proposal on time for the past year."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Track cause and effect: streamlining approvals leads to a full year of on-time proposals. One option reverses that.",
-            "explanation": "Since the firm submits every proposal on time for a full year, an option claiming it kept missing deadlines just as often contradicts that record.",
-            "storyKeyEvents": [
-                "An architecture firm had a reputation for submitting proposals well past client deadlines.",
-                "Partners restructured internal review stages to remove unnecessary approval steps.",
-                "The firm has submitted every proposal on time for the past year.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L64_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A small nonprofit's annual report had gone largely unread by its own donors for years. Staff redesigned it as a short, visual summary instead of a lengthy document. Donor engagement with the report tripled the following year.",
-            "options": [
-                "A small nonprofit's annual report had gone largely unread by its own donors for years.",
-                "Staff redesigned it as a short, visual summary instead of a lengthy document.",
-                "Donor engagement with the report tripled the following year.",
-                "Donor engagement with the report stayed just as low as before."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Ask which option matches what actually happened to donor engagement after the redesign.",
-            "explanation": "Because donor engagement triples the following year, an option claiming it stayed just as low denies that measured jump.",
-            "storyKeyEvents": [
-                "A small nonprofit's annual report had gone largely unread by its own donors for years.",
-                "Staff redesigned it as a short, visual summary instead of a lengthy document.",
-                "Donor engagement with the report tripled the following year.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L65_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A software team had spent months debating whether to rebuild an outdated internal tool from scratch. They ran a two-week trial rebuilding just one small feature first. The successful trial convinced leadership to fund the full rebuild.",
-            "options": [
-                "Leadership rejected the rebuild despite the trial's success.",
-                "A software team had spent months debating whether to rebuild an outdated internal tool from scratch.",
-                "The team ran a two-week trial rebuilding just one small feature first.",
-                "The successful trial convinced leadership to fund the full rebuild."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Notice what leadership actually decides once the trial succeeds.",
-            "explanation": "Since the successful trial convinces leadership to fund the full rebuild, an option showing them rejecting it anyway contradicts that decision.",
-            "storyKeyEvents": [
-                "A software team had spent months debating whether to rebuild an outdated internal tool from scratch.",
-                "The team ran a two-week trial rebuilding just one small feature first.",
-                "The successful trial convinced leadership to fund the full rebuild.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L65_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional airline had struggled for years to fill seats on its least popular route. It partnered with a local tourism board to promote the destination directly. That route became one of the airline's most profitable within a year.",
-            "options": [
-                "A regional airline had struggled for years to fill seats on its least popular route.",
-                "The airline canceled the route due to continued low demand.",
-                "The airline partnered with a local tourism board to promote the destination directly.",
-                "That route became one of the airline's most profitable within a year."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "This story moves in a clear line from struggle to partnership to profitability. Find the sentence outside it.",
-            "explanation": "Because the route becomes one of the airline's most profitable within a year, an option canceling it for low demand contradicts that outcome.",
-            "storyKeyEvents": [
-                "A regional airline had struggled for years to fill seats on its least popular route.",
-                "The airline partnered with a local tourism board to promote the destination directly.",
-                "That route became one of the airline's most profitable within a year.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L65_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A high school's debate program had not sent a single student to the state finals in over a decade. A new coach introduced weekly practice debates judged by outside volunteers. Two students qualified for the state finals that same year.",
-            "options": [
-                "A high school's debate program had not sent a single student to the state finals in over a decade.",
-                "A new coach introduced weekly practice debates judged by outside volunteers.",
-                "No students qualified for the state finals that year either.",
-                "Two students qualified for the state finals that same year."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Check whether each option matches what actually happens at the state finals that year.",
-            "explanation": "Since two students qualify for the state finals that year, an option claiming none qualified contradicts that specific result.",
-            "storyKeyEvents": [
-                "A high school's debate program had not sent a single student to the state finals in over a decade.",
-                "A new coach introduced weekly practice debates judged by outside volunteers.",
-                "Two students qualified for the state finals that same year.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L66_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A manufacturing company had struggled for years with high employee turnover on its overnight shift. It introduced a modest pay differential and better break facilities for that shift. Overnight shift turnover dropped to its lowest level in company history.",
-            "options": [
-                "A manufacturing company had struggled for years with high employee turnover on its overnight shift.",
-                "The company introduced a modest pay differential and better break facilities for that shift.",
-                "Overnight shift turnover dropped to its lowest level in company history.",
-                "Overnight shift turnover remained the highest in company history."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Track cause and effect: better pay and facilities lead to record-low turnover. One option reverses that.",
-            "explanation": "Because overnight turnover drops to its lowest level in company history, an option claiming it remained the highest reverses that measured result.",
-            "storyKeyEvents": [
-                "A manufacturing company had struggled for years with high employee turnover on its overnight shift.",
-                "The company introduced a modest pay differential and better break facilities for that shift.",
-                "Overnight shift turnover dropped to its lowest level in company history.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L66_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A dental practice had received repeated complaints about long hold times on its appointment line. It added an online booking option alongside the phone line. Complaints about hold times nearly vanished within a few months.",
-            "options": [
-                "Complaints about hold times grew even more frequent.",
-                "A dental practice had received repeated complaints about long hold times on its appointment line.",
-                "The practice added an online booking option alongside the phone line.",
-                "Complaints about hold times nearly vanished within a few months."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Read the ending closely: it tells you what actually happened to complaints after online booking launched.",
-            "explanation": "Since complaints about hold times nearly vanish within months, an option claiming they grew more frequent reverses that clear improvement.",
-            "storyKeyEvents": [
-                "A dental practice had received repeated complaints about long hold times on its appointment line.",
-                "The practice added an online booking option alongside the phone line.",
-                "Complaints about hold times nearly vanished within a few months.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L66_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A young entrepreneur had been rejected by every investor she approached for her first business idea. She used her own modest savings to build a small working prototype instead. That prototype attracted investment from the very people who had rejected her.",
-            "options": [
-                "A young entrepreneur had been rejected by every investor she approached for her first business idea.",
-                "She abandoned the business idea after her savings ran out.",
-                "She used her own modest savings to build a small working prototype instead.",
-                "That prototype attracted investment from the very people who had rejected her."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Notice what the entrepreneur actually does once her prototype is built.",
-            "explanation": "Because the prototype eventually attracts investment from those who rejected her, an option showing her abandoning the idea contradicts that turnaround.",
-            "storyKeyEvents": [
-                "A young entrepreneur had been rejected by every investor she approached for her first business idea.",
-                "She used her own modest savings to build a small working prototype instead.",
-                "That prototype attracted investment from the very people who had rejected her.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L67_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A city's public transit authority had faced criticism for years over confusing fare structures. It replaced the system with a single flat fare regardless of distance traveled. Rider complaints about fares dropped to a fraction of previous levels.",
-            "options": [
-                "A city's public transit authority had faced criticism for years over confusing fare structures.",
-                "The authority replaced the system with a single flat fare regardless of distance traveled.",
-                "Rider complaints about fares increased after the change.",
-                "Rider complaints about fares dropped to a fraction of previous levels."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Ask which option matches what actually happened to rider complaints after the flat fare began.",
-            "explanation": "Because complaints drop to a fraction of previous levels, an option claiming they increased after the change reverses that measured result.",
-            "storyKeyEvents": [
-                "A city's public transit authority had faced criticism for years over confusing fare structures.",
-                "The authority replaced the system with a single flat fare regardless of distance traveled.",
-                "Rider complaints about fares dropped to a fraction of previous levels.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L67_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional hospital network had struggled to fill nursing positions in its smaller rural branches. It offered a loan forgiveness program for nurses who committed to three years in a rural branch. Every rural nursing position was filled within the following year.",
-            "options": [
-                "A regional hospital network had struggled to fill nursing positions in its smaller rural branches.",
-                "The network offered a loan forgiveness program for nurses who committed to three years in a rural branch.",
-                "Every rural nursing position was filled within the following year.",
-                "Rural nursing positions remained unfilled despite the new program."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "One of these four sentences quietly contradicts what happened to rural staffing after the loan program launched.",
-            "explanation": "Since every rural position is filled within the following year, an option claiming positions remained unfilled contradicts that specific outcome.",
-            "storyKeyEvents": [
-                "A regional hospital network had struggled to fill nursing positions in its smaller rural branches.",
-                "The network offered a loan forgiveness program for nurses who committed to three years in a rural branch.",
-                "Every rural nursing position was filled within the following year.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L67_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A small game studio had released three titles in a row that failed to attract any real audience. For its fourth title, it spent months gathering feedback from a small test community first. That fourth title became the studio's first genuine commercial success.",
-            "options": [
-                "The studio closed before finishing its fourth title.",
-                "A small game studio had released three titles in a row that failed to attract any real audience.",
-                "For its fourth title, the studio spent months gathering feedback from a small test community first.",
-                "That fourth title became the studio's first genuine commercial success."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "This story moves in a clear line from repeated failure to community feedback to commercial success. Find the sentence outside it.",
-            "explanation": "Because the fourth title becomes the studio's first real success, an option showing the studio closing before finishing it contradicts that outcome.",
-            "storyKeyEvents": [
-                "A small game studio had released three titles in a row that failed to attract any real audience.",
-                "For its fourth title, the studio spent months gathering feedback from a small test community first.",
-                "That fourth title became the studio's first genuine commercial success.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L68_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional bank had processed mortgage applications through a slow, paper-heavy approval process for decades. It introduced a digital pre-approval system that verified documents automatically. Average approval time fell from several weeks to under three days.",
-            "options": [
-                "A regional bank had processed mortgage applications through a slow, paper-heavy approval process for decades.",
-                "Average approval time increased after the new system launched.",
-                "The bank introduced a digital pre-approval system that verified documents automatically.",
-                "Average approval time fell from several weeks to under three days."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Notice what actually happened to approval times once the digital system began.",
-            "explanation": "Because approval time falls from weeks to under three days, an option claiming it increased after the new system contradicts that measured improvement.",
-            "storyKeyEvents": [
-                "A regional bank had processed mortgage applications through a slow, paper-heavy approval process for decades.",
-                "The bank introduced a digital pre-approval system that verified documents automatically.",
-                "Average approval time fell from several weeks to under three days.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L68_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional theater's productions had consistently drawn smaller audiences than its downtown competitor for years. It began offering pay-what-you-can tickets for opening weekend performances. Opening weekend attendance eventually surpassed its competitor's for the first time.",
-            "options": [
-                "A regional theater's productions had consistently drawn smaller audiences than its downtown competitor for years.",
-                "The theater began offering pay-what-you-can tickets for opening weekend performances.",
-                "Opening weekend attendance remained lower than its competitor's every time.",
-                "Opening weekend attendance eventually surpassed its competitor's for the first time."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Check whether each option matches what actually happened to opening weekend attendance.",
-            "explanation": "Since opening weekend attendance eventually surpasses the competitor's, an option claiming it remained lower every time contradicts that specific milestone.",
-            "storyKeyEvents": [
-                "A regional theater's productions had consistently drawn smaller audiences than its downtown competitor for years.",
-                "The theater began offering pay-what-you-can tickets for opening weekend performances.",
-                "Opening weekend attendance eventually surpassed its competitor's for the first time.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L68_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A talented young cellist had auditioned for the same youth orchestra three years running without success. A private teacher helped her rebuild her technique from the ground up. She was accepted into the orchestra on her fourth audition.",
-            "options": [
-                "A talented young cellist had auditioned for the same youth orchestra three years running without success.",
-                "A private teacher helped her rebuild her technique from the ground up.",
-                "She was accepted into the orchestra on her fourth audition.",
-                "She stopped auditioning after her third rejection."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Read the ending closely: it tells you what actually happens on the cellist's fourth attempt.",
-            "explanation": "Because she is accepted into the orchestra on her fourth audition, an option showing her giving up after the third rejection contradicts that eventual acceptance.",
-            "storyKeyEvents": [
-                "A talented young cellist had auditioned for the same youth orchestra three years running without success.",
-                "A private teacher helped her rebuild her technique from the ground up.",
-                "She was accepted into the orchestra on her fourth audition.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L69_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional grocery chain had seen a sharp rise in customer complaints about out-of-stock items. It adopted inventory software that predicted demand more accurately for each store. Out-of-stock complaints fell to their lowest level in the company's history.",
-            "options": [
-                "Out-of-stock complaints reached an all-time high after the change.",
-                "A regional grocery chain had seen a sharp rise in customer complaints about out-of-stock items.",
-                "The chain adopted inventory software that predicted demand more accurately for each store.",
-                "Out-of-stock complaints fell to their lowest level in the company's history."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Track cause and effect: better inventory prediction leads to record-low complaints. One option reverses that.",
-            "explanation": "Because complaints fall to their lowest level in company history, an option claiming they reached an all-time high reverses that measured outcome.",
-            "storyKeyEvents": [
-                "A regional grocery chain had seen a sharp rise in customer complaints about out-of-stock items.",
-                "The chain adopted inventory software that predicted demand more accurately for each store.",
-                "Out-of-stock complaints fell to their lowest level in the company's history.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L69_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A small city's volunteer fire department had struggled for years to recruit enough new members. It partnered with the local high school to offer hands-on training credit. Recruitment reached its highest level in the department's history the following year.",
-            "options": [
-                "A small city's volunteer fire department had struggled for years to recruit enough new members.",
-                "Recruitment remained at its lowest level the following year as well.",
-                "The department partnered with the local high school to offer hands-on training credit.",
-                "Recruitment reached its highest level in the department's history the following year."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Ask which option matches what actually happened to recruitment after the school partnership began.",
-            "explanation": "Since recruitment reaches its highest level in the department's history, an option claiming it stayed at its lowest level contradicts that record.",
-            "storyKeyEvents": [
-                "A small city's volunteer fire department had struggled for years to recruit enough new members.",
-                "The department partnered with the local high school to offer hands-on training credit.",
-                "Recruitment reached its highest level in the department's history the following year.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L69_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A first-time filmmaker had been turned down by every festival she submitted her short film to. She re-edited the film based on notes from a mentor at a local film school. The revised version was accepted into a well-known international festival.",
-            "options": [
-                "A first-time filmmaker had been turned down by every festival she submitted her short film to.",
-                "She re-edited the film based on notes from a mentor at a local film school.",
-                "She gave up on the project and deleted the footage.",
-                "The revised version was accepted into a well-known international festival."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "One of these four sentences quietly contradicts what the filmmaker does with her re-edited film.",
-            "explanation": "Because the revised version is accepted into a well-known festival, an option showing her deleting the footage contradicts that eventual acceptance.",
-            "storyKeyEvents": [
-                "A first-time filmmaker had been turned down by every festival she submitted her short film to.",
-                "She re-edited the film based on notes from a mentor at a local film school.",
-                "The revised version was accepted into a well-known international festival.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L70_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A regional energy provider had faced years of criticism for slow response times during outages. It equipped repair crews with real-time outage-mapping technology. Average outage response times fell by more than half within a year.",
-            "options": [
-                "A regional energy provider had faced years of criticism for slow response times during outages.",
-                "The provider equipped repair crews with real-time outage-mapping technology.",
-                "Average outage response times fell by more than half within a year.",
-                "Average outage response times stayed exactly the same as before."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Notice what actually happened to response times once crews had the mapping technology.",
-            "explanation": "Because response times fall by more than half within a year, an option claiming they stayed exactly the same denies that measured improvement.",
-            "storyKeyEvents": [
-                "A regional energy provider had faced years of criticism for slow response times during outages.",
-                "The provider equipped repair crews with real-time outage-mapping technology.",
-                "Average outage response times fell by more than half within a year.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L70_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A struggling minor league soccer club had one of the smallest social media followings in its division. It began posting behind-the-scenes footage of players' daily training routines. Its following grew faster than any other club in the division that season.",
-            "options": [
-                "Its following remained the smallest in the division that season.",
-                "A struggling minor league soccer club had one of the smallest social media followings in its division.",
-                "The club began posting behind-the-scenes footage of players' daily training routines.",
-                "Its following grew faster than any other club in the division that season."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "This story moves in a clear line from a small following to new content to the fastest growth in the division. Find the sentence outside it.",
-            "explanation": "Since the club's following grows faster than any other in the division, an option claiming it remained the smallest contradicts that specific ranking.",
-            "storyKeyEvents": [
-                "A struggling minor league soccer club had one of the smallest social media followings in its division.",
-                "The club began posting behind-the-scenes footage of players' daily training routines.",
-                "Its following grew faster than any other club in the division that season.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L70_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "writing",
-            "story": "A young app developer had been unable to find funding for his idea after dozens of pitch meetings. He built a stripped-down free version and released it directly to users. Investors approached him after seeing thousands of organic downloads.",
-            "options": [
-                "A young app developer had been unable to find funding for his idea after dozens of pitch meetings.",
-                "He abandoned the app after failing to secure any funding.",
-                "He built a stripped-down free version and released it directly to users.",
-                "Investors approached him after seeing thousands of organic downloads."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Check whether each option matches what actually happens once the developer releases the free version.",
-            "explanation": "Because investors approach him after seeing thousands of downloads, an option showing him abandoning the app contradicts that eventual outcome.",
-            "storyKeyEvents": [
-                "A young app developer had been unable to find funding for his idea after dozens of pitch meetings.",
-                "He built a stripped-down free version and released it directly to users.",
-                "Investors approached him after seeing thousands of organic downloads.",
-                "The story reaches its climax.",
-                "The situation is fully resolved."
-            ]
-        }
-    ]
+  "gameType": "summarizeStoryWriting",
+  "batchIndex": 7,
+  "levels": "61-70",
+  "quests": [
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L61_Q1",
+      "instruction": "Arrange the three events that happened before the first exercise began, in the order they happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Sunniva's orientation day at the coding bootcamp began at nine with a welcome talk. She had collected her laptop from the front desk ten minutes earlier. After the talk, the instructors split the new students into groups of four, and the groups started their first exercise. Sunniva's group finished it just before lunch.",
+      "options": [
+        "The welcome talk began at nine.",
+        "The instructors split the new students into groups of four.",
+        "Sunniva collected her laptop from the front desk.",
+        "Sunniva's group finished the exercise before lunch."
+      ],
+      "correctOrder": [2, 0, 1],
+      "hint": "Watch the words \"earlier\" and \"after\": they move an event backwards or forwards in time.",
+      "explanation": "The laptop was collected ten minutes before the talk, and the groups were formed after it. The exercise's ending comes later than the exercise's beginning, so it lies outside the window.",
+      "storyKeyEvents": [
+        "Sunniva collected her laptop from the front desk.",
+        "The welcome talk began at nine.",
+        "The instructors split the new students into groups of four."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L61_Q2",
+      "instruction": "Arrange the three things that happened on Saturday.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Ivo usually caught the 7:40 bus to the ski school. On Saturday his boot buckle snapped just as he was leaving, so he missed it. A friend lent him a spare buckle, and Ivo caught the 8:10 bus and arrived as the first lesson started.",
+      "options": [
+        "Ivo usually caught the 7:40 bus to the ski school.",
+        "Ivo caught the 8:10 bus and arrived as the first lesson started.",
+        "A friend lent Ivo a spare buckle.",
+        "Ivo's boot buckle snapped just as he was leaving."
+      ],
+      "correctOrder": [3, 2, 1],
+      "hint": "\"Usually\" describes a routine. Ask whether it happened on that particular day.",
+      "explanation": "\"Usually caught\" describes his normal habit, and on Saturday he did not catch that bus at all. Saturday's events are the snapped buckle, the loan, and the later bus.",
+      "storyKeyEvents": [
+        "Ivo's boot buckle snapped just as he was leaving.",
+        "A friend lent Ivo a spare buckle.",
+        "Ivo caught the 8:10 bus and arrived as the first lesson started."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L61_Q3",
+      "instruction": "Arrange the three events that happened from six o'clock onward.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The art gallery's opening night started at six. By then, Odalys had hung the last painting, which had taken most of the afternoon, and she had delivered the paintings by van the day before. At half past six the gallery owner made a short speech, and by seven the first painting had sold.",
+      "options": [
+        "The gallery's opening night started at six.",
+        "The gallery owner made a short speech at half past six.",
+        "Odalys delivered the paintings by van the day before.",
+        "The first painting sold by seven."
+      ],
+      "correctOrder": [0, 1, 3],
+      "hint": "\"By then\" and \"the day before\" point backwards from the starting time.",
+      "explanation": "The van delivery took place the day before, and the last painting was hung before six. From six onward the evening runs through the opening, the speech, and the first sale.",
+      "storyKeyEvents": [
+        "The gallery's opening night started at six.",
+        "The gallery owner made a short speech at half past six.",
+        "The first painting sold by seven."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L62_Q1",
+      "instruction": "Arrange the three events from this year's tournament.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The junior tennis tournament ended on Sunday with a final that went to three sets. Sam had lost in the first round of the same tournament the year before. This year he won his first-round match on Friday, took the semi-final on Saturday afternoon, and beat Leah in the final.",
+      "options": [
+        "Sam won his semi-final on Saturday afternoon.",
+        "Sam lost in the first round the year before.",
+        "Sam won his first-round match on Friday.",
+        "Sam beat Leah in the final."
+      ],
+      "correctOrder": [2, 0, 3],
+      "hint": "Look for the sentence that belongs to a different year.",
+      "explanation": "The first-round loss was a year earlier and belongs to another tournament. This year's run goes from Friday's win, to Saturday's semi-final, to the final.",
+      "storyKeyEvents": [
+        "Sam won his first-round match on Friday.",
+        "Sam won his semi-final on Saturday afternoon.",
+        "Sam beat Leah in the final."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L62_Q2",
+      "instruction": "Arrange the three things Ms. Lund had done by the evening before opening.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The first families were due on 1 June, and Ms. Lund wanted the campsite ready. She had replaced the broken tap by the shower block the week before. Two days ahead she checked every pitch, and on the last evening she hung the welcome banner.",
+      "options": [
+        "The first families arrived on 1 June.",
+        "Ms. Lund replaced the broken tap by the shower block.",
+        "Ms. Lund checked every pitch.",
+        "Ms. Lund hung the welcome banner."
+      ],
+      "correctOrder": [1, 2, 3],
+      "hint": "Check whether the family arrival has already happened when the story stops.",
+      "explanation": "The families were only due on 1 June, so their arrival lies ahead of the story. Before that date she replaced the tap, checked the pitches, and hung the banner.",
+      "storyKeyEvents": [
+        "Ms. Lund replaced the broken tap by the shower block.",
+        "Ms. Lund checked every pitch.",
+        "Ms. Lund hung the welcome banner."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L62_Q3",
+      "instruction": "Arrange the three things that actually happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The class would have reached the planetarium's ten o'clock show if the school bus had arrived on time. Instead the bus broke down, and the teacher phoned the planetarium. The staff moved the class to the eleven o'clock show, and the pupils watched it from the front row.",
+      "options": [
+        "The pupils watched the show from the front row.",
+        "The teacher phoned the planetarium and staff moved the class to the eleven o'clock show.",
+        "The school bus broke down.",
+        "The class reached the ten o'clock show."
+      ],
+      "correctOrder": [2, 1, 0],
+      "hint": "Sentences with \"would have\" describe what didn't happen. Look for what did.",
+      "explanation": "The ten o'clock show is the outcome that a working bus would have produced, and it never took place. What did happen was the breakdown, the phone call and rescheduling, and the later show.",
+      "storyKeyEvents": [
+        "The school bus broke down.",
+        "The teacher phoned the planetarium and staff moved the class to the eleven o'clock show.",
+        "The pupils watched the show from the front row."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L63_Q1",
+      "instruction": "Arrange the three things that happened around Thursday's audition.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Ottilie normally rehearsed her lines alone at home. Before Thursday's audition, however, she asked her brother to read the other parts. At the audition she forgot a line, paused, and carried on, and the director offered her a callback.",
+      "options": [
+        "Ottilie forgot a line at the audition, paused, and carried on.",
+        "The director offered Ottilie a callback.",
+        "Ottilie normally rehearsed her lines alone at home.",
+        "Ottilie asked her brother to read the other parts."
+      ],
+      "correctOrder": [3, 0, 1],
+      "hint": "\"Normally\" tells you about a habit, not about this week's events.",
+      "explanation": "Rehearsing alone was her usual habit, and this time she did something different. This week's events run from asking her brother, to the audition, to the callback.",
+      "storyKeyEvents": [
+        "Ottilie asked her brother to read the other parts.",
+        "Ottilie forgot a line at the audition, paused, and carried on.",
+        "The director offered Ottilie a callback."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L63_Q2",
+      "instruction": "Arrange the three things Dana did.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Dana reached the office at eight. By then, Paolo had already fixed the jammed printer. Dana printed the contracts, and after checking each one she put them into envelopes for the courier.",
+      "options": [
+        "Dana checked each contract and put it into an envelope for the courier.",
+        "Dana reached the office at eight.",
+        "Dana printed the contracts.",
+        "Paolo fixed the jammed printer."
+      ],
+      "correctOrder": [1, 2, 0],
+      "hint": "Ask whose action each sentence describes before putting anything in order.",
+      "explanation": "Paolo's repair happened before Dana arrived and it was his job, not hers. Dana's own sequence is arriving, printing, and checking and enveloping.",
+      "storyKeyEvents": [
+        "Dana reached the office at eight.",
+        "Dana printed the contracts.",
+        "Dana checked each contract and put it into an envelope for the courier."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L63_Q3",
+      "instruction": "Arrange the three events that happened before the prize-giving.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Sports day at Mr. Boateng's school ended with the prize-giving on the podium. That came after the relay, which Yellow house won. The head teacher had fired the starting pistol once the pupils had lined up by house colour.",
+      "options": [
+        "The pupils lined up by house colour.",
+        "The prizes were handed out on the podium.",
+        "Yellow house won the relay.",
+        "The head teacher fired the starting pistol."
+      ],
+      "correctOrder": [0, 3, 2],
+      "hint": "The story opens with the last event. Work out the order backwards.",
+      "explanation": "The prize-giving is told first but happened last, so it is not before itself. Working back from it gives the line-up, the pistol, and the relay win.",
+      "storyKeyEvents": [
+        "The pupils lined up by house colour.",
+        "The head teacher fired the starting pistol.",
+        "Yellow house won the relay."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L64_Q1",
+      "instruction": "Arrange the three events that happened after the shift started.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The night shift at the warehouse started at ten, but the supervisor had printed the delivery lists earlier that evening. By half past ten the trucks were unloaded, at midnight the team began sorting the parcels by region, and by four the last van was loaded.",
+      "options": [
+        "The supervisor had printed the delivery lists.",
+        "The last van was loaded by four.",
+        "The trucks were unloaded by half past ten.",
+        "The team began sorting the parcels by region at midnight."
+      ],
+      "correctOrder": [2, 3, 1],
+      "hint": "Find the sentence that reaches back before ten o'clock.",
+      "explanation": "The lists were printed before the shift began, so they fall outside the window. After ten came the unloading, the sorting, and the final van.",
+      "storyKeyEvents": [
+        "The trucks were unloaded by half past ten.",
+        "The team began sorting the parcels by region at midnight.",
+        "The last van was loaded by four."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L64_Q2",
+      "instruction": "Arrange the three things that actually happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Kavita's laptop charger stopped working the night before her presentation. She might have spoken from notes without slides, but instead she borrowed a charger from her neighbour. She finished the slides at midnight and presented them the next morning.",
+      "options": [
+        "Kavita's laptop charger stopped working the night before her presentation.",
+        "Kavita finished the slides at midnight and presented them the next morning.",
+        "Kavita borrowed a charger from her neighbour.",
+        "Kavita spoke from notes without slides."
+      ],
+      "correctOrder": [0, 2, 1],
+      "hint": "\"Might have\" describes a possibility. Which option is only that?",
+      "explanation": "Speaking from notes was an option she considered and rejected. The real sequence is the dead charger, the borrowed one, and the finished slides.",
+      "storyKeyEvents": [
+        "Kavita's laptop charger stopped working the night before her presentation.",
+        "Kavita borrowed a charger from her neighbour.",
+        "Kavita finished the slides at midnight and presented them the next morning."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L64_Q3",
+      "instruction": "Arrange the three events from Tuesday's visit.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Bruno took his dog Rex to the vet on Tuesday for a vaccination. Two years earlier Rex had been in the same waiting room after eating a sock. This time the vet weighed him, gave the injection, and noted the date in his booklet.",
+      "options": [
+        "Two years earlier Rex had eaten a sock and been in that waiting room.",
+        "The vet gave Rex his vaccination injection.",
+        "The vet noted the date in Rex's vaccination booklet.",
+        "The vet weighed Rex on the clinic scales."
+      ],
+      "correctOrder": [3, 1, 2],
+      "hint": "Some sentences describe a different visit altogether.",
+      "explanation": "The sock episode belongs to a visit two years ago. Tuesday's visit is the weighing, the injection, and the note in the booklet.",
+      "storyKeyEvents": [
+        "The vet weighed Rex on the clinic scales.",
+        "The vet gave Rex his vaccination injection.",
+        "The vet noted the date in Rex's vaccination booklet."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L65_Q1",
+      "instruction": "Arrange the three events that had already happened by Thursday evening.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "On Monday Milo dropped his old acoustic guitar off at the repair shop. The technician replaced the cracked bridge on Wednesday and phoned Milo on Thursday to say it was ready. Milo would collect it on Friday and planned to play it at Saturday's open mic.",
+      "options": [
+        "The technician replaced the cracked bridge.",
+        "Milo dropped his guitar off at the repair shop.",
+        "The technician phoned Milo to say the guitar was ready.",
+        "Milo played the guitar at Saturday's open mic."
+      ],
+      "correctOrder": [1, 0, 2],
+      "hint": "Words like \"would\" and \"planned\" point to events that haven't taken place yet.",
+      "explanation": "The open mic was a plan for Saturday, after Thursday evening. By then the guitar had been dropped off, repaired, and reported ready.",
+      "storyKeyEvents": [
+        "Milo dropped his guitar off at the repair shop.",
+        "The technician replaced the cracked bridge.",
+        "The technician phoned Milo to say the guitar was ready."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L65_Q2",
+      "instruction": "Arrange the three events on the boat.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The boat returned to the harbour at three. Anders and his uncle had left at five that morning, and by noon the hold was half full. Meanwhile, Anders's cousin Elin repaired the nets on the quay.",
+      "options": [
+        "Anders and his uncle left the harbour at five.",
+        "Elin repaired the nets on the quay.",
+        "The boat returned to the harbour at three.",
+        "The boat's hold was half full by noon."
+      ],
+      "correctOrder": [0, 3, 2],
+      "hint": "\"Meanwhile\" tells you something is happening elsewhere. Is it on the boat?",
+      "explanation": "Elin was on land while the boat was at sea, so her repair isn't part of the boat's day. The boat's day is leaving at five, the half-full hold at noon, and the return at three.",
+      "storyKeyEvents": [
+        "Anders and his uncle left the harbour at five.",
+        "The boat's hold was half full by noon.",
+        "The boat returned to the harbour at three."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L65_Q3",
+      "instruction": "Arrange the three things that happened when Renata went swimming.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Renata usually took the tram to the swimming pool. Last Friday it was cancelled, so she walked for forty minutes. When she arrived, every lane was full, so she waited in the café for a free one.",
+      "options": [
+        "Renata waited in the café for a free lane.",
+        "Renata walked for forty minutes.",
+        "The tram to the pool was cancelled.",
+        "Renata usually took the tram to the pool."
+      ],
+      "correctOrder": [2, 1, 0],
+      "hint": "Look for the sentence that is about most weeks rather than Friday.",
+      "explanation": "Taking the tram is her routine, and on Friday the tram didn't run. Friday's events are the cancellation, the walk, and the wait for a lane.",
+      "storyKeyEvents": [
+        "The tram to the pool was cancelled.",
+        "Renata walked for forty minutes.",
+        "Renata waited in the café for a free lane."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L66_Q1",
+      "instruction": "Arrange the three things that actually happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The concert would have begun at eight if the sound system had worked. It failed during the soundcheck, so the crew swapped the mixing desk, and the band finally started forty minutes late.",
+      "options": [
+        "The band started forty minutes late.",
+        "The sound system failed during the soundcheck.",
+        "The crew swapped the mixing desk.",
+        "The concert began at eight."
+      ],
+      "correctOrder": [1, 2, 0],
+      "hint": "What the story says would have happened is not what did happen.",
+      "explanation": "Beginning at eight depended on the sound system working, and it didn't. The chain is the failure, the swap, and the late start.",
+      "storyKeyEvents": [
+        "The sound system failed during the soundcheck.",
+        "The crew swapped the mixing desk.",
+        "The band started forty minutes late."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L66_Q2",
+      "instruction": "Arrange the three events that happened before tea.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The exhibition tour finished at four with tea in the courtyard. Before the group left the entrance hall at two, the guide had handed out headsets. Halfway through, the group stopped for a demonstration of a printing press.",
+      "options": [
+        "The guide handed out headsets.",
+        "The group stopped for a demonstration of a printing press.",
+        "Tea was served in the courtyard at four.",
+        "The group left the entrance hall at two."
+      ],
+      "correctOrder": [0, 3, 1],
+      "hint": "The story starts with the end. Rebuild the afternoon from the beginning.",
+      "explanation": "Tea came last, so it can't be before itself. The afternoon before it is headsets, departure at two, and the printing-press stop.",
+      "storyKeyEvents": [
+        "The guide handed out headsets.",
+        "The group left the entrance hall at two.",
+        "The group stopped for a demonstration of a printing press."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L66_Q3",
+      "instruction": "Arrange the three events that happened from ten o'clock on.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Mona's moving van arrived at ten. Before it came, she had taped up her boxes and labelled them by room. The porter signed her key return at noon, and by one she was on the train home.",
+      "options": [
+        "Mona had taped up and labelled her boxes.",
+        "Mona was on the train home by one.",
+        "The porter signed Mona's key return at noon.",
+        "Mona's moving van arrived at ten."
+      ],
+      "correctOrder": [3, 2, 1],
+      "hint": "\"Before it came\" sends you back to an earlier time than the window.",
+      "explanation": "Taping and labelling happened before the van arrived, so they fall before ten o'clock. The window covers the van, the key return, and the train home.",
+      "storyKeyEvents": [
+        "Mona's moving van arrived at ten.",
+        "The porter signed Mona's key return at noon.",
+        "Mona was on the train home by one."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L67_Q1",
+      "instruction": "Arrange the three things that happened at the top of the lighthouse.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The lighthouse tour group reached the top at noon. Three years earlier the stairs had been closed for repairs. The guide unlocked the door, the visitors looked out over the bay, and everyone signed the visitors' book.",
+      "options": [
+        "Three years earlier the stairs had been closed.",
+        "The visitors looked out over the bay.",
+        "Everyone signed the visitors' book.",
+        "The guide unlocked the door."
+      ],
+      "correctOrder": [3, 1, 2],
+      "hint": "One sentence looks back three years. Is it part of today's visit?",
+      "explanation": "The closed stairs belong to an episode three years ago. Today's visit at the top is the unlocking, the view, and the signing.",
+      "storyKeyEvents": [
+        "The guide unlocked the door.",
+        "The visitors looked out over the bay.",
+        "Everyone signed the visitors' book."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L67_Q2",
+      "instruction": "Arrange the three things Iris did.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Iris won the final round on a tie-break, after answering the first four questions correctly and missing the fifth. Marcus, the host, had joked with the audience for ten minutes beforehand.",
+      "options": [
+        "Iris answered the first four questions correctly.",
+        "Iris missed the fifth question.",
+        "Iris won the round on a tie-break.",
+        "Marcus joked with the audience for ten minutes."
+      ],
+      "correctOrder": [0, 1, 2],
+      "hint": "The last sentence is about someone else at an earlier time.",
+      "explanation": "Marcus's warm-up was the host's job and came before the round. Iris's own sequence is four correct answers, the miss, and the tie-break win.",
+      "storyKeyEvents": [
+        "Iris answered the first four questions correctly.",
+        "Iris missed the fifth question.",
+        "Iris won the round on a tie-break."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L67_Q3",
+      "instruction": "Arrange the three events that came before the move-in date.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Paloma's roommate was moving out on 1 March, so on the 20th Paloma posted a room-share advert. Three people came to view the room the following weekend, and she chose one of them on Monday. The new roommate would move in on 1 March.",
+      "options": [
+        "Paloma chose one of the viewers on Monday.",
+        "Three people came to view the room the following weekend.",
+        "The new roommate moved in on 1 March.",
+        "Paloma posted a room-share advert on the 20th."
+      ],
+      "correctOrder": [3, 1, 0],
+      "hint": "Check the tense of the last sentence.",
+      "explanation": "\"Would move in\" points to a date still ahead of the story. Before that date came the advert, the viewings, and the choice.",
+      "storyKeyEvents": [
+        "Paloma posted a room-share advert on the 20th.",
+        "Three people came to view the room the following weekend.",
+        "Paloma chose one of the viewers on Monday."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L68_Q1",
+      "instruction": "Arrange the three events that happened before the band started.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The wedding band started playing at eight, after the guests had taken their seats. The florist had delivered the table arrangements at four, and the caterer set the tables at six. The first dance took place at nine.",
+      "options": [
+        "The first dance took place at nine.",
+        "The guests took their seats.",
+        "The florist delivered the table arrangements at four.",
+        "The caterer set the tables at six."
+      ],
+      "correctOrder": [2, 3, 1],
+      "hint": "Use the band's start time as your fixed point and sort what is before it.",
+      "explanation": "The first dance came an hour after the band started, so it lies beyond the window. Before the band, the arrangements arrived, the tables were set, and the guests sat down.",
+      "storyKeyEvents": [
+        "The florist delivered the table arrangements at four.",
+        "The caterer set the tables at six.",
+        "The guests took their seats."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L68_Q2",
+      "instruction": "Arrange the three things that happened this Saturday.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Every Saturday, Odette washed the shop windows first thing. This Saturday she found the front door glass cracked, so she taped it and phoned a glazier before doing anything else. The glazier replaced the pane at noon.",
+      "options": [
+        "Odette taped the glass and phoned a glazier.",
+        "The glazier replaced the pane at noon.",
+        "Odette washed the shop windows every Saturday.",
+        "Odette found the front door glass cracked."
+      ],
+      "correctOrder": [3, 0, 1],
+      "hint": "One sentence describes every Saturday. Ask what it says about this one.",
+      "explanation": "The window-washing is her regular habit, and this Saturday she did other things first. Today's events run from finding the crack, to taping and phoning, to the new pane.",
+      "storyKeyEvents": [
+        "Odette found the front door glass cracked.",
+        "Odette taped the glass and phoned a glazier.",
+        "The glazier replaced the pane at noon."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L68_Q3",
+      "instruction": "Arrange the three events that happened once the interview had started.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Yara's job interview started at two. She had submitted her application the previous month and had reached the office half an hour early. The panel first asked about a project she had led, then put three questions on teamwork, and at three she was told a decision would come by Friday.",
+      "options": [
+        "The panel put three questions on teamwork to Yara.",
+        "The panel asked Yara about a project she had led.",
+        "Yara submitted her application the previous month.",
+        "Yara was told a decision would come by Friday."
+      ],
+      "correctOrder": [1, 0, 3],
+      "hint": "Look for facts that come from before the interview began.",
+      "explanation": "The application was sent a month earlier and doesn't belong within the interview itself. Once it began, the panel asked about the project, the teamwork questions, and then gave the timeline.",
+      "storyKeyEvents": [
+        "The panel asked Yara about a project she had led.",
+        "The panel put three questions on teamwork to Yara.",
+        "Yara was told a decision would come by Friday."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L69_Q1",
+      "instruction": "Arrange the three things that actually happened.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Karim would have missed the deadline if his colleague hadn't offered to check the figures. Instead, Karim finished the report at nine, his colleague checked the figures by ten, and they submitted the report at half past.",
+      "options": [
+        "Karim and his colleague submitted the report at half past.",
+        "Karim submitted the report after the deadline.",
+        "Karim finished the report at nine.",
+        "Karim's colleague checked the figures by ten."
+      ],
+      "correctOrder": [2, 3, 0],
+      "hint": "Which sentence describes what would have happened, and which what did?",
+      "explanation": "A missed deadline is the outcome the story says was avoided. What took place was the report, the check, and the submission.",
+      "storyKeyEvents": [
+        "Karim finished the report at nine.",
+        "Karim's colleague checked the figures by ten.",
+        "Karim and his colleague submitted the report at half past."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L69_Q2",
+      "instruction": "Arrange the three events that took place on Saturday.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The clearance of Ellie's grandmother's house took place on Saturday. The removal firm had been booked in the spring, and her grandmother had lived in the house for fifty years. The first van took the furniture at nine, Ellie's cousins collected the books at noon, and at four Ellie handed the keys to the estate agent.",
+      "options": [
+        "Ellie's grandmother had lived there for fifty years.",
+        "The first van took the furniture at nine.",
+        "Ellie handed the keys to the estate agent at four.",
+        "Ellie's cousins collected the books at noon."
+      ],
+      "correctOrder": [1, 3, 2],
+      "hint": "Background from decades ago doesn't belong in a day's timetable.",
+      "explanation": "Fifty years of living there is history, not one of Saturday's events. The day itself is the furniture, the books, and the keys.",
+      "storyKeyEvents": [
+        "The first van took the furniture at nine.",
+        "Ellie's cousins collected the books at noon.",
+        "Ellie handed the keys to the estate agent at four."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L69_Q3",
+      "instruction": "Arrange the three events that were completed before the fair week.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Two weeks before the school science fair, Ansel's team chose their project on solar ovens. They built a prototype in the first week and tested it on Sunday. The judges would visit the team's stand next Thursday.",
+      "options": [
+        "The judges visited the stand on Thursday.",
+        "Ansel's team chose a project on solar ovens.",
+        "The team built a prototype in the first week.",
+        "The team tested the prototype on Sunday."
+      ],
+      "correctOrder": [1, 2, 3],
+      "hint": "One sentence looks ahead rather than back. Which one?",
+      "explanation": "The visit was still to come, since the judges \"would visit\" next Thursday. The completed events are the choice, the building, and the Sunday test.",
+      "storyKeyEvents": [
+        "Ansel's team chose a project on solar ovens.",
+        "The team built a prototype in the first week.",
+        "The team tested the prototype on Sunday."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L70_Q1",
+      "instruction": "Arrange the three events that happened after Ingeborg reached the platform.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "By the time Ingeborg reached the platform, the 6:15 train had gone. She had left home late because her alarm hadn't rung. She caught the 7:00 train, emailed the client to move the meeting to ten, and arrived at the office at 9:20.",
+      "options": [
+        "Ingeborg emailed the client to move the meeting to ten.",
+        "Ingeborg arrived at the office at 9:20.",
+        "Ingeborg caught the 7:00 train.",
+        "Ingeborg's alarm didn't ring."
+      ],
+      "correctOrder": [2, 0, 1],
+      "hint": "\"Had gone\" and \"had left\" tell you what happened before the platform.",
+      "explanation": "The alarm failure explains why she left late, but it came before she reached the platform. After that moment came the later train, the email, and the arrival.",
+      "storyKeyEvents": [
+        "Ingeborg caught the 7:00 train.",
+        "Ingeborg emailed the client to move the meeting to ten.",
+        "Ingeborg arrived at the office at 9:20."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L70_Q2",
+      "instruction": "Arrange the three events that happened up to midnight.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "After Ted restarted the portal, the branch opened on time. That was possible because the update had finished at midnight. Ted, who worked the night shift, had backed up the customer files at nine and switched off the online portal at eleven.",
+      "options": [
+        "Ted backed up the customer files at nine.",
+        "The system update finished at midnight.",
+        "Ted switched off the online portal at eleven.",
+        "Ted restarted the portal after the update."
+      ],
+      "correctOrder": [0, 2, 1],
+      "hint": "Start from the time you are given and sort the events around it.",
+      "explanation": "The restart came after the update finished, so it lies past midnight. Up to midnight came the backup, the shutdown of the portal, and the finished update.",
+      "storyKeyEvents": [
+        "Ted backed up the customer files at nine.",
+        "Ted switched off the online portal at eleven.",
+        "The system update finished at midnight."
+      ]
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L70_Q3",
+      "instruction": "Arrange the three things Camille did.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Everyone in Camille's team had a task for the product launch. Camille wrote the announcement on Monday. Meanwhile Elias tested the demo for bugs. On Tuesday Camille sent the announcement to the mailing list, and on Wednesday she answered the first replies.",
+      "options": [
+        "Camille answered the first replies on Wednesday.",
+        "Elias tested the demo for bugs.",
+        "Camille sent the announcement to the mailing list on Tuesday.",
+        "Camille wrote the announcement on Monday."
+      ],
+      "correctOrder": [3, 2, 0],
+      "hint": "\"Meanwhile\" introduces someone else's task. Is it Camille's?",
+      "explanation": "Elias's testing was his own task, running alongside Camille's writing. Her three steps are the writing, the sending, and the replies.",
+      "storyKeyEvents": [
+        "Camille wrote the announcement on Monday.",
+        "Camille sent the announcement to the mailing list on Tuesday.",
+        "Camille answered the first replies on Wednesday."
+      ]
+    }
+  ]
 }

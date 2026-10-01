@@ -1,607 +1,577 @@
 {
-    "gameType": "opinionWriting",
-    "batchIndex": 12,
-    "levels": "111-120",
-    "quests": [
-        {
-            "id": "WRT_OPINIONWRITING_L111_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "All processed food products should carry prominent graphic health warnings.",
-            "options": [
-                "Processed food is a broad category covering many products that do not pose significant health risks.",
-                "Warning label fatigue sets in quickly, reducing the impact of labelling after initial exposure.",
-                "Graphic warnings alert consumers to specific health risks and increase the salience of nutritional decisions.",
-                "Warning labels that quantify health impacts give all consumers equal access to relevant health information."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about the consumer information case for graphic food warnings (Pros) and the definition and fatigue concerns (Cons).",
-            "explanation": "Graphic warnings raise health risk salience and democratise nutritional information (Pros), but processed food is a very broad category, and warning fatigue significantly reduces label impact after initial exposure (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L111_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Graphic health warnings on food should specifically target sugar, fat, and salt content.",
-            "options": [
-                "Prominent front-of-pack labelling on specific harmful nutrients makes health risks immediately comprehensible.",
-                "Nutrient-specific warnings do not capture the complexity of overall dietary pattern and interaction effects.",
-                "Food manufacturers lobby successfully to weaken or delay the implementation of nutrient labelling schemes.",
-                "Targeted nutrient warnings have been shown to shift consumer purchasing decisions towards healthier options."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Consider the targeted nutrient warning case (Pros) and the systemic food complexity and lobbying concerns (Cons).",
-            "explanation": "Targeted nutrient warnings are comprehensible and demonstrably shift purchasing behaviour (Pros), but they miss dietary complexity and food manufacturers consistently lobby to weaken labelling requirements (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L111_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Health warning labels on food empower consumers without infringing on their freedom.",
-            "options": [
-                "Providing clearer information enables genuinely informed choice rather than restricting what people may buy.",
-                "Food choices are driven by habit, culture, price, and availability - not primarily by labelling information.",
-                "Better-informed consumers create market pressure on manufacturers to improve product nutritional quality.",
-                "People with lower literacy or numeracy skills may not benefit from health label information equally."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about food labels as an empowerment tool (Pros) and the limits of information-only interventions (Cons).",
-            "explanation": "Health labels enable informed choice and create consumer market pressure for product improvement (Pros), but food choices are primarily driven by habit, culture, and cost, and labels benefit literate consumers far more than those with lower literacy skills (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L112_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Routine dental care should be fully covered by the national health service.",
-            "options": [
-                "Poor dental health is directly linked to cardiovascular disease, diabetes, and systemic infections.",
-                "Free dental care removes the cost barrier that causes many lower-income people to delay essential treatment.",
-                "Comprehensive NHS dental coverage would require substantial additional public funding.",
-                "Many people who could afford dental costs continue to use NHS provision, reducing funding efficiency."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about the public health and access case for NHS dental cover (Pros) and the funding and efficiency concerns (Cons).",
-            "explanation": "Free dental care links oral health to systemic disease prevention and removes cost barriers for lower-income patients (Pros), but comprehensive NHS dental coverage requires substantial new funding, and universal provision is less efficient than targeted support (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L112_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Dental health inequality is one of the most visible markers of social and economic inequality.",
-            "options": [
-                "Expanding NHS dental provision requires recruiting significantly more dentists than currently train in the UK.",
-                "Dental disease disproportionately affects lower-income communities who cannot afford preventive care.",
-                "Addressing dental inequality through public provision has measurable long-term public health benefits.",
-                "Dental health is strongly influenced by lifestyle behaviours that public provision alone cannot change."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Consider dental inequality as a public health policy target (Pros) and the workforce and lifestyle barriers (Cons).",
-            "explanation": "Dental disease disproportionately affects lower-income communities and NHS provision reduces long-term health inequality (Pros), but workforce shortages limit provision capacity, and dental health depends on lifestyle behaviours beyond the reach of healthcare alone (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L112_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Prevention-focused dental programmes are more cost-effective than expanding NHS treatment.",
-            "options": [
-                "Prevention programmes alone cannot meet the existing backlog of untreated dental disease in the population.",
-                "Prevention must be complemented by accessible and affordable treatment for those who already need care.",
-                "Fluoride in water, school dental health education, and subsidised preventive check-ups cost less than remedial treatment.",
-                "Investing in early preventive care reduces future demand for expensive restorative NHS dental procedures."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about dental prevention versus treatment as the most cost-effective NHS approach (Pros) and the backlog and access concerns (Cons).",
-            "explanation": "Prevention is significantly cheaper than remedial treatment and reduces future NHS demand (Pros), but existing disease backlogs cannot be addressed through prevention alone, and prevention must complement rather than replace accessible treatment (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L113_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "All junk food advertising should be banned before nine in the evening.",
-            "options": [
-                "Pre-watershed restrictions protect children from repeated exposure to persuasive junk food advertising.",
-                "Removing peak-time junk food advertising reduces normalisation of unhealthy food as a desirable choice.",
-                "A nine o'clock watershed ban ignores the reality that children consume media on demand at all hours.",
-                "Junk food advertisers simply shift spend to digital platforms where pre-watershed restrictions do not apply."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about the protection case for a pre-watershed junk food advertising ban (Pros) and its effectiveness in the digital age (Cons).",
-            "explanation": "Pre-watershed restrictions protect children from unhealthy food advertising during prime viewing (Pros), but on-demand media and digital advertising make watershed restrictions easily circumvented in practice (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L113_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "A total ban on junk food advertising would more effectively protect children's health.",
-            "options": [
-                "A total advertising ban significantly affects media businesses and entertainment companies that rely on food advertising.",
-                "An all-time ban removes junk food advertising from all broadcast media, eliminating the loophole of late-night viewing.",
-                "Adults have the right to receive advertising information about legal food products they are free to purchase.",
-                "Total advertising prohibition removes the commercial incentive to create persuasive food marketing targeting children."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Consider a total ban versus a watershed restriction on junk food advertising (Pros) and the commercial and rights concerns (Cons).",
-            "explanation": "A total ban eliminates all broadcast loopholes and removes commercial incentives for child-targeted marketing (Pros), but it significantly impacts media revenues and raises questions about adults' right to receive information about legal products (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L113_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Digital platform restrictions on junk food advertising are essential alongside broadcast regulation.",
-            "options": [
-                "Online platforms carry vast volumes of junk food advertising targeted precisely at children using algorithms.",
-                "Digital platform regulation is technically complex and difficult to enforce across global platform operators.",
-                "Broadcast-only restrictions are ineffective without equivalent digital platform regulation.",
-                "Platform self-regulation of food advertising has historically been weak and commercially compromised."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about the necessity of digital platform junk food advertising regulation (Pros) and the enforcement challenges (Cons).",
-            "explanation": "Digital food advertising targets children algorithmically and makes broadcast-only restrictions ineffective without equivalent digital rules (Pros), but global platform regulation is technically complex, and self-regulation by platforms has consistently failed to protect children (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L114_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Mental health treatment should be provided completely free at the point of need.",
-            "options": [
-                "Providing truly comprehensive free mental health care requires enormous sustained public investment.",
-                "Free provision without capacity expansion creates long waiting lists that reduce clinical effectiveness.",
-                "Mental illness is as serious as physical illness and must receive equivalent free access to treatment.",
-                "Removing financial barriers to mental health treatment encourages earlier intervention before crises develop."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about the equity and early intervention case for free mental health care (Pros) and the capacity and cost concerns (Cons).",
-            "explanation": "Free mental health treatment removes financial barriers and enables earlier intervention (Pros), but genuine comprehensiveness requires enormous investment, and free provision without capacity growth creates dangerous waiting list delays (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L114_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Long waiting times for NHS mental health treatment cause serious harm to patients.",
-            "options": [
-                "Delays in accessing treatment allow mild conditions to escalate into severe and costly crises.",
-                "People waiting for care remain at serious risk, with some experiencing self-harm or suicide during delays.",
-                "The primary cause of long waits is workforce shortage, not funding alone.",
-                "Expanding mental health provision is not achievable quickly given the years required to train clinical staff."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Consider the harm caused by mental health waiting times (Pros for urgent action) and the structural barriers (Cons).",
-            "explanation": "Treatment delays allow conditions to worsen and leave patients at serious risk of harm during the wait (Pros for urgent action), but the primary cause is workforce shortage that cannot be quickly resolved regardless of funding levels (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L114_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Prevention and community support can reduce demand for expensive mental health treatment.",
-            "options": [
-                "Early community-based support and social prescribing prevent many people from reaching crisis threshold.",
-                "Investment in social determinants of mental health - housing, employment, community - is more effective than treatment alone.",
-                "Community support and prevention cannot replace specialist clinical treatment for severe mental illness.",
-                "The evidence base for social prescribing and community mental health interventions is still developing."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about prevention and community support as mental health strategy (Pros) and their limits and evidence base (Cons).",
-            "explanation": "Community support and prevention reduce clinical demand and address social determinants of mental illness (Pros), but they cannot substitute for specialist clinical treatment in severe cases, and the evidence for community interventions is still maturing (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L115_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Employers should be legally required to offer workplace wellness programmes to all staff.",
-            "options": [
-                "Wellness programmes vary enormously in quality and many deliver little measurable health benefit.",
-                "Mandatory wellness programmes can feel intrusive and patronising, reducing employee autonomy.",
-                "Workplace wellness programmes reduce absenteeism and improve productivity in measurable ways.",
-                "Employer-led wellness programmes reach employees who would not otherwise access health support."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about the productivity and access case for mandatory wellness programmes (Pros) and the quality and autonomy concerns (Cons).",
-            "explanation": "Wellness programmes reduce absenteeism and reach otherwise unreached employees (Pros), but quality varies enormously, and mandatory programmes can feel intrusive and undermine the employee autonomy that genuine wellbeing requires (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L115_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Compulsory wellness programmes benefit employers through reduced healthcare and absence costs.",
-            "options": [
-                "Small businesses cannot afford the infrastructure and cost of running meaningful wellness programmes.",
-                "Healthier employees take fewer sick days, reducing the direct and indirect cost of absence to employers.",
-                "Early detection of health conditions through workplace programmes prevents costly long-term medical treatment.",
-                "Wellness programme ROI is often overstated in industry studies with significant conflicts of interest."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Consider the employer cost-reduction case for wellness programmes (Pros) and the small business and evidence quality concerns (Cons).",
-            "explanation": "Wellness programmes reduce absence costs and enable early health condition detection (Pros), but small businesses cannot afford meaningful programmes, and the financial return on wellness investment is often overstated in industry-funded research (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L115_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Voluntary rather than compulsory wellness programmes produce better employee engagement.",
-            "options": [
-                "Employees who choose to participate demonstrate greater commitment and derive more benefit from programmes.",
-                "Voluntary programmes focused on specific measurable outcomes generate stronger evidence of effectiveness.",
-                "Voluntary wellness programmes primarily attract already-healthy employees, missing those most at need.",
-                "Without compulsion, programmes are underfunded, underused, and fail to change population health outcomes."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about voluntary versus mandatory wellness programmes (Pros for voluntary) and who they actually reach (Cons).",
-            "explanation": "Voluntary participation generates genuine engagement and stronger outcome evidence (Pros), but voluntary programmes primarily attract healthy employees and without compulsion remain underfunded and too narrow in reach (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L116_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Physical education grades should count towards students' final academic results.",
-            "options": [
-                "Grading PE on physical performance disadvantages students with disabilities and chronic health conditions.",
-                "Including PE grades in academic results signals that physical health matters as much as academic achievement.",
-                "Graded PE motivates students to engage seriously with exercise as a valued and assessed discipline.",
-                "Academic grades already reflect learning effort; measuring physical ability alongside them is a categorical error."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about the motivation and values case for graded PE (Pros) and the equity and category concerns (Cons).",
-            "explanation": "Counting PE grades signals the importance of health and motivates serious engagement (Pros), but performance-based grading disadvantages disabled students and conflates physical ability with academic achievement (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L116_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Assessing PE on effort, progress, and knowledge rather than ability makes grading more equitable.",
-            "options": [
-                "Assessing on personal improvement and sports science knowledge rewards effort rather than natural athleticism.",
-                "Effort-based grading is subjective and open to teacher bias in ways that undermine its academic legitimacy.",
-                "Including effort-based PE grades motivates all students equally regardless of physical starting point.",
-                "Students quickly learn to appear to be trying without genuinely engaging with physical activity."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Consider effort-based PE grading as an equitable approach (Pros) and the subjectivity and gaming concerns (Cons).",
-            "explanation": "Effort and progress-based PE grades reward commitment over natural ability and motivate all students (Pros), but effort assessment is highly subjective and vulnerable to teacher bias, and students can perform effort without genuine engagement (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L116_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "PE is better delivered as an enriching non-assessed experience than as an examined academic subject.",
-            "options": [
-                "Without assessment, PE lacks the status, funding priority, and teacher accountability of assessed subjects.",
-                "Non-assessed PE removes the anxiety and competition that undermine its enjoyment and health benefits.",
-                "Physical activity experienced as intrinsically enjoyable is more likely to continue beyond compulsory schooling.",
-                "Non-assessed subjects risk becoming marginalised in schools dominated by examination performance pressure."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about PE as a non-assessed enriching experience (Pros) and the status and marginalisation risks without assessment (Cons).",
-            "explanation": "Non-assessed PE promotes intrinsic enjoyment and reduces competitive anxiety, building lifelong activity habits (Pros), but without assessment PE lacks academic status, funding, and accountability, risking marginalisation in exam-focused schools (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L117_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Schools should teach students about the importance and science of sleep.",
-            "options": [
-                "Sleep education competes for limited curriculum time against more immediately assessable academic subjects.",
-                "Evidence-based sleep education helps adolescents understand and manage the biological sleep shifts of puberty.",
-                "Understanding sleep science equips students to make better decisions about bedtime, screens, and rest.",
-                "Parental behaviour and family environment have far greater influence on adolescent sleep than school education."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about the evidence-based case for sleep education in schools (Pros) and the curriculum and parent influence concerns (Cons).",
-            "explanation": "Sleep education helps adolescents understand biological sleep changes and make better rest decisions (Pros), but it competes for scarce curriculum time and family environment exerts far greater influence on sleep than school-based education (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L117_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Poor adolescent sleep is a significant and underaddressed public health concern.",
-            "options": [
-                "Adolescent sleep problems are primarily driven by digital device use and social pressures beyond school control.",
-                "Addressing sleep requires family and community-level intervention, not school education programmes alone.",
-                "Chronic sleep deprivation in teenagers is strongly associated with depression, anxiety, and reduced academic performance.",
-                "Schools are ideally placed to identify and address sleep deficits that families may not recognise."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Consider the public health case for school sleep intervention (Pros) and the root cause and systemic concerns (Cons).",
-            "explanation": "Chronic teen sleep deprivation links to depression and academic decline, and schools can identify patterns families miss (Pros), but device use and social pressures are the primary drivers, and effective sleep improvement requires family and community-level action (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L117_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Later school start times are more effective than sleep education in addressing teen sleep deprivation.",
-            "options": [
-                "Later school starts displace the school day and create significant logistical problems for working families.",
-                "Structural change to school start times addresses the biological clock mismatch without requiring behaviour change.",
-                "Later starts have demonstrated measurable improvements in attendance, mood, and academic performance in pilots.",
-                "Later starts do not address the late-night digital device use that is the primary cause of teen sleep loss."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about later starts versus sleep education as responses to teen sleep deprivation (Pros for later starts) and the practical and root cause concerns (Cons).",
-            "explanation": "Later starts address biological clock mismatch structurally and show positive pilot results for attendance and performance (Pros), but they create serious family logistics problems and do not address the underlying cause of device-driven late-night sleep loss (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L118_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Governments should significantly increase research funding for rare and neglected diseases.",
-            "options": [
-                "Public research budgets are finite and every rare disease investment displaces funding for common condition research.",
-                "Rare disease patients are systematically underserved by market-driven pharmaceutical research.",
-                "Public research investment in rare diseases produces scientific discoveries applicable to common conditions.",
-                "Orphan drug legislation and commercial incentives have already significantly improved rare disease research."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about the equity and spillover case for more rare disease funding (Pros) and the opportunity cost and existing incentives (Cons).",
-            "explanation": "Rare disease patients deserve research investment and rare disease science generates widely applicable discoveries (Pros), but public research budgets are finite, every rare disease investment displaces common condition funding, and existing orphan drug incentives already drive some private investment (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L118_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Market incentives alone are insufficient to ensure adequate research into rare diseases.",
-            "options": [
-                "Tax incentives and guaranteed purchase commitments can motivate sufficient private sector rare disease research.",
-                "The commercial market is too small to justify private investment in diseases affecting few patients.",
-                "Public bodies are less efficient than private research companies in translating funding into effective treatments.",
-                "Without public funding, patients with rare conditions face a lifetime without treatment options or diagnosis."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Consider why market incentives are insufficient for rare disease research (Pros) and the private sector alternative (Cons).",
-            "explanation": "Small rare disease markets cannot justify private investment without public support (Pros), but tax incentives and guaranteed purchase agreements can motivate private research, and private companies may translate investment into treatments more efficiently than public bodies (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L118_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "International collaboration in rare disease research is more efficient than national funding alone.",
-            "options": [
-                "International research collaboration raises complex questions of data sharing, intellectual property, and access.",
-                "Pooling patients across countries enables clinical trials with sufficient participants for rare conditions.",
-                "Shared research infrastructure reduces duplication and significantly lowers the cost of rare disease investigation.",
-                "National governments may prioritise domestic research capacity and control over international collaborative efficiency."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about international collaboration as the most effective rare disease research model (Pros) and the coordination challenges (Cons).",
-            "explanation": "International pooling enables adequate trial participation and reduces duplication in rare disease research (Pros), but data sharing and IP questions complicate collaboration, and governments may prioritise national control over collaborative efficiency (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L119_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Alcohol should be taxed significantly more heavily to reduce harmful consumption.",
-            "options": [
-                "Higher alcohol prices demonstrably reduce consumption, particularly among younger and heavier drinkers.",
-                "Tax revenue from higher alcohol duty can fund alcohol harm reduction, treatment, and public health.",
-                "A higher alcohol tax disproportionately affects lower-income people who drink relatively more of their income.",
-                "Moderate drinkers should not be financially penalised for the harms caused by a minority of heavy drinkers."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about the public health and revenue case for higher alcohol taxation (Pros) and the regressive and fairness concerns (Cons).",
-            "explanation": "Higher alcohol taxes demonstrably cut harmful consumption and generate health funding (Pros), but they fall harder on lower-income people and penalise responsible moderate drinkers for harms caused by a minority (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L119_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Minimum unit pricing for alcohol is more targeted and effective than blanket taxation.",
-            "options": [
-                "Minimum unit pricing increases profits for producers and retailers rather than generating public health revenue.",
-                "Middle-class wine drinkers are largely unaffected by minimum unit pricing on cheap high-strength products.",
-                "Minimum unit pricing specifically increases the cost of the cheapest high-strength alcohol used by heavy drinkers.",
-                "Scottish evidence demonstrates that minimum unit pricing measurably reduced alcohol-related hospital admissions."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Consider minimum unit pricing versus taxation as the optimal alcohol policy tool (Pros) and the revenue and targeting concerns (Cons).",
-            "explanation": "Minimum unit pricing targets cheap high-strength alcohol used by heavy drinkers and Scottish evidence shows measurable health benefits (Pros), but producers capture the revenue benefit rather than the public, and the policy largely bypasses moderate wine and beer drinkers (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L119_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Education and cultural change are more effective long-term responses to harmful drinking than taxation.",
-            "options": [
-                "Cultural change in alcohol consumption takes generations to achieve and cannot address immediate harms.",
-                "Changing social norms about alcohol requires sustained cultural and educational investment, not price intervention.",
-                "Countries with positive drinking cultures achieve lower harm levels through norms rather than tax structures.",
-                "Evidence from tobacco shows that price measures are consistently more effective than education in changing behaviour."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about cultural change versus taxation as the more effective alcohol harm reduction strategy (Pros for culture) and the speed and evidence concerns (Cons).",
-            "explanation": "Sustainable cultural change about alcohol is more durable than price interventions (Pros), but cultural change takes generations, and tobacco evidence shows price measures consistently outperform education in changing consumption behaviour (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L120_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Annual health checks at work should be compulsory for all full-time employees.",
-            "options": [
-                "Compulsory health checks raise complex questions about medical privacy and employee autonomy.",
-                "Compulsory checks detect chronic conditions early, reducing long-term healthcare costs and sick leave.",
-                "Employers who access employee health data may use it to discriminate in pay, promotion, or redundancy.",
-                "Workplace health checks reach people who would not proactively visit their GP for routine screening."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about the preventive health case for compulsory workplace checks (Pros) and the privacy and discrimination concerns (Cons).",
-            "explanation": "Compulsory checks enable early detection and reach people who avoid healthcare (Pros), but they raise serious medical privacy concerns and risk employer misuse of health data for discriminatory employment decisions (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L120_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Employer-funded health monitoring programmes deliver measurable returns on investment.",
-            "options": [
-                "Financial return on health monitoring investment typically takes many years to materialise.",
-                "Early detection of conditions reduces the cost of subsequent treatment for employers funding health insurance.",
-                "Healthier employees demonstrate higher productivity, lower absence rates, and stronger retention.",
-                "Small businesses cannot afford meaningful health monitoring infrastructure for their employees."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Consider the employer ROI case for health monitoring (Pros) and the timeline and small business concerns (Cons).",
-            "explanation": "Early detection saves treatment costs and healthier employees are more productive and reliable (Pros), but returns take years to materialise and small businesses face disproportionate cost barriers to implementing health monitoring (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L120_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Voluntary occupational health programmes are more effective than compulsory workplace checks.",
-            "options": [
-                "Employees who choose to engage with health monitoring participate more honestly and act on findings.",
-                "Voluntary programmes avoid the legal and ethical minefield of compulsory health data collection at work.",
-                "Voluntary programmes attract primarily health-conscious employees, missing those with greatest health needs.",
-                "Without compulsion, the majority of employees in high-risk jobs do not participate in health monitoring."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about voluntary versus compulsory workplace health programmes (Pros for voluntary) and the reach concerns (Cons).",
-            "explanation": "Voluntary programmes generate genuine engagement and avoid legal and ethical problems of compulsory data collection (Pros), but they attract mainly health-conscious employees, and without compulsion most at-risk workers in high-risk roles do not participate (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        }
-    ]
+  "gameType": "opinionWriting",
+  "batchIndex": 12,
+  "levels": "111-120",
+  "quests": [
+    {
+      "id": "WRT_OPINIONWRITING_L111_Q1",
+      "instruction": "What is the main weakness in this argument?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Either we ban all phones at school or students will never pay attention.'",
+      "options": [
+        "It relies on a very small sample of students.",
+        "It confuses correlation with cause.",
+        "It attacks a person instead of an idea.",
+        "It presents only two options when others exist."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Count how many possibilities the sentence allows.",
+      "explanation": "The argument treats a total ban and total distraction as the only choices, ignoring middle options such as limits at certain times.",
+      "structureGuide": "Argument → Flaw"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L111_Q2",
+      "instruction": "Which sentence avoids a false choice?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "The shop is short of money.",
+      "options": [
+        "It is raising prices or nothing at all.",
+        "We must either raise prices or close the shop.",
+        "Either everyone works late or the shop fails completely.",
+        "We could raise prices, cut costs, or do a bit of both."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "A fair sentence leaves room for several options.",
+      "explanation": "The best sentence lists several ways forward. The others reduce the choice to two extremes.",
+      "structureGuide": "Argument → Flaw"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L111_Q3",
+      "instruction": "Which alternative shows that the argument presents a false choice?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Either we buy new computers or our students will fall behind.'",
+      "options": [
+        "Computers are used in lessons every week at the school.",
+        "The school could repair the old computers or share devices in class.",
+        "Some schools have bought new computers this term.",
+        "New computers are quicker than the ones we have now."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Look for a third option that the argument ignores.",
+      "explanation": "Repairing or sharing devices are extra options, showing that 'new computers or failure' is not the only choice.",
+      "structureGuide": "Argument → Flaw"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L112_Q1",
+      "instruction": "What is the main weakness in this argument?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'If we allow one late assignment, students will stop handing anything in on time, and soon the whole school will collapse.'",
+      "options": [
+        "It claims a small step will lead to a huge disaster without proof.",
+        "It offers only two possible choices, and it ignores every other way the school could respond.",
+        "It uses statistics in a misleading way, by leaving out the numbers that would matter most.",
+        "It relies on a sample that is much too small, because only a few students were asked."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Look at how quickly the sentence moves from a small event to a large one.",
+      "explanation": "The argument jumps from one late assignment to school collapse with no evidence for each step.",
+      "structureGuide": "Argument → Flaw"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L112_Q2",
+      "instruction": "Which sentence is a reasonable prediction rather than a slippery slope?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Topic: the swimming pool is raising its entry price.",
+      "options": [
+        "If the pool raises its price, some regular swimmers may swim less often.",
+        "If a price rises once, prices will rise for ever after that.",
+        "If the pool raises its price, soon nobody will exercise and the town will be unhealthy.",
+        "One price rise will lead to the closure of every leisure centre."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "A reasonable prediction stays close to the likely effect.",
+      "explanation": "The best sentence predicts a limited, likely effect. The alternatives jump to extreme outcomes.",
+      "structureGuide": "Argument → Flaw"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L112_Q3",
+      "instruction": "Choose the best revision of the slippery slope.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'If we let staff dress casually on Fridays, standards will collapse and customers will leave.'",
+      "options": [
+        "Casual Fridays will definitely end professionalism completely in the office.",
+        "Customers always leave when staff are dressed casually.",
+        "Casual Fridays might relax dress standards a little, so we could set guidelines and review the effect.",
+        "Casual dress is the first step toward chaos in every workplace."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "A better version names a limited risk and a plan.",
+      "explanation": "The best revision recognises a modest risk and suggests a way to manage it. The alternatives repeat the exaggeration.",
+      "structureGuide": "Argument → Revision"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L113_Q1",
+      "instruction": "Which piece of evidence is anecdotal?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Learning chess improves concentration in class.",
+      "options": [
+        "A school compared attention scores for 120 chess and non-chess students.",
+        "A teachers' survey recorded classroom focus before and after a chess club.",
+        "My cousin took up chess and now pays more attention at school.",
+        "Researchers reviewed results from six schools that added chess lessons."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "An anecdote is one person's story.",
+      "explanation": "The cousin's story is a single case. The other choices gather results from many students or schools.",
+      "structureGuide": "Evidence → Type"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L113_Q2",
+      "instruction": "Why is a single personal story weak evidence for a general claim?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Choose the best explanation.",
+      "options": [
+        "Only experts can tell whether a story from real life is worth repeating to other people.",
+        "Stories about real people are usually too interesting to be trusted by careful readers.",
+        "Personal stories are often exaggerated by the people who tell them, so they cannot be used as evidence.",
+        "One person's story may not represent what happens to most people."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Think about how many people the story covers.",
+      "explanation": "A single case might be unusual. The other options are exaggerations or unrelated.",
+      "structureGuide": "Evidence → Type"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L113_Q3",
+      "instruction": "Choose the evidence that is more convincing than the anecdote.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Anecdote: 'My neighbour saved money using a meal-planning app.'",
+      "options": [
+        "The app's makers say it is helpful for many families and point to a number of happy customers.",
+        "My other neighbour says that the app is fun to use and that she recommends it to everyone she meets.",
+        "The app has a five-star rating in the online store, based on several hundred short reviews.",
+        "In a study of 300 households, those using meal-planning apps spent on average 12% less on food."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Look for a measured comparison with many people.",
+      "explanation": "The study compares many households and measures spending. The other options are opinions or promotion.",
+      "structureGuide": "Evidence → Type"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L114_Q1",
+      "instruction": "Which statement could be misleading because it gives no base number?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Choose the sentence that hides important information.",
+      "options": [
+        "Complaints stayed at about two percent of all orders.",
+        "Complaints have doubled this month.",
+        "There were 80 complaints this month, compared with 40 last month.",
+        "Complaints rose from 40 to 80 this month, out of 20,000 orders."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "A change in size means little unless you know what size it started from.",
+      "explanation": "Without a starting number, 'doubled' cannot be judged. The other statements include the amounts involved.",
+      "structureGuide": "Evidence → Misleading Numbers"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L114_Q2",
+      "instruction": "Which claim describes the numbers most honestly?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Data: Daily visits to the pool rose from 10 to 15.",
+      "options": [
+        "The pool is busier than it has ever been, according to the staff at the front desk.",
+        "Visits rose from 10 to 15 a day, which is a small increase in actual numbers.",
+        "Pool visits jumped by an amazing 50 percent in just a few weeks, which shows the pool is thriving!",
+        "Pool attendance is soaring at the moment, and the whole town seems to have discovered swimming."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Honest reporting gives the real numbers, not just the impressive percentage.",
+      "explanation": "The correct sentence gives the actual amounts and their scale. The others use exciting words that overstate a small change.",
+      "structureGuide": "Evidence → Misleading Numbers"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L114_Q3",
+      "instruction": "What is wrong with this graph?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A company graph starts its vertical axis at 90 instead of 0, so a rise from 92 to 95 looks huge.",
+      "options": [
+        "It shows too few months of data.",
+        "It hides the dates of the measurements.",
+        "It uses too many colours on the chart.",
+        "It makes a small change look much bigger than it is."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Ask what the axis choice does to the size of the visible change.",
+      "explanation": "Starting the axis at 90 exaggerates the height difference. The other issues aren't described in the graph.",
+      "structureGuide": "Evidence → Misleading Numbers"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L115_Q1",
+      "instruction": "Which sentence relies on emotion instead of reasons?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: The council should keep the youth centre open.",
+      "options": [
+        "Its closure would remove the only free evening activity in the district.",
+        "It gives young people a supervised place to meet after school.",
+        "About 150 teenagers use it each week for homework help and activities.",
+        "Closing it would break the hearts of everyone who cares about young people."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Look for the sentence that pushes feelings but gives no information.",
+      "explanation": "The correct sentence appeals to feelings without stating a fact. The alternatives give numbers or reasons.",
+      "structureGuide": "Argument → Emotion"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L115_Q2",
+      "instruction": "Choose the version that keeps the concern but adds a reason.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'It is heartless to charge for parking at the hospital.'",
+      "options": [
+        "Nobody with any decency would ever support such charges.",
+        "Parking charges add strain for families who visit sick relatives daily.",
+        "Parking charges at hospitals are terrible and completely cruel.",
+        "Anyone who charges for hospital parking should be truly ashamed."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "A strong version explains who is affected and how.",
+      "explanation": "This sentence explains the impact on families. The alternatives use emotional words with no explanation.",
+      "structureGuide": "Argument → Emotion"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L115_Q3",
+      "instruction": "Which sentence uses emotion appropriately alongside reasons?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: The road outside the school needs a crossing.",
+      "options": [
+        "It is upsetting that 12 pupils walk home in the dark; a crossing and streetlights would make the route safer.",
+        "Everyone is furious about the road, which proves that the council must change it as soon as possible.",
+        "It is upsetting, so the council must act now without delay, before another child is put at risk.",
+        "Only a monster would leave the road as it is today, when children are walking home in the dark."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Feelings can help, but they need facts and a solution.",
+      "explanation": "The correct sentence gives a number and a proposed solution. The alternatives rely on pressure or insults.",
+      "structureGuide": "Argument → Emotion"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L116_Q1",
+      "instruction": "Which reason relies on popularity instead of evidence?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: You should switch to the new phone plan.",
+      "options": [
+        "It has no contract lock-in period at all.",
+        "It costs £8 less per month than the current plan.",
+        "Everyone in my class has already switched.",
+        "It includes more data for the same monthly price."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Ask what the reason tells you about the plan itself.",
+      "explanation": "The popularity reason says what others did, not why the plan is good. The other reasons describe the plan.",
+      "structureGuide": "Argument → Popularity"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L116_Q2",
+      "instruction": "Which source is the most convincing for the claim?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Quiet study spaces improve reading time.",
+      "options": [
+        "A popular blogger who insists that quiet study spaces work well, and who has many thousands of followers.",
+        "My friend's teacher, who likes quiet rooms and says that her own pupils seem to work better in them.",
+        "A university researcher who studied 500 students in different study spaces.",
+        "A famous singer who says quiet spaces are best, and who has sold millions of records around the world."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Expertise should match the topic.",
+      "explanation": "The researcher studied the question directly. The other sources have fame or opinions but no relevant evidence.",
+      "structureGuide": "Argument → Authority"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L116_Q3",
+      "instruction": "Why is this reasoning weak?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Millions of people use this app, so it must be secure.'",
+      "options": [
+        "Popularity does not prove the app is secure.",
+        "The sentence talks about people, not machines.",
+        "Apps can never be secure in any way.",
+        "Millions is too small a number to judge."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Ask whether the number of users says anything about security.",
+      "explanation": "Lots of people can use an app that is not secure. The argument confuses popularity with quality.",
+      "structureGuide": "Argument → Popularity"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L117_Q1",
+      "instruction": "Which argument is circular?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Choose the sentence whose reason only repeats the claim.",
+      "options": [
+        "This rule is fair because it is the fairest rule available.",
+        "This rule is fair because it was tested in a trial period.",
+        "This rule is fair because it applies equally to all staff.",
+        "This rule is fair because everyone had a chance to comment on it."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "A circular reason says the same thing in different words.",
+      "explanation": "'The fairest rule' just restates 'fair'. The rest give separate reasons.",
+      "structureGuide": "Argument → Circular Reasoning"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L117_Q2",
+      "instruction": "Choose the revision that breaks the circle.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'The film is great because it is so good.'",
+      "options": [
+        "The film is great because it is one of the best films that anybody has made in recent years.",
+        "The film is great because its story keeps surprising you and the acting feels real.",
+        "The film is great because it is really excellent from the very first scene to the last one.",
+        "The film is great because good films are great, and this is certainly a good film."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Replace repeated praise with specific reasons.",
+      "explanation": "This answer names what makes the film good. The alternatives repeat praise in new words.",
+      "structureGuide": "Argument → Circular Reasoning"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L117_Q3",
+      "instruction": "Which sentence gives independent support for the claim?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Handwritten notes are better for learning.",
+      "options": [
+        "Writing slowly forces students to summarise, which helps them process ideas.",
+        "Notes written by hand are superior for learning purposes.",
+        "Handwritten notes are a better way of learning than typed ones.",
+        "Learning is better when students use handwritten notes."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Independent support explains why, using new information.",
+      "explanation": "The best sentence adds a reason about summarising. The others repeat the claim in different words.",
+      "structureGuide": "Argument → Circular Reasoning"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L118_Q1",
+      "instruction": "Which reply is a red herring (it changes the subject)?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: The office should recycle more paper.",
+      "options": [
+        "But what about the office coffee machine, which keeps breaking down?",
+        "How much paper do we recycle at the moment?",
+        "What would a recycling service cost the office each month?",
+        "Would bins on every floor make a difference to it?"
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Three replies deal with paper recycling. One raises something else.",
+      "explanation": "The coffee machine has nothing to do with recycling. The other replies ask relevant questions.",
+      "structureGuide": "Argument → Red Herring"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L118_Q2",
+      "instruction": "Which response stays on topic?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: The team should use a shared calendar.",
+      "options": [
+        "I prefer paper diaries because they smell nice.",
+        "Marcus never updates anything, so forget it.",
+        "Calendars were invented long before phones existed.",
+        "It would help, but only if everyone updates it every day."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Choose the response that engages with the calendar idea.",
+      "explanation": "This response considers what the calendar needs to work. The others attack a person or drift to history and preferences.",
+      "structureGuide": "Argument → Red Herring"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L118_Q3",
+      "instruction": "What is the flaw in this response?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'You cannot criticise the parking policy; you do not even drive.'",
+      "options": [
+        "It repeats the claim without giving a reason.",
+        "It attacks the speaker instead of the argument.",
+        "It gives only two options to choose from.",
+        "It uses a sample that is too small."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Ask whether the response deals with what was actually said about the policy.",
+      "explanation": "Whether the speaker drives does not decide if the criticism is sound. The response goes after the person.",
+      "structureGuide": "Argument → Flaw"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L119_Q1",
+      "instruction": "Choose the strongest argument.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: The town should extend the tram line.",
+      "options": [
+        "Trams are modern and stylish, and a longer line would make the town look as up to date as its neighbours.",
+        "Every other town nearby is extending its tram line, so we should extend ours before we are left behind.",
+        "If we do not extend the line, the whole town will fall behind and lose its best chance to grow.",
+        "Extending the line would reach the hospital, where 300 staff now need two bus changes, so commuting time would fall."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "The strongest argument names who benefits and how.",
+      "explanation": "The best argument gives specific evidence and a clear benefit. The remaining options rely on style, popularity or exaggeration.",
+      "structureGuide": "Claim → Evidence → Explanation"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L119_Q2",
+      "instruction": "Choose the argument with the most reliable reasoning.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: The cinema should offer discounted matinees.",
+      "options": [
+        "Everyone likes cheap tickets, so the cinema must lower its prices and welcome everybody who wants to come.",
+        "Discounts are popular with customers, so any discount at all will raise the cinema's profit this year.",
+        "Weekday afternoon showings are often half empty, so lower prices could fill seats and attract students.",
+        "Cinemas that do not offer matinees end up failing, which is why the town's cinema must lower its prices."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Look for an argument that uses a specific situation and a likely result.",
+      "explanation": "This argument links empty seats and price. The others use absolute words or unproven claims.",
+      "structureGuide": "Claim → Evidence → Explanation"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L119_Q3",
+      "instruction": "Choose the argument that avoids overgeneralizing and includes a fair concession.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Meetings should be held standing up.",
+      "options": [
+        "Standing meetings will not suit every topic, but for short updates they can save time.",
+        "Standing meetings are perfect for every kind of meeting, from quick updates to long planning sessions.",
+        "Standing meetings will fix all of our communication problems, so we should hold every meeting that way.",
+        "Standing meetings are the future, because everybody is trying them and no one has gone back to chairs."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "The best answer limits the claim and gives a reason.",
+      "explanation": "The best sentence concedes a limit and gives a reason. The alternatives overclaim or rely on popularity.",
+      "structureGuide": "Claim → Concession → Reason"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L120_Q1",
+      "instruction": "Identify the flaw in the reasoning.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'I asked two friends and both prefer the new logo, so customers will like it.'",
+      "options": [
+        "It attacks the person instead of the argument.",
+        "It presents a false either/or choice.",
+        "It uses circular reasoning.",
+        "The sample is too small and not representative."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Think about who was asked and how many.",
+      "explanation": "Two friends cannot represent all customers. The other flaws do not appear in the sentence.",
+      "structureGuide": "Argument → Flaw"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L120_Q2",
+      "instruction": "Identify the flaw in the reasoning.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Either we cancel the trip or the students will be bored all term.'",
+      "options": [
+        "It uses circular reasoning to prove its point.",
+        "It appeals to what most people already do.",
+        "It offers a false choice between two extremes.",
+        "It generalises from a single personal experience."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Look for the pattern 'either... or' and ask what is left out.",
+      "explanation": "The sentence ignores other options such as a cheaper trip or a different activity.",
+      "structureGuide": "Argument → Flaw"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L120_Q3",
+      "instruction": "Which revision fixes the reasoning?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'Everyone uses this software, so it must be the best for us.'",
+      "options": [
+        "This software is widely used, so support is easy to find, but we should still test it against our needs.",
+        "Since everyone uses this software, we do not need to test it against our own needs at all.",
+        "The software is popular because it is the best software, so it will suit us as well as it suits them.",
+        "This software is used by many people, so it must be flawless and we can buy it without any trial."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "A fix uses the popularity fact in a limited way and adds a check.",
+      "explanation": "This revision uses popularity for one modest point and recommends testing. The others still treat popularity as proof.",
+      "structureGuide": "Argument → Revision"
+    }
+  ]
 }

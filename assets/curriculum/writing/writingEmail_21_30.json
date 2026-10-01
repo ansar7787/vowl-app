@@ -8,78 +8,56 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email applying for a part-time job at a local bookshop.",
+            "prompt": "You're going away for a week and would like your neighbour to water your plants. Arrange the email.",
             "options": [
-                "Dear Hiring Manager,",
-                "Subject: Application for part-time sales assistant position",
-                "Yours faithfully,\nMarcus Owen",
-                "I am writing to apply for the part-time sales assistant position advertised on your website and have attached my cv for your consideration."
+                "Dear Mrs Diallo,",
+                "I'm away from 9 to 16 March. Would you mind watering the plants on my balcony twice during that time? I'll leave the key with you before I go.",
+                "Subject: Could you water my plants next week?",
+                "Thank you so much,\nCamille"
             ],
             "correctOrder": [
-                1,
+                2,
                 0,
-                3,
-                2
+                1,
+                3
             ],
-            "hint": "The job title goes in the subject; 'DEAR HIRING MANAGER' is used when you don't know the recruiter's name; mentioning the CV attachment is important; the closing must match this unnamed greeting.",
-            "explanation": "When the recruiter's name is unknown, 'Dear Hiring Manager' is more targeted than 'Dear Sir or Madam' - and because you still don't know their name, 'Yours faithfully' is the correct closing, not 'Yours sincerely'.",
-            "formalityLevel": "Formal"
+            "hint": "A favour is easier to grant when you say what you need, for how long and what you will do to help.",
+            "explanation": "Requests for favours should be specific about what and when. Offering to leave the key removes a practical obstacle, and the closing thanks the neighbour before she has answered.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L21_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a bank asking about the process for opening a savings account.",
+            "prompt": "Subject: Swapping Thursday's shift / Greeting: Hi Dina, / A colleague is asked to swap shifts at the café. Assemble the body and sign-off.",
             "options": [
-                "Subject: Enquiry about opening a savings account",
-                "I would like to open a savings account and wonder if you could tell me what identification I need to bring and whether I can book an appointment online.",
-                "Dear Customer Services Team,",
-                "Kind regards,\nPenny Lucas"
+                "Would you be able to swap shifts with me on Thursday?",
+                "Thanks,\nAaron",
+                "I'm happy to take your Saturday morning in return.",
+                "I have a dentist's appointment at 3 pm that I can't move."
             ],
             "correctOrder": [
                 0,
+                3,
                 2,
-                1,
-                3
+                1
             ],
-            "hint": "The purpose is in the subject; the team is addressed professionally; two specific procedural questions are asked; 'KIND REGARDS' closes the banking enquiry.",
-            "explanation": "Asking about two practical aspects - required ID AND online appointment booking - in one email demonstrates good planning. Specific questions lead to more useful answers than vague enquiries.",
-            "formalityLevel": "Formal"
+            "hint": "Ask first, explain second, and offer something in return last.",
+            "explanation": "Starting with the request lets Dina see immediately what is wanted. The reason makes it understandable, and offering a swap turns a demand into a fair exchange.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L21_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a retailer asking for information about returning a damaged product.",
+            "prompt": "You want to ask a café owner, Mr Haddad, if you can hold a charity bake sale outside his café. The subject is already written ('Subject: Bake sale outside your café?'). Lay out the rest.",
             "options": [
-                "I received my order last tuesday and the item arrived damaged - please could you tell me how to initiate a return and receive a replacement?",
-                "Kind regards,\nTracey Ball",
-                "Dear Returns Department,",
-                "Subject: Return request for damaged product - order #9217"
-            ],
-            "correctOrder": [
-                3,
-                2,
-                0,
-                1
-            ],
-            "hint": "The return and order number are in the subject; the right department is addressed; the problem and two-part request are in the body; 'KIND REGARDS' closes the customer complaint politely.",
-            "explanation": "Including the order number in the subject line allows customer service to pull up your account instantly, speeding up the resolution. 'Kind regards' works well here since you're writing to a department rather than a named contact.",
-            "formalityLevel": "Formal"
-        },
-        {
-            "id": "WRT_WRITINGEMAIL_L22_Q1",
-            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
-            "subtype": "writingEmail",
-            "interactionType": "writing",
-            "prompt": "Write a work email requesting a team meeting to discuss a project update.",
-            "options": [
-                "I would like to arrange a brief team meeting early next week to discuss the latest updates on project aurora and our next steps.",
-                "Subject: Request for team meeting - project aurora update",
-                "Best regards,\nSteve Palmer",
-                "Dear Team,"
+                "All the money raised would go to new books, and we would clear everything away by 2 pm.",
+                "Dear Mr Haddad,",
+                "Kind regards,\nEleni Papas",
+                "I'm organising a bake sale for the school's library fund, and I'm writing to ask whether we could set up a table outside your café on Saturday 10 May."
             ],
             "correctOrder": [
                 1,
@@ -87,30 +65,52 @@
                 0,
                 2
             ],
-            "hint": "Project name and meeting purpose are in the subject; 'DEAR TEAM' addresses the group; the reason and timing are in the body; 'BEST REGARDS' closes professionally.",
-            "explanation": "'Best regards' is the standard professional closing in business emails. Including the project name in the subject line allows team members to prepare before the meeting.",
-            "formalityLevel": "Formal"
+            "hint": "In a request to a stranger, say who you are and what you want before describing the benefit.",
+            "explanation": "A stranger needs to know quickly who is asking and what they are asking for. Only then is it useful to mention the benefit and the promise to tidy up, which answers his likely concerns.",
+            "formalityLevel": "Semi-formal"
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L22_Q1",
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+            "subtype": "writingEmail",
+            "interactionType": "writing",
+            "prompt": "You've been asked to confirm you'll attend Saturday's meeting. Subject: Confirming Saturday's meeting / Greeting: Hi Rosa, / Arrange the body and sign-off.",
+            "options": [
+                "Just confirming that I'll be at the community centre on Saturday at 10 am.",
+                "See you there,\nMohamed",
+                "I can bring the projector, if that's helpful.",
+                "Let me know if you need anything else before then."
+            ],
+            "correctOrder": [
+                0,
+                2,
+                3,
+                1
+            ],
+            "hint": "Some emails only need one job. Confirm first, then add the useful extra.",
+            "explanation": "A confirmation should be brief and unambiguous. State the fact with day, time and place, then add anything that helps, such as bringing equipment. Nobody should have to reread it to be sure.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L22_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to your HR department requesting annual leave.",
+            "prompt": "You have received a parcel delivery notice and need to confirm someone will be at home. Arrange the email to the courier company.",
             "options": [
-                "Subject: Annual leave request - 12 to 16 august",
-                "Dear Hr Team,",
-                "I would like to request annual leave from monday 12 august to friday 16 august and will ensure all my tasks are covered before I go.",
-                "Kind regards,\nDanielle Fox"
+                "I am confirming that someone will be at home to receive the parcel between 9 am and 12 noon on Wednesday. Please ring the bell for the top flat.",
+                "Dear Delivery Team,",
+                "Subject: Confirming delivery on Wednesday, ref. 77102",
+                "Kind regards,\nGabriela Torres"
             ],
             "correctOrder": [
-                0,
-                1,
                 2,
+                1,
+                0,
                 3
             ],
-            "hint": "Both dates are in the subject; HR is addressed professionally; the specific dates and handover commitment are in the body; 'KIND REGARDS' closes the internal work email.",
-            "explanation": "Including both start and end dates in the subject line makes it easy to check your request against the team calendar. Offering to cover tasks beforehand shows professionalism and consideration for colleagues.",
+            "hint": "A good confirmation includes the reference and the practical detail that saves confusion.",
+            "explanation": "Including the reference number in the subject makes it easy for the courier to match your reply. The instruction about which bell to ring prevents a failed delivery, which is exactly the problem a confirmation should avoid.",
             "formalityLevel": "Formal"
         },
         {
@@ -118,21 +118,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to your manager notifying them that you are ill and cannot come to work.",
+            "prompt": "You've received a job offer and want to acknowledge it. Subject: Re: Job offer, Marketing Assistant / Greeting: Dear Ms Reilly, / Arrange the message.",
             "options": [
-                "Dear Kate,",
-                "I am unwell today and will not be able to come into the office - I will keep you updated and hope to be back tomorrow.",
-                "Best wishes,\nNeil",
-                "Subject: Sick day notification - unable to come in today"
+                "Thank you for the offer of the Marketing Assistant position.",
+                "I look forward to speaking with you again soon.",
+                "I am pleased to confirm that I received your letter and will reply formally by Friday.",
+                "Yours sincerely,\nKwabena Asante"
             ],
             "correctOrder": [
-                3,
                 0,
+                2,
                 1,
-                2
+                3
             ],
-            "hint": "The purpose is clear in the subject; the manager is addressed by first name (informal workplace); the situation and update promise are in the body; 'BEST WISHES' closes warmly.",
-            "explanation": "In many workplaces, emailing your manager directly by first name is normal. Promising to keep them updated ('will keep you updated') and giving an expected return date shows professionalism even when unwell.",
+            "hint": "First thanks, then say what you are confirming, then a friendly next step.",
+            "explanation": "Confirming receipt is a valid purpose on its own. You are not accepting yet, only telling the employer the message arrived and when they can expect an answer.",
             "formalityLevel": "Formal"
         },
         {
@@ -140,21 +140,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email following up on a job application submitted two weeks ago.",
+            "prompt": "You can't make Wednesday's call with your tutor, Dr Wilson. Subject: Moving Wednesday's tutorial / Greeting: Dear Dr Wilson, / Arrange the body and sign-off.",
             "options": [
-                "Subject: Follow-up on my application - marketing executive role",
-                "Yours sincerely,\nLewis Hart",
-                "Dear Ms Hendricks,",
-                "I submitted my application for the marketing executive role on 3 june and I am writing to politely follow up and confirm it was received."
+                "I have been asked to attend a lab session at the same time.",
+                "Would Thursday at 11 am or Friday morning suit you instead?",
+                "Best regards,\nAnnika Holm",
+                "I am afraid I need to ask if we could move Wednesday's tutorial."
             ],
             "correctOrder": [
-                0,
-                2,
                 3,
-                1
+                0,
+                1,
+                2
             ],
-            "hint": "The job title and follow-up purpose are in the subject; the recruiter is addressed by name ('Ms Hendricks'); the application date and polite request are in the body; 'YOURS SINCERELY' closes.",
-            "explanation": "When you know the recruiter's name, always use it - 'Dear Ms Hendricks' is more personal and impactful than 'Dear Hiring Manager'. Giving the application date makes it easy for them to locate your submission.",
+            "hint": "State the problem, give the reason and offer specific alternatives.",
+            "explanation": "Offering two specific alternatives saves a chain of emails. It also shows you respect the other person's time by doing the work of finding solutions.",
             "formalityLevel": "Formal"
         },
         {
@@ -162,34 +162,34 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a training provider asking about a first aid course.",
+            "prompt": "You want to move a coffee date with an old friend. Put together the email.",
             "options": [
-                "Dear Training Team,",
-                "I am looking to complete a first aid certification and would like to know when your next available course runs and what the fee is.",
-                "Many thanks,\nAbigail Price",
-                "Subject: Enquiry about first aid training courses"
+                "Sorry for the hassle,\nBruno",
+                "Something has come up at work on Saturday. Would you mind if we met on Sunday at 11 instead? Same café, same time.",
+                "Subject: Can we swap coffee to Sunday?",
+                "Hi Ingrid,"
             ],
             "correctOrder": [
+                2,
                 3,
-                0,
                 1,
-                2
+                0
             ],
-            "hint": "The training type and course are in the subject; the team is addressed; the two key questions (dates and fee) are in the body; 'MANY THANKS' closes the professional course enquiry.",
-            "explanation": "Combining a date AND fee question into one concise body sentence is efficient. 'Many thanks' is appropriate because you are asking for a service and want to convey appreciation in advance.",
-            "formalityLevel": "Formal"
+            "hint": "Say what has changed and what stays the same, so the friend has less to decide.",
+            "explanation": "Keeping some details the same ('Same café') reduces the amount your friend must think about. A short apology ('Sorry for the hassle') acknowledges the inconvenience without over-apologising.",
+            "formalityLevel": "Informal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L23_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email confirming your attendance at an industry conference.",
+            "prompt": "A plumber needs to move your appointment. Arrange the message from the plumbing company to a customer.",
             "options": [
-                "I am pleased to confirm my attendance at the tech summit on 14 september and look forward to the programme.",
-                "Dear Events Team,",
-                "Best regards,\nVincent Marsh",
-                "Subject: Attendance confirmation - tech summit 14 september"
+                "Unfortunately, our engineer is unable to visit on 18 June because of an emergency call-out. We can offer you 19 June between 8 am and 12 noon. Please let us know whether this is convenient.",
+                "Dear Mr Kowalski,",
+                "Yours sincerely,\nHome Comfort Plumbing",
+                "Subject: Change to your appointment on 18 June"
             ],
             "correctOrder": [
                 3,
@@ -197,8 +197,8 @@
                 0,
                 2
             ],
-            "hint": "Event name and date are in the subject; the events team is addressed formally; confirmation and anticipation are in the body; 'BEST REGARDS' closes warmly and professionally.",
-            "explanation": "Confirming attendance promptly helps event organisers plan catering and seating. 'Best regards' suits a team rather than a named individual, so it fits better here than 'Yours sincerely'.",
+            "hint": "For a customer, it helps to lead with the change and then present a replacement to accept.",
+            "explanation": "Businesses that change appointments should be clear about the new date and ask for the customer's agreement. The word 'unfortunately' signals regret before the alternative is offered.",
             "formalityLevel": "Formal"
         },
         {
@@ -206,43 +206,43 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a hotel requesting a room reservation.",
+            "prompt": "You missed a video call with your team leader because you misread the time. Lay out the apology.",
             "options": [
-                "I would like to book a double room for three nights from 5 to 8 october and would appreciate knowing your current rates.",
-                "Subject: Room reservation request - 5 to 8 october",
-                "Kind regards,\nBridget Doyle",
-                "Dear Reservations Team,"
+                "Thanks,\nElias",
+                "Subject: Sorry I missed today's call",
+                "Hi Andrea,",
+                "I'm sorry I missed the 2 pm call. I read the time as 3 pm. Could you send me the notes or tell me who I should ask?"
             ],
             "correctOrder": [
                 1,
+                2,
                 3,
-                0,
-                2
+                0
             ],
-            "hint": "Dates and reservation purpose are in the subject; the reservations team is addressed; room type, duration, and a price enquiry are in the body; 'KIND REGARDS' closes the hotel email.",
-            "explanation": "Specifying the room type (double) and exact dates gives the hotel all they need to check availability instantly. Asking about rates at the same time avoids a back-and-forth exchange.",
-            "formalityLevel": "Formal"
+            "hint": "In an apology, decide if a reason is helpful or just an excuse before you write it.",
+            "explanation": "One short, honest reason plus a practical request (the notes) works better than a long explanation. It shows responsibility, and it helps the colleague see how to fix the problem.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L24_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to an airline asking to change a flight booking.",
+            "prompt": "Subject: Apology for the delay / Greeting: Dear Ms Nowak, / A tutor forgot to return a student's essay. Piece together the body.",
             "options": [
-                "Subject: Flight change request - booking ref: ab4321",
-                "Yours faithfully,\nPatrick Dunn",
-                "Dear Customer Services,",
-                "I need to change my outbound flight from 10 july to 12 july due to an unexpected work commitment and would like to know if this is possible and any applicable fees."
+                "I have now finished marking it and attached it to this email.",
+                "Kind regards,\nDr Alan Pryce",
+                "It should have been with you last Friday.",
+                "I apologise for the delay in returning your essay."
             ],
             "correctOrder": [
-                0,
-                2,
                 3,
+                2,
+                0,
                 1
             ],
-            "hint": "The booking reference and purpose are in the subject; customer services is addressed by role, not name; reason, new date, and fee question are in the body; the closing must match this unnamed greeting.",
-            "explanation": "Including the booking reference in the subject allows airlines to pull up your booking immediately. Since 'Customer Services' isn't a named person, 'Yours faithfully' is the grammatically correct closing.",
+            "hint": "Apologise, acknowledge the fault, then show the fix.",
+            "explanation": "An apology is stronger when it acknowledges what was promised ('It should have been with you last Friday'), and even stronger when the solution comes immediately.",
             "formalityLevel": "Formal"
         },
         {
@@ -250,43 +250,43 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to an insurance company enquiring about travel cover.",
+            "prompt": "You accidentally called a friend by the wrong name in a message. Subject: Oops, sorry! / Greeting: Hi Emily, / Arrange the body and sign-off.",
             "options": [
-                "Dear Insurance Team,",
-                "I am planning a two-week holiday to spain in august and would like information about your single-trip travel insurance options and prices.",
-                "Subject: Enquiry about single-trip travel insurance",
-                "Many thanks,\nFelicity Ward"
+                "I hope you can forgive me!",
+                "I'm so sorry, I called you Emma in my last message.",
+                "I was typing so fast that I didn't notice.",
+                "Best,\nJoseph"
             ],
             "correctOrder": [
+                1,
                 2,
                 0,
-                1,
                 3
             ],
-            "hint": "The type of cover and trip length are in the subject; the team is addressed; destination, duration, and cover type are mentioned in the body; 'MANY THANKS' closes the insurance enquiry.",
-            "explanation": "Specifying the destination and duration upfront ensures the insurer gives you accurate quotes rather than generic options. Mentioning you are looking at 'options and prices' signals you are comparing before buying.",
-            "formalityLevel": "Formal"
+            "hint": "A light mistake calls for a light apology, but it still needs the same steps.",
+            "explanation": "Not every apology needs to be serious. Even here, you name the mistake, give a quick reason and end with warmth. The tone stays proportionate to a small error.",
+            "formalityLevel": "Informal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L25_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write a polite email to a neighbour about noise from their parties at weekends.",
+            "prompt": "You're interested in a coding course for teenagers. Subject: Coding course for 14-year-olds / Greeting: Dear Ms Chowdhury, / Arrange the body and sign-off.",
             "options": [
-                "Yours sincerely,\nAlan Cross",
-                "Subject: Concern about weekend noise levels",
-                "I hope this email finds you well - I wanted to raise politely that the noise from your weekend gatherings has been affecting my family's sleep.",
-                "Dear David,"
+                "Could you tell me whether beginners are welcome and how much the course costs?",
+                "Yours sincerely,\nLatifa Rahman",
+                "I found your Saturday coding course on the community centre website.",
+                "My son is fourteen and has never programmed before."
             ],
             "correctOrder": [
-                1,
-                3,
                 2,
-                0
+                3,
+                0,
+                1
             ],
-            "hint": "The concern topic is in the subject without being aggressive; the neighbour is addressed by first name; the polite complaint is in the body; 'YOURS SINCERELY' closes formally despite the first-name greeting.",
-            "explanation": "Using a neutral subject like 'Concern about noise levels' rather than 'YOUR LOUD PARTIES' sets a non-confrontational tone. Starting with 'I hope this email finds you well' softens a sensitive complaint, even to someone you know by name.",
+            "hint": "Where did you hear about it? Who is it for? What do you want to know?",
+            "explanation": "An enquiry works when the reader can see who is asking and why. Giving your son's age and level lets the organiser answer accurately without asking follow-up questions.",
             "formalityLevel": "Formal"
         },
         {
@@ -294,43 +294,43 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to your landlord asking for urgent repairs to a leaking tap.",
+            "prompt": "You want to ask a market stall holder if she can make a custom cake. Build the email.",
             "options": [
-                "Subject: Urgent repair request - leaking tap in kitchen",
-                "Dear Mr Johnson,",
-                "The kitchen tap has been leaking for the past three days and the situation is getting worse - I would be grateful if you could arrange a plumber as soon as possible.",
-                "Yours sincerely,\nCaren Mills"
+                "Subject: Custom birthday cake in July?",
+                "Hello Mrs Achterberg,",
+                "Kind regards,\nLuis Ortega",
+                "I bought a lemon cake from your stall last Saturday, and it was delicious. Do you make custom cakes for parties of around 20 people? If so, how far in advance should I order?"
             ],
             "correctOrder": [
                 0,
                 1,
-                2,
-                3
+                3,
+                2
             ],
-            "hint": "The urgency and problem are in the subject; the landlord is addressed formally by name; duration, worsening, and the specific request are in the body; 'YOURS SINCERELY' closes formally.",
-            "explanation": "Marking the subject 'URGENT' and giving a timeline ('three days') establishes both urgency and evidence. A formal closing to a landlord ('Yours sincerely') reflects a professional tenant-landlord relationship.",
-            "formalityLevel": "Formal"
+            "hint": "A short compliment can explain why you are choosing this seller.",
+            "explanation": "A sentence about your previous experience explains why you are writing to this seller and makes the enquiry warmer. The question about ordering time helps you plan.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L25_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to your landlord reporting damage to the living room ceiling.",
+            "prompt": "You're a student asking about accommodation before arriving in a new city. Subject: Student accommodation for September / Greeting: Dear Accommodation Office, / Arrange the body and sign-off.",
             "options": [
-                "Yours sincerely,\nSimon Crane",
-                "I am writing to report that there is a large damp patch on the living room ceiling which I believe may be due to a leak from the flat above.",
-                "Dear Ms Adeyemi,",
-                "Subject: Report of ceiling damage - flat 4, 22 barton road"
+                "Could you let me know what types of rooms are available for postgraduate students?",
+                "I have accepted a place on the MSc in Data Science starting in September.",
+                "I would also appreciate information about the application deadline.",
+                "Yours faithfully,\nPradeep Nair"
             ],
             "correctOrder": [
-                3,
-                2,
                 1,
-                0
+                0,
+                2,
+                3
             ],
-            "hint": "Address and damage type are in the subject; the landlord is addressed by name; the problem and suspected cause are in the body; 'YOURS SINCERELY' maintains the formal tenant-landlord tone.",
-            "explanation": "Including your flat address in the subject helps a landlord with multiple properties identify your property immediately. Offering a possible cause ('leak from above') is helpful but the word 'believe' signals you are not certain.",
+            "hint": "Introduce yourself briefly, then ask the more general question before the detail.",
+            "explanation": "An accommodation office needs to know which category of student you are. The broad question comes first and the deadline second because it depends on the room type.",
             "formalityLevel": "Formal"
         },
         {
@@ -338,21 +338,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a school admin office asking about the admission process.",
+            "prompt": "You sent a job application ten days ago and have heard nothing. Subject: Following up on my application / Greeting: Dear Mr Sinclair, / Arrange the body and sign-off.",
             "options": [
-                "Dear Admissions Team,",
-                "Subject: Enquiry about year 7 admission for september",
-                "My daughter is due to start secondary school in september and I would like to know how to apply for a place and what the application deadline is.",
-                "Yours faithfully,\nHelen Burke"
+                "Kind regards,\nAmina Yusuf",
+                "I remain very interested in the role.",
+                "Could you let me know whether a decision has been made?",
+                "I am writing to follow up on my application for the Office Assistant post, which I submitted on 3 March."
             ],
             "correctOrder": [
+                3,
                 1,
-                0,
                 2,
-                3
+                0
             ],
-            "hint": "The year group and entry date are in the subject; the admissions team is addressed by role, not name; the two key application questions are in the body; the closing must match this unnamed greeting.",
-            "explanation": "For school admissions, specifying the year group and intended start date in the subject makes your enquiry immediately clear. Because you don't have a named contact, 'Yours faithfully' is correct here rather than 'Yours sincerely'.",
+            "hint": "Refer to the earlier message before you ask about progress.",
+            "explanation": "A follow-up should remind the reader of the earlier message with the date. Repeating your interest keeps the tone positive, and the question at the end asks for a specific response.",
             "formalityLevel": "Formal"
         },
         {
@@ -360,34 +360,12 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a teacher requesting a meeting to discuss your child's progress.",
+            "prompt": "A friend hasn't replied about the holiday. Subject: Holiday plans / Greeting: Hi Ravi, / Arrange the message.",
             "options": [
-                "Subject: Request to meet and discuss my son's progress",
-                "Dear Mr Hassan,",
-                "Yours sincerely,\nMrs Carol Smart",
-                "I would like to arrange a short meeting with you at a time that is convenient to discuss how my son thomas is getting on in your class."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3,
-                2
-            ],
-            "hint": "The meeting purpose is in the subject; the teacher is addressed formally by name; a flexible time request and the student's name are in the body; the parent signs with title and full name.",
-            "explanation": "Saying 'at a time that is convenient' shows respect for the teacher's schedule. Using the student's first name ('Thomas') helps the teacher immediately picture who you are referring to.",
-            "formalityLevel": "Formal"
-        },
-        {
-            "id": "WRT_WRITINGEMAIL_L26_Q3",
-            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
-            "subtype": "writingEmail",
-            "interactionType": "writing",
-            "prompt": "Write an email to a school asking about the uniform requirements for new pupils.",
-            "options": [
-                "Kind regards,\nMrs Tina Walsh",
-                "Dear School Office,",
-                "Subject: Question about school uniform for new pupils",
-                "My son will be joining your school in september and I would like to know what the full uniform requirement is and where it can be purchased."
+                "Thanks,\nClara",
+                "No pressure at all, but I need to book flights by Friday.",
+                "I just wanted to check that you saw my message about the trip to Lisbon.",
+                "Let me know what you think!"
             ],
             "correctOrder": [
                 2,
@@ -395,8 +373,30 @@
                 3,
                 0
             ],
-            "hint": "New pupil status and topic are in the subject; the school office is addressed by role, not name; two practical questions are in the body; 'KIND REGARDS' closes politely.",
-            "explanation": "Asking where the uniform can be purchased is just as important as knowing what it is - this saves a follow-up email. 'Kind regards' is a safe, friendly choice whenever you're writing to an office rather than a named person.",
+            "hint": "A friendly reminder gives the reason for asking now.",
+            "explanation": "Explaining the deadline ('flights by Friday') tells the friend why you're asking. Writing 'No pressure' softens the nudge, so it doesn't feel like a complaint.",
+            "formalityLevel": "Informal"
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L26_Q3",
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+            "subtype": "writingEmail",
+            "interactionType": "writing",
+            "prompt": "You emailed your supervisor about a meeting two days ago. Subject: Re: Meeting request / Greeting: Dear Dr Fitzgerald, / Arrange the polite reminder.",
+            "options": [
+                "I wanted to follow up on my email of Monday asking for a short meeting about my thesis outline.",
+                "I hope you are well.",
+                "Best wishes,\nMina Park",
+                "I know this is a busy time, so even fifteen minutes would be very helpful."
+            ],
+            "correctOrder": [
+                1,
+                0,
+                3,
+                2
+            ],
+            "hint": "Greet, remind, then soften the request for a busy person.",
+            "explanation": "Acknowledging that the reader is busy lets you press gently. Suggesting only fifteen minutes makes the request smaller and easier to accept.",
             "formalityLevel": "Formal"
         },
         {
@@ -404,87 +404,87 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a retailer asking them to review your complaint about a product.",
+            "prompt": "You are stuck with a spreadsheet formula and would like to ask a colleague for help. Set out the email.",
             "options": [
-                "I purchased a food processor from your website on 2 august and it stopped working after just three uses - I am requesting an urgent review of my complaint.",
-                "Dear Customer Services Manager,",
-                "Subject: Formal complaint - defective product received",
-                "Yours faithfully,\nPaula Scott"
+                "Thanks a lot,\nRebecca",
+                "I can't get the total in column F to update when I change the prices. Would you have five minutes this afternoon to look at it?",
+                "Subject: Quick question about the budget sheet",
+                "Hi Jamal,"
             ],
             "correctOrder": [
                 2,
+                3,
                 1,
-                0,
-                3
+                0
             ],
-            "hint": "The complaint level and product are in the subject; the manager is addressed formally but without a name; purchase date, problem, and request are in the body; 'YOURS FAITHFULLY' closes (no named recipient).",
-            "explanation": "The word 'FORMAL' in the subject signals this is an escalated complaint, not a casual query. Including purchase date and the number of uses ('three uses') provides specific evidence that supports your case.",
-            "formalityLevel": "Formal"
+            "hint": "A request for help should describe the problem and the amount of time you need.",
+            "explanation": "Saying exactly what is wrong ('the total does not update') and how long you need makes the request easy to accept. A vague 'I need help' forces the colleague to ask more questions.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L27_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a retailer requesting a refund for a product that has not arrived.",
+            "prompt": "You are new at university and want help finding a study skills workshop. Subject: Help finding a study skills workshop / Greeting: Dear Ms Osei, / Arrange the body and sign-off.",
             "options": [
-                "Regards,\nGabrielle Hunt",
-                "Subject: Refund request - order not arrived after 14 days",
-                "Dear Returns Team,",
-                "I placed an order on 1 september and it has now been fourteen days with no delivery - I would like a full refund as I no longer wish to wait."
+                "I am a first-year student in the History department.",
+                "Could you tell me when the next one is and how to sign up?",
+                "Kind regards,\nHannah Lee",
+                "Someone told me you run workshops on essay writing."
             ],
             "correctOrder": [
-                1,
-                2,
+                0,
                 3,
-                0
+                1,
+                2
             ],
-            "hint": "Refund and timeframe are in the subject; the returns team is addressed by role, not name; order date, waiting time, and clear refund request are in the body; 'REGARDS' closes firmly but politely.",
-            "explanation": "Stating both the order date and the number of days waited provides a clear, factual account that is harder for customer services to dispute. A short 'Regards' keeps the tone brisk and businesslike, matching your firm request.",
-            "formalityLevel": "Formal"
+            "hint": "Who you are comes first, then how you found her, and finally the question.",
+            "explanation": "Referring to how you heard about her ('someone told me') explains why you wrote to her in particular. The specific question at the end gives her a clear task.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L27_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a delivery company about a parcel that has not arrived.",
+            "prompt": "You are asking a classmate for lesson notes after being ill. Arrange the email.",
             "options": [
-                "Yours faithfully,\nRobert Payne",
-                "Subject: Missing parcel - tracking number uk8837261",
-                "I have been waiting for a parcel with tracking number uk8837261 for ten days and the tracking page shows it has not been updated since 5 june.",
-                "Dear Delivery Support Team,"
+                "Hi Abena,",
+                "I was ill on Tuesday and missed the chemistry lesson. Would you mind sending me a photo of your notes? I can lend you mine from last week in return.",
+                "Thanks so much,\nTomasz",
+                "Subject: Could I see your notes from Tuesday?"
             ],
             "correctOrder": [
-                1,
                 3,
-                2,
-                0
+                0,
+                1,
+                2
             ],
-            "hint": "Tracking number and 'missing' are in the subject; the support team is addressed generically; all key details (tracking number, days waited, last update) are in the body; 'YOURS FAITHFULLY' closes.",
-            "explanation": "Including the tracking number in the subject means support staff can locate the parcel before they even open the email. Citing the lack of tracking updates provides objective evidence that the parcel is delayed, not just late.",
-            "formalityLevel": "Formal"
+            "hint": "Say why you need help and what you can give back.",
+            "explanation": "People are more willing to help when the request is reasonable and reciprocal. Offering your own notes turns a favour into a fair exchange.",
+            "formalityLevel": "Informal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L28_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a property owner offering to rent a spare room.",
+            "prompt": "You need to cancel a table you booked at a restaurant. Put together the email.",
             "options": [
-                "Yours sincerely,\nFrankie Burns",
-                "Dear Mr Harris,",
-                "Subject: Interest in renting the spare room in your home",
-                "I saw your advertisement for a room to let and would like to enquire further - I am a working professional with excellent references available."
+                "Dear Bella Notte,",
+                "Kind regards,\nChidi Okoye",
+                "Subject: Cancelling booking for Friday at 8 pm",
+                "I am sorry to say that I must cancel my reservation for four people under the name Okoye. I apologise for the short notice."
             ],
             "correctOrder": [
                 2,
-                1,
+                0,
                 3,
-                0
+                1
             ],
-            "hint": "The rental purpose is in the subject; the owner is addressed by name; key relevant information (working professional, references) is in the body; 'YOURS SINCERELY' closes the semi-formal enquiry.",
-            "explanation": "Mentioning you are a 'working professional with excellent references' immediately reassures a potential landlord. Keeping the initial enquiry brief and offering more detail on request is a professional approach.",
+            "hint": "Give the details they need to find the booking, then apologise if the notice is short.",
+            "explanation": "A cancellation should give enough detail (name, number of people, time) for staff to find the booking. A brief apology for short notice shows consideration.",
             "formalityLevel": "Formal"
         },
         {
@@ -492,21 +492,21 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email responding to a job advertisement for a receptionist role.",
+            "prompt": "You no longer use a language-learning app and want to stop paying for it. Subject: Cancel my subscription / Greeting: Dear Support Team, / Arrange the body and sign-off.",
             "options": [
-                "I am writing in response to your advertisement for a receptionist and believe my three years of experience in customer-facing roles makes me an excellent candidate.",
-                "Subject: Application for receptionist role - advertised on jobs today",
-                "Yours faithfully,\nSharlene Grant",
-                "Dear Hiring Manager,"
+                "Please confirm by email that the cancellation is complete.",
+                "Please cancel my subscription, account email m.silva@example.com, before the next payment on 1 July.",
+                "I have enjoyed the app, but I no longer have time to use it.",
+                "Yours faithfully,\nMarta Silva"
             ],
             "correctOrder": [
                 1,
-                3,
+                2,
                 0,
-                2
+                3
             ],
-            "hint": "Job title and source are in the subject; the hiring manager is addressed by role, not name; the experience and relevance are in the body; the closing must match this unnamed greeting.",
-            "explanation": "Mentioning where you saw the advertisement tells the employer which of their channels is effective. As with any 'Dear Hiring Manager' letter, 'Yours faithfully' is the correct closing since you don't know their name.",
+            "hint": "Give the instruction, mention timing, and ask for proof at the end.",
+            "explanation": "The action requested comes first so nobody misses it. The date shows when it matters. Asking for confirmation protects you if you are charged later.",
             "formalityLevel": "Formal"
         },
         {
@@ -514,100 +514,100 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to your manager requesting a pay rise discussion.",
+            "prompt": "You are declining a friend's party invitation because of a family event. Subject: Re: Your party / Greeting: Hi Tess, / Arrange the body and sign-off.",
             "options": [
-                "I have been in my current role for eighteen months and feel my performance and contributions justify a discussion about a salary review.",
-                "Dear Janet,",
-                "Yours sincerely,\nTimothy Ash",
-                "Subject: Request to discuss a salary review"
+                "I'm really sorry, but I can't come because I'll be at my cousin's wedding that weekend.",
+                "Love,\nHarry",
+                "I hope you have a wonderful evening, and let's catch up next week.",
+                "Thank you so much for inviting me!"
             ],
             "correctOrder": [
                 3,
-                1,
                 0,
-                2
+                2,
+                1
             ],
-            "hint": "The purpose is clearly but professionally stated in the subject; the manager is addressed by first name (workplace norm); length of service and merit form the basis in the body; 'YOURS SINCERELY' closes respectfully.",
-            "explanation": "Framing a pay request as a 'discussion' rather than a 'demand' creates space for negotiation. Citing tenure ('eighteen months') and performance gives concrete reasons rather than just stating you want more money.",
-            "formalityLevel": "Formal"
+            "hint": "Thank first, decline clearly, then look positively to the future.",
+            "explanation": "Gratitude first softens the refusal, and a short reason shows it is not personal. Suggesting a future meeting keeps the friendship warm.",
+            "formalityLevel": "Informal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L29_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a GP surgery asking for a referral to a specialist.",
+            "prompt": "A friend passed her driving test. Subject: Congratulations! / Greeting: Hi Yasmin, / Arrange the message.",
             "options": [
-                "Subject: Referral request to a dermatologist",
-                "I am writing to ask whether you would be able to refer me to a dermatologist as I have had a persistent skin condition that has not improved over the past six months.",
-                "Yours sincerely,\nBeatrice Knight",
-                "Dear Dr Fletcher,"
+                "Let's celebrate soon. Dinner is on me!",
+                "You worked so hard for it, and you totally deserve it.",
+                "I just heard that you passed your driving test. Congratulations!",
+                "Proud of you,\nMaeve"
             ],
             "correctOrder": [
-                0,
-                3,
+                2,
                 1,
-                2
+                0,
+                3
             ],
-            "hint": "The speciality is in the subject; the GP is addressed formally by name; the medical reason and duration are clearly stated in the body; 'YOURS SINCERELY' closes the medical correspondence.",
-            "explanation": "Being specific about duration ('six months') gives the doctor clinical context for making a referral decision. Formal medical correspondence always uses 'Yours sincerely' or 'Yours faithfully' rather than casual closings.",
-            "formalityLevel": "Formal"
+            "hint": "Say the good news, say why it's deserved, then suggest something to do together.",
+            "explanation": "A congratulation email is strongest when it names the achievement and recognises the effort. Ending with a plan to celebrate makes it more than a formality.",
+            "formalityLevel": "Informal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L29_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a dentist asking about NHS dental checkup availability.",
+            "prompt": "Welcome a new colleague to the team. Subject: Welcome to the team / Greeting: Dear Suresh, / Arrange the body and sign-off.",
             "options": [
-                "Subject: Enquiry about nhs checkup appointments",
-                "Dear Reception Team,",
-                "I am looking for an nhs dentist and would like to know if your practice is currently accepting new nhs patients and when checkup appointments are available.",
-                "Many thanks,\nKatie Mack"
+                "Please let me know if there is anything you would like to know before you start.",
+                "Best wishes,\nMargaret",
+                "Your desk is on the second floor next to mine, and I will give you a tour at 9:30.",
+                "Welcome to the team! We are delighted you are joining us on Monday."
             ],
             "correctOrder": [
-                0,
-                1,
+                3,
                 2,
-                3
+                0,
+                1
             ],
-            "hint": "The NHS and checkup are in the subject; the reception team is addressed; two key questions - accepting patients and availability - are in the body; 'MANY THANKS' closes the healthcare enquiry.",
-            "explanation": "Asking both whether a practice is accepting new patients AND when appointments are available in one email is efficient. It avoids a situation where you find out they are accepting patients but then have to email again about dates.",
-            "formalityLevel": "Formal"
+            "hint": "A welcome email should be warm and give practical information for day one.",
+            "explanation": "Warmth alone is not enough for a new starter. Telling him where to sit and when to arrive removes first-day anxiety, so he knows what to expect.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L29_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a health insurance provider asking about cover for dental treatment.",
+            "prompt": "Congratulate a former teacher on her retirement. Subject: Congratulations on your retirement / Greeting: Dear Mrs Whitaker, / Arrange the body and sign-off.",
             "options": [
-                "I have a health insurance policy with you and would like to know whether routine dental treatment and emergency dental care are included in my cover.",
-                "Subject: Enquiry about dental cover under my policy",
-                "Dear Customer Services Team,",
-                "Best regards,\nNick Cole"
+                "With warm wishes,\nSeun Adeyinka",
+                "I heard that you are retiring at the end of this term, and I wanted to congratulate you.",
+                "You were the reason I fell in love with reading, and I have never forgotten your lessons.",
+                "I hope you enjoy every minute of your well-earned rest."
             ],
             "correctOrder": [
                 1,
                 2,
-                0,
-                3
+                3,
+                0
             ],
-            "hint": "The policy type and query topic are in the subject; the customer services team is addressed by role, not name; two specific types of dental care are queried in the body; 'BEST REGARDS' closes politely.",
-            "explanation": "Distinguishing between 'routine' and 'emergency' dental care shows you understand different types of cover may apply different terms. 'Best regards' is a natural, modern choice when writing to a team rather than a named adviser.",
-            "formalityLevel": "Formal"
+            "hint": "Congratulate, add a personal memory, then give a good wish for the future.",
+            "explanation": "A personal memory turns generic congratulations into something the teacher will remember. Ending with a wish looks forward, which suits a retirement message.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L30_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email to a library asking about joining their reading group.",
+            "prompt": "After a class trip, you want to tell your teacher what you learned. Build the email.",
             "options": [
-                "Kind regards,\nJosephine Lamb",
-                "Dear Reading Group Coordinator,",
-                "Subject: Interest in joining the monthly reading group",
-                "I would like to join your monthly reading group and wonder if there are currently any places available and how I can sign up."
+                "Best wishes,\nOlivia",
+                "Dear Mr Zhang,",
+                "Subject: Thank you for the trip to the science museum",
+                "Thank you for organising the trip yesterday. My favourite part was the planetarium, and it made me want to learn more about space."
             ],
             "correctOrder": [
                 2,
@@ -615,30 +615,30 @@
                 3,
                 0
             ],
-            "hint": "The activity and frequency are in the subject; the right coordinator is addressed; availability and sign-up are both asked about in the body; 'KIND REGARDS' closes the community enquiry.",
-            "explanation": "Addressing the 'Reading Group Coordinator' rather than the general library team shows you have identified who to contact. Asking whether places are available before asking how to sign up is a logical, polite approach.",
-            "formalityLevel": "Formal"
+            "hint": "Choose the tone for a teacher who is friendly but still your teacher.",
+            "explanation": "In this review, decide whether the situation calls for casual or formal language. A teacher is best addressed politely, but a warm personal comment (the planetarium) keeps the email sincere.",
+            "formalityLevel": "Semi-formal"
         },
         {
             "id": "WRT_WRITINGEMAIL_L30_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email inviting a colleague to participate in a charity fundraiser.",
+            "prompt": "Your flight has been cancelled, and you want to ask the airline to rebook you. Subject: Flight BA412 cancelled: request to rebook / Greeting: Dear Customer Service, / Arrange the body and sign-off.",
             "options": [
-                "We are organising a charity quiz night on thursday 18th in aid of the local foodbank and would love for you to join our team.",
-                "Hi Marcus,",
-                "Subject: Invitation to take part in our charity quiz night",
-                "See you there,\nJennifer"
+                "I need to arrive in London by the evening of 7 May for a work event.",
+                "My flight BA412 from Lisbon to London on 6 May was cancelled.",
+                "Yours faithfully,\nCarla Mendes",
+                "Could you please rebook me on the earliest available flight and confirm by email?"
             ],
             "correctOrder": [
-                2,
                 1,
                 0,
-                3
+                3,
+                2
             ],
-            "hint": "Charity and event type are in the subject; a colleague is greeted casually by first name; the event details, charity, and invitation are in the body; a friendly, informal sign-off closes the invitation.",
-            "explanation": "Between colleagues who know each other well, a casual 'Hi' and a first-name sign-off fit a fun, informal invitation better than a stiffly formal one. Naming the charity immediately gives the invitation context and social value.",
+            "hint": "The problem, the requirement and the action needed should appear in that order.",
+            "explanation": "The airline needs to know what happened, what limits your options and what you want. This shortens the reply and stops them offering a flight that does not help you.",
             "formalityLevel": "Formal"
         },
         {
@@ -646,22 +646,22 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "writing",
-            "prompt": "Write an email thanking volunteers after a community event.",
+            "prompt": "You and a friend arranged to study together but you found out your exam moved. Subject: Change of plan for Thursday / Greeting: Hi Lena, / Arrange the message.",
             "options": [
-                "Dear Volunteers,",
-                "Subject: Thank you to all our wonderful volunteers",
-                "I wanted to thank each and every one of you for your incredible hard work at last saturday's community fair - the event would not have been possible without you.",
-                "With warmest thanks,\nThe Events Committee"
+                "If that's not possible, we can study on the phone afterwards.",
+                "Would it be okay if we started our session an hour earlier, at 4 pm?",
+                "Thanks,\nSamuel",
+                "I've just seen that my exam has been moved to Friday morning, so I need to study more on Thursday."
             ],
             "correctOrder": [
+                3,
                 1,
                 0,
-                2,
-                3
+                2
             ],
-            "hint": "'DEAR VOLUNTEERS' addresses the group collectively; 'WITH WARMEST THANKS' is the appropriate warm closing; the specific event and genuine praise form the body; the committee signs as a whole.",
-            "explanation": "Signing as 'The Events Committee' makes the thanks feel official and representative of the whole organisation. Saying the event 'would not have been possible without you' expresses true appreciation rather than just polite acknowledgement.",
-            "formalityLevel": "Formal"
+            "hint": "The reason, the proposal and the fallback come in a natural sequence.",
+            "explanation": "Offering a fallback shows flexibility. In everyday emails, this small extra sentence often saves a further round of messages.",
+            "formalityLevel": "Informal"
         }
     ]
 }

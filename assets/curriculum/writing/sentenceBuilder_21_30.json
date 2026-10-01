@@ -9,17 +9,16 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "The",
-                "on",
-                "the",
-                "sits",
-                "old",
-                "man",
-                "bench"
+                "reliable",
+                "Priya",
+                "uses",
+                "online",
+                "calendar",
+                "a"
             ],
-            "correctAnswer": "The old man sits on the bench.",
-            "hint": "Start with 'The'. Adjective+noun, action, where.",
-            "explanation": "'Sits on the bench' - 'on' for surfaces and seats.",
+            "correctAnswer": "Priya uses a reliable online calendar.",
+            "hint": "Two describing words come before one noun. The word that gives your opinion usually comes before the word that names the type.",
+            "explanation": "When adjectives stack up, opinion words such as 'reliable' come before descriptive type words such as 'online'. Both stay between 'a' and the noun.",
             "sentenceType": "statement"
         },
         {
@@ -28,17 +27,16 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "at",
-                "She",
-                "market",
-                "local",
-                "the",
-                "buys",
-                "vegetables"
+                "wallet",
+                "a",
+                "leather",
+                "Sofia",
+                "carries",
+                "small"
             ],
-            "correctAnswer": "She buys vegetables at the local market.",
-            "hint": "Begin with 'She'. Then action, object, place.",
-            "explanation": "'At the market' uses 'at' for a specific place.",
+            "correctAnswer": "Sofia carries a small leather wallet.",
+            "hint": "Size and material are both mentioned. Decide which one is closer to the noun.",
+            "explanation": "The usual order is size, then material, then the noun: 'small leather wallet'. Reversing the two adjectives would sound unnatural.",
             "sentenceType": "statement"
         },
         {
@@ -47,17 +45,16 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "He",
-                "at",
-                "English",
-                "a",
-                "school",
-                "primary",
-                "teaches"
+                "paintings",
+                "displays",
+                "The",
+                "gallery",
+                "abstract",
+                "large"
             ],
-            "correctAnswer": "He teaches English at a primary school.",
-            "hint": "Start with 'He'. Then action, subject, place.",
-            "explanation": "'At a primary school' uses 'at' for institutions.",
+            "correctAnswer": "The gallery displays large abstract paintings.",
+            "hint": "A plural object with two adjectives. Ask which describes the general shape of the thing and which describes its style.",
+            "explanation": "Adjectives before a noun follow a natural order (size before type). Because 'paintings' is plural and general, no article is needed.",
             "sentenceType": "statement"
         },
         {
@@ -66,17 +63,16 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "works",
-                "hospital",
+                "comes",
+                "Our",
+                "week",
                 "a",
-                "sister",
-                "big",
-                "at",
-                "My"
+                "cleaner",
+                "twice"
             ],
-            "correctAnswer": "My sister works at a big hospital.",
-            "hint": "Begin with 'My sister'. Then action, place phrase.",
-            "explanation": "'My' is possessive. 'At a big hospital' - 'at' for workplaces.",
+            "correctAnswer": "Our cleaner comes twice a week.",
+            "hint": "A frequency phrase can be built from a number word and a time unit. The little word between them is essential.",
+            "explanation": "'Twice a week' is a frequency expression: number + a + time period. It goes after the verb because it tells how often the action happens.",
             "sentenceType": "statement"
         },
         {
@@ -85,17 +81,17 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "for",
-                "final",
-                "exams",
-                "study",
-                "their",
-                "students",
-                "The"
+                "I",
+                "my",
+                "month",
+                "once",
+                "call",
+                "grandmother",
+                "a"
             ],
-            "correctAnswer": "The students study for their final exams.",
-            "hint": "Start with 'The students'. Then action, purpose phrase.",
-            "explanation": "'Study for an exam' is a set phrase.",
+            "correctAnswer": "I call my grandmother once a month.",
+            "hint": "Find the phrase that answers 'how often?'. It has a fixed internal order.",
+            "explanation": "Like 'twice a week', 'once a month' stays together as one block. It follows the object rather than splitting the verb from it.",
             "sentenceType": "statement"
         },
         {
@@ -104,17 +100,17 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "long",
-                "walks",
-                "We",
-                "the",
-                "forest",
-                "in",
-                "enjoy"
+                "every",
+                "opens",
+                "gym",
+                "except",
+                "day",
+                "Sunday",
+                "The"
             ],
-            "correctAnswer": "We enjoy long walks in the forest.",
-            "hint": "Begin with 'We'. Then action, adjective+noun, place.",
-            "explanation": "'Long walks'=adjective before noun. 'In the forest' uses 'in'.",
+            "correctAnswer": "The gym opens every day except Sunday.",
+            "hint": "One word introduces an exception. What does it separate?",
+            "explanation": "'Except' introduces the exception to 'every day'. The frequency phrase 'every day' comes after the verb, and the exception follows it.",
             "sentenceType": "statement"
         },
         {
@@ -123,17 +119,17 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "coffee",
-                "two",
-                "cups",
-                "He",
-                "drinks",
-                "of",
-                "daily"
+                "washes",
+                "my",
+                "On",
+                "car",
+                "father",
+                "Sundays,",
+                "the"
             ],
-            "correctAnswer": "He drinks two cups of coffee daily.",
-            "hint": "Start with 'He'. Then action, quantity phrase, frequency.",
-            "explanation": "'Two cups of coffee'=number+measure+'of'+substance.",
+            "correctAnswer": "On Sundays, my father washes the car.",
+            "hint": "When a time phrase opens the sentence, it is followed by a comma. Check which token carries that comma.",
+            "explanation": "A time expression at the start is usually separated from the main clause by a comma. The word order that follows is the ordinary subject + verb + object.",
             "sentenceType": "statement"
         },
         {
@@ -142,17 +138,19 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
+                "lake",
+                "skating",
+                "winter,",
+                "the",
                 "a",
-                "dress",
-                "today",
-                "red",
-                "She",
-                "bright",
-                "wears"
+                "becomes",
+                "popular",
+                "In",
+                "spot"
             ],
-            "correctAnswer": "She wears a bright red dress today.",
-            "hint": "Begin with 'She'. Then action, two adjectives+noun, time.",
-            "explanation": "Adjective order: quality (bright) before colour (red).",
+            "correctAnswer": "In winter, the lake becomes a popular skating spot.",
+            "hint": "There is a signal at the start telling when. The second part of the sentence describes a change of state.",
+            "explanation": "The opening phrase 'In winter,' sets the time. 'Becomes' links the lake to a new description, 'a popular skating spot', which contains a compound noun.",
             "sentenceType": "statement"
         },
         {
@@ -161,17 +159,18 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "barks",
-                "The",
-                "at",
-                "every",
-                "passing",
-                "dog",
-                "car"
+                "book",
+                "hosts",
+                "a",
+                "the",
+                "autumn,",
+                "Every",
+                "city",
+                "fair"
             ],
-            "correctAnswer": "The dog barks at every passing car.",
-            "hint": "Start with 'The dog'. Then action, target phrase.",
-            "explanation": "'Barks at' - 'at' is part of this verb pattern.",
+            "correctAnswer": "Every autumn, the city hosts a book fair.",
+            "hint": "The time phrase is set apart at the beginning. Identify who acts and what they organise afterwards.",
+            "explanation": "'Every autumn,' is a frequency and time phrase in first position. In the main clause, 'the city' is the subject and 'a book fair' is the object.",
             "sentenceType": "statement"
         },
         {
@@ -180,18 +179,19 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "always",
-                "morning",
-                "emails",
-                "in",
-                "I",
-                "my",
+                "wait",
                 "the",
-                "check"
+                "platform",
+                "Passengers",
+                "the",
+                "far",
+                "of",
+                "end",
+                "at"
             ],
-            "correctAnswer": "I always check my emails in the morning.",
-            "hint": "Start with 'I'. Then the frequency adverb before the verb. Then the object and time.",
-            "explanation": "'Always' goes between the subject and the main verb 'check'.",
+            "correctAnswer": "Passengers wait at the far end of the platform.",
+            "hint": "A place phrase can contain a smaller place phrase inside it. Build the inner one first.",
+            "explanation": "'At the far end of the platform' contains two prepositional phrases: 'at ... end' and 'of the platform'. The adjective 'far' describes 'end'.",
             "sentenceType": "statement"
         },
         {
@@ -200,17 +200,21 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "prepares",
-                "children",
-                "healthy",
-                "lunches",
-                "She",
-                "her",
-                "for"
+                "whole",
+                "The",
+                "the",
+                "second",
+                "for",
+                "printer",
+                "department",
+                "is",
+                "the",
+                "on",
+                "floor"
             ],
-            "correctAnswer": "She prepares healthy lunches for her children.",
-            "hint": "Start with 'She'. Then action, adjective+noun, for whom.",
-            "explanation": "'For her children' shows who benefits.",
+            "correctAnswer": "The printer for the whole department is on the second floor.",
+            "hint": "The subject is long because it includes a purpose phrase. Locate the verb 'is' to know where that phrase must end.",
+            "explanation": "The subject phrase 'the printer for the whole department' comes before 'is'. Then 'on the second floor' is the location, with 'second' an ordinal adjective.",
             "sentenceType": "statement"
         },
         {
@@ -220,16 +224,18 @@
             "interactionType": "reorder",
             "shuffledWords": [
                 "the",
-                "They",
-                "at",
-                "airport",
-                "very",
-                "arrive",
-                "early"
+                "the",
+                "behind",
+                "building",
+                "in",
+                "Our",
+                "works",
+                "dentist",
+                "station"
             ],
-            "correctAnswer": "They arrive at the airport very early.",
-            "hint": "Begin with 'They'. Then action, place, how early.",
-            "explanation": "'Arrive at'+specific building - use 'at' not 'to'.",
+            "correctAnswer": "Our dentist works in the building behind the station.",
+            "hint": "One place is described using a second place. Keep the two apart and check which comes first.",
+            "explanation": "The first place phrase, 'in the building', is further specified by 'behind the station', which follows the noun it describes.",
             "sentenceType": "statement"
         },
         {
@@ -238,17 +244,17 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "He",
-                "evenings",
-                "detective",
-                "spends",
-                "novels",
-                "his",
-                "reading"
+                "every",
+                "before",
+                "goalkeeper",
+                "Our",
+                "match",
+                "hard",
+                "trains"
             ],
-            "correctAnswer": "He spends his evenings reading detective novels.",
-            "hint": "Start with 'He'. Then time-spending, when, activity.",
-            "explanation": "'Spend time+-ing' is a common pattern.",
+            "correctAnswer": "Our goalkeeper trains hard before every match.",
+            "hint": "The word for effort looks like an adjective but describes the action. It sits directly after the verb.",
+            "explanation": "'Hard' can be an adverb meaning 'with great effort'. It stays after the verb, and the time phrase 'before every match' comes afterwards.",
             "sentenceType": "statement"
         },
         {
@@ -257,18 +263,16 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "at",
+                "surprisingly",
+                "intern",
+                "fast",
+                "learns",
                 "The",
-                "nine",
-                "in",
-                "the",
-                "library",
-                "opens",
-                "morning"
+                "new"
             ],
-            "correctAnswer": "The library opens at nine in the morning.",
-            "hint": "Begin with 'The library'. Then opening verb, exact time.",
-            "explanation": "'Opens at nine' - 'at' is used with exact clock times.",
+            "correctAnswer": "The new intern learns surprisingly fast.",
+            "hint": "A word that rates the speed is itself strengthened by another word. Keep those two together at the end.",
+            "explanation": "'Fast' is an adverb here, and 'surprisingly' modifies it. The subject 'the new intern' has an adjective before the noun.",
             "sentenceType": "statement"
         },
         {
@@ -277,17 +281,15 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "flowers",
-                "garden",
-                "in",
-                "plants",
-                "small",
-                "her",
-                "She"
+                "really",
+                "cooks",
+                "My",
+                "well",
+                "grandfather"
             ],
-            "correctAnswer": "She plants flowers in her small garden.",
-            "hint": "Start with 'She'. Then action, object, place.",
-            "explanation": "'In her small garden' - 'in' for enclosed spaces.",
+            "correctAnswer": "My grandfather cooks really well.",
+            "hint": "Only one word can finish this sentence naturally. Think about how skill is described after a verb.",
+            "explanation": "'Well' is the adverb form of 'good'. 'Really' intensifies it, and together they follow the verb.",
             "sentenceType": "statement"
         },
         {
@@ -296,17 +298,18 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "from",
-                "works",
-                "Friday",
-                "brother",
-                "My",
-                "home",
-                "every"
+                "on",
+                "before",
+                "it",
+                "every",
+                "technician",
+                "The",
+                "lesson",
+                "switches"
             ],
-            "correctAnswer": "My brother works from home every Friday.",
-            "hint": "Begin with 'My brother'. Then action, location, time.",
-            "explanation": "'Works from home'=modern phrase for remote working.",
+            "correctAnswer": "The technician switches it on before every lesson.",
+            "hint": "The thing being switched is replaced by a pronoun. Decide whether the pronoun can be moved after the particle.",
+            "explanation": "With separable phrasal verbs, a pronoun object must go between the verb and the particle: 'switches it on', not 'switches on it'.",
             "sentenceType": "statement"
         },
         {
@@ -315,17 +318,17 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "The",
-                "very",
-                "clearly",
-                "explains",
-                "grammar",
-                "teacher",
-                "rules"
+                "new",
+                "Our",
+                "the",
+                "staff",
+                "looks",
+                "manager",
+                "after"
             ],
-            "correctAnswer": "The teacher explains grammar rules very clearly.",
-            "hint": "Start with 'The teacher'. Then action, object, how.",
-            "explanation": "'Very clearly' - 'very' strengthens the adverb 'clearly'.",
+            "correctAnswer": "Our manager looks after the new staff.",
+            "hint": "This verb and its partner cannot be split, so the object comes after both.",
+            "explanation": "'Look after' means 'take care of' and is inseparable. The object 'the new staff' goes after 'after'.",
             "sentenceType": "statement"
         },
         {
@@ -334,17 +337,16 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "the",
-                "friends",
-                "meet",
-                "our",
-                "We",
-                "cafe",
-                "at"
+                "Friday",
+                "every",
+                "them",
+                "Ben",
+                "away",
+                "throws"
             ],
-            "correctAnswer": "We meet our friends at the cafe.",
-            "hint": "Begin with 'We'. Then action, whom, where.",
-            "explanation": "'Meet our friends' - 'our' is possessive. 'At the cafe' uses 'at'.",
+            "correctAnswer": "Ben throws them away every Friday.",
+            "hint": "Another pronoun-plus-phrasal-verb pattern. Check where 'them' should sit.",
+            "explanation": "'Throw away' can be separated, and pronouns like 'them' must sit inside the phrasal verb. 'Every Friday' shows the routine.",
             "sentenceType": "statement"
         },
         {
@@ -353,17 +355,17 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "a",
-                "city",
-                "She",
-                "sends",
-                "postcard",
-                "every",
-                "from"
+                "library",
+                "next",
+                "The",
+                "new",
+                "school's",
+                "opens",
+                "month"
             ],
-            "correctAnswer": "She sends a postcard from every city.",
-            "hint": "Start with 'She'. Then action, object, from where.",
-            "explanation": "'From every city' - 'from' shows the place of origin.",
+            "correctAnswer": "The school's new library opens next month.",
+            "hint": "The owner-and-possession phrase is part of the subject. Adjectives come between the possessive noun and the item.",
+            "explanation": "In 'the school's new library', the possessive comes first and 'new' sits before 'library'. 'Next month' is a future time phrase.",
             "sentenceType": "statement"
         },
         {
@@ -372,16 +374,17 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "businesses",
-                "for",
-                "local",
-                "fixes",
-                "He",
-                "computers"
+                "season",
+                "breakfast",
+                "every",
+                "The",
+                "changes",
+                "menu",
+                "hotel's"
             ],
-            "correctAnswer": "He fixes computers for local businesses.",
-            "hint": "Begin with 'He'. Then action, object, for whom.",
-            "explanation": "'Fixes computers'=repairs computers.",
+            "correctAnswer": "The hotel's breakfast menu changes every season.",
+            "hint": "A place owns a service. Decide how the two nouns that make one item ('breakfast menu') should stay together.",
+            "explanation": "Possessive 's can be used for organisations. 'Breakfast menu' is a compound noun: the first word tells what type of menu.",
             "sentenceType": "statement"
         },
         {
@@ -390,17 +393,18 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "sells",
-                "day",
-                "market",
-                "fresh",
-                "food",
-                "every",
-                "The"
+                "run",
+                "parents",
+                "a",
+                "My",
+                "small",
+                "bakery",
+                "friend's",
+                "best"
             ],
-            "correctAnswer": "The market sells fresh food every day.",
-            "hint": "Start with 'The market'. Then action, object, time.",
-            "explanation": "'Fresh food'=adjective before noun. 'Every day' shows daily regularity.",
+            "correctAnswer": "My best friend's parents run a small bakery.",
+            "hint": "Build the long possessive subject before adding the verb. Two-word owner phrase.",
+            "explanation": "'My best friend's parents' means the parents of my best friend. The 's attaches to the last word of the owner phrase.",
             "sentenceType": "statement"
         },
         {
@@ -409,18 +413,19 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "shower",
-                "before",
-                "going",
+                "drink",
+                "includes",
+                "The",
+                "ticket",
+                "the",
+                "price",
                 "a",
-                "take",
-                "to",
-                "I",
-                "work"
+                "of",
+                "free"
             ],
-            "correctAnswer": "I take a shower before going to work.",
-            "hint": "Begin with 'I'. Then action, before+gerund.",
-            "explanation": "'Take a shower' is a set phrase. 'Before going to work' - 'before'+gerund.",
+            "correctAnswer": "The price of the ticket includes a free drink.",
+            "hint": "A noun is followed by a phrase saying what it belongs to. Keep the whole subject together before the verb.",
+            "explanation": "'The price of the ticket' is a noun phrase with an 'of' phrase. The verb 'includes' agrees with 'price', not 'ticket'.",
             "sentenceType": "statement"
         },
         {
@@ -429,18 +434,18 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "bedtime",
-                "story",
-                "She",
-                "a",
-                "to",
-                "reads",
-                "daughter",
-                "her"
+                "of",
+                "entrance",
+                "group",
+                "the",
+                "waits",
+                "near",
+                "A",
+                "tourists"
             ],
-            "correctAnswer": "She reads a bedtime story to her daughter.",
-            "hint": "Start with 'She'. Then action, object, to whom.",
-            "explanation": "'To her daughter' shows the recipient.",
+            "correctAnswer": "A group of tourists waits near the entrance.",
+            "hint": "The first noun names the group. The verb form depends on it rather than on the people inside.",
+            "explanation": "'A group of tourists' is grammatically singular, so the verb is 'waits'. 'Near the entrance' says where.",
             "sentenceType": "statement"
         },
         {
@@ -449,17 +454,20 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "They",
-                "in",
-                "a",
-                "go",
-                "summer",
+                "of",
+                "Fridays",
+                "team",
                 "on",
-                "picnic"
+                "the",
+                "from",
+                "rest",
+                "home",
+                "works",
+                "The"
             ],
-            "correctAnswer": "They go on a picnic in summer.",
-            "hint": "Begin with 'They'. Then outing phrase, when.",
-            "explanation": "'Go on a picnic' is a fixed phrase. 'In summer' - seasons use 'in'.",
+            "correctAnswer": "The rest of the team works from home on Fridays.",
+            "hint": "One noun phrase names a portion of a larger set. After that, two more phrases describe location and time.",
+            "explanation": "'The rest of the team' is singular in structure, so 'works'. 'From home' shows location and 'on Fridays' shows repeated time.",
             "sentenceType": "statement"
         },
         {
@@ -468,17 +476,16 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "starting",
-                "before",
-                "organises",
-                "his",
-                "He",
-                "desk",
-                "work"
+                "tickets",
+                "Most",
+                "by",
+                "buy",
+                "card",
+                "visitors"
             ],
-            "correctAnswer": "He organises his desk before starting work.",
-            "hint": "Start with 'He'. Then the action and object. Then before+gerund.",
-            "explanation": "'Before starting work' - 'before+-ing' shows sequence.",
+            "correctAnswer": "Most visitors buy tickets by card.",
+            "hint": "A quantity word starts the subject, and the payment method needs a small word with no article.",
+            "explanation": "'By card' shows the method of payment without an article. 'Most visitors' is plural, so the verb 'buy' has no -s, and 'tickets' is a plural noun used without a determiner.",
             "sentenceType": "statement"
         },
         {
@@ -487,16 +494,18 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "neighbours",
-                "parties",
+                "fresh",
+                "soup",
+                "seasons",
                 "The",
-                "loud",
-                "have",
-                "always"
+                "herbs",
+                "the",
+                "chef",
+                "with"
             ],
-            "correctAnswer": "The neighbours always have loud parties.",
-            "hint": "Begin with 'The neighbours'. Then frequency adverb, action.",
-            "explanation": "'Always' before the main verb 'have'. 'Have a party' - not 'make a party'.",
+            "correctAnswer": "The chef seasons the soup with fresh herbs.",
+            "hint": "An ingredient is added with a small connecting word. Locate the object before the extra item.",
+            "explanation": "'With' introduces an added item or tool. The object 'the soup' comes right after the verb, then 'with fresh herbs'.",
             "sentenceType": "statement"
         },
         {
@@ -505,17 +514,19 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "saves",
-                "holiday",
-                "money",
-                "for",
-                "She",
-                "a",
-                "family"
+                "gym",
+                "brother",
+                "to",
+                "the",
+                "go",
+                "Usually",
+                "my",
+                "with",
+                "I"
             ],
-            "correctAnswer": "She saves money for a family holiday.",
-            "hint": "Start with 'She'. Then action, object, purpose.",
-            "explanation": "'Saves money for' - 'for' shows the goal of saving.",
+            "correctAnswer": "Usually I go to the gym with my brother.",
+            "hint": "A frequency word starts the sentence this time. Find the token that shows the companion.",
+            "explanation": "When 'usually' opens the sentence, the rest keeps the normal order. 'With my brother' names the companion and comes after the place phrase.",
             "sentenceType": "statement"
         },
         {
@@ -524,18 +535,20 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "house",
-                "We",
-                "my",
-                "grandmother's",
-                "dinner",
+                "the",
+                "floor",
+                "flatmate",
+                "brother's",
+                "whole",
+                "My",
                 "often",
-                "eat",
-                "at"
+                "cooks",
+                "for",
+                "dinner"
             ],
-            "correctAnswer": "We often eat dinner at my grandmother's house.",
-            "hint": "Begin with 'We'. Then frequency, action, place.",
-            "explanation": "'Often' before the main verb. 'Grandmother's house' uses possessive 's.",
+            "correctAnswer": "My brother's flatmate often cooks dinner for the whole floor.",
+            "hint": "Layers: possessive owner, frequency word, verb and object, then who benefits. Stack them in that order.",
+            "explanation": "The possessive phrase 'my brother's flatmate' forms the subject. 'Often' is before the verb, 'dinner' is the object and 'for the whole floor' tells who benefits.",
             "sentenceType": "statement"
         },
         {
@@ -544,17 +557,21 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "work",
-                "arrives",
-                "early",
-                "at",
-                "minutes",
-                "ten",
-                "He"
+                "for",
+                "summer,",
+                "the",
+                "classes",
+                "library",
+                "offers",
+                "the",
+                "In",
+                "beginners",
+                "city",
+                "free"
             ],
-            "correctAnswer": "He arrives at work ten minutes early.",
-            "hint": "Start with 'He'. Then action, place, how early.",
-            "explanation": "'Ten minutes early'=precise time expression.",
+            "correctAnswer": "In the summer, the city library offers free classes for beginners.",
+            "hint": "A time opener needs a comma. Then identify the compound noun in the subject and the group that benefits.",
+            "explanation": "'In the summer,' opens the sentence with a comma. 'City library' is a compound noun, and 'for beginners' says who the classes are for.",
             "sentenceType": "statement"
         },
         {
@@ -563,17 +580,18 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "get",
+                "security",
+                "up",
+                "locks",
+                "guard",
+                "midnight",
+                "always",
                 "The",
-                "school",
-                "about",
-                "excited",
-                "trips",
-                "children"
+                "before"
             ],
-            "correctAnswer": "The children get excited about school trips.",
-            "hint": "Begin with 'The children'. Then reaction, cause.",
-            "explanation": "'Get excited about'=become excited. 'Get+adjective' shows change of state.",
+            "correctAnswer": "The security guard always locks up before midnight.",
+            "hint": "A phrasal verb without an object sits next to a time limit. Decide where the frequency word goes.",
+            "explanation": "'Always' comes before the main verb 'locks'. 'Lock up' is a phrasal verb meaning 'secure the building', and 'before midnight' gives the deadline.",
             "sentenceType": "statement"
         }
     ]

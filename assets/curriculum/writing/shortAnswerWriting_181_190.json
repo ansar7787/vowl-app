@@ -5,572 +5,602 @@
     "quests": [
         {
             "id": "WRT_SHORTANSWERWRITING_L181_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Respond in a single sentence in a clear, polite workplace tone. Include the three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how combining insights from psychology and economics can produce a fuller picture of human decision-making.",
+            "prompt": "A customer says he has waited three weeks for a refund and is furious. Open your reply.",
             "options": [
-                "combine",
-                "insight",
-                "fuller"
+                "delay",
+                "personally",
+                "apologize"
             ],
-            "sampleAnswer": "Combining insights from psychology and economics produces a fuller, more accurate picture of how humans actually make decisions.",
-            "hint": "Name the two fields being combined, then describe what kind of picture this combination produces.",
-            "explanation": "'Fuller, more accurate picture' shows why combining fields helps - each discipline alone misses something the other one catches.",
+            "sampleAnswer": "I sincerely apologize for the delay, which is unacceptable, and I will personally make sure that your refund is processed today.",
+            "hint": "Apologize, admit the delay, and commit to a specific action.",
+            "explanation": "A reply to an angry customer must show accountability and give a specific commitment, not a general promise.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "apologize",
+                "delay",
+                "personally"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L181_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a concise workplace message in one clear sentence. Each word should appear in your answer.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how data scientists identify the underlying shape of a large, complex dataset.",
+            "prompt": "Explain the cause without making excuses.",
             "options": [
-                "dataset",
-                "underlying",
-                "identify"
+                "acceptable",
+                "process",
+                "caused"
             ],
-            "sampleAnswer": "Data scientists identify the underlying shape of a large dataset by looking for clusters and patterns hidden within the raw numbers.",
-            "hint": "Name what data scientists look for in a large dataset, then explain where these patterns are hidden.",
-            "explanation": "'Hidden within the raw numbers' captures the real task of data science - the pattern exists, but it isn't visible until you go looking for it.",
+            "sampleAnswer": "The delay was caused by an error in our refund process, which is not an acceptable reason, and we have corrected it.",
+            "hint": "Name the cause once, take responsibility, and move on to what has been corrected.",
+            "explanation": "Explaining a cause without sounding defensive means naming it once and moving to the solution.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "acceptable",
+                "caused",
+                "process"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L181_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a concise workplace message in a single sentence. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how a comforting shared story can help a society avoid confronting an uncomfortable truth about itself.",
+            "prompt": "Offer a resolution and a gesture of goodwill.",
             "options": [
-                "comforting",
-                "confront",
-                "uncomfortable"
+                "resolve",
+                "inconvenience",
+                "voucher"
             ],
-            "sampleAnswer": "A comforting shared story can help a society avoid having to confront an uncomfortable truth about itself.",
-            "hint": "Name what a shared story can help a society avoid, then specify the kind of truth being avoided.",
-            "explanation": "Naming the truth as 'uncomfortable' explains why the comforting story persists - it's easier to believe than to face what it's covering up.",
+            "sampleAnswer": "To resolve this, the refund will arrive within two working days, and please accept a voucher as an apology for the inconvenience.",
+            "hint": "Give a specific timeframe for the refund and add one goodwill gesture for the inconvenience.",
+            "explanation": "A goodwill gesture recognizes the customer's effort and often prevents a lasting complaint.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "inconvenience",
+                "resolve",
+                "voucher"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L182_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Summarize the key information in one sentence. Your answer should contain all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why a strong essay must directly address readers' likely objections rather than ignoring them.",
+            "prompt": "A study found students who tested themselves remembered 50% more than those who reread. Report the finding in your own words.",
             "options": [
-                "objection",
-                "address",
-                "ignore"
+                "outperformed",
+                "research",
+                "retrieval"
             ],
-            "sampleAnswer": "A strong essay must directly address readers' likely objections rather than ignore them and hope they go unnoticed.",
-            "hint": "State what a strong essay must do with likely objections, then contrast this with the weaker alternative.",
-            "explanation": "Contrasting 'address' with 'ignoring...hoping they go unnoticed' makes the stakes clear - unaddressed objections don't disappear, they just weaken your credibility.",
+            "sampleAnswer": "Research indicates that students who practiced retrieval by testing themselves outperformed those who simply reread, remembering about half as much again.",
+            "hint": "Use a reporting verb and change the vocabulary.",
+            "explanation": "Academic writing reports findings with reporting verbs such as 'indicates' and avoids copying the original wording.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "outperformed",
+                "research",
+                "retrieval"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L182_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Pass the information on in one clear sentence, keeping only what matters. Work in each of the three words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why some scientific theories propose things that current instruments cannot yet detect or measure.",
+            "prompt": "A report found remote workers were more productive but felt less connected. Summarize the findings.",
             "options": [
-                "propose",
-                "instrument",
-                "detect"
+                "connected",
+                "productive",
+                "trade-off"
             ],
-            "sampleAnswer": "Some scientific theories propose phenomena so small or distant that current instruments simply cannot detect them yet.",
-            "hint": "State what some theories propose, then explain why current tools fall short of confirming them.",
-            "explanation": "Explaining that instruments 'fall short' rather than that the theory is wrong is an important scientific distinction - untested is not the same as false.",
+            "sampleAnswer": "The report found that remote workers were more productive but felt less connected, which suggests a trade-off between output and belonging.",
+            "hint": "Report the two findings with 'but', then add a short interpretation of what they suggest together.",
+            "explanation": "An interpretation such as 'trade-off' adds value beyond restating the findings, because it tells the reader what the two results mean together.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "connected",
+                "productive",
+                "trade-off"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L182_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Pass the information on in one clear sentence, keeping only what matters. Each word should appear in your answer.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why recovering traditional knowledge that was dismissed by colonial powers matters today.",
+            "prompt": "A survey found that most commuters would switch to trains if they were cheaper. Explain what this suggests for policy.",
             "options": [
-                "traditional",
-                "dismiss",
-                "matter"
+                "affordability",
+                "suggests",
+                "incentive"
             ],
-            "sampleAnswer": "Recovering traditional knowledge that colonial powers once dismissed matters today because entire ways of understanding the world were nearly lost.",
-            "hint": "State what colonial powers once dismissed, then explain in your own words why recovering it matters now.",
-            "explanation": "Explaining the stakes in your own words ('entire ways of understanding the world were nearly lost') turns an abstract claim into something concrete and felt.",
+            "sampleAnswer": "The survey suggests that affordability is the main barrier, so lower fares could act as an effective incentive to reduce car use.",
+            "hint": "State the survey finding, then say what it suggests for policy makers.",
+            "explanation": "Moving from a finding to its implication is what makes a summary useful for decision-makers.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "affordability",
+                "incentive",
+                "suggests"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L183_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write the message in two short sentences in a polite tone. Include the three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how an enthymeme works rhetorically by omitting a premise the audience is expected to supply.",
+            "prompt": "A friend tells you her small business is closing. Write a supportive reply.",
             "options": [
-                "enthymeme",
-                "implicit",
-                "audience"
+                "sorry",
+                "here",
+                "proud"
             ],
-            "sampleAnswer": "An enthymeme achieves its rhetorical force by omitting an implicit premise that the audience is trusted to supply from shared knowledge.",
-            "hint": "Name the rhetorical device, then explain what the audience is trusted to do.",
-            "explanation": "'Trusted to supply from shared knowledge' shows that the enthymeme relies on and flatters the audience's intelligence.",
+            "sampleAnswer": "I'm so sorry to hear that. I'm proud of how hard you worked, and I'm here if you want to talk or need help with the next step.",
+            "hint": "Be sincere, mention something specific, and offer support.",
+            "explanation": "A supportive message avoids empty phrases and includes something specific and an offer of help.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "here",
+                "proud",
+                "sorry"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L183_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write the message in a single sentence in a polite tone. Include all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how LIGO detects the gravitational waves produced by cataclysmic cosmic events.",
+            "prompt": "Tell a friend honestly, but kindly, that you cannot lend money.",
             "options": [
-                "LIGO",
-                "spacetime",
-                "ripple"
+                "unfortunately",
+                "help",
+                "honest"
             ],
-            "sampleAnswer": "LIGO detects gravitational waves as infinitesimal ripples in the fabric of spacetime caused by colliding black holes and neutron stars.",
-            "hint": "Name the detector, then describe what it detects and list two cosmic sources.",
-            "explanation": "'Infinitesimal ripples in the fabric of spacetime' uses a vivid spatial metaphor to make an abstract physics concept easier to picture.",
+            "sampleAnswer": "Unfortunately I can't lend money right now, and I wanted to be honest with you, but I'd like to help in other ways, such as looking at your options together.",
+            "hint": "Refuse clearly and offer a different kind of support.",
+            "explanation": "A refusal is easier to accept when it is honest, gentle, and paired with a different form of help.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "help",
+                "honest",
+                "unfortunately"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L183_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write the message in two sentences in a polite tone. Work in each of the three words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how the language used in official forms can quietly assign people into fixed categories.",
+            "prompt": "Reconnect with an old colleague you have not spoken to for years.",
             "options": [
-                "official",
-                "assign",
-                "category"
+                "reach out",
+                "years",
+                "catch up"
             ],
-            "sampleAnswer": "The language used on official forms can quietly assign people into fixed categories they never actively chose for themselves.",
-            "hint": "Name what kind of language does this, then explain what it does to people without their active choice.",
-            "explanation": "'Without their active choice' is the key phrase - it shows the categorising happens to people, not through any decision they made.",
+            "sampleAnswer": "I hope you're well. It's been years since we worked together, so I wanted to reach out and see if you'd like to catch up over coffee sometime.",
+            "hint": "Give the reason for writing and a low-pressure invitation.",
+            "explanation": "A reconnection message works when it is warm, brief, and does not demand much.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "catch up",
+                "reach out",
+                "years"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L184_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Show how one thing leads to another in one sentence. Use all three words naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how a well-placed em dash can set off a dramatic or clarifying interruption in a sentence.",
+            "prompt": "Deliveries have been late for two weeks. Suggest a root cause using this clue: only orders from one warehouse are affected.",
             "options": [
-                "em dash",
-                "interrupt",
-                "dramatic"
+                "root cause",
+                "staffing",
+                "warehouse"
             ],
-            "sampleAnswer": "A well-placed em dash can interrupt a sentence for dramatic effect, setting off a phrase that demands the reader's attention.",
-            "hint": "Name the punctuation mark, then explain the effect it creates when it interrupts a sentence.",
-            "explanation": "'Setting off a phrase that demands the reader's attention' explains why writers reach for the em dash instead of a comma - it creates a small dramatic pause.",
+            "sampleAnswer": "The root cause is probably at that warehouse, possibly staffing shortages or a problem with the packing process, so I would investigate there first.",
+            "hint": "Use the clue to narrow the cause and say where to look first.",
+            "explanation": "Root-cause analysis follows the clue to the source and not just the symptom, so it tells you where to investigate first.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "root cause",
+                "staffing",
+                "warehouse"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L184_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Show how one thing leads to another in one sentence. Work in each of the three words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how a whirlpool or flame can maintain a stable, organized shape while constantly using up energy.",
+            "prompt": "Customer complaints increased after a website update. Suggest which evidence would confirm the cause.",
             "options": [
-                "stable",
-                "organized",
-                "energy"
+                "compare",
+                "update",
+                "confirm"
             ],
-            "sampleAnswer": "A whirlpool or flame can maintain a stable, organized shape only by constantly using up a fresh supply of energy.",
-            "hint": "Give two examples of this pattern in nature, then explain what continuous input keeps them going.",
-            "explanation": "'Only by constantly using up' is the key qualifier - these structures aren't static, they need a continuous flow of energy just to hold their shape.",
+            "sampleAnswer": "To confirm that the update is responsible, we should compare the complaints before and after the change and check whether they concern the new features.",
+            "hint": "Say what data would support or reject your hypothesis.",
+            "explanation": "A cause is confirmed by comparing before and after and checking that the complaints relate to the change.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "compare",
+                "confirm",
+                "update"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L184_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Explain the cause and its effect in one sentence. Make sure all three words fit the meaning.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why people from marginalized communities are so often left out of decisions that directly affect them.",
+            "prompt": "A team keeps missing deadlines. Give two possible causes that are not laziness.",
             "options": [
-                "marginalized",
-                "exclude",
-                "decision"
+                "estimates",
+                "unclear",
+                "unrealistic"
             ],
-            "sampleAnswer": "People from marginalized communities are too often excluded from the decisions that most directly affect their own lives.",
-            "hint": "Name who tends to be excluded, then specify exactly what kind of decisions they're left out of.",
-            "explanation": "'Most directly affect their own lives' sharpens the point - the issue isn't just being unheard in general, but being unheard on the decisions that matter most to them.",
+            "sampleAnswer": "The deadlines may be unrealistic because the estimates were too optimistic, or the requirements may be unclear, so the team keeps redoing work.",
+            "hint": "Give two causes that come from the process or the plan, not from the people.",
+            "explanation": "A systemic explanation looks at process rather than blaming individuals, which is a more useful analysis.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "estimates",
+                "unclear",
+                "unrealistic"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L185_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Say what you decided and why in one clear sentence. Each word should appear in your answer.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how an expert essayist weaves counterpositions into the argument's fabric rather than avoiding them.",
+            "prompt": "Choose between a fixed-price supplier and a cheaper but variable one for a two-year contract. Justify your choice.",
             "options": [
-                "weave",
-                "counterposition",
-                "fabric"
+                "fixed",
+                "predictable",
+                "variable"
             ],
-            "sampleAnswer": "The essay weaves counterpositions into the very fabric of its argument, using them to strengthen rather than escape the thesis.",
-            "hint": "State what the essay does with counterpositions, then contrast the two possible purposes with 'rather than'.",
-            "explanation": "'Strengthen rather than escape the thesis' shows the expert move - counterarguments become resources, not threats.",
+            "sampleAnswer": "I would choose the fixed-price supplier because predictable costs matter more than the potential savings of a variable price over a two-year contract, particularly if the budget is tight.",
+            "hint": "Explain which criterion is most important and why.",
+            "explanation": "A decision is justified by the criterion that matters most in the specific situation.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "fixed",
+                "predictable",
+                "variable"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L185_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Say what you decided and why in one clear sentence. Make sure all three words fit the meaning.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how the immune system distinguishes the body's own cells from foreign invaders.",
+            "prompt": "Decide whether to train existing staff or hire an expert. Justify your choice.",
             "options": [
-                "immune system",
-                "distinguish",
-                "foreign"
+                "long-term",
+                "expertise",
+                "train"
             ],
-            "sampleAnswer": "The immune system distinguishes the body's own cells from foreign invaders by recognizing specific markers on each cell's surface.",
-            "hint": "Name the system, then explain the method it uses to tell self from foreign cells.",
-            "explanation": "Naming the specific mechanism ('markers on each cell's surface') grounds an abstract biological process in something concrete and picturable.",
+            "sampleAnswer": "I would train existing staff, because although hiring gives immediate expertise, training builds long-term capacity and improves retention.",
+            "hint": "Weigh the short-term benefit of hiring against the long-term benefit of training staff.",
+            "explanation": "Comparing time horizons is a strong way to justify a decision, because it shows that you considered what happens after the first few months.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "expertise",
+                "long-term",
+                "train"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L185_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Explain the decision and your reasoning in one sentence. Work in each of the three words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why healthy democratic debate depends on every citizen being recognized as a distinct, irreplaceable voice.",
+            "prompt": "Decide whether to release a product now with known minor bugs or wait a month. Justify your choice.",
             "options": [
-                "distinct",
-                "irreplaceable",
-                "recognize"
+                "release",
+                "reputation",
+                "bugs"
             ],
-            "sampleAnswer": "Healthy democratic debate depends on recognizing each citizen as a distinct and irreplaceable voice, not an interchangeable vote.",
-            "hint": "State what healthy debate depends on recognizing in each citizen, then contrast this with treating people as interchangeable.",
-            "explanation": "Contrasting 'irreplaceable voice' with 'interchangeable vote' makes a sharp point - democracy needs individual perspectives, not just a headcount.",
+            "sampleAnswer": "I would delay the release by a month, because minor bugs can damage the company's reputation with early users, and a good first impression is difficult to repair.",
+            "hint": "Weigh the cost of waiting against the cost of harm.",
+            "explanation": "Deciding under uncertainty means comparing the size of the possible harm with the cost of delay.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "bugs",
+                "release",
+                "reputation"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L186_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Make the meaning clear in one clear sentence. Use the three words meaningfully.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how deep syntactic embedding in multiple relative clauses creates significant parsing difficulty.",
+            "prompt": "Explain a password manager to someone who is not technical, using an analogy.",
             "options": [
-                "relative",
-                "depth",
-                "parse"
+                "vault",
+                "remember",
+                "like"
             ],
-            "sampleAnswer": "Deep syntactic embedding across multiple relative clauses makes sentences hard to parse and significantly impairs comprehension at depth.",
-            "hint": "Use 'Deep syntactic embedding across multiple relative clauses makes sentences hard to parse and significantly impairs' and end.",
-            "explanation": "'At depth' is a technical qualifier - it specifies that comprehension fails specifically when embedding exceeds processing limits.",
+            "sampleAnswer": "A password manager is like a secure vault: you only need to remember one key, and it stores all the others for you.",
+            "hint": "Use an everyday object to explain the idea.",
+            "explanation": "An analogy links something unfamiliar to something familiar, which helps beginners understand quickly.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "like",
+                "remember",
+                "vault"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L186_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Make the meaning clear in one clear sentence. Include all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why people often invent excuses for behavior that clashes with their own stated values.",
+            "prompt": "Explain what a budget is to a teenager, using an analogy.",
             "options": [
-                "invent",
-                "clash",
-                "excuse"
+                "spend",
+                "plan",
+                "budget"
             ],
-            "sampleAnswer": "People often invent convenient excuses when their behavior clashes with the values they claim to hold.",
-            "hint": "State what people tend to invent, then explain when this typically happens.",
-            "explanation": "This is a common psychological pattern - it's often easier to invent a justification than to change the behavior or admit the inconsistency.",
+            "sampleAnswer": "A budget is like a plan for a game: you decide in advance how much you can spend on each part so you don't run out before the end.",
+            "hint": "Use an analogy from something that the teenager knows.",
+            "explanation": "Choosing an analogy from your listener's own world makes it easier to remember.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "budget",
+                "plan",
+                "spend"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L186_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Make the meaning clear in one sentence. Each word should appear in your answer.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why representation in film and media matters for how different groups feel seen in a culture.",
+            "prompt": "Explain what a backup is to someone who has never lost a file, using an analogy.",
             "options": [
-                "represent",
-                "culture",
-                "seen"
+                "spare",
+                "copy",
+                "backup"
             ],
-            "sampleAnswer": "Seeing people like themselves fairly represented on screen helps audiences feel genuinely seen within their own culture.",
-            "hint": "Name what matters about representation, then explain what it helps audiences feel.",
-            "explanation": "'Feel genuinely seen' captures why representation matters beyond simple visibility - it's about recognition, not just screen time.",
+            "sampleAnswer": "A backup is like a spare key kept in a safe place: you hope you never need it, but if you lose the original, you'll be very glad to have a copy.",
+            "hint": "Use the analogy and explain why the item matters.",
+            "explanation": "An analogy combined with the reason it matters explains both what and why.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "backup",
+                "copy",
+                "spare"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L187_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Respond in a clear, polite workplace tone. Use all three words naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about the micro-thesis, elaboration, and clincher as the three elements of an expert paragraph.",
+            "prompt": "Write the first two sentences of a briefing recommending a switch to a new payment system.",
             "options": [
-                "micro-thesis",
-                "elaboration",
-                "clincher"
+                "recommend",
+                "three",
+                "switching"
             ],
-            "sampleAnswer": "Each expert paragraph opens with a micro-thesis, develops it through focused elaboration, and closes with a conceptual clincher.",
-            "hint": "Name the three parts of an expert paragraph in order, using three different verbs.",
-            "explanation": "Three-part paragraph structure ('opens, develops, closes') gives learners a replicable model at the highest level.",
+            "sampleAnswer": "We recommend switching to the new payment system, which reduces processing costs by about 15 percent and offers three extra security features.",
+            "hint": "Start with the recommendation and the main benefit.",
+            "explanation": "Briefings for decision-makers begin with the recommendation and the strongest reason, because their time is limited.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "recommend",
+                "switching",
+                "three"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L187_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a concise workplace message in one clear sentence. Your answer should contain all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why some of the most fundamental questions in physics remain unresolved after a century of research.",
+            "prompt": "State the main risk and how you would manage it.",
             "options": [
-                "fundamental",
-                "unresolved",
-                "research"
+                "risk",
+                "transition",
+                "pilot"
             ],
-            "sampleAnswer": "Some of the most fundamental questions in physics remain unresolved because the research needed to test them requires energies far beyond current technology.",
-            "hint": "Name what remains unresolved in physics, then explain the practical obstacle to testing it.",
-            "explanation": "'Requires energies far beyond current technology' explains the real bottleneck - the ideas are testable in principle, just not yet in practice.",
+            "sampleAnswer": "The main risk is disruption during the transition, which we would manage by running a two-week pilot in one branch first.",
+            "hint": "Name the main risk in one clause and the control measure in the next, using 'which'.",
+            "explanation": "Naming the main risk and how to control it makes a recommendation credible.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "pilot",
+                "risk",
+                "transition"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L187_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a concise workplace message in a single sentence. Include all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how a community can hold together through shared experience even without everyone agreeing on the same beliefs.",
+            "prompt": "State what decision you need and by when.",
             "options": [
-                "community",
-                "shared",
-                "agree"
+                "pilot",
+                "month",
+                "approval"
             ],
-            "sampleAnswer": "A community can hold together through shared experience alone, even when its members never fully agree on the same beliefs.",
-            "hint": "State what can hold a community together, then add a concession about full agreement.",
-            "explanation": "'Even when its members never fully agree' is the key concession - shared experience can bind people more tightly than shared opinion.",
+            "sampleAnswer": "We need your approval by the end of the month so that the pilot can begin before the summer season.",
+            "hint": "Say exactly what you need and the deadline.",
+            "explanation": "A clear request with a deadline makes it easy for the decision-maker to act.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "approval",
+                "month",
+                "pilot"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L188_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Reflect in a single sentence on what you learned. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how an anaphoric reference chain maintains coherent textual identity across complex academic discourse.",
+            "prompt": "Say what went well in a project you completed and why.",
             "options": [
-                "anaphoric chain",
-                "sustain",
-                "reference"
+                "communication",
+                "because",
+                "worked"
             ],
-            "sampleAnswer": "A sustained anaphoric chain of reference maintains textual cohesion by pointing consistently back to one identifiable referent.",
-            "hint": "Name the type of reference chain, then specify what it must consistently point back to.",
-            "explanation": "'A single identifiable referent' is the key - anaphoric chains only work if the referent remains clear throughout.",
+            "sampleAnswer": "What worked best was regular communication, because small problems were noticed early and never became serious.",
+            "hint": "Choose one success and explain the reason behind it.",
+            "explanation": "Reflection means identifying the causes of success, so that you can repeat them in the next project and not just celebrate the result.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "because",
+                "communication",
+                "worked"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L188_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Reflect in one sentence on what you learned. Make sure all three words fit the meaning.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how a person's environment and experiences can influence which of their genes are actively used.",
+            "prompt": "Say what you would do differently.",
             "options": [
-                "environment",
-                "influence",
-                "active"
+                "differently",
+                "earlier",
+                "scope"
             ],
-            "sampleAnswer": "A person's environment and daily experiences can influence which of their genes stay active without changing the genes themselves.",
-            "hint": "Name what can influence gene activity, then clarify what stays unchanged in the process.",
-            "explanation": "'Without changing the genes themselves' distinguishes this from genetic mutation - the underlying code stays the same, only its activity shifts.",
+            "sampleAnswer": "Next time I would do things differently and define the scope earlier, because unclear expectations caused avoidable rework in the middle of the project.",
+            "hint": "Say what you would change and what problem it addresses.",
+            "explanation": "A useful reflection links the change to the specific problem it would prevent, so the lesson is practical and not only a regret.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "differently",
+                "earlier",
+                "scope"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L188_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write what this taught you in a single sentence. Include all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why focusing on what makes two things different can reveal more than focusing on what makes them the same.",
+            "prompt": "Say what advice you would give to a team starting a similar project.",
             "options": [
-                "different",
-                "reveal",
-                "same"
+                "owners",
+                "check-ins",
+                "advise"
             ],
-            "sampleAnswer": "Focusing on what makes two things different can reveal more about each one than focusing only on what makes them the same.",
-            "hint": "State what focusing on difference can reveal, then compare it to focusing only on similarity.",
-            "explanation": "This is a genuinely useful thinking habit - contrast often exposes a detail that similarity quietly hides.",
+            "sampleAnswer": "I would advise the team to assign clear owners to each task and hold short check-ins each week, which keeps small issues visible.",
+            "hint": "Give two concrete pieces of advice that a new team could apply from the first week.",
+            "explanation": "Advice from experience is most valuable when it is specific enough to apply immediately.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "advise",
+                "check-ins",
+                "owners"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L189_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Give a nuanced answer in one clear sentence, acknowledging another side. Include the three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how masters of a form both embody genre conventions and transcend them through creative innovation.",
+            "prompt": "Should companies use AI to screen job applications? Give a nuanced answer.",
             "options": [
-                "convention",
-                "transcend",
-                "innovate"
+                "oversight",
+                "bias",
+                "efficient"
             ],
-            "sampleAnswer": "Masters of a genre embody its conventions deeply enough to transcend and innovate beyond them in ways that redefine the form.",
-            "hint": "State what masters of a genre do with its conventions, then describe the ultimate result of their innovation.",
-            "explanation": "'Redefine the form' is the ultimate creative achievement - the form itself changes as a result of the work.",
+            "sampleAnswer": "AI screening can be more efficient, but it may repeat existing bias, so it should only be used with human oversight and regular checks.",
+            "hint": "Give the benefit, the risk, and the condition for using it.",
+            "explanation": "A nuanced answer includes conditions, such as oversight, under which the technology may be acceptable.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "bias",
+                "efficient",
+                "oversight"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L189_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a balanced answer in one sentence that shows more than one view. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about what Gödel's incompleteness theorems prove about the limits of formal axiomatic systems.",
+            "prompt": "Is it acceptable for employers to monitor work email? Give a nuanced answer.",
             "options": [
-                "formal system",
-                "unprovable",
-                "consistent"
+                "acceptable",
+                "purpose",
+                "transparent"
             ],
-            "sampleAnswer": "Gödel proved that any consistent formal system of sufficient complexity contains true statements that are formally unprovable within it.",
-            "hint": "Name the mathematician and what kind of system he studied, then specify what such systems always contain.",
-            "explanation": "'Formally unprovable within it' is the key phrase - the truth exists but cannot be reached using the system's own rules.",
+            "sampleAnswer": "It can be acceptable if the rules are transparent and the purpose is legitimate, such as security, but not if it is used for general surveillance.",
+            "hint": "State the conditions under which it is acceptable.",
+            "explanation": "Nuance means saying when something is acceptable and when it is not, and naming conditions such as purpose and transparency makes the judgment usable.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "acceptable",
+                "purpose",
+                "transparent"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L189_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Give a nuanced answer in one clear sentence, acknowledging another side. Use all three words naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how our physical sense of touch and movement shapes the way we understand abstract concepts.",
+            "prompt": "Should schools teach coding to all children? Give a nuanced answer.",
             "options": [
-                "physical",
-                "shape",
-                "abstract"
+                "everyone",
+                "logical",
+                "valuable"
             ],
-            "sampleAnswer": "Our physical sense of touch and movement subtly shapes the way we come to understand even the most abstract concepts.",
-            "hint": "Name the two physical senses involved, then state what they shape our understanding of.",
-            "explanation": "This idea - that abstract thought is rooted in bodily experience - is echoed across cognitive science and psychology research.",
+            "sampleAnswer": "Coding can be valuable for logical thinking, but not everyone needs to become a programmer, so schools should teach the basics without making it compulsory.",
+            "hint": "Separate the value of learning coding from the question of making it compulsory.",
+            "explanation": "Separating the value of a skill from the requirement to learn it makes the answer more balanced.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "everyone",
+                "logical",
+                "valuable"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L190_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Suggest what to do in one sentence and justify it. Your answer should contain all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how combining engineering and biology has led to breakthroughs like artificial limbs that respond to nerve signals.",
+            "prompt": "Recommend a mentoring program for new staff and give your strongest reason.",
             "options": [
-                "combine",
-                "breakthrough",
-                "respond"
+                "retention",
+                "recommend",
+                "onboarding"
             ],
-            "sampleAnswer": "Combining engineering and biology has produced remarkable breakthroughs, including artificial limbs that respond directly to nerve signals.",
-            "hint": "Name the two fields being combined, then give the specific example of what this combination produced.",
-            "explanation": "Giving a concrete example ('artificial limbs that respond to nerve signals') makes the abstract idea of interdisciplinary work immediately vivid and convincing.",
+            "sampleAnswer": "I recommend a mentoring program because it speeds up onboarding and improves retention, both of which reduce long-term hiring costs.",
+            "hint": "Recommend and support it with one business reason.",
+            "explanation": "Recommendations to management are stronger when linked to cost or performance, because managers decide by comparing benefits against budgets.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "onboarding",
+                "recommend",
+                "retention"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L190_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Name the issue and offer a solution in one sentence. Use the three words meaningfully.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how causal inference requires isolating counterfactual variation and accounting for potential confounders.",
+            "prompt": "Name one risk in the program and how to reduce it.",
             "options": [
-                "counterfactual",
-                "confound",
-                "identify"
+                "mismatched",
+                "training",
+                "pairs"
             ],
-            "sampleAnswer": "Identifying causal effects requires isolating counterfactual variation and rigorously accounting for every potential confounding variable.",
-            "hint": "State what identifying causal effects requires isolating, then name what else must be carefully accounted for.",
-            "explanation": "'Every potential confounding variable' uses 'every' to stress completeness - a single missed confounder can invalidate the inference.",
+            "sampleAnswer": "A risk is mismatched pairs, which we can reduce by asking both people for their preferences and offering a short training session for mentors.",
+            "hint": "Name one risk in the program, then give two controls: one before it starts and one during.",
+            "explanation": "Risks in people programs are best handled with preparation and a way to adjust.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "mismatched",
+                "pairs",
+                "training"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L190_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Give a nuanced answer in one sentence, acknowledging another side. Include all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about the different ways a sign can convey meaning: by resembling something, by being directly connected to it, or by pure convention.",
+            "prompt": "Give a balanced view on whether the program should be compulsory.",
             "options": [
-                "resemble",
-                "connected",
-                "convention"
+                "voluntary",
+                "committed",
+                "compulsory"
             ],
-            "sampleAnswer": "A sign can convey meaning by resembling its subject, by being physically connected to it, or through pure cultural convention.",
-            "hint": "List the three different ways a sign can create meaning, using three different linking words.",
-            "explanation": "Naming three distinct mechanisms shows that 'meaning' isn't one simple thing - a photograph, smoke from a fire, and a word all mean something, but in completely different ways.",
+            "sampleAnswer": "A voluntary program attracts committed participants, whereas a compulsory one reaches everyone, so I would make it voluntary but encourage everyone actively.",
+            "hint": "Compare what each option achieves, then make a clear call for one of them.",
+            "explanation": "A balanced decision compares the outcomes of both options and chooses one clearly.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "committed",
+                "compulsory",
+                "voluntary"
             ]
         }
     ]

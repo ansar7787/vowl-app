@@ -8,143 +8,143 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "My sister like to read books every night before bed.",
-            "missingWord": "like",
+            "passage": "My cousin play football at the park every Sunday.",
+            "missingWord": "play",
             "options": [
-                "like",
-                "likes",
-                "liked",
-                "liking"
+                "play",
+                "to play",
+                "playing",
+                "plays"
             ],
-            "correctAnswer": "likes",
-            "hint": "The subject 'my sister' is singular (she). In simple present, singular subjects need a verb ending in -s.",
-            "explanation": "With a third-person singular subject (he/she/it), add -s to the base verb. 'My sister likes to read' is correct.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "plays",
+            "hint": "Think about how many people the subject names, then check whether the verb ending matches.",
+            "explanation": "One person is doing the action, so the simple-present verb takes -s: 'plays'. 'Playing' and 'to play' cannot work as the main verb here.",
+            "errorType": "Agreement Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L1_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "The class start at nine o'clock every weekday morning.",
-            "missingWord": "start",
+            "passage": "The bus to the airport leave from Gate 4 every twenty minutes.",
+            "missingWord": "leave",
             "options": [
-                "start",
-                "starts",
-                "started",
-                "starting"
+                "leaves",
+                "to leave",
+                "leave",
+                "leaving"
             ],
-            "correctAnswer": "starts",
-            "hint": "'The class' is one group treated as a single unit. What verb ending does a singular subject need?",
-            "explanation": "In simple present, singular subjects take the -s form. 'The class starts at nine o'clock' is correct.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "leaves",
+            "hint": "Is 'the bus' one thing or several? Let the answer decide the verb ending.",
+            "explanation": "'The bus' is a single thing, so the present-simple verb needs -s: 'leaves'. Without it the verb doesn't agree with its subject.",
+            "errorType": "Agreement Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L1_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He go to the market every Saturday to buy fresh vegetables.",
-            "missingWord": "go",
+            "passage": "Her parents lives in a small town near the coast.",
+            "missingWord": "lives",
             "options": [
-                "go",
-                "goes",
-                "went",
-                "going"
+                "to live",
+                "live",
+                "living",
+                "lives"
             ],
-            "correctAnswer": "goes",
-            "hint": "'He' is a third-person singular pronoun. What form of 'go' follows he/she/it in simple present?",
-            "explanation": "The verb 'go' becomes 'goes' for he/she/it: 'He goes to the market every Saturday'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "live",
+            "hint": "Compare the number of the subject with the ending on the verb. Do the two match?",
+            "explanation": "'Parents' is plural, so the verb stays in its base form: 'live'. The -s ending belongs only with singular he/she/it subjects.",
+            "errorType": "Agreement Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L2_Q1",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She drink green tea instead of coffee every morning.",
-            "missingWord": "drink",
+            "passage": "I is very tired after the long bus ride home.",
+            "missingWord": "is",
             "options": [
-                "drink",
-                "drinks",
-                "drank",
-                "drinking"
+                "are",
+                "is",
+                "be",
+                "am"
             ],
-            "correctAnswer": "drinks",
-            "hint": "The subject 'she' is singular. What form of 'drink' goes with a singular subject in simple present?",
-            "explanation": "Third-person singular subjects need the -s form: 'She drinks green tea every morning'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "am",
+            "hint": "One pronoun has its very own form of 'be'. Which one goes with 'I'?",
+            "explanation": "'I' always pairs with 'am' in the present: 'I am'. Bare 'be' cannot act as the main verb in a simple statement like this.",
+            "errorType": "Agreement Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L2_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "The baker make fresh bread rolls before the shop opens each day.",
-            "missingWord": "make",
+            "passage": "The tickets is on the kitchen table, next to your keys.",
+            "missingWord": "is",
             "options": [
-                "make",
-                "makes",
-                "made",
-                "making"
+                "are",
+                "be",
+                "am",
+                "is"
             ],
-            "correctAnswer": "makes",
-            "hint": "One baker equals one singular subject. What ending does the verb need for a singular subject?",
-            "explanation": "'The baker makes' is correct. A singular subject like 'the baker' requires the -s form of the verb.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "are",
+            "hint": "Count the things the sentence is describing before choosing between 'is' and 'are'.",
+            "explanation": "'Tickets' is plural, so 'be' takes the form 'are'. 'Is' is only for singular subjects such as 'the ticket'.",
+            "errorType": "Agreement Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L2_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "My cat sleep in a patch of sunlight on the kitchen floor.",
-            "missingWord": "sleep",
+            "passage": "Tomorrow i have an appointment with the dentist at ten.",
+            "missingWord": "i",
             "options": [
-                "sleep",
-                "sleeps",
-                "slept",
-                "sleeping"
+                "I",
+                "my",
+                "i",
+                "me"
             ],
-            "correctAnswer": "sleeps",
-            "hint": "Your cat is one animal - a singular subject. What verb ending is needed for singular subjects?",
-            "explanation": "Use 'sleeps' (with -s) for the singular subject 'my cat'. This is the third-person singular agreement rule.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "I",
+            "hint": "Look at the letter itself. Is the pronoun written the way it normally is in English?",
+            "explanation": "The pronoun 'I' is always a capital letter, wherever it appears. 'Me' and 'my' cannot be the subject of 'have'.",
+            "errorType": "Capitalization Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L3_Q1",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He watch the news every evening after he finishes dinner.",
-            "missingWord": "watch",
+            "passage": "My brother have a new phone with an excellent camera.",
+            "missingWord": "have",
             "options": [
-                "watch",
-                "watches",
-                "watched",
-                "watching"
+                "having",
+                "to have",
+                "has",
+                "have"
             ],
-            "correctAnswer": "watches",
-            "hint": "'He' is third-person singular. Verbs ending in -ch need -es in the third-person singular form.",
-            "explanation": "Verbs ending in -ch get -es: 'watch → watches'. 'He watches the news every evening' is correct.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "has",
+            "hint": "Ask what 'have' turns into when the subject is one person.",
+            "explanation": "'Have' becomes 'has' with he, she, it or a singular noun. 'Having' and 'to have' can't be the only verb in a statement.",
+            "errorType": "Agreement Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L3_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "My father teach history at the local high school.",
-            "missingWord": "teach",
+            "passage": "Do we has enough chairs for everyone at the table?",
+            "missingWord": "has",
             "options": [
-                "teach",
-                "teaches",
-                "taught",
-                "teaching"
+                "has",
+                "have",
+                "had",
+                "having"
             ],
-            "correctAnswer": "teaches",
-            "hint": "The subject 'my father' refers to one person. What verb ending does a singular subject need?",
-            "explanation": "Verbs ending in -ch take -es for third-person singular: 'My father teaches history' is correct.",
+            "correctAnswer": "have",
+            "hint": "Notice the helping verb that opens the question. What form should the main verb take after it?",
+            "explanation": "After 'do', 'does' or 'did', the main verb stays in its base form: 'Do we have...?'. The helping verb already carries the tense.",
             "errorType": "Grammar Error"
         },
         {
@@ -152,53 +152,53 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She always carry a spare pen and notebook in her bag.",
-            "missingWord": "carry",
+            "passage": "There are three childs waiting outside the classroom.",
+            "missingWord": "childs",
             "options": [
-                "carry",
-                "carries",
-                "carried",
-                "carrying"
+                "child",
+                "children",
+                "childs",
+                "childrens"
             ],
-            "correctAnswer": "carries",
-            "hint": "'She' is singular. When verbs end in consonant + -y, what happens in the third-person singular?",
-            "explanation": "For verbs ending in consonant + y, third-person singular changes -y to -ies: 'She carries a spare pen'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "children",
+            "hint": "'Three' tells you the noun is plural, but not every plural is built the same way.",
+            "explanation": "'Child' has an irregular plural: 'children'. 'Childrens' adds a second plural ending to a word that is already plural.",
+            "errorType": "Word Form Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L4_Q1",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "The river flow gently through the centre of the old town.",
-            "missingWord": "flow",
+            "passage": "She don't like spicy food, so please choose something mild.",
+            "missingWord": "don't",
             "options": [
-                "flow",
-                "flows",
-                "flowed",
-                "flowing"
+                "isn't",
+                "don't",
+                "doesn't",
+                "not"
             ],
-            "correctAnswer": "flows",
-            "hint": "Think about the subject 'the river'. Is it singular or plural? What verb form does it need?",
-            "explanation": "'The river' is singular, so the verb takes -s: 'The river flows'. This is simple present tense.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "doesn't",
+            "hint": "Match the negative helping verb to the person who is doing the liking.",
+            "explanation": "With he, she or it, the present-simple negative uses 'doesn't'. 'Isn't' and bare 'not' can't be followed by 'like' in this way.",
+            "errorType": "Agreement Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L4_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He usually try the soup before adding any salt or pepper.",
-            "missingWord": "try",
+            "passage": "Does your sister works on weekends at the hospital?",
+            "missingWord": "works",
             "options": [
-                "try",
-                "tries",
-                "tried",
-                "trying"
+                "worked",
+                "works",
+                "working",
+                "work"
             ],
-            "correctAnswer": "tries",
-            "hint": "The subject 'he' is singular. When a verb ends in consonant + y, what happens in the third person?",
-            "explanation": "When 'he/she/it' is the subject and the verb ends in consonant + y, change -y to -ies: 'He tries the soup'.",
+            "correctAnswer": "work",
+            "hint": "Look at the helping verb that opens the question. Does the main verb also need an ending?",
+            "explanation": "In a question with 'does', the main verb goes back to its base form: 'Does she work...?'. Only the helping verb carries the -s.",
             "errorType": "Grammar Error"
         },
         {
@@ -206,251 +206,251 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "My uncle fix old motorcycles in his garage on weekends.",
-            "missingWord": "fix",
+            "passage": "Priya and her brother is studying nursing at the same college.",
+            "missingWord": "is",
             "options": [
-                "fix",
-                "fixes",
-                "fixed",
-                "fixing"
+                "am",
+                "are",
+                "be",
+                "is"
             ],
-            "correctAnswer": "fixes",
-            "hint": "The subject is one person. Verbs ending in -x need a special ending for third-person singular.",
-            "explanation": "Verbs ending in -x add -es for third-person singular: 'fix → fixes'. 'My uncle fixes motorcycles' is correct.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "are",
+            "hint": "How many people are in the subject? Pay attention to the word that joins the two names.",
+            "explanation": "Two people joined by 'and' make a plural subject, so the verb is 'are'. Each person alone would take 'is', but together they don't.",
+            "errorType": "Agreement Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L5_Q1",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She study late every night to prepare for her final exams.",
-            "missingWord": "study",
+            "passage": "Please put the boxs on the shelf beside the door.",
+            "missingWord": "boxs",
             "options": [
-                "study",
-                "studies",
-                "studied",
-                "studying"
+                "boxies",
+                "box's",
+                "boxes",
+                "boxs"
             ],
-            "correctAnswer": "studies",
-            "hint": "The subject 'she' is third-person singular. What happens to verbs ending in consonant + y?",
-            "explanation": "For third-person singular, verbs ending in consonant + y change to -ies: 'She studies late every night'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "boxes",
+            "hint": "Some noun endings need extra letters before the plural -s. Say the word aloud to hear which ending fits.",
+            "explanation": "Nouns ending in -x, -s, -sh, -ch or -z add -es to form the plural: 'boxes'. A single -s would be almost impossible to pronounce.",
+            "errorType": "Word Form Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L5_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "The dog follow me everywhere I go around the house.",
-            "missingWord": "follow",
+            "passage": "She wants to be a engineer when she finishes university.",
+            "missingWord": "a",
             "options": [
-                "follow",
-                "follows",
-                "followed",
-                "following"
+                "any",
+                "a",
+                "an",
+                "many"
             ],
-            "correctAnswer": "follows",
-            "hint": "Think of the dog as 'it' - a third-person singular subject. What ending does the verb need?",
-            "explanation": "'The dog' is singular. In simple present, singular subjects take the -s form: 'The dog follows me'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "an",
+            "hint": "Say the next word aloud. What sound does it start with?",
+            "explanation": "We use 'an' before a vowel sound: 'an engineer'. 'Any' and 'many' don't fit before a singular job title.",
+            "errorType": "Article Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L5_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He play chess with his grandfather every Sunday afternoon.",
-            "missingWord": "play",
+            "passage": "There is two seats free at the back of the bus.",
+            "missingWord": "is",
             "options": [
-                "play",
-                "plays",
-                "played",
-                "playing"
+                "is",
+                "be",
+                "am",
+                "are"
             ],
-            "correctAnswer": "plays",
-            "hint": "The subject 'he' is singular. In simple present, what must the verb have after 'he'?",
-            "explanation": "'He' is third-person singular, so the verb takes -s: 'He plays chess with his grandfather'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "are",
+            "hint": "Look at what comes after 'there'. It decides whether the verb is singular or plural.",
+            "explanation": "In 'there is/are', the verb agrees with the noun that follows. 'Two seats' is plural, so the sentence needs 'are'.",
+            "errorType": "Agreement Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L6_Q1",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "My friend take the bus to university every weekday morning.",
-            "missingWord": "take",
+            "passage": "My neighbour is friendly, and I often talk to he over the fence.",
+            "missingWord": "he",
             "options": [
-                "take",
-                "takes",
-                "took",
-                "taking"
+                "him",
+                "himself",
+                "he",
+                "his"
             ],
-            "correctAnswer": "takes",
-            "hint": "The subject 'my friend' refers to one person. What form of 'take' is correct in simple present?",
-            "explanation": "Singular subjects need the -s form: 'My friend takes the bus to university'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "him",
+            "hint": "What job does this pronoun do after the preposition 'to'?",
+            "explanation": "After a preposition we use the object form of the pronoun: 'to him'. 'He' is a subject pronoun, and 'his' shows ownership.",
+            "errorType": "Pronoun Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L6_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "The plant grow very fast when you water it regularly.",
-            "missingWord": "grow",
+            "passage": "Those keys are mine, and the blue ones on the table are your.",
+            "missingWord": "your",
             "options": [
-                "grow",
-                "grows",
-                "grew",
-                "growing"
+                "you",
+                "your",
+                "yours",
+                "yourself"
             ],
-            "correctAnswer": "grows",
-            "hint": "'The plant' is singular. Singular subjects in the simple present take a verb ending in -s.",
-            "explanation": "With a singular subject like 'the plant', add -s to the base verb: 'The plant grows very fast'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "yours",
+            "hint": "Which word can stand on its own to mean 'the ones that belong to you'?",
+            "explanation": "'Your' must always be followed by a noun. When the noun is left out, we use 'yours': 'the blue ones are yours'.",
+            "errorType": "Pronoun Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L6_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She enjoy cooking new recipes from different countries at the weekend.",
-            "missingWord": "enjoy",
+            "passage": "There house is at the end of the street, past the post office.",
+            "missingWord": "There",
             "options": [
-                "enjoy",
-                "enjoys",
-                "enjoyed",
-                "enjoying"
+                "Their",
+                "There",
+                "They're",
+                "Them"
             ],
-            "correctAnswer": "enjoys",
-            "hint": "'She' is a third-person singular pronoun. Does the verb have the right ending after 'she'?",
-            "explanation": "After 'she', add -s to the verb in simple present: 'She enjoys cooking'. 'Enjoy' is used with I/you/we/they.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "Their",
+            "hint": "Is this word pointing to a place, or showing that something belongs to a group of people?",
+            "explanation": "'Their' shows possession. 'There' points to a place, and 'they're' is short for 'they are', which makes no sense before 'house'.",
+            "errorType": "Word Choice Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L7_Q1",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "The sun rise in the east and set in the west each day.",
-            "missingWord": "rise",
+            "passage": "She is studying at an university in Leeds this year.",
+            "missingWord": "an",
             "options": [
-                "rise",
-                "rises",
-                "rose",
-                "rising"
+                "many",
+                "an",
+                "any",
+                "a"
             ],
-            "correctAnswer": "rises",
-            "hint": "The subject 'the sun' is singular (it). What ending does the verb need for a singular subject?",
-            "explanation": "In simple present, 'the sun' (singular) takes the -s form: 'The sun rises in the east'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "a",
+            "hint": "The choice depends on how the next word is spoken, not how it is spelled. How does 'university' begin?",
+            "explanation": "'University' begins with a 'y' sound, like 'you', so it takes 'a'. We use 'an' only before a vowel sound.",
+            "errorType": "Article Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L7_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He rush to catch the early train every weekday morning.",
-            "missingWord": "rush",
+            "passage": "Could you pass me a salt? It's next to the pepper.",
+            "missingWord": "a",
             "options": [
-                "rush",
-                "rushes",
-                "rushed",
-                "rushing"
+                "an",
+                "a",
+                "these",
+                "the"
             ],
-            "correctAnswer": "rushes",
-            "hint": "'He' is singular. Verbs ending in -sh need -es in the third-person singular form.",
-            "explanation": "For verbs ending in -sh, -ch, -x, -s, or -z, add -es for third-person singular: 'He rushes to catch the train'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "the",
+            "hint": "Are you asking for any salt at all, or for the one you can both see?",
+            "explanation": "We use 'the' when both speakers know exactly which item is meant. 'These' cannot be used with an uncountable noun like salt.",
+            "errorType": "Article Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L7_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "My neighbour walk her dog along the river path every evening.",
-            "missingWord": "walk",
+            "passage": "I have two younger brother and one older sister.",
+            "missingWord": "brother",
             "options": [
-                "walk",
-                "walks",
-                "walked",
-                "walking"
+                "brother",
+                "brothers",
+                "brother's",
+                "brothers'"
             ],
-            "correctAnswer": "walks",
-            "hint": "'My neighbour' = one person = singular subject. What is the correct verb form for a singular subject?",
-            "explanation": "Singular subjects need the -s form in simple present: 'My neighbour walks her dog every evening'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "brothers",
+            "hint": "Look at the number in front of the noun. What should happen to the noun itself?",
+            "explanation": "After a number greater than one, a countable noun must be plural: 'two brothers'. Apostrophes show possession, not plurals.",
+            "errorType": "Word Form Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L8_Q1",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She know the answer to almost every question in the quiz.",
-            "missingWord": "know",
+            "passage": "My aunt speaks English very good after living abroad for years.",
+            "missingWord": "good",
             "options": [
-                "know",
-                "knows",
-                "knew",
-                "knowing"
+                "best",
+                "well",
+                "good",
+                "better"
             ],
-            "correctAnswer": "knows",
-            "hint": "The subject 'she' is third-person singular. In simple present, what ending does the verb need?",
-            "explanation": "With a third-person singular subject like 'she', always add -s to the base verb: 'She knows the answer'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "well",
+            "hint": "Is the missing word describing a person or describing how an action is done?",
+            "explanation": "'Speaks' is a verb, so it needs an adverb: 'well'. 'Good' is an adjective and describes nouns, such as 'a good speaker'.",
+            "errorType": "Word Form Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L8_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "The manager sign all important documents in person every day.",
-            "missingWord": "sign",
+            "passage": "The museum is closed on monday, but it opens again on Tuesday.",
+            "missingWord": "monday",
             "options": [
-                "sign",
-                "signs",
-                "signed",
-                "signing"
+                "Monday",
+                "monday",
+                "Monday's",
+                "monday's"
             ],
-            "correctAnswer": "signs",
-            "hint": "'The manager' is one person - a singular subject. What form does the verb take with a singular subject?",
-            "explanation": "In simple present, singular subjects take the -s form: 'The manager signs all important documents'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "Monday",
+            "hint": "Compare how the two days of the week are written in this sentence.",
+            "explanation": "Days of the week always begin with a capital letter in English. An apostrophe would show ownership, which isn't needed here.",
+            "errorType": "Capitalization Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L8_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He speak three languages and is currently learning a fourth one.",
-            "missingWord": "speak",
+            "passage": "The shops on our street has late opening hours on Thursdays.",
+            "missingWord": "has",
             "options": [
-                "speak",
-                "speaks",
-                "spoke",
-                "speaking"
+                "to have",
+                "has",
+                "have",
+                "having"
             ],
-            "correctAnswer": "speaks",
-            "hint": "The subject 'he' is singular. What is the correct present tense form of 'speak' after 'he'?",
-            "explanation": "'He speaks' is the third-person singular form. The base verb 'speak' is used with I/you/we/they only.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "have",
+            "hint": "Which noun is the real subject? Check that the verb matches it, not the nearest word.",
+            "explanation": "'The shops' is plural, so the verb must be 'have'. 'Having' and 'to have' can't be the main verb of this statement.",
+            "errorType": "Agreement Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L9_Q1",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "The machine stop automatically when the task is complete.",
-            "missingWord": "stop",
+            "passage": "I am agree with your plan, but we need more time.",
+            "missingWord": "am agree",
             "options": [
-                "stop",
-                "stops",
-                "stopped",
-                "stopping"
+                "am agree",
+                "agreeing",
+                "to agree",
+                "agree"
             ],
-            "correctAnswer": "stops",
-            "hint": "The subject 'the machine' is singular. In simple present, singular subjects need the -s form.",
-            "explanation": "A singular subject like 'the machine' takes the -s form: 'The machine stops automatically'.",
+            "correctAnswer": "agree",
+            "hint": "Does 'agree' need a form of 'be' in front of it here? Think about what kind of word it is.",
+            "explanation": "'Agree' is a verb, not an adjective, so it doesn't need 'am'. 'I agree' is complete, and 'I am agree' is a common learner error.",
             "errorType": "Grammar Error"
         },
         {
@@ -458,90 +458,90 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She always check her emails first thing every morning.",
-            "missingWord": "check",
+            "passage": "Is raining, so take an umbrella with you.",
+            "missingWord": "Is raining",
             "options": [
-                "check",
-                "checks",
-                "checked",
-                "checking"
+                "There is raining",
+                "It is raining",
+                "He is raining",
+                "Is raining"
             ],
-            "correctAnswer": "checks",
-            "hint": "'She' is a third-person singular pronoun. Which verb form goes with she/he/it in simple present?",
-            "explanation": "Use -s after a third-person singular subject: 'She checks her emails first thing every morning'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "It is raining",
+            "hint": "English statements normally need a subject. What is missing at the start?",
+            "explanation": "English needs a subject even when nobody is doing the action. We use 'it' for weather: 'It is raining'.",
+            "errorType": "Sentence Structure Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L9_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "My cousin travel to a new country every chance he gets.",
-            "missingWord": "travel",
+            "passage": "She is a nurse and works in a hospital big near the river.",
+            "missingWord": "hospital big",
             "options": [
-                "travel",
-                "travels",
-                "travelled",
-                "travelling"
+                "big hospital",
+                "hospital bigger",
+                "hospital big",
+                "hospitals big"
             ],
-            "correctAnswer": "travels",
-            "hint": "'My cousin' refers to one person - a singular subject. What verb ending is needed for singular subjects?",
-            "explanation": "Singular subjects take the -s form in simple present: 'My cousin travels to a new country'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "big hospital",
+            "hint": "Where does English normally place a descriptive adjective compared with the noun?",
+            "explanation": "In English, adjectives normally come before the noun they describe: 'a big hospital'. Many other languages put them after.",
+            "errorType": "Sentence Structure Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L10_Q1",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He reply to every message within just a few minutes.",
-            "missingWord": "reply",
+            "passage": "The children's are playing in the garden behind the school.",
+            "missingWord": "children's",
             "options": [
-                "reply",
-                "replies",
-                "replied",
-                "replying"
+                "child's",
+                "children",
+                "children's",
+                "childrens"
             ],
-            "correctAnswer": "replies",
-            "hint": "The subject 'he' is singular. When verbs end in consonant + y, what happens in third-person singular?",
-            "explanation": "For 'he/she/it', verbs ending in consonant + y change to -ies: 'He replies to every message'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "children",
+            "hint": "Does this noun need to show ownership here, or just show more than one child?",
+            "explanation": "An apostrophe with -'s shows possession. Here we only need the irregular plural 'children', as the subject of 'are playing'.",
+            "errorType": "Word Form Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L10_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "The library close at eight o'clock on weekday evenings.",
-            "missingWord": "close",
+            "passage": "Can you help? I can't find me keys anywhere in this bag.",
+            "missingWord": "me",
             "options": [
-                "close",
-                "closes",
-                "closed",
-                "closing"
+                "me",
+                "I",
+                "mine",
+                "my"
             ],
-            "correctAnswer": "closes",
-            "hint": "'The library' is singular. What ending does the verb need in simple present for a singular subject?",
-            "explanation": "'The library' is singular, so the verb takes -s: 'The library closes at eight o'clock'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "my",
+            "hint": "Which word shows that the keys belong to the speaker and is followed by a noun?",
+            "explanation": "'My' is a possessive adjective placed before a noun. 'Me' is an object pronoun, and 'mine' cannot be followed by 'keys'.",
+            "errorType": "Pronoun Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L10_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She always bring homemade biscuits to the office on Fridays.",
-            "missingWord": "bring",
+            "passage": "My sister and me are both learning to drive this year.",
+            "missingWord": "me",
             "options": [
-                "bring",
-                "brings",
-                "brought",
-                "bringing"
+                "myself",
+                "mine",
+                "I",
+                "me"
             ],
-            "correctAnswer": "brings",
-            "hint": "The subject 'she' is third-person singular. What must be added to the verb in simple present?",
-            "explanation": "Third-person singular subjects require the -s form: 'She brings homemade biscuits to the office'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "I",
+            "hint": "Take away 'my sister and'. Would you say 'me am learning'?",
+            "explanation": "In a compound subject, use subject pronouns: 'My sister and I'. Test it by removing the other person: 'I am learning' works, 'me am' doesn't.",
+            "errorType": "Pronoun Error"
         }
     ]
 }

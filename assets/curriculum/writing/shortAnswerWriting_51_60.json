@@ -5,572 +5,602 @@
     "quests": [
         {
             "id": "WRT_SHORTANSWERWRITING_L51_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Say why in two short sentences, with the reason stated clearly. Your answer should contain all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how committing to a daily routine helps build a healthier lifestyle over time.",
+            "prompt": "Explain why some people learn better from videos than from books, and give one example.",
             "options": [
-                "commit",
-                "routine",
-                "consistent"
+                "example",
+                "pause",
+                "videos"
             ],
-            "sampleAnswer": "Committing to a consistent daily routine is the foundation of a healthier lifestyle, building sustainable habits over time.",
-            "hint": "Use an -ing subject about committing to a routine, then describe what it becomes the foundation of.",
-            "explanation": "'Over time' anchors a long-term benefit. It makes the claim realistic and encourages persistence.",
+            "sampleAnswer": "People often learn better from videos because they can pause and replay the difficult parts. For example, I watched a cooking tutorial twice before I understood how to fold dough.",
+            "hint": "Make your general statement first, then bring in one real situation that proves it.",
+            "explanation": "A general claim is easy to doubt, but a concrete example shows the reader exactly what you mean. 'For example' signals the shift from idea to proof.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "example",
+                "pause",
+                "videos"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L51_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Say why in two short sentences, with the reason stated clearly. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write a review of a product you have tried, explaining its features and whether you recommend it.",
+            "prompt": "Someone says small habits do not matter. Disagree politely and give a short illustration.",
             "options": [
-                "evaluate",
-                "feature",
-                "recommend"
+                "instance",
+                "habits",
+                "daily"
             ],
-            "sampleAnswer": "After taking time to carefully evaluate all key features, I strongly recommend this product for its quality and value.",
-            "hint": "Open with a time phrase about evaluating first, then give your recommendation and the reasons behind it.",
-            "explanation": "A participial opener ('After carefully evaluating') shows that the recommendation is evidence-based, not impulsive.",
+            "sampleAnswer": "Small habits matter because they add up. For instance, reading ten pages daily means about a dozen books a year.",
+            "hint": "State your view, then use 'for instance' with a number to make it convincing.",
+            "explanation": "A calculation turns a vague opinion into something the reader can check. 'For instance' works like 'for example' but adds variety to your writing.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "daily",
+                "habits",
+                "instance"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L51_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Give your reason in one sentence. Use all three words naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how students can overcome academic difficulties through determination and focus.",
+            "prompt": "A colleague thinks a spare phone charger is a waste of money. Explain why it is useful.",
             "options": [
-                "overcome",
-                "difficulty",
-                "persist"
+                "spare",
+                "battery",
+                "such as"
             ],
-            "sampleAnswer": "By persisting through every difficulty, students gradually overcome obstacles and build long-term resilience.",
-            "hint": "Use a means phrase with 'By', then show the two-stage result of persisting.",
-            "explanation": "'By + gerund' ('By persisting') describes the method or means. It is one of the most versatile structures in English.",
+            "sampleAnswer": "A spare charger is useful in situations such as a long train delay, when your battery is almost empty and you cannot reach a socket.",
+            "hint": "Name the situation where the charger would save you, using 'such as'.",
+            "explanation": "'Such as' introduces a typical case inside the same sentence, so you can give an example without starting a new one.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "battery",
+                "spare",
+                "such as"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L52_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a description in one clear sentence that a stranger could picture. Each word should appear in your answer.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how to maintain a professional tone when writing emails in a workplace.",
+            "prompt": "A student asks what a baker's morning is like.",
             "options": [
-                "tone",
-                "professional",
-                "email"
+                "before",
+                "dawn",
+                "ovens"
             ],
-            "sampleAnswer": "Maintaining a professional tone in workplace emails ensures clarity, builds trust, and reflects well on your organisation.",
-            "hint": "Use an -ing subject about tone in emails, then list three distinct benefits with varied verbs.",
-            "explanation": "Listing three distinct benefits ('ensures', 'builds', 'reflects') creates a comprehensive and authoritative sentence.",
+            "sampleAnswer": "A baker usually starts before dawn, turns on the ovens, and has the first bread ready by six.",
+            "hint": "Follow the baker through the morning in time order, using the present simple for a regular routine.",
+            "explanation": "Describing a routine in the third person needs -s on verbs, and time markers like 'before' and 'by' show the schedule.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "before",
+                "dawn",
+                "ovens"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L52_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Give a specific description in one sentence. Your answer should contain all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Describe a city you know well, covering its character, community, and infrastructure.",
+            "prompt": "Explain what a night security guard does during a shift.",
             "options": [
-                "vibrant",
-                "infrastructure",
-                "diverse"
+                "rounds",
+                "checks",
+                "until"
             ],
-            "sampleAnswer": "This vibrant city is home to a remarkably diverse community supported by modern, well-maintained infrastructure.",
-            "hint": "Describe the city with 'is home to', then add precise adjectives for the community and infrastructure.",
-            "explanation": "'Is home to' is a natural and idiomatic way to describe what a place contains - more expressive than 'has'.",
+            "sampleAnswer": "A night guard walks regular rounds, checks that doors are locked, and writes a report until the morning team arrives.",
+            "hint": "Give two or three regular tasks, then a phrase that shows when the shift ends.",
+            "explanation": "'Until' marks the end of a repeated activity, which fits routines that have a fixed finish.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "checks",
+                "rounds",
+                "until"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L52_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Paint a clear, concrete picture in one clear sentence. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why public transport is often a better option than private vehicles for daily commuting.",
+            "prompt": "Describe how a delivery driver plans a working day.",
             "options": [
-                "efficient",
-                "commute",
-                "alternative"
+                "traffic",
+                "route",
+                "deliveries"
             ],
-            "sampleAnswer": "Public transport is a highly efficient and cost-effective alternative for the daily commute, reducing both congestion and emissions.",
-            "hint": "Describe public transport with two qualities, then add a participial phrase showing its wider effect.",
-            "explanation": "'Reducing both congestion and emissions' is a participial phrase showing two consequences - efficient and parallel.",
+            "sampleAnswer": "A driver plans the route first, sorts the deliveries by area, and changes the order if traffic gets bad.",
+            "hint": "Describe the plan in order, then add one flexible decision.",
+            "explanation": "Adding a flexible decision ('changes the order if...') shows real understanding of the job and not just a list of tasks.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "deliveries",
+                "route",
+                "traffic"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L53_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a description in a single sentence that a stranger could picture. Work in each of the three words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how to set realistic personal ambitions that are achievable in the long term.",
+            "prompt": "You were on a very crowded bus. Describe what it was like.",
             "options": [
-                "aspire",
-                "ambition",
-                "realistic"
+                "crowded",
+                "windows",
+                "pressed"
             ],
-            "sampleAnswer": "Set realistic ambitions that reflect your true capabilities, and aspire to exceed them gradually with focused effort.",
-            "hint": "Give two connected pieces of advice as commands, joined with 'and'.",
-            "explanation": "Two imperative clauses ('Set' and 'aspire') create a direct, motivational writing tone - suitable for advice writing.",
+            "sampleAnswer": "The bus was so crowded that I was pressed against the door, and the windows were fogged up from everyone's breath.",
+            "hint": "Use 'so...that' to show how extreme it was, and add something you could see or feel.",
+            "explanation": "'So + adjective + that' shows the result of an extreme situation, which makes the description vivid without exaggeration.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "crowded",
+                "pressed",
+                "windows"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L53_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Describe it clearly in one clear sentence. Include the three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how to describe a process clearly so that readers can follow every step.",
+            "prompt": "Describe the sounds and smells of a busy outdoor market.",
             "options": [
-                "sequence",
-                "step",
-                "clearly"
+                "smell",
+                "voices",
+                "stalls"
             ],
-            "sampleAnswer": "When describing any process, present each step clearly and in the correct sequence so that readers can follow easily.",
-            "hint": "Set the condition with 'When describing any process', then state two requirements for each step.",
-            "explanation": "Two parallel adverbials ('clearly' and 'in the correct sequence') specify how each step should be presented.",
+            "sampleAnswer": "The smell of fried food drifted from the stalls while voices shouted prices from every direction.",
+            "hint": "Use two different senses and connect them with 'while'.",
+            "explanation": "Two senses in one sentence give a fuller picture, and 'while' shows that they happen at the same time.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "smell",
+                "stalls",
+                "voices"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L53_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Paint a clear, concrete picture in a single sentence. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why storing food correctly is important for safety and health.",
+            "prompt": "Describe what it is like to wait in a doctor's waiting room.",
             "options": [
-                "store",
-                "properly",
-                "risk"
+                "waiting",
+                "quiet",
+                "clock"
             ],
-            "sampleAnswer": "Choosing to store food properly reduces the risk of contamination and extends the shelf life of perishables.",
-            "hint": "Open with an -ing or 'choosing to' subject about storage, then list two results joined with 'and'.",
-            "explanation": "Two parallel benefits ('reduces the risk' and 'extends the shelf life') create a balanced cause-and-effect sentence.",
+            "sampleAnswer": "The waiting room was quiet except for the ticking clock, and everyone kept looking at their phones.",
+            "hint": "Describe the atmosphere with one sound and one action.",
+            "explanation": "Atmosphere comes from small details: what you hear and what people are doing.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "clock",
+                "quiet",
+                "waiting"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L54_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Explain in one clear sentence so the reason is easy to follow. Include the three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about the advantages of online learning for students with busy or irregular schedules.",
+            "prompt": "Explain why people wait in line instead of pushing forward.",
             "options": [
-                "flexible",
-                "platform",
-                "self-paced"
+                "fair",
+                "everyone",
+                "line"
             ],
-            "sampleAnswer": "Online learning platforms offer flexible, self-paced options that allow busy learners to study at their own convenience.",
-            "hint": "State what the platforms offer, then add a relative clause about what this allows learners to do.",
-            "explanation": "A relative clause of permission ('that allow learners to study') shows what the feature enables - not just what it is.",
+            "sampleAnswer": "People wait in line because it is fair to everyone, and pushing forward would probably start an argument.",
+            "hint": "Give the social reason first, then add the likely consequence of breaking the rule.",
+            "explanation": "Explaining social behavior often needs two parts: the reason for the rule, and what would go wrong without it.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "everyone",
+                "fair",
+                "line"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L54_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Explain in one sentence so the reason is easy to follow. Include all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how the opening sentences of a story can immediately capture a reader's attention.",
+            "prompt": "Explain why shops play music.",
             "options": [
-                "hook",
-                "reader",
-                "immediately"
+                "music",
+                "mood",
+                "customers"
             ],
-            "sampleAnswer": "A well-crafted opening hook immediately captures the reader's curiosity and compels them to continue reading.",
-            "hint": "Describe what a strong opening does, using two verbs that share the same object.",
-            "explanation": "Two verbs with a shared object ('captures curiosity and compels them') keep the sentence tight and forceful.",
+            "sampleAnswer": "Shops play music to change the mood, and relaxed customers usually stay longer.",
+            "hint": "Say what the music does, then what that means for the shop.",
+            "explanation": "A chain of cause and effect (mood, then time spent) makes the explanation sound analytical.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "customers",
+                "mood",
+                "music"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L54_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Explain in a single sentence so the reason is easy to follow. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how the climate of a region shapes the habits and behaviour of its people.",
+            "prompt": "Explain why some people prefer working from home.",
             "options": [
-                "influence",
-                "climate",
-                "behavior"
+                "commute",
+                "flexible",
+                "focus"
             ],
-            "sampleAnswer": "The local climate profoundly influences the daily behavior and cultural habits of the communities that live there.",
-            "hint": "State what climate influences, then add a relative clause about the people affected.",
-            "explanation": "'Profoundly influences' uses an adverb of degree - 'profoundly' shows depth rather than just 'greatly'.",
+            "sampleAnswer": "Some people prefer working from home because they avoid the commute, focus better, and choose flexible hours.",
+            "hint": "List reasons of the same type and keep the grammar parallel.",
+            "explanation": "Parallel verbs (avoid, focus, choose) make a list easy to read and sound organized.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "commute",
+                "flexible",
+                "focus"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L55_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Show how one thing leads to another in a single sentence. Work in each of the three words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about the contrast between people who prefer structure and those who prefer spontaneity.",
+            "prompt": "A new metro line opened in a city. Explain how it changed commuting.",
             "options": [
-                "whereas",
-                "differ",
-                "approach"
+                "metro",
+                "shorter",
+                "commute"
             ],
-            "sampleAnswer": "Whereas structured planners prefer predictability, spontaneous individuals differ significantly in their approach to daily life.",
-            "hint": "Contrast two types of people using 'Whereas... differ...'.",
-            "explanation": "'Differ significantly in their approach to' is a formal way to contrast behaviour - essential in comparative writing.",
+            "sampleAnswer": "Since the new metro line opened, the commute has become much shorter for people in the north.",
+            "hint": "Use 'since' with the present perfect to show that the change is still current.",
+            "explanation": "The present perfect ('has become') connects a past change to today, which is exactly what a report on change needs.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "commute",
+                "metro",
+                "shorter"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L55_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Explain the cause and its effect in one clear sentence. Include the three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how controlling portion sizes contributes to a balanced and healthy diet.",
+            "prompt": "Say how the new metro line might affect small shops nearby.",
             "options": [
-                "moderate",
-                "portion",
-                "balance"
+                "rent",
+                "nearby",
+                "customers"
             ],
-            "sampleAnswer": "Eating moderate portions at each meal creates the caloric balance necessary for maintaining a healthy body weight.",
-            "hint": "Use an -ing subject about portions, then explain the balance it creates.",
-            "explanation": "'Necessary for + gerund' ('necessary for maintaining') is a formal phrase expressing requirement or condition.",
+            "sampleAnswer": "More customers will walk past the nearby shops, so business should grow, but the rent may go up too.",
+            "hint": "Give one positive effect and one possible negative effect.",
+            "explanation": "A balanced prediction uses 'should' and 'may' for uncertain results, showing that the writer has considered more than one outcome.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "customers",
+                "nearby",
+                "rent"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L55_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Explain the cause and its effect in one sentence. Use the three words meaningfully.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how skilled travel writing uses descriptive language to transport the reader.",
+            "prompt": "Say how the metro line could change noise and traffic around the center.",
             "options": [
-                "evoke",
-                "vivid",
-                "landscape"
+                "fewer",
+                "quieter",
+                "traffic"
             ],
-            "sampleAnswer": "Skilled travel writing uses vivid, sensory language to evoke the landscape so powerfully that readers feel present.",
-            "hint": "Describe the kind of language travel writing uses, then add a result clause about the reader's experience.",
-            "explanation": "'So powerfully that' is a result clause of degree - it shows how strongly the description affects the reader.",
+            "sampleAnswer": "The center may become quieter because there will be less traffic, and fewer people will drive into it.",
+            "hint": "Connect each effect to its cause with 'because'.",
+            "explanation": "Predicting effects with 'may' and 'will' shows different levels of certainty, which makes a prediction sound careful and realistic.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "fewer",
+                "quieter",
+                "traffic"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L56_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a balanced answer in one clear sentence that shows more than one view. Make sure all three words fit the meaning.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how to present your qualifications most effectively in a job application cover letter.",
+            "prompt": "Describe a course or job you like but that has one real drawback.",
             "options": [
-                "highlight",
-                "qualification",
-                "relevant"
+                "useful",
+                "although",
+                "demanding"
             ],
-            "sampleAnswer": "In a cover letter, highlight only the qualifications that are most directly relevant to the specific role you are applying for.",
-            "hint": "Use an imperative for the advice, then add a relative clause narrowing down which qualifications matter.",
-            "explanation": "'Most directly relevant to' is a precise phrase for matching your skills to job requirements - a key CV writing skill.",
+            "sampleAnswer": "Although the course is demanding, I find it very useful for my career.",
+            "hint": "Begin with 'Although' plus the drawback, then finish with your main point.",
+            "explanation": "'Although' places the weaker idea first, and the idea you want to stress comes after the comma.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "although",
+                "demanding",
+                "useful"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L56_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a balanced answer in one clear sentence that shows more than one view. Use the three words meaningfully.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how an artist uses style and technique to convey emotion in their work.",
+            "prompt": "Say something good about a product that has one flaw.",
             "options": [
-                "convey",
-                "emotion",
-                "style"
+                "battery",
+                "even though",
+                "phone"
             ],
-            "sampleAnswer": "Through a distinctive personal style, this artist conveys profound emotion in every brushstroke and composition choice.",
-            "hint": "Open with a prepositional phrase about style, then describe what the artist conveys.",
-            "explanation": "Prepositional openers ('Through a distinctive style') create a formal, literary tone by placing means before action.",
+            "sampleAnswer": "Even though the phone's battery is weak, I still recommend it because the camera is excellent.",
+            "hint": "Use 'even though' for the flaw, then give your recommendation.",
+            "explanation": "'Even though' is stronger than 'although' and shows the flaw is real but not decisive.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "battery",
+                "even though",
+                "phone"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L56_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Give a nuanced answer, acknowledging another side. Your answer should contain all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about the personal and social benefits of volunteering in your community.",
+            "prompt": "Compare two neighbors' habits in one sentence.",
             "options": [
-                "contribute",
-                "volunteer",
-                "benefit"
+                "early",
+                "late",
+                "while"
             ],
-            "sampleAnswer": "Volunteering to contribute to your community not only benefits those you help but also enriches your own sense of purpose.",
-            "hint": "Use an -ing subject about volunteering, then show the dual benefit with 'not only...but also'.",
-            "explanation": "'Not only...but also' is one of the most powerful correlative conjunction pairs in English for showing dual benefit.",
+            "sampleAnswer": "While my upstairs neighbor goes to bed early, the couple next door often stays up late.",
+            "hint": "Use 'while' to place two contrasting facts side by side.",
+            "explanation": "'While' at the start of a sentence compares two situations without judging either.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "early",
+                "late",
+                "while"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L57_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Summarize the key information in one clear sentence. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why academic writing should maintain an objective and impersonal tone.",
+            "prompt": "Your manager said: 'The meeting starts at ten, and please bring your laptops.' Tell a colleague.",
             "options": [
-                "objective",
-                "avoid",
-                "personal"
+                "bring",
+                "meeting",
+                "said"
             ],
-            "sampleAnswer": "Academic writing should remain objective throughout and avoid overly personal language that could undermine its authority.",
-            "hint": "State the tone academic writing should keep, then add a relative clause about the risk of the opposite.",
-            "explanation": "A relative clause of consequence ('that could undermine') shows why the personal language is problematic.",
+            "sampleAnswer": "The manager said that the meeting starts at ten and that we should bring our laptops.",
+            "hint": "Change 'please bring' into 'we should bring' and keep the key details.",
+            "explanation": "Reported speech shifts pronouns and often the verb: 'your' becomes 'our', and a request becomes 'should'.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "bring",
+                "meeting",
+                "said"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L57_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a brief summary in one clear sentence for someone who missed it. Include all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about the potential negative effects of over-relying on digital technology in everyday life.",
+            "prompt": "Your doctor said: 'Drink more water and rest for two days.' Tell a friend.",
             "options": [
-                "rely",
-                "excessively",
-                "consequence"
+                "drink",
+                "advised",
+                "rest"
             ],
-            "sampleAnswer": "Relying excessively on technology can have serious consequences for creativity, focus, and the ability to think independently.",
-            "hint": "Name the habit, then list several consequences it can lead to.",
-            "explanation": "Listing three consequences in increasing seriousness ('creativity, focus, and independent thinking') builds emphasis.",
+            "sampleAnswer": "The doctor advised me to drink more water and to rest for two days.",
+            "hint": "Use 'advised' plus 'me to' and a base verb.",
+            "explanation": "'Advise someone to + verb' is a compact way to report advice without repeating the exact words.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "advised",
+                "drink",
+                "rest"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L57_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Pass the information on in one clear sentence, keeping only what matters. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how to identify and describe an emerging trend based on observed evidence.",
+            "prompt": "A friend said: 'I am going to be late because my train was cancelled.' Tell another friend.",
             "options": [
-                "emerge",
-                "pattern",
-                "observe"
+                "cancelled",
+                "told",
+                "late"
             ],
-            "sampleAnswer": "By observing patterns in data, researchers can spot new trends as they emerge, well before the wider public notices.",
-            "hint": "Use 'By observing' as a means phrase, then describe what researchers can spot and how early.",
-            "explanation": "'As they emerge' shows the timing advantage researchers gain - noticing a trend at its earliest stage, well before it becomes common knowledge.",
+            "sampleAnswer": "She told me she would be late because her train had been cancelled.",
+            "hint": "Move the verbs one step back in time.",
+            "explanation": "Reported speech usually moves the tense backwards: 'am going to be' becomes 'would be', and 'was' becomes 'had been'.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "cancelled",
+                "late",
+                "told"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L58_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Paint a clear, concrete picture in one clear sentence. Each word should appear in your answer.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how to give practical and empathetic advice to someone facing a difficult situation.",
+            "prompt": "Describe one way your town or neighborhood has changed.",
             "options": [
-                "recommend",
-                "situation",
-                "practical"
+                "building",
+                "used to",
+                "now"
             ],
-            "sampleAnswer": "In a challenging situation, I would recommend taking a calm, practical approach rather than reacting emotionally.",
-            "hint": "Set the scene with 'In a challenging situation', then contrast your recommendation with what to avoid using 'rather than'.",
-            "explanation": "'Rather than + gerund' contrasts a recommended action with an unrecommended one - a concise, clear structure.",
+            "sampleAnswer": "There used to be an empty lot on my street, but now there is a big apartment building.",
+            "hint": "Describe the old situation with 'used to', then use 'now' to show what replaced it.",
+            "explanation": "'Used to' describes a past state or habit that is no longer true, so it needs 'now' or 'today' for contrast.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "building",
+                "now",
+                "used to"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L58_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Compare the two options in one clear sentence. Include the three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how demonstrating a word in context is the best way to teach its correct usage.",
+            "prompt": "Say how the way you studied has changed over time.",
             "options": [
-                "demonstrate",
-                "usage",
-                "sentence"
+                "used to",
+                "notes",
+                "apps"
             ],
-            "sampleAnswer": "The most effective way to demonstrate correct vocabulary usage is to show the word in a complete, authentic sentence.",
-            "hint": "State the most effective teaching method, then specify what makes a good example work.",
-            "explanation": "'Authentic sentence' stresses that the example should be real, not artificial - an important principle in language teaching.",
+            "sampleAnswer": "I used to write all my notes by hand, but now I use apps on my tablet.",
+            "hint": "Compare the old habit with the current one.",
+            "explanation": "Comparing then and now shows real change, and 'used to' is the standard way to introduce the old habit.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "apps",
+                "notes",
+                "used to"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L58_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Say how the two things differ in one clear sentence. Work in each of the three words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how lifestyle choices significantly affect the risk of developing common diseases.",
+            "prompt": "Describe a change in the way people communicate.",
             "options": [
-                "prevent",
-                "disease",
-                "lifestyle"
+                "used to",
+                "messages",
+                "letters"
             ],
-            "sampleAnswer": "A carefully chosen lifestyle that includes good nutrition and regular exercise can prevent many common diseases effectively.",
-            "hint": "Use a subject with a defining relative clause about lifestyle, then state the main benefit.",
-            "explanation": "A defining relative clause as part of the subject ('that includes good nutrition') sets the condition for the benefit.",
+            "sampleAnswer": "People used to write letters, but now most of us send quick messages instead.",
+            "hint": "Use 'people' as the subject and give the contrast.",
+            "explanation": "Talking about people in general is easier than personal memory, and the contrast is universally understood.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "letters",
+                "messages",
+                "used to"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L59_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a brief summary in one sentence for someone who missed it. Include all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about the process of identifying what causes a problem before seeking a solution.",
+            "prompt": "Fifty-two of eighty employees answered a survey. Summarize the response rate.",
             "options": [
-                "identify",
-                "cause",
-                "solution"
+                "most",
+                "answered",
+                "about"
             ],
-            "sampleAnswer": "Accurately identifying the root cause of a problem is always the essential first step toward finding a lasting solution.",
-            "hint": "Use an -ing subject about finding causes, then rank it as the essential first step.",
-            "explanation": "'Root cause' is more specific than 'cause' - it refers to the deepest or most fundamental reason for the problem.",
+            "sampleAnswer": "About two thirds of the employees answered the survey, so most people gave their opinion.",
+            "hint": "Convert the numbers into a simple fraction with 'about'.",
+            "explanation": "Approximate language such as 'about' and 'most' summarizes numbers naturally without repeating exact figures.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "about",
+                "answered",
+                "most"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L59_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Pass the information on in a single sentence, keeping only what matters. Make sure all three words fit the meaning.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how using a concrete example makes an abstract argument clearer for readers.",
+            "prompt": "A café sold 60 hot drinks and 20 cold drinks today. Describe the difference.",
             "options": [
-                "illustrate",
-                "point",
-                "concretely"
+                "three times",
+                "drinks",
+                "cold"
             ],
-            "sampleAnswer": "One well-chosen example can illustrate an abstract point far more concretely than pages of general explanation.",
-            "hint": "Name what a good example does to an abstract point, then compare it favorably to plain explanation using 'more...than'.",
-            "explanation": "The comparative 'more concretely than' directly contrasts two teaching methods, showing why examples work better than abstract explanation alone.",
+            "sampleAnswer": "The café sold three times as many hot drinks as cold drinks today, which is about 75 percent of its sales.",
+            "hint": "Use 'three times as many ... as' for the comparison.",
+            "explanation": "Multiplication phrases like 'three times as many' compare quantities in one easy phrase.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "cold",
+                "drinks",
+                "three times"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L59_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Summarize the key information in a single sentence. Include the three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how travelling to different places broadens your understanding of the world.",
+            "prompt": "A bus trip took 58 minutes instead of 45. Describe how much longer it was.",
             "options": [
-                "broaden",
-                "horizon",
-                "perspective"
+                "longer",
+                "expected",
+                "almost"
             ],
-            "sampleAnswer": "Travelling abroad broadens your perspective and widens your intellectual horizons in ways that no classroom can fully replicate.",
-            "hint": "Describe two effects of travel using two verbs, then compare it to something travel does better.",
-            "explanation": "'In ways that no classroom can fully replicate' is a powerful restrictive clause elevating travel over formal education.",
+            "sampleAnswer": "The trip took almost an hour, which was longer than expected.",
+            "hint": "Round to a useful number and add a comment.",
+            "explanation": "Rounding makes information easy to remember, and a comment shows what the number means.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "almost",
+                "expected",
+                "longer"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L60_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Give a specific description in a single sentence. Make sure all three words fit the meaning.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how analysing an issue from multiple angles leads to better conclusions.",
+            "prompt": "The bakery on your street is closing. Describe what it was like.",
             "options": [
-                "analyze",
-                "aspect",
-                "conclusion"
+                "used to",
+                "smelled",
+                "bakery"
             ],
-            "sampleAnswer": "To analyze every aspect of an issue thoroughly allows you to reach a well-reasoned, balanced conclusion.",
-            "hint": "Open with 'To analyze every aspect of' as a purpose phrase, then state what it allows you to do.",
-            "explanation": "'Well-reasoned, balanced conclusion' uses two adjectives that reflect different qualities: logic and fairness.",
+            "sampleAnswer": "The bakery used to open early, and the whole street smelled like fresh bread.",
+            "hint": "Use 'used to' for the old routine and add one detail that you could smell or see.",
+            "explanation": "Describing something that is ending needs the past habit form, plus one sensory detail.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "bakery",
+                "smelled",
+                "used to"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L60_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Give your reason in one clear sentence. Your answer should contain all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how communication and trust are central to any healthy personal relationship.",
+            "prompt": "Explain why small shops like this close.",
             "options": [
-                "communication",
-                "sustain",
-                "trust"
+                "supermarkets",
+                "because",
+                "rent"
             ],
-            "sampleAnswer": "Open communication and mutual trust are the two pillars that sustain any genuinely healthy and long-lasting relationship.",
-            "hint": "Use two nouns as a compound subject, then describe their role with a metaphor.",
-            "explanation": "'Two pillars that sustain' is a structural metaphor - it makes the abstract concept of trust concrete and visual.",
+            "sampleAnswer": "Small shops often close because rent is rising and supermarkets sell similar products more cheaply.",
+            "hint": "Give two related reasons after 'because' and join them with 'and'.",
+            "explanation": "Two related reasons show that you can see a wider cause, and 'often' keeps the claim realistic instead of absolute.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "because",
+                "rent",
+                "supermarkets"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L60_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Explain what would happen in a single sentence. Use the three words meaningfully.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how the gradual changes in a place become noticeable when you look back over time.",
+            "prompt": "Say what the street will lose if the bakery closes.",
             "options": [
-                "gradual",
-                "transformation",
-                "notice"
+                "lose",
+                "gathering",
+                "without"
             ],
-            "sampleAnswer": "The gradual transformation of the neighbourhood became noticeable only when residents looked back over a decade of change.",
-            "hint": "Name the gradual change as the subject, then use 'only when' to show when it became visible.",
-            "explanation": "'Only when' stresses that a condition must be met before something is perceived - a precise and useful connector.",
+            "sampleAnswer": "Without the bakery, the street will lose a friendly gathering place for the people who live nearby.",
+            "hint": "Start with 'Without' plus a noun, then say what people would miss.",
+            "explanation": "'Without + noun' states a consequence concisely, and naming who loses something makes the effect feel real.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "gathering",
+                "lose",
+                "without"
             ]
         }
     ]

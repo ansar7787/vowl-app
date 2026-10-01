@@ -9,15 +9,17 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "at",
-                "She",
+                "passport",
+                "is",
+                "drawer",
+                "The",
+                "in",
                 "the",
-                "library",
-                "studies"
+                "top"
             ],
-            "correctAnswer": "She studies at the library.",
-            "hint": "Start with 'She'. Then the action. Then the place phrase.",
-            "explanation": "'At the library' uses 'at' for specific locations.",
+            "correctAnswer": "The passport is in the top drawer.",
+            "hint": "Two nouns are connected by a word that shows position. Decide which thing is being located and which thing is the location.",
+            "explanation": "The preposition 'in' shows a thing inside a space. The location phrase 'in the top drawer' follows 'is', and the adjective 'top' sits between 'the' and 'drawer'.",
             "sentenceType": "statement"
         },
         {
@@ -26,15 +28,17 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "We",
-                "travel",
-                "often",
-                "train",
-                "by"
+                "Your",
+                "is",
+                "the",
+                "to",
+                "next",
+                "window",
+                "seat"
             ],
-            "correctAnswer": "We travel by train often.",
-            "hint": "Begin with 'We'. Then action, transport method, frequency.",
-            "explanation": "'By train' shows method. We use 'by' + vehicle for transport.",
+            "correctAnswer": "Your seat is next to the window.",
+            "hint": "'Next to' works as one unit meaning 'beside'. Keep those two words together when you test your order.",
+            "explanation": "Some prepositions have more than one word. 'Next to' must stay together, and the whole phrase answers the question 'where is the seat?'",
             "sentenceType": "statement"
         },
         {
@@ -43,15 +47,17 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "sends",
-                "clients",
-                "to",
-                "emails",
-                "He"
+                "hangs",
+                "A",
+                "reception",
+                "above",
+                "desk",
+                "the",
+                "poster"
             ],
-            "correctAnswer": "He sends emails to clients.",
-            "hint": "Start with 'He'. Then action, object, recipient.",
-            "explanation": "'To clients' shows who receives the emails.",
+            "correctAnswer": "A poster hangs above the reception desk.",
+            "hint": "One noun in this sentence is made of two words. Treat it as a single item, and think about which position word links it to the poster.",
+            "explanation": "'Above' means higher than something. 'Reception desk' is a compound noun: 'reception' describes what kind of desk it is.",
             "sentenceType": "statement"
         },
         {
@@ -60,15 +66,16 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "morning",
-                "every",
-                "I",
-                "single",
-                "exercise"
+                "needs",
+                "Nadia's",
+                "battery",
+                "new",
+                "laptop",
+                "a"
             ],
-            "correctAnswer": "I exercise every single morning.",
-            "hint": "Begin with 'I'. Then action, emphatic time phrase.",
-            "explanation": "'Every single morning' emphasises daily regularity.",
+            "correctAnswer": "Nadia's laptop needs a new battery.",
+            "hint": "One token shows who owns something. It must stay directly before the thing that is owned.",
+            "explanation": "The 's ending turns a name into a possessive: 'Nadia's laptop' means the laptop that belongs to Nadia. The possessive phrase acts as the subject.",
             "sentenceType": "statement"
         },
         {
@@ -77,15 +84,16 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "stories",
-                "The",
-                "bedtime",
-                "children",
-                "love"
+                "landlord's",
+                "at",
+                "barks",
+                "dog",
+                "strangers",
+                "Our"
             ],
-            "correctAnswer": "The children love bedtime stories.",
-            "hint": "Start with 'The children'. Then action, compound noun.",
-            "explanation": "'Bedtime stories' is a compound noun.",
+            "correctAnswer": "Our landlord's dog barks at strangers.",
+            "hint": "Find the owner-and-possession pair first. The rest is a simple action with a target.",
+            "explanation": "'Landlord's' shows one owner, so the apostrophe comes before the s. 'At strangers' shows who the barking is directed toward.",
             "sentenceType": "statement"
         },
         {
@@ -94,15 +102,16 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "daily",
-                "She",
-                "her",
-                "walks",
-                "dog"
+                "My",
+                "the",
+                "parents'",
+                "river",
+                "faces",
+                "apartment"
             ],
-            "correctAnswer": "She walks her dog daily.",
-            "hint": "Begin with 'She'. Then action, possessive+noun, frequency.",
-            "explanation": "'Her dog'=possessive adjective+noun. 'Daily'=every day.",
+            "correctAnswer": "My parents' apartment faces the river.",
+            "hint": "Watch where the apostrophe sits. It tells you whether there is one owner or several.",
+            "explanation": "With a plural owner ending in -s, the apostrophe goes after the s: 'parents''. Compare this with 'landlord's' for one owner.",
             "sentenceType": "statement"
         },
         {
@@ -111,16 +120,17 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "east",
-                "rises",
-                "The",
-                "sun",
-                "in",
-                "the"
+                "her",
+                "sell",
+                "handmade",
+                "candles",
+                "cousin",
+                "and",
+                "Mia"
             ],
-            "correctAnswer": "The sun rises in the east.",
-            "hint": "Start with 'The sun'. Then action, place phrase.",
-            "explanation": "'In the east'=prepositional phrase. Present simple for scientific facts.",
+            "correctAnswer": "Mia and her cousin sell handmade candles.",
+            "hint": "Two people do the same action. Look for the word that joins them and decide whether the verb needs an -s.",
+            "explanation": "Two subjects joined by 'and' are plural, so the verb is 'sell', not 'sells'. Each subject keeps its own words: 'Mia' and 'her cousin'.",
             "sentenceType": "statement"
         },
         {
@@ -129,15 +139,18 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "We",
-                "sometimes",
-                "food",
-                "order",
-                "online"
+                "The",
+                "kitchen",
+                "its",
+                "need",
+                "and",
+                "paint",
+                "cupboards",
+                "fresh"
             ],
-            "correctAnswer": "We order food online sometimes.",
-            "hint": "Begin with 'We'. Then action, object, manner, frequency.",
-            "explanation": "'Online'=manner adverb. 'Sometimes'=frequency adverb at the end.",
+            "correctAnswer": "The kitchen and its cupboards need fresh paint.",
+            "hint": "Two things share one verb, and the second is described relative to the first. Let the possessive word tell you which item comes first.",
+            "explanation": "'And' joins a compound subject, so the verb is plural: 'need'. 'Its' refers back to 'the kitchen', which is why the kitchen must be named first. 'Paint' is uncountable and takes no article.",
             "sentenceType": "statement"
         },
         {
@@ -146,15 +159,18 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "every",
-                "morning",
-                "She",
-                "makes",
-                "coffee"
+                "and",
+                "water",
+                "open",
+                "I",
+                "the",
+                "plants",
+                "the",
+                "window"
             ],
-            "correctAnswer": "She makes coffee every morning.",
-            "hint": "Begin with 'She'. Then the action and the drink. Then how often.",
-            "explanation": "'Make coffee'=correct phrase. We 'make' hot drinks in English.",
+            "correctAnswer": "I open the window and water the plants.",
+            "hint": "One person does two jobs in a row. Think about which job makes sense first and which noun each verb can take.",
+            "explanation": "'And' joins two verb phrases that share the subject 'I', so the subject is not repeated. Each verb has its own object, and only 'window' can be opened while only 'plants' can be watered.",
             "sentenceType": "statement"
         },
         {
@@ -163,16 +179,17 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
+                "street",
+                "is",
                 "the",
-                "She",
-                "drinks",
-                "coffee",
-                "in",
-                "morning"
+                "a",
+                "pharmacy",
+                "across",
+                "There"
             ],
-            "correctAnswer": "She drinks coffee in the morning.",
-            "hint": "Begin with 'She'. Then action+drink, time phrase.",
-            "explanation": "'In the morning' is a fixed time phrase.",
+            "correctAnswer": "There is a pharmacy across the street.",
+            "hint": "This pattern introduces something for the first time. Start by finding the word that acts like a placeholder subject.",
+            "explanation": "'There is' announces that something exists. It is followed by a singular noun phrase, and the place phrase comes at the end.",
             "sentenceType": "statement"
         },
         {
@@ -181,16 +198,18 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "the",
-                "on",
-                "Saturdays",
-                "visit",
-                "market",
-                "They"
+                "in",
+                "three",
+                "ports",
+                "room",
+                "this",
+                "There",
+                "charging",
+                "are"
             ],
-            "correctAnswer": "They visit the market on Saturdays.",
-            "hint": "Start with 'They'. Then action, place, time.",
-            "explanation": "'On Saturdays' (plural)=every Saturday. Use 'on' with days.",
+            "correctAnswer": "There are three charging ports in this room.",
+            "hint": "The verb form depends on the noun that comes after the placeholder, not on the placeholder itself.",
+            "explanation": "With 'there', the verb agrees with what follows: 'three charging ports' is plural, so 'are' is needed.",
             "sentenceType": "statement"
         },
         {
@@ -199,16 +218,17 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "evening",
-                "I",
-                "books",
                 "the",
-                "read",
-                "in"
+                "some",
+                "is",
+                "in",
+                "There",
+                "milk",
+                "fridge"
             ],
-            "correctAnswer": "I read books in the evening.",
-            "hint": "Begin with 'I'. Then action, object, time phrase.",
-            "explanation": "'In the evening' uses 'in', like 'in the morning'.",
+            "correctAnswer": "There is some milk in the fridge.",
+            "hint": "Milk cannot be counted one by one. Find the little word that fits with things you cannot count.",
+            "explanation": "'Milk' is uncountable, so 'there is' (singular) is used, and 'some' shows an unspecified amount.",
             "sentenceType": "statement"
         },
         {
@@ -217,16 +237,17 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "goes",
-                "He",
-                "bed",
-                "to",
-                "very",
-                "late"
+                "old",
+                "few",
+                "contain",
+                "Those",
+                "boxes",
+                "photographs",
+                "a"
             ],
-            "correctAnswer": "He goes to bed very late.",
-            "hint": "Start with 'He'. Then bedtime phrase, how late.",
-            "explanation": "'Go to bed' is a fixed phrase. 'Very late' intensifies 'late'.",
+            "correctAnswer": "Those boxes contain a few old photographs.",
+            "hint": "Two determiners point at different nouns. One shows distance, the other shows a small number.",
+            "explanation": "'Those' points to things that are far from the speaker. 'A few' means a small number and is followed by plural nouns; the adjective 'old' comes before 'photographs'.",
             "sentenceType": "statement"
         },
         {
@@ -235,16 +256,17 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "The",
-                "play",
-                "children",
-                "games",
-                "school",
-                "after"
+                "tea",
+                "serves",
+                "kinds",
+                "This",
+                "café",
+                "many",
+                "of"
             ],
-            "correctAnswer": "The children play games after school.",
-            "hint": "Begin with 'The children'. Then action, object, time.",
-            "explanation": "'After school'=when school finishes. 'After+noun' shows time sequence.",
+            "correctAnswer": "This café serves many kinds of tea.",
+            "hint": "One phrase describes a large number of varieties. Keep 'kinds of' together with what follows it.",
+            "explanation": "'Many' is used with countable plural nouns. 'Kinds of tea' is a common phrase where 'of' links the group word to the noun.",
             "sentenceType": "statement"
         },
         {
@@ -253,16 +275,17 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "She",
+                "have",
+                "time",
+                "the",
+                "We",
                 "before",
-                "her",
-                "coffee",
-                "drinks",
-                "meeting"
+                "exam",
+                "little"
             ],
-            "correctAnswer": "She drinks coffee before her meeting.",
-            "hint": "Start with 'She'. Then action, before-phrase.",
-            "explanation": "'Before her meeting' shows temporal sequence.",
+            "correctAnswer": "We have little time before the exam.",
+            "hint": "The quantity word here suggests 'not enough'. Consider what kind of noun it can go with.",
+            "explanation": "'Little' goes with uncountable nouns and means almost none. It sounds more negative than 'a little' would.",
             "sentenceType": "statement"
         },
         {
@@ -271,16 +294,16 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "eat",
-                "at",
-                "lunch",
-                "We",
-                "together",
-                "work"
+                "customers",
+                "sends",
+                "monthly",
+                "bank",
+                "The",
+                "statements"
             ],
-            "correctAnswer": "We eat lunch together at work.",
-            "hint": "Begin with 'We'. Then meal, manner, place.",
-            "explanation": "'Together' shows a shared action. 'At work'=place phrase.",
+            "correctAnswer": "The bank sends customers monthly statements.",
+            "hint": "The sentence has two things after the verb: someone who receives and something that is sent. Which one usually comes first?",
+            "explanation": "With verbs like 'send', the receiver can come directly after the verb, before the thing sent: 'customers' then 'monthly statements'. No 'to' is needed.",
             "sentenceType": "statement"
         },
         {
@@ -289,16 +312,17 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "weekend",
-                "He",
-                "calls",
-                "mother",
-                "every",
-                "his"
+                "me",
+                "about",
+                "advice",
+                "Raj",
+                "Uncle",
+                "money",
+                "gives"
             ],
-            "correctAnswer": "He calls his mother every weekend.",
-            "hint": "Start with 'He'. Then action, object, time.",
-            "explanation": "'Calls'=makes a phone call. 'Every weekend'=each weekend.",
+            "correctAnswer": "Uncle Raj gives me advice about money.",
+            "hint": "The person who benefits comes right after the giving verb. The topic is added after that.",
+            "explanation": "'Me' is the indirect object and 'advice' is the direct object. 'About money' is a phrase that tells the subject of the advice.",
             "sentenceType": "statement"
         },
         {
@@ -307,16 +331,16 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "The",
-                "weather",
-                "and",
-                "warm",
-                "is",
-                "sunny"
+                "breakfast",
+                "guests",
+                "free",
+                "hotel",
+                "offers",
+                "The"
             ],
-            "correctAnswer": "The weather is warm and sunny.",
-            "hint": "Begin with 'The weather'. Then linking verb, two adjectives.",
-            "explanation": "'And' joins two adjectives. 'Is' is a linking verb.",
+            "correctAnswer": "The hotel offers guests free breakfast.",
+            "hint": "Guests receive something. Put the receivers before the thing they receive.",
+            "explanation": "The order 'verb + person + thing' is common with 'offer', 'give' and 'send'. The adjective 'free' describes 'breakfast'.",
             "sentenceType": "statement"
         },
         {
@@ -325,16 +349,16 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "university",
-                "to",
-                "She",
-                "bus",
-                "the",
-                "takes"
+                "small",
+                "quite",
+                "The",
+                "room",
+                "is",
+                "conference"
             ],
-            "correctAnswer": "She takes the bus to university.",
-            "hint": "Start with 'She'. Then transport phrase, destination.",
-            "explanation": "'Take the bus'=use the bus.",
+            "correctAnswer": "The conference room is quite small.",
+            "hint": "A degree word changes how strong the adjective is. It must come right before the adjective.",
+            "explanation": "'Quite' is an adverb of degree. It modifies the adjective that follows it and is placed directly before it.",
             "sentenceType": "statement"
         },
         {
@@ -343,16 +367,17 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "exercise",
-                "always",
-                "I",
-                "after",
-                "drink",
-                "water"
+                "heavy",
+                "for",
+                "me",
+                "too",
+                "is",
+                "suitcase",
+                "This"
             ],
-            "correctAnswer": "I always drink water after exercise.",
-            "hint": "Start with 'I'. Then the frequency adverb before the verb. Then what and when.",
-            "explanation": "'Always' before the main verb 'drink'.",
+            "correctAnswer": "This suitcase is too heavy for me.",
+            "hint": "One word means 'more than acceptable'. Think about what 'for me' tells us at the end.",
+            "explanation": "'Too' shows an excess that causes a problem. 'For me' names the person affected by that problem.",
             "sentenceType": "statement"
         },
         {
@@ -361,16 +386,15 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "park",
-                "spend",
-                "at",
-                "weekends",
-                "They",
-                "the"
+                "well",
+                "English",
+                "speaks",
+                "extremely",
+                "Ines"
             ],
-            "correctAnswer": "They spend weekends at the park.",
-            "hint": "Start with 'They'. Then action, object, place.",
-            "explanation": "'Spend weekends'=how they use their time. 'At the park'=specific location.",
+            "correctAnswer": "Ines speaks English extremely well.",
+            "hint": "A manner word can be strengthened by another word. Look for the pair that goes together at the end.",
+            "explanation": "'Well' is an adverb of manner, and 'extremely' intensifies it. The object 'English' stays right after the verb.",
             "sentenceType": "statement"
         },
         {
@@ -379,16 +403,17 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "new",
-                "learns",
-                "day",
+                "engineer",
+                "inspects",
                 "every",
-                "things",
-                "He"
+                "An",
+                "the",
+                "month",
+                "bridge"
             ],
-            "correctAnswer": "He learns new things every day.",
-            "hint": "Begin with 'He'. Then action, adjective+noun, time.",
-            "explanation": "'New things'=adjective before noun. 'Every day'=frequency adverb.",
+            "correctAnswer": "An engineer inspects the bridge every month.",
+            "hint": "Notice which noun begins with a vowel sound. The first noun is not yet known, while the second one is.",
+            "explanation": "'An' comes before a vowel sound, and it introduces a general singular noun. 'The bridge' is specific, so it takes 'the'.",
             "sentenceType": "statement"
         },
         {
@@ -397,16 +422,19 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "healthy",
-                "cooks",
-                "meals",
-                "dinner",
-                "for",
-                "She"
+                "table",
+                "an",
+                "our",
+                "The",
+                "extra",
+                "to",
+                "chair",
+                "waiter",
+                "brings"
             ],
-            "correctAnswer": "She cooks healthy meals for dinner.",
-            "hint": "Start with 'She'. Then action, adjective+noun, purpose.",
-            "explanation": "'For dinner' shows purpose. 'Healthy meals'=adjective before noun.",
+            "correctAnswer": "The waiter brings an extra chair to our table.",
+            "hint": "Two nouns with different articles: one is a new item, the other belongs to the speaker. Spot which one needs 'an'.",
+            "explanation": "'Extra' starts with a vowel sound, so the article is 'an'. 'Our' replaces an article before 'table'.",
             "sentenceType": "statement"
         },
         {
@@ -415,16 +443,20 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "We",
-                "Friday",
-                "nights",
-                "on",
-                "watch",
-                "movies"
+                "water",
+                "drinks",
+                "apple",
+                "an",
+                "eats",
+                "Lucia",
+                "lunch",
+                "some",
+                "and",
+                "at"
             ],
-            "correctAnswer": "We watch movies on Friday nights.",
-            "hint": "Begin with 'We'. Then action, object, time phrase.",
-            "explanation": "'On Friday nights' uses 'on'. Plural 'nights'=every Friday night.",
+            "correctAnswer": "Lucia eats an apple and drinks some water at lunch.",
+            "hint": "Two different foods need different quantity words: one can be counted, the other cannot. Match each with the right verb.",
+            "explanation": "'An apple' is countable and singular, so it takes 'an'. 'Water' is uncountable, so it takes 'some'. 'Eats' and 'drinks' each pair with the right noun, and 'at lunch' names the meal.",
             "sentenceType": "statement"
         },
         {
@@ -433,17 +465,16 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "check",
-                "to",
-                "phone",
-                "my",
-                "use",
-                "messages",
-                "I"
+                "the",
+                "Cyclists",
+                "path",
+                "river",
+                "ride",
+                "along"
             ],
-            "correctAnswer": "I use my phone to check messages.",
-            "hint": "Start with 'I'. Then action+object, purpose infinitive.",
-            "explanation": "'To check messages'=infinitive of purpose answering WHY.",
+            "correctAnswer": "Cyclists ride along the river path.",
+            "hint": "Look for the word showing movement in the same direction as a line, and keep its noun group together.",
+            "explanation": "'Along' shows movement following a line. The noun phrase after it, 'the river path', includes the compound noun 'river path'.",
             "sentenceType": "statement"
         },
         {
@@ -452,17 +483,19 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "cup",
-                "tea",
-                "a",
-                "He",
-                "of",
-                "green",
-                "drinks"
+                "flat",
+                "delivery",
+                "the",
+                "to",
+                "stairs",
+                "my",
+                "The",
+                "driver",
+                "climbs"
             ],
-            "correctAnswer": "He drinks a cup of green tea.",
-            "hint": "Begin with 'He'. Then action, quantity phrase, tea type.",
-            "explanation": "'A cup of'=quantity expression. 'Green tea'=adjective before noun.",
+            "correctAnswer": "The delivery driver climbs the stairs to my flat.",
+            "hint": "Two things are reached in sequence: first the climbing, then the destination. Keep the destination phrase at the end.",
+            "explanation": "'Climbs the stairs' is a verb with an object. 'To my flat' names the destination and follows the object.",
             "sentenceType": "statement"
         },
         {
@@ -471,17 +504,19 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "night",
-                "in",
-                "She",
-                "every",
-                "journal",
-                "writes",
-                "her"
+                "city",
+                "run",
+                "through",
+                "centre",
+                "the",
+                "from",
+                "airport",
+                "the",
+                "Trains"
             ],
-            "correctAnswer": "She writes in her journal every night.",
-            "hint": "Start with 'She'. Then action, where, time.",
-            "explanation": "'In her journal' - we write 'in' a journal or diary.",
+            "correctAnswer": "Trains from the airport run through the city centre.",
+            "hint": "The subject has extra information attached to it. Separate that from the verb and the route.",
+            "explanation": "'From the airport' is part of the subject phrase and says which trains. 'Through' shows movement inside an area.",
             "sentenceType": "statement"
         },
         {
@@ -490,17 +525,18 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
+                "television",
                 "after",
-                "take",
-                "They",
-                "walk",
-                "long",
                 "dinner",
-                "a"
+                "rarely",
+                "watches",
+                "Our",
+                "daughter",
+                "neighbour's"
             ],
-            "correctAnswer": "They take a long walk after dinner.",
-            "hint": "Begin with 'They'. Then action, adjective+noun, time.",
-            "explanation": "'Take a walk' is a set phrase. 'After dinner'=time phrase.",
+            "correctAnswer": "Our neighbour's daughter rarely watches television after dinner.",
+            "hint": "Assemble the possessive phrase, then place the frequency word before the main verb, and finally add the time.",
+            "explanation": "Possessive 's shows the owner: 'our neighbour's daughter'. 'Rarely' goes before 'watches', and 'after dinner' tells when.",
             "sentenceType": "statement"
         },
         {
@@ -509,17 +545,19 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "my",
-                "phone",
-                "listen",
-                "I",
-                "music",
-                "on",
-                "to"
+                "good",
+                "near",
+                "several",
+                "cafés",
+                "library",
+                "There",
+                "are",
+                "the",
+                "university"
             ],
-            "correctAnswer": "I listen to music on my phone.",
-            "hint": "Start with 'I'. Then listening phrase, where.",
-            "explanation": "'Listen to' always uses 'to'. We listen to music, radio, podcasts.",
+            "correctAnswer": "There are several good cafés near the university library.",
+            "hint": "Begin by deciding whether the sentence announces something singular or plural. Then decide where the location goes.",
+            "explanation": "'There are' agrees with the plural noun 'cafés'. 'Several good' is a quantity word plus an adjective, and 'university library' is a compound noun.",
             "sentenceType": "statement"
         },
         {
@@ -528,17 +566,20 @@
             "subtype": "sentenceBuilder",
             "interactionType": "reorder",
             "shuffledWords": [
-                "children",
-                "her",
-                "with",
-                "helps",
-                "their",
-                "She",
-                "homework"
+                "receptionist",
+                "the",
+                "The",
+                "visitors",
+                "a",
+                "entrance",
+                "temporary",
+                "gives",
+                "badge",
+                "at"
             ],
-            "correctAnswer": "She helps her children with their homework.",
-            "hint": "Begin with 'She'. Then action, object, with-phrase.",
-            "explanation": "'Help someone with something'=V+O+'with'+noun.",
+            "correctAnswer": "The receptionist gives visitors a temporary badge at the entrance.",
+            "hint": "Someone receives an item, and the place where it happens closes the sentence. Check that the receiver comes first.",
+            "explanation": "The pattern is subject + verb + receiver + thing, followed by a place phrase. The article 'a' goes before 'temporary badge'.",
             "sentenceType": "statement"
         }
     ]

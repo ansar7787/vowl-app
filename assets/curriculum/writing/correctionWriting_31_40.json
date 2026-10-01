@@ -8,16 +8,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "The doctor examined [I] carefully and said everything was fine.",
+            "passage": "The interviewer asked [I] several unexpected questions about teamwork.",
             "options": [
+                "me",
                 "mine",
-                "my",
                 "I",
-                "me"
+                "myself"
             ],
             "correctAnswer": "me",
-            "hint": "We need an object pronoun here, since this word comes after the verb 'examined.'",
-            "explanation": "Object pronouns like 'me' follow verbs, so 'examined me' is correct, not the subject pronoun 'I.'",
+            "hint": "After a verb, the object form of the pronoun is needed, not the subject form.",
+            "explanation": "'I' is a subject pronoun and cannot follow a verb as its object. The object pronoun 'me' is correct: 'asked me.'",
             "errorCount": 3
         },
         {
@@ -25,16 +25,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "My sister felt sick, so I took [she] to see a doctor right away.",
+            "passage": "The coach gave [we] some useful feedback after the match.",
             "options": [
-                "she",
-                "hers",
-                "herself",
-                "her"
+                "ours",
+                "us",
+                "we",
+                "ourselves"
             ],
-            "correctAnswer": "her",
-            "hint": "We need an object pronoun here, since it comes after the verb 'took.'",
-            "explanation": "'Her' is the object pronoun that follows the verb 'took,' not the subject pronoun 'she.'",
+            "correctAnswer": "us",
+            "hint": "The pronoun receiving the action of 'gave' needs the object form.",
+            "explanation": "'We' is a subject pronoun, but here the pronoun receives the action, so the object form 'us' is required.",
             "errorCount": 3
         },
         {
@@ -42,16 +42,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "The nurse gave [we] some medicine for the pain in the morning.",
+            "passage": "Between you and [I], I think the proposal needs more detail.",
             "options": [
-                "ours",
-                "us",
-                "we",
-                "our"
+                "I",
+                "myself",
+                "mine",
+                "me"
             ],
-            "correctAnswer": "us",
-            "hint": "We need a plural object pronoun after the verb 'gave.'",
-            "explanation": "'Us' is the object pronoun matching 'we' and follows the verb 'gave,' not the subject pronoun 'we.'",
+            "correctAnswer": "me",
+            "hint": "After a preposition like 'between,' pronouns always take the object form.",
+            "explanation": "Prepositions like 'between' are always followed by object pronouns, so 'me' is correct, even though 'I' feels formal.",
             "errorCount": 3
         },
         {
@@ -59,16 +59,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "The singer thanked [we] warmly for coming to the concert.",
+            "passage": "The manager thanked [they] personally for staying late to finish the order.",
             "options": [
-                "our",
-                "we",
-                "us",
-                "ours"
+                "them",
+                "they",
+                "theirs",
+                "themselves"
             ],
-            "correctAnswer": "us",
-            "hint": "We need an object pronoun after the verb 'thanked.'",
-            "explanation": "'Us' is the object pronoun form of 'we,' used after the verb 'thanked,' not the subject pronoun 'we.'",
+            "correctAnswer": "them",
+            "hint": "The pronoun follows a verb and receives its action — which form is that?",
+            "explanation": "'They' is a subject pronoun, but after the verb 'thanked,' the object pronoun 'them' is required.",
             "errorCount": 3
         },
         {
@@ -76,16 +76,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "I really like this band; their new song makes [I] want to dance.",
+            "passage": "This news really surprised [I], since I hadn't expected any changes.",
             "options": [
-                "my",
-                "me",
                 "I",
+                "me",
+                "myself",
                 "mine"
             ],
             "correctAnswer": "me",
-            "hint": "We need an object pronoun after the verb 'makes.'",
-            "explanation": "'Me' is the object pronoun that follows the verb 'makes,' not the subject pronoun 'I.'",
+            "hint": "Check whether the pronoun performs the action or receives it.",
+            "explanation": "The pronoun receives the action of 'surprised,' so it needs the object form 'me,' not the subject form 'I.'",
             "errorCount": 3
         },
         {
@@ -93,16 +93,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "The movie was so funny that it made [they] laugh the whole time.",
+            "passage": "Could you send the invoice to [she] instead of the main office?",
             "options": [
-                "their",
-                "they",
-                "them",
-                "theirs"
+                "herself",
+                "hers",
+                "her",
+                "she"
             ],
-            "correctAnswer": "them",
-            "hint": "We need a plural object pronoun after the verb 'made.'",
-            "explanation": "'Them' is the object pronoun matching 'they,' used after the verb 'made,' not the subject pronoun 'they.'",
+            "correctAnswer": "her",
+            "hint": "After a preposition like 'to,' pronouns take the object form.",
+            "explanation": "'To' is a preposition, and prepositions are always followed by object pronouns, so 'her' is correct here.",
             "errorCount": 3
         },
         {
@@ -110,16 +110,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "I [check always] my email before I leave for work in the morning.",
+            "passage": "She [checks always] her messages before starting her shift.",
             "options": [
+                "checks always",
                 "check always",
-                "always check",
-                "checking always",
-                "always checking"
+                "always checks",
+                "is always checks"
             ],
-            "correctAnswer": "always check",
-            "hint": "Frequency adverbs like 'always' usually go before the main verb, not after it.",
-            "explanation": "Frequency adverbs such as 'always' are placed before the main verb: 'always check,' not 'check always.'",
+            "correctAnswer": "always checks",
+            "hint": "Frequency adverbs like 'always' usually sit before the main verb, not after it.",
+            "explanation": "Adverbs of frequency such as 'always,' 'never,' and 'usually' typically go before the main verb: 'always checks,' not 'checks always.'",
             "errorCount": 3
         },
         {
@@ -127,16 +127,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "She [answers never] messages late at night because she goes to bed early.",
+            "passage": "We [call rarely] the landlord unless something is seriously broken.",
             "options": [
-                "never answers",
-                "answers never",
-                "never answering",
-                "answering never"
+                "rare call",
+                "rarely call",
+                "call rarely",
+                "are rarely call"
             ],
-            "correctAnswer": "never answers",
-            "hint": "Frequency adverbs like 'never' usually go before the main verb, not after it.",
-            "explanation": "'Never' is placed before the main verb: 'never answers,' not 'answers never.'",
+            "correctAnswer": "rarely call",
+            "hint": "The frequency adverb belongs directly before the verb it modifies.",
+            "explanation": "'Rarely' should appear before the main verb: 'rarely call.' Placing it after the verb sounds unnatural in standard English.",
             "errorCount": 3
         },
         {
@@ -144,16 +144,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "We [call usually] our grandparents on Sunday afternoons every week.",
+            "passage": "He [answers never] emails over the weekend, even from his boss.",
             "options": [
-                "call usually",
-                "usually call",
-                "usually calling",
-                "calling usually"
+                "never answer",
+                "not never answers",
+                "answers never",
+                "never answers"
             ],
-            "correctAnswer": "usually call",
-            "hint": "Frequency adverbs like 'usually' usually go before the main verb, not after it.",
-            "explanation": "'Usually' is placed before the main verb: 'usually call,' not 'call usually.'",
+            "correctAnswer": "never answers",
+            "hint": "Move the frequency adverb to its usual position before the verb.",
+            "explanation": "'Never' goes before the main verb it modifies: 'never answers.' Placing it afterward is a common but incorrect word-order pattern.",
             "errorCount": 3
         },
         {
@@ -161,16 +161,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "I [make always] my bed as soon as I wake up each day.",
+            "passage": "My parents [usually are] home by six, but they're often late lately.",
             "options": [
-                "always making",
-                "making always",
-                "always make",
-                "make always"
+                "are usually",
+                "is usually",
+                "usually are",
+                "usually is"
             ],
-            "correctAnswer": "always make",
-            "hint": "This frequency word belongs right before the verb it describes.",
-            "explanation": "'Always' is placed before the main verb: 'always make,' not 'make always.'",
+            "correctAnswer": "are usually",
+            "hint": "With the verb 'be,' frequency adverbs actually go after it, not before — this is an exception to the usual rule.",
+            "explanation": "Unlike most verbs, 'be' takes the frequency adverb after it, not before: 'are usually home.' This is a key exception to the standard placement rule.",
             "errorCount": 3
         },
         {
@@ -178,16 +178,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "He [skips rarely] breakfast, maybe once or twice a year at most.",
+            "passage": "I [make always] my coffee before checking any messages in the morning.",
             "options": [
-                "skipping rarely",
-                "skips rarely",
-                "rarely skipping",
-                "rarely skips"
+                "always makes",
+                "is always make",
+                "make always",
+                "always make"
             ],
-            "correctAnswer": "rarely skips",
-            "hint": "Frequency adverbs like 'rarely' usually go before the main verb, not after it.",
-            "explanation": "'Rarely' is placed before the main verb: 'rarely skips,' not 'skips rarely.'",
+            "correctAnswer": "always make",
+            "hint": "Reposition the frequency adverb so it comes before the main verb, as with most verbs.",
+            "explanation": "With ordinary action verbs, the frequency adverb comes before the verb: 'always make,' not 'make always.'",
             "errorCount": 3
         },
         {
@@ -195,16 +195,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "We [go always] for a walk after dinner; it's part of our routine.",
+            "passage": "This train [rarely is] on time during the winter months.",
             "options": [
-                "always going",
-                "go always",
-                "always go",
-                "going always"
+                "rarely is",
+                "is rarely",
+                "rare is",
+                "rarely be"
             ],
-            "correctAnswer": "always go",
-            "hint": "Check that the frequency adverb sits ahead of the verb, not trailing after it.",
-            "explanation": "'Always' is placed before the main verb: 'always go,' not 'go always.'",
+            "correctAnswer": "is rarely",
+            "hint": "Remember the exception: with 'be,' the frequency adverb follows the verb.",
+            "explanation": "Because the verb is a form of 'be,' the frequency adverb 'rarely' correctly comes after it: 'is rarely.' This differs from action verbs, where the adverb comes first.",
             "errorCount": 3
         },
         {
@@ -212,16 +212,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "This year's exam was [more harder] than last year's exam.",
+            "passage": "This year's contract terms are [more better] than last year's.",
             "options": [
-                "more hard",
-                "harder",
-                "most harder",
-                "more harder"
+                "more better",
+                "more good",
+                "better",
+                "gooder"
             ],
-            "correctAnswer": "harder",
-            "hint": "Short adjectives form comparatives with -er alone, not with both -er and 'more.'",
-            "explanation": "Short adjectives like 'hard' use only the -er ending: 'harder,' never both 'more' and '-er' together.",
+            "correctAnswer": "better",
+            "hint": "This word is already an irregular comparative form — can 'more' be added in front of a comparative that's already complete?",
+            "explanation": "'Better' is already the comparative form of 'good.' Adding 'more' creates a double comparative, which is incorrect: the correct form is simply 'better.'",
             "errorCount": 3
         },
         {
@@ -229,16 +229,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "My new classroom is [brighter than than] my old one.",
+            "passage": "My new commute is [more shorter] than my old one used to be.",
             "options": [
-                "more brighter than",
-                "brighter than",
-                "brighter than than",
-                "brightest than"
+                "shorter",
+                "more shorter",
+                "more short",
+                "shortest"
             ],
-            "correctAnswer": "brighter than",
-            "hint": "The word 'than' should only appear once in a comparative sentence.",
-            "explanation": "'Than' should appear only once after a comparative adjective: 'brighter than,' not repeated twice.",
+            "correctAnswer": "shorter",
+            "hint": "Short adjectives usually take an '-er' ending rather than 'more' in front of them.",
+            "explanation": "Short adjectives like 'short' form comparatives with '-er,' not with 'more.' Using both together, as in 'more shorter,' is a double comparative and is incorrect.",
             "errorCount": 3
         },
         {
@@ -246,16 +246,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "History class is [more interestinger] than mathematics class, in my opinion.",
+            "passage": "The second draft of the essay is [more clearer] than the first one.",
             "options": [
-                "more interestinger",
-                "interestinger",
-                "most interestinger",
-                "more interesting"
+                "more clearer",
+                "clearer",
+                "more clear",
+                "clearest"
             ],
-            "correctAnswer": "more interesting",
-            "hint": "Longer adjectives use 'more' instead of an -er ending, and never combine both.",
-            "explanation": "Longer adjectives like 'interesting' use 'more' alone: 'more interesting,' never adding -er as well.",
+            "correctAnswer": "clearer",
+            "hint": "Check whether the adjective already has an '-er' ending — if so, 'more' shouldn't also be used.",
+            "explanation": "'Clearer' already carries the comparative '-er' ending, so adding 'more' in front of it is redundant and incorrect.",
             "errorCount": 3
         },
         {
@@ -263,16 +263,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "This job is [more easier] than my last one because I work from home.",
+            "passage": "This apartment is [more bigger] than the one we saw yesterday.",
             "options": [
-                "most easier",
-                "easier",
-                "more easier",
-                "more easy"
+                "bigger",
+                "biggest",
+                "more big",
+                "more bigger"
             ],
-            "correctAnswer": "easier",
-            "hint": "Adjectives ending in -y change to -ier in the comparative, without adding 'more' as well.",
-            "explanation": "'Easy' becomes 'easier' in the comparative; adding 'more' as well, as in 'more easier,' is incorrect.",
+            "correctAnswer": "bigger",
+            "hint": "One-syllable adjectives typically take '-er,' not 'more,' in the comparative form.",
+            "explanation": "'Big' is a short adjective and forms its comparative by doubling the final consonant and adding '-er': 'bigger.' Using 'more' as well is a double comparative.",
             "errorCount": 3
         },
         {
@@ -280,16 +280,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "Our new office is [more modern than than] the old building downtown.",
+            "passage": "Her second presentation was [more worse] than her first attempt.",
             "options": [
-                "more modern than",
-                "modern than than",
-                "more modern than than",
-                "more modern that"
+                "more worse",
+                "more bad",
+                "worst",
+                "worse"
             ],
-            "correctAnswer": "more modern than",
-            "hint": "Check that 'than' isn't accidentally repeated in this comparison.",
-            "explanation": "'Than' should appear only once after a comparative phrase: 'more modern than,' not repeated.",
+            "correctAnswer": "worse",
+            "hint": "This is already an irregular comparative form of 'bad' — think about whether 'more' can be added on top of it.",
+            "explanation": "'Worse' is the irregular comparative form of 'bad.' Adding 'more' in front of it, as in 'more worse,' is incorrect and redundant.",
             "errorCount": 3
         },
         {
@@ -297,16 +297,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "My new manager is [more friendlier] than the previous one.",
+            "passage": "This year's marketing budget is [more smaller] than we originally planned.",
             "options": [
-                "friendlier",
-                "more friendly",
-                "more friendlier",
-                "most friendlier"
+                "smallest",
+                "more smaller",
+                "smaller",
+                "more small"
             ],
-            "correctAnswer": "friendlier",
-            "hint": "Two-syllable adjectives ending in -y typically change to -ier alone, without adding 'more.'",
-            "explanation": "'Friendly' becomes 'friendlier' in the comparative; adding 'more' as well is incorrect and redundant.",
+            "correctAnswer": "smaller",
+            "hint": "Short adjectives ending in a consonant usually just add '-er.'",
+            "explanation": "'Small' takes the regular comparative ending '-er': 'smaller.' Adding 'more' in front creates an unnecessary double comparative.",
             "errorCount": 3
         },
         {
@@ -314,16 +314,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "We don't have [many time] before our flight departs, so let's hurry to the gate.",
+            "passage": "We don't have [many time] left before the store closes for the night.",
             "options": [
-                "time much",
+                "many",
+                "much times",
                 "many time",
-                "much time",
-                "a lot time"
+                "much time"
             ],
             "correctAnswer": "much time",
-            "hint": "'Time' is an uncountable noun - which quantity word matches it?",
-            "explanation": "'Time' is uncountable, so it pairs with 'much,' not 'many,' which is reserved for countable plural nouns.",
+            "hint": "'Time' in this sense is uncountable — you can't count individual 'times' when talking about duration.",
+            "explanation": "'Time' as a general concept is a noncount noun, so it pairs with 'much,' not 'many,' which is reserved for countable nouns.",
             "errorCount": 3
         },
         {
@@ -331,16 +331,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "There aren't [much seats] left on this train, so we should hurry.",
+            "passage": "There aren't [much apples] left in the fruit bowl after the party.",
             "options": [
-                "many seats",
-                "seats much",
-                "a lot seats",
-                "much seats"
+                "many apple",
+                "many apples",
+                "much apples",
+                "much apple"
             ],
-            "correctAnswer": "many seats",
-            "hint": "'Seats' is a countable plural noun - which quantity word matches it?",
-            "explanation": "'Seats' is countable and plural, so it pairs with 'many,' not 'much,' which is for uncountable nouns.",
+            "correctAnswer": "many apples",
+            "hint": "'Apples' can be counted one by one — which quantifier fits countable plural nouns?",
+            "explanation": "Since 'apples' is a countable plural noun, it takes 'many,' not 'much,' which is used for noncount nouns.",
             "errorCount": 3
         },
         {
@@ -348,16 +348,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "We met [much interesting travelers] at the hostel last night.",
+            "passage": "We met [much interesting people] during our trip through the mountains.",
             "options": [
-                "a lot interesting travelers",
-                "many interesting travelers",
-                "interesting travelers much",
-                "much interesting travelers"
+                "many interesting person",
+                "much interesting people",
+                "many interesting people",
+                "much interesting persons"
             ],
-            "correctAnswer": "many interesting travelers",
-            "hint": "'Travelers' is a countable plural noun - which quantity word matches it?",
-            "explanation": "'Travelers' is countable and plural, so 'many' is correct, not 'much,' which is used with uncountable nouns.",
+            "correctAnswer": "many interesting people",
+            "hint": "'People' functions as a countable plural noun, even though it doesn't end in -s.",
+            "explanation": "'People' is a countable plural noun, so it needs 'many,' not 'much.' 'Much' would only be correct with noncount nouns like 'advice' or 'furniture.'",
             "errorCount": 3
         },
         {
@@ -365,16 +365,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "Do you have [much photos] from your cousin's wedding last month?",
+            "passage": "My accountant gave me [many advice] about saving for retirement.",
             "options": [
-                "many photos",
-                "photos much",
-                "much photos",
-                "a lot photos"
+                "much advice",
+                "much advices",
+                "many advices",
+                "many advice"
             ],
-            "correctAnswer": "many photos",
-            "hint": "'Photos' is a countable plural noun - which quantity word matches it?",
-            "explanation": "'Photos' is countable and plural, so 'many' is correct, not 'much,' which pairs with uncountable nouns.",
+            "correctAnswer": "much advice",
+            "hint": "'Advice' cannot be counted individually as 'one advice, two advices' — it's a noncount noun.",
+            "explanation": "'Advice' is an uncountable noun in English, so it takes 'much,' not 'many,' and never takes a plural '-s.'",
             "errorCount": 3
         },
         {
@@ -382,16 +382,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "My uncle has [many advice] about starting a small business.",
+            "passage": "There isn't [many furniture] in the new apartment yet, just a couch.",
             "options": [
-                "a lot advice",
-                "much advice",
-                "many advice",
-                "advice many"
+                "many furnitures",
+                "much furniture",
+                "many furniture",
+                "much furnitures"
             ],
-            "correctAnswer": "much advice",
-            "hint": "'Advice' is an uncountable noun - which quantity word matches it?",
-            "explanation": "'Advice' is uncountable, so it pairs with 'much,' not 'many,' which is reserved for countable nouns.",
+            "correctAnswer": "much furniture",
+            "hint": "Like 'advice,' this word refers to a general category rather than individual countable items.",
+            "explanation": "'Furniture' is uncountable in English, even though it refers to multiple objects collectively. It takes 'much,' not 'many,' and has no plural form.",
             "errorCount": 3
         },
         {
@@ -399,16 +399,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "There isn't [many reason] to worry; everyone in the family is doing fine.",
+            "passage": "Do you have [much questions] about the new onboarding process?",
             "options": [
-                "much reason",
-                "a lot reason",
-                "reason much",
-                "many reason"
+                "much question",
+                "many question",
+                "many questions",
+                "much questions"
             ],
-            "correctAnswer": "much reason",
-            "hint": "'Reason' here is singular and uncountable in this context - which quantity word fits?",
-            "explanation": "Used this way, 'reason' pairs with 'much,' not 'many,' which is reserved for countable plural nouns.",
+            "correctAnswer": "many questions",
+            "hint": "'Questions' can be counted one at a time — which quantifier suits countable nouns?",
+            "explanation": "'Questions' is a countable plural noun, so 'many' is required rather than 'much,' which pairs only with noncount nouns.",
             "errorCount": 3
         },
         {
@@ -416,16 +416,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "I hope to visit Japan [at the future], once international flights become more affordable again.",
+            "passage": "I hope to finish this certification [at the future], maybe within a year or two.",
             "options": [
                 "at the future",
-                "for the future",
                 "on the future",
+                "to the future",
                 "in the future"
             ],
             "correctAnswer": "in the future",
-            "hint": "Think about the preposition that goes before the general idea of time yet to come.",
-            "explanation": "'In the future' is the standard phrase for time yet to come; 'at the future' is not correct English.",
+            "hint": "This phrase describes a general, ongoing period ahead, not a fixed point.",
+            "explanation": "'In the future' is the standard fixed expression for time ahead; 'at' is reserved for specific points, not general future time.",
             "errorCount": 3
         },
         {
@@ -433,16 +433,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "My rent payment is always due [in the beginning of] the month, on the very first day.",
+            "passage": "The rent is always due [in the beginning of] the month, on the first.",
             "options": [
-                "on the beginning of",
-                "for the beginning of",
+                "at the beginning of",
                 "in the beginning of",
-                "at the beginning of"
+                "to the beginning of",
+                "on the beginning of"
             ],
             "correctAnswer": "at the beginning of",
-            "hint": "Think about the preposition that pairs with 'the beginning' or 'the end' of a time period.",
-            "explanation": "'At the beginning of' and 'at the end of' are the standard forms; 'in the beginning of' is a common error.",
+            "hint": "This is a fixed expression — 'the beginning of' pairs with one specific preposition by convention.",
+            "explanation": "The fixed phrase is 'at the beginning of,' not 'in the beginning of.' This is a set expression that doesn't follow the usual in/on/at rules exactly.",
             "errorCount": 3
         },
         {
@@ -450,16 +450,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "Most online orders arrive [on five business days] from the order date.",
+            "passage": "Most refunds are processed [on ten business days] from the return date.",
             "options": [
-                "within five business days",
-                "on five business days",
-                "at five business days",
-                "during five business days"
+                "on ten business days",
+                "in ten business days",
+                "at ten business days",
+                "within ten business days"
             ],
-            "correctAnswer": "within five business days",
-            "hint": "Think about a preposition meaning 'before this period of time ends.'",
-            "explanation": "'Within' expresses a time limit before a period ends, such as 'within five days,' not 'on five days.'",
+            "correctAnswer": "within ten business days",
+            "hint": "This phrase expresses a time limit or duration, which typically needs a different preposition altogether.",
+            "explanation": "To express a deadline within a span of time, English uses 'within,' not 'on.' 'Within ten business days' correctly signals a time limit.",
             "errorCount": 3
         },
         {
@@ -467,16 +467,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "Could you call the client and email the invoice [in the same time]? We're short on time before the deadline.",
+            "passage": "Could you send the files and call the client [in the same time]?",
             "options": [
-                "on the same time",
-                "for the same time",
+                "to the same time",
+                "at the same time",
                 "in the same time",
-                "at the same time"
+                "on the same time"
             ],
             "correctAnswer": "at the same time",
-            "hint": "Think about the fixed phrase meaning 'simultaneously,' doing two things together.",
-            "explanation": "'At the same time' is the fixed expression meaning simultaneously; 'in the same time' is incorrect.",
+            "hint": "This is another fixed expression — memorize the specific preposition it takes.",
+            "explanation": "The set phrase is 'at the same time,' not 'in the same time.' Certain time expressions follow fixed patterns that must be memorized individually.",
             "errorCount": 3
         },
         {
@@ -484,16 +484,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "The restaurant serves a special menu [at the holiday season] every year.",
+            "passage": "The bakery introduces a special menu [at the holiday season] every year.",
             "options": [
                 "in the holiday season",
+                "on the holiday season",
                 "during the holiday season",
-                "at the holiday season",
-                "on the holiday season"
+                "at the holiday season"
             ],
             "correctAnswer": "during the holiday season",
-            "hint": "Think about the preposition meaning 'throughout a period of time.'",
-            "explanation": "'During' describes something happening throughout a period, such as a season, not 'at.'",
+            "hint": "This phrase refers to an extended period, not a single point — which preposition expresses 'throughout that time'?",
+            "explanation": "'During' is used for events or periods that span a length of time, such as 'during the holiday season,' rather than 'at,' which suggests a single point.",
             "errorCount": 3
         },
         {
@@ -501,16 +501,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "The new bakery on Main Street officially opens [in the 5th of May], according to the flyer posted outside.",
+            "passage": "The new policy takes effect [in the 1st of June], according to the memo.",
             "options": [
-                "at the 5th of May",
-                "during the 5th of May",
-                "in the 5th of May",
-                "on the 5th of May"
+                "on the 1st of June",
+                "at the 1st of June",
+                "to the 1st of June",
+                "in the 1st of June"
             ],
-            "correctAnswer": "on the 5th of May",
-            "hint": "Think about the preposition we use with a specific calendar date.",
-            "explanation": "Specific calendar dates take 'on,' as in 'on the 5th of May,' not 'in the 5th of May.'",
+            "correctAnswer": "on the 1st of June",
+            "hint": "Specific calendar dates take a particular preposition, different from months alone.",
+            "explanation": "Specific dates take 'on,' as in 'on the 1st of June.' 'In' would only be correct with the month alone, such as 'in June.'",
             "errorCount": 3
         }
     ]

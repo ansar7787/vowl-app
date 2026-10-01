@@ -10,14 +10,14 @@
             "interactionType": "typing",
             "passage": "We [have wait] for the tour guide for almost twenty minutes now.",
             "options": [
-                "were waiting",
-                "have been waiting",
                 "have wait",
-                "waited"
+                "have been waiting",
+                "waited",
+                "are waiting since"
             ],
             "correctAnswer": "have been waiting",
-            "hint": "The present perfect continuous needs 'have been' plus the -ing form to show ongoing duration.",
-            "explanation": "The present perfect continuous requires 'have been' + -ing: 'have been waiting,' not 'have wait.'",
+            "hint": "The waiting started in the past and is still continuing — which structure shows ongoing duration?",
+            "explanation": "Present perfect continuous ('have/has been + verb-ing') expresses an action that began in the past and continues now, so 'have been waiting' is correct.",
             "errorCount": 3
         },
         {
@@ -27,14 +27,14 @@
             "interactionType": "typing",
             "passage": "My legs hurt because I [have walking] all day around the old city.",
             "options": [
-                "was walking",
+                "have walking",
                 "walked",
                 "have been walking",
-                "have walking"
+                "am walking all day"
             ],
             "correctAnswer": "have been walking",
-            "hint": "Think about an ongoing action that explains a present physical result, and check the missing word.",
-            "explanation": "The present perfect continuous needs 'have been' + -ing: 'have been walking,' not just 'have walking.'",
+            "hint": "The action of walking started earlier and its effect continues into the present.",
+            "explanation": "The correct present perfect continuous form needs 'have been' plus the -ing verb: 'have been walking,' not just 'have walking.'",
             "errorCount": 3
         },
         {
@@ -42,16 +42,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "How long [you have been planning] for this trip already?",
+            "passage": "How long [you have been planning] this trip already?",
             "options": [
-                "have you been planning",
+                "you been planning",
+                "have you planning",
                 "you have been planning",
-                "are you planning",
-                "did you plan"
+                "have you been planning"
             ],
             "correctAnswer": "have you been planning",
-            "hint": "Questions normally flip the auxiliary and subject around.",
-            "explanation": "Present perfect continuous questions invert the auxiliary and subject: 'have you been planning,' not the reverse.",
+            "hint": "In a question, the auxiliary moves to the front, before the subject.",
+            "explanation": "Present perfect continuous questions invert subject and auxiliary: 'have you been planning,' not 'you have been planning.'",
             "errorCount": 3
         },
         {
@@ -61,14 +61,14 @@
             "interactionType": "typing",
             "passage": "My parents [have talking] about retirement for the past few months.",
             "options": [
+                "have been talking",
                 "have talking",
-                "were talking",
                 "talked",
-                "have been talking"
+                "are talking since"
             ],
             "correctAnswer": "have been talking",
-            "hint": "The present perfect continuous needs 'have been' plus the -ing form.",
-            "explanation": "The present perfect continuous requires 'have been' + -ing: 'have been talking,' not 'have talking.'",
+            "hint": "The talking started months ago and is still ongoing — which structure fits that?",
+            "explanation": "'Have been talking' correctly shows an action that started in the past and continues into the present, unlike the incomplete 'have talking.'",
             "errorCount": 3
         },
         {
@@ -78,14 +78,14 @@
             "interactionType": "typing",
             "passage": "She [has practice] for her driving test for weeks, so she should pass easily.",
             "options": [
-                "has been practicing",
-                "was practicing",
+                "is practicing since",
                 "has practice",
+                "has been practicing",
                 "practiced"
             ],
             "correctAnswer": "has been practicing",
-            "hint": "With a singular subject, the present perfect continuous uses 'has been' plus the -ing form.",
-            "explanation": "With a singular subject, the present perfect continuous needs 'has been' + -ing: 'has been practicing.'",
+            "hint": "The action began weeks ago and is still continuing up to now.",
+            "explanation": "The present perfect continuous requires 'has been + verb-ing': 'has been practicing.' The base form alone doesn't complete the structure.",
             "errorCount": 3
         },
         {
@@ -95,14 +95,14 @@
             "interactionType": "typing",
             "passage": "Why [you have been crying] all morning? Is something wrong?",
             "options": [
-                "did you cry",
-                "have you been crying",
-                "are you crying",
-                "you have been crying"
+                "have you crying",
+                "you have been crying",
+                "you been crying",
+                "have you been crying"
             ],
             "correctAnswer": "have you been crying",
-            "hint": "Remember to place the auxiliary verb ahead of the subject in a question.",
-            "explanation": "Present perfect continuous questions invert the auxiliary and subject: 'have you been crying,' not the reverse.",
+            "hint": "Move the auxiliary to the front of the question, before the subject.",
+            "explanation": "In questions, the auxiliary 'have' moves before the subject: 'have you been crying,' not 'you have been crying.'",
             "errorCount": 3
         },
         {
@@ -112,14 +112,14 @@
             "interactionType": "typing",
             "passage": "By the time I arrived at the store, the sale [has ended] already.",
             "options": [
-                "was ending",
-                "has ended",
+                "ended already before",
                 "had ended",
-                "ended"
+                "was ending",
+                "has ended"
             ],
             "correctAnswer": "had ended",
-            "hint": "Think about an action completed before another past action, shown by 'by the time,' and the correct auxiliary for the past.",
-            "explanation": "The past perfect uses 'had,' not 'has,' for an action completed before another past event: 'had ended.'",
+            "hint": "Two past events are being compared — one happened before the other, which needs the earlier-past tense.",
+            "explanation": "Past perfect ('had + past participle') marks the earlier of two past events. Since the sale ended before the arrival, 'had ended' is correct, not the present perfect 'has ended.'",
             "errorCount": 3
         },
         {
@@ -130,13 +130,13 @@
             "passage": "I realized I [had leave] my wallet at home after I reached the checkout.",
             "options": [
                 "had left",
+                "have left",
                 "was leaving",
-                "had leave",
-                "have left"
+                "had leave"
             ],
             "correctAnswer": "had left",
-            "hint": "The past perfect needs the past participle, not the base verb, after 'had.'",
-            "explanation": "The past perfect requires the past participle after 'had': 'had left,' not 'had leave.'",
+            "hint": "The past perfect needs the past participle, not the base form.",
+            "explanation": "Past perfect requires 'had + past participle,' and 'leave' irregularly becomes 'left': 'had left.'",
             "errorCount": 3
         },
         {
@@ -146,14 +146,14 @@
             "interactionType": "typing",
             "passage": "She had never seen such low prices before she [had visited] that outlet store.",
             "options": [
-                "visited",
                 "has visited",
                 "had visited",
-                "visits"
+                "visited",
+                "was visiting"
             ],
             "correctAnswer": "visited",
-            "hint": "This clause describes the second, later action, so it should be in the simple past, not the past perfect.",
-            "explanation": "The second, later action in a past perfect sentence usually takes the simple past: 'visited,' not 'had visited.'",
+            "hint": "The visiting is the later of the two past events here — check which one needs the simple past instead.",
+            "explanation": "Since visiting the store is the second, more recent event, it takes the simple past 'visited,' while the earlier event ('had never seen') takes the past perfect.",
             "errorCount": 3
         },
         {
@@ -163,14 +163,14 @@
             "interactionType": "typing",
             "passage": "By the time the guests arrived, she [has prepared] all the food already.",
             "options": [
-                "prepared",
+                "prepared already before",
                 "had prepared",
-                "was preparing",
-                "has prepared"
+                "has prepared",
+                "was preparing"
             ],
             "correctAnswer": "had prepared",
-            "hint": "Think about an action completed before another past event, and the correct auxiliary for the past.",
-            "explanation": "The past perfect uses 'had,' not 'has,' for an action finished before another past moment: 'had prepared.'",
+            "hint": "One event (preparing) finished before another past event (the guests arriving).",
+            "explanation": "Because the preparing was completed before the guests arrived, the past perfect 'had prepared' is required, not the present perfect.",
             "errorCount": 3
         },
         {
@@ -180,14 +180,14 @@
             "interactionType": "typing",
             "passage": "I had already eaten dinner before my friend [had called] to invite me out.",
             "options": [
-                "calls",
+                "was calling",
+                "has called",
                 "had called",
-                "called",
-                "has called"
+                "called"
             ],
             "correctAnswer": "called",
-            "hint": "This clause describes the second, later action, so use the simple past, not the past perfect.",
-            "explanation": "The later action in a past perfect sentence takes the simple past: 'called,' not 'had called.'",
+            "hint": "The friend's call is the more recent of the two past events — which tense fits the later one?",
+            "explanation": "The call is the second, more recent event, so it takes the simple past 'called,' while 'had already eaten' correctly marks the earlier event.",
             "errorCount": 3
         },
         {
@@ -198,13 +198,13 @@
             "passage": "We discovered that the restaurant [has closed] before we even got there.",
             "options": [
                 "had closed",
+                "closed already",
                 "has closed",
-                "was closing",
-                "closed"
+                "was closing"
             ],
             "correctAnswer": "had closed",
-            "hint": "Think about an action completed before another past action, and the correct auxiliary for the past.",
-            "explanation": "The past perfect uses 'had,' not 'has,' to show the earlier completed action: 'had closed.'",
+            "hint": "The closing happened before the discovery, both in the past — which tense shows the earlier action?",
+            "explanation": "Since closing happened before the discovery, the earlier past event needs the past perfect: 'had closed.'",
             "errorCount": 3
         },
         {
@@ -214,14 +214,14 @@
             "interactionType": "typing",
             "passage": "If I [will have] more free time, I would learn how to code.",
             "options": [
-                "have",
+                "had",
                 "will have",
-                "having",
-                "had"
+                "would have",
+                "have"
             ],
             "correctAnswer": "had",
-            "hint": "Second conditional uses the simple past in the 'if' clause for an unreal present situation, not 'will.'",
-            "explanation": "The second conditional uses the simple past in the 'if' clause: 'had,' not 'will have.'",
+            "hint": "Second conditional 'if' clauses use the simple past, even though the meaning is present or future.",
+            "explanation": "The second conditional uses simple past in the 'if' clause, even for present situations: 'If I had.' 'Will' never appears in this clause.",
             "errorCount": 3
         },
         {
@@ -231,14 +231,14 @@
             "interactionType": "typing",
             "passage": "If this app [was] slower, fewer people would use it every day.",
             "options": [
+                "is",
                 "was",
-                "will be",
                 "were",
-                "is"
+                "would be"
             ],
             "correctAnswer": "were",
-            "hint": "Second conditional often uses 'were' instead of 'was,' especially in a more formal style.",
-            "explanation": "In the second conditional, 'were' is commonly used for all subjects, even singular ones, instead of 'was.'",
+            "hint": "In formal second conditionals, the verb 'be' traditionally takes one specific past-tense form for every subject, including singular ones.",
+            "explanation": "In the second conditional, formal English uses 'were' for all subjects, even singular ones like 'this app': 'If this app were.'",
             "errorCount": 3
         },
         {
@@ -248,14 +248,14 @@
             "interactionType": "typing",
             "passage": "If I lost my phone, I [will lose] all my saved contacts.",
             "options": [
-                "losing",
+                "am losing",
                 "will lose",
                 "lose",
                 "would lose"
             ],
             "correctAnswer": "would lose",
-            "hint": "The main clause of a second conditional sentence uses 'would' plus the base verb, not 'will.'",
-            "explanation": "The result clause of a second conditional uses 'would' + base verb: 'would lose,' not 'will lose.'",
+            "hint": "The result clause of a second conditional uses 'would,' not 'will.'",
+            "explanation": "Second conditional result clauses use 'would + base verb': 'would lose.' 'Will' belongs to the first conditional, not the second.",
             "errorCount": 3
         },
         {
@@ -265,14 +265,14 @@
             "interactionType": "typing",
             "passage": "If I [will eat] more vegetables, I would probably feel more energetic.",
             "options": [
-                "eat",
-                "eating",
+                "will eat",
                 "ate",
-                "will eat"
+                "would eat",
+                "eat"
             ],
             "correctAnswer": "ate",
-            "hint": "Second conditional uses the simple past in the 'if' clause for a hypothetical situation, not 'will.'",
-            "explanation": "The 'if' clause of a second conditional uses the simple past: 'ate,' not 'will eat.'",
+            "hint": "The 'if' clause of a second conditional takes the simple past tense.",
+            "explanation": "Second conditional 'if' clauses use the simple past, so 'ate' is correct rather than 'will eat,' which belongs to the first conditional.",
             "errorCount": 3
         },
         {
@@ -282,14 +282,14 @@
             "interactionType": "typing",
             "passage": "If she [was] less stressed, she would probably sleep much better at night.",
             "options": [
-                "was",
                 "is",
-                "will be",
+                "was",
+                "would be",
                 "were"
             ],
             "correctAnswer": "were",
-            "hint": "Second conditional often uses 'were' for all subjects in a more formal style.",
-            "explanation": "'Were' is commonly used in the second conditional for all subjects, including singular ones, instead of 'was.'",
+            "hint": "Formal second conditionals use one specific form of 'be' for every subject.",
+            "explanation": "In formal English, the second conditional uses 'were' for all subjects: 'If she were.' This is a long-standing convention, though 'was' is common informally.",
             "errorCount": 3
         },
         {
@@ -302,11 +302,11 @@
                 "will become",
                 "would become",
                 "become",
-                "becoming"
+                "are becoming"
             ],
             "correctAnswer": "would become",
-            "hint": "Remember that second conditional results pair 'would' with the base verb form.",
-            "explanation": "The result clause of a second conditional sentence takes 'would' + base verb: 'would become,' not 'will become.'",
+            "hint": "The main clause of a second conditional needs 'would,' not 'will.'",
+            "explanation": "The result clause of a second conditional takes 'would + base verb': 'would become,' not 'will become.'",
             "errorCount": 3
         },
         {
@@ -316,14 +316,14 @@
             "interactionType": "typing",
             "passage": "This song [plays] on the radio almost every single day around here.",
             "options": [
-                "was played",
                 "is played",
-                "played",
+                "was played",
+                "is playing",
                 "plays"
             ],
             "correctAnswer": "is played",
-            "hint": "Think about who performs the action - here, the focus is on the song, not who plays it.",
-            "explanation": "The passive voice 'is played' focuses on the song itself, not who is playing it, unlike the active 'plays.'",
+            "hint": "The song doesn't play itself — someone or something plays it, so the subject receives the action.",
+            "explanation": "Since the song receives the action rather than performing it, the passive voice is needed: 'is played,' not the active 'plays.'",
             "errorCount": 3
         },
         {
@@ -334,13 +334,13 @@
             "passage": "Tickets for the festival [sell] online and at the box office every season.",
             "options": [
                 "were sold",
-                "sold",
+                "sell",
                 "are sold",
-                "sell"
+                "are selling"
             ],
             "correctAnswer": "are sold",
-            "hint": "Think about the focus of the sentence - it's on the tickets, not on who sells them.",
-            "explanation": "The passive 'are sold' shifts focus to the tickets rather than the seller, unlike the active 'sell.'",
+            "hint": "Tickets don't sell themselves — they receive the action of selling from someone else, so think about which voice that requires.",
+            "explanation": "'Tickets' receive the action of selling rather than performing it, so the passive form 'are sold' is correct.",
             "errorCount": 3
         },
         {
@@ -351,13 +351,13 @@
             "passage": "This show [watches] by millions of viewers around the world every week.",
             "options": [
                 "is watched",
-                "watches",
-                "watched",
-                "was watched"
+                "is watching",
+                "was watched",
+                "watches"
             ],
             "correctAnswer": "is watched",
-            "hint": "Think about the focus being on the show, not the people watching it.",
-            "explanation": "Passive voice 'is watched' emphasizes the show as the subject, not 'watches,' which would need a different subject.",
+            "hint": "The show doesn't watch anything — it receives the action of watching from viewers, which points to a specific voice.",
+            "explanation": "'This show' is the receiver of the action, not the performer, so the passive form 'is watched' is required instead of the active 'watches.'",
             "errorCount": 3
         },
         {
@@ -368,13 +368,13 @@
             "passage": "This form [signs] by both parties before it becomes official.",
             "options": [
                 "was signed",
-                "signs",
+                "is signing",
                 "is signed",
-                "signed"
+                "signs"
             ],
             "correctAnswer": "is signed",
-            "hint": "Think about the focus being on the form, not on who signs it.",
-            "explanation": "The passive voice 'is signed' puts the focus on the form rather than the signer, unlike the active 'signs.'",
+            "hint": "The form doesn't sign itself — it's signed by the parties, making it the receiver of the action.",
+            "explanation": "Since 'this form' receives the action of signing, the passive voice 'is signed' is correct, not the active 'signs.'",
             "errorCount": 3
         },
         {
@@ -384,14 +384,14 @@
             "interactionType": "typing",
             "passage": "All complaints [handle] within three business days, according to policy.",
             "options": [
+                "were handled",
+                "are handling",
                 "handle",
-                "are handled",
-                "handled",
-                "were handled"
+                "are handled"
             ],
             "correctAnswer": "are handled",
-            "hint": "Think about the focus being on the complaints, not on the staff handling them.",
-            "explanation": "Passive voice 'are handled' emphasizes the complaints rather than who deals with them, unlike 'handle.'",
+            "hint": "Complaints don't handle themselves — staff handle them, so the subject here receives the action rather than performing it.",
+            "explanation": "'Complaints' is the receiver of the action, so the passive form 'are handled' is required rather than the active 'handle.'",
             "errorCount": 3
         },
         {
@@ -401,14 +401,14 @@
             "interactionType": "typing",
             "passage": "This message [sends] automatically to everyone on the mailing list.",
             "options": [
+                "is sending",
                 "is sent",
                 "was sent",
-                "sends",
-                "sent"
+                "sends"
             ],
             "correctAnswer": "is sent",
-            "hint": "Think about the focus being on the message, not on who sends it.",
-            "explanation": "Passive voice 'is sent' highlights the message itself, not 'sends,' which would need a different subject.",
+            "hint": "The message is dispatched by the system automatically, so it receives, rather than performs, the action.",
+            "explanation": "Because 'this message' receives the action of sending, the passive form 'is sent' is correct instead of the active 'sends.'",
             "errorCount": 3
         },
         {
@@ -418,14 +418,14 @@
             "interactionType": "typing",
             "passage": "Our house [builds] over fifty years ago, but it still looks great today.",
             "options": [
+                "built",
+                "is built",
                 "was built",
-                "builds",
-                "build",
-                "is built"
+                "builds"
             ],
             "correctAnswer": "was built",
-            "hint": "Think about the focus being on the house, with the action completed in the past.",
-            "explanation": "The passive past simple 'was built' focuses on the house, with the action completed in the past, unlike 'builds.'",
+            "hint": "This is a completed past action, and the house is the receiver, not the builder.",
+            "explanation": "'House' receives the action of building and the event is in the past, so 'was built' is the correct past passive form.",
             "errorCount": 3
         },
         {
@@ -435,14 +435,14 @@
             "interactionType": "typing",
             "passage": "The kitchen [cleans] last weekend by a professional cleaning service.",
             "options": [
-                "cleans",
+                "is cleaned",
                 "was cleaned",
-                "clean",
-                "is cleaned"
+                "cleaned",
+                "cleans"
             ],
             "correctAnswer": "was cleaned",
-            "hint": "Think about the focus being on the kitchen, with the action completed in the past.",
-            "explanation": "Passive past simple 'was cleaned' emphasizes the kitchen, with the action already finished, unlike 'cleans.'",
+            "hint": "The kitchen didn't clean itself — a service cleaned it, and this happened in the past.",
+            "explanation": "Since 'the kitchen' receives the action and the event is in the past, the passive past form 'was cleaned' is correct.",
             "errorCount": 3
         },
         {
@@ -452,14 +452,14 @@
             "interactionType": "typing",
             "passage": "These curtains [makes] by my grandmother many years ago, by hand.",
             "options": [
-                "make",
                 "were made",
+                "are made",
                 "makes",
-                "are made"
+                "made"
             ],
             "correctAnswer": "were made",
-            "hint": "Think about the focus being on the curtains, a plural subject, with the action completed in the past.",
-            "explanation": "With a plural subject, the passive past simple uses 'were made,' focusing on the curtains, not 'makes.'",
+            "hint": "The curtains are plural and were the receivers of a completed past action.",
+            "explanation": "'Curtains' is plural and receives the action, so the plural past passive form 'were made' is correct, not 'makes.'",
             "errorCount": 3
         },
         {
@@ -469,14 +469,14 @@
             "interactionType": "typing",
             "passage": "This school [founds] in 1950 and has a long, proud history.",
             "options": [
+                "founded",
                 "is founded",
-                "found",
                 "founds",
                 "was founded"
             ],
             "correctAnswer": "was founded",
-            "hint": "Think about the focus being on the school, with the founding completed long ago.",
-            "explanation": "Passive past simple 'was founded' emphasizes the school, with the founding completed in the past, not 'founds.'",
+            "hint": "The school is the receiver of a completed past action — founding.",
+            "explanation": "Since 'this school' receives the action of founding, and the event happened in the past, 'was founded' is the correct passive form.",
             "errorCount": 3
         },
         {
@@ -486,14 +486,14 @@
             "interactionType": "typing",
             "passage": "Our exam papers [grades] very quickly by the new teacher this term.",
             "options": [
+                "were graded",
                 "are graded",
-                "grades",
-                "grade",
-                "were graded"
+                "graded",
+                "grades"
             ],
             "correctAnswer": "were graded",
-            "hint": "Think about the focus being on the papers, a plural subject, with the action completed in the past.",
-            "explanation": "With a plural subject, the passive past simple is 'were graded,' focusing on the papers, not 'grades.'",
+            "hint": "The papers are plural and someone else evaluated them in the past, which points to a specific passive form.",
+            "explanation": "'Exam papers' is plural and receives the action, so the past passive form 'were graded' is correct rather than 'grades.'",
             "errorCount": 3
         },
         {
@@ -503,14 +503,14 @@
             "interactionType": "typing",
             "passage": "The new library [opens] officially last September with a small ceremony.",
             "options": [
-                "open",
-                "is opened",
                 "opens",
-                "was opened"
+                "was opened",
+                "is opened",
+                "opened"
             ],
             "correctAnswer": "was opened",
-            "hint": "Think about the focus being on the library, with the opening completed at a specific past time.",
-            "explanation": "Passive past simple 'was opened' highlights the library, with the opening finished in the past, not 'opens.'",
+            "hint": "The library is the receiver of the opening action, which happened in the past.",
+            "explanation": "Because the library receives the action and the event is in the past, 'was opened' is the correct passive form here.",
             "errorCount": 3
         }
     ]

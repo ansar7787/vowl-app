@@ -1,607 +1,587 @@
 {
-    "gameType": "opinionWriting",
-    "batchIndex": 2,
-    "levels": "11-20",
-    "quests": [
-        {
-            "id": "WRT_OPINIONWRITING_L11_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Children should watch less television each day.",
-            "options": [
-                "Reducing TV time encourages children to read, play, and explore other interests.",
-                "Television offers genuinely educational content that supports children's learning.",
-                "Less screen time before bed improves the quality of children's sleep.",
-                "Restricting TV can make children feel left out when their friends discuss popular programmes."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about the benefits of less TV (Pros) and what children lose when it is restricted (Cons).",
-            "explanation": "Cutting TV time frees children for enriching activities and improves sleep (Pros), but educational content has real value, and restrictions can cause social exclusion among peers (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L11_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Less television allows children to be more physically active.",
-            "options": [
-                "Time previously spent watching TV can be redirected to sports and outdoor play.",
-                "Reducing sedentary screen time lowers the risk of childhood obesity.",
-                "Many children prefer watching television and will resist being forced to do other activities.",
-                "Passive activities like watching TV serve an important role in helping children relax and recover."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Consider how reducing TV supports physical health (Pros) and when TV itself has value (Cons).",
-            "explanation": "Less TV creates space for physical activity and reduces obesity risk (Pros), but children need downtime to recover, and forcing unwilling children into physical activity is counterproductive (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L11_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Watching less TV helps children develop better social skills.",
-            "options": [
-                "Time away from screens encourages children to play and interact with others face to face.",
-                "Television can be a shared social experience that brings family members together.",
-                "Family conversations naturally increase when television is not the focus of the evening.",
-                "Children who feel they are missing out on popular TV shows may become more socially isolated."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about how reducing TV improves social interaction (Pros) and how TV can itself be social (Cons).",
-            "explanation": "Less TV encourages face-to-face interaction and family conversation (Pros), but shared TV viewing bonds families together, and exclusion from popular shows can isolate children from peers (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L12_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Children should share household chores with the rest of the family.",
-            "options": [
-                "Chores take up time that children could spend on homework, reading, or rest.",
-                "Doing chores teaches children practical skills they will need throughout adult life.",
-                "Contributing to household tasks builds children's sense of responsibility and self-worth.",
-                "Assigning chores can create arguments and resentment within the family."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about what children gain from doing chores (Pros) and the problems chores can cause (Cons).",
-            "explanation": "Chores build practical skills and a sense of responsibility (Pros), but they reduce available study and rest time and can become a source of household conflict (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L12_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Sharing chores teaches children about fairness and cooperation.",
-            "options": [
-                "Very young children lack the physical ability and focus to complete most household tasks.",
-                "Working together on household tasks demonstrates that everyone contributes equally.",
-                "Children who do chores learn to work as part of a team from an early age.",
-                "Parents sometimes find it faster and easier to do chores themselves rather than teach children."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Consider what fairness and cooperation lessons chores teach (Pros) and when they are not practical (Cons).",
-            "explanation": "Chores teach equality and teamwork (Pros), but young children are often physically incapable, and it is frequently quicker for parents to do the work themselves (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L12_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Completing chores prepares children for independent adult life.",
-            "options": [
-                "Teenagers who do household tasks are better prepared to manage their own homes.",
-                "Learning domestic skills at home builds confidence for living independently at university.",
-                "Some children are overburdened with chores, leaving too little time for academic work.",
-                "Cultural expectations around which children should do which chores can reinforce inequalities."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about how chores prepare children for independence (Pros) and when they become a burden (Cons).",
-            "explanation": "Chores build the skills needed for independent living (Pros), but too many chores can harm academic progress, and unequal chore assignment can reinforce gender or family inequalities (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L13_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Children should keep their bedroom clean and tidy at all times.",
-            "options": [
-                "A child's bedroom is their personal space, and forcing tidiness can feel controlling.",
-                "A tidy bedroom makes it easier for children to find their belongings and study effectively.",
-                "Many children are naturally untidy, and constant enforcement causes unnecessary conflict.",
-                "Keeping personal spaces clean teaches children to take responsibility for their environment."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about the benefits of a tidy bedroom (Pros) and when tidiness rules cause problems (Cons).",
-            "explanation": "Tidiness aids organisation and teaches responsibility (Pros), but enforcing strict tidiness in a personal space can feel controlling and creates ongoing conflict with naturally untidy children (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L13_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "A tidy bedroom improves children's focus and mental clarity.",
-            "options": [
-                "An organised space reduces visual distractions that can interrupt concentration during study.",
-                "Research suggests that clutter in the home environment increases feelings of stress and anxiety.",
-                "Some children and adults actually work and think better in a more relaxed, cluttered space.",
-                "Insisting on tidiness can make children anxious about mess rather than focused on learning."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Consider how a tidy room supports mental focus (Pros) and when order causes its own problems (Cons).",
-            "explanation": "An organised space reduces distraction and stress (Pros), but some people genuinely function better in clutter, and rigid tidiness standards can increase rather than reduce anxiety (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L13_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Keeping shared spaces tidy shows respect for other family members.",
-            "options": [
-                "Tidying communal areas teaches children to consider the needs and comfort of others.",
-                "Different family members have different standards of tidiness, making agreement difficult.",
-                "Shared domestic responsibilities reduce the burden on one parent or carer in the household.",
-                "Constant requests to tidy up can damage parent-child relationships and breed resentment."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about how tidiness supports family life (Pros) and what problems differing standards create (Cons).",
-            "explanation": "Keeping shared spaces tidy shows consideration for others and shares the domestic burden (Pros), but conflicting standards of tidiness and constant reminders can create tension and resentment at home (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L14_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Children should learn to play a musical instrument.",
-            "options": [
-                "Learning an instrument builds discipline, patience, and a strong work ethic.",
-                "Regular instrument practice requires significant time that could be used for other activities.",
-                "Playing music develops children's coordination and fine motor skills effectively.",
-                "Instruments, lessons, and associated costs can be financially prohibitive for many families."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about what learning an instrument gives children (Pros) and what it costs (Cons).",
-            "explanation": "Instrument learning builds discipline and motor skills (Pros), but the time commitment and financial costs of lessons and instruments can be significant barriers for many families (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L14_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Learning music improves children's academic performance and brain development.",
-            "options": [
-                "Studies consistently show that music education strengthens mathematical and language abilities.",
-                "Learning to read music develops cognitive skills that support academic learning generally.",
-                "Not all children are musically inclined, and forcing lessons can create a lasting dislike of music.",
-                "The benefits of music on academic performance may not be greater than other enriching activities."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Consider the academic benefits of music learning (Pros) and the risks of imposing it (Cons).",
-            "explanation": "Music education strengthens academic and cognitive skills (Pros), but forced lessons can kill children's enthusiasm, and other activities may offer equivalent developmental benefits (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L14_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Playing a musical instrument gives children a lifelong creative outlet.",
-            "options": [
-                "Music provides a healthy emotional outlet that helps children express feelings constructively.",
-                "The pressure of public performances and exams causes significant anxiety in some children.",
-                "Children who do not enjoy music may waste years on lessons before abandoning them.",
-                "Performing music in groups teaches collaboration and boosts children's self-confidence."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about music as a creative and emotional tool (Pros) and when it causes pressure (Cons).",
-            "explanation": "Music offers emotional expression and builds confidence through performance (Pros), but exam pressure and recitals cause real anxiety, and years of reluctant lessons may ultimately produce lasting dislike (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L15_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Families should eat meals together every day.",
-            "options": [
-                "Conflicting work, school, and activity schedules make daily shared meals very difficult.",
-                "Regular shared meals strengthen communication and family bonds significantly.",
-                "Children who eat with their families tend to have healthier and more balanced diets.",
-                "Some family mealtimes become tense occasions if relationships are strained."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about what shared meals give the family (Pros) and what makes them difficult (Cons).",
-            "explanation": "Family meals strengthen communication and improve diet quality (Pros), but busy and conflicting schedules make them hard to achieve daily, and difficult family relationships can make meals stressful (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L15_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Eating together as a family benefits children's emotional wellbeing.",
-            "options": [
-                "Family mealtimes give children a predictable daily moment of connection and belonging.",
-                "Shared meals create positive rituals that children look back on fondly throughout their lives.",
-                "Older teenagers often prefer eating with friends or independently from their family.",
-                "Forcing unwilling teenagers to attend family meals can damage rather than improve relationships."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Consider the emotional benefits of family meals (Pros) and when they are counterproductive (Cons).",
-            "explanation": "Family mealtimes provide connection and positive rituals (Pros), but older teenagers value independence, and mandatory family meals can feel controlling and damage parent-teen relationships (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L15_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Shared family meals help children develop good social and communication skills.",
-            "options": [
-                "Screens at the dinner table undermine conversation even when the whole family is present.",
-                "Children with social anxiety may find forced conversation at mealtimes very stressful.",
-                "Conversation at family meals teaches children how to discuss topics respectfully.",
-                "Children learn table manners and social etiquette naturally during shared mealtimes."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about the social skills family meals build (Pros) and when they fail to deliver these benefits (Cons).",
-            "explanation": "Family meals teach conversation skills and social etiquette naturally (Pros), but screens undermine the conversation, and socially anxious children may find enforced mealtime talk genuinely distressing (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L16_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Children and adults should get regular physical exercise every day.",
-            "options": [
-                "Busy schedules at school and work leave many people with very little time for exercise.",
-                "Daily exercise strengthens the heart, builds muscle, and maintains a healthy body weight.",
-                "Exercise can cause injury, particularly when people push too hard too quickly.",
-                "Regular physical activity significantly reduces the risk of many serious long-term diseases."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about the health benefits of regular exercise (Pros) and the barriers to getting it (Cons).",
-            "explanation": "Regular exercise protects cardiovascular health and reduces disease risk (Pros), but time pressure from school and work commitments and the risk of injury are genuine obstacles for many people (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L16_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Regular exercise improves people's mental health and emotional wellbeing.",
-            "options": [
-                "Physical activity releases natural brain chemicals that reduce feelings of stress, anxiety, and low mood.",
-                "Competitive sports can cause anxiety and damage self-esteem in less athletic individuals.",
-                "Exercise provides a healthy break from screens and mental demands of daily life.",
-                "Over-exercising driven by pressure to look a certain way can harm mental health."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Consider the mental health benefits of exercise (Pros) and when it becomes harmful (Cons).",
-            "explanation": "Exercise reduces stress and improves mood by releasing natural feel-good brain chemicals (Pros), but competitive pressure and obsession with appearance can make exercise a source of anxiety and harm to self-esteem (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L16_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Physical exercise is essential for children's healthy development.",
-            "options": [
-                "Active children develop stronger bones, better coordination, and greater physical confidence.",
-                "Highly academic school environments increasingly prioritise studying over physical activity.",
-                "Children who dislike exercise may develop a lasting aversion if it is forced on them.",
-                "Children who are physically active tend to sleep better and concentrate more effectively at school."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about why exercise matters for children's development (Pros) and what reduces access to it (Cons).",
-            "explanation": "Regular activity builds physical health, coordination, and sleep quality in children (Pros), but academic pressure squeezes out exercise time, and forced participation can create a lifelong dislike of physical activity (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L17_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Children should be encouraged to save a portion of their pocket money.",
-            "options": [
-                "Children with very little pocket money have almost nothing spare to put into savings.",
-                "Saving money teaches children the value of delayed gratification and financial planning.",
-                "Forcing young children to save can remove the enjoyment and learning value of spending.",
-                "Children who save regularly from a young age develop healthy financial habits for life."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about what saving teaches children (Pros) and when it is not practical or helpful (Cons).",
-            "explanation": "Saving teaches delayed gratification and builds lifelong financial habits (Pros), but children with little pocket money have nothing to save, and forced saving removes the natural learning experience of spending (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L17_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Saving pocket money teaches children about financial responsibility.",
-            "options": [
-                "Some parents believe children should enjoy their money rather than being burdened with saving.",
-                "Financial anxiety created by over-emphasising saving can cause children unnecessary stress.",
-                "Children who manage savings learn to set goals and work patiently towards them.",
-                "Understanding saving and budgeting from an early age prepares children for adult financial life."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Consider how saving develops financial skills (Pros) and when saving becomes a pressure (Cons).",
-            "explanation": "Managing savings builds goal-setting and financial planning skills (Pros), but over-emphasising saving can create financial anxiety in children and deny them the simpler joy of spending their pocket money (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L17_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Encouraging children to save money builds self-discipline and patience.",
-            "options": [
-                "Resisting the urge to spend immediately develops willpower that benefits other areas of life.",
-                "Advertising and peer pressure constantly encourage children to spend rather than save.",
-                "Working steadily towards a savings goal teaches children the satisfaction of achievement.",
-                "Very young children lack the cognitive development to understand the long-term value of saving."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about how saving builds self-discipline (Pros) and what works against it (Cons).",
-            "explanation": "Saving builds willpower and teaches the satisfaction of achieving goals (Pros), but peer pressure and advertising work against saving, and very young children cannot yet understand why saving now is worthwhile (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L18_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Families should grow plants or herbs in their home.",
-            "options": [
-                "Not all homes have enough space, light, or suitable conditions to grow plants successfully.",
-                "Plants require consistent watering and care, which busy families may not be able to maintain.",
-                "Looking after plants teaches children to care for a living thing and observe its growth.",
-                "Growing herbs at home encourages healthier cooking and an interest in fresh ingredients."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about what growing plants teaches the family (Pros) and what makes it difficult (Cons).",
-            "explanation": "Growing plants builds nurturing skills and encourages healthy cooking (Pros), but unsuitable living spaces and the time needed to maintain plants make it impractical for many busy families (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L18_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Growing plants at home improves mental wellbeing for the whole family.",
-            "options": [
-                "Studies show that caring for plants reduces stress and creates a calming home environment.",
-                "Watching plants grow from seeds gives both children and adults a sense of achievement.",
-                "Plants can trigger allergies or asthma in sensitive family members.",
-                "Dead or failing plants can cause disappointment and a sense of failure, especially in children."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Consider how plants improve wellbeing (Pros) and when they cause problems (Cons).",
-            "explanation": "Plants reduce stress and create a sense of calm and achievement (Pros), but they can trigger allergies, and plant failures can be genuinely disheartening, particularly for young children (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L18_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Growing plants at home builds children's environmental awareness.",
-            "options": [
-                "Tending a garden or indoor plants connects children to natural cycles and seasonal change.",
-                "Home growing teaches children where food comes from and reduces reliance on supermarkets.",
-                "Children in apartments or urban areas may have extremely limited space for any growing.",
-                "Some children lack the patience required for growing plants, which takes weeks or months."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about how growing plants builds environmental awareness (Pros) and who cannot access it (Cons).",
-            "explanation": "Home growing connects children to nature and the origins of food (Pros), but urban children often lack space, and the slow pace of plant growth tests the patience of many young learners (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L19_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Children should visit their local library on a regular basis.",
-            "options": [
-                "Many children find libraries boring and prefer faster, more interactive digital content.",
-                "Libraries in some areas have reduced their opening hours or closed due to funding cuts.",
-                "Libraries give children free access to thousands of books across every subject and genre.",
-                "Regular library visits build a lifelong love of reading and learning from an early age."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about what regular library visits give children (Pros) and what limits access (Cons).",
-            "explanation": "Libraries provide free, wide-ranging reading material and build a love of learning (Pros), but children may find them dull compared to digital alternatives, and funding cuts have reduced availability in many areas (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L19_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Public libraries strengthen communities and support lifelong learning.",
-            "options": [
-                "Libraries provide a welcoming public space where people of all ages and backgrounds can meet.",
-                "Online resources and e-books now offer many of the services libraries once provided exclusively.",
-                "Some communities see libraries as less relevant in the digital age and prioritise other funding.",
-                "Free access to information and resources at libraries reduces educational inequality."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Consider how libraries support communities (Pros) and what challenges they face (Cons).",
-            "explanation": "Libraries foster community and reduce educational inequality through free access (Pros), but digital alternatives now compete with traditional library services, and some communities question their continued relevance (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L19_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Encouraging children to use the library builds research and information skills.",
-            "options": [
-                "Finding information in a library teaches children to evaluate and select reliable sources.",
-                "Internet searches feel faster and more relevant to children than browsing library shelves.",
-                "Librarians help children navigate resources and develop independent research skills.",
-                "Not all children have equal access to well-resourced libraries with trained staff."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about the research skills libraries build (Pros) and the barriers children face (Cons).",
-            "explanation": "Library use builds critical research and source evaluation skills (Pros), but the immediacy of internet searching feels more relevant to children, and unequal library quality means not all children benefit equally (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L20_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "People should take regular walks in nature.",
-            "options": [
-                "People living in cities may have very limited access to parks, woodland, or natural areas.",
-                "Time spent in natural green spaces significantly improves mood and reduces stress.",
-                "Regular outdoor walking provides gentle, low-impact exercise suitable for all fitness levels.",
-                "Extreme weather conditions such as intense heat or cold can make outdoor walking unpleasant."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about the benefits of walking in nature (Pros) and the barriers people face (Cons).",
-            "explanation": "Nature walks improve mood and provide accessible exercise (Pros), but urban residents often lack nearby green spaces, and extreme weather makes outdoor walking impractical for much of the year (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L20_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Spending time in nature improves children's wellbeing and creativity.",
-            "options": [
-                "Natural environments stimulate children's curiosity and encourage imaginative, unstructured play.",
-                "Many children today prefer indoor digital entertainment to outdoor natural experiences.",
-                "Regular exposure to nature from childhood builds environmental appreciation and responsibility.",
-                "Concerns about safety, insects, and getting dirty make some parents reluctant to encourage outdoor nature activities."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Consider how nature benefits children's development (Pros) and what prevents regular access (Cons).",
-            "explanation": "Nature stimulates imagination and builds environmental values in children (Pros), but digital entertainment competes strongly for children's attention, and parental anxieties about outdoor safety further reduce access (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L20_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Walking in nature regularly benefits people's long-term physical health.",
-            "options": [
-                "Regular walking reduces blood pressure, improves cardiovascular health, and controls weight.",
-                "People with physical disabilities or health conditions may find outdoor walking very difficult.",
-                "The environmental quality of some outdoor areas, including pollution levels, can reduce health benefits.",
-                "Time in natural light and fresh air supports healthy sleep patterns and immune function."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about the long-term physical health benefits of nature walks (Pros) and who may not benefit (Cons).",
-            "explanation": "Walking in nature improves cardiovascular health and sleep (Pros), but physical disability limits access for some, and pollution in many outdoor areas can undermine the expected health benefits (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        }
-    ]
+  "gameType": "opinionWriting",
+  "batchIndex": 2,
+  "levels": "11-20",
+  "quests": [
+    {
+      "id": "WRT_OPINIONWRITING_L11_Q1",
+      "instruction": "Choose the sentence that makes a claim, something a reader could agree or disagree with.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A student is planning an essay about public parks. Which sentence is a claim?",
+      "options": [
+        "The city has fourteen parks in total this year.",
+        "This essay is about public parks in our city.",
+        "Every neighbourhood should have a park nearby.",
+        "Some parks have playgrounds, ponds and picnic areas."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Ask which sentence would start a discussion, not end it.",
+      "explanation": "Only the first sentence takes a position that someone could challenge. The rest announce a topic or give facts that nobody would argue about.",
+      "structureGuide": "Claim"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L11_Q2",
+      "instruction": "Which sentence could be the main claim of a short essay?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A student is writing about learning new skills online.",
+      "options": [
+        "Many videos teach guitar, cooking and coding today.",
+        "There are websites for learning new languages online.",
+        "Online courses can begin at any time of the year.",
+        "Learning a skill online is better than in a classroom."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "A main claim states a position, not just what exists.",
+      "explanation": "The first sentence compares two ways of learning and takes a side. The alternatives describe what online learning offers, without saying whether it is better.",
+      "structureGuide": "Claim"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L11_Q3",
+      "instruction": "Select the TWO sentences that make a claim someone could disagree with.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Topic: public libraries.",
+      "options": [
+        "Libraries are more valuable to a town than cinemas.",
+        "The main library has a reading room upstairs.",
+        "Most libraries lend books for two or three weeks.",
+        "Libraries should stop charging fees for late books."
+      ],
+      "correctOrder": [
+        0,
+        3
+      ],
+      "hint": "Look for sentences where a reasonable person might say 'I'm not so sure'.",
+      "explanation": "'More valuable' and 'should stop charging' are positions that people may disagree about. The loan period and the reading room are facts that can simply be checked.",
+      "structureGuide": "Claim"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L12_Q1",
+      "instruction": "Choose the sentence that states the STRONGEST opinion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Four students give their views on a class trip to the science museum.",
+      "options": [
+        "A trip to the science museum might be useful.",
+        "A trip to the science museum is essential for every student.",
+        "A trip to the science museum is fairly good for some classes.",
+        "A trip to the science museum could be quite interesting."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Compare how sure and how far-reaching each sentence sounds.",
+      "explanation": "'Essential for every student' is the most certain and the widest claim. The other sentences use softer words such as 'might', 'could' and 'fairly'.",
+      "structureGuide": "Claim → Strength"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L12_Q2",
+      "instruction": "Choose the sentence that gives a MILD opinion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A friend asks when you like to study.",
+      "options": [
+        "I slightly prefer studying in the morning.",
+        "Nobody should study late at night.",
+        "Studying in the morning is the only sensible choice.",
+        "Morning is far better than any other time to study."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Which sentence leaves room for other views?",
+      "explanation": "'Slightly prefer' is gentle and personal. The alternatives speak as if there were one correct answer, which is a much stronger stance.",
+      "structureGuide": "Claim → Strength"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L12_Q3",
+      "instruction": "Choose the most cautious way to give an opinion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A manager asks for your honest but careful view of a new work schedule.",
+      "options": [
+        "This schedule works perfectly for everybody.",
+        "This schedule seems to work well for most of the team.",
+        "This schedule will solve all our problems.",
+        "This schedule is the best decision we have made."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Careful wording avoids promising too much.",
+      "explanation": "'Seems' and 'most of the team' limit the claim to what the writer can reasonably say. The other sentences promise perfect results for everyone.",
+      "structureGuide": "Claim → Strength"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L13_Q1",
+      "instruction": "Choose the fact that best supports the opinion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Opinion: The city should add more lighting along the riverside path.",
+      "options": [
+        "The path was completely repaved two years ago.",
+        "The river is about twelve kilometres long in total.",
+        "Many people enjoy walking beside the water at weekends.",
+        "Several runners tripped on the path after dark last winter."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Which fact shows a problem that lighting could solve?",
+      "explanation": "Trips in the dark are a real problem that lighting addresses. The river's length and the repaving date don't connect to visibility.",
+      "structureGuide": "Claim → Fact"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L13_Q2",
+      "instruction": "Select the TWO facts that support the opinion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Opinion: Our hobby club should meet online instead of in person.",
+      "options": [
+        "Members live in five towns, some over an hour away.",
+        "Online meetings can be joined from a phone or laptop.",
+        "The club room has an old piano in the far corner.",
+        "The club was formed by two teachers back in 2015."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Which facts make online meetings more practical?",
+      "explanation": "Travel time and easy access are facts that favour meeting online. The founding year and the piano say nothing about how the club should meet.",
+      "structureGuide": "Claim → Fact"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L13_Q3",
+      "instruction": "Choose the fact that gives the strongest support.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Opinion: Students should carry lighter school bags.",
+      "options": [
+        "Most students carry a bag to school every single day.",
+        "The school day starts at 8:30 in the morning each day.",
+        "Nine students with heavy bags saw the nurse for back pain.",
+        "Bags come in many different sizes and colours."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "The best fact links directly to the harm the opinion is trying to prevent.",
+      "explanation": "Back pain among students with heavy bags directly shows why lighter bags matter. The other facts are true but do not point to any problem.",
+      "structureGuide": "Claim → Fact"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L14_Q1",
+      "instruction": "Choose the sentence that gives a personal experience as support.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Opinion: Children should learn to swim early.",
+      "options": [
+        "Swimming is a popular activity in many countries.",
+        "Some pools have shallow ends for young beginners.",
+        "Swimming is a very good form of exercise for adults.",
+        "When I fell into a pool at six, lessons kept me calm."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "A personal example tells what happened to a real person.",
+      "explanation": "The first sentence tells a specific event that shows why early lessons mattered. The alternatives are general statements about swimming.",
+      "structureGuide": "Claim → Example"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L14_Q2",
+      "instruction": "Choose the personal example that best supports the opinion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Opinion: Public transport can save you money.",
+      "options": [
+        "Buses and trains are used by many people every day.",
+        "A friend once told me that trains can be expensive.",
+        "Travel costs vary quite a lot from city to city.",
+        "Since I sold my car and bought a bus pass, I spend half as much."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Look for a real change or result that the writer actually experienced.",
+      "explanation": "The writer describes a change and its result in money terms. The other sentences are general, second-hand or uncertain.",
+      "structureGuide": "Claim → Example"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L14_Q3",
+      "instruction": "Select the TWO personal examples that support the opinion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Opinion: Working in a team can make projects easier.",
+      "options": [
+        "Teams usually have more than two people in them.",
+        "In our robotics club, a teammate's coding covered what I could not do.",
+        "When three of us split the poster work, we finished early.",
+        "Some teachers prefer to give individual tasks instead."
+      ],
+      "correctOrder": [
+        1,
+        2
+      ],
+      "hint": "Choose the sentences that describe something that happened to the writer.",
+      "explanation": "Both correct options describe real situations where teamwork helped. The other choices are general remarks that do not show teamwork making a project easier.",
+      "structureGuide": "Claim → Example"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L15_Q1",
+      "instruction": "Choose the reply that disagrees with the post.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Sam posts: 'Coffee shops are great places to study.' Which reply disagrees?",
+      "options": [
+        "True, and the cake is always a nice bonus.",
+        "I find them too noisy; a library works better for me.",
+        "Agreed, especially the ones that have free Wi-Fi.",
+        "Yes, and the background chatter helps me focus too."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Look for the reply that gives a different view of coffee shops as study places.",
+      "explanation": "The first reply says coffee shops don't work for the writer and offers a reason. The alternatives agree in different ways.",
+      "structureGuide": "Claim → Reply"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L15_Q2",
+      "instruction": "Choose the reply that agrees AND gives a reason.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Jo posts: 'Local shops deserve more support than online stores.'",
+      "options": [
+        "Agreed, since money spent locally stays in our community.",
+        "Not really, because online prices are lower.",
+        "I disagree, but I can see your point.",
+        "Local shops are shops in the local area."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "A good agreeing reply does more than say 'yes'.",
+      "explanation": "The right reply agrees and adds 'since money spent locally stays in our community'. One reply disagrees, one repeats the idea, and one is hesitant disagreement.",
+      "structureGuide": "Claim → Reply"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L15_Q3",
+      "instruction": "Choose the reply that agrees only partly.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A colleague writes: 'Remote work is better for everyone.'",
+      "options": [
+        "No, working in an office is clearly the better choice.",
+        "Some people work remotely and other people do not.",
+        "Yes, it is the best option for the whole team here.",
+        "It suits many people, but not those needing a quiet workspace."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Partial agreement accepts one part of the claim and questions another.",
+      "explanation": "The first reply accepts that remote work helps many people, then points out a limit. The other choices agree completely, disagree completely, or say nothing about the claim.",
+      "structureGuide": "Claim → Reply"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L16_Q1",
+      "instruction": "Decide who the message is most likely for.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Hey! Did you see the new pizza place? Honestly, it's way better than the old one. We should go on Friday.'",
+      "options": [
+        "A newspaper editor",
+        "A close friend",
+        "A company's customer service team",
+        "A school principal"
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Think about the informal tone and the invitation at the end.",
+      "explanation": "The casual language and the invitation show that the writer is talking to someone familiar. A principal, editor or customer service team would usually get more formal wording.",
+      "structureGuide": "Audience → Tone"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L16_Q2",
+      "instruction": "Who is the writer most likely addressing?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Dear Ms Adams, I would like to suggest that Year 8 students be allowed to use the library at lunchtime.'",
+      "options": [
+        "A teacher or member of school staff",
+        "A friend from another school",
+        "A younger brother or sister",
+        "A crowd at a sports match"
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Notice the greeting and the way the request is made.",
+      "explanation": "'Dear Ms Adams' and the polite suggestion show the writer is speaking to a school adult in a formal way.",
+      "structureGuide": "Audience → Tone"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L16_Q3",
+      "instruction": "Choose the sentence that suits the audience.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "You are writing to your school principal to suggest a later start time.",
+      "options": [
+        "Everyone knows that the current start time is a total joke.",
+        "Honestly, school starts way too early. It is crazy, and everyone knows it.",
+        "Start times are a topic that some people like to talk about.",
+        "I would like to suggest a later start, as many students arrive tired."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Consider the reader's position and choose a respectful tone that still states a position.",
+      "explanation": "This sentence is polite, clear and gives a reason. The first alternative is too casual, the second avoids taking a side, and the last is disrespectful.",
+      "structureGuide": "Audience → Tone"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L17_Q1",
+      "instruction": "What is the writer's main purpose?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'The new phone plan charged me twice this month, and nobody has answered my emails. Please remove the extra charge.'",
+      "options": [
+        "To complain and ask for action",
+        "To advertise the phone plan",
+        "To explain how phones work",
+        "To thank the company for its help"
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Ask what the writer wants to happen after the reader finishes.",
+      "explanation": "The writer describes a problem and requests a solution, which is a complaint. There is no advertising, no thanks and no explanation of technology.",
+      "structureGuide": "Purpose"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L17_Q2",
+      "instruction": "What is the purpose of this post?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'The trail to Green Lake is easy and beautiful. Go on a weekday and bring water.'",
+      "options": [
+        "To warn people to avoid the trail",
+        "To ask for directions",
+        "To recommend the trail to other people",
+        "To report a news event"
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Look at the advice given at the end of the post.",
+      "explanation": "The writer praises the trail and gives tips for visiting, so the aim is to recommend it. There is no warning, news report or question.",
+      "structureGuide": "Purpose"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L17_Q3",
+      "instruction": "Choose the sentence that best matches the purpose of persuading a council.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "You want to persuade the town council to add a pedestrian crossing on Mill Lane.",
+      "options": [
+        "The council should add a crossing on Mill Lane before someone is hurt.",
+        "Mill Lane is a two-lane road with a bus stop at each end.",
+        "Last Tuesday I walked along Mill Lane and took the bus home.",
+        "A pedestrian crossing is a marked place for people to cross."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Which sentence tries to make the reader act?",
+      "explanation": "Only the first sentence pushes the council toward a decision. The remaining options describe, narrate or define.",
+      "structureGuide": "Purpose"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L18_Q1",
+      "instruction": "Which sentence does NOT belong in the paragraph?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: The town needs a skate park. Sentences in the paragraph include the ones below.",
+      "options": [
+        "Her brother bought new trainers last week.",
+        "It could also reduce skating on pavements.",
+        "A skate park would give them a safe space.",
+        "Teenagers have few places to meet."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Check which sentence has no link to the skate park idea.",
+      "explanation": "The trainers have nothing to do with the need for a skate park. The other three give reasons connected to teenagers and safety.",
+      "structureGuide": "Claim → Relevance"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L18_Q2",
+      "instruction": "Choose the sentence that should be deleted from the email.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "An employee is writing to a manager to argue for shorter Friday meetings.",
+      "options": [
+        "Short meetings leave more time for real work.",
+        "Long meetings often repeat information from earlier emails.",
+        "Ending by 3 p.m. would help people with early train times.",
+        "I also think the coffee in the canteen should be cheaper."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "One sentence introduces a second opinion that has nothing to do with meetings.",
+      "explanation": "The coffee comment is a separate issue, so it weakens the focus. The alternatives give reasons about time and meetings.",
+      "structureGuide": "Claim → Relevance"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L18_Q3",
+      "instruction": "Select the TWO sentences that drift away from the claim.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Cats are easier pets than dogs for busy people.",
+      "options": [
+        "Dogs have been companions to humans for thousands of years.",
+        "A cat can be left alone for a weekend with food and water.",
+        "Cats do not need to be walked several times a day.",
+        "Rabbits are also popular pets in small flats."
+      ],
+      "correctOrder": [
+        0,
+        3
+      ],
+      "hint": "Only some sentences compare how much time each pet needs.",
+      "explanation": "The history of dogs and the popularity of rabbits do not help the comparison about busy people. The other two sentences address time and effort directly.",
+      "structureGuide": "Claim → Relevance"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L19_Q1",
+      "instruction": "Choose the word that completes the opinion best.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'The new app is very ____ because it saves me an hour of typing every week.'",
+      "options": [
+        "useful",
+        "popular",
+        "colourful",
+        "modern"
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Choose the word that matches the reason after 'because'.",
+      "explanation": "Saving an hour of work makes the app useful. Popular, modern and colourful might describe it but do not follow from the reason.",
+      "structureGuide": "Opinion word → Reason"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L19_Q2",
+      "instruction": "Choose the sentence that presents the opinion politely and with care.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "You want to tell a teammate that a deadline may be too short.",
+      "options": [
+        "The deadline is a terrible mistake by management.",
+        "It seems to me the deadline is a little tight.",
+        "Anyone can see that the deadline is simply wrong.",
+        "The deadline is impossible for us to meet."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Polite opinions often soften the judgement instead of stating it bluntly.",
+      "explanation": "'It seems to me' and 'a little tight' give the view without blaming anyone. The remaining options sound harsh or absolute.",
+      "structureGuide": "Opinion word → Tone"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L19_Q3",
+      "instruction": "Select the TWO words that give a negative opinion of a product.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Words from reviews of a pair of headphones.",
+      "options": [
+        "adjustable",
+        "lightweight",
+        "overpriced",
+        "flimsy"
+      ],
+      "correctOrder": [
+        2,
+        3
+      ],
+      "hint": "Which words tell you the writer was disappointed?",
+      "explanation": "'Flimsy' and 'overpriced' judge the product badly. 'Lightweight' and 'adjustable' describe features that most reviewers treat as neutral or positive.",
+      "structureGuide": "Opinion word → Tone"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L20_Q1",
+      "instruction": "Choose the sentence that gives a clear opinion supported by a fact.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Which sentence states an opinion and backs it with a relevant fact?",
+      "options": [
+        "Cyclists need their own lane on Bridge Street after four accidents last year.",
+        "I think Bridge Street is fine just the way that it is now.",
+        "Bridge Street has a bridge, a bank and a bakery on it.",
+        "Cyclists are the friendliest people on the road, in my view."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Look for a sentence that includes both a position and evidence.",
+      "explanation": "The first sentence recommends a change and supports it with the number of accidents. The others give unrelated facts, an unsupported opinion, or an unrelated compliment.",
+      "structureGuide": "Claim → Fact"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L20_Q2",
+      "instruction": "Select the THREE sentences that belong in a post supporting the idea. One does not belong.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Our street should start a community garden.",
+      "options": [
+        "The street was resurfaced in June.",
+        "Neighbours could share fresh vegetables.",
+        "The empty plot next to the bus stop is currently unused.",
+        "Children would learn how plants grow."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        3
+      ],
+      "hint": "Which sentences give reasons or opportunities that connect to a garden?",
+      "explanation": "Shared produce, learning and a free plot are all connected to the garden idea. The resurfacing does not help the argument.",
+      "structureGuide": "Claim → Reason"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L20_Q3",
+      "instruction": "Put the sentences in the best order for a short opinion text.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Arrange these four sentences.",
+      "options": [
+        "The notice on the door says it closes at 5 p.m., before most workers get home.",
+        "Opening until 8 p.m. would give them a real chance to use it.",
+        "Most people cannot visit while they are at work.",
+        "The library should stay open later on weekday evenings."
+      ],
+      "correctOrder": [
+        3,
+        2,
+        0,
+        1
+      ],
+      "hint": "Begin with the claim and end with a sentence that connects back to it.",
+      "explanation": "The claim comes first, a reason follows, and a fact from the door notice gives evidence. The final sentence explains how the change would fix the problem.",
+      "structureGuide": "Claim → Reason → Fact → Closing"
+    }
+  ]
 }

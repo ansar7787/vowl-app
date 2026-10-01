@@ -8,16 +8,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "My grandmother speaks very [good], so it's easy to understand her.",
+            "passage": "My grandmother speaks three languages [good], even though she never studied abroad.",
             "options": [
-                "goodly",
-                "well",
                 "best",
-                "good"
+                "goodly",
+                "good",
+                "well"
             ],
             "correctAnswer": "well",
-            "hint": "We need an adverb to describe how she speaks, not an adjective describing a noun.",
-            "explanation": "'Well' is the irregular adverb form used to describe how an action is performed, not 'good,' which is an adjective.",
+            "hint": "The word describes how she speaks — an action, which needs an adverb.",
+            "explanation": "'Well' is the adverb form used to describe how an action is performed, while 'good' is an adjective describing nouns. Since the word modifies 'speaks,' 'well' is correct.",
             "errorCount": 3
         },
         {
@@ -25,16 +25,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "My little brother always finishes his homework very [bad].",
+            "passage": "My little brother always finishes his homework very [bad], rushing through it.",
             "options": [
                 "bad",
-                "badder",
                 "badly",
-                "worse"
+                "worse",
+                "badder"
             ],
             "correctAnswer": "badly",
-            "hint": "We need an adverb to describe how the action of finishing is done.",
-            "explanation": "'Badly' is the adverb form of 'bad,' describing how an action is performed.",
+            "hint": "The word describes how he finishes his homework, which calls for an adverb.",
+            "explanation": "'Badly' is the adverb form needed to describe the verb 'finishes.' The adjective 'bad' cannot directly modify a verb.",
             "errorCount": 3
         },
         {
@@ -42,16 +42,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "My uncle works so [hardly] at the family farm that he rarely has a moment to rest.",
+            "passage": "My uncle works so [hardly] on the family farm that he rarely rests.",
             "options": [
                 "hardly",
-                "harder",
-                "hardness",
-                "hard"
+                "hard",
+                "more hard",
+                "harder"
             ],
             "correctAnswer": "hard",
-            "hint": "This adverb of manner is a tricky exception - adding '-ly' actually creates a completely different word.",
-            "explanation": "'Hard' is both the adjective and the adverb of manner; 'hardly' is a separate word meaning 'barely,' not the adverb of 'hard.'",
+            "hint": "This is a tricky pair: one form of this word can already function as an adverb on its own, while adding '-ly' actually creates a word with a completely different meaning.",
+            "explanation": "'Hard' is both an adjective and an adverb meaning 'with great effort.' 'Hardly' means 'barely,' which changes the meaning entirely, so 'hard' is correct here.",
             "errorCount": 3
         },
         {
@@ -59,16 +59,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "The shop assistant answered all my questions very [good].",
+            "passage": "The new intern answered every question very [good] during her interview.",
             "options": [
-                "well",
-                "goodly",
+                "good",
+                "gooder",
                 "best",
-                "good"
+                "well"
             ],
             "correctAnswer": "well",
-            "hint": "We need an adverb describing how the assistant answered, not an adjective.",
-            "explanation": "'Well' is the irregular adverb form describing how an action is done, not 'good,' which is an adjective.",
+            "hint": "The word describes the way she answered — an adverb is needed.",
+            "explanation": "Because the word modifies the verb 'answered,' the adverb 'well' is required rather than the adjective 'good.'",
             "errorCount": 3
         },
         {
@@ -76,16 +76,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "That delivery was handled really [bad]; the box arrived completely crushed.",
+            "passage": "That shipment was handled really [bad]; the box arrived completely crushed.",
             "options": [
-                "worse",
-                "bad",
+                "badly",
                 "badder",
-                "badly"
+                "bad",
+                "worse"
             ],
             "correctAnswer": "badly",
-            "hint": "We need an adverb describing how the delivery was handled.",
-            "explanation": "'Badly' is the adverb form of 'bad,' describing the manner in which something was done.",
+            "hint": "The word describes how the shipment was handled, calling for an adverb form.",
+            "explanation": "'Badly' correctly modifies the verb 'was handled,' while 'bad' would incorrectly try to describe a noun instead.",
             "errorCount": 3
         },
         {
@@ -93,16 +93,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "The delivery truck arrived so [lately] that the frozen groceries had already started to melt in the heat.",
+            "passage": "The delivery arrived so [lately] that the frozen groceries had already melted.",
             "options": [
                 "lately",
-                "later",
-                "lateness",
-                "late"
+                "more late",
+                "late",
+                "later"
             ],
             "correctAnswer": "late",
-            "hint": "This adverb of manner is a tricky exception - the '-ly' version means something different here.",
-            "explanation": "'Late' is both the adjective and the adverb of manner; 'lately' is a separate word meaning 'recently,' not the adverb of 'late.'",
+            "hint": "This adjective can also function as its own adverb — adding '-ly' actually creates a word with a different meaning, closer to 'recently.'",
+            "explanation": "'Late' can be used as an adverb meaning 'not on time,' while 'lately' means 'recently' and doesn't fit this context.",
             "errorCount": 3
         },
         {
@@ -110,16 +110,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "I really enjoy [try] new recipes on the weekend with my family.",
+            "passage": "I really enjoy [try] unfamiliar recipes whenever I have a free weekend.",
             "options": [
+                "to try",
+                "try",
                 "tried",
-                "trying",
-                "tries",
-                "try"
+                "trying"
             ],
             "correctAnswer": "trying",
-            "hint": "After the verb 'enjoy,' we need a verb form ending in -ing, not the base form.",
-            "explanation": "'Enjoy' is always followed by the gerund (-ing form): 'enjoy trying,' not the base verb 'try.'",
+            "hint": "'Enjoy' is one of several verbs that are always followed by the gerund form.",
+            "explanation": "'Enjoy' is always followed by a gerund (-ing form), never an infinitive or base verb, so 'trying' is correct.",
             "errorCount": 3
         },
         {
@@ -127,16 +127,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "My father loves [cook] traditional dishes for big family gatherings.",
+            "passage": "My father genuinely loves [cook] elaborate dishes for family gatherings.",
             "options": [
+                "cooking",
+                "to cook",
                 "cooked",
-                "cooks",
-                "cook",
-                "cooking"
+                "cook"
             ],
             "correctAnswer": "cooking",
-            "hint": "After the verb 'loves,' we need a verb form ending in -ing, not the base form.",
-            "explanation": "'Love' is commonly followed by the gerund: 'loves cooking,' not the base verb 'cook.'",
+            "hint": "'Love' can be followed by either the gerund or infinitive, but the gerund is the more natural everyday choice here — check which fits this pattern.",
+            "explanation": "'Love' followed by the -ing form describes enjoyment of an ongoing activity, which is the natural pattern in everyday speech: 'loves cooking.'",
             "errorCount": 3
         },
         {
@@ -144,16 +144,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "She hates [wash] dishes after hosting a big dinner party at home.",
+            "passage": "She hates [wash] dishes right after a big dinner party.",
             "options": [
+                "to wash",
+                "wash",
                 "washing",
-                "washed",
-                "washes",
-                "wash"
+                "washed"
             ],
             "correctAnswer": "washing",
-            "hint": "After the verb 'hates,' we need a verb form ending in -ing, not the base form.",
-            "explanation": "'Hate' is followed by the gerund form: 'hates washing,' not the base verb 'wash.'",
+            "hint": "'Hate' pairs naturally with the gerund form in this kind of everyday context.",
+            "explanation": "'Hate' followed by the gerund expresses dislike of an activity: 'hates washing.' The base form alone cannot follow 'hate' directly.",
             "errorCount": 3
         },
         {
@@ -161,16 +161,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "I don't mind [charge] my phone every night before going to bed.",
+            "passage": "I don't mind [charge] my phone every single night before bed.",
             "options": [
-                "charging",
                 "charge",
-                "charges",
+                "charging",
+                "to charge",
                 "charged"
             ],
             "correctAnswer": "charging",
-            "hint": "After the expression 'don't mind,' we need a verb form ending in -ing.",
-            "explanation": "'Mind' is followed by the gerund form: 'don't mind charging,' not the base verb 'charge.'",
+            "hint": "'Mind' is consistently followed by the gerund form, never the infinitive.",
+            "explanation": "'Mind' always takes a gerund after it: 'don't mind charging.' Using the base form or infinitive here would be incorrect.",
             "errorCount": 3
         },
         {
@@ -178,16 +178,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "He enjoys [explore] new apps on his tablet every single weekend.",
+            "passage": "He genuinely enjoys [explore] new apps on his tablet every weekend.",
             "options": [
-                "explored",
                 "exploring",
-                "explores",
-                "explore"
+                "explore",
+                "explored",
+                "to explore"
             ],
             "correctAnswer": "exploring",
-            "hint": "After the verb 'enjoys,' we need a verb form ending in -ing.",
-            "explanation": "'Enjoy' is always followed by the gerund: 'enjoys exploring,' not the base verb 'explore.'",
+            "hint": "'Enjoy' consistently requires the -ing form after it.",
+            "explanation": "'Enjoy' is always followed by a gerund, so the correct form is 'exploring,' not the base verb or infinitive.",
             "errorCount": 3
         },
         {
@@ -195,16 +195,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "She avoids [scroll] on her phone right before going to sleep at night.",
+            "passage": "She avoids [scroll] on her phone right before going to sleep.",
             "options": [
-                "scrolls",
-                "scroll",
                 "scrolled",
-                "scrolling"
+                "scrolling",
+                "to scroll",
+                "scroll"
             ],
             "correctAnswer": "scrolling",
-            "hint": "After the verb 'avoids,' we need a verb form ending in -ing.",
-            "explanation": "'Avoid' is followed by the gerund form: 'avoids scrolling,' not the base verb 'scroll.'",
+            "hint": "'Avoid' is another verb that always pairs with the gerund form.",
+            "explanation": "'Avoid' is consistently followed by the -ing form, so 'scrolling' is correct rather than the base verb or infinitive.",
             "errorCount": 3
         },
         {
@@ -214,14 +214,14 @@
             "interactionType": "typing",
             "passage": "If you keep skipping meals, you [mights] feel dizzy later in the day.",
             "options": [
-                "may's",
                 "mights",
-                "might",
-                "musts"
+                "might to",
+                "mighting",
+                "might"
             ],
             "correctAnswer": "might",
-            "hint": "'Might' never changes form for different subjects, no matter what they are.",
-            "explanation": "'Might' is a modal verb and never takes an -s ending: 'might feel,' not 'mights feel.'",
+            "hint": "Modal verbs never take an -s ending, no matter the subject.",
+            "explanation": "'Might' is a modal verb and never changes form, even with a singular subject like 'you.' The correct form is simply 'might.'",
             "errorCount": 3
         },
         {
@@ -232,13 +232,13 @@
             "passage": "The doctor said the headache [might to] be caused by ongoing stress.",
             "options": [
                 "might to",
+                "mights",
                 "might",
-                "may's",
                 "mighting"
             ],
             "correctAnswer": "might",
-            "hint": "Modal verbs like 'might' are followed directly by the base verb, with no 'to' in between.",
-            "explanation": "'Might' is followed directly by the base verb: 'might be,' never 'might to be.'",
+            "hint": "Modal verbs are followed directly by the base verb, without 'to' in between.",
+            "explanation": "'Might' is directly followed by the base verb with no 'to': 'might be.' Adding 'to' after a modal is a common but incorrect pattern.",
             "errorCount": 3
         },
         {
@@ -248,14 +248,14 @@
             "interactionType": "typing",
             "passage": "She [mighting] need to take a few days off if she doesn't feel better soon.",
             "options": [
-                "might's",
-                "might",
                 "mights",
+                "might",
+                "might to",
                 "mighting"
             ],
             "correctAnswer": "might",
-            "hint": "Modal verbs like 'might' never take an -ing ending.",
-            "explanation": "'Might' never changes form and is never written with -ing: simply 'might need,' not 'mighting need.'",
+            "hint": "Modal verbs never take an -ing ending.",
+            "explanation": "Modal verbs like 'might' stay in one unchanging form; they never take '-ing.' The correct form is simply 'might need.'",
             "errorCount": 3
         },
         {
@@ -265,14 +265,14 @@
             "interactionType": "typing",
             "passage": "We [mights] go to the new theater downtown this weekend, but we haven't decided.",
             "options": [
-                "mights",
-                "may's",
                 "might",
-                "musts"
+                "mights",
+                "mighting",
+                "might to"
             ],
             "correctAnswer": "might",
-            "hint": "The modal 'might' stays the same no matter what the subject is.",
-            "explanation": "'Might' never takes an -s ending: 'might go,' not 'mights go.'",
+            "hint": "Remember that modal verbs don't change form for any subject.",
+            "explanation": "Since 'might' is a modal, it stays the same for every subject, including 'we.' The correct form is simply 'might.'",
             "errorCount": 3
         },
         {
@@ -282,14 +282,14 @@
             "interactionType": "typing",
             "passage": "This band [might to] release a new album sometime next year, according to rumors.",
             "options": [
-                "might to",
                 "mighting",
-                "may's",
+                "might to",
+                "mights",
                 "might"
             ],
             "correctAnswer": "might",
-            "hint": "Don't insert 'to' between the modal 'might' and the verb that follows.",
-            "explanation": "'Might' is followed directly by the base verb: 'might release,' never 'might to release.'",
+            "hint": "There's no 'to' between a modal and the base verb that follows it.",
+            "explanation": "'Might' is followed directly by the base verb, so 'might release' is correct without inserting 'to.'",
             "errorCount": 3
         },
         {
@@ -297,16 +297,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "The tickets [mighting] sell out soon, so you should book now if you're interested.",
+            "passage": "The tickets [mighting] sell out soon, so you should book them now.",
             "options": [
                 "mights",
+                "mighting",
                 "might",
-                "might's",
-                "mighting"
+                "might to"
             ],
             "correctAnswer": "might",
-            "hint": "An -ing ending never attaches to a modal verb like 'might.'",
-            "explanation": "'Might' never changes form and is never written with -ing: simply 'might sell,' not 'mighting sell.'",
+            "hint": "This modal verb never takes an -ing form under any circumstance.",
+            "explanation": "'Might' has no '-ing' form; it stays constant as 'might' regardless of subject or context.",
             "errorCount": 3
         },
         {
@@ -314,16 +314,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "I [use to] write long letters to my pen pal before we started emailing instead.",
+            "passage": "I [use to] write long letters to my pen pal before we started emailing.",
             "options": [
                 "used to",
-                "was using to",
                 "am used to",
+                "used",
                 "use to"
             ],
             "correctAnswer": "used to",
-            "hint": "Think about the correct spelling of the past habit structure - it ends in -d, not just -e.",
-            "explanation": "The past habit structure is spelled 'used to,' with a -d ending, not 'use to.'",
+            "hint": "The past-habit form of this expression always ends in 'd,' even before 'to.'",
+            "explanation": "The past-habit expression is spelled 'used to,' with a 'd,' regardless of the subject. 'Use to' is a common spelling mistake.",
             "errorCount": 3
         },
         {
@@ -331,16 +331,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "She [use to call] her parents every single day when she lived abroad.",
+            "passage": "She [use to call] her parents every single day while she lived abroad.",
             "options": [
+                "using to call",
                 "used to call",
-                "use to call",
-                "was used to call",
-                "uses to call"
+                "used calling",
+                "use to call"
             ],
             "correctAnswer": "used to call",
-            "hint": "Think about the correct spelling and form of the past habit structure.",
-            "explanation": "'Used to' is the correct past habit structure, spelled with -d, describing a repeated past action.",
+            "hint": "The correct spelling of this past-habit phrase always includes a final 'd.'",
+            "explanation": "'Used to' is the fixed form for describing a discontinued past habit, so 'used to call' is correct.",
             "errorCount": 3
         },
         {
@@ -350,14 +350,14 @@
             "interactionType": "typing",
             "passage": "We [use to] meet at the same café every Friday, but we don't anymore.",
             "options": [
-                "are used to",
+                "use to",
+                "used",
                 "used to",
-                "were using to",
-                "use to"
+                "was used to"
             ],
             "correctAnswer": "used to",
-            "hint": "Think about the correct spelling of the past habit structure - it always ends in -d.",
-            "explanation": "The past habit structure 'used to' always ends in -d; 'use to' is a common spelling mistake.",
+            "hint": "This expression, describing a habit that no longer happens, has one fixed spelling.",
+            "explanation": "The correct spelling for a discontinued past habit is 'used to,' with a final 'd,' not 'use to.'",
             "errorCount": 3
         },
         {
@@ -367,14 +367,14 @@
             "interactionType": "typing",
             "passage": "I [use to] wake up really early before I changed my work schedule.",
             "options": [
-                "was using to",
                 "use to",
-                "used to",
-                "am used to"
+                "am used to",
+                "used",
+                "used to"
             ],
             "correctAnswer": "used to",
-            "hint": "Remember that this past-habit form always ends in -d, never just -e.",
-            "explanation": "The correct spelling of this past-habit form is 'used to,' with a -d, not 'use to.'",
+            "hint": "This form is spelled the same way regardless of who the subject is.",
+            "explanation": "'Used to' is always spelled with a final 'd' for describing a past habit, no matter the subject.",
             "errorCount": 3
         },
         {
@@ -385,13 +385,13 @@
             "passage": "My father [use to ride] his bike to work, but now he drives instead.",
             "options": [
                 "used to ride",
+                "used riding",
                 "use to ride",
-                "uses to ride",
-                "was used to ride"
+                "using to ride"
             ],
             "correctAnswer": "used to ride",
-            "hint": "Double-check the spelling of this past-habit expression before answering.",
-            "explanation": "'Used to ride' is the correct past habit structure, spelled with -d, not 'use to ride.'",
+            "hint": "The base verb follows 'used to' directly, without changing form.",
+            "explanation": "'Used to' is followed by the base form of the verb: 'used to ride.' The correct spelling always includes the final 'd.'",
             "errorCount": 3
         },
         {
@@ -399,16 +399,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "We [use to] cook every meal at home before we got so busy with work.",
+            "passage": "We [use to] cook every meal at home before things got busy with work.",
             "options": [
-                "used to",
-                "were using to",
-                "are used to",
-                "use to"
+                "use to",
+                "was used to",
+                "used",
+                "used to"
             ],
             "correctAnswer": "used to",
-            "hint": "Check the spelling here - the past habit structure needs a -d ending.",
-            "explanation": "'Used to' always keeps its -d ending; dropping it to 'use to' is a frequent spelling error.",
+            "hint": "Confirm the correct spelling of this expression describing a discontinued habit.",
+            "explanation": "The correct spelling is 'used to,' with a final 'd,' describing something that was once true but no longer is.",
             "errorCount": 3
         },
         {
@@ -418,14 +418,14 @@
             "interactionType": "typing",
             "passage": "I'm really [looking after] the summer holidays this year.",
             "options": [
+                "looking into",
                 "looking after",
-                "looking for",
                 "looking forward to",
-                "looking into"
+                "looking for"
             ],
             "correctAnswer": "looking forward to",
-            "hint": "Think about the phrasal verb meaning to feel excited about something coming up.",
-            "explanation": "'Look forward to' means to feel excited about a future event, not 'look after,' which means to take care of someone.",
+            "hint": "This phrase expresses anticipation about a future event, not caregiving.",
+            "explanation": "'Look forward to' expresses excitement about something upcoming. 'Look after' actually means to take care of someone or something, which doesn't fit here.",
             "errorCount": 3
         },
         {
@@ -435,14 +435,14 @@
             "interactionType": "typing",
             "passage": "Could you help me [look after] my missing textbook? I can't find it anywhere.",
             "options": [
-                "look into",
+                "look after",
                 "look for",
-                "look forward to",
-                "look after"
+                "look into",
+                "look forward to"
             ],
             "correctAnswer": "look for",
-            "hint": "Think about the phrasal verb meaning to search for something missing.",
-            "explanation": "'Look for' means to search for something missing, not 'look after,' which means to take care of someone.",
+            "hint": "The sentence describes searching for a lost object, not caring for someone.",
+            "explanation": "'Look for' means to search for something, matching the context of a missing textbook. 'Look after' means to take care of someone or something.",
             "errorCount": 3
         },
         {
@@ -452,14 +452,14 @@
             "interactionType": "typing",
             "passage": "The older students often [look for] the younger ones during the school trip.",
             "options": [
-                "look into",
-                "look for",
                 "look after",
+                "look for",
+                "look into",
                 "look forward to"
             ],
             "correctAnswer": "look after",
-            "hint": "Think about the phrasal verb meaning to take care of or supervise someone.",
-            "explanation": "'Look after' means to take care of someone, not 'look for,' which means to search for something.",
+            "hint": "This phrase describes supervising or caring for someone, not searching for them.",
+            "explanation": "'Look after' means to take care of someone, which fits the context of older students supervising younger ones on a trip.",
             "errorCount": 3
         },
         {
@@ -475,8 +475,8 @@
                 "looking for"
             ],
             "correctAnswer": "looking for",
-            "hint": "Think about the phrasal verb meaning to search for something, like a job.",
-            "explanation": "'Look for' means to search for something, such as a new job, not 'look after,' which means to care for someone.",
+            "hint": "The sentence describes a job search, not caregiving.",
+            "explanation": "'Look for' means to search for something, which fits searching for a new job. 'Look after' would incorrectly suggest caregiving.",
             "errorCount": 3
         },
         {
@@ -486,14 +486,14 @@
             "interactionType": "typing",
             "passage": "Our team is [looking after] the result of the client's final decision.",
             "options": [
+                "looking into",
                 "looking forward to",
-                "looking after",
                 "looking for",
-                "looking into"
+                "looking after"
             ],
             "correctAnswer": "looking forward to",
-            "hint": "This phrasal verb expresses anticipation about a future event.",
-            "explanation": "'Look forward to' expresses anticipation about a future event, not 'look after.'",
+            "hint": "This phrase expresses anticipation, not caretaking or searching.",
+            "explanation": "'Look forward to' expresses eager anticipation of an outcome, matching the excitement about the client's decision.",
             "errorCount": 3
         },
         {
@@ -501,16 +501,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "The HR department will [look forward to] all new employee requests this week.",
+            "passage": "The HR department will [look after] all new employee requests this week.",
             "options": [
-                "look into",
-                "look after",
                 "look forward to",
-                "look for"
+                "look for",
+                "look into",
+                "look after"
             ],
             "correctAnswer": "look into",
-            "hint": "Think about the phrasal verb meaning to investigate or examine something.",
-            "explanation": "'Look into' means to investigate an issue, not 'look forward to,' which expresses anticipation.",
+            "hint": "This phrase means to investigate or examine something, which fits reviewing requests.",
+            "explanation": "'Look into' means to investigate or examine something carefully, which fits reviewing employee requests better than 'look after,' which means to take care of someone.",
             "errorCount": 3
         }
     ]

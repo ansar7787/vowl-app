@@ -5,572 +5,602 @@
     "quests": [
         {
             "id": "WRT_SHORTANSWERWRITING_L191_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Give a nuanced answer in two sentences, acknowledging another side. Work in each of the three words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about the difference between a claim that must be true by pure logic and one that depends on real-world evidence.",
+            "prompt": "Should a company let employees choose their own working hours? Answer in a structured way, with a claim, a reason, and an example.",
             "options": [
-                "logic",
-                "depend",
-                "evidence"
+                "example",
+                "autonomy",
+                "motivation"
             ],
-            "sampleAnswer": "A claim that must be true by pure logic needs no outside evidence, unlike a claim whose truth depends entirely on how the world happens to be.",
-            "hint": "Define the first type of claim using 'needs no', then define the second type using 'depends on'.",
-            "explanation": "Contrasting 'needs no outside evidence' with 'depends entirely on how the world happens to be' draws a clean, useful line between two very different kinds of truth.",
+            "sampleAnswer": "Companies should let employees choose their hours because autonomy improves motivation. For example, a team I know finished projects earlier once they could plan their own days.",
+            "hint": "Make your position clear, give the reason that supports it, and illustrate it with something concrete.",
+            "explanation": "A structured answer has three parts that a reader can find easily: what you think, why, and a case that shows it.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "autonomy",
+                "example",
+                "motivation"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L191_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a balanced answer in two short sentences that shows more than one view. Your answer should contain all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how Hawking radiation causes black holes to slowly lose mass and eventually evaporate.",
+            "prompt": "Is it better to specialize in one skill or learn many? Answer with a claim, a reason, and an example.",
             "options": [
-                "Hawking radiation",
-                "evaporate",
-                "temperature"
+                "career",
+                "broad",
+                "adapt"
             ],
-            "sampleAnswer": "Hawking radiation causes black holes to slowly evaporate by emitting thermal radiation at a temperature inversely proportional to their mass.",
-            "hint": "Name the phenomenon and what it causes black holes to do, then specify how temperature relates to mass.",
-            "explanation": "'Inversely proportional to their mass' names the precise relationship - smaller black holes are hotter and evaporate faster.",
+            "sampleAnswer": "Early in a career it is better to develop a broad base, because it helps you adapt when jobs change. For example, people who learned several tools moved to new roles more easily.",
+            "hint": "Take a position and support it with a specific reason and example.",
+            "explanation": "A clear position with a reason and an example gives even a short answer the shape of a complete argument.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "adapt",
+                "broad",
+                "career"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L191_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a balanced answer in two sentences that shows more than one view. Include all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how people sometimes deny their own freedom and responsibility to avoid a difficult choice.",
+            "prompt": "Should cities invest more in public art? Answer with a claim, a reason, and an example.",
             "options": [
-                "deny",
-                "freedom",
-                "responsibility"
+                "visitors",
+                "invest",
+                "identity"
             ],
-            "sampleAnswer": "People sometimes deny their own freedom to avoid the responsibility that comes with truly owning a difficult choice.",
-            "hint": "State what people sometimes deny, then explain what they're trying to avoid by denying it.",
-            "explanation": "Linking denial to avoiding 'responsibility that comes with truly owning a difficult choice' captures a real and relatable psychological pattern.",
+            "sampleAnswer": "Cities should invest in public art because it strengthens local identity. For instance, a mural district in one town now attracts visitors who spend money in nearby shops.",
+            "hint": "Choose one benefit and give a real-world type of example.",
+            "explanation": "Choosing one strong benefit and illustrating it is more convincing than listing many benefits without proof.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "identity",
+                "invest",
+                "visitors"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L192_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a professional reply in one clear sentence. Use the three words meaningfully.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how a clear structural outline helps organize a long piece of writing before you draft a single sentence.",
+            "prompt": "Write the opening of a public message about a data breach, in a calm and honest tone.",
             "options": [
-                "outline",
-                "organize",
-                "structure"
+                "affected",
+                "breach",
+                "investigating"
             ],
-            "sampleAnswer": "A clear structural outline helps writers organize a long piece before drafting, mapping how every part will relate to the whole.",
-            "hint": "Name the planning tool, then explain what it helps writers do before they start drafting.",
-            "explanation": "'Mapping how every part will relate to the whole' is the real value of an outline - it solves structural problems before they become expensive to fix.",
+            "sampleAnswer": "We have discovered a data breach that may have affected some customers, and we are investigating it urgently with independent experts.",
+            "hint": "State the facts honestly without alarming or hiding.",
+            "explanation": "A crisis message opens with the facts and the response, in calm language, and never minimizes the problem.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "affected",
+                "breach",
+                "investigating"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L192_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Respond in a single sentence in a clear, polite workplace tone. Include all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how engineers calculate the absolute limit on how much data a communication channel can carry.",
+            "prompt": "Tell customers what they should do now.",
             "options": [
-                "calculate",
-                "channel",
-                "limit"
+                "monitor",
+                "change",
+                "recommend"
             ],
-            "sampleAnswer": "Engineers calculate the theoretical limit on how much data a communication channel can carry before errors become unavoidable.",
-            "hint": "Name what engineers calculate, then specify what happens once that limit is crossed.",
-            "explanation": "'Before errors become unavoidable' names the real constraint - every channel has a ceiling, no matter how good the technology.",
+            "sampleAnswer": "We recommend that you change your password today and monitor your accounts for unusual activity.",
+            "hint": "Give two simple actions that customers can do right now, and start with the most urgent.",
+            "explanation": "People in a crisis need simple actions they can do immediately, so short instructions with a clear order are more useful than an explanation.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "change",
+                "monitor",
+                "recommend"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L192_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Respond in a single sentence in a clear, polite workplace tone. Each word should appear in your answer.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why forcing a messy, complicated situation into one simple category can distort the truth.",
+            "prompt": "Say what the company will do next and when it will update people.",
             "options": [
-                "messy",
-                "category",
-                "distort"
+                "within",
+                "update",
+                "measures"
             ],
-            "sampleAnswer": "Forcing a messy, complicated situation into one simple category can distort the truth by erasing exactly the details that mattered most.",
-            "hint": "State what forcing a situation into one category can do, then explain exactly what gets lost.",
-            "explanation": "'Erasing exactly the details that mattered most' is the real cost of oversimplification - the parts that don't fit are often the most important ones.",
+            "sampleAnswer": "We will publish a further update within 48 hours and are introducing additional security measures to prevent this from happening again.",
+            "hint": "Give a specific time for the next update and a prevention step.",
+            "explanation": "A promise of a specific update time maintains trust while the investigation continues.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "measures",
+                "update",
+                "within"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L193_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Respond in one clear sentence in a clear, polite workplace tone. Include the three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why expert writers choose one precise word instead of a wordy, roundabout phrase.",
+            "prompt": "Ask your manager to discuss a pay increase, giving evidence.",
             "options": [
-                "precise",
-                "wordy",
-                "roundabout"
+                "discuss",
+                "contributed",
+                "increase"
             ],
-            "sampleAnswer": "Expert writers choose one precise word instead of a wordy, roundabout phrase that only dilutes their meaning.",
-            "hint": "State what expert writers choose, then contrast it with the wordy alternative they avoid.",
-            "explanation": "Calling the alternative 'wordy' and 'roundabout' emphasizes the cost of imprecision - readers have to work harder to extract the same meaning.",
+            "sampleAnswer": "I would like to discuss my salary, as I have contributed to two major projects this year and taken on additional responsibilities, so I believe an increase is appropriate.",
+            "hint": "Make the request and support it with evidence.",
+            "explanation": "A negotiation begins with specific evidence of the value that you provide, not with personal needs.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "contributed",
+                "discuss",
+                "increase"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L193_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a concise workplace message in one clear sentence. Make sure all three words fit the meaning.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how researchers map the complex web of interactions between proteins inside a living cell.",
+            "prompt": "Your manager says there is no budget for a raise. Propose an alternative.",
             "options": [
-                "protein",
-                "interaction",
-                "map"
+                "development",
+                "alternative",
+                "understand"
             ],
-            "sampleAnswer": "Researchers map the complex web of protein interactions inside a living cell to understand how its systems actually function.",
-            "hint": "Name what researchers map inside a cell, then state the ultimate purpose of doing so.",
-            "explanation": "'Understand how its systems actually function' names the payoff - mapping interactions reveals function that studying single proteins alone would miss.",
+            "sampleAnswer": "I understand the budget is limited, so as an alternative I'd like to discuss a development opportunity, such as a training course or a change in responsibilities.",
+            "hint": "Show that you understand the budget limit, then offer a different benefit with real value.",
+            "explanation": "Negotiation rarely ends at 'no', so a good writer proposes an alternative that has value.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "alternative",
+                "development",
+                "understand"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L193_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Respond in one sentence in a clear, polite workplace tone. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how the true meaning of a word often becomes clear only through watching how people actually use it.",
+            "prompt": "Confirm the agreement in writing.",
             "options": [
-                "meaning",
-                "clear",
-                "actually"
+                "review",
+                "confirm",
+                "agreed"
             ],
-            "sampleAnswer": "The true meaning of a word often becomes clear only through watching how people actually use it in real conversation.",
-            "hint": "State when a word's true meaning becomes clear, then specify where you have to look to see it.",
-            "explanation": "'In real conversation' is the key phrase - it grounds an abstract question about meaning in something every reader has direct experience with.",
+            "sampleAnswer": "To confirm what we agreed, my responsibilities will expand next month, and we will review my salary again in six months.",
+            "hint": "Restate what was agreed and add a date for the next review of your salary.",
+            "explanation": "Writing down what was agreed prevents later misunderstandings, and a review date shows that both sides expect the conversation to continue.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "agreed",
+                "confirm",
+                "review"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L194_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Judge the option in a single sentence and support your judgment. Use the three words meaningfully.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why the best essays explore a genuine tension in their topic instead of pretending it doesn't exist.",
+            "prompt": "A colleague proposes replacing all meetings with written updates. Evaluate the strengths.",
             "options": [
-                "tension",
-                "pretend",
-                "explore"
+                "asynchronous",
+                "strength",
+                "documented"
             ],
-            "sampleAnswer": "The best essays explore a genuine tension in their topic instead of pretending it doesn't exist or smoothing it over.",
-            "hint": "State what the best essays do with tension in their topic, then contrast this with two weaker alternatives.",
-            "explanation": "Naming two weak alternatives ('pretending it doesn't exist or smoothing it over') makes the stronger choice - genuinely engaging the tension - feel earned by comparison.",
+            "sampleAnswer": "A strength of the proposal is that asynchronous updates save time and leave a documented record that people can check later.",
+            "hint": "Name a real strength and explain why it matters.",
+            "explanation": "A fair evaluation starts by recognizing what is strong in the proposal, which makes the criticism that follows easier for the proposer to accept.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "asynchronous",
+                "documented",
+                "strength"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L194_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Judge the option in a single sentence and support your judgment. Your answer should contain all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how inflationary cosmology explains the remarkable uniformity of the observable universe.",
+            "prompt": "Evaluate the weaknesses of the same proposal.",
             "options": [
-                "inflation",
-                "rapid expansion",
-                "universe"
+                "nuance",
+                "discussion",
+                "weakness"
             ],
-            "sampleAnswer": "Inflationary cosmology proposes the early universe underwent rapid expansion, an inflation that smoothed initial inhomogeneities.",
-            "hint": "Name the theory, then describe the early-universe event and its effect on uniformity.",
-            "explanation": "'Smoothed initial inhomogeneities' is the precise consequence - inflation explains the uniformity of the early universe.",
+            "sampleAnswer": "A weakness is that written updates lose nuance and remove spontaneous discussion, which can slow down complex decisions.",
+            "hint": "Name a real weakness and explain its consequence.",
+            "explanation": "A useful evaluation names weaknesses precisely enough for the proposer to address them.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "discussion",
+                "nuance",
+                "weakness"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L194_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Judge the option in a single sentence and support your judgment. Work in each of the three words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how a single unexpected event can suddenly make something possible that seemed impossible before.",
+            "prompt": "Give a verdict on the proposal, with a condition.",
             "options": [
-                "unexpected",
-                "possible",
-                "impossible"
+                "partially",
+                "verdict",
+                "routine"
             ],
-            "sampleAnswer": "A single unexpected event can suddenly make something possible that had seemed completely impossible only moments before.",
-            "hint": "State what kind of event can do this, then contrast the before-and-after using 'possible' and 'impossible'.",
-            "explanation": "Contrasting 'possible' and 'impossible' in one sentence captures the dramatic, sudden nature of the shift being described.",
+            "sampleAnswer": "My verdict is that the proposal should be adopted partially: written updates for routine information, and short meetings for decisions and problems.",
+            "hint": "State a clear verdict and how it should be applied.",
+            "explanation": "A verdict that specifies where a proposal should apply shows a mature judgment.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "partially",
+                "routine",
+                "verdict"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L195_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Show how one thing leads to another in one sentence. Each word should appear in your answer.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why a single disappointing experimental result rarely overturns an entire well-supported scientific theory.",
+            "prompt": "Explain why many young people now rent for longer instead of buying a home.",
             "options": [
-                "overturn",
-                "well-supported",
-                "single"
+                "deposit",
+                "prices",
+                "rent"
             ],
-            "sampleAnswer": "A single disappointing result rarely overturns an entire well-supported scientific theory, since one anomaly is usually explained away first.",
-            "hint": "State what a single result rarely does to a well-supported theory, then explain what usually happens to that result first.",
-            "explanation": "'Usually explained away first' captures a realistic pattern in science - a lone anomaly gets scrutinized before it's allowed to threaten an established theory.",
+            "sampleAnswer": "Rising property prices and the difficulty of saving a deposit mean that many young people rent for far longer than earlier generations did.",
+            "hint": "Give two causes and show how they are linked, using a phrase that means 'as a result'.",
+            "explanation": "Explaining a social trend requires causes that plausibly apply to a large group of people.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "deposit",
+                "prices",
+                "rent"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L195_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Explain the cause and its effect in one clear sentence. Use all three words naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how scientists compare gene activity between a healthy sample and a diseased one to find meaningful differences.",
+            "prompt": "Explain one effect of this trend on cities.",
             "options": [
-                "compare",
-                "sample",
-                "difference"
+                "mobility",
+                "rental",
+                "demand"
             ],
-            "sampleAnswer": "Scientists compare gene activity between a healthy sample and a diseased one to identify the difference that actually matters.",
-            "hint": "Name the two samples being compared, then state what scientists are trying to identify.",
-            "explanation": "'The difference that actually matters' is precise - the goal isn't just noticing differences, but isolating the ones connected to the disease.",
+            "sampleAnswer": "Growing demand for rental housing pushes rents up, but it also increases mobility, since renters can move for work more easily.",
+            "hint": "Give an effect with both a cost and a benefit.",
+            "explanation": "Social effects are rarely one-sided, so naming a cost and a benefit is more accurate.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "demand",
+                "mobility",
+                "rental"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L195_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Suggest what to do in one sentence and justify it. Work in each of the three words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why some news stories about tragedy receive far more public attention and sympathy than others.",
+            "prompt": "Suggest one policy response and a possible limitation.",
             "options": [
-                "sympathy",
-                "attention",
-                "tragedy"
+                "supply",
+                "policy",
+                "limitation"
             ],
-            "sampleAnswer": "Some stories of tragedy receive far more public sympathy and attention than others, often for reasons that have little to do with the scale of suffering.",
-            "hint": "State what some tragedies receive more of than others, then comment on whether this always tracks the actual scale of suffering.",
-            "explanation": "Noting the gap 'has little to do with the scale of suffering' invites a genuinely important question about which stories the media and public choose to elevate.",
+            "sampleAnswer": "A sensible policy is to increase housing supply near transport, although a limitation is that new building takes years to affect prices.",
+            "hint": "Suggest a policy and state its main limit.",
+            "explanation": "A policy suggestion is credible when it includes an honest limit, because it shows that you understand how slowly real changes take effect.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "limitation",
+                "policy",
+                "supply"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L196_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Summarize the key information in one sentence. Your answer should contain all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how breaking a complicated idea into its basic parts can make it easier to define clearly.",
+            "prompt": "Source A says electric buses cut emissions by 60%. Source B says they cost 40% more to buy. Write a synthesis.",
             "options": [
-                "break down",
-                "basic part",
-                "define"
+                "emissions",
+                "whereas",
+                "purchase"
             ],
-            "sampleAnswer": "To break down a complicated idea into its basic parts often makes it far easier to define clearly and precisely.",
-            "hint": "State what breaking an idea into parts does, then describe the effect on clarity.",
-            "explanation": "This is a foundational thinking strategy across many fields - complexity becomes manageable once you isolate and name the individual pieces.",
+            "sampleAnswer": "Electric buses cut emissions by around 60 percent, whereas their purchase price is about 40 percent higher, so the choice depends on how a city values long-term benefits.",
+            "hint": "Put both facts into one sentence and end with a conclusion about how the city should decide.",
+            "explanation": "Synthesis combines information from two sources into a single conclusion, instead of listing them one after another.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "emissions",
+                "purchase",
+                "whereas"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L196_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a brief summary in one clear sentence for someone who missed it. Use all three words naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how the many-worlds interpretation of quantum mechanics posits branching parallel universes.",
+            "prompt": "Source A says most workers prefer hybrid work. Source B says managers worry about team cohesion. Write a synthesis.",
             "options": [
-                "many-worlds",
-                "branching",
-                "quantum"
+                "cohesion",
+                "reconcile",
+                "prefer"
             ],
-            "sampleAnswer": "The many-worlds interpretation posits that every quantum measurement causes branching into parallel, non-communicating universes.",
-            "hint": "Name the interpretation, then describe what happens to the universe at every quantum measurement.",
-            "explanation": "'Non-communicating universes' is the key phrase - once the branches separate, they cannot interact with one another again.",
+            "sampleAnswer": "Employees clearly prefer hybrid work, but managers worry about cohesion, so organizations need to reconcile the two, perhaps with shared office days.",
+            "hint": "Combine the views and propose a way forward.",
+            "explanation": "Good synthesis highlights the tension between sources and proposes how to resolve it.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "cohesion",
+                "prefer",
+                "reconcile"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L196_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a brief summary in one sentence for someone who missed it. Each word should appear in your answer.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how a person's name still refers to them even in an imagined situation where every fact about their life is different.",
+            "prompt": "Source A says online courses have high dropout rates. Source B says they are cheaper and flexible. Write a synthesis.",
             "options": [
-                "refer",
-                "imagined",
-                "fact"
+                "flexible",
+                "dropout",
+                "despite"
             ],
-            "sampleAnswer": "A person's name still refers to them even in an imagined situation where every single fact about their life is different.",
-            "hint": "State what still works even in an imagined scenario, then specify how much about that scenario has changed.",
-            "explanation": "This is a genuinely strange and interesting puzzle about language - it shows that names can behave differently from ordinary descriptions.",
+            "sampleAnswer": "Online courses are cheaper and flexible, but high dropout rates suggest that many learners need more support to finish despite these advantages.",
+            "hint": "Combine the benefit and the problem, and suggest an implication.",
+            "explanation": "A synthesis shows how one source qualifies the other, so the reader gets one conclusion and not two separate summaries.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "despite",
+                "dropout",
+                "flexible"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L197_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a professional reply in a single sentence. Your answer should contain all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how a strong closing paragraph can leave the reader with a clear sense of the writer's confidence in their argument.",
+            "prompt": "You must report on a delay, but you do not yet know the cause. Write a careful update.",
             "options": [
-                "confidence",
-                "closing",
-                "clear"
+                "not yet",
+                "confirm",
+                "currently"
             ],
-            "sampleAnswer": "A strong closing paragraph leaves the reader with a clear sense of the writer's confidence in the argument just made.",
-            "hint": "Name what a strong closing leaves the reader with, then specify whose confidence it reflects.",
-            "explanation": "Ending on a note of 'clear confidence' matters - readers remember how an argument concludes more than how carefully it hedged along the way.",
+            "sampleAnswer": "We are currently investigating the delay, and we do not yet know the cause, but we will confirm it by tomorrow afternoon.",
+            "hint": "Say what you know, what you do not, and when you will know.",
+            "explanation": "Honest uncertainty with a follow-up date is more professional than guessing, because the reader knows what you know and when to expect more.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "confirm",
+                "currently",
+                "not yet"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L197_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a professional reply in one sentence. Fit the three key words into your answer naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how different regions of the brain must work together in coordination to produce complex thought.",
+            "prompt": "Give a forecast with an assumption stated clearly.",
             "options": [
-                "coordinate",
-                "region",
-                "complex"
+                "estimate",
+                "could",
+                "assuming"
             ],
-            "sampleAnswer": "Different regions of the brain must coordinate closely with one another to produce genuinely complex thought and behavior.",
-            "hint": "Name what different brain regions must do together, then specify the kind of thought this produces.",
-            "explanation": "This reflects a key shift in neuroscience - complex thought isn't located in one single brain area, it emerges from coordination across many.",
+            "sampleAnswer": "Assuming that suppliers deliver on time, we estimate that the project could finish by the end of June.",
+            "hint": "State the assumption at the start, then hedge the estimate with 'could' or 'may'.",
+            "explanation": "Stating the assumption behind a forecast helps the reader to judge how reliable it is.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "assuming",
+                "could",
+                "estimate"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L197_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write a concise workplace message in one clear sentence. Include the three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why people today are often more skeptical of big, sweeping explanations for how the world works.",
+            "prompt": "Recommend a next step despite the uncertainty.",
             "options": [
-                "skeptical",
-                "sweeping",
-                "explanation"
+                "proceed",
+                "review",
+                "despite"
             ],
-            "sampleAnswer": "People today are often more skeptical of sweeping explanations that claim to account for how the entire world works.",
-            "hint": "State how people tend to react to big explanations today, then describe the scope such explanations claim to cover.",
-            "explanation": "Describing explanations as 'sweeping' hints at the reason for the skepticism - the bigger and neater the claim, the more it invites careful scrutiny.",
+            "sampleAnswer": "Despite the uncertainty, I recommend that we proceed with the first phase and review the situation once the data arrives.",
+            "hint": "Recommend a first step despite the uncertainty and mention a point at which you will review it.",
+            "explanation": "Uncertainty should not prevent action if the step is reversible and a review point is planned.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "despite",
+                "proceed",
+                "review"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L198_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write the message in a single sentence in a polite tone. Use all three words naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how expert prose transmits the maximum amount of information using the minimum number of words.",
+            "prompt": "Write the opening of an email to a stranger, asking for a 15-minute conversation about her career.",
             "options": [
-                "maximum information",
-                "minimum words",
-                "achieve"
+                "admire",
+                "conversation",
+                "brief"
             ],
-            "sampleAnswer": "Expert prose achieves maximum information transfer using minimum words, so that not a single word feels wasted.",
-            "hint": "State what expert prose achieves in terms of information and word count, then add a result clause about waste.",
-            "explanation": "'Not a single word feels wasted' is the real test of economical prose - every word should be doing real work in the sentence.",
+            "sampleAnswer": "I admire your work in urban planning, and I would be grateful for a brief conversation of fifteen minutes to learn about your career path.",
+            "hint": "State a specific reason for choosing her and make a small request.",
+            "explanation": "A stranger is more likely to agree when the request is specific, short, and shows you did your research.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "admire",
+                "brief",
+                "conversation"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L198_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write the message in a single sentence in a polite tone. Work in each of the three words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how the cosmological constant serves as the leading explanation for the accelerating expansion of the universe.",
+            "prompt": "Explain what you hope to learn, so she can decide whether to say yes.",
             "options": [
-                "cosmological constant",
-                "expansion",
-                "accelerate"
+                "advice",
+                "hope",
+                "entering"
             ],
-            "sampleAnswer": "The cosmological constant is the leading explanation for the accelerating expansion of the universe observed at the largest cosmic scales.",
-            "hint": "Use 'The cosmological constant is the leading theoretical explanation for the observed accelerating expansion of the universe at' and end.",
-            "explanation": "'At the largest cosmic scales' scopes the claim precisely - the acceleration is only measurable across vast intergalactic distances.",
+            "sampleAnswer": "I hope to get your advice on entering the field, especially on how to choose between further study and gaining experience first.",
+            "hint": "Make the topic specific enough that she can prepare.",
+            "explanation": "A specific question shows that her time will be used well, so it is easier for her to say yes and to prepare an answer.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "advice",
+                "entering",
+                "hope"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L198_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write the message in a single sentence in a polite tone. Each word should appear in your answer.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how two different descriptions can refer to the exact same real-world thing without anyone realizing it at first.",
+            "prompt": "Close the email politely, making it easy to decline.",
             "options": [
-                "description",
-                "refer",
-                "realize"
+                "busy",
+                "understand",
+                "appreciate"
             ],
-            "sampleAnswer": "Two different descriptions can refer to the exact same real-world thing without anyone realizing it until much later.",
-            "hint": "State what two different descriptions can share, then specify how long it can take for anyone to notice.",
-            "explanation": "'Until much later' captures something genuinely interesting about language and discovery - two labels can quietly point at one thing for a long time before anyone connects them.",
+            "sampleAnswer": "I understand that you are busy, so please feel free to say no, and I appreciate you reading this in any case.",
+            "hint": "Show respect for her time and make declining easy.",
+            "explanation": "Making it easy to refuse actually makes a stranger more willing to agree.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "appreciate",
+                "busy",
+                "understand"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L199_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write what this taught you in one clear sentence. Include all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how a well-crafted concluding sentence can clinch an argument by revealing its inevitable implication.",
+            "prompt": "Describe one way your writing has improved and how you noticed.",
             "options": [
-                "clinch",
-                "implication",
-                "inevitable"
+                "clearer",
+                "noticed",
+                "shorter"
             ],
-            "sampleAnswer": "The final sentence clinches the argument by revealing its most important implication as logically inevitable and practically urgent.",
-            "hint": "State what the final sentence does to the argument, then describe the implication with two adjectives.",
-            "explanation": "'Logically inevitable and practically urgent' names two types of force: intellectual necessity and real-world consequence.",
+            "sampleAnswer": "I noticed that my messages have become clearer and shorter, because I now decide my main point before I start writing.",
+            "hint": "State the improvement and the habit that caused it.",
+            "explanation": "Reflection identifies both the result and the habit that produced it, which is why it helps you repeat the improvement.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "clearer",
+                "noticed",
+                "shorter"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L199_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Reflect in a single sentence on what you learned. Make sure all three words fit the meaning.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about a surprising scientific idea: that all the information about a space could theoretically be described using only its outer surface.",
+            "prompt": "Say which writing skill you still find difficult and how you will practice.",
             "options": [
-                "information",
-                "surface",
-                "describe"
+                "struggle",
+                "practice",
+                "regularly"
             ],
-            "sampleAnswer": "One surprising scientific idea proposes that all the information within a space could theoretically be described using only its outer surface.",
-            "hint": "Introduce the idea as surprising, then state what could theoretically be described using only a surface.",
-            "explanation": "Calling the idea 'surprising' is honest framing - reducing a description of a whole space down to just its surface defies ordinary intuition.",
+            "sampleAnswer": "I still struggle with choosing the right tone, so I will practice regularly by rewriting the same message for different readers.",
+            "hint": "Name the challenge and a concrete practice method.",
+            "explanation": "A practice plan with a method and a frequency is more likely to succeed.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "practice",
+                "regularly",
+                "struggle"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L199_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Reflect in one sentence on what you learned. Use all three words naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how an old idea can be refined by a new one without being completely thrown away in the process.",
+            "prompt": "Explain what advice you would give to someone starting to learn to write in English.",
             "options": [
-                "refine",
-                "thrown away",
-                "idea"
+                "advice",
+                "beginners",
+                "confidence"
             ],
-            "sampleAnswer": "A good new idea can refine an old one without the old one being simply thrown away in the process.",
-            "hint": "State what a good new idea can do to an old one, then clarify what does NOT happen to the old idea.",
-            "explanation": "Clarifying what does not happen (the old idea being thrown away) is a precise way to describe genuine intellectual progress, as opposed to simple replacement.",
+            "sampleAnswer": "My advice to beginners is to write a few sentences every day and not to worry about mistakes, because confidence grows with practice.",
+            "hint": "Give advice from your own experience, and add a reason that makes it easy to believe.",
+            "explanation": "Advice from your own experience is often the most helpful and the easiest for a learner to believe.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "advice",
+                "beginners",
+                "confidence"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L200_Q1",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Explain the problem and what should be done. Include the three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about how a master chef can take a traditional recipe and transform it into something genuinely original.",
+            "prompt": "Customer response times have doubled since the team lost two members. Describe the problem and its impact in two sentences.",
             "options": [
-                "master",
-                "traditional",
-                "transform"
+                "impact",
+                "satisfaction",
+                "doubled"
             ],
-            "sampleAnswer": "A master chef can take a traditional recipe passed down for generations and transform it into something genuinely original.",
-            "hint": "Name the kind of expert, then describe what they do to a traditional recipe.",
-            "explanation": "Using a concrete example (a master chef and a recipe) makes an abstract claim about mastery and innovation immediately easy to picture, in any discipline.",
+            "sampleAnswer": "Customer response times have doubled since two team members left, and the impact is falling satisfaction scores and an increase in repeat complaints.",
+            "hint": "State the problem with a fact and name its impact.",
+            "explanation": "A strong problem statement combines a measurable fact and its business impact, so the reader understands why it matters.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "doubled",
+                "impact",
+                "satisfaction"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L200_Q2",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Write an evaluation in one sentence that weighs both sides. Use all three words naturally.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why final-round negotiators often make their biggest concessions only when a deadline is about to expire.",
+            "prompt": "Compare two possible solutions: hiring temporary staff or introducing an automated first reply. Weigh them.",
             "options": [
-                "concession",
-                "deadline",
-                "expire"
+                "whereas",
+                "temporary",
+                "automated"
             ],
-            "sampleAnswer": "Negotiators often save their biggest concessions for the very end, offering them only as a deadline is about to expire.",
-            "hint": "State when negotiators tend to make their biggest concessions, then specify the exact timing that triggers this.",
-            "explanation": "This is a well-documented negotiation pattern - a ticking deadline creates pressure that unlocks flexibility neither side showed earlier in the conversation.",
+            "sampleAnswer": "Temporary staff would restore capacity quickly, whereas an automated first reply is cheaper but cannot handle complex questions, so each solves only part of the problem.",
+            "hint": "Compare on the criteria that matter, and be fair to both options.",
+            "explanation": "A fair comparison makes clear what each option solves and what it leaves unsolved.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "automated",
+                "temporary",
+                "whereas"
             ]
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L200_Q3",
-            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
+            "instruction": "Give a recommendation and say why. Use the three words meaningfully.",
             "subtype": "shortAnswerWriting",
             "interactionType": "writing",
-            "prompt": "Write about why nothing in nature can be fully understood in complete isolation from everything around it.",
+            "prompt": "Recommend a solution and explain your next steps to the manager, in two or three sentences.",
             "options": [
-                "isolation",
-                "interconnected",
-                "nature"
+                "recommend",
+                "within",
+                "combining"
             ],
-            "sampleAnswer": "Nothing in nature can be fully understood in isolation, since every living thing exists as part of a deeply interconnected system.",
-            "hint": "State what can't be understood alone, then explain what larger system every living thing belongs to.",
-            "explanation": "This ecological insight applies far beyond biology - systems thinking, in general, reminds us that context and relationship often matter as much as the thing itself.",
+            "sampleAnswer": "I recommend combining both: hire two temporary agents now, and introduce the automated reply within a month to reduce pressure on them. I will report progress on response times weekly.",
+            "hint": "Give a decision, a plan with timing, and how you will report progress.",
+            "explanation": "A complete recommendation states what to do, in what order, and how success will be measured, which is what a manager needs to approve it.",
             "keywordsExpected": [
-                "key1",
-                "key2"
+                "combining",
+                "recommend",
+                "within"
             ]
         }
     ]

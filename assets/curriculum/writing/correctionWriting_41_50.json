@@ -8,16 +8,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "I [making] a video call when the internet suddenly disconnected.",
+            "passage": "I [make] a video call when the internet suddenly cut out.",
             "options": [
+                "made",
+                "make",
                 "was making",
-                "have made",
-                "making",
-                "make"
+                "making"
             ],
             "correctAnswer": "was making",
-            "hint": "Think about an action that was already in progress when something else interrupted it.",
-            "explanation": "The past continuous needs both 'was' and the -ing form: 'was making,' not just 'making.'",
+            "hint": "One action was in progress when a second, shorter action interrupted it — which tense shows the ongoing one?",
+            "explanation": "Past continuous ('was/were + verb-ing') describes an action in progress when something else happened. Since 'I' is singular, 'was making' is correct.",
             "errorCount": 3
         },
         {
@@ -25,16 +25,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "While she [was save] her files, the computer froze completely.",
+            "passage": "While she [save] her files, the whole computer froze unexpectedly.",
             "options": [
                 "was saving",
-                "has saved",
-                "saving",
-                "was save"
+                "saved",
+                "save",
+                "is saving"
             ],
             "correctAnswer": "was saving",
-            "hint": "Think about an ongoing action interrupted by another event, and check the verb ending.",
-            "explanation": "The past continuous requires the -ing form after 'was': 'was saving,' not 'was save.'",
+            "hint": "The saving was happening continuously at the moment the computer froze.",
+            "explanation": "The ongoing background action needs past continuous: 'was saving.' The simple past 'saved' would suggest the action was already complete.",
             "errorCount": 3
         },
         {
@@ -42,16 +42,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "What [you were] doing online at midnight last night?",
+            "passage": "What [you do] online so late last night when I called?",
             "options": [
-                "were you",
-                "you was",
-                "was you",
-                "you were"
+                "you were doing",
+                "you do",
+                "you doing",
+                "were you doing"
             ],
-            "correctAnswer": "were you",
-            "hint": "In questions, the auxiliary verb usually comes before the subject.",
-            "explanation": "Past continuous questions invert the auxiliary and subject: 'were you,' not 'you were.'",
+            "correctAnswer": "were you doing",
+            "hint": "In a past continuous question, the auxiliary moves before the subject.",
+            "explanation": "Past continuous questions invert subject and auxiliary: 'were you doing,' not 'you were doing' or 'you do.'",
             "errorCount": 3
         },
         {
@@ -59,16 +59,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "I [waiting] when the doctor finally walked into the room.",
+            "passage": "I [wait] outside the clinic when the doctor finally called my name.",
             "options": [
                 "wait",
-                "have waited",
-                "waiting",
-                "was waiting"
+                "was waiting",
+                "am waiting",
+                "waited"
             ],
             "correctAnswer": "was waiting",
-            "hint": "Think about an ongoing action that was happening when another event occurred, and check for a missing word.",
-            "explanation": "The past continuous needs 'was' plus the -ing form: 'was waiting,' not just 'waiting.'",
+            "hint": "The waiting was already in progress at the exact moment the doctor called.",
+            "explanation": "'Was waiting' shows an action already in progress when the shorter action (the doctor calling) interrupted it — the defining pattern of past continuous with 'when.'",
             "errorCount": 3
         },
         {
@@ -76,16 +76,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "She felt dizzy while she [were running] on the treadmill yesterday.",
+            "passage": "She felt dizzy while she [run] on the treadmill at the gym.",
             "options": [
                 "were running",
-                "running",
+                "ran",
                 "was running",
-                "has run"
+                "run"
             ],
             "correctAnswer": "was running",
-            "hint": "The subject 'she' is singular, so check the matching form of 'be' in the past continuous.",
-            "explanation": "With the singular subject 'she,' the past continuous uses 'was,' not 'were': 'was running.'",
+            "hint": "'She' is singular, so which form of 'be' pairs with the -ing verb?",
+            "explanation": "Since the subject 'she' is singular, the correct auxiliary is 'was,' giving 'was running,' not 'were running.'",
             "errorCount": 3
         },
         {
@@ -93,16 +93,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "They [was checking] the patient's blood pressure when the alarm went off.",
+            "passage": "They [check] the patient's chart when the alarm suddenly went off.",
             "options": [
-                "have checked",
                 "was checking",
-                "checking",
+                "checked",
+                "check",
                 "were checking"
             ],
             "correctAnswer": "were checking",
-            "hint": "The subject 'they' is plural, so check the matching form of 'be' in the past continuous.",
-            "explanation": "With the plural subject 'they,' the past continuous uses 'were,' not 'was': 'were checking.'",
+            "hint": "'They' is plural — match the auxiliary to the subject.",
+            "explanation": "Plural subjects take 'were' in the past continuous, so the correct form is 'were checking,' not 'was checking.'",
             "errorCount": 3
         },
         {
@@ -110,16 +110,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "We [is going to] watch the new superhero movie this weekend.",
+            "passage": "We [is going to] present the new proposal at Thursday's meeting.",
             "options": [
-                "was going to",
                 "are going to",
+                "going to",
                 "is going to",
-                "go to"
+                "am going to"
             ],
             "correctAnswer": "are going to",
-            "hint": "The subject 'we' is plural; think about the matching form of 'going to.'",
-            "explanation": "With the plural subject 'we,' the correct form is 'are going to,' not 'is going to.'",
+            "hint": "'We' is plural — which form of 'be' matches it in this future structure?",
+            "explanation": "'Be going to' requires the form of 'be' to agree with the subject. Since 'we' is plural, the correct form is 'are going to.'",
             "errorCount": 3
         },
         {
@@ -127,16 +127,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "My sister [are going to] join a dance class starting next month.",
+            "passage": "My assistant [are going to] confirm the venue by the end of the day.",
             "options": [
-                "am going to",
-                "was going to",
+                "going to",
                 "is going to",
-                "are going to"
+                "are going to",
+                "am going to"
             ],
             "correctAnswer": "is going to",
-            "hint": "The subject 'my sister' is singular; think about the matching form of 'going to.'",
-            "explanation": "With the singular subject 'my sister,' the correct form is 'is going to,' not 'are going to.'",
+            "hint": "'My assistant' is a single person — check subject-verb agreement carefully.",
+            "explanation": "'My assistant' is singular, so the correct form of 'be' is 'is,' giving 'is going to confirm.'",
             "errorCount": 3
         },
         {
@@ -144,16 +144,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "I [is going to] buy tickets for the concert first thing tomorrow morning.",
+            "passage": "I [is going to] need another extension on this deadline, unfortunately.",
             "options": [
+                "am going to",
                 "are going to",
-                "was going to",
-                "is going to",
-                "am going to"
+                "going to",
+                "is going to"
             ],
             "correctAnswer": "am going to",
-            "hint": "The subject is 'I'; think about the matching form of 'going to.'",
-            "explanation": "With the subject 'I,' the form of 'going to' is always 'am going to,' not 'is going to.'",
+            "hint": "With the subject 'I,' only one form of 'be' is grammatically correct.",
+            "explanation": "The subject 'I' always pairs with 'am,' so the correct form is 'am going to,' not 'is going to.'",
             "errorCount": 3
         },
         {
@@ -161,16 +161,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "She [are going to] call you back as soon as she finishes her meeting.",
+            "passage": "She [are going to] call you back the moment her meeting ends.",
             "options": [
                 "are going to",
-                "is going to",
                 "am going to",
-                "was going to"
+                "going to",
+                "is going to"
             ],
             "correctAnswer": "is going to",
-            "hint": "The subject 'she' is singular; think about the matching form of 'going to.'",
-            "explanation": "With the singular subject 'she,' the correct form is 'is going to,' not 'are going to.'",
+            "hint": "Match the form of 'be' to the singular subject 'she.'",
+            "explanation": "'She' is singular, so 'is going to' is correct; 'are going to' only matches plural subjects like 'we' or 'they.'",
             "errorCount": 3
         },
         {
@@ -178,16 +178,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "We [is going to] send you the documents by email later this afternoon.",
+            "passage": "We [is going to] email you the documents sometime this afternoon.",
             "options": [
                 "is going to",
                 "are going to",
                 "am going to",
-                "was going to"
+                "going to"
             ],
             "correctAnswer": "are going to",
-            "hint": "Match the plural subject 'we' to the correct form of 'going to.'",
-            "explanation": "'We' is plural, so 'going to' takes 'are,' not the singular form 'is.'",
+            "hint": "The plural subject 'we' requires a specific form of 'be.'",
+            "explanation": "'We' takes 'are' in the present tense of 'be,' so the correct form is 'are going to email,' not 'is going to.'",
             "errorCount": 3
         },
         {
@@ -195,16 +195,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "I [are going to] explain everything clearly once we meet in person.",
+            "passage": "I [are going to] explain the whole situation once everyone has arrived.",
             "options": [
-                "was going to",
-                "are going to",
+                "is going to",
+                "going to",
                 "am going to",
-                "is going to"
+                "are going to"
             ],
             "correctAnswer": "am going to",
-            "hint": "Remember which form of 'going to' always goes with the subject 'I.'",
-            "explanation": "With the subject 'I,' 'going to' always takes the form 'am going to,' not 'are going to.'",
+            "hint": "'I' always pairs with one specific form of 'be.'",
+            "explanation": "The subject 'I' takes 'am,' never 'are' or 'is,' so the correct form is 'am going to explain.'",
             "errorCount": 3
         },
         {
@@ -212,16 +212,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "Don't worry, I [will to help] you carry those heavy bags upstairs.",
+            "passage": "Don't worry, I [will to help] you move those boxes upstairs.",
             "options": [
                 "will help",
+                "wills help",
                 "will to help",
-                "am will help",
                 "will helping"
             ],
             "correctAnswer": "will help",
-            "hint": "'Will' is followed directly by the base form of the verb, with no extra word in between.",
-            "explanation": "'Will' is followed straight by the base verb form: 'will help,' never 'will to help.'",
+            "hint": "The modal 'will' is always followed directly by the base form of the verb, with nothing in between.",
+            "explanation": "After the modal 'will,' the verb stays in its base form with no 'to': 'will help,' not 'will to help.'",
             "errorCount": 3
         },
         {
@@ -229,7 +229,7 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "I think it [wills rain] later this evening; the sky looks quite dark.",
+            "passage": "I think it [wills rain] before the afternoon match even starts.",
             "options": [
                 "wills rain",
                 "will raining",
@@ -237,8 +237,8 @@
                 "will rain"
             ],
             "correctAnswer": "will rain",
-            "hint": "'Will' never changes form for different subjects, no matter what they are.",
-            "explanation": "'Will' stays the same for every subject and never takes an -s ending: 'will rain,' not 'wills rain.'",
+            "hint": "Modal verbs like 'will' never take an -s ending, even with singular subjects like 'it.'",
+            "explanation": "'Will' never changes form, regardless of the subject, so 'wills' is incorrect. The correct form is simply 'will rain.'",
             "errorCount": 3
         },
         {
@@ -246,16 +246,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "She [will probably to be] home by seven, according to her last message.",
+            "passage": "She [will probably to be] home by the time we finish dinner.",
             "options": [
-                "will probably to be",
-                "will probably be",
                 "wills probably be",
-                "will probably being"
+                "will probably be",
+                "will probably being",
+                "will probably to be"
             ],
             "correctAnswer": "will probably be",
-            "hint": "'Will' is followed directly by the base verb, even with an adverb like 'probably' in between.",
-            "explanation": "'Will' takes the base verb form even with an adverb inserted: 'will probably be,' not 'will probably to be.'",
+            "hint": "An adverb like 'probably' can sit between 'will' and the verb, but 'to' still doesn't belong there.",
+            "explanation": "Even with an adverb inserted, 'will' is still followed directly by the base verb, without 'to': 'will probably be.'",
             "errorCount": 3
         },
         {
@@ -263,16 +263,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "I promise I [will to study] harder for the next exam.",
+            "passage": "I promise I [will to study] harder before the next exam.",
             "options": [
-                "will studying",
                 "will to study",
+                "wills study",
                 "will study",
-                "am will study"
+                "will studying"
             ],
             "correctAnswer": "will study",
-            "hint": "No word should separate 'will' from the base verb that follows it.",
-            "explanation": "'Will' is followed directly by the base verb form: 'will study,' never 'will to study.'",
+            "hint": "Remove the unnecessary 'to' that sometimes creeps in after modal verbs.",
+            "explanation": "'Will' is directly followed by the base verb with no 'to': 'will study.' Adding 'to' is a common learner error.",
             "errorCount": 3
         },
         {
@@ -280,16 +280,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "Our teacher says the test results [wills be] ready by Friday afternoon.",
+            "passage": "Our supervisor says the results [wills be] posted by Friday afternoon.",
             "options": [
                 "will to be",
+                "will be",
                 "will being",
-                "wills be",
-                "will be"
+                "wills be"
             ],
             "correctAnswer": "will be",
-            "hint": "The modal 'will' stays exactly the same regardless of the subject.",
-            "explanation": "'Will' stays the same for every subject: 'will be,' not 'wills be.'",
+            "hint": "Check that the modal verb hasn't picked up an incorrect -s ending.",
+            "explanation": "Since modal verbs never take '-s,' the correct form is 'will be,' not 'wills be,' regardless of the subject.",
             "errorCount": 3
         },
         {
@@ -297,16 +297,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "Don't worry about the presentation - I [will to help] you practice tonight.",
+            "passage": "Don't worry about the presentation — I [will to help] you rehearse tonight.",
             "options": [
-                "will help",
+                "will helping",
                 "will to help",
-                "wills help",
-                "will helping"
+                "will help",
+                "wills help"
             ],
             "correctAnswer": "will help",
-            "hint": "'Will' is followed directly by the base verb, with no 'to' in between.",
-            "explanation": "'Will' is never followed by 'to': the correct form is 'will help,' not 'will to help.'",
+            "hint": "The base verb follows 'will' directly, with no infinitive marker.",
+            "explanation": "'Will' takes the base form of the verb directly after it, without 'to,' so 'will help' is correct.",
             "errorCount": 3
         },
         {
@@ -314,16 +314,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "This is [the most difficultest] project I have ever worked on at this company.",
+            "passage": "This is [the most difficultest] assignment I've faced all semester.",
             "options": [
-                "most difficultest",
-                "the most difficult",
                 "the most difficultest",
-                "the difficultest"
+                "most difficultest",
+                "the difficultest",
+                "the most difficult"
             ],
             "correctAnswer": "the most difficult",
-            "hint": "Longer adjectives form the superlative with 'the most' alone, never combined with an -est ending.",
-            "explanation": "Long adjectives like 'difficult' use only 'the most': 'the most difficult,' never adding -est as well.",
+            "hint": "'Difficult' is a longer adjective — check whether it needs 'most' or an '-est' ending, not both.",
+            "explanation": "Longer adjectives form superlatives with 'most,' not '-est.' Combining both, as in 'most difficultest,' creates an incorrect double superlative.",
             "errorCount": 3
         },
         {
@@ -331,7 +331,7 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "She is [most hard-working] employee in our entire department.",
+            "passage": "She's [most hard-working] employee I've ever managed on this team.",
             "options": [
                 "the most hard-working",
                 "more hard-working",
@@ -339,8 +339,8 @@
                 "most hard-working"
             ],
             "correctAnswer": "the most hard-working",
-            "hint": "Superlatives comparing one thing to a whole group require the article 'the.'",
-            "explanation": "Superlatives always include 'the': 'the most hard-working,' not just 'most hard-working.'",
+            "hint": "Superlatives describing 'the one at the extreme' usually need the definite article in front.",
+            "explanation": "Superlative phrases require 'the' before them: 'the most hard-working.' Leaving out 'the' is a common but incorrect omission.",
             "errorCount": 3
         },
         {
@@ -348,16 +348,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "That was [the longuest] meeting of the entire year, in my opinion.",
+            "passage": "That was [the longuest] meeting I have sat through all year.",
             "options": [
-                "longest",
-                "the most longest",
                 "the longest",
-                "the longuest"
+                "longuest",
+                "the longuest",
+                "the most long"
             ],
             "correctAnswer": "the longest",
-            "hint": "Short adjectives form the superlative with -est alone, added directly to the adjective.",
-            "explanation": "'Long' becomes 'longest' in the superlative; the spelling 'longuest' is simply incorrect.",
+            "hint": "'Long' is a short adjective — its superlative ending follows a regular spelling pattern.",
+            "explanation": "Short adjectives like 'long' form superlatives with '-est': 'longest.' 'Longuest' is a misspelling that doesn't exist in English.",
             "errorCount": 3
         },
         {
@@ -365,16 +365,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "This is [most beautiful] beach I have ever visited in my entire life.",
+            "passage": "This is [most beautiful] view I have ever seen from a hotel room.",
             "options": [
                 "more beautiful",
-                "the most beautiful",
                 "most beautiful",
-                "the beautifulest"
+                "the most beautiful",
+                "beautifulest"
             ],
             "correctAnswer": "the most beautiful",
-            "hint": "Don't forget 'the' when forming a superlative about an entire group.",
-            "explanation": "Superlatives always include 'the': 'the most beautiful,' not just 'most beautiful.'",
+            "hint": "A superlative sentence like this needs the definite article before it.",
+            "explanation": "Superlatives require 'the' in front: 'the most beautiful.' Omitting the article is a common error even when the rest of the phrase is correct.",
             "errorCount": 3
         },
         {
@@ -382,16 +382,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "That mountain is [the most high] peak in the entire country.",
+            "passage": "That mountain range is [the most high] peak system in the entire country.",
             "options": [
-                "the most high",
-                "the higher",
                 "most highest",
-                "the highest"
+                "the highest",
+                "the higher",
+                "the most high"
             ],
             "correctAnswer": "the highest",
-            "hint": "Short adjectives form the superlative with -est alone, not with 'the most.'",
-            "explanation": "Short adjectives like 'high' use the -est ending: 'the highest,' not 'the most high.'",
+            "hint": "'High' is a short adjective — check whether '-est' or 'most' is the standard form.",
+            "explanation": "Short adjectives like 'high' take '-est' in the superlative: 'highest.' Using 'most' with a short adjective like this is nonstandard.",
             "errorCount": 3
         },
         {
@@ -399,16 +399,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "Our guide showed us [the most fastest] route through the old city center.",
+            "passage": "Our guide showed us [the most fastest] route through the old quarter.",
             "options": [
-                "most fastest",
+                "fastest",
                 "the most fastest",
-                "the fastest",
-                "the fastlier"
+                "the more fast",
+                "the fastest"
             ],
             "correctAnswer": "the fastest",
-            "hint": "Short adjectives form the superlative with -est alone, never combined with 'the most.'",
-            "explanation": "Short adjectives like 'fast' use only -est: 'the fastest,' never both 'the most' and '-est' together.",
+            "hint": "'Fast' already forms its superlative with '-est' — check for an unnecessary extra 'most.'",
+            "explanation": "'Fastest' is already the correct superlative form; adding 'most' in front creates a double superlative, which is incorrect.",
             "errorCount": 3
         },
         {
@@ -416,16 +416,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "Children [mustn't] wear a seatbelt every time they are in the car.",
+            "passage": "Passengers [mustn't] fasten their seatbelts before the plane takes off.",
             "options": [
-                "could",
-                "must",
                 "mustn't",
-                "can"
+                "shouldn't",
+                "must",
+                "can't"
             ],
             "correctAnswer": "must",
-            "hint": "Think about whether this rule requires something or forbids something.",
-            "explanation": "This is a required safety rule, so it needs 'must,' not 'mustn't,' which expresses prohibition.",
+            "hint": "Think about the actual safety rule being described — is this required, or forbidden?",
+            "explanation": "Seatbelts are required before takeoff, so the sentence needs 'must,' expressing obligation. 'Mustn't' would incorrectly suggest this is forbidden.",
             "errorCount": 3
         },
         {
@@ -433,16 +433,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "You [must] leave young children alone near the swimming pool, for their safety.",
+            "passage": "You [must] touch the wet paint — the sign clearly says so.",
             "options": [
+                "don't have to",
                 "mustn't",
-                "can",
-                "must",
-                "could"
+                "shouldn't",
+                "must"
             ],
             "correctAnswer": "mustn't",
-            "hint": "Think about whether this sentence forbids something dangerous or requires it.",
-            "explanation": "This describes something dangerous that should be avoided, so it needs 'mustn't,' not 'must.'",
+            "hint": "A sign like this is typically warning people away from something, not requiring an action.",
+            "explanation": "Since the sign is prohibiting an action, the sentence needs 'mustn't,' expressing prohibition, not 'must,' which would express obligation.",
             "errorCount": 3
         },
         {
@@ -450,16 +450,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "In our family, everyone [mustn't] help clean up after dinner together.",
+            "passage": "In this office, everyone [mustn't] wear their ID badge at all times.",
             "options": [
-                "mustn't",
                 "must",
-                "could",
-                "can"
+                "mustn't",
+                "shouldn't",
+                "doesn't have to"
             ],
             "correctAnswer": "must",
-            "hint": "Think about whether this household rule requires participation or forbids it.",
-            "explanation": "This is a firm family rule requiring participation, so it needs 'must,' not 'mustn't.'",
+            "hint": "Consider whether wearing the badge is being required or forbidden by office policy.",
+            "explanation": "The rule requires badges to be worn, so 'must' is correct here. 'Mustn't' would reverse the meaning to a prohibition.",
             "errorCount": 3
         },
         {
@@ -467,16 +467,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "Customers [mustn't] show their receipt in order to return an item.",
+            "passage": "Customers [mustn't] show a valid receipt in order to return an item.",
             "options": [
+                "don't have to",
+                "shouldn't",
                 "mustn't",
-                "could",
-                "must",
-                "can"
+                "must"
             ],
             "correctAnswer": "must",
-            "hint": "Think about whether this store policy requires something or forbids it.",
-            "explanation": "This describes a required condition for returns, so it needs 'must,' not 'mustn't.'",
+            "hint": "A store return policy usually states a requirement, not a prohibition.",
+            "explanation": "Since showing the receipt is required for a return, 'must' fits the meaning; 'mustn't' would incorrectly suggest receipts are forbidden.",
             "errorCount": 3
         },
         {
@@ -484,16 +484,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "You [must] touch the items in the glass display case, according to the sign.",
+            "passage": "You [must] eat or drink near the museum's antique manuscripts.",
             "options": [
                 "mustn't",
                 "must",
-                "can",
-                "could"
+                "don't have to",
+                "shouldn't"
             ],
             "correctAnswer": "mustn't",
-            "hint": "Think about whether this is something store staff would forbid.",
-            "explanation": "This describes a prohibition against touching items, so it needs 'mustn't,' not 'must.'",
+            "hint": "A museum rule near fragile items is almost always a prohibition, not a requirement.",
+            "explanation": "The context describes a rule protecting fragile items, so 'mustn't' correctly expresses prohibition rather than obligation.",
             "errorCount": 3
         },
         {
@@ -501,16 +501,16 @@
             "instruction": "Correct the grammatical error in the sentence.",
             "subtype": "correctionWriting",
             "interactionType": "typing",
-            "passage": "Shoppers [mustn't] wear a mask if the store requires it by policy.",
+            "passage": "All new hires [mustn't] complete the safety training within their first week.",
             "options": [
+                "shouldn't",
+                "must",
                 "mustn't",
-                "can",
-                "could",
-                "must"
+                "don't have to"
             ],
             "correctAnswer": "must",
-            "hint": "Think about whether store policy requires this action or forbids it.",
-            "explanation": "This describes a requirement set by store policy, so it needs 'must,' not 'mustn't.'",
+            "hint": "Company onboarding policies usually describe what's required, not forbidden.",
+            "explanation": "Completing training is a requirement for new hires, so 'must' is correct; 'mustn't' would reverse the intended meaning entirely.",
             "errorCount": 3
         }
     ]

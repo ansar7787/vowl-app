@@ -1,577 +1,577 @@
 {
-    "gameType": "dailyJournal",
-    "batchIndex": 1,
-    "levels": "1-10",
-    "quests": [
-        {
-            "id": "WRT_DAILYJOURNAL_L1_Q1",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about what you do every morning before school or work.",
-            "options": [
-                "wake",
-                "shower",
-                "breakfast"
-            ],
-            "sampleAnswer": "I wake up, take a quick shower, and then eat breakfast before I leave the house.",
-            "hint": "Think about the very first three things you do after getting out of bed.",
-            "explanation": "This sentence uses the simple present tense to describe a daily habit, listing the actions in the order they happen.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L1_Q2",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about your nightly routine before going to sleep.",
-            "options": [
-                "brush",
-                "teeth",
-                "bed"
-            ],
-            "sampleAnswer": "Every night, I brush my teeth and then go straight to bed.",
-            "hint": "Think about the last two or three things you do before falling asleep.",
-            "explanation": "The simple present tense ('brush', 'go') fits here because this routine happens every night, not just once.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L1_Q3",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence describing how you usually get to school or work.",
-            "options": [
-                "commute",
-                "bus",
-                "tired"
-            ],
-            "sampleAnswer": "My daily commute by bus takes almost an hour, and it always makes me feel tired.",
-            "hint": "Describe your normal way of traveling and how it makes you feel.",
-            "explanation": "This sentence connects a routine action (commuting) with a feeling (tired), giving a clear picture of daily life.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L2_Q1",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about a typical day in your classroom.",
-            "options": [
-                "classroom",
-                "homework",
-                "teacher"
-            ],
-            "sampleAnswer": "In my classroom, the teacher checks our homework first thing every morning.",
-            "hint": "Think about what happens right when class starts each day.",
-            "explanation": "This sentence uses the simple present tense to show something that happens regularly at school, fitting a habitual routine.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L2_Q2",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about your typical lunchtime at school.",
-            "options": [
-                "lunch",
-                "cafeteria",
-                "friends"
-            ],
-            "sampleAnswer": "I usually eat lunch with my friends in the school cafeteria.",
-            "hint": "Think about who you usually sit with and where you eat.",
-            "explanation": "Using 'usually' with the simple present clearly signals a regular daily habit, which is the goal of this entry.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L2_Q3",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence describing your weekly timetable at school.",
-            "options": [
-                "timetable",
-                "subjects",
-                "favorite"
-            ],
-            "sampleAnswer": "My timetable includes many subjects, but math is still my favorite.",
-            "hint": "Think about your class schedule and which subject you enjoy most.",
-            "explanation": "This sentence combines a factual statement about routine with a personal opinion, making it more engaging to read.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L3_Q1",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about something that happened at work yesterday.",
-            "options": [
-                "meeting",
-                "presented",
-                "report"
-            ],
-            "sampleAnswer": "Yesterday, I presented my report during the team meeting.",
-            "hint": "Think of one specific task you completed at work yesterday.",
-            "explanation": "The simple past tense ('presented') is correct here because the action is finished and happened at a specific time.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L3_Q2",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about a work task you finished yesterday.",
-            "options": [
-                "emailed",
-                "client",
-                "deadline"
-            ],
-            "sampleAnswer": "I emailed the client right before the deadline yesterday afternoon.",
-            "hint": "Think about a task you had to finish before a certain time.",
-            "explanation": "The simple past tense and the time word 'yesterday' work together to describe a single completed action.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L3_Q3",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about helping a colleague yesterday.",
-            "options": [
-                "colleague",
-                "helped",
-                "project"
-            ],
-            "sampleAnswer": "I helped my colleague finish her part of the project yesterday.",
-            "hint": "Think of a time you assisted someone with their work recently.",
-            "explanation": "This sentence uses the simple past to recount a specific, completed action, the main goal of a short recount entry.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L4_Q1",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about a travel problem you experienced recently.",
-            "options": [
-                "airport",
-                "delayed",
-                "waited"
-            ],
-            "sampleAnswer": "My flight was delayed, so I waited at the airport for three extra hours.",
-            "hint": "Think of an inconvenience that happened during a recent trip.",
-            "explanation": "The simple past tense describes a completed event, and 'so' connects the problem clearly to its result.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L4_Q2",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about something you forgot while packing for a trip.",
-            "options": [
-                "luggage",
-                "packed",
-                "forgot"
-            ],
-            "sampleAnswer": "I packed my luggage quickly and forgot my phone charger at home.",
-            "hint": "Think about an item you accidentally left behind on a trip.",
-            "explanation": "This sentence joins two simple past verbs with 'and' to show a sequence of related actions.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L4_Q3",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about arriving somewhere after a long journey.",
-            "options": [
-                "arrived",
-                "hotel",
-                "tired"
-            ],
-            "sampleAnswer": "We arrived at the hotel late at night, feeling completely tired.",
-            "hint": "Think about how you felt right after a long trip ended.",
-            "explanation": "Combining a simple past action with a feeling makes a simple recount more vivid and personal.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L5_Q1",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence describing your grandmother or another older relative.",
-            "options": [
-                "grandmother",
-                "kind",
-                "patient"
-            ],
-            "sampleAnswer": "My grandmother is incredibly kind and always patient with everyone in our family.",
-            "hint": "Think of two positive qualities that describe this family member well.",
-            "explanation": "Using two clear adjectives gives the reader a strong, specific picture of a person's character.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L5_Q2",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence describing your brother or another sibling.",
-            "options": [
-                "brother",
-                "funny",
-                "loud"
-            ],
-            "sampleAnswer": "My brother is really funny, but he can also be quite loud.",
-            "hint": "Think of one good trait and one slightly less convenient trait.",
-            "explanation": "The connector 'but' lets the writer present two contrasting qualities in one natural-sounding sentence.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L5_Q3",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence describing your parents and their daily life.",
-            "options": [
-                "parents",
-                "supportive",
-                "busy"
-            ],
-            "sampleAnswer": "My parents are always supportive, even though they are very busy.",
-            "hint": "Think about a quality you appreciate despite their busy schedule.",
-            "explanation": "'Even though' introduces a mild contrast, showing the relationship between two ideas in one clear sentence.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L6_Q1",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence describing a local market you have visited.",
-            "options": [
-                "market",
-                "crowded",
-                "colorful"
-            ],
-            "sampleAnswer": "The local market is always crowded, but the stalls are so colorful.",
-            "hint": "Think of one challenging feature and one pleasant visual detail.",
-            "explanation": "Pairing two adjectives with a contrast word like 'but' creates a more balanced, realistic description.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L6_Q2",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence describing a shop or store you like.",
-            "options": [
-                "store",
-                "spacious",
-                "modern"
-            ],
-            "sampleAnswer": "My favorite store is spacious and has a modern, clean design.",
-            "hint": "Think about the size and style of a shop you enjoy visiting.",
-            "explanation": "This sentence uses two adjectives together to build a clear visual impression of the store's interior.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L6_Q3",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence describing a shopping mall near your home.",
-            "options": [
-                "mall",
-                "busy",
-                "convenient"
-            ],
-            "sampleAnswer": "The mall near my home is always busy, but it's very convenient for quick errands.",
-            "hint": "Think about a downside and an upside of this shopping location.",
-            "explanation": "Using 'but' to link two contrasting adjectives shows a balanced description rather than a one-sided opinion.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L7_Q1",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about your favorite type of food.",
-            "options": [
-                "noodles",
-                "favorite",
-                "spicy"
-            ],
-            "sampleAnswer": "My favorite food is spicy noodles, especially on a cold day.",
-            "hint": "Think of a dish you genuinely look forward to eating.",
-            "explanation": "Adding a small detail, like 'on a cold day,' makes a simple preference statement feel more personal.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L7_Q2",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about a food you don't enjoy eating.",
-            "options": [
-                "vegetables",
-                "dislike",
-                "bitter"
-            ],
-            "sampleAnswer": "I dislike bitter vegetables, especially raw bell peppers.",
-            "hint": "Think of a specific food whose taste you find unpleasant.",
-            "explanation": "This sentence states a dislike and supports it with a reason, the bitter taste, making the opinion more convincing.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L7_Q3",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence describing a dessert you often crave.",
-            "options": [
-                "dessert",
-                "sweet",
-                "craving"
-            ],
-            "sampleAnswer": "I often get a craving for something sweet, like chocolate dessert.",
-            "hint": "Think about a sweet treat you find yourself wanting often.",
-            "explanation": "Using 'craving' instead of simply 'want' adds a more natural, conversational tone to this short entry.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L8_Q1",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about something you like about your smartphone.",
-            "options": [
-                "smartphone",
-                "useful",
-                "battery"
-            ],
-            "sampleAnswer": "My smartphone is incredibly useful, although the battery doesn't last very long.",
-            "hint": "Think of one strong advantage and one common frustration.",
-            "explanation": "The connector 'although' lets the writer express both a positive and a negative point in one balanced sentence.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L8_Q2",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence about something that annoys you about an app you use.",
-            "options": [
-                "app",
-                "annoying",
-                "ads"
-            ],
-            "sampleAnswer": "This app is generally fine, but the constant ads are really annoying.",
-            "hint": "Think of a small but repeated problem you notice while using an app.",
-            "explanation": "This sentence shows how to express a mild complaint clearly, a useful everyday writing skill.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L8_Q3",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence praising a piece of technology you own.",
-            "options": [
-                "laptop",
-                "fast",
-                "reliable"
-            ],
-            "sampleAnswer": "My laptop is fast, reliable, and has never let me down.",
-            "hint": "Think of two qualities that make this device trustworthy.",
-            "explanation": "Listing two adjectives together strengthens a positive opinion and makes the writing sound more confident.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L9_Q1",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence describing your morning health routine in order.",
-            "options": [
-                "first",
-                "then",
-                "exercise"
-            ],
-            "sampleAnswer": "First, I drink a glass of water, then I do some light exercise.",
-            "hint": "Think about the very first two healthy habits you do each morning.",
-            "explanation": "Sequencing words like 'first' and 'then' help organize actions clearly in the order they happen.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L9_Q2",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence describing two steps in your post-exercise routine.",
-            "options": [
-                "after",
-                "stretch",
-                "shower"
-            ],
-            "sampleAnswer": "After my workout, I always stretch before taking a shower.",
-            "hint": "Think about what you do right after finishing a workout.",
-            "explanation": "'After' clearly signals the order of two related actions, which is essential for clear sequencing.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L9_Q3",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence describing a healthy step in your morning.",
-            "options": [
-                "next",
-                "vitamins",
-                "breakfast"
-            ],
-            "sampleAnswer": "I eat a light breakfast, and next I take my daily vitamins.",
-            "hint": "Think about a small healthy habit you do after eating.",
-            "explanation": "The word 'next' keeps the sequence of actions clear and easy for a reader to follow.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L10_Q1",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence describing the order of events on movie night.",
-            "options": [
-                "first",
-                "movie",
-                "popcorn"
-            ],
-            "sampleAnswer": "First, we make popcorn, and then we choose a movie to watch together.",
-            "hint": "Think about what you prepare before the movie actually starts.",
-            "explanation": "Using 'first' and 'then' shows a clear, logical order of two simple actions in one sentence.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L10_Q2",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence describing your plan for a concert evening.",
-            "options": [
-                "after",
-                "concert",
-                "dinner"
-            ],
-            "sampleAnswer": "After the concert, we usually go out for a late dinner.",
-            "hint": "Think about what you typically do once a concert event ends.",
-            "explanation": "'After' is a simple but effective sequencing word for describing what happens once one event finishes.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        },
-        {
-            "id": "WRT_DAILYJOURNAL_L10_Q3",
-            "instruction": "Write a daily journal entry.",
-            "subtype": "dailyJournal",
-            "interactionType": "writing",
-            "prompt": "Write one sentence describing the order of a typical game night.",
-            "options": [
-                "then",
-                "game",
-                "snacks"
-            ],
-            "sampleAnswer": "We set out snacks, and then everyone starts the board game.",
-            "hint": "Think about what you prepare before the actual game begins.",
-            "explanation": "This sentence models a clear two-step sequence, a foundational skill for describing routines and events.",
-            "promptQuestions": [
-                "What happened?",
-                "How did you feel?"
-            ]
-        }
-    ]
+  "gameType": "dailyJournal",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "WRT_DAILYJOURNAL_L1_Q1",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about the first thing you usually do after you wake up.",
+      "options": [
+        "alarm",
+        "stretch",
+        "kitchen"
+      ],
+      "sampleAnswer": "As soon as my alarm goes off, I stretch for a minute before heading to the kitchen.",
+      "hint": "Pick just one action — the very first one — and name it clearly.",
+      "explanation": "The simple present tense (\"goes off\", \"stretch\") is used because this happens regularly, not just once.",
+      "promptQuestions": [
+        "What is the first thing you notice when you wake up?",
+        "Does your first action change on weekends?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L1_Q2",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence describing what you usually eat or drink in the morning.",
+      "options": [
+        "toast",
+        "coffee",
+        "rushed"
+      ],
+      "sampleAnswer": "Most mornings I only have time for a piece of toast and a cup of coffee.",
+      "hint": "Name the food or drink and add one small detail about how it usually goes.",
+      "explanation": "Adding a detail like \"only have time for\" turns a plain list into a real habit description.",
+      "promptQuestions": [
+        "What do you eat most mornings?",
+        "Is your morning food the same every day?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L1_Q3",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about how you usually get to school or work.",
+      "options": [
+        "bus",
+        "walk",
+        "earbuds"
+      ],
+      "sampleAnswer": "I usually put in my earbuds and walk to the bus stop about ten minutes early.",
+      "hint": "Think about the method of travel and one small habit that goes with it.",
+      "explanation": "Combining an action (\"walk\") with a habit (\"earbuds\") makes the sentence feel more specific than a single word.",
+      "promptQuestions": [
+        "How do you usually travel in the morning?",
+        "What do you usually do while you travel?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L2_Q1",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about what you usually do right after you get home in the evening.",
+      "options": [
+        "bag",
+        "shoes",
+        "couch"
+      ],
+      "sampleAnswer": "The moment I get home, I drop my bag by the door and collapse on the couch for a few minutes.",
+      "hint": "Think about the very first small action, not your whole evening.",
+      "explanation": "Strong verbs like \"drop\" and \"collapse\" show more energy than plain verbs like \"put\" and \"sit\".",
+      "promptQuestions": [
+        "What do you do in the first five minutes after arriving home?",
+        "Why do you do that first?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L2_Q2",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about something you do most nights before going to bed.",
+      "options": [
+        "phone",
+        "lights",
+        "quiet"
+      ],
+      "sampleAnswer": "Before I turn off the lights, I scroll through my phone for a while even though I know I shouldn't.",
+      "hint": "Choose one honest habit, even a small bad one — journals don't need perfect routines.",
+      "explanation": "The phrase \"even though I know I shouldn't\" adds a personal, honest tone instead of just listing an action.",
+      "promptQuestions": [
+        "What is one habit you have before bed?",
+        "Do you think this habit is a good one?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L2_Q3",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence comparing your weekday evenings to your weekend evenings.",
+      "options": [
+        "unwind",
+        "pace",
+        "contrast"
+      ],
+      "sampleAnswer": "On weekdays I go to bed early, but on weekends I usually stay up much later.",
+      "hint": "Use one sentence with \"but\" to show the difference between the two.",
+      "explanation": "The connector \"but\" links two contrasting habits in a single, clear sentence.",
+      "promptQuestions": [
+        "How are your weekday nights different from weekend nights?",
+        "Which one do you prefer?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L3_Q1",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence describing someone you see almost every day.",
+      "options": [
+        "neighbor",
+        "friendly",
+        "greets"
+      ],
+      "sampleAnswer": "My neighbor across the hall always greets me with a big smile, even early in the morning.",
+      "hint": "Pick a real person and one specific thing they always do.",
+      "explanation": "Focusing on one repeated action (\"always greets me\") tells us more about a person than a general adjective alone.",
+      "promptQuestions": [
+        "Who do you see almost every day?",
+        "What is one thing they always do?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L3_Q2",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about a family member and something you notice about them.",
+      "options": [
+        "mother",
+        "laughs",
+        "kitchen"
+      ],
+      "sampleAnswer": "My mother laughs loudly whenever she tells a story about her own childhood.",
+      "hint": "Choose a family member and a small, specific detail rather than a general trait.",
+      "explanation": "Specific details, like when and how someone laughs, make a person feel real on the page.",
+      "promptQuestions": [
+        "Which family member did you think of?",
+        "What small detail did you notice about them?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L3_Q3",
+      "instruction": "Write one or two connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a classmate or coworker and describe one habit that makes them stand out.",
+      "options": [
+        "punctual",
+        "notice",
+        "trait"
+      ],
+      "sampleAnswer": "My classmate always arrives five minutes early and organizes her notes before class starts.",
+      "hint": "Look for a small, repeated behavior rather than a physical description.",
+      "explanation": "Describing a repeated behavior helps the reader picture the person in action, not just their appearance.",
+      "promptQuestions": [
+        "What habit makes this person memorable?",
+        "How do you know this about them?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L4_Q1",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence describing a place you visit often, such as a shop or a park.",
+      "options": [
+        "corner",
+        "shop",
+        "crowded"
+      ],
+      "sampleAnswer": "The small shop on the corner is always crowded right after work ends.",
+      "hint": "Choose a real place and one detail about what it's usually like there.",
+      "explanation": "Adding a time clue (\"right after work\") explains why the place looks the way it does.",
+      "promptQuestions": [
+        "Which place did you picture?",
+        "What is it usually like there?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L4_Q2",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about your favorite room in your home and why you like it.",
+      "options": [
+        "window",
+        "light",
+        "comfortable"
+      ],
+      "sampleAnswer": "My bedroom feels the most comfortable because the window lets in soft light in the afternoon.",
+      "hint": "Name the room, then add \"because\" and one reason.",
+      "explanation": "The connector \"because\" gives a reason instead of just stating a preference, which makes the sentence more informative.",
+      "promptQuestions": [
+        "Which room did you choose?",
+        "Why does it feel that way to you?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L4_Q3",
+      "instruction": "Write one or two connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a place near your home that has changed recently.",
+      "options": [
+        "street",
+        "construction",
+        "noisy"
+      ],
+      "sampleAnswer": "The street near my building used to be quiet, but construction work has made it noisy for weeks.",
+      "hint": "Compare how the place used to be with how it is now.",
+      "explanation": "Contrasting past and present (\"used to be... but\") is a natural way to describe change over time.",
+      "promptQuestions": [
+        "What has changed about this place?",
+        "How does the change affect your daily life?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L5_Q1",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about a food you really enjoy and give a short reason why.",
+      "options": [
+        "spicy",
+        "noodles",
+        "warm"
+      ],
+      "sampleAnswer": "I really enjoy spicy noodles because they warm me up on cold days.",
+      "hint": "State your preference first, then add \"because\" with one reason.",
+      "explanation": "A simple reason after \"because\" turns a plain preference into a short explanation.",
+      "promptQuestions": [
+        "What food did you pick?",
+        "What reason makes it your favorite?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L5_Q2",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about an activity you dislike and explain why in a few words.",
+      "options": [
+        "dishes",
+        "boring",
+        "tired"
+      ],
+      "sampleAnswer": "I dislike washing the dishes because it always feels boring after a long day.",
+      "hint": "Choose something ordinary you dislike, not something extreme.",
+      "explanation": "Everyday dislikes, explained simply, sound more natural in a journal than dramatic complaints.",
+      "promptQuestions": [
+        "What activity did you choose?",
+        "When do you dislike it the most?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L5_Q3",
+      "instruction": "Write one or two connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about two things you like and explain which one you prefer and why.",
+      "options": [
+        "prefer",
+        "reading",
+        "movies"
+      ],
+      "sampleAnswer": "I like both reading and watching movies, but I prefer reading because I can imagine the story my own way.",
+      "hint": "Mention both things briefly, then focus your reason on the one you prefer.",
+      "explanation": "Comparing two options before choosing one shows a small but real reasoning step, not just a flat statement.",
+      "promptQuestions": [
+        "Which two things did you compare?",
+        "What made you choose one over the other?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L6_Q1",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about something small that made you smile today.",
+      "options": [
+        "message",
+        "friend",
+        "smile"
+      ],
+      "sampleAnswer": "A funny message from my friend made me smile while I was waiting for the bus.",
+      "hint": "Pick one small moment, not a whole event, and name the feeling it caused.",
+      "explanation": "Naming the exact moment (\"while I was waiting\") makes the feeling easier to picture than a vague statement.",
+      "promptQuestions": [
+        "What small moment made you smile?",
+        "Where were you when it happened?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L6_Q2",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about a moment today when you felt a little annoyed.",
+      "options": [
+        "traffic",
+        "late",
+        "annoyed"
+      ],
+      "sampleAnswer": "I felt annoyed when the traffic made me ten minutes late for my meeting.",
+      "hint": "Name the cause first, then the feeling, or the feeling first, then the cause.",
+      "explanation": "Placing the cause next to the feeling (\"felt annoyed when...\") shows the reader exactly why the emotion happened.",
+      "promptQuestions": [
+        "What caused the annoyed feeling?",
+        "How long did the feeling last?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L6_Q3",
+      "instruction": "Write one or two connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a moment today when you felt calm or relaxed, and explain what caused it.",
+      "options": [
+        "quiet",
+        "tea",
+        "relaxed"
+      ],
+      "sampleAnswer": "I felt completely relaxed this evening when I sat alone with a cup of tea and no noise around me.",
+      "hint": "Describe the setting first, then say how it made you feel.",
+      "explanation": "Describing the setting before naming the feeling helps the reader experience the moment along with you.",
+      "promptQuestions": [
+        "What setting helped you feel calm?",
+        "Does this happen often for you?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L7_Q1",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about something you did last weekend for fun.",
+      "options": [
+        "park",
+        "friends",
+        "afternoon"
+      ],
+      "sampleAnswer": "Last weekend, I met a few friends at the park and we stayed there all afternoon.",
+      "hint": "Use past tense verbs since this already happened.",
+      "explanation": "The simple past (\"met\", \"stayed\") is correct here because the action is finished and happened at a specific time.",
+      "promptQuestions": [
+        "What did you do for fun?",
+        "Who else was there with you?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L7_Q2",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about a hobby you enjoy doing in your free time.",
+      "options": [
+        "guitar",
+        "practice",
+        "evening"
+      ],
+      "sampleAnswer": "In my free time, I like to practice guitar for about half an hour in the evening.",
+      "hint": "Name the hobby and add when or how often you do it.",
+      "explanation": "Adding a time detail (\"about half an hour in the evening\") shows the hobby is a real habit, not just a general interest.",
+      "promptQuestions": [
+        "What hobby did you choose?",
+        "When do you usually do it?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L7_Q3",
+      "instruction": "Write one or two connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about a free-time activity you used to enjoy but rarely do anymore.",
+      "options": [
+        "drawing",
+        "childhood",
+        "rarely"
+      ],
+      "sampleAnswer": "I used to draw almost every day as a child, but now I rarely pick up a pencil at all.",
+      "hint": "Contrast what you did in the past with what happens now.",
+      "explanation": "The contrast between \"used to\" and \"now\" is a natural way to show how habits change over time.",
+      "promptQuestions": [
+        "What activity did you enjoy before?",
+        "Why do you think it changed?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L8_Q1",
+      "instruction": "Write two connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about three small tasks you completed this morning, in the order you did them.",
+      "options": [
+        "first",
+        "then",
+        "finally"
+      ],
+      "sampleAnswer": "First, I made my bed. Then I packed my bag, and finally I grabbed a quick snack before leaving.",
+      "hint": "Use words like \"first\", \"then\", and \"finally\" to keep the order clear.",
+      "explanation": "Sequencing words guide the reader through the order of events without confusion.",
+      "promptQuestions": [
+        "What did you do first?",
+        "What did you do right before leaving?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L8_Q2",
+      "instruction": "Write two connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about the steps you take when you get ready to cook a simple meal.",
+      "options": [
+        "ingredients",
+        "chop",
+        "cook"
+      ],
+      "sampleAnswer": "I usually gather all the ingredients first, then chop everything before I start cooking.",
+      "hint": "Think about your actual steps in order, not just the finished meal.",
+      "explanation": "Ordering steps clearly (\"first... then\") makes a process easy for a reader to follow and repeat.",
+      "promptQuestions": [
+        "What is the first step you take?",
+        "What comes right after that?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L8_Q3",
+      "instruction": "Write two or three connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about the order of events during your commute or trip somewhere today.",
+      "options": [
+        "left",
+        "stopped",
+        "arrived"
+      ],
+      "sampleAnswer": "I left the house at eight, stopped at the bakery for a coffee, and arrived at work just in time.",
+      "hint": "List each stage of the trip in the order it actually happened.",
+      "explanation": "Using a series of past-tense verbs in order (\"left, stopped, arrived\") creates a clear mini-timeline.",
+      "promptQuestions": [
+        "Where did your trip start?",
+        "What happened along the way?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L9_Q1",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about an object you use every day and why it's useful to you.",
+      "options": [
+        "headphones",
+        "commute",
+        "useful"
+      ],
+      "sampleAnswer": "My headphones are useful because they help me block out noise during my commute.",
+      "hint": "Name the object, then explain its purpose with \"because\".",
+      "explanation": "Explaining purpose instead of just appearance helps the reader understand why the object matters to you.",
+      "promptQuestions": [
+        "Which object did you choose?",
+        "How does it help you?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L9_Q2",
+      "instruction": "Write a short journal sentence.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write one sentence about an old object you own that still means something to you.",
+      "options": [
+        "watch",
+        "grandfather",
+        "worn"
+      ],
+      "sampleAnswer": "The old watch my grandfather gave me still works, even though the strap is worn and faded.",
+      "hint": "Describe the object's condition and one reason it still matters.",
+      "explanation": "Mentioning both the object's condition and its meaning gives the sentence emotional depth, not just description.",
+      "promptQuestions": [
+        "What object did you think of?",
+        "Why does it still matter to you?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L9_Q3",
+      "instruction": "Write one or two connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write about an object you recently lost or misplaced and how you reacted.",
+      "options": [
+        "keys",
+        "searched",
+        "relieved"
+      ],
+      "sampleAnswer": "I couldn't find my keys for almost ten minutes, and I searched every pocket before I finally felt relieved.",
+      "hint": "Describe the problem first, then your reaction or feeling.",
+      "explanation": "Moving from problem to reaction (\"couldn't find... finally felt\") gives the sentence a small, natural story shape.",
+      "promptQuestions": [
+        "What did you lose or misplace?",
+        "How did you feel when you found it, or didn't?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L10_Q1",
+      "instruction": "Write two or three connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write a short entry about your day so far, including one thing you did and how it made you feel.",
+      "options": [
+        "morning",
+        "busy",
+        "satisfied"
+      ],
+      "sampleAnswer": "My morning was busier than usual, but I finished all my emails early, which left me feeling satisfied.",
+      "hint": "Mention one action and one feeling, connected with a word like \"which\" or \"so\".",
+      "explanation": "Linking an action to a feeling (\"which left me feeling\") shows cause and effect in a single natural sentence.",
+      "promptQuestions": [
+        "What made your day busy or calm?",
+        "How did the day's events affect your mood?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L10_Q2",
+      "instruction": "Write two or three connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write a short entry about something ordinary that happened today and why it stood out to you a little.",
+      "options": [
+        "ordinary",
+        "noticed",
+        "different"
+      ],
+      "sampleAnswer": "Nothing special happened today, but I noticed the bus driver waited an extra moment for an elderly passenger, and it stayed with me.",
+      "hint": "Pick something small that isn't usually worth mentioning, and explain why you noticed it.",
+      "explanation": "Writing about small, ordinary moments trains you to notice real life, which is the heart of good journal writing.",
+      "promptQuestions": [
+        "What small thing did you notice today?",
+        "Why did it stick in your mind?"
+      ]
+    },
+    {
+      "id": "WRT_DAILYJOURNAL_L10_Q3",
+      "instruction": "Write three connected sentences.",
+      "subtype": "dailyJournal",
+      "interactionType": "writing",
+      "prompt": "Write a short journal entry that describes your morning, one moment that stood out, and how you feel right now.",
+      "options": [
+        "routine",
+        "stood out",
+        "mood"
+      ],
+      "sampleAnswer": "My morning started slowly with a cup of coffee on the balcony. Around noon, a message from an old friend completely changed my mood. Right now, I feel more cheerful than I expected to feel today.",
+      "hint": "Move through your entry in three parts: morning, one specific moment, and your feeling now.",
+      "explanation": "This three-part structure — start, event, current feeling — is the basic shape of almost every real journal entry.",
+      "promptQuestions": [
+        "How did your morning begin?",
+        "What is different about how you feel now compared to this morning?"
+      ]
+    }
+  ]
 }

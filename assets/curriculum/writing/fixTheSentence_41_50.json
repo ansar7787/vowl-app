@@ -8,17 +8,17 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "I had an sandwich for lunch because I was too busy to cook.",
-            "missingWord": "an",
+            "passage": "If it will rain on Saturday, we'll move the barbecue indoors.",
+            "missingWord": "will rain",
             "options": [
-                "a",
-                "an",
-                "the",
-                "some"
+                "rains",
+                "will rain",
+                "would rain",
+                "rained"
             ],
-            "correctAnswer": "a",
-            "hint": "'An' is used before vowel sounds. Listen to the first sound of 'sandwich' - is it a vowel sound?",
-            "explanation": "'An' is used before vowel sounds (a, e, i, o, u). 'Sandwich' begins with a consonant sound (s), so use 'a sandwich'.",
+            "correctAnswer": "rains",
+            "hint": "Look at the clause that begins with 'if'. Does it use a future form when the result clause already does?",
+            "explanation": "In a real future condition, the 'if' clause uses simple present and the main clause uses 'will': 'If it rains, we'll move...'.",
             "errorType": "Grammar Error"
         },
         {
@@ -26,17 +26,17 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "Can you pass me a salt, please? This soup needs more flavour.",
-            "missingWord": "a",
+            "passage": "If I had more free time, I will join a photography course.",
+            "missingWord": "will join",
             "options": [
-                "a",
-                "an",
-                "the",
-                "some"
+                "will join",
+                "joined",
+                "would join",
+                "would joined"
             ],
-            "correctAnswer": "the",
-            "hint": "'Salt' is uncountable, so 'a salt' is wrong. Both people know the salt on the table - which article fits?",
-            "explanation": "Use 'the' when referring to something specific nearby: 'Can you pass me the salt?' referring to the salt on the table.",
+            "correctAnswer": "would join",
+            "hint": "The 'if' clause is in the past tense but describes an unreal situation. Which form matches in the result clause?",
+            "explanation": "Second conditional pairs 'if + past simple' with 'would + base verb': 'If I had..., I would join...'.",
             "errorType": "Grammar Error"
         },
         {
@@ -44,17 +44,17 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He wants to be an doctor when he finishes medical school.",
-            "missingWord": "an",
+            "passage": "Unless you don't confirm by noon, the hotel will release your room.",
+            "missingWord": "don't confirm",
             "options": [
-                "a",
-                "an",
-                "the",
-                "one"
+                "won't confirm",
+                "don't confirm",
+                "didn't confirm",
+                "confirm"
             ],
-            "correctAnswer": "a",
-            "hint": "Think about the first sound of 'doctor'. Is it a vowel sound or a consonant sound?",
-            "explanation": "'Doctor' begins with a consonant sound (d), so use 'a doctor'. 'An' is only used before vowel sounds.",
+            "correctAnswer": "confirm",
+            "hint": "'Unless' already carries a negative meaning. What happens if you add another negative?",
+            "explanation": "'Unless' means 'if ... not', so the verb after it should be positive: 'Unless you confirm'. Adding 'don't' creates a double negative.",
             "errorType": "Grammar Error"
         },
         {
@@ -62,71 +62,71 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "We stayed in an hotel near the city centre during our trip.",
-            "missingWord": "an",
+            "passage": "The woman which lives upstairs collects vintage postcards.",
+            "missingWord": "which",
             "options": [
-                "a",
-                "an",
-                "the",
-                "one"
+                "who",
+                "whose",
+                "which",
+                "whom"
             ],
-            "correctAnswer": "a",
-            "hint": "Listen to how 'hotel' is actually pronounced. Many think it starts with a vowel - what is the actual sound?",
-            "explanation": "'Hotel' starts with an 'h' sound (not silent), so use 'a hotel'. Use 'an' only before actual vowel sounds.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "who",
+            "hint": "Is the noun being described a person or a thing? That decides the relative pronoun.",
+            "explanation": "For people, use 'who' (or 'that') as the subject of a relative clause. 'Which' is for things, and 'whom' is an object form.",
+            "errorType": "Pronoun Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L42_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She took a taxi to airport and arrived just in time for her flight.",
-            "missingWord": "a",
+            "passage": "This is the app who helps me track my spending each month.",
+            "missingWord": "who",
             "options": [
-                "a",
-                "an",
-                "the",
-                "-"
+                "that",
+                "what",
+                "who",
+                "whom"
             ],
-            "correctAnswer": "the",
-            "hint": "When we talk about a specific airport - the destination - which article do we use?",
-            "explanation": "Use 'the' before 'airport' when referring to a specific one: 'She took a taxi to the airport'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "that",
+            "hint": "Is the app a person? Choose the relative pronoun that fits a thing.",
+            "explanation": "'Who' refers to people. For an app or another thing, use 'that' (or 'which'). 'What' cannot introduce a relative clause.",
+            "errorType": "Pronoun Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L42_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He is a honest man who always keeps his word and tells the truth.",
-            "missingWord": "a",
+            "passage": "He's the colleague that laptop was stolen on the train last week.",
+            "missingWord": "that",
             "options": [
-                "a",
-                "an",
-                "the",
-                "very"
+                "which",
+                "that",
+                "whose",
+                "who"
             ],
-            "correctAnswer": "an",
-            "hint": "What is the first sound of the word 'honest'? Not all words starting with 'h' have an 'h' sound.",
-            "explanation": "'Honest' has a silent 'h', so it begins with a vowel sound (o). Use 'an honest man', not 'a honest man'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "whose",
+            "hint": "The clause shows something belonging to the colleague. Which relative pronoun expresses ownership?",
+            "explanation": "'Whose' shows possession inside a relative clause: 'the colleague whose laptop was stolen'. 'That' and 'who' can't show ownership.",
+            "errorType": "Pronoun Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L43_Q1",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She has an unique way of explaining very difficult grammar concepts.",
-            "missingWord": "an",
+            "passage": "The doctor advised me resting for a few days after the operation.",
+            "missingWord": "resting",
             "options": [
-                "a",
-                "an",
-                "the",
-                "quite"
+                "rest",
+                "rested",
+                "to rest",
+                "resting"
             ],
-            "correctAnswer": "a",
-            "hint": "What sound does 'unique' begin with? It might not be what you expect - listen carefully.",
-            "explanation": "'Unique' starts with a 'y' sound (yoo-NEEK), which is a consonant sound. Use 'a unique way', not 'an'.",
+            "correctAnswer": "to rest",
+            "hint": "Some verbs of advice are followed by an object plus 'to' and a verb. Does 'advise' follow that pattern?",
+            "explanation": "'Advise someone to do something' is the standard pattern. The -ing form doesn't follow 'advised me'.",
             "errorType": "Grammar Error"
         },
         {
@@ -134,17 +134,17 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He is a best student in our class and always helps the others.",
-            "missingWord": "a",
+            "passage": "My manager let me to leave early on Friday because of my train.",
+            "missingWord": "to leave",
             "options": [
-                "a",
-                "an",
-                "the",
-                "-"
+                "leave",
+                "to leave",
+                "left",
+                "leaving"
             ],
-            "correctAnswer": "the",
-            "hint": "Superlatives like 'best' always need one specific article before them. Which one?",
-            "explanation": "Use 'the' with superlatives: 'the best', 'the tallest', 'the most helpful'. 'He is the best student' is correct.",
+            "correctAnswer": "leave",
+            "hint": "Which verbs are followed by an object and a bare infinitive, with no 'to'?",
+            "explanation": "'Let' and 'make' take an object plus the base form, without 'to': 'let me leave'. 'Allow' would take 'to'.",
             "errorType": "Grammar Error"
         },
         {
@@ -152,17 +152,17 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "The life is too short to spend doing things you don't enjoy.",
-            "missingWord": "The",
+            "passage": "I want that you send me the final version tonight.",
+            "missingWord": "that you send",
             "options": [
-                "A",
-                "An",
-                "The",
-                "-"
+                "you send",
+                "you to send",
+                "that you send",
+                "you sending"
             ],
-            "correctAnswer": "-",
-            "hint": "Are we talking about one specific life, or the general concept of life? This changes which article we use.",
-            "explanation": "When speaking about a concept in general (life, love, music), use no article. 'Life is too short' is correct.",
+            "correctAnswer": "you to send",
+            "hint": "After 'want', how do we connect a second person to the action?",
+            "explanation": "'Want' is followed by object plus 'to' infinitive: 'want you to send'. A 'that' clause isn't used with 'want'.",
             "errorType": "Grammar Error"
         },
         {
@@ -170,35 +170,35 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "After business school, she earned a MBA and moved to London.",
-            "missingWord": "a",
+            "passage": "The tickets was sold out within an hour of going online.",
+            "missingWord": "was",
             "options": [
-                "a",
-                "an",
-                "the",
-                "her"
+                "was",
+                "been",
+                "is",
+                "were"
             ],
-            "correctAnswer": "an",
-            "hint": "'MBA' is an abbreviation. What sound does it make when you say the letters aloud: M-B-A?",
-            "explanation": "Say the letters: 'em-bee-ay'. The first sound is a vowel sound ('em'), so use 'an MBA'. Always go by sound, not spelling.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "were",
+            "hint": "Find the subject of the passive verb. Does 'was' match its number?",
+            "explanation": "In a passive, 'be' agrees with the subject. 'Tickets' is plural, so we need 'were sold'.",
+            "errorType": "Agreement Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L44_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "A information in this report is very useful for our entire team.",
-            "missingWord": "A",
+            "passage": "The bridge built in 1932 and still carries thousands of cars a day.",
+            "missingWord": "built",
             "options": [
-                "A",
-                "An",
-                "The",
-                "Some"
+                "was built",
+                "has built",
+                "building",
+                "built"
             ],
-            "correctAnswer": "The",
-            "hint": "'Information' is uncountable. We can't say 'a/an information'. Which article works for specific, known information?",
-            "explanation": "'Information' is uncountable, so 'a/an' cannot be used. 'The information in this report' refers to specific data.",
+            "correctAnswer": "was built",
+            "hint": "Was the bridge doing the building, or was it made by someone else?",
+            "explanation": "The bridge didn't build itself, so we need a passive form: 'was built'. Without 'was', the verb sounds like an active past form with no builder.",
             "errorType": "Grammar Error"
         },
         {
@@ -206,17 +206,17 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He went to the bed early because he had an important meeting next morning.",
-            "missingWord": "the",
+            "passage": "The package will deliver to your door between nine and noon.",
+            "missingWord": "will deliver",
             "options": [
-                "a",
-                "an",
-                "the",
-                "-"
+                "will be delivering",
+                "will deliver",
+                "has delivered",
+                "will be delivered"
             ],
-            "correctAnswer": "-",
-            "hint": "Think about the phrase 'go to bed'. Is this about a specific piece of furniture, or a state and activity?",
-            "explanation": "'Go to bed' (no article) means the activity of sleeping. 'The bed' refers to a specific piece of furniture.",
+            "correctAnswer": "will be delivered",
+            "hint": "Who or what performs the delivery? Is it the package?",
+            "explanation": "The package receives the action, so we use a passive: 'will be delivered'. The sender or courier is the doer.",
             "errorType": "Grammar Error"
         },
         {
@@ -224,53 +224,53 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She has the terrible headache and should probably rest for today.",
-            "missingWord": "the",
+            "passage": "Could you tell me where is the nearest pharmacy?",
+            "missingWord": "where is the nearest pharmacy",
             "options": [
-                "a",
-                "an",
-                "the",
-                "very"
+                "where is the nearest pharmacy",
+                "where the nearest pharmacy does",
+                "where does the nearest pharmacy is",
+                "where the nearest pharmacy is"
             ],
-            "correctAnswer": "a",
-            "hint": "Is the headache one specific headache already known to the listener? Or is this new information?",
-            "explanation": "Use 'a' when introducing something for the first time. 'She has a terrible headache' is correct here.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "where the nearest pharmacy is",
+            "hint": "Polite indirect questions don't use question word order. How should the verb and subject be arranged?",
+            "explanation": "Inside an indirect question, use statement word order: 'where the nearest pharmacy is'. The question inversion is only for direct questions.",
+            "errorType": "Sentence Structure Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L45_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He visited an doctor yesterday and was told to take more rest.",
-            "missingWord": "an",
+            "passage": "I wonder if does the shop deliver on Sundays.",
+            "missingWord": "if does the shop deliver",
             "options": [
-                "a",
-                "an",
-                "the",
-                "his"
+                "that the shop delivers",
+                "if the shop delivers",
+                "if does the shop deliver",
+                "if delivers the shop"
             ],
-            "correctAnswer": "a",
-            "hint": "'Doctor' begins with a 'd' sound - a consonant. Which article goes before a word beginning with a consonant?",
-            "explanation": "'Doctor' starts with a consonant sound (d), so use 'a doctor', not 'an'. 'He visited a doctor yesterday'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "if the shop delivers",
+            "hint": "After 'I wonder if', is a helping verb like 'does' needed?",
+            "explanation": "Indirect questions keep normal statement order and drop the helping verb: 'if the shop delivers'.",
+            "errorType": "Sentence Structure Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L45_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She plays the violin and the piano, and hopes to join a orchestra.",
-            "missingWord": "a",
+            "passage": "She asked me that I could help with the poster for the fair.",
+            "missingWord": "that",
             "options": [
-                "a",
-                "an",
-                "the",
-                "-"
+                "that",
+                "if",
+                "which",
+                "what"
             ],
-            "correctAnswer": "an",
-            "hint": "'Orchestra' - what sound does it begin with? Think about how you actually say this word.",
-            "explanation": "'Orchestra' begins with a vowel sound (o-r), so use 'an orchestra'. 'She hopes to join an orchestra' is correct.",
+            "correctAnswer": "if",
+            "hint": "The original question was a yes/no question. Which word introduces a reported yes/no question?",
+            "explanation": "A reported yes/no question uses 'if' or 'whether'. 'That' introduces statements, not questions.",
             "errorType": "Grammar Error"
         },
         {
@@ -278,17 +278,17 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "I need a advice about which laptop to buy for university next year.",
-            "missingWord": "a",
+            "passage": "Despite of the heavy traffic, we reached the airport in time.",
+            "missingWord": "Despite of",
             "options": [
-                "a",
-                "an",
-                "the",
-                "some"
+                "Despite of",
+                "Although",
+                "Despite",
+                "In spite"
             ],
-            "correctAnswer": "some",
-            "hint": "'Advice' is uncountable - we can't use 'a' with it. What can we use to indicate an amount?",
-            "explanation": "'Advice' is uncountable, so 'a advice' is wrong. Use 'some advice' or just 'advice'. 'I need some advice' is correct.",
+            "correctAnswer": "Despite",
+            "hint": "Does 'despite' need an extra word after it?",
+            "explanation": "'Despite' is used without 'of' and is followed by a noun. 'In spite of' is the alternative with 'of'.",
             "errorType": "Grammar Error"
         },
         {
@@ -296,17 +296,17 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He is an European who has lived in Asia for over ten years.",
-            "missingWord": "an",
+            "passage": "The flight was cancelled because the storm, so we rebooked for Monday.",
+            "missingWord": "because",
             "options": [
-                "a",
-                "an",
-                "the",
-                "-"
+                "due",
+                "because of",
+                "since",
+                "because"
             ],
-            "correctAnswer": "a",
-            "hint": "What sound does 'European' begin with? Think about how you actually pronounce this word aloud.",
-            "explanation": "'European' begins with a 'y' sound (yoo-ro-PEE-an) - a consonant sound. Use 'a European', not 'an'.",
+            "correctAnswer": "because of",
+            "hint": "What follows this word: a full clause or just a noun phrase?",
+            "explanation": "'Because' introduces a clause with a subject and verb. Before a noun phrase like 'the storm', use 'because of'.",
             "errorType": "Grammar Error"
         },
         {
@@ -314,71 +314,71 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "Through his hotel window, he photographed a moon rising over the city.",
-            "missingWord": "a",
+            "passage": "The room was small, however it was clean and cheap.",
+            "missingWord": "however",
             "options": [
-                "a",
-                "an",
-                "the",
-                "one"
+                "so",
+                "therefore",
+                "however",
+                "but"
             ],
-            "correctAnswer": "the",
-            "hint": "There is only one of this object in the sky. Does it need 'a' or 'the'?",
-            "explanation": "Some nouns are unique, so we treat them as already known: 'the moon', 'the sun', 'the sky'. Saying 'a moon' suggests there could be more than one.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "but",
+            "hint": "Which connector can join two contrasting clauses after a comma?",
+            "explanation": "'But' can join contrasting clauses directly. 'However' is an adverb and needs a semicolon or full stop before it.",
+            "errorType": "Sentence Structure Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L47_Q1",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "We went to see an film at the cinema on Saturday evening.",
-            "missingWord": "an",
+            "passage": "The lecture was interesting, the room was far too cold.",
+            "missingWord": "interesting, the",
             "options": [
-                "a",
-                "an",
-                "the",
-                "one"
+                "interesting, however the",
+                "interesting, but the",
+                "interesting, the",
+                "interesting the"
             ],
-            "correctAnswer": "a",
-            "hint": "'Film' begins with 'f'. What type of sound is 'f' - vowel or consonant?",
-            "explanation": "'Film' begins with a consonant sound (f), so use 'a film'. 'An' is only used before vowel sounds.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "interesting, but the",
+            "hint": "Two complete sentences are joined only by a comma. What is missing?",
+            "explanation": "A comma alone cannot join two independent clauses. Adding a conjunction like 'but' fixes the comma splice.",
+            "errorType": "Sentence Structure Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L47_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She plays a piano every weekend with her jazz band in the city centre.",
-            "missingWord": "a",
+            "passage": "I booked the tickets online they arrived by email within minutes.",
+            "missingWord": "online they",
             "options": [
-                "a",
-                "an",
-                "the",
-                "-"
+                "online they",
+                "online, they",
+                "online, and they",
+                "online and, they"
             ],
-            "correctAnswer": "the",
-            "hint": "For musical instruments someone plays, which article do we normally use?",
-            "explanation": "Use 'the' with musical instruments: 'plays the piano'. This is a fixed pattern regardless of which instrument is meant.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "online, and they",
+            "hint": "Where does the first clause end and the second begin?",
+            "explanation": "Two independent clauses need a conjunction, a semicolon or a full stop between them. 'Online, and they' fixes the run-on.",
+            "errorType": "Sentence Structure Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L47_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He watched an hour-long documentary about the climate change.",
-            "missingWord": "an",
+            "passage": "I was late because of I missed the bus at the corner.",
+            "missingWord": "because of",
             "options": [
-                "a",
-                "an",
-                "the",
-                "-"
+                "since of",
+                "because",
+                "due to",
+                "because of"
             ],
-            "correctAnswer": "-",
-            "hint": "Are we talking about climate change as a specific topic, or as a general phenomenon?",
-            "explanation": "When referring to a general phenomenon like 'climate change', no article is needed: 'a documentary about climate change'.",
+            "correctAnswer": "because",
+            "hint": "What comes after this connector: a noun or a full clause?",
+            "explanation": "'Because' is followed by a clause with a subject and verb. 'Because of' needs a noun phrase.",
             "errorType": "Grammar Error"
         },
         {
@@ -386,125 +386,125 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "I'd like the coffee with milk, please, and also a croissant.",
-            "missingWord": "the",
+            "passage": "We need eggs, flour, sugar and, butter for the cake.",
+            "missingWord": "and,",
             "options": [
-                "a",
-                "an",
-                "the",
-                "-"
+                "and",
+                "and,,",
+                "and;",
+                "and,"
             ],
-            "correctAnswer": "a",
-            "hint": "Is this the first time coffee is mentioned? Or a specific one the listener already knows about?",
-            "explanation": "Since this is the first mention with no shared context, use 'a coffee' (any coffee, a cup of coffee).",
-            "errorType": "Grammar Error"
+            "correctAnswer": "and",
+            "hint": "Look at how the last two items in the list are connected.",
+            "explanation": "In a list, the comma comes before the final 'and' only if you use the Oxford comma. A comma after 'and' is always wrong.",
+            "errorType": "Punctuation Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L48_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He owns a small shop in same street where I live.",
-            "missingWord": "same",
+            "passage": "Our manager is away today, so please leave the form in the managers office.",
+            "missingWord": "managers",
             "options": [
-                "the",
-                "a",
-                "same",
-                "-"
+                "manager's",
+                "managers's",
+                "managers",
+                "managers'"
             ],
-            "correctAnswer": "the",
-            "hint": "The word 'same' almost always requires a specific article before it. Which one?",
-            "explanation": "'Same' requires 'the'. We always say 'the same street': 'in the same street where I live'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "manager's",
+            "hint": "Does the sentence need to show that the office belongs to one person?",
+            "explanation": "One manager owns the office, so we add 's: 'manager's office'. 'Managers' would just mean several managers.",
+            "errorType": "Punctuation Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L48_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She is a only child in her family and grew up without any siblings.",
-            "missingWord": "a",
+            "passage": "The pizza's at the counter are freshly baked and ready to eat.",
+            "missingWord": "pizza's",
             "options": [
-                "a",
-                "an",
-                "the",
-                "-"
+                "pizzas'",
+                "pizza's",
+                "pizzas",
+                "pizzas's"
             ],
-            "correctAnswer": "the",
-            "hint": "When we describe a unique role or position ('only child'), which article is typically used?",
-            "explanation": "'Only child' is a unique role. Use 'the': 'She is the only child'. We use 'the' with unique descriptions.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "pizzas",
+            "hint": "Is this noun showing ownership, or just more than one pizza?",
+            "explanation": "Apostrophes show possession or contraction, not plurals. The correct plural is simply 'pizzas'.",
+            "errorType": "Punctuation Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L49_Q1",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "Some milk in the fridge has gone off, so please don't drink it.",
-            "missingWord": "Some",
+            "passage": "It was raining heavily we decided to stay inside and play cards.",
+            "missingWord": "heavily we",
             "options": [
-                "A",
-                "An",
-                "The",
-                "Some"
+                "heavily, so we",
+                "heavily. so we",
+                "heavily we",
+                "heavily, we"
             ],
-            "correctAnswer": "The",
-            "hint": "Are we talking about milk in general, or specific milk already in the fridge?",
-            "explanation": "'The milk' refers to specific milk - the one in the fridge. Both speaker and listener know which milk it is.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "heavily, so we",
+            "hint": "How are the two events related: cause and effect? Choose the punctuation that shows it.",
+            "explanation": "The two clauses need a joining word. 'So' shows that staying inside was a result of the rain.",
+            "errorType": "Sentence Structure Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L49_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She is afraid of the spiders and screams whenever she sees one.",
-            "missingWord": "the",
+            "passage": "Please read the instructions carefully they are quite different from last year.",
+            "missingWord": "carefully they",
             "options": [
-                "a",
-                "an",
-                "the",
-                "-"
+                "carefully and, they",
+                "carefully, they",
+                "carefully they",
+                "carefully; they"
             ],
-            "correctAnswer": "-",
-            "hint": "Are we talking about specific spiders, or spiders in general? Think about what this fear applies to.",
-            "explanation": "When expressing a general fear about a whole category, use no article: 'She is afraid of spiders'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "carefully; they",
+            "hint": "Is a comma strong enough to separate two independent clauses?",
+            "explanation": "A semicolon can join two closely related independent clauses. A comma alone creates a comma splice.",
+            "errorType": "Sentence Structure Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L49_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He photographed a sunset from the window of his hotel room.",
-            "missingWord": "a",
+            "passage": "The app is free, however you must pay for extra features.",
+            "missingWord": "free, however you",
             "options": [
-                "a",
-                "the",
-                "an",
-                "one"
+                "free, however you",
+                "free. however you",
+                "free however you",
+                "free; however, you"
             ],
-            "correctAnswer": "the",
-            "hint": "A sunset happening at that particular moment is a specific, known event. Which article fits?",
-            "explanation": "'The sunset' refers to that specific sunset happening at the time, not just any sunset. 'A sunset' would suggest one among many, unspecified.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "free; however, you",
+            "hint": "'However' is a linking adverb. What punctuation usually comes before and after it?",
+            "explanation": "When 'however' links two clauses, place a semicolon or full stop before it and a comma after it.",
+            "errorType": "Punctuation Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L50_Q1",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "She always reads an book before going to sleep at night.",
-            "missingWord": "an",
+            "passage": "If you will need any help with the form, call the office.",
+            "missingWord": "will need",
             "options": [
-                "a",
-                "an",
-                "the",
-                "-"
+                "needing",
+                "need",
+                "would need",
+                "will need"
             ],
-            "correctAnswer": "a",
-            "hint": "'Book' begins with the letter 'b'. What type of sound is 'b' - a vowel sound or a consonant sound?",
-            "explanation": "'Book' begins with a consonant sound (b), so use 'a book', not 'an book'. 'An' is only for vowel sounds.",
+            "correctAnswer": "need",
+            "hint": "The 'if' clause refers to the future. Which tense does it use?",
+            "explanation": "In first-conditional sentences, the 'if' clause takes present simple, not 'will'.",
             "errorType": "Grammar Error"
         },
         {
@@ -512,35 +512,35 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "We visited the Eiffel Tower and a Louvre Museum on the same day.",
-            "missingWord": "a",
+            "passage": "The man who's bag was left on the bus came to collect it.",
+            "missingWord": "who's",
             "options": [
-                "a",
-                "an",
-                "the",
-                "-"
+                "who's",
+                "who",
+                "whose",
+                "whom"
             ],
-            "correctAnswer": "the",
-            "hint": "The Louvre is a famous, specific, unique museum. Which article is used for specific named places?",
-            "explanation": "Use 'the' with specific named institutions: 'the Louvre Museum', 'the Eiffel Tower', 'the British Museum'.",
-            "errorType": "Grammar Error"
+            "correctAnswer": "whose",
+            "hint": "Try expanding it as 'who is'. Does the sentence still work?",
+            "explanation": "'Whose' shows possession. 'Who's' is only 'who is' or 'who has'.",
+            "errorType": "Pronoun Error"
         },
         {
             "id": "WRT_FIXTHESENTENCE_L50_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "typing",
-            "passage": "He has always wanted to learn to play an guitar since he was young.",
-            "missingWord": "an",
+            "passage": "He suggested to meet outside the station at seven.",
+            "missingWord": "to meet",
             "options": [
-                "a",
-                "an",
-                "the",
-                "-"
+                "to meet",
+                "meet",
+                "to meeting",
+                "meeting"
             ],
-            "correctAnswer": "the",
-            "hint": "Think about how we refer to playing instruments. Is there a rule about which article to use?",
-            "explanation": "Use 'the' when playing a musical instrument: 'learn to play the guitar'. This is the standard expression.",
+            "correctAnswer": "meeting",
+            "hint": "Which form follows 'suggest' when you propose an action?",
+            "explanation": "'Suggest' takes the -ing form: 'suggested meeting'. It does not use 'to' plus infinitive directly.",
             "errorType": "Grammar Error"
         }
     ]

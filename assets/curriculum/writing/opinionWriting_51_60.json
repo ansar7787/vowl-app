@@ -1,607 +1,592 @@
 {
-    "gameType": "opinionWriting",
-    "batchIndex": 6,
-    "levels": "51-60",
-    "quests": [
-        {
-            "id": "WRT_OPINIONWRITING_L51_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "All state school students should receive free school meals regardless of family income.",
-            "options": [
-                "Providing meals to affluent families uses public funds in an inefficient and poorly targeted way.",
-                "Universal free meals ensure every child receives adequate daily nutrition to concentrate and learn.",
-                "Removing means-testing protects the dignity of lower-income students from stigma.",
-                "The same budget could fund more targeted nutritional support for the most vulnerable children."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about the equity and nutritional case for universal free meals (Pros) and the funding efficiency concerns (Cons).",
-            "explanation": "Universal free meals guarantee nutrition and eliminate the stigma of means-testing (Pros), but funding meals for wealthy students is inefficient when the same money could be better targeted at those in genuine nutritional need (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L51_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Free school meals improve the academic performance and health of disadvantaged children.",
-            "options": [
-                "Improving attainment for disadvantaged children requires much more than just providing daily meals.",
-                "Children who receive free meals have better daily nutrition and energy for learning.",
-                "Well-nourished children demonstrate significantly better concentration and classroom behaviour.",
-                "Free school meals do not address the broader food insecurity many children face at home."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Consider the academic and health impact of free school meals (Pros) and their limitations in tackling inequality (Cons).",
-            "explanation": "Free meals improve nutrition, energy, and concentration for disadvantaged learners (Pros), but school meals alone cannot close the attainment gap, and food insecurity at home continues to harm children's wellbeing outside school hours (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L51_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Universal free school meals reduce administrative burden and ensure no child goes hungry.",
-            "options": [
-                "Providing all students with free meals is significantly more expensive than a properly targeted system.",
-                "Removing means-testing simplifies administration and eliminates the risk of eligible children being missed.",
-                "Universal provision means no child ever sits without a meal due to an administrative error or family oversight.",
-                "A well-administered means-tested scheme can reach those in need just as effectively at much lower cost."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about the administrative case for universal school meals (Pros) and the cost comparison with targeted approaches (Cons).",
-            "explanation": "Universal provision prevents administrative failures and ensures no child is excluded (Pros), but it costs far more than targeted programmes, and a well-run means-tested system can achieve the same outcomes significantly more cheaply (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L52_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Personal finance should be a compulsory subject in all secondary schools.",
-            "options": [
-                "Schools already face an overcrowded curriculum with very little room for additional compulsory content.",
-                "Teaching budgeting, saving, and debt management equips young people for essential adult financial life.",
-                "Financial education is most effective when combined with real-world experience, not classroom theory alone.",
-                "Financial literacy education helps young people avoid the debt traps that damage millions of adult lives."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about the life skills case for compulsory financial education (Pros) and the curriculum and effectiveness challenges (Cons).",
-            "explanation": "Financial literacy equips young people to manage money and avoid debt (Pros), but curriculum pressure is acute, and research suggests classroom financial education is far less effective without complementary real-world practice (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L52_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Financial education in schools can reduce long-term inequality and economic hardship.",
-            "options": [
-                "Better financial decisions made early in life compound into significantly greater long-term economic wellbeing.",
-                "Children from wealthier families already receive financial literacy informally at home, limiting the levelling effect.",
-                "Educating young people from all backgrounds equally about finance can help to level the economic playing field.",
-                "Systemic economic inequality requires structural policy change, not individual financial education alone."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Consider whether financial education in schools can genuinely reduce inequality (Pros) and what limits its impact (Cons).",
-            "explanation": "Early financial literacy builds better long-term financial outcomes and can narrow the knowledge gap (Pros), but wealthy families transmit financial knowledge informally, and genuine inequality requires structural economic policy beyond classroom education (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L52_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Teaching young people about personal finance builds confidence and independent living skills.",
-            "options": [
-                "Understanding personal finances gives young people confidence to manage independently at university.",
-                "Young people's financial situations vary so widely that a uniform curriculum is difficult to design.",
-                "Digital payment systems have reduced some of the everyday financial literacy demands on young adults.",
-                "Financial competence reduces the stress of unexpected expenses and major life transitions."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about how financial education builds independence (Pros) and the challenges of delivering it equitably (Cons).",
-            "explanation": "Financial literacy builds confidence for independent living and reduces financial stress (Pros), but designing a curriculum relevant to all income levels is genuinely difficult, and digital payments have changed some traditional financial literacy demands (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L53_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Secondary school students should be required to complete community service hours.",
-            "options": [
-                "Mandatory service removes the personal motivation that makes volunteering genuinely impactful.",
-                "Compulsory service exposes students to social issues they would not otherwise encounter in their lives.",
-                "Compulsory unpaid work creates inequity for students who need paid employment in their free time.",
-                "Community involvement builds empathy, civic responsibility, and a sense of social belonging."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about what required community service teaches (Pros) and how compulsion affects its real value (Cons).",
-            "explanation": "Compulsory service broadens social awareness and builds civic values (Pros), but mandatory unpaid work loses motivational authenticity and disadvantages students who need paid work to support their families (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L53_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Community service teaches students career-relevant skills that benefit their future prospects.",
-            "options": [
-                "Not all community service opportunities are of equal quality or equally available to all students.",
-                "Working alongside diverse groups develops communication, teamwork, and problem-solving abilities.",
-                "Poorly matched service placements waste student time and may demotivate rather than inspire.",
-                "Service experience meaningfully distinguishes university and employment applications in competitive markets."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Consider the career and personal development benefits of community service (Pros) and the quality concerns (Cons).",
-            "explanation": "Community service builds employable skills and strengthens applications (Pros), but unequal placement quality and poor matching can make service feel pointless rather than developmental (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L53_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Requiring students to do community service connects schools to local communities.",
-            "options": [
-                "Student volunteers provide genuine capacity to local organisations that are chronically under-resourced.",
-                "Poorly supervised students may do more harm than good in sensitive community environments.",
-                "Without adequate school coordination, community service becomes a box-ticking exercise for students.",
-                "Schools that engage their local community build better community relationships and broader social trust."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about how required service benefits communities (Pros) and the risks of poor implementation (Cons).",
-            "explanation": "Student service provides real capacity to under-resourced organisations and builds school-community trust (Pros), but poor supervision and coordination reduce impact and can leave community organisations with more work, not less (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L54_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Fast food outlets should be restricted from opening near school premises.",
-            "options": [
-                "Fast food businesses near schools have legitimate commercial rights that proximity bans infringe.",
-                "Students will simply travel further or order delivery, which negates the intended health benefit.",
-                "Proximity restrictions reduce pupils' convenient access to unhealthy food during the school day.",
-                "Limiting easy access to fast food near schools supports better nutritional choices for young people."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about the public health case for fast food proximity restrictions (Pros) and the enforcement and rights concerns (Cons).",
-            "explanation": "Fast food restrictions reduce convenient unhealthy options during school hours (Pros), but businesses have legitimate commercial rights, and determined students can easily bypass geographic restrictions (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L54_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Limiting fast food near schools can improve long-term student health outcomes.",
-            "options": [
-                "Effective nutrition policy requires working constructively with the food industry, not simply restricting it.",
-                "Adolescent eating habits are strongly influenced by the environmental availability of food options.",
-                "Home diet and parental food culture far outweigh the impact of restrictions on school-area food outlets.",
-                "Reducing proximity of fast food is linked to lower rates of childhood obesity in studies."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Consider whether proximity restrictions genuinely improve long-term student health (Pros) and what drives choices more powerfully (Cons).",
-            "explanation": "Environmental food access shapes adolescent choices and pilot evidence links proximity restrictions to lower obesity rates (Pros), but home diet and family food culture are far more powerful influences, and restrictions alone are insufficient (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L54_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Schools should promote healthy food choices rather than restrict access to unhealthy ones.",
-            "options": [
-                "Positive nutrition education and quality school meals create more lasting healthy habits than restriction.",
-                "Teaching students to make informed food choices prepares them for independent adult decision-making.",
-                "Without reducing easy access to unhealthy food, education alone has very limited behavioural impact.",
-                "Promotional approaches are slower and less certain than direct environmental restrictions on food access."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about the case for promoting healthy choices over restricting unhealthy ones (Pros) and the limits of promotion alone (Cons).",
-            "explanation": "Nutrition education and quality school meals build lasting autonomous decision-making (Pros for promotion), but without restricting easy access to unhealthy options, educational approaches alone produce only modest and slow behavioural change (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L55_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Swimming lessons should be compulsory for all primary school children.",
-            "options": [
-                "Providing pool access and transport for all primary students involves extremely significant costs.",
-                "Swimming is a fundamental life-saving skill that every child deserves the opportunity to acquire.",
-                "Compulsory swimming closes the access gap between children from wealthier and poorer backgrounds.",
-                "Children with severe water phobia may be genuinely harmed rather than helped by forced lessons."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Think about the safety and equity case for compulsory swimming (Pros) and the cost and wellbeing concerns (Cons).",
-            "explanation": "Compulsory swimming is a life-saving skill that levels access inequalities (Pros), but the cost of universal provision is enormous, and forcing water-phobic children into pools can cause lasting psychological harm (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L55_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Learning to swim builds children's physical confidence and emotional resilience.",
-            "options": [
-                "Mastering a challenging physical skill builds children's general confidence and self-belief.",
-                "Physical confidence can be built through many activities without specifically requiring compulsory swimming.",
-                "Children who struggle repeatedly in swimming lessons may experience reduced rather than increased confidence.",
-                "Regular swimming lessons develop core strength, stamina, and coordination in primary-age children."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Consider what swimming uniquely offers children's development (Pros) and when it may undermine confidence (Cons).",
-            "explanation": "Swimming builds confidence and physical skills (Pros), but other activities offer equivalent developmental benefits, and repeated struggles in swimming lessons can leave children feeling less, not more, confident (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L55_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Compulsory swimming lessons significantly reduce the risk of accidental childhood drowning.",
-            "options": [
-                "Non-swimming children are considerably more vulnerable to serious water accidents near open water.",
-                "A limited number of school lessons does not provide the competence needed to prevent drowning in open water.",
-                "Teaching swimming in primary school reaches children before they independently access rivers or lakes.",
-                "Pool-based swimming skills do not automatically transfer to the very different conditions of rivers and seas."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about the drowning prevention case for compulsory swimming (Pros) and the limitations of pool-based lessons (Cons).",
-            "explanation": "Swimming competence reduces drowning risk and primary school is the ideal age to acquire it (Pros), but limited pool lessons rarely produce genuine open-water safety, and pool skills do not fully transfer to rivers and sea conditions (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L56_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "The government should introduce a national reading programme for people of all ages.",
-            "options": [
-                "Government reading campaigns have historically failed to produce sustained long-term increases in reading.",
-                "A national programme raises literacy standards and normalises reading as a valued cultural activity.",
-                "Voluntary sector and library organisations often promote reading more flexibly and effectively.",
-                "Government-led campaigns with resources and incentives reach people who do not read independently."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about the case for a national reading programme (Pros) and its historical effectiveness (Cons).",
-            "explanation": "National programmes raise literacy standards and reach non-readers through structured incentives (Pros), but government reading campaigns have a mixed track record, and voluntary organisations often deliver more targeted and lasting impact (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L56_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "A national reading programme would help reduce educational inequality across society.",
-            "options": [
-                "Reading inequality is deeply rooted in poverty and family circumstance that a programme alone cannot fix.",
-                "Structured reading support in schools and libraries helps children who lack books and encouragement at home.",
-                "Targeted reading programmes for adults can significantly improve employment prospects and life chances.",
-                "Without addressing underlying causes of literacy inequality, a reading programme treats only the symptoms."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Consider whether a national reading programme can reduce literacy inequality (Pros) and what limits its impact (Cons).",
-            "explanation": "Structured reading support reaches under-resourced children and improves adult employability (Pros), but literacy inequality is rooted in poverty and family background that a reading programme alone cannot address (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L56_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Encouraging reading across the population benefits mental health and community wellbeing.",
-            "options": [
-                "Regular reading is consistently associated with reduced stress, greater empathy, and improved mental health.",
-                "Mental health benefits from reading are significant only for people who voluntarily choose to read.",
-                "There are more direct and better-evidenced ways to support population mental health than reading campaigns.",
-                "A national programme that makes reading accessible and social can meaningfully reduce loneliness."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about reading's role in mental health promotion (Pros) and whether it is the most effective approach (Cons).",
-            "explanation": "Reading reduces stress and builds empathy and community connection (Pros), but benefits depend on voluntary engagement, and more direct evidence-based mental health interventions may deliver greater population impact (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L57_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Students should regularly assess and evaluate their own work as part of their learning.",
-            "options": [
-                "Students often lack the objectivity and assessment knowledge needed to evaluate their work accurately.",
-                "Inaccurate self-assessment can reinforce misconceptions and leave significant errors uncorrected.",
-                "Self-assessment helps students notice and understand how they learn best.",
-                "Students who evaluate their own work develop critical thinking skills applicable across all subjects."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about what self-assessment develops (Pros) and the accuracy concerns (Cons).",
-            "explanation": "Self-assessment builds self-awareness and critical thinking (Pros), but students lack teacher objectivity, and inaccurate self-evaluation can entrench rather than correct misunderstandings (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L57_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Student self-assessment can reduce teacher workload and make feedback more sustainable.",
-            "options": [
-                "Teachers still need to verify self-assessed work, which limits the actual workload reduction achieved.",
-                "Regular self-assessment partially offsets the unsustainable marking burden that is affecting teachers.",
-                "Students learn to apply marking criteria and develop a clearer understanding of what quality work looks like.",
-                "Effective self-assessment requires criteria knowledge that itself demands significant initial teaching investment."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Consider self-assessment as a workload solution (Pros) and the conditions needed for it to work (Cons).",
-            "explanation": "Self-assessment eases marking burden and teaches students to understand quality criteria (Pros), but teacher verification remains necessary, and effective self-assessment requires upfront teaching investment that reduces immediate workload savings (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L57_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Involving students in their own assessment improves motivation and ownership of learning.",
-            "options": [
-                "Some students feel greater anxiety about self-assessment than about receiving teacher-marked feedback.",
-                "Struggling students may use self-assessment to conceal rather than confront their learning difficulties.",
-                "Students who assess their own work develop a stronger sense of personal responsibility for their progress.",
-                "Participating in assessment processes makes learning goals clearer and more personally meaningful."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about how self-assessment motivates students (Pros) and the risks it creates for struggling learners (Cons).",
-            "explanation": "Self-assessment builds ownership and clarifies learning goals (Pros), but it can increase anxiety in some students, and those who are struggling may conceal their difficulties rather than addressing them through honest self-evaluation (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L58_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Primary schools should introduce regular mindfulness sessions for all students.",
-            "options": [
-                "Mindfulness practices equip children with evidence-based tools to manage stress and regulate emotions.",
-                "Regular mindfulness in school improves children's focus, emotional regulation, and overall wellbeing.",
-                "The evidence base for school mindfulness programmes improving long-term outcomes remains limited.",
-                "Curriculum time is extremely limited and mindfulness may displace more directly academic activities."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Think about the wellbeing case for school mindfulness (Pros) and the evidence and time concerns (Cons).",
-            "explanation": "Mindfulness gives children practical stress management tools and improves emotional regulation (Pros), but the long-term evidence base is mixed, and time for mindfulness reduces already limited curriculum space (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L58_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Mindfulness in school helps children develop lifelong mental health management skills.",
-            "options": [
-                "Mindfulness is not effective for all children, particularly those with specific mental health conditions.",
-                "Learning to regulate emotions and thoughts from an early age provides meaningful long-term mental health protection.",
-                "Children with trained mindfulness skills are better equipped to cope with the pressures of adolescence.",
-                "School mindfulness is a poor substitute for properly funded professional child mental health services."
-            ],
-            "correctOrder": [
-                1,
-                2
-            ],
-            "hint": "Consider mindfulness as a long-term mental health investment (Pros) and its limitations (Cons).",
-            "explanation": "Early mindfulness skills protect mental health and build resilience for adolescent pressures (Pros), but it is ineffective for some children and must never substitute for properly funded professional mental health support (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L58_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Mindfulness programmes in schools improve classroom behaviour and the learning environment.",
-            "options": [
-                "Some children find mindfulness sessions confusing, uncomfortable, or culturally inappropriate.",
-                "Behavioural issues stem from complex causes that brief mindfulness sessions alone cannot adequately address.",
-                "Calmer, more self-regulated students create a more positive and productive classroom for everyone.",
-                "Teachers who guide mindfulness sessions also develop their own useful stress regulation skills."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about mindfulness as a classroom management tool (Pros) and the root causes it cannot address (Cons).",
-            "explanation": "Mindfulness calms classrooms and benefits teacher wellbeing too (Pros), but some students find it uncomfortable, and complex behavioural difficulties rooted in trauma or disadvantage require far more intensive and targeted intervention (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L59_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Extracurricular clubs and activities should be compulsory for all secondary school students.",
-            "options": [
-                "Structured after-school activities develop talents, interests, and vital social skills beyond the classroom.",
-                "Compulsory clubs create significant additional costs and logistical challenges for families around transport.",
-                "Universal participation ensures all students have enrichment opportunities regardless of family background.",
-                "Forced participation in activities removes the intrinsic motivation that makes them genuinely enriching."
-            ],
-            "correctOrder": [
-                0,
-                2
-            ],
-            "hint": "Think about the development benefits of universal extracurricular participation (Pros) and the practical and motivational concerns (Cons).",
-            "explanation": "Compulsory clubs guarantee enrichment for all students equally (Pros), but forced participation eliminates intrinsic motivation, and transport and cost burdens create real barriers for many families (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L59_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "After-school clubs provide vital enrichment opportunities for students from lower-income families.",
-            "options": [
-                "Students from poorer backgrounds gain access to sport, arts, and activities they could not otherwise afford.",
-                "School-based clubs are a powerful equaliser that levels access to enriching experiences.",
-                "Well-resourced students already have extensive extracurricular lives and gain little from compulsory participation.",
-                "Schools face significant staff cost and supervision challenges in running quality daily after-school programmes."
-            ],
-            "correctOrder": [
-                0,
-                1
-            ],
-            "hint": "Consider extracurricular clubs as an equality intervention (Pros) and the resource challenges they create (Cons).",
-            "explanation": "After-school clubs equalise access to enrichment for lower-income students (Pros), but wealthy students gain little additional benefit, and running daily programmes creates major staffing and supervision challenges (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L59_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Extracurricular activities teach skills that classroom learning cannot adequately provide.",
-            "options": [
-                "Team sports, drama, and music build collaboration, resilience, and performance under real pressure.",
-                "Many students have little time for clubs because of family commitments, jobs, or caring responsibilities.",
-                "The social and personal benefits of clubs can be partially replicated through well-designed group projects.",
-                "Creative and competitive clubs allow students to develop identities beyond their academic performance alone."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Think about what clubs uniquely offer beyond classroom learning (Pros) and who cannot easily access them (Cons).",
-            "explanation": "Clubs build collaboration, resilience, and identity beyond academic achievement (Pros), but students with heavy responsibilities outside school cannot always participate, and collaborative classroom learning partially substitutes for club benefits (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L60_Q1",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "Schools should use AI assistants to personalise learning for individual students.",
-            "options": [
-                "Heavy dependence on AI tools may reduce students' ability to think independently and seek human guidance.",
-                "Data privacy concerns arise when AI systems collect and process detailed student learning information.",
-                "AI systems can track each student's progress in real time and adapt content to individual learning pace.",
-                "Personalised AI learning reduces the disadvantage faced by students in large, under-resourced classes."
-            ],
-            "correctOrder": [
-                2,
-                3
-            ],
-            "hint": "Think about the personalisation benefits of AI in education (Pros) and the independence and privacy concerns (Cons).",
-            "explanation": "AI personalisation adapts to individual needs and supports under-resourced classrooms (Pros), but reliance on AI risks reducing independent thinking, and detailed student data collection raises serious privacy and safeguarding questions (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L60_Q2",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "AI learning tools help teachers focus on pastoral care and complex teaching interactions.",
-            "options": [
-                "By handling routine assessment and practice, AI frees teachers for higher-value human teaching moments.",
-                "Effective AI educational tools require significant training investment from already overstretched teachers.",
-                "AI tools may carry biases that disadvantage certain student groups if not carefully designed and tested.",
-                "AI can provide instant individualised feedback on exercises that teachers could not realistically mark alone."
-            ],
-            "correctOrder": [
-                0,
-                3
-            ],
-            "hint": "Consider how AI reduces teacher workload (Pros) and the implementation challenges and bias risks (Cons).",
-            "explanation": "AI handles routine tasks, freeing teachers for pastoral and complex instructional roles (Pros), but implementation demands significant staff training, and algorithmic bias can disadvantage particular student groups (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L60_Q3",
-            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
-            "subtype": "opinionWriting",
-            "interactionType": "writing",
-            "prompt": "AI in education risks replacing the irreplaceable human relationship between teacher and pupil.",
-            "options": [
-                "AI is designed to complement, not replace, teacher-student relationships in well-conceived implementations.",
-                "The emotional connection and mentorship a skilled teacher provides cannot be replicated by any technology.",
-                "Research in controlled settings shows AI tutoring can significantly close attainment gaps for struggling students.",
-                "Students' social and emotional development depends fundamentally on meaningful human relationships in school."
-            ],
-            "correctOrder": [
-                1,
-                3
-            ],
-            "hint": "Think about the limits of AI in education (Pros for human-centred teaching) and AI's demonstrated effectiveness (Cons).",
-            "explanation": "Human mentorship and emotional connection are foundational to education and genuinely irreplaceable by AI (Pros), but well-designed AI complements rather than replaces teachers, and research demonstrates it can close attainment gaps effectively (Cons).",
-            "structureGuide": "Intro, Body, Conclusion"
-        }
-    ]
+  "gameType": "opinionWriting",
+  "batchIndex": 6,
+  "levels": "51-60",
+  "quests": [
+    {
+      "id": "WRT_OPINIONWRITING_L51_Q1",
+      "instruction": "Choose the sentence that clearly states a cause and its effect.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Street festivals help local businesses.",
+      "options": [
+        "Street festivals are held every summer in many towns across the region, and most of them last a weekend.",
+        "Because thousands of visitors walk down Harbour Road during the festival, its cafés sell out by noon.",
+        "Harbour Road has several cafés, a bakery and two second-hand bookshops, and it is closed to traffic on Sundays.",
+        "The festival is organised by volunteers and a group of local businesses, and it has been running for eleven years."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Look for a because / so link where one thing leads to another.",
+      "explanation": "The correct sentence shows crowds causing sell-outs. The others only give facts about festivals, the street and the organisers.",
+      "structureGuide": "Cause → Effect"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L51_Q2",
+      "instruction": "Which sentence links cause and effect correctly?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "The cinema raised its ticket prices, and fewer students now come on weeknights.",
+      "options": [
+        "Ticket prices are higher, so cinemas are old and beautiful buildings.",
+        "The cinema raised its prices, and it has six screens and a café.",
+        "Since the cinema raised its prices, fewer students come on weeknights.",
+        "Students come on weeknights, so the cinema raised its ticket prices."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Check which event happened first and which one followed as a result.",
+      "explanation": "The price rise comes first and the drop in students follows. One option reverses the order, one links unrelated facts and one draws an illogical conclusion.",
+      "structureGuide": "Cause → Effect"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L51_Q3",
+      "instruction": "Select the TWO sentences that show cause and effect.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A writer is collecting examples for a community newsletter.",
+      "options": [
+        "The bus stop is on the corner of Elm Road and Market Street, opposite the small row of shops.",
+        "When the school added a homework club, more students finished their assignments on time.",
+        "The homework club meets in Room 12 on Tuesdays and Thursdays, straight after the last lesson of the day.",
+        "Because the bus stop has no shelter, many passengers wait inside nearby shops when it rains."
+      ],
+      "correctOrder": [
+        1,
+        3
+      ],
+      "hint": "Look for a sentence where one thing makes another thing happen.",
+      "explanation": "Each correct sentence shows that one event produced a result. The others simply say where or when something happens.",
+      "structureGuide": "Cause → Effect"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L52_Q1",
+      "instruction": "Choose the sentence that best explains what the evidence shows.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Evidence: After the canteen added a salad bar, fruit sales rose from 30 to 75 portions a day.",
+      "options": [
+        "Salad bars are popular in restaurants around the world, and many of them offer fruit as well.",
+        "Seventy-five is a bigger number than thirty portions, and the difference is easy to see.",
+        "The canteen sells fruit on every day of the school week, and it is placed near the tills.",
+        "This suggests students choose fruit more often when it is easy to see and reach."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "An explanation says what the evidence means, not just repeats it.",
+      "explanation": "The correct sentence gives a reason for the rise in sales. The other choices restate numbers or add general facts.",
+      "structureGuide": "Evidence → Explanation"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L52_Q2",
+      "instruction": "Choose the best explanation of the evidence.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Evidence: Since the study centre added a silent floor, noise complaints fell from 21 to 7 per term.",
+      "options": [
+        "Twenty-one complaints about noise were made in the earlier term, mostly on weekday afternoons.",
+        "This shows that separating quiet and social spaces reduces conflict between students.",
+        "Complaints are made through a form at the front desk, and a member of staff reads them each week.",
+        "The study centre has three floors, a small café and a row of computers near the entrance."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "What does the drop in complaints tell us about the change?",
+      "explanation": "The correct sentence explains why the drop matters. The remaining options describe the complaints process or repeat details.",
+      "structureGuide": "Evidence → Explanation"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L52_Q3",
+      "instruction": "Choose the explanation that best fits the personal evidence.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Evidence: When I started planning meals on Sundays, my weekly food bill dropped from £85 to £62.",
+      "options": [
+        "Sunday is a day when many people go to the supermarket.",
+        "Food shops charge different prices for very similar products.",
+        "£62 is smaller than £85 by a difference of £23.",
+        "Planning helped me buy only what I would use, which cut waste and cost."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Explain how the action led to the result.",
+      "explanation": "The right sentence explains how planning reduced spending. The alternatives repeat, generalise or calculate without explaining.",
+      "structureGuide": "Evidence → Explanation"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L53_Q1",
+      "instruction": "Which sentence is the explanation (it says what the evidence means)?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Bike-share use rose by 30% in May. The weather was dry for three weeks. This suggests dry spells make people more willing to ride. The scheme has 40 stations.'",
+      "options": [
+        "This suggests dry spells make people more willing to ride.",
+        "The weather was dry for three weeks.",
+        "Bike-share use rose by 30% in May.",
+        "The scheme has 40 stations."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "The explanation begins to interpret the facts and explain why.",
+      "explanation": "The third sentence interprets the facts to say why use rose. The other choices give facts.",
+      "structureGuide": "Evidence vs Explanation"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L53_Q2",
+      "instruction": "Which sentence is the evidence?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A paragraph has four sentences: a claim, evidence, an explanation and a closing suggestion. Choose the evidence.",
+      "options": [
+        "We should test a stand-up format for one month.",
+        "That is a large share of the week that could be used better.",
+        "Last quarter, our weekly meeting ran for 70 minutes on average.",
+        "Stand-up meetings would save our team a great deal of time."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Evidence is a measurable fact, not a claim, comment or suggestion.",
+      "explanation": "The 70-minute average is a measurable fact. The other sentences are a claim, an interpretation and a recommendation.",
+      "structureGuide": "Evidence vs Explanation"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L53_Q3",
+      "instruction": "Choose the sentence that explains, rather than repeats, the evidence.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Evidence: Customers who received a text when their order was ready collected it within ten minutes.",
+      "options": [
+        "The shop sends its texts between nine in the morning and six in the evening, and never at weekends.",
+        "Customers who are told when an order is ready do not need to keep checking, so they arrive at the right time.",
+        "Customers collected their orders within ten minutes of the text, whatever time of day it arrived.",
+        "Some customers received a text and some customers did not receive one, depending on how they had ordered."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "An explanation gives the reason behind the result.",
+      "explanation": "The best sentence tells why the text helped. The alternatives restate the result or describe how the system works.",
+      "structureGuide": "Evidence vs Explanation"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L54_Q1",
+      "instruction": "Choose the comparison that works as evidence.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Studying in short sessions works better than long ones.",
+      "options": [
+        "Short study sessions are recommended in a number of well-known study guides written by experienced teachers.",
+        "Students who study in short sessions usually feel more positive about their work than students who study for hours.",
+        "Students who studied in 25-minute sessions recalled 70% of the material, compared with 50% for those who studied for two hours straight.",
+        "Studying for two hours straight is a very long time for most people, and many of them lose focus quickly."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "A comparison places two results side by side using the same measure.",
+      "explanation": "The best sentence compares the same result for both methods. The alternatives give feelings, length or recommendations.",
+      "structureGuide": "Claim → Comparison"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L54_Q2",
+      "instruction": "Choose the fairest comparison.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Cycling to work is quicker than driving in the city centre.",
+      "options": [
+        "The same 5 km commute took 18 minutes by bike and 31 minutes by car at 8 a.m.",
+        "My bike trip on a Sunday took 15 minutes, and my car trip at Monday rush hour took 30.",
+        "Cars are larger than bicycles and generally cost far more to buy.",
+        "A 2 km bike ride took 10 minutes, while a 15 km drive took 25 minutes."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "A fair comparison keeps distance and conditions the same.",
+      "explanation": "Only the first comparison uses the same distance and time of day. Others compare different distances or conditions, or do not compare speed.",
+      "structureGuide": "Claim → Comparison"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L54_Q3",
+      "instruction": "Which comparison best supports the claim?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Our new website is easier to use.",
+      "options": [
+        "The new website has a modern design with bright and cheerful colours.",
+        "Before the redesign, 35% of customers finished checkout; afterwards, 52% did.",
+        "Some customers said the old website was slow to load on their phones.",
+        "Before the redesign, the old website had around 120 pages in total."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Look for a before-and-after measure of ease of use.",
+      "explanation": "The checkout completion rates show an improvement. The other options describe appearance, size or a different problem.",
+      "structureGuide": "Claim → Comparison"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L55_Q1",
+      "instruction": "Choose the example that shows the practical value of the skill.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Learning first aid is useful.",
+      "options": [
+        "A first-aid kit contains plasters, bandages, scissors and gloves, and it should be checked every few months.",
+        "Many people say that first aid is an important skill to have, and most workplaces encourage staff to learn it.",
+        "First-aid courses usually last one or two days at a local centre and end with a short practical assessment.",
+        "A colleague who had taken a first-aid course stopped a cut from bleeding until the ambulance arrived."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "A practical example shows the skill being used.",
+      "explanation": "The colleague's action shows first aid making a difference. The alternatives describe courses, opinions or kit contents.",
+      "structureGuide": "Claim → Practical Example"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L55_Q2",
+      "instruction": "Choose the best practical example.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Labelling food in a shared fridge reduces arguments.",
+      "options": [
+        "After we added names and dates to containers, nobody accidentally ate a colleague's lunch.",
+        "Fridges in offices are usually cleaned by staff every Friday afternoon.",
+        "Labels can be bought in packs of one hundred from most stationers.",
+        "Some people bring their lunch from home every day of the week."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "The example should show what changed after labelling.",
+      "explanation": "The correct sentence shows the effect of labels. The others mention fridges, labels or lunches without showing the result.",
+      "structureGuide": "Claim → Practical Example"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L55_Q3",
+      "instruction": "Select the TWO practical examples.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Learning to budget helps students avoid money stress.",
+      "options": [
+        "Money is what people use to buy goods and services in shops.",
+        "A student who tracked spending found £30 a month going on snacks and cut it back.",
+        "By setting aside £20 each week, one student paid for her bus pass by autumn.",
+        "Budgeting is a topic in many school maths courses across the country."
+      ],
+      "correctOrder": [
+        1,
+        2
+      ],
+      "hint": "Which sentences show a student actually using budgeting?",
+      "explanation": "Both correct answers show a student taking action and getting a result. The alternatives are general statements.",
+      "structureGuide": "Claim → Practical Example"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L56_Q1",
+      "instruction": "Put the sentences in order: claim, evidence, explanation, closing.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Arrange these sentences about a weekly briefing.",
+      "options": [
+        "Last quarter, seated briefings averaged 40 minutes, but our two standing trials lasted 15.",
+        "Our team should hold the Monday briefing standing up.",
+        "A shorter briefing leaves more of Monday for real work.",
+        "People are less likely to wander off topic when they are not settled in chairs."
+      ],
+      "correctOrder": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "hint": "The explanation comes after the evidence, since it tells us what the evidence means.",
+      "explanation": "The claim opens the paragraph, the comparison gives evidence, the explanation says why, and the last sentence links to the benefit.",
+      "structureGuide": "Claim → Evidence → Explanation → Closing"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L56_Q2",
+      "instruction": "Order the sentences.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Arrange the sentences about food waste at school.",
+      "options": [
+        "In one week, students threw away 18 kilograms of fruit peel and crusts.",
+        "Most of that waste could have become soil for the school garden instead.",
+        "Compost bins would turn wasted food into something useful.",
+        "Our school should place compost bins near the canteen."
+      ],
+      "correctOrder": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "hint": "Look for the sentence that says what should happen.",
+      "explanation": "The claim leads, the weekly figure is the evidence, the third sentence explains what the evidence means, and the closing returns to the claim.",
+      "structureGuide": "Claim → Evidence → Explanation → Closing"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L56_Q3",
+      "instruction": "Order the sentences.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Arrange the sentences about tracking spending.",
+      "options": [
+        "Students should learn to track their spending early.",
+        "In a survey of 60 first-year students, 44 said they ran out of money before the end of term.",
+        "A simple spending diary would help them fix it sooner.",
+        "Without a record of where their money went, they could not spot the problem."
+      ],
+      "correctOrder": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "hint": "Ask which sentence would come first if you explained the point to a friend.",
+      "explanation": "The recommendation opens, the survey gives evidence, the explanation shows why the survey matters, and the closing suggests an action.",
+      "structureGuide": "Claim → Evidence → Explanation → Closing"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L57_Q1",
+      "instruction": "Choose the sentence that connects the evidence to the claim.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Walking meetings are better than desk meetings. Evidence: Staff at one firm take 15% more steps on days with walking meetings.",
+      "options": [
+        "Walking is one of the oldest and simplest forms of exercise.",
+        "More movement can raise energy and attention, which makes discussions more productive.",
+        "Staff at the firm also drink more water on those particular days.",
+        "The firm has offices in two different cities and employs many staff."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "The evidence shows steps. What is the link between steps and better meetings?",
+      "explanation": "The correct sentence explains why extra movement would improve meetings. The other choices add unrelated or additional facts.",
+      "structureGuide": "Evidence → Bridge → Claim"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L57_Q2",
+      "instruction": "Which sentence best links the evidence to the claim?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Cafés should offer free water refills. Evidence: In a survey of 100 customers, 64 said they buy bottled water only because they cannot get tap water.",
+      "options": [
+        "Bottled water is sold in supermarkets, petrol stations and vending machines, often at high prices.",
+        "Sixty-four is more than half of the one hundred customers asked, so the result is a clear majority.",
+        "Customers often visit cafés with friends, family or work colleagues, and stay for around an hour.",
+        "With free refills, most of those customers would stop buying bottled water and plastic use would fall."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Show what would happen if the claim became reality.",
+      "explanation": "The right sentence connects the survey to the goal of reducing plastic. The remaining options repeat numbers or add background.",
+      "structureGuide": "Evidence → Bridge → Claim"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L57_Q3",
+      "instruction": "Choose the explanation that makes the evidence support the claim.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Our club should add a beginner night. Evidence: Twelve people tried the club last term and none came back after the first session.",
+      "options": [
+        "Some members have played the game for more than ten years.",
+        "The club meets on Wednesday evenings at the community hall.",
+        "Newcomers may feel out of place in sessions designed for experienced members.",
+        "Twelve people is a small number of people for any club to measure."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Why might newcomers leave after one session?",
+      "explanation": "This sentence gives a reason for the drop-off that a beginner night would fix. The alternatives weaken the evidence or add facts.",
+      "structureGuide": "Evidence → Bridge → Claim"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L58_Q1",
+      "instruction": "Choose the best evidence.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: The new bus lane has reduced journey times on Route 5.",
+      "options": [
+        "Timetable records from this year show the average trip on Route 5 shortened by six minutes.",
+        "A 2009 study from another country found that bus lanes can reduce delays.",
+        "A friend reported one unusually fast trip on the route on Thursday.",
+        "A newspaper article described the history of buses in the region."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Look for evidence that is current, local and about this route.",
+      "explanation": "Current records for this route directly test the claim. The alternatives are old, foreign, anecdotal or general.",
+      "structureGuide": "Evidence Quality"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L58_Q2",
+      "instruction": "Choose the most useful evidence.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Restaurants in our area are struggling with rising costs.",
+      "options": [
+        "A blog post about one restaurant closing down last year.",
+        "A television show about the lives of famous chefs.",
+        "A survey of 40 restaurant owners in our area conducted last month.",
+        "A 2005 survey of restaurant owners in a different country."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Ask which evidence is recent and from the right place.",
+      "explanation": "A recent local survey matches the claim's time and place. The other sources are outdated, foreign, single cases or entertainment.",
+      "structureGuide": "Evidence Quality"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L58_Q3",
+      "instruction": "Which evidence is LEAST useful for the claim?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Students at our school need more sports facilities.",
+      "options": [
+        "A student survey at our school on access to the gym.",
+        "The waiting list for the football pitch has 40 names on it.",
+        "Our school's sports hall is booked every lunchtime by different teams.",
+        "A national report about the popularity of professional sport."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Which piece of evidence says nothing about our school?",
+      "explanation": "A national report on professional sport doesn't show demand at our school. The alternatives show real pressure on the school's facilities.",
+      "structureGuide": "Evidence Quality"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L59_Q1",
+      "instruction": "Choose the paragraph that has a claim, relevant evidence AND an explanation.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Four students wrote about the length of the lunch break.",
+      "options": [
+        "Employees should get a full hour for lunch. In a survey of 50 colleagues, those with thirty-minute breaks reported feeling tired by 3 p.m. The survey was completed in March and shared by email.",
+        "Employees should get a full hour for lunch. Our office has a canteen with sixty seats and a kitchen on each floor. A longer break gives people time to eat properly and rest, which helps them stay alert.",
+        "Employees should get a full hour for lunch. A longer break gives people time to eat properly and rest, which helps them stay alert. Most employers would agree that staying alert is important at work.",
+        "Employees should get a full hour for lunch. In a survey of 50 colleagues, those with thirty-minute breaks reported feeling tired by 3 p.m. A longer break gives people time to eat properly and rest, which helps them stay alert."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Check each paragraph for all three parts.",
+      "explanation": "This paragraph offers survey evidence and explains why it matters. The alternatives lack an explanation, lack evidence, or use evidence that does not relate to the claim.",
+      "structureGuide": "Claim → Evidence → Explanation"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L59_Q2",
+      "instruction": "Choose the strongest paragraph.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Four paragraphs argue that the school should offer free after-class tutoring.",
+      "options": [
+        "The school should offer free after-class tutoring. The science labs at the school were repainted last year. Free sessions would give students a fair chance to catch up.",
+        "The school should offer free after-class tutoring. Free sessions would give students a fair chance to catch up. Fairness is something that all schools should care about in the end.",
+        "The school should offer free after-class tutoring. Last term, 26 of the 40 students who failed the science test said they could not afford a tutor. Free sessions would give them a fair chance to catch up.",
+        "The school should offer free after-class tutoring. Last term, 26 of the 40 students who failed the science test said they could not afford a tutor. The school was founded in 1962 and has three science labs."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "The best paragraph links evidence to the claim in the last sentence.",
+      "explanation": "The correct paragraph shows a need and then explains how tutoring would meet it. The other choices end with irrelevant details, no evidence, or unrelated evidence.",
+      "structureGuide": "Claim → Evidence → Explanation"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L59_Q3",
+      "instruction": "Choose the sentence that best fills the gap.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Cafés should add a quiet hour each morning. In one café, 18 of 25 regular customers said they left because of loud music. ____ A quiet hour would keep those customers coming back.'",
+      "options": [
+        "Loud music is played in many cafés, shops and gyms every day.",
+        "Customers who want to read or work need calm surroundings to stay for long.",
+        "A quiet hour could begin at eight and end at nine in the morning.",
+        "Eighteen of the twenty-five customers asked were regular visitors."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "The missing sentence should explain how the evidence supports the claim.",
+      "explanation": "The right sentence explains why loud music drives away certain customers, connecting the survey to the quiet hour. The remaining options repeat, describe or give unrelated details.",
+      "structureGuide": "Claim → Evidence → Explanation"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L60_Q1",
+      "instruction": "Choose the best explanation of the evidence.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Evidence: Since paying by phone began, the average queue at the town's parking machines dropped from six minutes to two.",
+      "options": [
+        "Two minutes is a shorter length of time than six minutes.",
+        "Parking machines can be found in most town centres and car parks.",
+        "Paying by phone requires a mobile signal and a bank card.",
+        "Drivers no longer wait behind people searching for coins, so the line moves faster."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Which sentence tells why the queue got shorter?",
+      "explanation": "The best sentence explains the mechanism behind the result. The alternatives repeat, describe or list a possible drawback.",
+      "structureGuide": "Evidence → Explanation"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L60_Q2",
+      "instruction": "Select the TWO problems with this evidence.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Claim: Our team's new schedule is a success. Evidence: Last Tuesday, one manager said she liked it.",
+      "options": [
+        "It reflects the view of only one person.",
+        "It records an opinion, not a measured result.",
+        "It gives the name of a day instead of a date.",
+        "It was given on a Tuesday, not on a Monday."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Think about how many people it covers and what kind of information it gives.",
+      "explanation": "One person's opinion cannot show that a schedule is successful. The day of the week is unimportant, and the person's job title is a smaller issue than the missing measurements.",
+      "structureGuide": "Claim → Evidence Gap"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L60_Q3",
+      "instruction": "Put the sentences in order: claim, evidence, explanation, closing.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Arrange the sentences about a monthly game evening.",
+      "options": [
+        "A monthly board game night would strengthen our team.",
+        "One evening a month is a small step toward a friendlier office.",
+        "Playing together gives people a relaxed reason to talk about more than work.",
+        "After the trial evening, 14 of 20 attendees said they knew a colleague better than before."
+      ],
+      "correctOrder": [
+        0,
+        3,
+        2,
+        1
+      ],
+      "hint": "The claim comes first and the closing leaves the reader with the benefit.",
+      "explanation": "The claim leads, the survey result is the evidence, the explanation shows how a game night helps, and the closing sums up.",
+      "structureGuide": "Claim → Evidence → Explanation → Closing"
+    }
+  ]
 }

@@ -5,1173 +5,1173 @@
     "quests": [
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L11_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE PEOPLE AND THE PLACE",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You decide to start exercising more to feel healthier. Describe your new daily routine.",
+            "situation": "A tall man in a gray suit stands at the front of a busy meeting room, waiting for everyone to sit down. Describe the man, the room, and what happens next.",
             "emojis": [
-                "🏃‍♀️",
-                "💧",
-                "🥗",
-                "😊"
+                "🧑‍💼",
+                "🪑",
+                "🗂️",
+                "🕘"
             ],
             "keywords": {
                 "0": [
-                    "EXERCISE",
-                    "RUN",
-                    "MORNING"
+                    "SUIT",
+                    "TALL",
+                    "STAND"
                 ],
                 "1": [
-                    "WATER",
-                    "DRINK",
-                    "HYDRATE"
+                    "CHAIRS",
+                    "ROW",
+                    "EMPTY"
                 ],
                 "2": [
-                    "SALAD",
-                    "HEALTHY",
-                    "EAT"
+                    "FOLDERS",
+                    "TABLE",
+                    "STACK"
                 ],
                 "3": [
-                    "ENERGY",
-                    "FEEL",
-                    "BETTER"
+                    "NINE",
+                    "START",
+                    "MORNING"
                 ]
             },
             "minWords": 18,
-            "hint": "Describe what you do each day and how it makes you feel.",
-            "explanation": "Strong health answers connect actions to results, for example: 'I run every morning, and now I have more energy.'",
-            "modelAnswer": "Strong health answers connect actions to results, for example: 'I run every morning, and now I have more energy.' Describe what you do each day and how it makes you feel. This serves as a model answer for the situation."
+            "hint": "Describe the man's appearance first, then the room, and finish with the moment the meeting begins.",
+            "explanation": "There is / there are is useful for introducing a place before you move to actions: there are twelve chairs in the room. Placing this sentence early lets the reader picture the scene before anything happens.",
+            "modelAnswer": "A tall man in a gray suit stands at the front of the room. There are twelve chairs arranged in rows, and folders sit on the long table. At nine o'clock, he clears his throat and the meeting starts."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L11_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE PLACE IN DETAIL",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You go to a live concert with friends for the first time. Describe the atmosphere.",
+            "situation": "Your cousin's new apartment has a small balcony with a view of the city. Describe the apartment and the balcony in detail.",
             "emojis": [
-                "🎤",
-                "🎶",
-                "👯",
-                "🌟"
+                "🏙️",
+                "🪴",
+                "🛋️",
+                "🚪"
             ],
             "keywords": {
                 "0": [
-                    "CONCERT",
-                    "STAGE",
-                    "SINGER"
+                    "SKYLINE",
+                    "VIEW",
+                    "BUILDINGS"
                 ],
                 "1": [
-                    "MUSIC",
-                    "SONG",
-                    "CROWD"
+                    "PLANTS",
+                    "POTS",
+                    "GREEN"
                 ],
                 "2": [
-                    "FRIEND",
-                    "DANCE",
-                    "SING"
+                    "SOFA",
+                    "CUSHIONS",
+                    "LIVINGROOM"
                 ],
                 "3": [
-                    "EXCITED",
-                    "MEMORABLE",
-                    "LOUD"
+                    "FRONT",
+                    "ENTRANCE",
+                    "NARROW"
                 ]
             },
             "minWords": 18,
-            "hint": "Describe the sounds, the crowd, and how the experience feels.",
-            "explanation": "Good concert descriptions use sensory details and feelings, like loud music and an excited crowd.",
-            "modelAnswer": "Good concert descriptions use sensory details and feelings, like loud music and an excited crowd. Describe the sounds, the crowd, and how the experience feels. This serves as a model answer for the situation."
+            "hint": "Move from the front door inward, then describe the balcony last since it is the most interesting part.",
+            "explanation": "Spatial description works best when it follows a path, such as entering a room and moving through it. Ending on the most striking detail, like a view, gives the description a strong finish.",
+            "modelAnswer": "The front door opens into a narrow hallway that leads to a bright living room with a gray sofa. Beyond the glass door is a small balcony with potted plants and a wide view of the city skyline."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L11_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE PERSON AND WHAT THEY ARE DOING",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You need to email your teacher to ask for an extension on an assignment. Describe what you write.",
+            "situation": "An elderly woman with curly white hair sits on a park bench, feeding pigeons from a paper bag. Describe her and what she is doing.",
             "emojis": [
-                "💻",
-                "✉️",
-                "📅",
-                "🙏"
+                "🐦",
+                "👵",
+                "🥖",
+                "🌳"
             ],
             "keywords": {
                 "0": [
-                    "EMAIL",
-                    "WRITE",
-                    "SEND"
+                    "PIGEONS",
+                    "GATHER",
+                    "PECK"
                 ],
                 "1": [
-                    "TEACHER",
-                    "SUBJECT",
-                    "ADDRESS"
+                    "CURLY",
+                    "WHITE",
+                    "ELDERLY"
                 ],
                 "2": [
-                    "EXTENSION",
-                    "DEADLINE",
-                    "MOREDAYS"
+                    "CRUMBS",
+                    "BAG",
+                    "BREAD"
                 ],
                 "3": [
-                    "POLITE",
-                    "REASON",
-                    "REQUEST"
+                    "BENCH",
+                    "SHADE",
+                    "PARK"
                 ]
             },
             "minWords": 18,
-            "hint": "Explain your reason politely and ask clearly for more time.",
-            "explanation": "A good request email gives a clear reason and a polite tone, for example: 'I am writing to ask for two extra days because I have been sick.'",
-            "modelAnswer": "A good request email gives a clear reason and a polite tone, for example: 'I am writing to ask for two extra days because I have been sick.' Explain your reason politely and ask clearly for more time. This serves as a model answer for the situation."
+            "hint": "Give two physical details about the woman before describing her action.",
+            "explanation": "Adjectives before a noun, like curly white hair, add detail without extra sentences. Two well-chosen adjectives are usually enough; too many make a sentence heavy.",
+            "modelAnswer": "An elderly woman with curly white hair sits alone on a park bench in the shade. She breaks small pieces of bread from a paper bag and throws them to the pigeons gathering around her feet."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L12_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE PEOPLE AND THE SEQUENCE OF EVENTS",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your alarm does not go off and you wake up very late. Describe what you do to get ready quickly.",
+            "situation": "Two coworkers meet in the office kitchen at ten in the morning. Describe who they are, what they say, and what they do.",
             "emojis": [
-                "⏰",
-                "😱",
-                "🏃",
-                "👔"
+                "👩‍💻",
+                "👨‍💼",
+                "☕",
+                "🕙"
             ],
             "keywords": {
                 "0": [
-                    "ALARM",
-                    "LATE",
-                    "OVERSLEEP"
+                    "COLLEAGUE",
+                    "GREET",
+                    "SMILE"
                 ],
                 "1": [
-                    "PANIC",
-                    "RUSH",
-                    "QUICK"
+                    "MANAGER",
+                    "BUSY",
+                    "NOD"
                 ],
                 "2": [
-                    "HURRY",
-                    "DRESS",
-                    "GRAB"
+                    "KETTLE",
+                    "POUR",
+                    "MUG"
                 ],
                 "3": [
-                    "CLOTHES",
-                    "READY",
-                    "LEAVE"
+                    "TEN",
+                    "BREAK",
+                    "MORNING"
                 ]
             },
-            "minWords": 18,
-            "hint": "Describe the order of actions you take to save time.",
-            "explanation": "A strong answer shows quick, logical actions in order, such as jumping out of bed and dressing fast.",
-            "modelAnswer": "A strong answer shows quick, logical actions in order, such as jumping out of bed and dressing fast. Describe the order of actions you take to save time. This serves as a model answer for the situation."
+            "minWords": 19,
+            "hint": "Introduce both people briefly, then describe their short exchange before they return to work.",
+            "explanation": "When two people appear in a scene, giving each one a short label, such as her colleague or the new manager, helps the reader tell them apart without repeating names.",
+            "modelAnswer": "At ten, Mia meets her colleague in the kitchen. He is filling the kettle while she takes two mugs from the shelf. They talk about the weekend for a minute, and then both return to their desks."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L12_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE LOCATION AND THE ACTIVITY",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "A classmate asks to copy your homework before class starts. Describe how you respond.",
+            "situation": "There are usually many students on the university lawn at lunchtime. Describe the lawn and what the students are doing there today.",
             "emojis": [
-                "📝",
-                "🙅‍♂️",
-                "🤝",
-                "😬"
+                "📚",
+                "🧑‍🎓",
+                "🥪",
+                "☀️"
             ],
             "keywords": {
                 "0": [
-                    "CLASSMATE",
-                    "ASK",
-                    "COPY"
+                    "STUDENTS",
+                    "GROUPS",
+                    "SPREAD"
                 ],
                 "1": [
-                    "HOMEWORK",
-                    "ANSWER",
-                    "SHEET"
+                    "TEXTBOOKS",
+                    "OPEN",
+                    "REVISE"
                 ],
                 "2": [
-                    "REFUSE",
-                    "EXPLAIN",
-                    "HONEST"
+                    "SANDWICHES",
+                    "SHARE",
+                    "PICNIC"
                 ],
                 "3": [
-                    "OFFER",
-                    "HELP",
-                    "STUDY"
+                    "SUNNY",
+                    "GRASS",
+                    "WARM"
                 ]
             },
-            "minWords": 18,
-            "hint": "Think about a kind but honest way to say no.",
-            "explanation": "Good answers show honesty with kindness, for example offering to study together instead of copying answers.",
-            "modelAnswer": "Good answers show honesty with kindness, for example offering to study together instead of copying answers. Think about a kind but honest way to say no. This serves as a model answer for the situation."
+            "minWords": 19,
+            "hint": "Say what the lawn generally looks like at this time, then describe two different groups on it today.",
+            "explanation": "There is / there are can describe a general pattern before you zoom into specific details: there are usually students everywhere. This sets expectations before you show what is different or typical today.",
+            "modelAnswer": "There are usually dozens of students on the lawn at lunchtime, and today is no different. Some sit in small groups eating sandwiches, while others lie on the warm grass with open textbooks, revising quietly."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L12_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE STREET AND THE PEOPLE ON IT",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You disagree with a coworker's idea during a team meeting. Describe how you share your opinion.",
+            "situation": "Your street is unusually busy this afternoon because of a local festival. Describe the street, the decorations, and the people walking along it.",
             "emojis": [
-                "💼",
-                "🗯️",
-                "🤝",
-                "📋"
+                "🎈",
+                "🚶‍♀️",
+                "🏮",
+                "🎶"
             ],
             "keywords": {
                 "0": [
-                    "MEETING",
-                    "TEAM",
-                    "DISCUSS"
+                    "BALLOONS",
+                    "COLORFUL",
+                    "TIED"
                 ],
                 "1": [
-                    "IDEA",
-                    "DISAGREE",
-                    "OPINION"
+                    "FAMILIES",
+                    "STROLL",
+                    "CROWD"
                 ],
                 "2": [
-                    "RESPECT",
-                    "LISTEN",
-                    "POLITE"
+                    "LANTERNS",
+                    "HANG",
+                    "WIRES"
                 ],
                 "3": [
-                    "SUGGEST",
-                    "ALTERNATIVE",
-                    "COMPROMISE"
+                    "MUSIC",
+                    "DRUMS",
+                    "LOUD"
                 ]
             },
-            "minWords": 18,
-            "hint": "Describe how you express disagreement politely and offer another idea.",
-            "explanation": "A professional answer disagrees respectfully and offers a solution, for example: 'I see your point, but maybe we could also try...'",
-            "modelAnswer": "A professional answer disagrees respectfully and offers a solution, for example: 'I see your point, but maybe we could also try...' Describe how you express disagreement politely and offer another idea. This serves as a model answer for the situation."
+            "minWords": 19,
+            "hint": "Describe the decorations first, then the people, and finish with something you can hear.",
+            "explanation": "Combining sight and sound in one description gives the reader more than a visual list. A short sentence about noise or music at the end can make a busy scene feel alive.",
+            "modelAnswer": "Colorful balloons and paper lanterns hang along the whole street for the festival. Families stroll slowly between the stalls, and children run ahead of their parents. Loud drum music comes from somewhere near the square."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L13_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE PEOPLE AND WHAT EACH ONE DOES",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "You get lost in an unfamiliar city while sightseeing. Describe how you find your way back.",
+            "situation": "Four people are waiting in line at the post office. Describe who they are and what each person seems to be doing while they wait.",
             "emojis": [
-                "🗺️",
-                "🧭",
-                "😕",
-                "📍"
+                "📦",
+                "👴",
+                "📱",
+                "🎧"
             ],
             "keywords": {
                 "0": [
-                    "LOST",
-                    "STREET",
-                    "UNFAMILIAR"
+                    "PARCEL",
+                    "HOLD",
+                    "BOX"
                 ],
                 "1": [
-                    "MAP",
-                    "DIRECTION",
-                    "LOOK"
+                    "ELDERLY",
+                    "PATIENT",
+                    "STAND"
                 ],
                 "2": [
-                    "ASK",
-                    "LOCAL",
-                    "POINT"
+                    "PHONE",
+                    "SCROLL",
+                    "TEXT"
                 ],
                 "3": [
-                    "FIND",
-                    "RETURN",
-                    "HOTEL"
+                    "EARPHONES",
+                    "MUSIC",
+                    "NOD"
                 ]
             },
-            "minWords": 18,
-            "hint": "Describe what tools or people help you find your way.",
-            "explanation": "Good travel answers show a clear problem-solving process, such as checking a map and asking a local person for directions.",
-            "modelAnswer": "Good travel answers show a clear problem-solving process, such as checking a map and asking a local person for directions. Describe what tools or people help you find your way. This serves as a model answer for the situation."
+            "minWords": 19,
+            "hint": "Give each of the four people a slightly different action so the line does not feel identical from person to person.",
+            "explanation": "A queue is a natural place to practice giving several people different, believable actions in present continuous. Variety in the verbs, not just the nouns, keeps the description interesting.",
+            "modelAnswer": "An old man near the door is holding a heavy parcel and shifting his weight. Behind him, a young woman is scrolling through her phone, and a teenager with earphones is nodding to music. Everyone else just waits quietly."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L13_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE WHERE THINGS ARE IN THE ROOM",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your parents ask you to help clean the house before guests arrive. Describe what tasks you do.",
+            "situation": "Your friend's studio apartment is small but carefully organized. Describe where the bed, the desk, and the kitchen are placed.",
             "emojis": [
-                "🧹",
-                "🧽",
+                "🛏️",
+                "🖥️",
+                "🍳",
+                "📐"
+            ],
+            "keywords": {
+                "0": [
+                    "MATTRESS",
+                    "CORNER",
+                    "WINDOW"
+                ],
+                "1": [
+                    "LAPTOP",
+                    "CHAIR",
+                    "DESK"
+                ],
+                "2": [
+                    "STOVE",
+                    "COUNTER",
+                    "SMALL"
+                ],
+                "3": [
+                    "SPACE",
+                    "NARROW",
+                    "WALL"
+                ]
+            },
+            "minWords": 19,
+            "hint": "Use words like near, next to, and across from to show where each part of the room is.",
+            "explanation": "Prepositions of place, such as next to and across from, are essential tools for describing a room clearly. Without them, a reader cannot picture how the space is arranged.",
+            "modelAnswer": "The bed sits in the corner near the window, and a small desk with a laptop is next to it against the wall. Across from the desk, a narrow kitchen counter holds a stove and a few shelves."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L13_Q3",
+            "instruction": "DESCRIBE THE SCENE AT THE BUS TERMINAL",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A large bus terminal is busy in the early evening. Describe where different groups of people are and what they are doing.",
+            "emojis": [
+                "🧳",
+                "🚏",
+                "👪",
+                "🕰️"
+            ],
+            "keywords": {
+                "0": [
+                    "SUITCASES",
+                    "STACKED",
+                    "WHEELS"
+                ],
+                "1": [
+                    "PLATFORM",
+                    "NUMBER",
+                    "GATE"
+                ],
+                "2": [
+                    "FAMILY",
+                    "WAIT",
+                    "BENCH"
+                ],
+                "3": [
+                    "CLOCK",
+                    "MINUTES",
+                    "ANNOUNCE"
+                ]
+            },
+            "minWords": 19,
+            "hint": "Divide the terminal into two or three areas and describe who is in each one.",
+            "explanation": "Large places are easier to describe by dividing them into areas, such as near the gate or by the entrance. This turns a confusing scene into a few clear, separate pictures.",
+            "modelAnswer": "Near gate three, a family sits on a bench with three suitcases stacked beside them. By the entrance, a group of travelers checks the departure board. Every few minutes, an announcement echoes through the terminal."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L14_Q1",
+            "instruction": "DESCRIBE THE PERSON'S APPEARANCE AND ROLE",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A young man in a bright yellow vest is directing traffic near a construction site. Describe him and what he does.",
+            "emojis": [
+                "🚧",
+                "🦺",
+                "✋",
+                "🚗"
+            ],
+            "keywords": {
+                "0": [
+                    "VEST",
+                    "YELLOW",
+                    "BRIGHT"
+                ],
+                "1": [
+                    "CONSTRUCTION",
+                    "SITE",
+                    "FENCE"
+                ],
+                "2": [
+                    "SIGNAL",
+                    "HAND",
+                    "STOP"
+                ],
+                "3": [
+                    "CARS",
+                    "SLOW",
+                    "PASS"
+                ]
+            },
+            "minWords": 20,
+            "hint": "Describe his uniform and position first, then his hand movements as cars approach.",
+            "explanation": "A person's clothing or equipment can quickly tell the reader their job without a separate sentence explaining it. A bright vest immediately suggests a worker directing traffic.",
+            "modelAnswer": "A young man in a bright yellow vest stands beside the construction fence, watching the road. When cars approach, he raises his hand to stop them, then waves the next group forward one at a time."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L14_Q2",
+            "instruction": "DESCRIBE THE WEATHER AND HOW PEOPLE RESPOND",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A sudden strong wind blows through the market square, and vendors rush to protect their stalls. Describe the wind and how people react.",
+            "emojis": [
+                "💨",
+                "🍉",
+                "🧢",
+                "🏃"
+            ],
+            "keywords": {
+                "0": [
+                    "WIND",
+                    "GUST",
+                    "STRONG"
+                ],
+                "1": [
+                    "FRUIT",
+                    "ROLL",
+                    "MELONS"
+                ],
+                "2": [
+                    "HAT",
+                    "GRAB",
+                    "BLOW"
+                ],
+                "3": [
+                    "VENDORS",
+                    "RUSH",
+                    "HOLD"
+                ]
+            },
+            "minWords": 20,
+            "hint": "Show what the wind actually does to objects before describing how the vendors react.",
+            "explanation": "Describing weather through its effects on objects, such as fruit rolling off a table, is more convincing than simply saying it is windy. The reaction that follows explains why the detail matters.",
+            "modelAnswer": "A sudden gust of wind sweeps through the square, and several melons roll off a fruit stand. One vendor grabs his hat before it blows away, while others rush to hold down their umbrellas and boxes."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L14_Q3",
+            "instruction": "DESCRIBE THE PEOPLE, THE PLACE, AND THE MAIN ACTIVITY",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A community swimming pool is full of children during their summer lesson. Describe the pool area, the instructor, and what the children are doing.",
+            "emojis": [
+                "🏊",
+                "🧑‍🏫",
+                "🩱",
+                "🔵"
+            ],
+            "keywords": {
+                "0": [
+                    "POOL",
+                    "SPLASH",
+                    "BLUE"
+                ],
+                "1": [
+                    "INSTRUCTOR",
+                    "WHISTLE",
+                    "EDGE"
+                ],
+                "2": [
+                    "SWIMSUITS",
+                    "CAPS",
+                    "LINEUP"
+                ],
+                "3": [
+                    "KICK",
+                    "FLOAT",
+                    "PRACTICE"
+                ]
+            },
+            "minWords": 20,
+            "hint": "Describe the pool briefly, then focus on the instructor's role and the children's actions.",
+            "explanation": "When a scene has one clear leader, such as an instructor, giving that person a distinct action separates them from the group and shows structure in the situation.",
+            "modelAnswer": "The pool is loud with splashing as a dozen children practice kicking near the edge. Their instructor stands by the side, blowing a whistle and calling out instructions. Two children float on their backs, following her directions carefully."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L15_Q1",
+            "instruction": "DESCRIBE THE CAFÉ AND THE CUSTOMERS INSIDE",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A small café near your office is always busy on weekday mornings. Describe the café, the customers, and what most people are doing there.",
+            "emojis": [
+                "☕",
+                "📰",
+                "💻",
+                "🧑‍🍳"
+            ],
+            "keywords": {
+                "0": [
+                    "ESPRESSO",
+                    "MACHINE",
+                    "STEAM"
+                ],
+                "1": [
+                    "NEWSPAPER",
+                    "FOLD",
+                    "TABLE"
+                ],
+                "2": [
+                    "LAPTOP",
+                    "TYPE",
+                    "CORNER"
+                ],
+                "3": [
+                    "BARISTA",
+                    "COUNTER",
+                    "BUSY"
+                ]
+            },
+            "minWords": 20,
+            "hint": "Describe the café's general atmosphere first, then two or three different customers inside it.",
+            "explanation": "A general opening sentence about a place, followed by specific individual details, helps the reader move smoothly from the whole scene to particular people within it.",
+            "modelAnswer": "The small café is already crowded by eight in the morning, and the espresso machine hisses behind the counter. A man reads a folded newspaper near the window, while a woman in the corner types quickly on her laptop."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L15_Q2",
+            "instruction": "DESCRIBE THE APPEARANCE OF THE NEW STUDENT",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A new student joins your class in the middle of the term, and everyone notices him immediately. Describe how he looks and how the class reacts.",
+            "emojis": [
+                "👀",
+                "🎒",
+                "🆕",
+                "😲"
+            ],
+            "keywords": {
+                "0": [
+                    "BACKPACK",
+                    "NEW",
+                    "SHOULDER"
+                ],
+                "1": [
+                    "UNIFORM",
+                    "NEAT",
+                    "PRESSED"
+                ],
+                "2": [
+                    "STARE",
+                    "WHISPER",
+                    "TURN"
+                ],
+                "3": [
+                    "SURPRISED",
+                    "CURIOUS",
+                    "QUIET"
+                ]
+            },
+            "minWords": 20,
+            "hint": "Describe his appearance first, then how the other students react to seeing someone new.",
+            "explanation": "Reactions from a group, such as whispering or turning to look, show the reader that something is unusual without directly stating it. This lets the description imply the feeling of surprise.",
+            "modelAnswer": "A new student walks in wearing a neatly pressed uniform and carrying a backpack with a tag still attached. Several students turn their heads and whisper to each other, curious about who he is."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L15_Q3",
+            "instruction": "DESCRIBE THE HOTEL LOBBY AND THE GUESTS",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "The lobby of a large hotel is full of activity in the late afternoon. Describe the lobby and what different guests are doing.",
+            "emojis": [
+                "🛎️",
+                "🧳",
+                "🛋️",
+                "🗝️"
+            ],
+            "keywords": {
+                "0": [
+                    "BELL",
+                    "RING",
+                    "PORTER"
+                ],
+                "1": [
+                    "LUGGAGE",
+                    "TROLLEY",
+                    "WHEEL"
+                ],
+                "2": [
+                    "ARMCHAIRS",
+                    "SIT",
+                    "MARBLE"
+                ],
+                "3": [
+                    "KEYCARD",
+                    "RECEPTION",
+                    "DESK"
+                ]
+            },
+            "minWords": 20,
+            "hint": "Describe the lobby's general appearance, then give two different guests different activities.",
+            "explanation": "In a description with multiple people, alternating sentence subjects, such as one guest and another, prevents the writing from becoming a repetitive list.",
+            "modelAnswer": "The marble lobby is bright and busy, with soft armchairs arranged near the windows. A porter wheels a trolley of luggage toward the elevator, while a tired guest waits at the reception desk for a keycard."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L16_Q1",
+            "instruction": "DESCRIBE THE OFFICE AND THE WORKERS INSIDE",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "Your company's open-plan office has different areas for different tasks. Describe the layout and what people are doing in each area.",
+            "emojis": [
+                "🖨️",
+                "🧑‍💻",
+                "📞",
+                "🗄️"
+            ],
+            "keywords": {
+                "0": [
+                    "PRINTER",
+                    "PAPER",
+                    "JAM"
+                ],
+                "1": [
+                    "SCREEN",
+                    "TYPE",
+                    "FOCUS"
+                ],
+                "2": [
+                    "CALL",
+                    "HEADSET",
+                    "SPEAK"
+                ],
+                "3": [
+                    "CABINET",
+                    "FILES",
+                    "SHELVES"
+                ]
+            },
+            "minWords": 20,
+            "hint": "Divide the office into two or three sections and describe the activity in each one separately.",
+            "explanation": "Describing a space by section, rather than listing everyone at once, gives the reader a clear map of the room before any people appear in it.",
+            "modelAnswer": "Near the window, two colleagues sit quietly typing at their screens. By the printer, someone waits for a stuck page to clear. Closer to the hallway, a man on a headset speaks loudly into the phone."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L16_Q2",
+            "instruction": "DESCRIBE THE LIBRARY AND THE STUDENTS",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "The university library is nearly silent during exam week, except for occasional small sounds. Describe the room and what the students are doing.",
+            "emojis": [
+                "📚",
+                "🤫",
+                "✏️",
+                "💡"
+            ],
+            "keywords": {
+                "0": [
+                    "SHELVES",
+                    "ROWS",
+                    "QUIET"
+                ],
+                "1": [
+                    "FINGER",
+                    "LIPS",
+                    "SILENT"
+                ],
+                "2": [
+                    "NOTES",
+                    "UNDERLINE",
+                    "PEN"
+                ],
+                "3": [
+                    "LAMP",
+                    "DESK",
+                    "YELLOW"
+                ]
+            },
+            "minWords": 20,
+            "hint": "Describe the quiet atmosphere first, then two small actions that break the silence.",
+            "explanation": "Silence is easier to show than to state directly. A small, specific sound, like a pencil tapping, proves quietness better than the sentence it is very quiet.",
+            "modelAnswer": "The library is almost silent, and rows of tall shelves stretch across the room. Under a small desk lamp, a student underlines sentences in her notes, and somewhere a pencil taps gently against a desk."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L16_Q3",
+            "instruction": "DESCRIBE THE KITCHEN DURING A FAMILY DINNER",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "Your whole family is preparing dinner together in the kitchen on a Sunday evening. Describe who is doing what and how the kitchen looks.",
+            "emojis": [
+                "🥘",
+                "🔪",
+                "🧄",
+                "👨‍👩‍👧"
+            ],
+            "keywords": {
+                "0": [
+                    "POT",
+                    "STIR",
+                    "SIMMER"
+                ],
+                "1": [
+                    "CHOP",
+                    "ONIONS",
+                    "BOARD"
+                ],
+                "2": [
+                    "GARLIC",
+                    "PEEL",
+                    "SMELL"
+                ],
+                "3": [
+                    "FAMILY",
+                    "BUSY",
+                    "KITCHEN"
+                ]
+            },
+            "minWords": 20,
+            "hint": "Give each family member a specific cooking task rather than saying everyone helps.",
+            "explanation": "In group scenes, naming one specific task per person is more informative than a general statement like everyone helps. It shows exactly how the work is divided.",
+            "modelAnswer": "My mother stirs a pot of soup on the stove while my father chops onions on the wooden board. My sister peels garlic beside the sink, filling the whole kitchen with its sharp smell."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L17_Q1",
+            "instruction": "DESCRIBE THE CROWDED ELEVATOR",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "You step into a small elevator that already has several people inside it. Describe the space, the people, and how everyone behaves.",
+            "emojis": [
+                "🔢",
+                "👤",
+                "🚪",
+                "📶"
+            ],
+            "keywords": {
+                "0": [
+                    "BUTTONS",
+                    "FLOOR",
+                    "PRESS"
+                ],
+                "1": [
+                    "PASSENGERS",
+                    "SQUEEZE",
+                    "SILENT"
+                ],
+                "2": [
+                    "DOORS",
+                    "CLOSE",
+                    "SLIDE"
+                ],
+                "3": [
+                    "PHONE",
+                    "SIGNAL",
+                    "WEAK"
+                ]
+            },
+            "minWords": 20,
+            "hint": "Describe how crowded the space feels, then how the passengers act toward each other.",
+            "explanation": "Body language and silence can describe social awkwardness without naming the feeling directly. Showing that no one talks tells the reader more than saying it is uncomfortable.",
+            "modelAnswer": "The elevator is already crowded when I step in, and I have to squeeze between two other passengers. Nobody talks, and everyone stares at the changing floor numbers above the door until it finally opens."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L17_Q2",
+            "instruction": "DESCRIBE THE WAITING ROOM AT A CLINIC",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "You are sitting in a doctor's waiting room with several other patients. Describe the room, the people, and how the time passes.",
+            "emojis": [
+                "🪑",
+                "📋",
+                "😷",
+                "⏳"
+            ],
+            "keywords": {
+                "0": [
+                    "CHAIRS",
+                    "ROW",
+                    "FACE"
+                ],
+                "1": [
+                    "CLIPBOARD",
+                    "FORM",
+                    "FILL"
+                ],
+                "2": [
+                    "MASK",
+                    "COUGH",
+                    "TISSUE"
+                ],
+                "3": [
+                    "MINUTES",
+                    "WAIT",
+                    "CLOCK"
+                ]
+            },
+            "minWords": 20,
+            "hint": "Describe the room and the other patients, then say something about how slowly the time passes.",
+            "explanation": "Time itself can become part of a description, not just events. A phrase like the minutes pass slowly adds a feeling of waiting that plain description alone would not create.",
+            "modelAnswer": "Rows of plastic chairs line the small waiting room, and most patients avoid looking at each other. A woman fills out a form on a clipboard, and an old man coughs quietly into a tissue. The minutes pass slowly."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L17_Q3",
+            "instruction": "DESCRIBE THE PLAYGROUND AFTER SCHOOL",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "Children rush out to the playground the moment school finishes for the day. Describe the playground and what different children are doing.",
+            "emojis": [
+                "🛝",
+                "⚽",
+                "🤸",
+                "🎒"
+            ],
+            "keywords": {
+                "0": [
+                    "SLIDE",
+                    "CLIMB",
+                    "QUEUE"
+                ],
+                "1": [
+                    "BALL",
+                    "KICK",
+                    "GOAL"
+                ],
+                "2": [
+                    "CARTWHEEL",
+                    "JUMP",
+                    "GRASS"
+                ],
+                "3": [
+                    "BACKPACKS",
+                    "PILE",
+                    "GROUND"
+                ]
+            },
+            "minWords": 20,
+            "hint": "Show the sudden burst of energy first, then describe three separate groups of children.",
+            "explanation": "Contrast between before and after, such as a quiet school becoming a noisy playground, gives a description energy. A short opening sentence about the sudden change works well here.",
+            "modelAnswer": "The moment the bell rings, children pour out onto the playground, and backpacks pile up near the fence. Some line up for the slide, others chase a ball across the grass, and a few practice cartwheels near the wall."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L18_Q1",
+            "instruction": "DESCRIBE A RAINY DAY IN THE CITY",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "It has been raining heavily all afternoon in the city center. Describe the streets, the people, and how the rain affects them.",
+            "emojis": [
+                "🌧️",
+                "🏙️",
+                "🚕",
+                "👟"
+            ],
+            "keywords": {
+                "0": [
+                    "PUDDLES",
+                    "SPLASH",
+                    "GUTTER"
+                ],
+                "1": [
+                    "BUILDINGS",
+                    "GRAY",
+                    "BLUR"
+                ],
+                "2": [
+                    "TAXIS",
+                    "HONK",
+                    "SLOW"
+                ],
+                "3": [
+                    "SHOES",
+                    "SOAKED",
+                    "SQUEAK"
+                ]
+            },
+            "minWords": 21,
+            "hint": "Show what the rain does to the streets first, then how it affects the people walking through them.",
+            "explanation": "Weather descriptions become vivid when you show its physical effect on the environment and on people, rather than only stating that it is raining.",
+            "modelAnswer": "Heavy rain has turned the city center streets into a maze of puddles, and the gray buildings blur behind the falling water. Taxis honk and crawl through traffic while pedestrians dash between doorways, their shoes soaked through."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L18_Q2",
+            "instruction": "DESCRIBE THE FARMERS' MARKET IN THE MORNING",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "Local farmers set up their stalls early on Sunday morning at the village square. Describe the market and the different products for sale.",
+            "emojis": [
+                "🥕",
+                "🧀",
+                "🍯",
+                "🧑‍🌾"
+            ],
+            "keywords": {
+                "0": [
+                    "CARROTS",
+                    "BUNCH",
+                    "DIRT"
+                ],
+                "1": [
+                    "CHEESE",
+                    "WHEEL",
+                    "SLICE"
+                ],
+                "2": [
+                    "HONEY",
+                    "JAR",
+                    "GOLDEN"
+                ],
+                "3": [
+                    "FARMERS",
+                    "ARRANGE",
+                    "STALLS"
+                ]
+            },
+            "minWords": 21,
+            "hint": "Choose three different stalls and describe one specific product from each.",
+            "explanation": "Choosing three specific, sensory details, one from each stall, makes a market description feel real rather than generic. Avoid simply listing vegetables and fruit without detail.",
+            "modelAnswer": "Farmers arrange their stalls before sunrise, laying out bunches of carrots still covered in dirt. Nearby, a woman slices wedges from a large wheel of cheese, and jars of golden honey line another table."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L18_Q3",
+            "instruction": "DESCRIBE A QUIET BEACH IN THE EVENING",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "You walk along a nearly empty beach as the sun begins to set. Describe the beach, the sky, and what you notice around you.",
+            "emojis": [
+                "🌅",
+                "🏖️",
+                "🐚",
+                "👣"
+            ],
+            "keywords": {
+                "0": [
+                    "SUNSET",
+                    "ORANGE",
+                    "HORIZON"
+                ],
+                "1": [
+                    "SAND",
+                    "SOFT",
+                    "COOL"
+                ],
+                "2": [
+                    "SHELLS",
+                    "SCATTER",
+                    "COLLECT"
+                ],
+                "3": [
+                    "FOOTPRINTS",
+                    "TRAIL",
+                    "BEHIND"
+                ]
+            },
+            "minWords": 21,
+            "hint": "Describe the sky first, then the sand under your feet, and finish with one small detail you notice.",
+            "explanation": "Moving attention from the sky down to the ground mirrors how a person actually looks around a place. This natural order helps the reader imagine the scene as you experienced it.",
+            "modelAnswer": "The sky turns deep orange as the sun sinks toward the horizon, and the sand feels cool under my bare feet. A few scattered shells lie near the waterline, and my footprints trail behind me in the quiet sand."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L19_Q1",
+            "instruction": "DESCRIBE THE SCENE AT A WEDDING RECEPTION",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A wedding reception is taking place in a decorated garden in the evening. Describe the decorations, the guests, and what is happening.",
+            "emojis": [
+                "💐",
+                "🕺",
+                "🎉",
+                "🍽️"
+            ],
+            "keywords": {
+                "0": [
+                    "FLOWERS",
+                    "ARCH",
+                    "PETALS"
+                ],
+                "1": [
+                    "DANCE",
+                    "MUSIC",
+                    "FLOOR"
+                ],
+                "2": [
+                    "GUESTS",
+                    "LAUGH",
+                    "TOAST"
+                ],
+                "3": [
+                    "TABLES",
+                    "CANDLES",
+                    "DINNER"
+                ]
+            },
+            "minWords": 21,
+            "hint": "Describe the setting first, then two different things guests are doing at the same time.",
+            "explanation": "A festive scene often has several activities happening at once, such as dancing and eating. Using while or as, or simply placing sentences side by side, shows this simultaneity.",
+            "modelAnswer": "White flowers cover a wooden arch at the center of the garden, and candles flicker on every table. While some guests dance to the live music, others sit and laugh over dinner, raising their glasses in a toast."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L19_Q2",
+            "instruction": "DESCRIBE THE SCENE DURING A THUNDERSTORM AT NIGHT",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A sudden thunderstorm wakes you up in the middle of the night. Describe what you hear, see, and do.",
+            "emojis": [
+                "⚡",
+                "🌩️",
+                "🛏️",
+                "🔦"
+            ],
+            "keywords": {
+                "0": [
+                    "THUNDER",
+                    "CRASH",
+                    "ROLL"
+                ],
+                "1": [
+                    "LIGHTNING",
+                    "FLASH",
+                    "WINDOW"
+                ],
+                "2": [
+                    "BLANKET",
+                    "PULL",
+                    "AWAKE"
+                ],
+                "3": [
+                    "FLASHLIGHT",
+                    "DRAWER",
+                    "GRAB"
+                ]
+            },
+            "minWords": 21,
+            "hint": "Move from what wakes you up, to what you see and hear, to what you decide to do.",
+            "explanation": "Ordering sensory details by how they occur, first sound, then sight, then action, mirrors the real experience of being startled awake and keeps the description logical.",
+            "modelAnswer": "A loud crash of thunder wakes me up, and lightning flashes brightly through the curtains. I pull the blanket closer for a moment, then get up and find a flashlight in the drawer before checking on my little brother."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L19_Q3",
+            "instruction": "DESCRIBE THE VILLAGE FESTIVAL PARADE",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "A small parade moves slowly through the streets of your village during an annual festival. Describe the parade and the crowd watching it.",
+            "emojis": [
+                "🎺",
+                "🚩",
+                "👏",
+                "🎭"
+            ],
+            "keywords": {
+                "0": [
+                    "TRUMPETS",
+                    "BLAST",
+                    "BAND"
+                ],
+                "1": [
+                    "FLAGS",
+                    "WAVE",
+                    "COLORFUL"
+                ],
+                "2": [
+                    "CLAP",
+                    "CHEER",
+                    "CROWD"
+                ],
+                "3": [
+                    "MASKS",
+                    "COSTUME",
+                    "DANCERS"
+                ]
+            },
+            "minWords": 21,
+            "hint": "Describe the parade's movement and sound first, then the crowd's reaction along the street.",
+            "explanation": "A moving event, like a parade, benefits from verbs of motion such as march, wave and pass, which help the reader sense progress through the scene rather than a still image.",
+            "modelAnswer": "A brass band marches past, trumpets blasting a lively tune, followed by dancers in colorful masks. People wave small flags along the street, and children clap loudly as the costumed performers pass in front of them."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L20_Q1",
+            "instruction": "DESCRIBE THE SCENE AT A BUSY TRAIN STATION DURING RUSH HOUR",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "The main train station in your city is extremely busy during evening rush hour. Describe the station, the crowd, and the different things happening at once.",
+            "emojis": [
+                "🚉",
+                "🧑‍🤝‍🧑",
+                "📢",
+                "🕕"
+            ],
+            "keywords": {
+                "0": [
+                    "ANNOUNCEMENT",
+                    "ECHO",
+                    "PLATFORM"
+                ],
+                "1": [
+                    "COMMUTERS",
+                    "STREAM",
+                    "ESCALATOR"
+                ],
+                "2": [
+                    "BOARD",
+                    "FLICKER",
+                    "SCHEDULE"
+                ],
+                "3": [
+                    "SIX",
+                    "EVENING",
+                    "PEAK"
+                ]
+            },
+            "minWords": 22,
+            "hint": "Describe the station's general noise and movement, then focus on two specific things happening within it.",
+            "explanation": "In a busy multi-part scene, one broad opening sentence followed by two specific focused details keeps the description organized instead of overwhelming.",
+            "modelAnswer": "By six in the evening, the station overflows with commuters streaming down the escalators toward the platforms. An announcement echoes overhead about a delayed train, while the departure board flickers with updated times."
+        },
+        {
+            "id": "WRT_DESCRIBESITUATIONWRITING_L20_Q2",
+            "instruction": "DESCRIBE A NEIGHBORHOOD STREET DURING A POWER OUTAGE",
+            "subtype": "describeSituationWriting",
+            "interactionType": "writing",
+            "situation": "The entire neighborhood loses electricity one evening, and people gather outside their homes. Describe the street and how the neighbors respond.",
+            "emojis": [
+                "🕯️",
+                "🌆",
                 "🏠",
                 "👨‍👩‍👧"
             ],
             "keywords": {
                 "0": [
-                    "CLEAN",
-                    "HOUSE",
-                    "TIDY"
+                    "CANDLES",
+                    "FLICKER",
+                    "WINDOWSILL"
                 ],
                 "1": [
-                    "SWEEP",
-                    "VACUUM",
-                    "DUST"
+                    "DARK",
+                    "STREETLIGHTS",
+                    "OFF"
                 ],
                 "2": [
-                    "GUEST",
-                    "ARRIVE",
-                    "READY"
+                    "DOORSTEPS",
+                    "SIT",
+                    "CHAT"
                 ],
                 "3": [
-                    "TASK",
-                    "SHARE",
-                    "FINISH"
+                    "NEIGHBORS",
+                    "GATHER",
+                    "TALK"
                 ]
             },
-            "minWords": 18,
-            "hint": "List two or three specific cleaning tasks you complete.",
-            "explanation": "Clear answers name specific chores, such as vacuuming the floor and dusting the shelves, rather than just saying 'cleaning'.",
-            "modelAnswer": "Clear answers name specific chores, such as vacuuming the floor and dusting the shelves, rather than just saying 'cleaning'. List two or three specific cleaning tasks you complete. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L13_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You return a broken item to the store and ask for a refund. Describe the conversation.",
-            "emojis": [
-                "📦",
-                "💔",
-                "🧾",
-                "💵"
-            ],
-            "keywords": {
-                "0": [
-                    "ITEM",
-                    "BROKEN",
-                    "RETURN"
-                ],
-                "1": [
-                    "STORE",
-                    "COUNTER",
-                    "RECEIPT"
-                ],
-                "2": [
-                    "EXPLAIN",
-                    "PROBLEM",
-                    "SHOW"
-                ],
-                "3": [
-                    "REFUND",
-                    "EXCHANGE",
-                    "MONEY"
-                ]
-            },
-            "minWords": 18,
-            "hint": "Describe what you show the staff and what you ask for.",
-            "explanation": "Good return descriptions explain the problem clearly and state what you want, for example: 'This is broken, so I would like a refund.'",
-            "modelAnswer": "Good return descriptions explain the problem clearly and state what you want, for example: 'This is broken, so I would like a refund.' Describe what you show the staff and what you ask for. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L14_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You are baking cookies for the first time and something goes wrong. Describe what happens.",
-            "emojis": [
-                "🍪",
-                "🔥",
-                "😬",
-                "🙈"
-            ],
-            "keywords": {
-                "0": [
-                    "BAKE",
-                    "OVEN",
-                    "COOKIE"
-                ],
-                "1": [
-                    "BURN",
-                    "SMOKE",
-                    "MISTAKE"
-                ],
-                "2": [
-                    "SURPRISED",
-                    "LAUGH",
-                    "OOPS"
-                ],
-                "3": [
-                    "FIX",
-                    "RETRY",
-                    "LEARN"
-                ]
-            },
-            "minWords": 19,
-            "hint": "Describe the mistake and how you react to it.",
-            "explanation": "A good story answer shows a problem and a reaction, such as laughing at a small mistake and trying again.",
-            "modelAnswer": "A good story answer shows a problem and a reaction, such as laughing at a small mistake and trying again. Describe the mistake and how you react to it. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L14_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your laptop runs very slowly and you need to use it for an assignment. Describe how you solve this.",
-            "emojis": [
-                "💻",
-                "🐢",
-                "📂",
-                "🧹"
-            ],
-            "keywords": {
-                "0": [
-                    "LAPTOP",
-                    "SLOW",
-                    "FREEZE"
-                ],
-                "1": [
-                    "FILE",
-                    "SPACE",
-                    "STORAGE"
-                ],
-                "2": [
-                    "CLEAN",
-                    "DELETE",
-                    "CLOSE"
-                ],
-                "3": [
-                    "FASTER",
-                    "WORK",
-                    "FINISH"
-                ]
-            },
-            "minWords": 19,
-            "hint": "Describe what steps you take to make the laptop faster.",
-            "explanation": "Clear tech answers describe a logical fix, such as closing extra programs or deleting old files to free up space.",
-            "modelAnswer": "Clear tech answers describe a logical fix, such as closing extra programs or deleting old files to free up space. Describe what steps you take to make the laptop faster. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L14_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You twist your ankle while playing sports and need first aid. Describe what happens.",
-            "emojis": [
-                "🤕",
-                "🧊",
-                "🩹",
-                "⚽"
-            ],
-            "keywords": {
-                "0": [
-                    "ANKLE",
-                    "TWIST",
-                    "PAIN"
-                ],
-                "1": [
-                    "ICE",
-                    "SWELL",
-                    "COLD"
-                ],
-                "2": [
-                    "BANDAGE",
-                    "WRAP",
-                    "REST"
-                ],
-                "3": [
-                    "SPORT",
-                    "STOP",
-                    "CAREFUL"
-                ]
-            },
-            "minWords": 19,
-            "hint": "Describe the injury and the steps someone takes to help you.",
-            "explanation": "Good first-aid answers describe symptoms and treatment in order, such as applying ice and resting the injured area.",
-            "modelAnswer": "Good first-aid answers describe symptoms and treatment in order, such as applying ice and resting the injured area. Describe the injury and the steps someone takes to help you. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L15_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You are choosing a show to watch on a streaming service with your roommate. Describe the discussion.",
-            "emojis": [
-                "📺",
-                "🍿",
-                "🤷",
-                "👍"
-            ],
-            "keywords": {
-                "0": [
-                    "STREAM",
-                    "SHOW",
-                    "SCROLL"
-                ],
-                "1": [
-                    "ROOMMATE",
-                    "SUGGEST",
-                    "DISAGREE"
-                ],
-                "2": [
-                    "GENRE",
-                    "COMEDY",
-                    "DRAMA"
-                ],
-                "3": [
-                    "AGREE",
-                    "WATCH",
-                    "DECIDE"
-                ]
-            },
-            "minWords": 19,
-            "hint": "Describe how you and your roommate decide on something to watch.",
-            "explanation": "Strong answers show negotiation, for example: 'I wanted a comedy, but we agreed on a drama instead.'",
-            "modelAnswer": "Strong answers show negotiation, for example: 'I wanted a comedy, but we agreed on a drama instead.' Describe how you and your roommate decide on something to watch. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L15_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You need to leave a polite voicemail because no one answered your call. Describe what you say.",
-            "emojis": [
-                "📞",
-                "🔇",
-                "🎙️",
-                "📝"
-            ],
-            "keywords": {
-                "0": [
-                    "CALL",
-                    "RING",
-                    "NOANSWER"
-                ],
-                "1": [
-                    "VOICEMAIL",
-                    "MESSAGE",
-                    "LEAVE"
-                ],
-                "2": [
-                    "NAME",
-                    "REASON",
-                    "EXPLAIN"
-                ],
-                "3": [
-                    "CALLBACK",
-                    "NUMBER",
-                    "POLITE"
-                ]
-            },
-            "minWords": 19,
-            "hint": "Think about the key information a good voicemail should include.",
-            "explanation": "A clear voicemail gives your name, the reason for calling, and a request to call back, for example: 'Hi, this is Sam calling about the meeting time. Please call me back.'",
-            "modelAnswer": "A clear voicemail gives your name, the reason for calling, and a request to call back, for example: 'Hi, this is Sam calling about the meeting time. Please call me back.' Think about the key information a good voicemail should include. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L15_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your apartment building's elevator is broken and you live on a high floor. Describe your day.",
-            "emojis": [
-                "🏢",
-                "🚫",
-                "🛗",
-                "🪜"
-            ],
-            "keywords": {
-                "0": [
-                    "BUILDING",
-                    "FLOOR",
-                    "APARTMENT"
-                ],
-                "1": [
-                    "ELEVATOR",
-                    "BROKEN",
-                    "SIGN"
-                ],
-                "2": [
-                    "STAIRS",
-                    "CLIMB",
-                    "TIRED"
-                ],
-                "3": [
-                    "CARRY",
-                    "BAGS",
-                    "SLOW"
-                ]
-            },
-            "minWords": 19,
-            "hint": "Describe how the broken elevator changes your normal routine.",
-            "explanation": "Good answers show how a small problem affects daily life, such as climbing many stairs while carrying bags.",
-            "modelAnswer": "Good answers show how a small problem affects daily life, such as climbing many stairs while carrying bags. Describe how the broken elevator changes your normal routine. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L16_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your school is having a sports day and you join a team event. Describe what happens.",
-            "emojis": [
-                "🏃‍♂️",
-                "🥇",
-                "👟",
-                "📣"
-            ],
-            "keywords": {
-                "0": [
-                    "SPORTS",
-                    "FIELD",
-                    "RACE"
-                ],
-                "1": [
-                    "TEAM",
-                    "CHEER",
-                    "SUPPORT"
-                ],
-                "2": [
-                    "MEDAL",
-                    "WIN",
-                    "COMPETE"
-                ],
-                "3": [
-                    "ENERGY",
-                    "EXCITED",
-                    "PROUD"
-                ]
-            },
-            "minWords": 19,
-            "hint": "Describe the event, your team, and how the day ends.",
-            "explanation": "Strong sports day answers describe action and emotion together, such as racing hard and feeling proud at the end.",
-            "modelAnswer": "Strong sports day answers describe action and emotion together, such as racing hard and feeling proud at the end. Describe the event, your team, and how the day ends. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L16_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You receive positive feedback from your manager after finishing a difficult project. Describe how you feel and respond.",
-            "emojis": [
-                "💼",
-                "👏",
-                "😊",
-                "📈"
-            ],
-            "keywords": {
-                "0": [
-                    "PROJECT",
-                    "FINISH",
-                    "DIFFICULT"
-                ],
-                "1": [
-                    "MANAGER",
-                    "FEEDBACK",
-                    "PRAISE"
-                ],
-                "2": [
-                    "PROUD",
-                    "HAPPY",
-                    "RELIEVED"
-                ],
-                "3": [
-                    "THANK",
-                    "RESPOND",
-                    "CONTINUE"
-                ]
-            },
-            "minWords": 19,
-            "hint": "Describe both your feelings and what you say in response to the praise.",
-            "explanation": "Good answers combine emotion with a polite response, for example: 'I feel proud, so I thank my manager and promise to keep improving.'",
-            "modelAnswer": "Good answers combine emotion with a polite response, for example: 'I feel proud, so I thank my manager and promise to keep improving.' Describe both your feelings and what you say in response to the praise. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L16_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You are packing for a trip and realize your suitcase is too small. Describe how you solve the problem.",
-            "emojis": [
-                "🧳",
-                "😣",
-                "📏",
-                "👕"
-            ],
-            "keywords": {
-                "0": [
-                    "SUITCASE",
-                    "PACK",
-                    "SMALL"
-                ],
-                "1": [
-                    "CLOTHES",
-                    "FOLD",
-                    "FIT"
-                ],
-                "2": [
-                    "REMOVE",
-                    "CHOOSE",
-                    "LEAVE"
-                ],
-                "3": [
-                    "BAG",
-                    "EXTRA",
-                    "SOLVE"
-                ]
-            },
-            "minWords": 19,
-            "hint": "Describe what you decide to remove or change to make everything fit.",
-            "explanation": "Clear answers show a practical decision, such as removing unnecessary items or using a second smaller bag.",
-            "modelAnswer": "Clear answers show a practical decision, such as removing unnecessary items or using a second smaller bag. Describe what you decide to remove or change to make everything fit. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L17_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your parents are celebrating their wedding anniversary. Describe how the family makes the day special.",
-            "emojis": [
-                "💑",
-                "🌹",
-                "🎉",
-                "📷"
-            ],
-            "keywords": {
-                "0": [
-                    "ANNIVERSARY",
-                    "PARENTS",
-                    "CELEBRATE"
-                ],
-                "1": [
-                    "FLOWER",
-                    "GIFT",
-                    "SURPRISE"
-                ],
-                "2": [
-                    "DINNER",
-                    "TOAST",
-                    "SPEECH"
-                ],
-                "3": [
-                    "PHOTO",
-                    "MEMORY",
-                    "SMILE"
-                ]
-            },
-            "minWords": 19,
-            "hint": "Describe one or two specific things the family does to celebrate.",
-            "explanation": "Good family answers include specific actions, such as giving flowers and taking photos together.",
-            "modelAnswer": "Good family answers include specific actions, such as giving flowers and taking photos together. Describe one or two specific things the family does to celebrate. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L17_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You are comparing prices at two different stores before buying a new phone. Describe your decision process.",
-            "emojis": [
-                "📱",
-                "💲",
-                "🏬",
-                "⚖️"
-            ],
-            "keywords": {
-                "0": [
-                    "STORE",
-                    "COMPARE",
-                    "PRICE"
-                ],
-                "1": [
-                    "PHONE",
-                    "MODEL",
-                    "FEATURE"
-                ],
-                "2": [
-                    "DISCOUNT",
-                    "SALE",
-                    "CHEAPER"
-                ],
-                "3": [
-                    "CHOOSE",
-                    "BUY",
-                    "DECIDE"
-                ]
-            },
-            "minWords": 19,
-            "hint": "Explain what makes you choose one store over the other.",
-            "explanation": "Strong answers give a clear reason for the decision, for example choosing the store with a better discount.",
-            "modelAnswer": "Strong answers give a clear reason for the decision, for example choosing the store with a better discount. Explain what makes you choose one store over the other. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L17_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You are at a food festival trying dishes from different countries. Describe your favorite one.",
-            "emojis": [
-                "🌍",
-                "🍢",
-                "😍",
-                "🎪"
-            ],
-            "keywords": {
-                "0": [
-                    "FESTIVAL",
-                    "STALL",
-                    "CROWD"
-                ],
-                "1": [
-                    "DISH",
-                    "COUNTRY",
-                    "SPICY"
-                ],
-                "2": [
-                    "TASTE",
-                    "FAVORITE",
-                    "DELICIOUS"
-                ],
-                "3": [
-                    "ENJOY",
-                    "RECOMMEND",
-                    "AGAIN"
-                ]
-            },
-            "minWords": 19,
-            "hint": "Describe the dish in detail and explain why you like it most.",
-            "explanation": "Good descriptions give specific reasons for a preference, such as the taste, spice, or texture of a dish.",
-            "modelAnswer": "Good descriptions give specific reasons for a preference, such as the taste, spice, or texture of a dish. Describe the dish in detail and explain why you like it most. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L18_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You receive a suspicious email asking for your password. Describe what you do.",
-            "emojis": [
-                "✉️",
-                "⚠️",
-                "🔒",
-                "🗑️"
-            ],
-            "keywords": {
-                "0": [
-                    "EMAIL",
-                    "SUSPICIOUS",
-                    "UNKNOWN"
-                ],
-                "1": [
-                    "PASSWORD",
-                    "ASK",
-                    "REQUEST"
-                ],
-                "2": [
-                    "CAREFUL",
-                    "CHECK",
-                    "VERIFY"
-                ],
-                "3": [
-                    "DELETE",
-                    "REPORT",
-                    "IGNORE"
-                ]
-            },
-            "minWords": 20,
-            "hint": "Describe how you recognize the email is not safe and what you do about it.",
-            "explanation": "Smart answers show caution, such as not clicking links and reporting or deleting the suspicious email.",
-            "modelAnswer": "Smart answers show caution, such as not clicking links and reporting or deleting the suspicious email. Describe how you recognize the email is not safe and what you do about it. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L18_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You want to improve your sleep habits because you feel tired every day. Describe your new evening routine.",
-            "emojis": [
-                "🌙",
-                "📵",
-                "🛏️",
-                "📖"
-            ],
-            "keywords": {
-                "0": [
-                    "SLEEP",
-                    "TIRED",
-                    "NIGHT"
-                ],
-                "1": [
-                    "PHONE",
-                    "SCREEN",
-                    "AVOID"
-                ],
-                "2": [
-                    "BED",
-                    "EARLY",
-                    "ROUTINE"
-                ],
-                "3": [
-                    "BOOK",
-                    "READ",
-                    "RELAX"
-                ]
-            },
-            "minWords": 20,
-            "hint": "Describe what you change in the evening to sleep better.",
-            "explanation": "Good health answers connect a habit change to a benefit, for example: 'I stop using my phone before bed, so I fall asleep faster.'",
-            "modelAnswer": "Good health answers connect a habit change to a benefit, for example: 'I stop using my phone before bed, so I fall asleep faster.' Describe what you change in the evening to sleep better. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L18_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You are at an amusement park deciding which ride to try first. Describe your choice and the experience.",
-            "emojis": [
-                "🎡",
-                "🎢",
-                "😱",
-                "🤩"
-            ],
-            "keywords": {
-                "0": [
-                    "PARK",
-                    "RIDE",
-                    "LINE"
-                ],
-                "1": [
-                    "ROLLERCOASTER",
-                    "FAST",
-                    "SCARY"
-                ],
-                "2": [
-                    "SCREAM",
-                    "THRILL",
-                    "HEART"
-                ],
-                "3": [
-                    "FUN",
-                    "AGAIN",
-                    "EXCITED"
-                ]
-            },
-            "minWords": 20,
-            "hint": "Describe how the ride feels and your reaction afterward.",
-            "explanation": "Exciting descriptions use strong feeling words, like thrilling or scary, to bring the experience to life.",
-            "modelAnswer": "Exciting descriptions use strong feeling words, like thrilling or scary, to bring the experience to life. Describe how the ride feels and your reaction afterward. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L19_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You want to politely decline an invitation to a friend's party. Describe what you say.",
-            "emojis": [
-                "💌",
-                "🙏",
-                "😔",
-                "📅"
-            ],
-            "keywords": {
-                "0": [
-                    "INVITE",
-                    "PARTY",
-                    "FRIEND"
-                ],
-                "1": [
-                    "BUSY",
-                    "PLAN",
-                    "CONFLICT"
-                ],
-                "2": [
-                    "SORRY",
-                    "POLITE",
-                    "DECLINE"
-                ],
-                "3": [
-                    "NEXTTIME",
-                    "THANK",
-                    "LATER"
-                ]
-            },
-            "minWords": 20,
-            "hint": "Think about how to say no kindly without hurting your friend's feelings.",
-            "explanation": "A polite decline gives a brief reason and a kind closing, for example: 'I'm sorry, I already have plans, but thank you for inviting me.'",
-            "modelAnswer": "A polite decline gives a brief reason and a kind closing, for example: 'I'm sorry, I already have plans, but thank you for inviting me.' Think about how to say no kindly without hurting your friend's feelings. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L19_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You realize halfway to work that you forgot your wallet at home. Describe what you do.",
-            "emojis": [
-                "👛",
-                "😳",
-                "🏃",
-                "🚌"
-            ],
-            "keywords": {
-                "0": [
-                    "WALLET",
-                    "FORGET",
-                    "HOME"
-                ],
-                "1": [
-                    "REALIZE",
-                    "HALFWAY",
-                    "WORRY"
-                ],
-                "2": [
-                    "DECIDE",
-                    "RETURN",
-                    "CONTINUE"
-                ],
-                "3": [
-                    "BUS",
-                    "TIME",
-                    "LATE"
-                ]
-            },
-            "minWords": 20,
-            "hint": "Describe your choice: going back home or continuing without it.",
-            "explanation": "Good answers show clear decision-making, for example deciding whether the missing item is worth turning back for.",
-            "modelAnswer": "Good answers show clear decision-making, for example deciding whether the missing item is worth turning back for. Describe your choice: going back home or continuing without it. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L19_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "Your school library is hosting a book fair. Describe what you do while you are there.",
-            "emojis": [
-                "📚",
-                "🏷️",
-                "🎈",
-                "🛍️"
-            ],
-            "keywords": {
-                "0": [
-                    "LIBRARY",
-                    "FAIR",
-                    "SHELF"
-                ],
-                "1": [
-                    "BOOK",
-                    "PRICE",
-                    "SALE"
-                ],
-                "2": [
-                    "BROWSE",
-                    "CHOOSE",
-                    "FAVORITE"
-                ],
-                "3": [
-                    "BUY",
-                    "BAG",
-                    "EXCITED"
-                ]
-            },
-            "minWords": 20,
-            "hint": "Describe how you choose books and how you feel about the fair.",
-            "explanation": "Good book fair answers mention specific titles or genres and the feeling of finding something new to read.",
-            "modelAnswer": "Good book fair answers mention specific titles or genres and the feeling of finding something new to read. Describe how you choose books and how you feel about the fair. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L20_Q1",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You and a coworker need to split tasks for a shared project. Describe how you divide the work.",
-            "emojis": [
-                "💼",
-                "✂️",
-                "🤝",
-                "📑"
-            ],
-            "keywords": {
-                "0": [
-                    "PROJECT",
-                    "SHARE",
-                    "COWORKER"
-                ],
-                "1": [
-                    "DIVIDE",
-                    "TASK",
-                    "SPLIT"
-                ],
-                "2": [
-                    "STRENGTH",
-                    "SKILL",
-                    "ASSIGN"
-                ],
-                "3": [
-                    "AGREE",
-                    "PLAN",
-                    "DEADLINE"
-                ]
-            },
-            "minWords": 20,
-            "hint": "Describe how you decide who does which part of the project.",
-            "explanation": "Strong teamwork answers explain the reasoning behind the split, such as assigning tasks based on each person's strengths.",
-            "modelAnswer": "Strong teamwork answers explain the reasoning behind the split, such as assigning tasks based on each person's strengths. Describe how you decide who does which part of the project. This serves as a model answer for the situation."
-        },
-        {
-            "id": "WRT_DESCRIBESITUATIONWRITING_L20_Q2",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
-            "subtype": "describeSituationWriting",
-            "interactionType": "writing",
-            "situation": "You are choosing between two destinations for your next vacation. Describe how you decide.",
-            "emojis": [
-                "🏖️",
-                "🏔️",
-                "🤔",
-                "🗒️"
-            ],
-            "keywords": {
-                "0": [
-                    "BEACH",
-                    "SUN",
-                    "RELAX"
-                ],
-                "1": [
-                    "MOUNTAIN",
-                    "HIKE",
-                    "COOL"
-                ],
-                "2": [
-                    "BUDGET",
-                    "COMPARE",
-                    "COST"
-                ],
-                "3": [
-                    "DECIDE",
-                    "BOOK",
-                    "EXCITED"
-                ]
-            },
-            "minWords": 20,
-            "hint": "Give a clear reason for choosing one destination over the other.",
-            "explanation": "Good travel decisions include a reason, such as budget or personal interest, for example: 'We choose the beach because it fits our budget better.'",
-            "modelAnswer": "Good travel decisions include a reason, such as budget or personal interest, for example: 'We choose the beach because it fits our budget better.' Give a clear reason for choosing one destination over the other. This serves as a model answer for the situation."
+            "minWords": 22,
+            "hint": "Show the sudden darkness first, then describe how the neighbors react and interact outside.",
+            "explanation": "An unusual event, like a power outage, can bring people together in a description. Showing neighbors leaving their homes and talking adds a social dimension beyond the simple fact of no electricity.",
+            "modelAnswer": "The whole street goes dark at once, and the streetlights stop working. Within minutes, neighbors step out onto their doorsteps with candles, and small groups begin chatting quietly under the darkening sky."
         },
         {
             "id": "WRT_DESCRIBESITUATIONWRITING_L20_Q3",
-            "instruction": "TAP FLOATING EMOJIS AND CONSTRUCT A SITUATION DESCRIPTION",
+            "instruction": "DESCRIBE THE SCENE AT AN AIRPORT DEPARTURE GATE DURING A DELAY",
             "subtype": "describeSituationWriting",
             "interactionType": "writing",
-            "situation": "Your family is moving to a new house. Describe how everyone helps with the move.",
+            "situation": "Your flight has been delayed by two hours, and the departure gate is full of tired passengers. Describe the gate area and how people are passing the time.",
             "emojis": [
-                "📦",
-                "🚚",
-                "🏡",
-                "👨‍👩‍👧‍👦"
+                "✈️",
+                "😴",
+                "🔌",
+                "📱"
             ],
             "keywords": {
                 "0": [
-                    "BOX",
-                    "PACK",
-                    "LABEL"
+                    "GATE",
+                    "SCREEN",
+                    "DELAYED"
                 ],
                 "1": [
-                    "TRUCK",
-                    "LOAD",
-                    "CARRY"
+                    "SLEEP",
+                    "SLUMP",
+                    "SEAT"
                 ],
                 "2": [
-                    "NEWHOUSE",
-                    "ROOM",
-                    "UNPACK"
+                    "CHARGER",
+                    "OUTLET",
+                    "PLUG"
                 ],
                 "3": [
-                    "FAMILY",
-                    "TEAMWORK",
-                    "TIRED"
+                    "SCROLL",
+                    "MESSAGE",
+                    "BORED"
                 ]
             },
-            "minWords": 20,
-            "hint": "Describe specific tasks different family members do during the move.",
-            "explanation": "Clear moving-day answers assign specific roles, such as one person packing boxes while another carries furniture.",
-            "modelAnswer": "Clear moving-day answers assign specific roles, such as one person packing boxes while another carries furniture. Describe specific tasks different family members do during the move. This serves as a model answer for the situation."
+            "minWords": 22,
+            "hint": "Describe the announcement of the delay first, then three different ways passengers pass the time.",
+            "explanation": "When a situation causes several people to react in different ways, listing a few distinct behaviors, rather than one general statement, shows the range of the group's response.",
+            "modelAnswer": "A screen near the gate announces a two-hour delay, and a groan spreads through the waiting passengers. Some slump in their seats and fall asleep, others fight over the few available power outlets, and many just scroll through their phones."
         }
     ]
 }
