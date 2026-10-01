@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/gestures.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -64,6 +65,29 @@ class _SignUpViewState extends State<SignUpView> {
   final ValueNotifier<int> _passwordShake = ValueNotifier(0);
   final ValueNotifier<int> _legalShake = ValueNotifier(0);
   final ValueNotifier<bool> _acceptedLegal = ValueNotifier(false);
+  
+  void _submitForm(BuildContext context) {
+    if (_formKey.currentState?.validate() ?? false) {
+      TextInput.finishAutofillContext();
+      context.read<SignUpCubit>().signUp();
+    } else {
+      try {
+        Haptics.vibrate(HapticsType.error);
+      } catch (_) {}
+      if (!(_nameKey.currentState?.validate() ?? true)) {
+        _nameShake.value++;
+      }
+      if (!(_emailKey.currentState?.validate() ?? true)) {
+        _emailShake.value++;
+      }
+      if (!(_passwordKey.currentState?.validate() ?? true)) {
+        _passwordShake.value++;
+      }
+      if (!(_legalKey.currentState?.validate() ?? true)) {
+        _legalShake.value++;
+      }
+    }
+  }
 
   @override
   void dispose() {
@@ -250,6 +274,7 @@ class _SignUpViewState extends State<SignUpView> {
                                                       child: SignUpNameInput(
                                                         fieldKey: _nameKey,
                                                         focusNode: _nameFocus,
+                                                        onSubmitted: () => _emailFocus.requestFocus(),
                                                       ),
                                                     ),
                                                     SizedBox(height: 16.h),
@@ -271,6 +296,7 @@ class _SignUpViewState extends State<SignUpView> {
                                                       child: SignUpEmailInput(
                                                         fieldKey: _emailKey,
                                                         focusNode: _emailFocus,
+                                                        onSubmitted: () => _passwordFocus.requestFocus(),
                                                       ),
                                                     ),
                                                     SizedBox(height: 16.h),
@@ -295,6 +321,7 @@ class _SignUpViewState extends State<SignUpView> {
                                                                 _passwordKey,
                                                             focusNode:
                                                                 _passwordFocus,
+                                                            onSubmitted: () => _submitForm(context),
                                                           ),
                                                     ),
                                                     SizedBox(height: 24.h),
@@ -514,39 +541,7 @@ class _SignUpViewState extends State<SignUpView> {
                                                     ),
                                                     SizedBox(height: 32.h),
                                                     SignUpButton(
-                                                      formKey: _formKey,
-                                                      onValidationError: () {
-                                                        try {
-                                                          Haptics.vibrate(
-                                                            HapticsType.error,
-                                                          );
-                                                        } catch (_) {}
-                                                        if (!(_nameKey
-                                                                .currentState
-                                                                ?.validate() ??
-                                                            true)) {
-                                                          _nameShake.value++;
-                                                        }
-                                                        if (!(_emailKey
-                                                                .currentState
-                                                                ?.validate() ??
-                                                            true)) {
-                                                          _emailShake.value++;
-                                                        }
-                                                        if (!(_passwordKey
-                                                                .currentState
-                                                                ?.validate() ??
-                                                            true)) {
-                                                          _passwordShake
-                                                              .value++;
-                                                        }
-                                                        if (!(_legalKey
-                                                                .currentState
-                                                                ?.validate() ??
-                                                            true)) {
-                                                          _legalShake.value++;
-                                                        }
-                                                      },
+                                                      onPressed: () => _submitForm(context),
                                                     ),
                                                     SizedBox(height: 16.h),
                                                     const GoogleLoginButton(),

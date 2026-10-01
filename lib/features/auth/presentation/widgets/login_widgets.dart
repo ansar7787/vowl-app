@@ -17,8 +17,9 @@ import 'package:vowl/features/auth/presentation/widgets/auth_decoration.dart';
 class LoginEmailInput extends StatelessWidget {
   final GlobalKey<FormFieldState>? fieldKey;
   final FocusNode? focusNode;
+  final VoidCallback? onSubmitted;
 
-  const LoginEmailInput({super.key, this.fieldKey, this.focusNode});
+  const LoginEmailInput({super.key, this.fieldKey, this.focusNode, this.onSubmitted});
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +54,13 @@ class LoginEmailInput extends StatelessWidget {
               }
               return null;
             },
-            onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
+            onFieldSubmitted: (_) {
+              if (onSubmitted != null) {
+                onSubmitted!();
+              } else {
+                FocusScope.of(context).nextFocus();
+              }
+            },
             textInputAction: TextInputAction.next,
             keyboardType: TextInputType.emailAddress,
             inputFormatters: [
@@ -84,14 +91,14 @@ class LoginEmailInput extends StatelessWidget {
 
 class LoginPasswordInput extends StatelessWidget {
   final GlobalKey<FormFieldState>? fieldKey;
-  final GlobalKey<FormState> formKey;
   final FocusNode? focusNode;
+  final VoidCallback? onSubmitted;
 
   const LoginPasswordInput({
     super.key,
     this.fieldKey,
-    required this.formKey,
     this.focusNode,
+    this.onSubmitted,
   });
 
   @override
@@ -129,12 +136,7 @@ class LoginPasswordInput extends StatelessWidget {
               }
               return null;
             },
-            onFieldSubmitted: (_) {
-              if (formKey.currentState?.validate() ?? false) {
-                TextInput.finishAutofillContext();
-                context.read<LoginCubit>().logInWithCredentials();
-              }
-            },
+            onFieldSubmitted: (_) => onSubmitted?.call(),
             obscureText: !state.isPasswordVisible,
             textInputAction: TextInputAction.done,
             keyboardType: TextInputType.visiblePassword,
@@ -187,13 +189,11 @@ class LoginPasswordInput extends StatelessWidget {
 // ---------------------------------------------------------------------------
 
 class LoginButton extends StatelessWidget {
-  final GlobalKey<FormState> formKey;
-  final VoidCallback onValidationError;
+  final VoidCallback onPressed;
 
   const LoginButton({
     super.key,
-    required this.formKey,
-    required this.onValidationError,
+    required this.onPressed,
   });
 
   @override
@@ -208,14 +208,7 @@ class LoginButton extends StatelessWidget {
           child: ElevatedButton(
             onPressed: state.isSubmitting
                 ? null
-                : () {
-                    if (formKey.currentState?.validate() ?? false) {
-                      TextInput.finishAutofillContext();
-                      context.read<LoginCubit>().logInWithCredentials();
-                    } else {
-                      onValidationError();
-                    }
-                  },
+                : onPressed,
             style: ElevatedButton.styleFrom(
               minimumSize: const Size(double.infinity, 56),
             ),

@@ -16,8 +16,9 @@ import 'package:vowl/features/auth/presentation/widgets/auth_decoration.dart';
 class SignUpNameInput extends StatelessWidget {
   final GlobalKey<FormFieldState>? fieldKey;
   final FocusNode? focusNode;
+  final VoidCallback? onSubmitted;
 
-  const SignUpNameInput({super.key, this.fieldKey, this.focusNode});
+  const SignUpNameInput({super.key, this.fieldKey, this.focusNode, this.onSubmitted});
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +52,13 @@ class SignUpNameInput extends StatelessWidget {
               }
               return null;
             },
-            onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
+            onFieldSubmitted: (_) {
+              if (onSubmitted != null) {
+                onSubmitted!();
+              } else {
+                FocusScope.of(context).nextFocus();
+              }
+            },
             textInputAction: TextInputAction.next,
             keyboardType: TextInputType.name,
             inputFormatters: [
@@ -84,8 +91,9 @@ class SignUpNameInput extends StatelessWidget {
 class SignUpEmailInput extends StatelessWidget {
   final GlobalKey<FormFieldState>? fieldKey;
   final FocusNode? focusNode;
+  final VoidCallback? onSubmitted;
 
-  const SignUpEmailInput({super.key, this.fieldKey, this.focusNode});
+  const SignUpEmailInput({super.key, this.fieldKey, this.focusNode, this.onSubmitted});
 
   @override
   Widget build(BuildContext context) {
@@ -120,7 +128,13 @@ class SignUpEmailInput extends StatelessWidget {
               }
               return null;
             },
-            onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
+            onFieldSubmitted: (_) {
+              if (onSubmitted != null) {
+                onSubmitted!();
+              } else {
+                FocusScope.of(context).nextFocus();
+              }
+            },
             textInputAction: TextInputAction.next,
             keyboardType: TextInputType.emailAddress,
             inputFormatters: [
@@ -152,13 +166,13 @@ class SignUpEmailInput extends StatelessWidget {
 class SignUpPasswordInput extends StatelessWidget {
   final GlobalKey<FormFieldState>? fieldKey;
   final FocusNode? focusNode;
-  final GlobalKey<FormState>? formKey;
+  final VoidCallback? onSubmitted;
 
   const SignUpPasswordInput({
     super.key,
     this.fieldKey,
     this.focusNode,
-    this.formKey,
+    this.onSubmitted,
   });
 
   @override
@@ -202,12 +216,7 @@ class SignUpPasswordInput extends StatelessWidget {
                   }
                   return null;
                 },
-                onFieldSubmitted: (_) {
-                  if (formKey?.currentState?.validate() ?? false) {
-                    TextInput.finishAutofillContext();
-                    context.read<SignUpCubit>().signUp();
-                  }
-                },
+                onFieldSubmitted: (_) => onSubmitted?.call(),
                 textInputAction: TextInputAction.done,
                 obscureText: !state.isPasswordVisible,
                 keyboardType: TextInputType.visiblePassword,
@@ -267,13 +276,11 @@ class SignUpPasswordInput extends StatelessWidget {
 // ---------------------------------------------------------------------------
 
 class SignUpButton extends StatelessWidget {
-  final GlobalKey<FormState> formKey;
-  final VoidCallback onValidationError;
+  final VoidCallback onPressed;
 
   const SignUpButton({
     super.key,
-    required this.formKey,
-    required this.onValidationError,
+    required this.onPressed,
   });
 
   @override
@@ -288,14 +295,7 @@ class SignUpButton extends StatelessWidget {
           child: ElevatedButton(
             onPressed: state.isSubmitting
                 ? null
-                : () {
-                    if (formKey.currentState?.validate() ?? false) {
-                      TextInput.finishAutofillContext();
-                      context.read<SignUpCubit>().signUp();
-                    } else {
-                      onValidationError();
-                    }
-                  },
+                : onPressed,
             style: ElevatedButton.styleFrom(
               minimumSize: const Size(double.infinity, 56),
             ),

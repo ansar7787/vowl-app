@@ -1,10 +1,10 @@
-import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/theme/illustration_colors.dart';
-import 'dart:ui';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/core/utils/locale_service.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+
+import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/illustration_colors.dart';
 
 class _LocalPalette {
   _LocalPalette._();
@@ -18,257 +18,156 @@ class ModernFeatureBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    // An ultra-premium 2026 staggered list of glassmorphic feature cards
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        _buildFeatureCard(
-          context,
-          icon: LucideIcons.bookOpen,
-          title: context.tr(
-            'premium.feature_daily_words',
-            fallback: '10,000 Daily Words',
-          ),
-          subtitle: context.tr(
-            'premium.feature_daily_words_desc',
-            fallback:
-                'Unlock the ultimate word bank with zero ad interruptions.',
-          ),
-          isDark: isDark,
-          customColor: IllustrationColors.brightBlue, // Blue
-        ),
-        SizedBox(height: 12.h),
-        _buildFeatureCard(
-          context,
-          icon: LucideIcons.camera,
-          title: context.tr(
-            'premium.feature_photo_vocab',
-            fallback: 'Photo Vocabulary',
-          ),
-          subtitle: context.tr(
-            'premium.feature_photo_vocab_desc',
-            fallback:
-                'Snap any object and learn its English name instantly using AI.',
-          ),
-          isDark: isDark,
-          customColor: AppColors.teal500, // Teal
-        ),
-        SizedBox(height: 12.h),
-        _buildFeatureCard(
-          context,
-          icon: LucideIcons.scan,
-          title: context.tr(
-            'premium.feature_scan_learn',
-            fallback: 'Scan & Learn',
-          ),
-          subtitle: context.tr(
-            'premium.feature_scan_learn_desc',
-            fallback:
-                'Extract text from books or documents and get instant, real-time AI translations.',
-          ),
-          isDark: isDark,
-          customColor: AppColors.indigo500, // Indigo
-        ),
-        SizedBox(height: 12.h),
-        _buildFeatureCard(
-          context,
-          icon: LucideIcons.sparkles,
-          title: context.tr(
-            'premium.feature_translations',
-            fallback: 'Offline AI Translations',
-          ),
-          subtitle: context.tr(
-            'premium.feature_translations_desc',
-            fallback: 'Zero-lag, 100% offline native hints across all modules.',
-          ),
-          isDark: isDark,
-          customColor: AppColors.rose500, // Rose
-        ),
-        SizedBox(height: 12.h),
-        _buildFeatureCard(
-          context,
-          icon: LucideIcons.shieldCheck,
-          title: context.tr(
-            'premium.feature_zero_ads',
-            fallback: 'Zero Interruptions',
-          ),
-          subtitle: context.tr(
-            'premium.feature_zero_ads_desc',
-            fallback: 'A completely pure, ad-free learning experience.',
-          ),
-          isDark: isDark,
-          customColor: AppColors.emerald500, // Emerald
-        ),
-        SizedBox(height: 12.h),
-        _buildFeatureCard(
-          context,
-          icon: LucideIcons.brain,
-          title: context.tr(
-            'premium.feature_ai_tools',
-            fallback: 'AI Learning Suite',
-          ),
-          subtitle: context.tr(
-            'premium.feature_ai_tools_desc',
-            fallback:
-                'Unlimited Smart Reply, Photo Vocabulary, Scan & Learn, Entity Highlighter — all ad-free.',
-          ),
-          isDark: isDark,
-          customColor: AppColors.violet500, // Violet
-        ),
-        SizedBox(height: 12.h),
-        _buildFeatureCard(
-          context,
-          icon: LucideIcons.zap,
-          title: context.tr(
-            'premium.feature_2x_speed',
-            fallback: 'Enhanced Learning Tools',
-          ),
-          subtitle: context.tr(
-            'premium.feature_2x_speed_desc',
-            fallback: 'Access advanced exercises and detailed explanations.',
-          ),
-          isDark: isDark,
-          customColor: AppColors.amber500, // Amber
-        ),
-        SizedBox(height: 12.h),
-        _buildFeatureCard(
-          context,
-          icon: LucideIcons.wifiOff,
-          title: context.tr(
-            'premium.feature_play_offline',
-            fallback: 'Anywhere Offline Mode',
-          ),
-          subtitle: context.tr(
-            'premium.feature_play_offline_desc',
-            fallback: 'Download curriculum and learn off the grid.',
-          ),
-          isDark: isDark,
-          customColor: AppColors.slate500, // Slate
-        ),
-        SizedBox(height: 12.h),
-        _buildFeatureCard(
-          context,
-          icon: LucideIcons.gift,
-          title: context.tr(
-            'premium.feature_vip_loot',
-            fallback: 'Daily Elite Loot',
-          ),
-          subtitle: context.tr(
-            'premium.feature_vip_loot_desc',
-            fallback: 'Claim 100 free bonus coins every single day.',
-          ),
-          isDark: isDark,
-          customColor: IllustrationColors.vibrantPink, // Pink
-        ),
-        SizedBox(height: 12.h),
-        _buildFeatureCard(
-          context,
-          icon: LucideIcons.unlock,
-          title: context.tr(
-            'premium.feature_unlimited_levels',
-            fallback: 'Unlimited Vault Access',
-          ),
-          subtitle: context.tr(
-            'premium.feature_unlimited_levels_desc',
-            fallback: 'Instantly unlock all elite and master difficulty tiers.',
-          ),
-          isDark: isDark,
-          customColor: _LocalPalette.color06b6d4, // Cyan
-        ),
-        SizedBox(height: 12.h),
-        _buildFeatureCard(
-          context,
-          icon: LucideIcons.award,
-          title: context.tr(
-            'premium.feature_vip_badges',
-            fallback: 'Golden VIP Badges',
-          ),
-          subtitle: context.tr(
-            'premium.feature_vip_badges_desc',
-            fallback:
-                'Flaunt your exclusive elite status on the global leaderboards.',
-          ),
-          isDark: isDark,
-          customColor: _LocalPalette.coloreab308, // Yellow
-        ),
-      ],
-    );
-  }
 
-  Widget _buildFeatureCard(
-    BuildContext context, {
-    required IconData icon,
-    required String title,
-    required String subtitle,
-    required bool isDark,
-    Color? customColor,
-  }) {
-    final primaryColor =
-        customColor ?? AppColors.indigo500; // Default to Indigo
-
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(20.r),
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
-        child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-          decoration: BoxDecoration(
-            color: isDark
-                ? primaryColor.withValues(alpha: 0.1)
-                : primaryColor.withValues(alpha: 0.05),
-            borderRadius: BorderRadius.circular(20.r),
-            border: Border.all(
-              color: primaryColor.withValues(alpha: 0.3),
-              width: 1.5,
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.all(20.r),
+      decoration: BoxDecoration(
+        color: isDark ? AppColors.slate900.withValues(alpha: 0.5) : Colors.white,
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(
+          color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05),
+          width: 1.5,
+        ),
+        boxShadow: [
+          if (!isDark)
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.03),
+              blurRadius: 15,
+              offset: const Offset(0, 8),
+            ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            context.tr('premium.whats_included', fallback: "Everything you get"),
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w800,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
           ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
+          SizedBox(height: 16.h),
+          Wrap(
+            spacing: 12.w,
+            runSpacing: 12.h,
             children: [
-              Container(
-                padding: EdgeInsets.all(12.r),
-                decoration: BoxDecoration(
-                  color: primaryColor.withValues(alpha: 0.15),
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: primaryColor.withValues(alpha: 0.3),
-                  ),
-                ),
-                child: Icon(icon, color: primaryColor, size: 24.r),
+              _buildFeatureChip(
+                context,
+                icon: LucideIcons.bot,
+                title: 'AI Smart Reply',
+                color: IllustrationColors.brightBlue,
+                isDark: isDark,
               ),
-              SizedBox(width: 16.w),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      title,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        color: Theme.of(context).colorScheme.onSurface,
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w900,
-                        letterSpacing: 0.5,
-                      ),
-                    ),
-                    SizedBox(height: 4.h),
-                    Text(
-                      subtitle,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        color: isDark ? Colors.white60 : Colors.black54,
-                        fontSize: 13.sp,
-                        height: 1.4,
-                      ),
-                    ),
-                  ],
-                ),
+              _buildFeatureChip(
+                context,
+                icon: LucideIcons.camera,
+                title: 'Photo Vocab',
+                color: AppColors.teal500,
+                isDark: isDark,
+              ),
+              _buildFeatureChip(
+                context,
+                icon: LucideIcons.scan,
+                title: 'Scan & Learn',
+                color: AppColors.indigo500,
+                isDark: isDark,
+              ),
+              _buildFeatureChip(
+                context,
+                icon: LucideIcons.shieldCheck,
+                title: 'Ad-Free',
+                color: AppColors.emerald500,
+                isDark: isDark,
+              ),
+              _buildFeatureChip(
+                context,
+                icon: LucideIcons.sparkles,
+                title: 'Offline AI',
+                color: AppColors.rose500,
+                isDark: isDark,
+              ),
+              _buildFeatureChip(
+                context,
+                icon: LucideIcons.wifiOff,
+                title: 'Offline Mode',
+                color: AppColors.slate500,
+                isDark: isDark,
+              ),
+              _buildFeatureChip(
+                context,
+                icon: LucideIcons.unlock,
+                title: 'All Vaults',
+                color: _LocalPalette.color06b6d4,
+                isDark: isDark,
+              ),
+              _buildFeatureChip(
+                context,
+                icon: LucideIcons.gift,
+                title: 'Daily Loot',
+                color: IllustrationColors.vibrantPink,
+                isDark: isDark,
+              ),
+              _buildFeatureChip(
+                context,
+                icon: LucideIcons.award,
+                title: 'VIP Badges',
+                color: _LocalPalette.coloreab308,
+                isDark: isDark,
               ),
             ],
           ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildFeatureChip(
+    BuildContext context, {
+    required IconData icon,
+    required String title,
+    required Color color,
+    required bool isDark,
+  }) {
+    // Calculates a width that fits exactly 2 columns with a 12px gap
+    final screenWidth = MediaQuery.of(context).size.width;
+    // 24 padding from screen edges * 2 = 48
+    // 20 padding from container * 2 = 40
+    // 12 gap between columns
+    final availableWidth = screenWidth - 48.w - 40.w - 12.w;
+    final chipWidth = availableWidth / 2;
+
+    return Container(
+      width: chipWidth,
+      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
+      decoration: BoxDecoration(
+        color: isDark ? AppColors.slate800 : AppColors.slate50,
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(
+          color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.03),
         ),
+      ),
+      child: Row(
+        children: [
+          Icon(icon, color: color, size: 20.r),
+          SizedBox(width: 8.w),
+          Expanded(
+            child: Text(
+              title,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 13.sp,
+                fontWeight: FontWeight.w600,
+                color: Theme.of(context).colorScheme.onSurface,
+              ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+        ],
       ),
     );
   }

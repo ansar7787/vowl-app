@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -51,6 +52,23 @@ class _LoginViewState extends State<LoginView> {
 
   final ValueNotifier<int> _emailShake = ValueNotifier(0);
   final ValueNotifier<int> _passwordShake = ValueNotifier(0);
+
+  void _submitForm(BuildContext context) {
+    if (_formKey.currentState?.validate() ?? false) {
+      TextInput.finishAutofillContext();
+      context.read<LoginCubit>().logInWithCredentials();
+    } else {
+      try {
+        Haptics.vibrate(HapticsType.error);
+      } catch (_) {}
+      if (!(_emailKey.currentState?.validate() ?? true)) {
+        _emailShake.value++;
+      }
+      if (!(_passwordKey.currentState?.validate() ?? true)) {
+        _passwordShake.value++;
+      }
+    }
+  }
 
   @override
   void dispose() {
@@ -246,6 +264,7 @@ class _LoginViewState extends State<LoginView> {
                                                       child: LoginEmailInput(
                                                         fieldKey: _emailKey,
                                                         focusNode: _emailFocus,
+                                                        onSubmitted: () => _passwordFocus.requestFocus(),
                                                       ),
                                                     ),
                                                     SizedBox(height: 16.h),
@@ -266,9 +285,9 @@ class _LoginViewState extends State<LoginView> {
                                                           },
                                                       child: LoginPasswordInput(
                                                         fieldKey: _passwordKey,
-                                                        formKey: _formKey,
                                                         focusNode:
                                                             _passwordFocus,
+                                                        onSubmitted: () => _submitForm(context),
                                                       ),
                                                     ),
                                                     Align(
@@ -327,27 +346,7 @@ class _LoginViewState extends State<LoginView> {
                                                     ),
                                                     SizedBox(height: 8.h),
                                                     LoginButton(
-                                                      formKey: _formKey,
-                                                      onValidationError: () {
-                                                        try {
-                                                          Haptics.vibrate(
-                                                            HapticsType.error,
-                                                          );
-                                                        } catch (_) {}
-                                                        if (!(_emailKey
-                                                                .currentState
-                                                                ?.validate() ??
-                                                            true)) {
-                                                          _emailShake.value++;
-                                                        }
-                                                        if (!(_passwordKey
-                                                                .currentState
-                                                                ?.validate() ??
-                                                            true)) {
-                                                          _passwordShake
-                                                              .value++;
-                                                        }
-                                                      },
+                                                      onPressed: () => _submitForm(context),
                                                     ),
                                                     SizedBox(height: 16.h),
                                                     const GoogleLoginButton(),

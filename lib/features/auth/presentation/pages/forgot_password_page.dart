@@ -1,5 +1,6 @@
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
@@ -55,6 +56,20 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
   final _emailFocus = FocusNode();
 
   final ValueNotifier<int> _emailShake = ValueNotifier(0);
+
+  void _submitForm(BuildContext context) {
+    if (_formKey.currentState?.validate() ?? false) {
+      TextInput.finishAutofillContext();
+      context.read<ForgotPasswordCubit>().sendPasswordResetEmail();
+    } else {
+      if (!(_emailKey.currentState?.validate() ?? true)) {
+        _emailShake.value++;
+      }
+      try {
+        Haptics.vibrate(HapticsType.error);
+      } catch (_) {}
+    }
+  }
 
   @override
   void dispose() {
@@ -341,6 +356,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                                                                   _emailFocus,
                                                               contrastColor:
                                                                   contrastColor,
+                                                              onSubmitted: () => _submitForm(context),
                                                             ),
                                                           ),
                                                           SizedBox(
@@ -349,32 +365,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                                                           SendResetLinkButton(
                                                             isSubmitting: state
                                                                 .isSubmitting,
-                                                            onPressed: () {
-                                                              if (_formKey
-                                                                      .currentState
-                                                                      ?.validate() ??
-                                                                  false) {
-                                                                context
-                                                                    .read<
-                                                                      ForgotPasswordCubit
-                                                                    >()
-                                                                    .sendPasswordResetEmail();
-                                                              } else {
-                                                                if (!(_emailKey
-                                                                        .currentState
-                                                                        ?.validate() ??
-                                                                    true)) {
-                                                                  _emailShake
-                                                                      .value++;
-                                                                }
-                                                                try {
-                                                                  Haptics.vibrate(
-                                                                    HapticsType
-                                                                        .error,
-                                                                  );
-                                                                } catch (_) {}
-                                                              }
-                                                            },
+                                                            onPressed: () => _submitForm(context),
                                                           ),
                                                         ],
                                                       ),
