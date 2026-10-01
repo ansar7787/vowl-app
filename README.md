@@ -1,4 +1,4 @@
-<!-- markdownlint-disable MD033 MD041 -->
+<!-- markdownlint-disable MD033 MD041 MD029 -->
 <div align="center">
   <img src="assets/images/vowly_mascot.png" alt="Vowl mascot" width="140"/>
   <h1>Vowl</h1>
