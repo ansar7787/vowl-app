@@ -56,6 +56,7 @@ class ModernFeatureBar extends StatelessWidget {
           _buildListFeature(context, icon: LucideIcons.scan, title: context.tr('premium.feature_scan_learn', fallback: 'Scan & Learn Documents'), color: AppColors.indigo500),
           _buildListFeature(context, icon: LucideIcons.sparkles, title: context.tr('premium.feature_translations', fallback: 'Offline AI Translations'), color: AppColors.rose500),
           _buildListFeature(context, icon: LucideIcons.shieldCheck, title: context.tr('premium.feature_zero_ads', fallback: 'No Ads (100% Ad-Free)'), color: AppColors.emerald500),
+          _buildListFeature(context, icon: LucideIcons.zap, title: context.tr('premium.feature_2x_speed', fallback: 'Enhanced Learning Tools'), color: AppColors.amber500),
           _buildListFeature(context, icon: LucideIcons.wifiOff, title: context.tr('premium.feature_play_offline', fallback: 'Play Offline Anywhere'), color: AppColors.slate500),
           _buildListFeature(context, icon: LucideIcons.unlock, title: context.tr('premium.feature_unlimited_levels', fallback: 'Unlock All Difficulty Vaults'), color: _LocalPalette.color06b6d4),
           _buildListFeature(context, icon: LucideIcons.gift, title: context.tr('premium.feature_vip_loot', fallback: '100 Free Bonus Coins Daily'), color: IllustrationColors.vibrantPink),
