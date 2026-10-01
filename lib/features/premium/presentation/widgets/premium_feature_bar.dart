@@ -82,6 +82,15 @@ class ModernFeatureBar extends StatelessWidget {
     required Color color,
     bool isLast = false,
   }) {
+    // If a translation file returns ALL CAPS (e.g. "ZERO ADS"), normalize it to Title Case.
+    String formattedTitle = title;
+    if (title.isNotEmpty && title == title.toUpperCase()) {
+      formattedTitle = title.split(' ').map((word) {
+        if (word.isEmpty) return word;
+        return word[0].toUpperCase() + word.substring(1).toLowerCase();
+      }).join(' ');
+    }
+
     return Padding(
       padding: EdgeInsets.only(bottom: isLast ? 0 : 12.h),
       child: Row(
@@ -91,7 +100,7 @@ class ModernFeatureBar extends StatelessWidget {
           SizedBox(width: 12.w),
           Expanded(
             child: Text(
-              title,
+              formattedTitle,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 14.sp,
