@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -362,20 +363,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     ),
 
                                   // ── 5. Premium CTA (single, after value) ──
-                                  if (!user.isPremium)
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        SizedBox(height: 40.h),
-                                        Padding(
-                                          padding: EdgeInsets.symmetric(
-                                            horizontal: 24.w,
-                                          ),
-                                          child: _buildPremiumBanner(context),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      SizedBox(height: 40.h),
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 24.w,
                                         ),
-                                      ],
-                                    ),
+                                        child: user.isPremium
+                                            ? _buildPremiumActiveBanner(context)
+                                            : _buildPremiumBanner(context),
+                                      ),
+                                    ],
+                                  ),
 
                                   // ── 6. Settings ──
                                   Column(
@@ -450,6 +452,27 @@ class _ProfileScreenState extends State<ProfileScreen> {
         color: isDark ? Colors.white : AppColors.slate900,
         letterSpacing: -0.5,
       ),
+    );
+  }
+
+  Widget _buildPremiumActiveBanner(BuildContext context) {
+    return ProfileFeatureCard(
+      iconContent: Icon(
+        LucideIcons.checkCircle,
+        color: Colors.white,
+        size: 24.r,
+      ),
+      color: AppColors.emerald500,
+      shadowColor: _LocalPalette.color059669,
+      title: context.tr('profile.premium_active', fallback: 'Premium Active'),
+      subtitle: context.tr(
+        'profile.premium_active_subtitle',
+        fallback: 'Enjoying your exclusive perks.',
+      ),
+      onTap: () {
+        di.sl<HapticService>().selection();
+        context.push(AppRouter.premiumRoute);
+      },
     );
   }
 
