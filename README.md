@@ -153,10 +153,14 @@ lib/
  │    └── monetization/      # IAP Repositories, Paywalls
  ├── config/                 # Environment Variables, Keys
  └── main.dart               # App Entrypoint & DI Setup
+extensions/                  # Infrastructure-as-Code for Firebase Extensions
+ └── delete-user-data.env    # Safe, non-secret configuration (Firebase Best Practice)
 functions/
  ├── index.js                # Node.js Server-Side Purchase Validation
  └── package.json            # Node Dependencies (googleapis, firebase-admin)
 ```
+
+> **Note on Infrastructure-as-Code:** The `extensions/` directory is safely committed to source control following Firebase's modern "Extensions-as-Code" architecture. It contains structural configuration parameters (like Firestore deletion paths) and no sensitive secrets, ensuring infrastructure reproducibility across environments.
 
 ---
 
