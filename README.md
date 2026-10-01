@@ -1,214 +1,250 @@
-<!-- markdownlint-disable MD033 MD041 MD051 -->
+<!-- markdownlint-disable MD033 MD041 -->
 <div align="center">
-  <img src="assets/images/vowly_mascot.png" alt="Vowl Logo" width="150"/>
-  <h1>Vowl (formerly VoxAI Quest)</h1>
-  <p><b>A highly scalable, production-grade language learning application at enterprise scale.</b></p>
+  <img src="assets/images/vowly_mascot.png" alt="Vowl mascot" width="140"/>
+  <h1>Vowl</h1>
+  <p><b>A gamified language-learning app built with Flutter and Firebase.</b></p>
 
   [![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev)
-  [![Firebase](https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/)
   [![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white)](https://dart.dev/)
+  [![Firebase](https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/)
   [![BLoC](https://img.shields.io/badge/BLoC-State_Management-blue?style=for-the-badge)](https://bloclibrary.dev/)
-  ![Scale](https://img.shields.io/badge/Scale-100k%2B_LOC-success?style=for-the-badge)
-  ![Scale](https://img.shields.io/badge/Games-100%2B-blueviolet?style=for-the-badge)
+  ![Status](https://img.shields.io/badge/status-Google_Play_release_in_progress-orange?style=for-the-badge)
 </div>
 
 ---
 
-## 📖 Executive Summary
+## Overview
 
-**Vowl** is a colossal, production-ready language learning and gamification platform built entirely on Flutter and Firebase. Spanning over **1,000+ files and 100,000+ lines of code**, this project represents an enterprise-grade mobile application architecture.
+Vowl is a gamified language-learning app with a separate Kids Zone. It has **100+ game types**, a **200-level curriculum per game**, and **60,000+ learning challenges** across vocabulary, grammar, listening, speaking, reading, writing, and more.
 
-It features a massive, dynamic curriculum comprising over **100 interactive game types**, a **200-level curriculum per game**, and an astounding **60,000+ unique learning challenges**. Engineered for scale, Vowl boasts a robust, 0-static-error architecture, strict backend zero-trust security, server-side receipt validation, and a visually stunning 60fps glassmorphic UI.
+I designed and built everything myself: the Flutter app, the Firebase backend, and the Cloud Function that validates in-app purchases.
 
----
+**Status:** Google Play release in progress.
 
-## 📑 Table of Contents
+[Features](#features) · [Architecture](#architecture) · [Security](#security-and-backend) · [Design decisions](#design-decisions) · [Getting started](#getting-started)
 
-- [Executive Summary](#-executive-summary)
-- [Screenshots & UI Showcase](#-screenshots--ui-showcase)
-- [Comprehensive Feature Breakdown](#-comprehensive-feature-breakdown)
-- [Core Architecture & Engineering](#-core-architecture--engineering)
-- [Security & Backend Infrastructure](#-security--backend-infrastructure)
-- [Codebase Structure](#-codebase-structure)
-- [Getting Started](#-getting-started)
-- [Legal & Compliance](#-legal--compliance)
+### Technical highlights
 
----
+- **BLoC + get_it:** business logic lives in BLoCs, and dependencies are injected, so services are easy to swap and test.
+- **Shared game logic:** a generic `GameScreenMixin<T>` removes duplicated timer, scoring, lifecycle, and haptics code across 60+ game screens.
+- **Server-side purchase validation:** a Node.js Firebase Cloud Function verifies Google Play purchase tokens before Premium is granted.
+- **Security Rules:** Firestore and Cloud Storage rules restrict users to their own data and validate XP updates.
+- **Speech and audio:** speech recognition and text-to-speech for speaking and listening games.
+- **UI and rendering:** a glassmorphic interface built with `flutter_animate`, plus an animated mesh-gradient background drawn with `CustomPainter`.
 
-## 📸 Screenshots & UI Showcase
+<!--
+## Screenshots
 
-> **Note:** (Developer) Insert actual screenshots here before publishing to your portfolio.
+Add real screenshots to docs/screenshots/ and uncomment this section.
 
 <div align="center">
-  <!-- INSERT SCREENSHOT HERE: Home Dashboard -->
-  <img src="https://via.placeholder.com/250x500.png?text=Home+Dashboard" alt="Home Dashboard" width="200"/>
-  &nbsp;&nbsp;
-  <!-- INSERT SCREENSHOT HERE: Game Screen (e.g., Grammar or Vocab) -->
-  <img src="https://via.placeholder.com/250x500.png?text=Interactive+Game" alt="Interactive Game" width="200"/>
-  &nbsp;&nbsp;
-  <!-- INSERT SCREENSHOT HERE: Kids Zone / Parental Gate -->
-  <img src="https://via.placeholder.com/250x500.png?text=Kids+Zone" alt="Kids Zone" width="200"/>
-  &nbsp;&nbsp;
-  <!-- INSERT SCREENSHOT HERE: Profile & Streaks -->
-  <img src="https://via.placeholder.com/250x500.png?text=Profile+%26+Streaks" alt="Profile" width="200"/>
+  <img src="docs/screenshots/home.png" alt="Home" width="200"/>
+  <img src="docs/screenshots/game.png" alt="Game" width="200"/>
+  <img src="docs/screenshots/kids-zone.png" alt="Kids Zone" width="200"/>
+  <img src="docs/screenshots/profile.png" alt="Profile and streaks" width="200"/>
 </div>
 
----
-
-## 🚀 Comprehensive Feature Breakdown
-
-Because of the massive scale of this application, features are broken down into core domain modules:
-
-### 🎮 The Game & Curriculum Engine
-
-- **100+ Game Modes:** Unique UI and logic for vocabulary, grammar, pronunciation, typing, matching, and listening comprehension.
-- **60,000+ Challenges:** A dynamically loaded curriculum supporting up to 200 levels per game mode.
-- **Real-time Lifecycle Management:** Games automatically pause and resume based on the device's foreground/background state via a custom `AppLifecycleHandler`.
-- **Haptic & Audio Feedback:** Context-aware haptics and sound effects for correct/incorrect answers, managed centrally.
-
-### 🗣️ Audio & Speech Processing
-
-- **On-Device Speech Recognition:** Real-time voice parsing for pronunciation and speaking exercises.
-- **Text-to-Speech (TTS):** Native TTS integration for listening comprehension games.
-
-### 🏆 Progression & Gamification
-
-- **XP & Leveling System:** Granular tracking of user experience points, automatically recalculating user levels.
-- **Daily Streaks:** Complex timezone-aware streak tracking to drive user retention.
-- **Achievements & Badges:** Unlockable digital assets based on user milestones.
-
-### 🛡️ Kids Zone & Parental Controls
-
-- **Dedicated Kids UI:** A simplified, distraction-free interface for younger learners.
-- **COPPA-Compliant Parental Gate:** Complex, randomized math equations protect settings, external links, and IAP, ensuring kids cannot make unauthorized purchases.
-
-### 💳 Monetization & Economy
-
-- **Dual Monetization Strategy:** AdMob integrations (Banners/Interstitials) paired with Premium Subscriptions.
-- **In-App Purchases (IAP):** Native Google Play Billing integration supporting recurring subscriptions and one-time coin packs.
-- **Razorpay Integration:** Alternative payment gateway tailored for the Indian market.
+Demo video: [Watch on YouTube](PASTE_YOUR_VIDEO_LINK_HERE)
+-->
 
 ---
 
-## 🏗️ Core Architecture & Engineering
+## Features
 
-Managing 100k+ LOC requires rigorous architectural patterns to prevent tech debt and spaghetti code. Vowl utilizes industry-standard paradigms:
+### Games and curriculum
 
-### 1. Advanced Mixin-Based Screen Architecture
+- 100+ game types, including vocabulary, grammar, pronunciation, typing, matching, and listening comprehension.
+- Up to 200 levels per game. Curriculum content is bundled as assets and organized by category (`assets/curriculum/`).
+- Games pause and resume with the app lifecycle through a custom `AppLifecycleHandler`.
+- Haptic and sound feedback for correct and wrong answers, managed in one place.
 
-To support 60+ unique game screens without duplicating core logic, Vowl uses a deeply generic `GameScreenMixin<T>` architecture.
+### Speech and audio
 
-- **DRY Principle:** Handles timer ticks, score tracking, lifecycle pausing, and haptics in one central place.
-- **Feature Mixins:** Screens compose functionality via `with GameScreenMixin<Widget>, GrammarFeatureMixin`.
+- Speech recognition for speaking and pronunciation exercises.
+- Text-to-speech for listening games.
 
-### 2. Strict State Management (BLoC)
+### Progress and rewards
 
-- **100% BLoC Pattern:** UI components are completely stateless regarding business logic. All events (e.g., `SubmitAnswerEvent`, `PauseGameEvent`) flow through BLoCs, emitting immutable States.
-- **0-Error Codebase:** Rigorous adherence to Dart static analysis ensures 0 errors and 0 warnings across the entire 1,000+ file project.
+- XP and level system.
+- Timezone-aware daily streaks.
+- Achievements, badges, and leaderboards.
 
-### 3. Dependency Injection (DI)
+### Kids Zone
 
-- **`get_it` Service Locator:** All repositories, network clients, and local storage managers are injected, making the codebase highly testable and decoupled.
+- Simplified interface with 25 learning topics, including alphabet, numbers, colors, animals, phonics, and handwriting.
+- Parental gate: randomized math questions protect settings, external links, and purchases.
 
-### 4. High-Performance UI Rendering
+### Accounts and monetization
 
-- **Custom `MeshGradientBackground`:** Instead of relying on heavy image assets or expensive layout calculations, Vowl uses low-level `CustomPainter` to draw animated mesh gradients. By batching `canvas.drawPoints` and stripping dynamic memory allocations, the app achieves a locked **60fps** during complex animations.
-- **Release-Mode Optimization:** Over 100+ `debugPrint` statements are strictly guarded by `if (kDebugMode)` to prevent string interpolation memory overhead in production builds.
-
----
-
-## 🔒 Security & Backend Infrastructure
-
-Vowl's backend relies on a **Zero-Trust Security Model** hosted on Firebase.
-
-### 1. Server-Side IAP Validation (Node.js)
-
-- **Anti-Piracy:** Client-side purchase spoofing is physically impossible. When a user buys Premium, the token is sent to a custom Node.js Firebase Cloud Function (`validateIAPReceipt`).
-- **Google Play Server Auth:** The Cloud Function securely authenticates with Google's servers to verify the receipt before granting Premium status in Firestore.
-
-### 2. Firestore & Storage Security Rules
-
-- **Resource Locking:** Users can strictly only read and write their own documents (`request.auth.uid == resource.id`).
-- **Anti-Cheat Validation:** Rules validate data payloads (e.g., ensuring `XP` increments are within reasonable mathematical bounds) to prevent client-side memory injection cheating.
-- **Rate Limiting:** Global read/write limits applied at the security rule level.
+- OAuth (Google Sign-In) and email login.
+- AdMob banner and interstitial ads.
+- Premium subscriptions and one-time coin packs through Google Play Billing.
+- Razorpay integration as an alternative payment gateway for the Indian market, subject to Google Play's payments policy.
 
 ---
 
-## 📂 Codebase Structure
+## Architecture
 
-The project follows a highly modular, feature-first structure:
+```mermaid
+flowchart LR
+    UI["Screens and widgets"] -- events --> BLOC["BLoCs"]
+    BLOC -- immutable states --> UI
+    BLOC --> REPO["Repositories"]
+    REPO --> FS[("Cloud Firestore")]
+    REPO --> LOCAL[("Local storage")]
+    DI{{"get_it"}} -.-> BLOC
+    DI -.-> REPO
+```
+
+The project uses a feature-first structure:
 
 ```text
 lib/
  ├── core/
- │    ├── presentation/      # Shared Mixins, Base Widgets (e.g., GameScreenMixin)
- │    ├── theme/             # Global AppTheme, AppDimensions, Colors
- │    └── utils/             # Helpers, Lifecycle handlers
+ │    ├── presentation/      # Shared mixins and base widgets (e.g. GameScreenMixin)
+ │    ├── theme/             # AppTheme, dimensions, colors
+ │    └── utils/             # Helpers, lifecycle handlers
  ├── features/
- │    ├── auth/              # OAuth, Email Login, Legal Consents
- │    ├── home/              # Dashboards, Category Shelves
- │    ├── games/             # The 100+ Game Modes (Vocab, Grammar, Math)
- │    ├── kids_zone/         # Parental Gate, Kids UI
- │    ├── profile/           # Streaks, Leaderboards, Settings
- │    └── monetization/      # IAP Repositories, Paywalls
- ├── config/                 # Environment Variables, Keys
- └── main.dart               # App Entrypoint & DI Setup
+ │    ├── auth/              # OAuth, email login, legal consents
+ │    ├── home/              # Dashboards, category shelves
+ │    ├── games/             # The 100+ game types
+ │    ├── kids_zone/         # Parental gate, kids UI
+ │    ├── profile/           # Streaks, leaderboards, settings
+ │    └── monetization/      # IAP repositories, paywalls
+ ├── config/                 # Environment variables, keys
+ └── main.dart               # Entry point and DI setup
 extensions/                  # Infrastructure-as-Code for Firebase Extensions
  └── delete-user-data.env    # Safe, non-secret configuration (Firebase Best Practice)
 functions/
- ├── index.js                # Node.js Server-Side Purchase Validation
- └── package.json            # Node Dependencies (googleapis, firebase-admin)
+ ├── index.js                # Server-side purchase validation (Node.js)
+ └── package.json            # googleapis, firebase-admin
 ```
 
 > **Note on Infrastructure-as-Code:** The `extensions/` directory is safely committed to source control following Firebase's modern "Extensions-as-Code" architecture. It contains structural configuration parameters (like Firestore deletion paths) and no sensitive secrets, ensuring infrastructure reproducibility across environments.
 
+### State management: BLoC
+
+Business logic lives in BLoCs. Widgets send events (for example `SubmitAnswerEvent` and `PauseGameEvent`) and rebuild from immutable states.
+
+### Dependency injection: get_it
+
+Repositories, network clients, and local storage managers are registered with `get_it`, so they can be replaced or mocked.
+
+### Shared game logic: mixins
+
+60+ game screens need the same timer ticks, score tracking, lifecycle pausing, and haptics. A generic `GameScreenMixin<T>` keeps that logic in one place, and screens add feature-specific behavior with extra mixins, for example `with GameScreenMixin<Widget>, GrammarFeatureMixin`.
+
+### Rendering performance
+
+The animated background uses `CustomPainter` instead of image assets. It batches points with `canvas.drawPoints` and minimizes allocations inside the paint loop to keep the animation smooth. Debug logging is wrapped in `kDebugMode`, so it does not run in release builds.
+
 ---
 
-## 🚀 Getting Started
+## Security and backend
+
+The app treats the client as untrusted. It does not decide that a purchase is valid: it sends the purchase token to a Cloud Function, which verifies it with Google Play and then grants Premium in Firestore.
+
+```mermaid
+sequenceDiagram
+    participant App as Flutter app
+    participant Play as Google Play Billing
+    participant Fn as Cloud Function validateIAPReceipt
+    participant API as Google Play servers
+    participant FS as Cloud Firestore
+
+    App->>Play: Start purchase
+    Play-->>App: Purchase token
+    App->>Fn: Send purchase token
+    Fn->>API: Verify token
+    API-->>Fn: Purchase status
+    Fn->>FS: Grant Premium (only if valid)
+    FS-->>App: Updated Premium status
+```
+
+The function is written in Node.js and uses `googleapis` and `firebase-admin`.
+
+### Firestore and Storage Security Rules
+
+- Users can read and write only their own documents (`request.auth.uid == resource.id`).
+- Rules validate XP updates (values must stay within valid bounds) to limit client-side tampering.
+
+---
+
+## Design decisions
+
+| Decision | Why | Trade-off |
+| --- | --- | --- |
+| BLoC for state | Games have many state changes (timer, score, pause, answers). Events and immutable states keep transitions predictable and testable. | More boilerplate than Provider or Cubit for simple screens. |
+| One generic `GameScreenMixin<T>` | 60+ game screens share timers, scoring, lifecycle pausing, and haptics. | Mixins can hide dependencies; a separate controller class would be more explicit. |
+| Curriculum bundled as assets | Content works offline and costs no database reads. | Larger app size, and new content needs an app release. |
+| Server-side purchase validation | The client cannot be trusted to say that a purchase happened. | Needs a Cloud Function and Google service-account setup to maintain. |
+| `CustomPainter` for the animated background | Avoids heavy image assets and expensive layout work. | Custom painting code is harder to maintain than widgets. |
+
+---
+
+## Tech stack
+
+| Area | Technologies |
+| --- | --- |
+| App | Flutter, Dart |
+| State and DI | flutter_bloc, equatable, get_it |
+| Navigation | go_router |
+| Backend | Firebase Auth, Cloud Firestore, Cloud Storage, Cloud Functions (Node.js) |
+| Payments and ads | in_app_purchase (Google Play Billing), razorpay_flutter, google_mobile_ads |
+| Voice and audio | speech_to_text, flutter_tts, audioplayers |
+| UI | flutter_animate, flutter_screenutil, shimmer, cached_network_image |
+
+---
+
+## Getting started
 
 ### Prerequisites
 
-- Flutter SDK (`stable` channel)
-- Firebase CLI installed and authenticated
-- Google Play Console Developer Account (for IAP testing)
+- Flutter SDK (stable channel)
+- Node.js and the Firebase CLI (for Cloud Functions)
+- A Firebase project
+- A Google Play Console account (for testing in-app purchases)
 
-### Installation
+### Run the app
 
-1. **Clone the repo:**
+1. Clone the repo:
 
-   ```bash
+```bash
    git clone https://github.com/ansar7787/vowl-app.git
    cd vowl-app
-   ```
+```
 
-2. **Install dependencies:**
+2. Install dependencies:
 
-   ```bash
+```bash
    flutter pub get
-   ```
+```
 
-3. **Setup Firebase:**
-   Ensure you have `google-services.json` (Android) and `GoogleService-Info.plist` (iOS) in their respective directories.
+3. Create a `.env` file in the project root. It is bundled as an asset and loaded with `flutter_dotenv`, so anyone can read it from the built app. Put only public identifiers in it (for example a Razorpay key ID) and keep all secrets on the server.
 
-4. **Deploy Cloud Functions (Optional but required for IAP):**
+4. Add your Firebase config files:
+   - Android: `android/app/google-services.json`
+   - iOS: `ios/Runner/GoogleService-Info.plist`
 
-   ```bash
+5. Deploy the Cloud Function (needed for purchase validation):
+
+```bash
    cd functions
    npm install
    firebase deploy --only functions:validateIAPReceipt
-   ```
+```
 
-5. **Run the app:**
+6. Run the app:
 
-   ```bash
+```bash
    flutter run
-   ```
+```
 
 ---
 
-## 📄 Legal & Compliance
+## Legal
 
-This application includes fully compliant, production-ready legal documentation hosted externally via GitHub Pages to allow web-based access for App Store compliance:
+Policies are hosted on GitHub Pages for store listings:
 
 - [Privacy Policy](https://ansar7787.github.io/vowl-legal/privacy.html)
 - [Terms of Service](https://ansar7787.github.io/vowl-legal/terms.html)
@@ -216,4 +252,20 @@ This application includes fully compliant, production-ready legal documentation 
 
 ---
 
-<p align="center">Designed, Engineered & Developed by <b>Ansar</b></p>
+<p align="center">Built by <b>Muhammed Ansar A</b> · <a href="https://github.com/ansar7787">GitHub</a> · <a href="https://www.linkedin.com/in/ansar7">LinkedIn</a></p>
+
+<!-- When live on Google Play: replace the "status" badge at the top with this -->
+[![Google Play](https://img.shields.io/badge/Google_Play-Get_it-34A853?style=for-the-badge&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=YOUR.APP.ID)
+
+<!-- After you have real tests + .github/workflows/ci.yml: add this section -->
+## Testing
+
+```bash
+flutter analyze
+flutter test
+```
+
+[![CI](https://github.com/ansar7787/vowl-app/actions/workflows/ci.yml/badge.svg)](https://github.com/ansar7787/vowl-app/actions/workflows/ci.yml)
+
+<!-- Only after you verify your rules block client writes to entitlement fields: add to the Security Rules list -->
+- Clients cannot write entitlement fields such as Premium; only the Cloud Function can.
