@@ -1,6 +1,7 @@
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/illustration_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -440,8 +441,61 @@ class _PremiumScreenState extends State<PremiumScreen> {
   /// fixed, screen-aware gaps (kept at roughly the same 1:1:1:2 ratio the
   /// original four `Spacer`/`Spacer(flex: 2)` had), since flexible gaps
   /// cannot be used inside a scrollable's unbounded main axis.
+  Widget _buildAlreadyPremiumCard(bool isDark, user) {
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.all(24.r),
+      decoration: BoxDecoration(
+        color: AppColors.emerald500.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(
+          color: AppColors.emerald500.withValues(alpha: 0.3),
+          width: 1.5,
+        ),
+      ),
+      child: Column(
+        children: [
+          Icon(
+            LucideIcons.checkCircle,
+            color: AppColors.emerald500,
+            size: 48.r,
+          ),
+          SizedBox(height: 16.h),
+          Text(
+            context.tr(
+              'premium.already_premium',
+              fallback: "You're already a Premium Quester!",
+            ),
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w800,
+              color: isDark ? Colors.white : AppColors.slate900,
+            ),
+          ),
+          if (user.premiumExpiryDate != null) ...[
+            SizedBox(height: 8.h),
+            Text(
+              "Valid until: ${user.premiumExpiryDate!.toLocal().toString().split(' ')[0]}",
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w500,
+                color: isDark ? Colors.white70 : AppColors.slate500,
+              ),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+
   Widget _buildScrollableBody() {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final user = context.read<AuthBloc>().state.user;
+    final isPremium = user?.isPremium ?? false;
+
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.w),
       child: Column(
@@ -451,86 +505,91 @@ class _PremiumScreenState extends State<PremiumScreen> {
           SizedBox(height: 16.h),
           const PremiumHero(),
           SizedBox(height: 24.h),
-          _buildPlanList(),
+          if (isPremium)
+            _buildAlreadyPremiumCard(isDark, user)
+          else
+            _buildPlanList(),
           SizedBox(height: 24.h),
           const ModernFeatureBar(),
           SizedBox(height: 32.h),
-          _buildPaymentMethodSelector(isDark),
-          _buildCTAButton(),
-          SizedBox(height: 12.h),
-          TextButton(
-            onPressed: () async {
-              di.sl<HapticService>().selection();
-              if (InAppPurchaseService.shouldUseIAP) {
-                _isProcessingVal = true;
-                _updateState();
+          if (!isPremium) ...[
+            _buildPaymentMethodSelector(isDark),
+            _buildCTAButton(),
+            SizedBox(height: 12.h),
+            TextButton(
+              onPressed: () async {
+                di.sl<HapticService>().selection();
+                if (InAppPurchaseService.shouldUseIAP) {
+                  _isProcessingVal = true;
+                  _updateState();
 
-                final iap = InAppPurchaseService.instance;
-                iap.onPurchaseRestored = () {
-                  if (mounted) {
-                    context.read<AuthBloc>().add(const AuthReloadUser());
-                    _isProcessingVal = false;
-                    _updateState();
-                    CustomSnackBar.show(
-                      context: context,
-                      message: context.tr(
-                        'premium.restore_success',
-                        fallback: 'Purchases restored successfully.',
-                      ),
-                      type: CustomSnackBarType.success,
-                    );
-                  }
-                };
-                iap.onPurchaseError = (error) {
-                  if (mounted) {
-                    _isProcessingVal = false;
-                    _updateState();
-                    CustomSnackBar.show(
-                      context: context,
-                      message: error,
-                      type: CustomSnackBarType.error,
-                    );
-                  }
-                };
+                  final iap = InAppPurchaseService.instance;
+                  iap.onPurchaseRestored = () {
+                    if (mounted) {
+                      context.read<AuthBloc>().add(const AuthReloadUser());
+                      _isProcessingVal = false;
+                      _updateState();
+                      CustomSnackBar.show(
+                        context: context,
+                        message: context.tr(
+                          'premium.restore_success',
+                          fallback: 'Purchases restored successfully.',
+                        ),
+                        type: CustomSnackBarType.success,
+                      );
+                    }
+                  };
+                  iap.onPurchaseError = (error) {
+                    if (mounted) {
+                      _isProcessingVal = false;
+                      _updateState();
+                      CustomSnackBar.show(
+                        context: context,
+                        message: error,
+                        type: CustomSnackBarType.error,
+                      );
+                    }
+                  };
 
-                await iap.restorePurchases();
+                  await iap.restorePurchases();
 
-                // If there are no past purchases, the stream won't emit anything.
-                // We should timeout the loading state just in case.
-                Future.delayed(const Duration(seconds: 5), () {
-                  if (mounted && _isProcessingVal) {
-                    _isProcessingVal = false;
-                    _updateState();
-                  }
-                });
-              } else {
-                CustomSnackBar.show(
-                  context: context,
-                  message: context.tr(
-                    'premium.restore_not_supported',
-                    fallback:
-                        'Restore is only available for Google Play purchases.',
-                  ),
-                  type: CustomSnackBarType.info,
-                );
-              }
-            },
-            child: Text(
-              context.tr(
-                'premium.restore_purchases',
-                fallback: 'Restore Purchases',
-              ),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                color: Theme.of(context).brightness == Brightness.dark
-                    ? Colors.white60
-                    : Colors.black54,
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w600,
-                decoration: TextDecoration.underline,
+                  // If there are no past purchases, the stream won't emit anything.
+                  // We should timeout the loading state just in case.
+                  Future.delayed(const Duration(seconds: 5), () {
+                    if (mounted && _isProcessingVal) {
+                      _isProcessingVal = false;
+                      _updateState();
+                    }
+                  });
+                } else {
+                  CustomSnackBar.show(
+                    context: context,
+                    message: context.tr(
+                      'premium.restore_not_supported',
+                      fallback:
+                          'Restore is only available for Google Play purchases.',
+                    ),
+                    type: CustomSnackBarType.info,
+                  );
+                }
+              },
+              child: Text(
+                context.tr(
+                  'premium.restore_purchases',
+                  fallback: 'Restore Purchases',
+                ),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  color: Theme.of(context).brightness == Brightness.dark
+                      ? Colors.white60
+                      : Colors.black54,
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w600,
+                  decoration: TextDecoration.underline,
+                ),
               ),
             ),
-          ),
+          ],
           SizedBox(height: 20.h),
           _buildSecureTag(),
           SizedBox(height: 8.h),
